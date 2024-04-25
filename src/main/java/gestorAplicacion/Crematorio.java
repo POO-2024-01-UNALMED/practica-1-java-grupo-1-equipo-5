@@ -9,7 +9,7 @@ public class Crematorio {
 	private String ubicacion;
 	private int sillas;
 	private ArrayList<Cliente> listadoClientes=new ArrayList<Cliente>();
-	private static ArrayList<Encargado> listadoEncargados=new ArrayList<Encargado>();
+	private static ArrayList<Empleado> listadoEmpleados=new ArrayList<Empleado>();
 	private static ArrayList<Transporte> listadoTransportes=new ArrayList<Transporte>();
 	
 	//Métodos get y set 
@@ -42,8 +42,8 @@ public class Crematorio {
 	
 	//Métodos get y set estáticos
 	
-	public static ArrayList<Encargado> getListadoEncargados(){
-		return listadoEncargados;
+	public static ArrayList<Empleado> getListadoEncargados(){
+		return listadoEmpleados;
 	}
 	public static ArrayList<Transporte> getListadoTransportes(){
 		return listadoTransportes;

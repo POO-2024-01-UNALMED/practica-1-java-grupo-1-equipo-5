@@ -9,8 +9,8 @@ public class Cliente {
 	private Crematorio crematorio;
 	private Cementerio cementerio;
 	private Velorio velorio;
-	private ArrayList<Familiar> listadoFamiliares;
-	private ArrayList<Factura> listadoFacturas;
+	private ArrayList<Familiar> listadoFamiliares=new ArrayList<Familiar>();
+	private ArrayList<Factura> listadoFacturas=new ArrayList<Factura>();
 	
 	//metodos get y set
 	
