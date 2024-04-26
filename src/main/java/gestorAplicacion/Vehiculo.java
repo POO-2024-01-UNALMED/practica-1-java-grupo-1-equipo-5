@@ -1,7 +1,7 @@
 package gestorAplicacion;
 
 import java.util.ArrayList;
-public class Transporte {
+public class Vehiculo {
 	private String placa;
 	private Empleado conductor;
 	private ArrayList<String> ruta=new ArrayList<String>();
@@ -25,6 +25,5 @@ public class Transporte {
 	public void setRuta(ArrayList<String> ruta) {
 		this.ruta=ruta;
 	}
-	
-	
+
 }
