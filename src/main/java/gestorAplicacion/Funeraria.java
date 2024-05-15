@@ -12,6 +12,32 @@ public class Funeraria {
 	private ArrayList<Establecimiento> listadoProveedores=new ArrayList<Establecimiento>();
 	private ArrayList<Factura> listadoFacturas=new ArrayList<Factura>();
 	
+	
+	public ArrayList<Crematorio> disponibilidadCrematorios(String afiliacion,ArrayList<Familiar> listadoFamiliares){
+		ArrayList<Crematorio> crematoriosDisponibles=new ArrayList<Crematorio>();
+		
+		//Contar la cantidad de familiares y acompañantes
+		int cantidadFamiliares=listadoFamiliares.size();
+		
+		for (int i=0; i<listadoFamiliares.size();i++) {
+			if(listadoFamiliares.get(i).getEdad()>17) {
+				int cantidad=listadoFamiliares.get(i).getAcompañantes();
+				cantidadFamiliares=cantidadFamiliares+cantidad;
+			}
+		}
+		
+		for (int i=0; i<listadoCrematorios.size(); i++) {
+			if (listadoCrematorios.get(i).getAfiliacion()==afiliacion & listadoCrematorios.get(i).getSillas()==cantidadFamiliares) {
+				crematoriosDisponibles.add(listadoCrematorios.get(i));
+			}
+		}
+		return crematoriosDisponibles;
+	}
+	
+	
+	
+	
+	
 	//metodos get y set
 	
 	public String getNombre() {

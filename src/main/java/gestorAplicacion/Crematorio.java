@@ -8,9 +8,16 @@ public class Crematorio {
 	private String nombre;
 	private String ubicacion;
 	private int sillas;
+	private String afiliacion; //oro - plata - bronce
 	private ArrayList<Cliente> listadoClientes=new ArrayList<Cliente>();
 	private static ArrayList<Empleado> listadoEmpleados=new ArrayList<Empleado>();
 	private static ArrayList<Vehiculo> listadoVehiculos=new ArrayList<Vehiculo>();
+	
+	
+	
+	
+	
+	
 	
 	//Métodos get y set 
 	
@@ -34,6 +41,14 @@ public class Crematorio {
 	public void setSillas(int sillas) {
 		this.sillas=sillas;
 	}
+	
+	public String getAfiliacion() {
+		return afiliacion;
+	}
+	public void setAfiliacion(String afiliacion) {
+		this.afiliacion=afiliacion;
+	}
+	
 	
 	public ArrayList<Cliente> getListadoClientes(){
 		return listadoClientes;

@@ -1,22 +1,13 @@
 package gestorAplicacion;
 
-public class Empleado {
+public class Empleado extends Persona{
 	//Atributos
-		private String nombre;
-		private final long CC;
+	
 		private boolean estado;
 		private String cargo;
 		
 		//Metodos get y set
-		public String getNombre() {
-			return nombre;
-		}
-		public void setNombre(String nombre) {
-			this.nombre=nombre;
-		}
-		public long getCC() {
-			return CC;
-		}
+		
 		public boolean isEstado() {
 			return estado;
 		}

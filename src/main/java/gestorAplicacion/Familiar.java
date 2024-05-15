@@ -1,31 +1,27 @@
 package gestorAplicacion;
 
-public class Familiar {
-	private String nombre;
-	private final long CC;
-	private int edad;
+public class Familiar extends Persona{
+	
+	
 	private String parentesco;
 	private boolean estado;
-	private String ubicacion;
+	
 	private int acompañantes;
 	private Familiar responsable;
 	
+	
+	
+	
+	public boolean autorizar() {
+		if (parentesco == "conyugue" || parentesco =="hijo" || parentesco =="hija" || parentesco =="madre" || parentesco =="padre") {
+			int numero= (int) (Math.random()*10);
+			if (numero<6) { return true; } }
+		return false;
+	}
+	
 	//metodos get y set 
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre=nombre;
-	}
-	public long getCC() {
-		return CC;
-	}
-	public int getEdad() {
-		return edad;
-	}
-	public void setEdad(int edad) {
-		this.edad=edad;
-	}
+	
+	
 	public String getParentesco() {
 		return parentesco;
 	}
@@ -37,12 +33,6 @@ public class Familiar {
 	}
 	public void setEstado(boolean estado) {
 		this.estado=estado;
-	}
-	public String getUbicacion() {
-		return ubicacion;
-	}
-	public void setUbicacion(String ubicacion) {
-		this.ubicacion=ubicacion;
 	}
 	public int getAcompañantes() {
 		return acompañantes;

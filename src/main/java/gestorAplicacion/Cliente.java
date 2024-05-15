@@ -1,10 +1,9 @@
 package gestorAplicacion;
 import java.util.ArrayList;
 
-public class Cliente {
+public class Cliente extends Persona {
 	//Atributos
-	private String nombre;
-	private final long CC;
+	
 	private Urna urna;
 	private Crematorio crematorio;
 	private Cementerio cementerio;
@@ -14,15 +13,7 @@ public class Cliente {
 	
 	//metodos get y set
 	
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre=nombre;
-	}
-	public long getCC() {
-		return CC;
-	}
+	
 	public Urna getUrna() {
 		return urna;
 	}
