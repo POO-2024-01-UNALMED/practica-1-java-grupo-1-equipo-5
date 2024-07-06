@@ -6,7 +6,26 @@ public class Persona {
 	private final long CC;
 	private int edad;
 	private String ubicacion;
+	private CuentaBancaria cuentaBancaria;
 	
+	
+	
+	public Persona(String nombre, long CC, int edad, String ubicacion, CuentaBancaria cuentaBancaria) {
+		this.nombre=nombre;
+		this.CC=CC;
+		this.edad=edad;
+		this.ubicacion=ubicacion;
+		this.cuentaBancaria=cuentaBancaria;
+	
+	}
+
+
+
+
+
+
+
+
 	public String getNombre() {
 		return nombre;
 	}

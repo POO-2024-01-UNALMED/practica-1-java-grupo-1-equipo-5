@@ -2,24 +2,39 @@ package gestorAplicacion;
 import java.util.ArrayList;
 
 public class Cliente extends Persona {
+	
+	
 	//Atributos
 	
-	private Urna urna;
+	private String plan;
 	private Crematorio crematorio;
 	private Cementerio cementerio;
-	private Velorio velorio;
-	private ArrayList<Familiar> listadoFamiliares=new ArrayList<Familiar>();
+	private ArrayList<Familiar> familiares=new ArrayList<Familiar>();
 	private ArrayList<Factura> listadoFacturas=new ArrayList<Factura>();
+	
+	
+	//Contructor mayores de edad
+	public Cliente(String nombre, long CC, int edad, String ubicacion, CuentaBancaria cuentaBancaria,String plan, ArrayList<Familiar> familiares) {
+		super(nombre, CC, edad, ubicacion, cuentaBancaria);
+		this.plan=plan;
+		this.familiares=familiares;
+	}
+	
+	//Contructor menores de edad
+		public Cliente(String nombre,int edad, String ubicacion, String plan,ArrayList<Familiar> familiares) {
+			this(nombre, 0, edad, ubicacion,null, plan,familiares);
+		}
+	
+	
+	
+	
+	
+	
 	
 	//metodos get y set
 	
 	
-	public Urna getUrna() {
-		return urna;
-	}
-	public void setUrna(Urna urna) {
-		this.urna=urna;
-	}
+	
 	public Crematorio getCrematorio() {
 		return crematorio;
 	}
@@ -32,17 +47,12 @@ public class Cliente extends Persona {
 	public void setCementerio(Cementerio cementerio) {
 		this.cementerio=cementerio;
 	}
-	public Velorio getVelorio() {
-		return velorio;
+	
+	public ArrayList<Familiar> getFamiliares() {
+		return familiares;
 	}
-	public void setVelorio(Velorio velorio) {
-		this.velorio=velorio;
-	}
-	public ArrayList<Familiar> getListadoFamiliares() {
-		return listadoFamiliares;
-	}
-	public void setListadoFamiliares(ArrayList<Familiar> listadoFamiliares) {
-		this.listadoFamiliares=listadoFamiliares;
+	public void setFamiliares(ArrayList<Familiar> familiares) {
+		this.familiares=familiares;
 	}
 	public ArrayList<Factura> getListadoFacturas() {
 		return listadoFacturas;
