@@ -1,4 +1,4 @@
-package gestorAplicacion;
+package gestorAplicacion.financiero;
 
 public class Factura {
 	//Atributos
@@ -6,7 +6,23 @@ public class Factura {
 	private String producto;
 	private double precio;
 	private double total;
-	private final float IVA;
+	private final double IVA=0.19;
+	private static int facturasCreadas;
+	
+	
+	
+	//Constructor
+	
+	public Factura(String producto, int precio) {
+		this.producto=producto;
+		this.precio=precio;
+		facturasCreadas++;
+		ID=facturasCreadas;
+		
+	}
+	
+	
+	
 	
 	//metodos get y set 
 	public int getID() {
@@ -30,7 +46,7 @@ public class Factura {
 	public void setTotal(double total ) {
 		this.total=total;
 	}
-	public float getIVA() {
+	public double getIVA() {
 		return IVA;
 	}
 	

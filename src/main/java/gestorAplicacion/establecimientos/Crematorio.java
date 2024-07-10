@@ -1,70 +1,31 @@
-package gestorAplicacion;
+package gestorAplicacion.establecimientos;
 
 import java.util.ArrayList;
 
+import gestorAplicacion.personas.*;
+import gestorAplicacion.financiero.CuentaBancaria;
+import gestorAplicacion.inventario.*;
 
-public class Crematorio {
+
+public class Crematorio extends Establecimiento{
 	//Atributos
-	private String nombre;
-	private String ubicacion;
-	private int sillas;
-	private String afiliacion; //oro - plata - bronce
-	private ArrayList<Cliente> listadoClientes=new ArrayList<Cliente>();
-	private static ArrayList<Empleado> listadoEmpleados=new ArrayList<Empleado>();
-	private static ArrayList<Vehiculo> listadoVehiculos=new ArrayList<Vehiculo>();
-	
-	
-	
-	
-	
-	
-	
-	//Métodos get y set 
-	
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre=nombre;
-	}
-	
-	public String getUbicacion() {
-		return ubicacion;
-	}
-	public void setUbicacion(String ubicacion) {
-		this.ubicacion=ubicacion;
-	}
-	
-	public int getSillas() {
-		return sillas;
-	}
-	public void setSillas(int sillas) {
-		this.sillas=sillas;
-	}
-	
-	public String getAfiliacion() {
-		return afiliacion;
-	}
-	public void setAfiliacion(String afiliacion) {
-		this.afiliacion=afiliacion;
-	}
-	
-	
-	public ArrayList<Cliente> getListadoClientes(){
-		return listadoClientes;
-	}
 
+	private Funeraria funeraria; 
 	
-	//Métodos get y set estáticos
 	
-	public static ArrayList<Empleado> getListadoEmpleados(){
-		return listadoEmpleados;
+	//Constructor
+	public Crematorio(String nombre, int ubicacion, int capacidad, CuentaBancaria cuentaCorriente,String afiliacion, Empleado empleado,Funeraria funeraria) {
+		super(nombre,ubicacion,capacidad,cuentaCorriente,afiliacion,empleado);
+		this.funeraria=funeraria;
 	}
-	public static void setListadoEmpleados(ArrayList<Empleado> listadoEmpleados) {
-		Crematorio.listadoEmpleados=listadoEmpleados;
-	}
-	public static ArrayList<Vehiculo> getListadoVehiculos(){
-		return listadoVehiculos;
-	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }

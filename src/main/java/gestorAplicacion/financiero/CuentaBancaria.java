@@ -1,4 +1,4 @@
-package gestorAplicacion;
+package gestorAplicacion.financiero;
 
 public class CuentaBancaria {
 	private String banco;

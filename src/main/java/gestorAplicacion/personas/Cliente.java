@@ -1,12 +1,16 @@
-package gestorAplicacion;
+package gestorAplicacion.personas;
+
 import java.util.ArrayList;
+
+import gestorAplicacion.establecimientos.*;
+import gestorAplicacion.financiero.*;
 
 public class Cliente extends Persona {
 	
 	
 	//Atributos
 	
-	private String plan;
+	private String afiliacion;
 	private Crematorio crematorio;
 	private Cementerio cementerio;
 	private ArrayList<Familiar> familiares=new ArrayList<Familiar>();
@@ -14,9 +18,9 @@ public class Cliente extends Persona {
 	
 	
 	//Contructor mayores de edad
-	public Cliente(String nombre, long CC, int edad, String ubicacion, CuentaBancaria cuentaBancaria,String plan, ArrayList<Familiar> familiares) {
+	public Cliente(String nombre, long CC, int edad, String ubicacion, CuentaBancaria cuentaBancaria,String afiliacion, ArrayList<Familiar> familiares) {
 		super(nombre, CC, edad, ubicacion, cuentaBancaria);
-		this.plan=plan;
+		this.afiliacion=afiliacion;
 		this.familiares=familiares;
 	}
 	

@@ -1,16 +1,31 @@
-package gestorAplicacion;
+package gestorAplicacion.establecimientos;
 
 import java.util.ArrayList;
 
-public class Funeraria {
-	private String nombre;
-	private Inventario inventario;
-	private CuentaBancaria cuentaBancaria;
-	private ArrayList<Empleado> listadoEmpleados=new ArrayList<Empleado>();
-	private ArrayList<Crematorio> listadoCrematorios=new ArrayList<Crematorio>();
-	private ArrayList<Cementerio> listadoCementerios=new ArrayList<Cementerio>();
-	private ArrayList<Establecimiento> listadoProveedores=new ArrayList<Establecimiento>();
+import gestorAplicacion.financiero.*;
+import gestorAplicacion.inventario.*;
+import gestorAplicacion.personas.*;
+
+public class Funeraria extends Establecimiento{
+
+	private static CuentaBancaria cuentaAhorros;
+	private ArrayList<Empleado> empleados=new ArrayList<Empleado>();
+	private ArrayList<Crematorio> crematorios=new ArrayList<Crematorio>();
+	private ArrayList<Cementerio> cementerios=new ArrayList<Cementerio>();
 	private ArrayList<Factura> listadoFacturas=new ArrayList<Factura>();
+	
+	//hereda inventario
+	
+	
+	//Constructor
+	public Funeraria(String nombre, CuentaBancaria cuentaAhorros) {
+		super(nombre,0,0,null,null,null);
+		this.cuentaAhorros=cuentaAhorros;
+		
+	}
+	
+	
+	
 	
 	
 	public ArrayList<Crematorio> disponibilidadCrematorios(String afiliacion,ArrayList<Familiar> listadoFamiliares){
@@ -40,23 +55,13 @@ public class Funeraria {
 	
 	//metodos get y set
 	
-	public String getNombre() {
-		return nombre;
+	
+
+	public CuentaBancaria getCuentaAhorros() {
+		return cuentaAhorros;
 	} 
-	public void setNombre(String nombre) {
-		this.nombre=nombre;
-	}
-	public Inventario getInventario() {
-		return inventario;
-	} 
-	public void setInventario(Inventario inventario) {
-		this.inventario=inventario;
-	}
-	public CuentaBancaria getCuentaBancaria() {
-		return cuentaBancaria;
-	} 
-	public void setCuentaBancaria(CuentaBancaria cuentaBancaria) {
-		this.cuentaBancaria=cuentaBancaria;
+	public void setCuentaBancaria(CuentaBancaria cuentaAhorros) {
+		this.cuentaAhorros=cuentaAhorros;
 	}
 	public ArrayList<Empleado> getlistadoEmpleados() {
 		return listadoEmpleados;
@@ -76,12 +81,7 @@ public class Funeraria {
 	public void setlistadoCementerios(ArrayList<Cementerio> listadoCementerios) {
 		this.listadoCementerios=listadoCementerios;
 	}
-	public ArrayList<Establecimiento> getlistadoEstablecimientos() {
-		return listadoProveedores;
-	} 
-	public void setlistadoEstablecimientos(ArrayList<Establecimiento> listadoProveedores) {
-		this.listadoProveedores=listadoProveedores;
-	}
+	
 	public ArrayList<Factura> getlistadoFacturas() {
 		return listadoFacturas;
 	} 

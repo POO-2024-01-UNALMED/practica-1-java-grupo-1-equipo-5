@@ -1,4 +1,8 @@
-package gestorAplicacion;
+package gestorAplicacion.personas;
+
+
+
+import gestorAplicacion.financiero.*;
 
 public class Persona {
 	
