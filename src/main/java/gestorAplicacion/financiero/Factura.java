@@ -6,6 +6,7 @@ public class Factura {
 	private String producto;
 	private double precio;
 	private double total;
+
 	private final double IVA=0.19;
 	private static int facturasCreadas;
 	
@@ -20,9 +21,7 @@ public class Factura {
 		ID=facturasCreadas;
 		
 	}
-	
-	
-	
+
 	
 	//metodos get y set 
 	public int getID() {
