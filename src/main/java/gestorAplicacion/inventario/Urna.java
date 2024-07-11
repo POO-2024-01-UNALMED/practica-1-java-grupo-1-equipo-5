@@ -1,4 +1,7 @@
-package gestorAplicacion;
+package gestorAplicacion.inventario;
+
+import gestorAplicacion.financiero.*;
+import gestorAplicacion.personas.Cliente;
 
 public class Urna {
 	private Cliente cliente;

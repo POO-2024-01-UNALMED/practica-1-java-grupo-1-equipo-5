@@ -28,26 +28,26 @@ public class Funeraria extends Establecimiento{
 	
 	
 	
-	public ArrayList<Crematorio> disponibilidadCrematorios(String afiliacion,ArrayList<Familiar> listadoFamiliares){
-		ArrayList<Crematorio> crematoriosDisponibles=new ArrayList<Crematorio>();
+	//public ArrayList<Crematorio> disponibilidadCrematorios(String afiliacion,ArrayList<Familiar> listadoFamiliares){
+		//ArrayList<Crematorio> crematoriosDisponibles=new ArrayList<Crematorio>();
 		
 		//Contar la cantidad de familiares y acompañantes
-		int cantidadFamiliares=listadoFamiliares.size();
+		//int cantidadFamiliares=listadoFamiliares.size();
 		
-		for (int i=0; i<listadoFamiliares.size();i++) {
-			if(listadoFamiliares.get(i).getEdad()>17) {
-				int cantidad=listadoFamiliares.get(i).getAcompañantes();
-				cantidadFamiliares=cantidadFamiliares+cantidad;
-			}
-		}
+		//for (int i=0; i<listadoFamiliares.size();i++) {
+			//if(listadoFamiliares.get(i).getEdad()>17) {
+				//int cantidad=listadoFamiliares.get(i).getAcompañantes();
+				//cantidadFamiliares=cantidadFamiliares+cantidad;
+			//}
+		//}
 		
-		for (int i=0; i<listadoCrematorios.size(); i++) {
-			if (listadoCrematorios.get(i).getAfiliacion()==afiliacion & listadoCrematorios.get(i).getSillas()==cantidadFamiliares) {
-				crematoriosDisponibles.add(listadoCrematorios.get(i));
-			}
-		}
-		return crematoriosDisponibles;
-	}
+		//for (int i=0; i<listadoCrematorios.size(); i++) {
+			//if (listadoCrematorios.get(i).getAfiliacion()==afiliacion & listadoCrematorios.get(i).getSillas()==cantidadFamiliares) {
+				//crematoriosDisponibles.add(listadoCrematorios.get(i));
+			//}
+		//}
+		//return crematoriosDisponibles;
+	//}
 	
 	
 	
@@ -63,23 +63,23 @@ public class Funeraria extends Establecimiento{
 	public void setCuentaBancaria(CuentaBancaria cuentaAhorros) {
 		this.cuentaAhorros=cuentaAhorros;
 	}
-	public ArrayList<Empleado> getlistadoEmpleados() {
-		return listadoEmpleados;
+	public ArrayList<Empleado> getEmpleados() {
+		return empleados;
 	} 
-	public void setlistadoEmpleados(ArrayList<Empleado> listadoEmpleados) {
-		this.listadoEmpleados=listadoEmpleados;
+	public void setEmpleados(ArrayList<Empleado> empleados) {
+		this.empleados=empleados;
 	}
-	public ArrayList<Crematorio> getlistadoCrematorios() {
-		return listadoCrematorios;
+	public ArrayList<Crematorio> getCrematorios() {
+		return crematorios;
 	} 
-	public void setlistadoCrematorios(ArrayList<Crematorio> listadoCrematorios) {
-		this.listadoCrematorios=listadoCrematorios;
+	public void setCrematorios(ArrayList<Crematorio> crematorios) {
+		this.crematorios=crematorios;
 	}
-	public ArrayList<Cementerio> getlistadoCementerios() {
-		return listadoCementerios;
+	public ArrayList<Cementerio> getCementerios() {
+		return cementerios;
 	} 
-	public void setlistadoCementerios(ArrayList<Cementerio> listadoCementerios) {
-		this.listadoCementerios=listadoCementerios;
+	public void setCementerios(ArrayList<Cementerio> cementerios) {
+		this.cementerios=cementerios;
 	}
 	
 	public ArrayList<Factura> getlistadoFacturas() {

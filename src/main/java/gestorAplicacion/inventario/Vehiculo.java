@@ -1,6 +1,10 @@
-package gestorAplicacion;
+package gestorAplicacion.inventario;
 
+
+import gestorAplicacion.personas.Empleado; 
 import java.util.ArrayList;
+
+
 public class Vehiculo {
 	private String placa;
 	private Empleado conductor;

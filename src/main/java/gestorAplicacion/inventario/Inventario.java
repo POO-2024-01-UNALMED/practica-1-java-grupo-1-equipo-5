@@ -1,18 +1,13 @@
-package gestorAplicacion;
+package gestorAplicacion.inventario;
 
 import java.util.ArrayList;
 public class Inventario {
-	private ArrayList<Ataud> listadoAtaudes=new ArrayList<Ataud>();
+	
 	private ArrayList<Urna> listadoUrnas =new ArrayList<Urna>();
 	private ArrayList<Vehiculo> listadoVehiculos= new ArrayList<Vehiculo>();
 	
 	//metodos get y set
-	public ArrayList<Ataud> getListadoAtaudes(){
-		return listadoAtaudes;
-	}
-	public void setListadoAtaudes(ArrayList<Ataud> listadoAtaudes) {
-		this.listadoAtaudes=listadoAtaudes;
-	}
+	
 	public ArrayList<Urna> getListadoUrnas(){
 		return listadoUrnas;
 	}
