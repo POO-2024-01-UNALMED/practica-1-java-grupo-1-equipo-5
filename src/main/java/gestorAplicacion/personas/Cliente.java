@@ -28,8 +28,40 @@ public class Cliente extends Persona {
 		public Cliente(String nombre,int edad, String ubicacion, String plan,ArrayList<Familiar> familiares) {
 			this(nombre, 0, edad, ubicacion,null, plan,familiares);
 		}
-	
-	
+		
+		//autorizar procedimiento de exhumacion y cremacion del cliente
+		public String autorizar() {
+			
+			for (int i=0; i<familiares.size();i++) {
+				if(familiares.get(i).getCC()!=0) {
+					if(familiares.get(i).getParentesco()=="conyugue" & numeroAutorizar()) {
+						return "conyugue autoriza la solicitud";
+					}
+					if(familiares.get(i).getParentesco()=="hijo" & numeroAutorizar()) {
+						return "hijo autoriza la solicitud";
+					}
+					if(familiares.get(i).getParentesco()=="padre" & numeroAutorizar()) {
+						return "padre autoriza la solicitud";
+					}
+					if(familiares.get(i).getParentesco()=="hermano" & numeroAutorizar()) {
+						return "Hermano autoriza la solicitud";
+					}
+					
+				}//fin if principal
+				
+			} //fin ciclo for
+			
+			return "No se pudo autorizar la solicitud";
+		}
+		
+		//apoyo a metodo autorizar
+		private boolean numeroAutorizar() {
+			int numero = (int) (Math.random() * 10);
+			if (numero < 6) {
+				return true;
+			}
+			return false;
+			}
 	
 	
 	

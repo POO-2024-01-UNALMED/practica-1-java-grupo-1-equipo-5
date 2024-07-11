@@ -2,6 +2,8 @@ package gestorAplicacion.personas;
 
 
 
+import java.util.ArrayList;
+
 import gestorAplicacion.financiero.*;
 
 public class Familiar extends Persona {
@@ -31,9 +33,8 @@ public class Familiar extends Persona {
 		
 	}
 
-	public boolean autorizar() {
-		if (parentesco == "conyugue" || parentesco == "hijo" || parentesco == "hija" || parentesco == "madre"
-				|| parentesco == "padre") {
+	public boolean autorizar(ArrayList<Familiar> familiares) {
+		if (parentesco == "conyugue") {
 			int numero = (int) (Math.random() * 10);
 			if (numero < 6) {
 				return true;
