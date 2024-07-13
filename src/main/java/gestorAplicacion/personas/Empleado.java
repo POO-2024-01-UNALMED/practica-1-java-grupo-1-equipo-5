@@ -26,5 +26,12 @@ public class Empleado extends Persona{
 	public void setCargo(String cargo) {
 		this.cargo=cargo;
 	}
-
+	
+	public String getJornada() {
+		return jornada;
+	}
+	public void setJornada(String jornada) {
+		this.jornada=jornada;
+	}
+	
 }

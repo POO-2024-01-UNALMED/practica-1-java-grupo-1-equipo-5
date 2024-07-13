@@ -51,5 +51,18 @@ public class Establecimiento {
 	public void setCuentaCorriente(CuentaBancaria cuentaCorriente) {
 		this.cuentaCorriente=cuentaCorriente;
 	}
+	public String getAfiliacion() {
+		return afiliacion;
+	}
+	public void setAfiliacion(String afiliacion) {
+		this.afiliacion=afiliacion;
+	}
+	public int getCapacidad() {
+		return capacidad;
+	}
+	public void setCapacidad(int capacidad) {
+		this.capacidad=capacidad;
+	}
+	
 
 }

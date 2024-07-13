@@ -24,33 +24,52 @@ public class Funeraria extends Establecimiento{
 		
 	}
 	
-	
-	
-	
-	
-	//public ArrayList<Crematorio> disponibilidadCrematorios(String afiliacion,ArrayList<Familiar> listadoFamiliares){
-		//ArrayList<Crematorio> crematoriosDisponibles=new ArrayList<Crematorio>();
+	public ArrayList<Establecimiento> disponibilidadEstablecimiento(String tipoEstablecimiento,Cliente cliente){
 		
-		//Contar la cantidad de familiares y acompañantes
-		//int cantidadFamiliares=listadoFamiliares.size();
+		ArrayList<Establecimiento> disponible=new ArrayList<>();
+	
+		int tamaño=0;
+		if(tipoEstablecimiento=="cementerio") { 
+			tamaño=cementerios.size();
+		}else if(tipoEstablecimiento=="crematorio") {
+			tamaño=crematorios.size();
+		}
+	
+				for (int i=0; i<tamaño; i++) {
+					if (tipoEstablecimiento=="cementerio") {
+						disponible.add(cementerios.get(i));
+					}else if (tipoEstablecimiento=="crematorio") {
+						disponible.add(crematorios.get(i));
+					}
+					
+					Establecimiento establecimiento=disponible.get(disponible.size()-1);
+					
+					if(establecimiento.getAfiliacion() != cliente.getAfiliacion() || establecimiento.getCapacidad() != cliente.cantidadFamiliares()) {
+						disponible.remove(disponible.get(disponible.size()-1));
+					}//fin cilo if
+					
+				}//fin ciclo for
+				
+				return disponible;
 		
-		//for (int i=0; i<listadoFamiliares.size();i++) {
-			//if(listadoFamiliares.get(i).getEdad()>17) {
-				//int cantidad=listadoFamiliares.get(i).getAcompañantes();
-				//cantidadFamiliares=cantidadFamiliares+cantidad;
-			//}
-		//}
+	}
+	
+	public ArrayList<Empleado> disponibilidadEmpleados(String cargo, String jornada){
 		
-		//for (int i=0; i<listadoCrematorios.size(); i++) {
-			//if (listadoCrematorios.get(i).getAfiliacion()==afiliacion & listadoCrematorios.get(i).getSillas()==cantidadFamiliares) {
-				//crematoriosDisponibles.add(listadoCrematorios.get(i));
-			//}
-		//}
-		//return crematoriosDisponibles;
-	//}
+		ArrayList<Empleado> disponible=new ArrayList<Empleado>();
+		
+		
+		for(int i=0;i<empleados.size();i++) {
+			if(empleados.get(i).getCargo()==cargo & empleados.get(i).getJornada()==jornada) {
 	
-	
-	
+				disponible.add(empleados.get(i));		
+				
+			}//fin if	
+			
+		}//fin ciclo for
+		return disponible;
+			
+	}
 	
 	
 	//metodos get y set

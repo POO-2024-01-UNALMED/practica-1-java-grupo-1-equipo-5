@@ -22,6 +22,22 @@ public class prueba {
 		
 		System.out.println(a.autorizar());
 		
+		Familiar[] family= new Familiar[0];
+		
+		family=new Familiar[2];
+		
+		
+		int eh=family.length;
+		System.out.println(eh);
+		
+
+
+	
+
+		
+	
+		
+	
 		
 		//String nombre,int edad, String ubicacion, String plan,ArrayList<Familiar> familiares
 		//String nombre, long CC, int edad, String ubicacion, CuentaBancaria cuentaBancaria, String parentesco, int acompañantes

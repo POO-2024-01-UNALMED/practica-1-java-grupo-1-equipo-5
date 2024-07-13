@@ -62,6 +62,22 @@ public class Cliente extends Persona {
 			}
 			return false;
 			}
+		
+		//metodo cantidad familiares
+		
+		public int cantidadFamiliares() {
+			int cantidadFamiliares=familiares.size();
+			
+			for (int i=0; i<familiares.size();i++) {
+				if(familiares.get(i).getCC()!=0) {
+					int cantidad=familiares.get(i).getAcompañantes();
+					cantidadFamiliares=cantidadFamiliares+cantidad;
+				}//fin if
+				
+			}//fin ciclo for
+			
+			return cantidadFamiliares;
+		}
 	
 	
 	
@@ -70,7 +86,12 @@ public class Cliente extends Persona {
 	//metodos get y set
 	
 	
-	
+	public String getAfiliacion() {
+		return afiliacion;
+	}
+	public void setAfiliacion(String afiliacion) {
+		this.afiliacion=afiliacion;
+	}
 	public Crematorio getCrematorio() {
 		return crematorio;
 	}
