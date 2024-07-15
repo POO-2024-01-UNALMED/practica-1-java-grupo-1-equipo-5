@@ -10,13 +10,15 @@ import gestorAplicacion.inventario.*;
 public class Crematorio extends Establecimiento{
 	//Atributos
 
-	private Funeraria funeraria; 
+
+	static ArrayList<Establecimiento> establecimientos = new ArrayList<Establecimiento>();
 	
 	
 	//Constructor
 	public Crematorio(String nombre, int ubicacion, int capacidad, CuentaBancaria cuentaCorriente,String afiliacion, Empleado empleado,Funeraria funeraria) {
-		super(nombre,ubicacion,capacidad,cuentaCorriente,afiliacion,empleado);
-		this.funeraria=funeraria;
+		super(nombre,ubicacion,capacidad,cuentaCorriente,afiliacion,empleado,funeraria);
+		establecimientos.add(this);
+		
 	}
 	
 	

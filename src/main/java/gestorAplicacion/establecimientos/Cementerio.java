@@ -8,14 +8,39 @@ import gestorAplicacion.personas.*;
 public class Cementerio extends Establecimiento {
 	
 	private String tipo; //(cenizas o cuerpos)
-	private Funeraria funeraria;
+	public static ArrayList<Establecimiento> establecimientos = new ArrayList<Establecimiento>();
 	
 	//Constructor
 	public Cementerio(String nombre, int ubicacion, int capacidad, CuentaBancaria cuentaCorriente,String afiliacion, Empleado empleado,String tipo,Funeraria funeraria) {
-			super(nombre,ubicacion,capacidad,cuentaCorriente,afiliacion,empleado);
+			super(nombre,ubicacion,capacidad,cuentaCorriente,afiliacion,empleado,funeraria);
 			this.tipo=tipo;
-			this.funeraria=funeraria;
+			establecimientos.add(this);
 		}
+	
+	
+	
+	public static ArrayList<Establecimiento> cementerioPorTipo(ArrayList<Establecimiento> cementerios,String tipo){
+		
+		ArrayList <Establecimiento> cementeriosDisponibles= new ArrayList<Establecimiento>();
+		
+		for(int i=0;i<cementerios.size();i++) {
+			
+			Cementerio cementerio = (Cementerio) cementerios.get(i);
+			
+			if (cementerio.getTipo()==tipo) {
+				cementeriosDisponibles.add(cementerio);
+			}//fin if
+			
+		}//fin for
+		
+		return cementeriosDisponibles;
+	}
+	
+	
+
+		
+		
+		
 	
 	
 	

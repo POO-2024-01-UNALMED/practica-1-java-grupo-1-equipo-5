@@ -2,12 +2,15 @@ package gestorAplicacion.establecimientos;
 
 import java.util.ArrayList;
 
+
 import gestorAplicacion.financiero.*;
 import gestorAplicacion.inventario.*;
 import gestorAplicacion.personas.*;
+import gestorAplicacion.establecimientos.*;
 
 public class Funeraria extends Establecimiento{
 
+	
 	private static CuentaBancaria cuentaAhorros;
 	private ArrayList<Empleado> empleados=new ArrayList<Empleado>();
 	private ArrayList<Crematorio> crematorios=new ArrayList<Crematorio>();
@@ -18,43 +21,74 @@ public class Funeraria extends Establecimiento{
 	
 	
 	//Constructor
-	public Funeraria(String nombre, CuentaBancaria cuentaAhorros) {
-		super(nombre,0,0,null,null,null);
+	public Funeraria(String nombre, CuentaBancaria cuentaCorriente, CuentaBancaria cuentaAhorros) {
+		super(nombre,cuentaCorriente);
 		this.cuentaAhorros=cuentaAhorros;
 		
 	}
 	
-	public ArrayList<Establecimiento> disponibilidadEstablecimiento(String tipoEstablecimiento,Cliente cliente){
+	//public ArrayList<Establecimiento> buscarEstablecimiento(String tipoEstablecimiento,Cliente cliente){
 		
-		ArrayList<Establecimiento> disponible=new ArrayList<>();
+		//ArrayList<Establecimiento> disponible=new ArrayList<>();
 	
-		int tamaño=0;
-		if(tipoEstablecimiento=="cementerio") { 
-			tamaño=cementerios.size();
-		}else if(tipoEstablecimiento=="crematorio") {
-			tamaño=crematorios.size();
-		}
+		//int tamaño=0;
+		//if(tipoEstablecimiento=="cementerio") { 
+			//tamaño=cementerios.size();
+		//}else if(tipoEstablecimiento=="crematorio") {
+			//tamaño=crematorios.size();
+		//}
 	
-				for (int i=0; i<tamaño; i++) {
-					if (tipoEstablecimiento=="cementerio") {
-						disponible.add(cementerios.get(i));
-					}else if (tipoEstablecimiento=="crematorio") {
-						disponible.add(crematorios.get(i));
-					}
+				//for (int i=0; i<tamaño; i++) {
+					//if (tipoEstablecimiento=="cementerio") {
+						//disponible.add(cementerios.get(i));
+					//}else if (tipoEstablecimiento=="crematorio") {
+						//disponible.add(crematorios.get(i));
+					//}
 					
-					Establecimiento establecimiento=disponible.get(disponible.size()-1);
+					//Establecimiento establecimiento=disponible.get(disponible.size()-1);
 					
-					if(establecimiento.getAfiliacion() != cliente.getAfiliacion() || establecimiento.getCapacidad() != cliente.cantidadFamiliares()) {
-						disponible.remove(disponible.get(disponible.size()-1));
-					}//fin cilo if
+					//if(establecimiento.getAfiliacion() != cliente.getAfiliacion() || establecimiento.getCapacidad() < cliente.cantidadFamiliares()) {
+						//disponible.remove(disponible.get(disponible.size()-1));
+					//}//fin ciclo if
 					
-				}//fin ciclo for
+				//}//fin ciclo for
 				
-				return disponible;
+				//return disponible;
 		
+	//}
+	
+	public ArrayList<Establecimiento> buscarEstablecimientos(String tipoEstablecimiento,Cliente cliente){
+		
+		ArrayList<Establecimiento> establecimientosEvaluar= Establecimiento.buscarPorFuneraria(this, tipoEstablecimiento);
+		
+		ArrayList<Establecimiento> establecimientosDisponibles=new ArrayList<Establecimiento>();
+		
+		for (int i=0; i<establecimientosEvaluar.size(); i++) {
+			
+			
+			Establecimiento establecimiento=establecimientosEvaluar.get(i);
+			
+			
+			if(establecimiento.getAfiliacion() == cliente.getAfiliacion() & establecimiento.getCapacidad() >= cliente.cantidadFamiliares()) {
+				establecimientosDisponibles.add(establecimiento);
+			}//fin ciclo if
+			
+		}//fin ciclo for
+		
+		return establecimientosDisponibles;
 	}
 	
-	public ArrayList<Empleado> disponibilidadEmpleados(String cargo, String jornada){
+	public ArrayList<Establecimiento> buscarCementerios(String tipoCementerio,Cliente cliente){
+		
+		ArrayList <Establecimiento> cementerios = this.buscarEstablecimientos("cementerio", cliente);
+		
+		ArrayList <Establecimiento> cementeriosDisponibles= Cementerio.cementerioPorTipo(cementerios, tipoCementerio);
+		
+		return cementeriosDisponibles;
+	}
+	
+	
+	public ArrayList<Empleado> buscarEmpleados(String cargo, String jornada){
 		
 		ArrayList<Empleado> disponible=new ArrayList<Empleado>();
 		

@@ -2,9 +2,12 @@ package uiMain;
 
 import java.util.ArrayList;
 
+
 import gestorAplicacion.personas.Cliente;
+import gestorAplicacion.personas.Empleado;
 import gestorAplicacion.financiero.CuentaBancaria;
 import gestorAplicacion.personas.Familiar;
+import gestorAplicacion.establecimientos.*;
 public class prueba {
 	
 	public static void main(String[] args) {
@@ -30,10 +33,25 @@ public class prueba {
 		int eh=family.length;
 		System.out.println(eh);
 		
+		//pruebas metodo buscarEstablecimientos
+		
+		CuentaBancaria cuenta = new CuentaBancaria();
+		Empleado empleadito = new Empleado("empli", 123, 34, "345", cuenta ,"noche", "de todo un poco");
+		
+		Funeraria funita = new Funeraria("funita", cuenta,cuenta);
+		Funeraria fumita = new Funeraria("fumita", cuenta,cuenta);
+		
+		Crematorio crematorio = new Crematorio ("cremi",56,35,cuenta,"oro", empleadito,funita); 
+		Crematorio creno = new Crematorio ("cremi",56,78,cuenta,"oro", empleadito,fumita); 
+		Crematorio cremita = new Crematorio ("cremi",56,78,cuenta,"oro", empleadito,funita); 
+		
+		Cementerio cementerio = new Cementerio ("cremi",56,78,cuenta,"oro", empleadito,"cenizas",fumita); 
+		Cementerio cemi = new Cementerio ("cremi",56,78,cuenta,"oro", empleadito,"cenizas",funita); 
+		Cementerio cemito = new Cementerio ("cremi",56,78,cuenta,"oro", empleadito,"cenizas",funita); 
 
+		System.out.println(funita.buscarCementerios("cenizas", a));
 
-	
-
+		
 		
 	
 		
