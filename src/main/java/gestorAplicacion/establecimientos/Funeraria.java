@@ -27,35 +27,6 @@ public class Funeraria extends Establecimiento{
 		
 	}
 	
-	//public ArrayList<Establecimiento> buscarEstablecimiento(String tipoEstablecimiento,Cliente cliente){
-		
-		//ArrayList<Establecimiento> disponible=new ArrayList<>();
-	
-		//int tamaño=0;
-		//if(tipoEstablecimiento=="cementerio") { 
-			//tamaño=cementerios.size();
-		//}else if(tipoEstablecimiento=="crematorio") {
-			//tamaño=crematorios.size();
-		//}
-	
-				//for (int i=0; i<tamaño; i++) {
-					//if (tipoEstablecimiento=="cementerio") {
-						//disponible.add(cementerios.get(i));
-					//}else if (tipoEstablecimiento=="crematorio") {
-						//disponible.add(crematorios.get(i));
-					//}
-					
-					//Establecimiento establecimiento=disponible.get(disponible.size()-1);
-					
-					//if(establecimiento.getAfiliacion() != cliente.getAfiliacion() || establecimiento.getCapacidad() < cliente.cantidadFamiliares()) {
-						//disponible.remove(disponible.get(disponible.size()-1));
-					//}//fin ciclo if
-					
-				//}//fin ciclo for
-				
-				//return disponible;
-		
-	//}
 	
 	public ArrayList<Establecimiento> buscarEstablecimientos(String tipoEstablecimiento,Cliente cliente){
 		
@@ -78,6 +49,7 @@ public class Funeraria extends Establecimiento{
 		return establecimientosDisponibles;
 	}
 	
+	
 	public ArrayList<Establecimiento> buscarCementerios(String tipoCementerio,Cliente cliente){
 		
 		ArrayList <Establecimiento> cementerios = this.buscarEstablecimientos("cementerio", cliente);
@@ -86,6 +58,7 @@ public class Funeraria extends Establecimiento{
 		
 		return cementeriosDisponibles;
 	}
+	
 	
 	
 	public ArrayList<Empleado> buscarEmpleados(String cargo, String jornada){
