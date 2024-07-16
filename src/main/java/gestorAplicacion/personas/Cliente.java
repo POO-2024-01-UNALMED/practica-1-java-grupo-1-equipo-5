@@ -11,7 +11,7 @@ public class Cliente extends Persona {
 	//Atributos
 	
 	private String afiliacion;
-	private Crematorio crematorio;
+	//private Crematorio crematorio;
 	private Cementerio cementerio;
 	private ArrayList<Familiar> familiares=new ArrayList<Familiar>();
 	private ArrayList<Factura> listadoFacturas=new ArrayList<Factura>();
@@ -92,12 +92,7 @@ public class Cliente extends Persona {
 	public void setAfiliacion(String afiliacion) {
 		this.afiliacion=afiliacion;
 	}
-	public Crematorio getCrematorio() {
-		return crematorio;
-	}
-	public void setCrematorio(Crematorio crematorio) {
-		this.crematorio=crematorio;
-	}
+
 	public Cementerio getCementerio() {
 		return cementerio;
 	}

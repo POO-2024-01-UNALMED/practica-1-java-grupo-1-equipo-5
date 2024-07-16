@@ -13,8 +13,8 @@ public class Funeraria extends Establecimiento{
 	
 	private static CuentaBancaria cuentaAhorros;
 	private ArrayList<Empleado> empleados=new ArrayList<Empleado>();
-	private ArrayList<Crematorio> crematorios=new ArrayList<Crematorio>();
-	private ArrayList<Cementerio> cementerios=new ArrayList<Cementerio>();
+	//private ArrayList<Crematorio> crematorios=new ArrayList<Crematorio>();
+	//private ArrayList<Cementerio> cementerios=new ArrayList<Cementerio>();
 	private ArrayList<Factura> listadoFacturas=new ArrayList<Factura>();
 	
 	//hereda inventario
@@ -94,18 +94,6 @@ public class Funeraria extends Establecimiento{
 	} 
 	public void setEmpleados(ArrayList<Empleado> empleados) {
 		this.empleados=empleados;
-	}
-	public ArrayList<Crematorio> getCrematorios() {
-		return crematorios;
-	} 
-	public void setCrematorios(ArrayList<Crematorio> crematorios) {
-		this.crematorios=crematorios;
-	}
-	public ArrayList<Cementerio> getCementerios() {
-		return cementerios;
-	} 
-	public void setCementerios(ArrayList<Cementerio> cementerios) {
-		this.cementerios=cementerios;
 	}
 	
 	public ArrayList<Factura> getlistadoFacturas() {

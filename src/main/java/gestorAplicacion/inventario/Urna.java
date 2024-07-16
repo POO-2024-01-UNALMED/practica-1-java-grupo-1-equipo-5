@@ -1,32 +1,31 @@
 package gestorAplicacion.inventario;
 
+import gestorAplicacion.establecimientos.Cementerio;
 import gestorAplicacion.financiero.*;
 import gestorAplicacion.personas.Cliente;
 
-public class Urna {
-	private Cliente cliente;
-	private int tamaño;
-	private Factura factura;
+public class Urna extends Inventario {
+
+	//private Factura factura;
+	private String tipo; // "fija" "ordinaria"
+	
+	public Urna(Cementerio cementerio,  int tamaño, String tipo) {
+		super(cementerio,tamaño);
+	}
+	
+	
+	
 	
 	//metodos get y set
-	public Cliente getCliente() {
-		return cliente;
-	}
-	public void setCliente(Cliente cliente) {
-		this.cliente=cliente;
-	}
-	public int getTamaño() {
-		return tamaño;
-	}
-	public void setTamaño(int tamaño) {
-		this.tamaño=tamaño;
-	}
-	public Factura getFactura() {
-		return factura;
-	}
-	public void setFactura(Factura factura) {
-		this.factura=factura;
-	}
+	
+	
+	
+	//public Factura getFactura() {
+		//return factura;
+	//}
+	//public void setFactura(Factura factura) {
+		//this.factura=factura;
+	//}
 	
 	
 	

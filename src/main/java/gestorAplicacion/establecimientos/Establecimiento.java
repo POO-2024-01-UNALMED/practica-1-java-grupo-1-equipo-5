@@ -23,7 +23,7 @@ public class Establecimiento {
 	private ArrayList<Establecimiento> listadoProveedores=new ArrayList<Establecimiento>();
 	
 	
-	//Constructor para clases Crematorio y Cementerio
+	//Constructor a ser llamado desde las clases Crematorio y Cementerio
 	public Establecimiento(String nombre, int ubicacion, int capacidad, CuentaBancaria cuentaCorriente,String afiliacion, Empleado empleado, Funeraria funeraria ) {
 		this.nombre=nombre;
 		this.ubicacion=ubicacion;
@@ -32,12 +32,14 @@ public class Establecimiento {
 		this.afiliacion=afiliacion;
 		this.empleado=empleado;
 		this.funeraria=funeraria;
+		establecimientos.add(this);
 	}
 	
-	//Constructor para clase Funeraria
+	//Constructor a ser llamado desde para clase Funeraria
 	public Establecimiento (String nombre, CuentaBancaria cuentaCorriente) {
 		this.nombre=nombre;
 		this.cuentaCorriente=cuentaCorriente;
+		establecimientos.add(this);
 	}
 	
 	
@@ -47,6 +49,7 @@ public class Establecimiento {
 		
 		ArrayList<Establecimiento> establecimientosFuneraria = new ArrayList<Establecimiento>();
 		ArrayList<Establecimiento> establecimientosEvaluar = new ArrayList<Establecimiento>();
+		
 		if (tipoEstablecimiento=="cementerio") {
 			establecimientosEvaluar=Cementerio.establecimientos;
 		}else if (tipoEstablecimiento=="crematorio") {
