@@ -7,8 +7,8 @@ public class Tumba extends Inventario{
 	
 	
 	//Constructor
-	public Tumba(Cementerio cementerio, int tamaño) {
-		super(cementerio,tamaño);
+	public Tumba(Cementerio cementerio, int tamaño, int categoria) {
+		super(cementerio,tamaño,categoria);
 	}
 	
 }

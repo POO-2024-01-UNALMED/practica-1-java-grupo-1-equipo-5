@@ -14,7 +14,7 @@ public class Establecimiento {
 	private String afiliacion;
 	private Empleado empleado;
 	private Funeraria funeraria;
-	private ArrayList<Persona> clientes=new ArrayList<Persona>();
+	protected ArrayList<Cliente> clientes=new ArrayList<Cliente>();
 	ArrayList<Inventario> inventario=new ArrayList<Inventario>();  
 	public static ArrayList<Establecimiento> establecimientos = new ArrayList<Establecimiento>();
 	
@@ -43,18 +43,43 @@ public class Establecimiento {
 	}
 	
 	
-	//buscar por funeraria 
+	public static ArrayList<Establecimiento> filtarEstablecimiento(String establecimiento){
+		ArrayList<Establecimiento> filtrados=new ArrayList<Establecimiento>();
+		
+		if(establecimiento=="cementerio") {
+			for(int i=0;i<establecimientos.size();i++) {
+				if(establecimientos.get(i) instanceof Cementerio) {
+					filtrados.add(Establecimiento.establecimientos.get(i));
+				}
+			}
+		}else if(establecimiento=="crematorio") {
+			for(int i=0;i<establecimientos.size();i++) {
+				if(establecimientos.get(i) instanceof Crematorio) {
+					filtrados.add(Establecimiento.establecimientos.get(i));
+				}
+			}
+		}else if(establecimiento=="funeraria") {
+			for(int i=0;i<establecimientos.size();i++) {
+				if(establecimientos.get(i) instanceof Funeraria) {
+					filtrados.add(Establecimiento.establecimientos.get(i));
+				}//fin if
+			}//fin for
+		}//fin else if
+		
+		return filtrados;
+	}
+	
+	//buscar por funeraria  //Devuelve el establecimiento de acuerdo a la funeraria 
 	public static ArrayList<Establecimiento> buscarPorFuneraria(Funeraria funeraria, String tipoEstablecimiento) {
 		
-		
 		ArrayList<Establecimiento> establecimientosFuneraria = new ArrayList<Establecimiento>();
-		ArrayList<Establecimiento> establecimientosEvaluar = new ArrayList<Establecimiento>();
+		ArrayList<Establecimiento> establecimientosEvaluar = Establecimiento.filtarEstablecimiento(tipoEstablecimiento);
 		
-		if (tipoEstablecimiento=="cementerio") {
-			establecimientosEvaluar=Cementerio.establecimientos;
-		}else if (tipoEstablecimiento=="crematorio") {
-			establecimientosEvaluar=Crematorio.establecimientos;
-		}
+		//if (tipoEstablecimiento=="cementerio") {
+			//establecimientosEvaluar=Cementerio.establecimientos;
+		//}else if (tipoEstablecimiento=="crematorio") {
+			//establecimientosEvaluar=Crematorio.establecimientos;
+		//}
 		
 		for (int i=0;i<establecimientosEvaluar.size();i++) {
 			
@@ -68,6 +93,31 @@ public class Establecimiento {
 		
 	}
 	
+	//busca a un cliente en toda las funerarias
+	public static Cliente buscarCliente(long CC) {
+		
+		ArrayList<Establecimiento> funerarias= Establecimiento.filtarEstablecimiento("funeraria");
+		
+		for(int i=0; i<funerarias.size();i++) {
+			Funeraria funeraria = (Funeraria)funerarias.get(i);
+			for (int a=0;a<funeraria.clientes.size();a++) {
+				if(funeraria.clientes.get(a).getCC()==CC) {
+					return funeraria.clientes.get(a);
+				}
+			}
+		}
+	return null;
+	
+	}
+	
+	//public ArrayList()
+	
+	
+	public static ArrayList<Cliente> buscarCliente(){
+		
+		
+		return null;
+	}
 	
 	
 	
@@ -104,6 +154,9 @@ public class Establecimiento {
 	public void setFuneraria(Funeraria funeraria) {
 		this.funeraria=funeraria;
 	}
+	public ArrayList<Cliente> getClientes(){
+		return clientes;
+	} 
 	
 
 }

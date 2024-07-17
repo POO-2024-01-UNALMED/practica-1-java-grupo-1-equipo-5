@@ -10,14 +10,13 @@ import gestorAplicacion.personas.*;
 public class Cementerio extends Establecimiento {
 	
 	private String tipo; //(cenizas o cuerpos)
-	public static ArrayList<Establecimiento> establecimientos = new ArrayList<Establecimiento>();
+	//public static ArrayList<Establecimiento> establecimientos = new ArrayList<Establecimiento>();
 	private ArrayList<Inventario> inventario = new ArrayList<Inventario>();
 	
 	//Constructor
 	public Cementerio(String nombre, int ubicacion, int capacidad, CuentaBancaria cuentaCorriente,String afiliacion, Empleado empleado,String tipo,Funeraria funeraria) {
 			super(nombre,ubicacion,capacidad,cuentaCorriente,afiliacion,empleado,funeraria);
 			this.tipo=tipo;
-			establecimientos.add(this);
 		}
 	
 	

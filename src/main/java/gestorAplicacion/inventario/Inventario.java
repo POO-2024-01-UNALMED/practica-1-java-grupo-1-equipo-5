@@ -10,15 +10,25 @@ public abstract class Inventario {
 	//private ArrayList<Vehiculo> listadoVehiculos= new ArrayList<Vehiculo>();
 	private Cementerio cementerio;
 	private Cliente cliente;
-	private int tamaño; //"pequeño", "mediano", "grande"
+	private int tamaño;//"pequeño", "mediano", "grande"
+	private int categoria;
 	
 	//Constructor a ser llamado desde las clases Urna y Tumba
-	protected Inventario(Cementerio cementerio, int tamaño) {
+	protected Inventario(Cementerio cementerio, int tamaño, int categoria) {
 		this.cementerio=cementerio;		
 		this.tamaño=tamaño;
+		this.categoria=categoria;
 		cementerio.agregarInventario(this); //Si el cementerio es de cenizas se agregarán urnas y si el cementerio es de cuerpos se agregarán tumbas
 	}
 	
+	//Metodo agregar cliente 
+	
+	public void agregarCliente(Cliente cliente) {
+		this.cliente=cliente;
+		cliente.setInventario(this);
+		this.cementerio.getFuneraria().getClientes().add(cliente);
+		this.cementerio.getClientes().add(cliente);
+	}
 	
 	
 	

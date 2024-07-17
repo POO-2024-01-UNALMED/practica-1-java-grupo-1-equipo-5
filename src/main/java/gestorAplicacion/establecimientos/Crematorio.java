@@ -11,13 +11,12 @@ public class Crematorio extends Establecimiento{
 	//Atributos
 
 
-	static ArrayList<Establecimiento> establecimientos = new ArrayList<Establecimiento>();
+	//static ArrayList<Establecimiento> establecimientos = new ArrayList<Establecimiento>();
 	
 	
 	//Constructor
 	public Crematorio(String nombre, int ubicacion, int capacidad, CuentaBancaria cuentaCorriente,String afiliacion, Empleado empleado,Funeraria funeraria) {
 		super(nombre,ubicacion,capacidad,cuentaCorriente,afiliacion,empleado,funeraria);
-		establecimientos.add(this);
 		
 	}
 	

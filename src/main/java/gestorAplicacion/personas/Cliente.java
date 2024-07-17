@@ -2,8 +2,10 @@ package gestorAplicacion.personas;
 
 import java.util.ArrayList;
 
+
 import gestorAplicacion.establecimientos.*;
 import gestorAplicacion.financiero.*;
+import gestorAplicacion.inventario.Inventario;
 
 public class Cliente extends Persona {
 	
@@ -12,7 +14,8 @@ public class Cliente extends Persona {
 	
 	private String afiliacion;
 	//private Crematorio crematorio;
-	private Cementerio cementerio;
+	//private Cementerio cementerio;
+	private Inventario inventario; //(tumba o urna según corresponda)
 	private ArrayList<Familiar> familiares=new ArrayList<Familiar>();
 	private ArrayList<Factura> listadoFacturas=new ArrayList<Factura>();
 	
@@ -92,13 +95,18 @@ public class Cliente extends Persona {
 	public void setAfiliacion(String afiliacion) {
 		this.afiliacion=afiliacion;
 	}
-
-	public Cementerio getCementerio() {
-		return cementerio;
+	public Inventario getInventario() {
+		return inventario;
 	}
-	public void setCementerio(Cementerio cementerio) {
-		this.cementerio=cementerio;
+	public void setInventario(Inventario inventario) {
+		this.inventario=inventario;
 	}
+	//public Cementerio getCementerio() {
+		//return cementerio;
+	//}
+	//public void setCementerio(Cementerio cementerio) {
+		//this.cementerio=cementerio;
+	//}
 	
 	public ArrayList<Familiar> getFamiliares() {
 		return familiares;

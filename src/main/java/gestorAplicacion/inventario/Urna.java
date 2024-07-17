@@ -9,8 +9,8 @@ public class Urna extends Inventario {
 	//private Factura factura;
 	private String tipo; // "fija" "ordinaria"
 	
-	public Urna(Cementerio cementerio,  int tamaño, String tipo) {
-		super(cementerio,tamaño);
+	public Urna(Cementerio cementerio,  int tamaño, String tipo, int categoria) {
+		super(cementerio,tamaño, categoria);
 	}
 	
 	

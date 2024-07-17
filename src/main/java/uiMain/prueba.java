@@ -46,10 +46,10 @@ public class prueba {
 		Crematorio cremita = new Crematorio ("cremi",56,78,cuenta,"oro", empleadito,funita); 
 		
 		Cementerio cementerio = new Cementerio ("cremi",56,78,cuenta,"oro", empleadito,"cenizas",fumita); 
-		Cementerio cemi = new Cementerio ("cremi",56,78,cuenta,"oro", empleadito,"cenizas",funita); 
+		Cementerio cemi = new Cementerio ("cremi",56,78,cuenta,"oro", empleadito,"cuerpos",fumita); 
 		Cementerio cemito = new Cementerio ("cremi",56,78,cuenta,"oro", empleadito,"cenizas",funita); 
 
-		System.out.println(funita.buscarCementerios("cenizas", a));
+		System.out.println(fumita.buscarCementerios("cuerpos", a));
 
 		
 		
