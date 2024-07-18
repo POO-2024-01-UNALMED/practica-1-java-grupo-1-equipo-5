@@ -1,17 +1,47 @@
 package gestorAplicacion.financiero;
 
-public class CuentaBancaria {
-	private String banco;
-	private double saldo;
-	private long numero;
-	
-	//metodos get y set
+import java.util.ArrayList;
 
+import gestorAplicacion.inventario.Inventario;
+
+public class CuentaBancaria {
+	private String Banco;
+	private double saldo;
+	private long numeroCuenta;
+	private String titular;
+	
+	public CuentaBancaria(long numeroCuenta, String titular, double saldoInicial, String banco) {
+        this.numeroCuenta = numeroCuenta;
+        this.titular = titular;
+        this.saldo = saldoInicial;
+        this.Banco = banco;
+    }
+    public void depositar(double cantidad) {
+        if (cantidad > 0) {
+            saldo += cantidad;
+            System.out.println("Se han depositado " + cantidad + ". Saldo actual: " + saldo);
+        } else {
+            System.out.println("La cantidad a depositar debe ser mayor que cero.");
+        }
+    }
+
+    public void retirar(double cantidad) {
+        if (cantidad > 0) {
+            if (cantidad <= saldo) {
+                saldo -= cantidad;
+                System.out.println("Se han retirado " + cantidad + ". Saldo actual: " + saldo);
+            } else {
+                System.out.println("Saldo insuficiente para retirar " + cantidad + ".");
+            }
+        } else {
+            System.out.println("La cantidad a retirar debe ser mayor que cero.");
+        }
+    }
 	public String getBanco() {
-		return banco;
+		return Banco;
 	}
 	public void setBanco(String banco) {
-		this.banco=banco;
+		this.Banco=banco;
 	}
 	public double getSaldo() {
 		return saldo;
@@ -20,9 +50,9 @@ public class CuentaBancaria {
 		this.saldo=saldo;
 	}
 	public long getNumero() {
-		return numero;
+		return numeroCuenta;
 	}
 	public void setNumero(long numero) {
-		this.numero=numero;
+		this.numeroCuenta=numero;
 	}
 }

@@ -21,6 +21,7 @@ public class Factura {
 		ID=facturasCreadas;
 		
 	}
+	
 
 	
 	//metodos get y set 
