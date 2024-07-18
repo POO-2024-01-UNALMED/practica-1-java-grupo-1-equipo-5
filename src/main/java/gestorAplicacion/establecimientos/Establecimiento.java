@@ -93,31 +93,28 @@ public class Establecimiento {
 		
 	}
 	
-	//busca a un cliente en toda las funerarias
+	//busca a un cliente en toda las funerarias por su atributo CC
 	public static Cliente buscarCliente(long CC) {
 		
 		ArrayList<Establecimiento> funerarias= Establecimiento.filtarEstablecimiento("funeraria");
+		Cliente cliente=null;
 		
-		for(int i=0; i<funerarias.size();i++) {
-			Funeraria funeraria = (Funeraria)funerarias.get(i);
-			for (int a=0;a<funeraria.clientes.size();a++) {
-				if(funeraria.clientes.get(a).getCC()==CC) {
-					return funeraria.clientes.get(a);
-				}
-			}
+		for(Establecimiento auxFuneraria: funerarias) {
+			Funeraria funeraria= (Funeraria) auxFuneraria;
+			for(Cliente auxCliente: funeraria.buscarCliente("adulto")) {
+				if(auxCliente.getCC()==CC) {
+					return cliente=auxCliente;
+				}//fin if
+			}//fin for
+			
 		}
-	return null;
+		return cliente;	
 	
 	}
 	
-	//public ArrayList()
 	
 	
-	public static ArrayList<Cliente> buscarCliente(){
-		
-		
-		return null;
-	}
+	
 	
 	
 	

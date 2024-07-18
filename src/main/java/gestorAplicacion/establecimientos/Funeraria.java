@@ -78,6 +78,50 @@ public class Funeraria extends Establecimiento{
 			
 	}
 	
+	//busca al cliente por funeraria y por tipo de Cementerio
+	public ArrayList<Cliente> buscarCliente(String tipoCementerio, String adultoNiño){
+		
+		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+		ArrayList<Cliente> clientesFiltrados=this.buscarCliente(adultoNiño);
+		
+		if(tipoCementerio=="cuerpos") {
+			for(Cliente cliente: clientesFiltrados) {
+				if(cliente.getInventario() instanceof Tumba) {
+					clientes.add(cliente);
+				}//fin if
+			}//fin for
+			}else {
+				for(Cliente cliente: clientesFiltrados) {
+					if(cliente.getInventario() instanceof Urna) {
+						clientes.add(cliente);
+					}//fin if
+				}//fin for
+				
+			}//fin else
+		
+		return clientes;
+	}
+	
+	public ArrayList<Cliente> buscarCliente(String adultoNiño) {
+		
+		ArrayList<Cliente> clientesEdad= new ArrayList<Cliente>();
+		if(adultoNiño=="adulto") {
+			for(Cliente cliente: clientes) {
+				if(cliente.getCC()!=0) {
+					clientesEdad.add(cliente);
+				}//fin if
+			}//fin for
+		}else {
+			for(Cliente cliente: clientes) {
+				if(cliente.getCC()==0) {
+					clientesEdad.add(cliente);
+				}//fin if
+			}//fin for
+		}//fin else
+		
+		return clientesEdad;
+	}
+	
 	
 	//metodos get y set
 	
