@@ -16,44 +16,43 @@ public class Cliente extends Persona {
 	//private Crematorio crematorio;
 	//private Cementerio cementerio;
 	private Inventario inventario; //(tumba o urna según corresponda)
-	private ArrayList<Familiar> familiares=new ArrayList<Familiar>();
+	private ArrayList<Persona> familiares=new ArrayList<Persona>();
 	private ArrayList<Factura> listadoFacturas=new ArrayList<Factura>();
 	
 	
 	//Contructor mayores de edad
-	public Cliente(String nombre, long CC, int edad, String ubicacion, CuentaBancaria cuentaBancaria,String afiliacion, ArrayList<Familiar> familiares) {
+	public Cliente(String nombre, long CC, int edad, String ubicacion, CuentaBancaria cuentaBancaria,String afiliacion, ArrayList<Persona> familiares) {
 		super(nombre, CC, edad, ubicacion, cuentaBancaria);
 		this.afiliacion=afiliacion;
 		this.familiares=familiares;
 	}
 	
 	//Contructor menores de edad
-		public Cliente(String nombre,int edad, String ubicacion, String plan,ArrayList<Familiar> familiares) {
+		public Cliente(String nombre,int edad, String ubicacion, String plan,ArrayList<Persona> familiares) {
 			this(nombre, 0, edad, ubicacion,null, plan,familiares);
 		}
 		
 		//autorizar procedimiento de exhumacion y cremacion del cliente
 		public String autorizar() {
 			
-			for (int i=0; i<familiares.size();i++) {
-				if(familiares.get(i).getCC()!=0) {
-					if(familiares.get(i).getParentesco()=="conyugue" & numeroAutorizar()) {
+			for(Persona auxFamiliar: familiares) {
+				if(auxFamiliar.getCC()!=0 & auxFamiliar instanceof Familiar) {
+					String parentesco= ((Familiar) auxFamiliar).getParentesco();
+					if(parentesco=="conyugue" & numeroAutorizar()) {
 						return "conyugue autoriza la solicitud";
 					}
-					if(familiares.get(i).getParentesco()=="hijo" & numeroAutorizar()) {
+					if(parentesco=="hijo" & numeroAutorizar()) {
 						return "hijo autoriza la solicitud";
 					}
-					if(familiares.get(i).getParentesco()=="padre" & numeroAutorizar()) {
+					if(parentesco=="padre" & numeroAutorizar()) {
 						return "padre autoriza la solicitud";
 					}
-					if(familiares.get(i).getParentesco()=="hermano" & numeroAutorizar()) {
+					if(parentesco=="hermano" & numeroAutorizar()) {
 						return "Hermano autoriza la solicitud";
 					}
 					
 				}//fin if principal
-				
-			} //fin ciclo for
-			
+			}//fin for
 			return "No se pudo autorizar la solicitud";
 		}
 		
@@ -71,15 +70,20 @@ public class Cliente extends Persona {
 		public int cantidadFamiliares() {
 			int cantidadFamiliares=familiares.size();
 			
-			for (int i=0; i<familiares.size();i++) {
-				if(familiares.get(i).getCC()!=0) {
-					int cantidad=familiares.get(i).getAcompañantes();
+			for(Persona auxFamiliar: familiares) {
+				if(auxFamiliar.getCC()!=0 & auxFamiliar instanceof Familiar) {
+					int cantidad = ((Familiar) auxFamiliar).getAcompañantes();
 					cantidadFamiliares=cantidadFamiliares+cantidad;
-				}//fin if
-				
+				}//Fin if
 			}//fin ciclo for
 			
 			return cantidadFamiliares;
+		}
+		
+		public void asignarParientesco(Cliente cliente, String parentesco) {
+			
+			
+			
 		}
 	
 	
@@ -108,10 +112,10 @@ public class Cliente extends Persona {
 		//this.cementerio=cementerio;
 	//}
 	
-	public ArrayList<Familiar> getFamiliares() {
+	public ArrayList<Persona> getFamiliares() {
 		return familiares;
 	}
-	public void setFamiliares(ArrayList<Familiar> familiares) {
+	public void setFamiliares(ArrayList<Persona> familiares) {
 		this.familiares=familiares;
 	}
 	public ArrayList<Factura> getListadoFacturas() {
