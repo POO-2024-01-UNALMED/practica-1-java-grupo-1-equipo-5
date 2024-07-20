@@ -17,6 +17,9 @@ public class Establecimiento {
 	protected ArrayList<Cliente> clientes=new ArrayList<Cliente>();
 	ArrayList<Inventario> inventario=new ArrayList<Inventario>();  
 	public static ArrayList<Establecimiento> establecimientos = new ArrayList<Establecimiento>();
+	private double calificacion=5;
+	private ArrayList<Empleado> empleados=new ArrayList<Empleado>();
+	private ArrayList<Vehiculo> Vehiculos=new ArrayList<Vehiculo>();
 	
 	
 	
@@ -111,9 +114,21 @@ public class Establecimiento {
 		return cliente;	
 	
 	}
+	// Añadir Veiculos
+	public void agregarVehiculo(Vehiculo vehiculo) {
+        Vehiculos.add(vehiculo);
+    }
 	
-	
-	
+	//Filtrar Vehiculos que Esten disponibles y sin conductor
+	public ArrayList<Vehiculo> filtrarVehiculosSinConductorYDisponibles() {
+        ArrayList<Vehiculo> vehiculosFiltrados = new ArrayList<>();
+        for (Vehiculo vehiculo : Vehiculos) {
+            if (vehiculo.getConductor() == null && vehiculo.isDisponible()) {
+                vehiculosFiltrados.add(vehiculo);
+            }
+        }
+        return vehiculosFiltrados;
+    }
 	
 	
 	
