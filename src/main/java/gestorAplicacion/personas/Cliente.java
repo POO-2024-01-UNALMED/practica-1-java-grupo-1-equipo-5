@@ -34,26 +34,30 @@ public class Cliente extends Persona {
 		
 		//autorizar procedimiento de exhumacion y cremacion del cliente
 		public String autorizar() {
+			ArrayList<Persona> familiares=this.familiares;
+			Familiar familiarDesignado= this.designarFamiliar(familiares);
+			String mensaje =" autoriza la solicitud";
 			
 			for(Persona auxFamiliar: familiares) {
-				if(auxFamiliar.getCC()!=0 & auxFamiliar instanceof Familiar) {
-					String parentesco= ((Familiar) auxFamiliar).getParentesco();
-					if(parentesco=="conyugue" & numeroAutorizar()) {
-						return "conyugue autoriza la solicitud";
-					}
-					if(parentesco=="hijo" & numeroAutorizar()) {
-						return "hijo autoriza la solicitud";
-					}
-					if(parentesco=="padre" & numeroAutorizar()) {
-						return "padre autoriza la solicitud";
-					}
-					if(parentesco=="hermano" & numeroAutorizar()) {
-						return "Hermano autoriza la solicitud";
-					}
-					
-				}//fin if principal
-			}//fin for
-			return "No se pudo autorizar la solicitud";
+				if(auxFamiliar instanceof Cliente) {
+					mensaje= " del cliente "+auxFamiliar.getNombre()+" autoriza la solicitud";
+					break;
+				}
+			}
+			
+			while (familiares.size()!=0) {
+				if (familiarDesignado !=null) {
+					if(numeroAutorizar() & familiarDesignado.getCC() !=0) {
+					return familiarDesignado.getParentesco() + mensaje;
+				}	else{
+						familiares.remove(familiarDesignado);
+						familiarDesignado=this.designarFamiliar(familiares);}
+				
+				}else {return "La solicitud no podrá ser autorizada";}
+						
+			}
+			return 	"La solicitud no podrá ser autorizada";
+			
 		}
 		
 		//apoyo a metodo autorizar
@@ -90,6 +94,24 @@ public class Cliente extends Persona {
 			
 		}
 	
+		
+		public Familiar designarFamiliar(ArrayList<Persona> familiares) {
+			
+			String[] parentescos ={"conyuge","hijo","padre","hermano"};
+			
+			for(String parentesco:parentescos) {
+				for(Persona auxFamiliar:familiares) {
+					if(auxFamiliar instanceof Familiar ) {
+						Familiar familiar=(Familiar)auxFamiliar;
+						if(familiar.getParentesco()==parentesco ) {
+							return familiar;
+						}// fin if 
+					}//fin if principal
+				}//fin for
+			}//Fin for principal
+			return null;
+			
+		}
 	
 	
 	
