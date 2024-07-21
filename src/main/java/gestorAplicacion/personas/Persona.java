@@ -22,6 +22,12 @@ public class Persona {
 		this.cuentaBancaria=cuentaBancaria;
 	
 	}
+	// Método para mostrar información de la persona
+    public void mostrarInformacion() {
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Edad: " + edad);
+        System.out.println("Dirección: " + ubicacion);
+    }
 
 
 

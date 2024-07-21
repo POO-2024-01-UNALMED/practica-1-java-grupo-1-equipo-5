@@ -8,6 +8,10 @@ public class Empleado extends Persona{
 	private String jornada;
 	private String cargo;
 	private double salario;
+	private int Calificacion=5;
+	private boolean disponible= true;
+	
+	
 		
 	//Constructor
 	public Empleado(String nombre, long CC, int edad, String ubicacion, CuentaBancaria cuentaBancaria,String jornada, String cargo, double salario) {
@@ -16,6 +20,15 @@ public class Empleado extends Persona{
 		this.cargo=cargo;
 		this.salario=salario;
 	}
+	
+	 // Método para mostrar información del empleado
+	@Override
+	public void mostrarInformacion() {
+        super.mostrarInformacion();
+        System.out.println("Cargo: " + cargo);
+        System.out.println("Salario: " + salario);
+        System.out.println("Disponible: " + (disponible ? "Sí" : "No"));
+    }
 	
 	
 	
@@ -41,6 +54,14 @@ public class Empleado extends Persona{
 
     public void setSalario(double salario) {
         this.salario = salario;
+    }
+    
+    public boolean isDisponible() {
+        return disponible;
+    }
+
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
     }
 	
 }

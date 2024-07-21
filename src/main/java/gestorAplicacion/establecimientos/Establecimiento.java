@@ -12,7 +12,7 @@ public class Establecimiento {
 	private int capacidad;
 	private CuentaBancaria cuentaCorriente;
 	private String afiliacion;
-	private Empleado empleado;
+	private Empleado Jefe;
 	private Funeraria funeraria;
 	protected ArrayList<Cliente> clientes=new ArrayList<Cliente>();
 	ArrayList<Inventario> inventario=new ArrayList<Inventario>();  
@@ -33,7 +33,7 @@ public class Establecimiento {
 		this.capacidad=capacidad;
 		this.cuentaCorriente=cuentaCorriente;
 		this.afiliacion=afiliacion;
-		this.empleado=empleado;
+		this.Jefe=empleado;
 		this.funeraria=funeraria;
 		establecimientos.add(this);
 	}
@@ -129,6 +129,15 @@ public class Establecimiento {
         }
         return vehiculosFiltrados;
     }
+	// Método para filtrar e imprimir empleados por puesto y disponibilidad
+    public void filtrarEmpleados(String Cargo, boolean disponibilidad) {
+        System.out.println("Empleados con Cargo '" + Cargo + "' y disponibilidad '" + (disponibilidad ? "Sí" : "No") + "':");
+        for (Empleado empleado : empleados) {
+            if (empleado.getCargo().equalsIgnoreCase(Cargo) && empleado.isDisponible() == disponibilidad) {
+                empleado.mostrarInformacion();
+            }
+        }
+    }
 	
 	
 	
@@ -169,6 +178,20 @@ public class Establecimiento {
 	public ArrayList<Cliente> getClientes(){
 		return clientes;
 	} 
+	public double getCalificacion() {
+        return calificacion;
+    }
+
+    public void setCalificacion(double calificacion) {
+        this.calificacion = calificacion;
+    }
+    public ArrayList<Empleado> getEmpleados() {
+        return empleados;
+    }
+
+    public void agregarEmpleado(Empleado empleado) {
+        this.empleados.add(empleado);
+    }
 	
 
 }
