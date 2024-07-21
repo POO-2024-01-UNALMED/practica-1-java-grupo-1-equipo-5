@@ -7,12 +7,14 @@ public class Empleado extends Persona{
 	//Atributos
 	private String jornada;
 	private String cargo;
+	private double salario;
 		
 	//Constructor
-	public Empleado(String nombre, long CC, int edad, String ubicacion, CuentaBancaria cuentaBancaria,String jornada, String cargo) {
+	public Empleado(String nombre, long CC, int edad, String ubicacion, CuentaBancaria cuentaBancaria,String jornada, String cargo, Double salario) {
 		super(nombre, CC, edad, ubicacion, cuentaBancaria);
 		this.jornada=jornada;
 		this.cargo=cargo;
+		this.salario=salario;
 	}
 	
 	
@@ -33,5 +35,12 @@ public class Empleado extends Persona{
 	public void setJornada(String jornada) {
 		this.jornada=jornada;
 	}
+	public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
 	
 }

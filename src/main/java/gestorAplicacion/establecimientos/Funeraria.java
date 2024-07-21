@@ -16,7 +16,9 @@ public class Funeraria extends Establecimiento{
 	//private ArrayList<Crematorio> crematorios=new ArrayList<Crematorio>();
 	//private ArrayList<Cementerio> cementerios=new ArrayList<Cementerio>();
 	private ArrayList<Factura> listadoFacturas=new ArrayList<Factura>();
-	
+	private ArrayList<Vehiculo> Vehiculos=new ArrayList<Vehiculo>();
+    
+    
 	//hereda inventario
 	
 	
