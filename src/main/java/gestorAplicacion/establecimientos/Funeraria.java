@@ -29,7 +29,7 @@ public class Funeraria extends Establecimiento{
 		
 	}
 	
-	
+	//Sirve para buscar establecimientos de tipo Cementerio o Crematorio que estén asociados a la funeraria y que concuerden con el atributo afiliacón y acompañantes del cliente 
 	public ArrayList<Establecimiento> buscarEstablecimientos(String tipoEstablecimiento,Cliente cliente){
 		
 		ArrayList<Establecimiento> establecimientosEvaluar= Establecimiento.buscarPorFuneraria(this, tipoEstablecimiento);
@@ -51,7 +51,7 @@ public class Funeraria extends Establecimiento{
 		return establecimientosDisponibles;
 	}
 	
-	
+	//Sirve para buscar el cementerio adecuado según su atributo tipo que puede ser "cenizas" o "cuerpo"
 	public ArrayList<Establecimiento> buscarCementerios(String tipoCementerio,Cliente cliente){
 		
 		ArrayList <Establecimiento> cementerios = this.buscarEstablecimientos("cementerio", cliente);

@@ -74,13 +74,17 @@ public class Cliente extends Persona {
 				if(auxFamiliar.getCC()!=0 & auxFamiliar instanceof Familiar) {
 					int cantidad = ((Familiar) auxFamiliar).getAcompañantes();
 					cantidadFamiliares=cantidadFamiliares+cantidad;
-				}//Fin if
+				if(auxFamiliar instanceof Cliente) {
+					cantidadFamiliares-=1;
+				}
+					
+				}//Fin if principal
 			}//fin ciclo for
 			
 			return cantidadFamiliares;
 		}
 		
-		public void asignarParientesco(Cliente cliente, String parentesco) {
+		public void asignarParentesco(Cliente cliente, String parentesco) {
 			
 			
 			

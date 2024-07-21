@@ -10,7 +10,7 @@ public class Empleado extends Persona{
 	private double salario;
 		
 	//Constructor
-	public Empleado(String nombre, long CC, int edad, String ubicacion, CuentaBancaria cuentaBancaria,String jornada, String cargo, Double salario) {
+	public Empleado(String nombre, long CC, int edad, String ubicacion, CuentaBancaria cuentaBancaria,String jornada, String cargo, double salario) {
 		super(nombre, CC, edad, ubicacion, cuentaBancaria);
 		this.jornada=jornada;
 		this.cargo=cargo;

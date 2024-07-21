@@ -45,7 +45,7 @@ public class Establecimiento {
 		establecimientos.add(this);
 	}
 	
-	
+	//Este método sirve para clasificar por el tipo más específico de los objetos que son o heredan de la clase Establecimiento
 	public static ArrayList<Establecimiento> filtarEstablecimiento(String establecimiento){
 		ArrayList<Establecimiento> filtrados=new ArrayList<Establecimiento>();
 		
@@ -72,7 +72,7 @@ public class Establecimiento {
 		return filtrados;
 	}
 	
-	//buscar por funeraria  //Devuelve el establecimiento de acuerdo a la funeraria 
+	//buscar por funeraria  //Devuelve el tipo de establecimiento más específico de acuerdo a la funeraria 
 	public static ArrayList<Establecimiento> buscarPorFuneraria(Funeraria funeraria, String tipoEstablecimiento) {
 		
 		ArrayList<Establecimiento> establecimientosFuneraria = new ArrayList<Establecimiento>();
@@ -96,7 +96,7 @@ public class Establecimiento {
 		
 	}
 	
-	//busca a un cliente en toda las funerarias por su atributo CC
+	//busca a un cliente en todas las funerarias por su atributo CC
 	public static Cliente buscarCliente(long CC) {
 		
 		ArrayList<Establecimiento> funerarias= Establecimiento.filtarEstablecimiento("funeraria");
