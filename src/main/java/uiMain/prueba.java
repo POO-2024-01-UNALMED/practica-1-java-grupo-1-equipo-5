@@ -21,9 +21,9 @@ public class prueba {
 		familiar.add(b);
 		familiar.add(e);
 		
-		Cliente a = new Cliente("yina",17,"6789","oro",familiar);
+		//Cliente a = new Cliente("yina",17,"6789","oro",familiar);
 		
-		System.out.println(a.autorizar());
+		//System.out.println(a.autorizar());
 		
 		Familiar[] family= new Familiar[0];
 		
