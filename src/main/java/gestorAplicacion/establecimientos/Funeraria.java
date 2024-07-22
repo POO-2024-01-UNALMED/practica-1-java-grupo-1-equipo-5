@@ -124,11 +124,16 @@ public class Funeraria extends Establecimiento{
 		return clientesEdad;
 	}
 	
+	public void agregarCliente(Cliente cliente) {
+		clientes.add(cliente);
+	}
+	
+	
+	
+	
 	
 	//metodos get y set
 	
-	
-
 	public CuentaBancaria getCuentaAhorros() {
 		return cuentaAhorros;
 	} 

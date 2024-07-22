@@ -2,6 +2,7 @@ package gestorAplicacion.financiero;
 
 import java.util.ArrayList;
 
+import gestorAplicacion.personas.Persona;
 import gestorAplicacion.inventario.Inventario;
 
 public class CuentaBancaria {

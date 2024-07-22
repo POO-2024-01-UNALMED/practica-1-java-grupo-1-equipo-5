@@ -12,7 +12,7 @@ public class Cliente extends Persona {
 	
 	//Atributos
 	
-	private String afiliacion;
+	private String afiliacion; //oro, plata y bronce
 	//private Crematorio crematorio;
 	//private Cementerio cementerio;
 	private Inventario inventario; //(tumba o urna según corresponda)
@@ -92,17 +92,18 @@ public class Cliente extends Persona {
 		
 		public void asignarParentesco(Cliente cliente, String parentesco) {
 			ArrayList<String> parentescos = new ArrayList<String>();
+			//familiares.add(cliente);
 			
 			if(parentesco=="conyuge") {
 				parentescos.add("hijo");
 				
 			}else if(parentesco=="hijo") {
-				parentescos.add("padre");
-				parentescos.add("hermano");
+				parentescos.add("conyuge");
+				parentescos.add("hijo");
 			
 			}else if(parentesco=="padre") {
-				parentescos.add("hijo");
-				parentescos.add("conyuge");
+				parentescos.add("hermano");
+				parentescos.add("padre");
 			}else {
 				parentescos.add("padre");
 				parentescos.add("hermano");
