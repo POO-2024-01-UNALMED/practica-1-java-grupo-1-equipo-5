@@ -88,7 +88,36 @@ public class Cliente extends Persona {
 			return cantidadFamiliares;
 		}
 		
+		//Este método se empleará para asignar a familiares del cliente únicamente que tengan un parentesco directo con le nuevo cliente de conyuge, hijo, padre, hermano 
+		
 		public void asignarParentesco(Cliente cliente, String parentesco) {
+			ArrayList<String> parentescos = new ArrayList<String>();
+			
+			if(parentesco=="conyuge") {
+				parentescos.add("hijo");
+				
+			}else if(parentesco=="hijo") {
+				parentescos.add("padre");
+				parentescos.add("hermano");
+			
+			}else if(parentesco=="padre") {
+				parentescos.add("hijo");
+				parentescos.add("conyuge");
+			}else {
+				parentescos.add("padre");
+				parentescos.add("hermano");
+			}
+			
+			for (String auxParentesco: parentescos) {
+				for(Persona auxFamiliar: cliente.familiares) {
+					if(auxFamiliar instanceof Familiar) {
+						Familiar familiar= (Familiar) auxFamiliar;
+						if(familiar.getParentesco()==auxParentesco) {
+							familiares.add(familiar);
+						}//fin if
+					}//fin if principal
+				}//fin for 
+			}//fin for principal
 			
 			
 			
