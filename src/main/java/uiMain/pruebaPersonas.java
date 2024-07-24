@@ -43,6 +43,8 @@ public class pruebaPersonas {
 	funi.agregarCliente(cli2);
 	
 	System.out.println(funi.buscarCliente("adulto"));
+	
+	//buscar cliente de la clase establecimiento
 	System.out.println(Establecimiento.buscarCliente(127));
 	
 		
