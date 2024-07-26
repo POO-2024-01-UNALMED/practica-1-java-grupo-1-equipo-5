@@ -1,28 +1,37 @@
 package gestorAplicacion.inventario;
 
 
-import gestorAplicacion.personas.Empleado; 
+import gestorAplicacion.personas.Empleado;
+import gestorAplicacion.personas.Persona;
 import java.util.ArrayList;
+import gestorAplicacion.establecimientos.Funeraria;
 
 
 public class Vehiculo {
+	private TipoVehiculo tipoVehiculo; //Es un Enum
+	private Funeraria funeraria;
 	private String marca;
-    private String modelo;
+	// private String modelo; Este se puede reemplazar pot tipoVehículo
     private String color;
-    private Boolean estado; // true si está disponible, false si no lo está
+    private Boolean estado=true; // true si está disponible, false si no lo está
 	private String placa;
 	private Empleado conductor;
 	private ArrayList<String> ruta=new ArrayList<String>();
+	private ArrayList<Persona> pasajeros = new ArrayList<Persona>();
+	
 	
 	// Constructor
-	public Vehiculo(String marca, String modelo, String color, Boolean estado, String placa) {
+	public Vehiculo(TipoVehiculo tipoVehiculo,Funeraria funeraria,String marca, String color, String placa) {
+		this.tipoVehiculo=tipoVehiculo;
+		this.funeraria=funeraria;
 		this.marca = marca;
-		this.modelo = modelo;
+		//this.modelo = modelo;
 		this.color = color;
-		this.estado = estado;
 		this.placa = placa;
+		funeraria.agregarVehiculo(this);
 		}
 	
+
 	
 	
 	
@@ -30,10 +39,22 @@ public class Vehiculo {
 	
 	
 	
+	
+	
+	public void agregarPasajero(Persona pasajero) {
+		pasajeros.add(pasajero);
+	}
+	
+	public String toString() {
+		return tipoVehiculo.toString();
+	}
 	
 	
 	
 	//metodos get y set 
+	public TipoVehiculo getTipoVehiculo() {
+		return tipoVehiculo;
+	}
 	public String getPlaca() {
 		return placa;
 	}
@@ -55,8 +76,9 @@ public class Vehiculo {
 	public boolean isDisponible() {
         return estado;
     }
-	public String getDescripcion() {
-        return "Conductor "+conductor + " " + marca + " " + modelo + " de color " + color;
-    }
+	public ArrayList<Persona> getPasajeros(){
+		return pasajeros;
+	}
+	
 
 }

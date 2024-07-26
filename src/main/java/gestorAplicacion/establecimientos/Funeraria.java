@@ -13,10 +13,9 @@ public class Funeraria extends Establecimiento{
 	
 	private static CuentaBancaria cuentaAhorros;
 	private ArrayList<Empleado> empleados=new ArrayList<Empleado>();
-	//private ArrayList<Crematorio> crematorios=new ArrayList<Crematorio>();
-	//private ArrayList<Cementerio> cementerios=new ArrayList<Cementerio>();
+	
 	private ArrayList<Factura> listadoFacturas=new ArrayList<Factura>();
-	private ArrayList<Vehiculo> Vehiculos=new ArrayList<Vehiculo>();
+	private ArrayList<Vehiculo> vehiculos=new ArrayList<Vehiculo>();
     
     
 	//hereda inventario
@@ -122,6 +121,36 @@ public class Funeraria extends Establecimiento{
 		}//fin else
 		
 		return clientesEdad;
+	}
+	
+	
+	
+public ArrayList<Vehiculo> asignarVehiculo(String clienteFamiliar) {
+		
+		ArrayList<Vehiculo> vehiculosDisponibles=new ArrayList<Vehiculo>();
+		
+		if(clienteFamiliar=="cliente") {
+			for(Vehiculo auxVehiculo: vehiculos) {
+				TipoVehiculo vehiculo=auxVehiculo.getTipoVehiculo();
+				if(vehiculo.getCliente()) {
+					vehiculosDisponibles.add(auxVehiculo);
+				}
+			}
+		}else {
+			for(Vehiculo auxVehiculo: vehiculos) {
+				TipoVehiculo vehiculo=auxVehiculo.getTipoVehiculo();
+				if(vehiculo.getFamiliar()) {
+					vehiculosDisponibles.add(auxVehiculo);
+				}//fin if
+		}//fin for
+	}//fin else
+		
+		return vehiculosDisponibles;
+		
+	}
+
+	public void agregarVehiculo(Vehiculo vehiculo) {
+		vehiculos.add(vehiculo);
 	}
 	
 	public void agregarCliente(Cliente cliente) {
