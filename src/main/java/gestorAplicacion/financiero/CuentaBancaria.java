@@ -20,9 +20,6 @@ public class CuentaBancaria {
     public void depositar(double cantidad) {
         if (cantidad > 0) {
             saldo += cantidad;
-            System.out.println("Se han depositado " + cantidad + ". Saldo actual: " + saldo);
-        } else {
-            System.out.println("La cantidad a depositar debe ser mayor que cero.");
         }
     }
 
@@ -30,13 +27,9 @@ public class CuentaBancaria {
         if (cantidad > 0) {
             if (cantidad <= saldo) {
                 saldo -= cantidad;
-                System.out.println("Se han retirado " + cantidad + ". Saldo actual: " + saldo);
-            } else {
-                System.out.println("Saldo insuficiente para retirar " + cantidad + ".");
-            }
-        } else {
-            System.out.println("La cantidad a retirar debe ser mayor que cero.");
+            } 
         }
+        
     }
 	public String getBanco() {
 		return Banco;
