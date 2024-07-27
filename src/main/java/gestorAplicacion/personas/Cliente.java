@@ -21,15 +21,15 @@ public class Cliente extends Persona {
 	
 	
 	//Contructor mayores de edad
-	public Cliente(String nombre, long CC, int edad, String ubicacion, CuentaBancaria cuentaBancaria,String afiliacion, ArrayList<Persona> familiares) {
-		super(nombre, CC, edad, ubicacion, cuentaBancaria);
+	public Cliente(String nombre, long CC, int edad, CuentaBancaria cuentaBancaria,String afiliacion, ArrayList<Persona> familiares) {
+		super(nombre, CC, edad, null, cuentaBancaria);
 		this.afiliacion=afiliacion;
 		this.familiares=familiares;
 	}
 	
 	//Contructor menores de edad
-		public Cliente(String nombre,int edad, String ubicacion, String plan,ArrayList<Persona> familiares) {
-			this(nombre, 0, edad, ubicacion,null, plan,familiares);
+		public Cliente(String nombre,int edad, String plan,ArrayList<Persona> familiares) {
+			this(nombre, 0, edad,null, plan,familiares);
 		}
 		
 		//autorizar procedimiento de exhumacion y cremacion del cliente

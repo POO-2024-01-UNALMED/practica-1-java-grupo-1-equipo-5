@@ -8,7 +8,7 @@ import gestorAplicacion.personas.*;
 
 public class Establecimiento {
 	private String nombre;
-	private int ubicacion;
+	private String ubicacion;
 	private int capacidad;
 	private CuentaBancaria cuentaCorriente;
 	private String afiliacion;
@@ -27,7 +27,7 @@ public class Establecimiento {
 	
 	
 	//Constructor a ser llamado desde las clases Crematorio y Cementerio
-	public Establecimiento(String nombre, int ubicacion, int capacidad, CuentaBancaria cuentaCorriente,String afiliacion, Empleado empleado, Funeraria funeraria ) {
+	public Establecimiento(String nombre, String ubicacion, int capacidad, CuentaBancaria cuentaCorriente,String afiliacion, Empleado empleado, Funeraria funeraria ) {
 		this.nombre=nombre;
 		this.ubicacion=ubicacion;
 		this.capacidad=capacidad;
@@ -150,6 +150,12 @@ public class Establecimiento {
 	}
 	public void setNombre(String nombre) {
 		this.nombre=nombre;
+	}
+	public String getUbicacion() {
+		return ubicacion;
+	}
+	public void setubicacion(String ubicacion) {
+		this.ubicacion=ubicacion;
 	}
 	public CuentaBancaria getCuentaCorriente() {
 		return cuentaCorriente;

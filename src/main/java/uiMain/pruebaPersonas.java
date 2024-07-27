@@ -23,7 +23,7 @@ public class pruebaPersonas {
 	familiares.add(fam3);
 	familiares.add(fam4);
 	
-	Cliente cli1=new Cliente("cli1", 127, 19, "HHHH", cuenta,"oro", familiares);
+	Cliente cli1=new Cliente("cli1", 127, 19, cuenta,"oro", familiares);
 	//Trae al familiar correcto
 	System.out.println((cli1.designarFamiliar(familiares)).getParentesco());
 	
@@ -31,7 +31,7 @@ public class pruebaPersonas {
 	familiaresAsociados.add(cli1);
 	
 	//Metodo asignarParentesco funciona bien igual que el de autorizar 
-	Cliente cli2=new Cliente("cli1", 127, 19, "HHHH", cuenta,"oro", familiaresAsociados);
+	Cliente cli2=new Cliente("cli1", 127, 19, cuenta,"oro", familiaresAsociados);
 	
 	cli2.asignarParentesco(cli1, "padre");
 	

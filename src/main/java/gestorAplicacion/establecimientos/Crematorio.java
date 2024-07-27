@@ -15,7 +15,7 @@ public class Crematorio extends Establecimiento{
 	
 	
 	//Constructor
-	public Crematorio(String nombre, int ubicacion, int capacidad, CuentaBancaria cuentaCorriente,String afiliacion, Empleado empleado,Funeraria funeraria) {
+	public Crematorio(String nombre, String ubicacion, int capacidad, CuentaBancaria cuentaCorriente,String afiliacion, Empleado empleado,Funeraria funeraria) {
 		super(nombre,ubicacion,capacidad,cuentaCorriente,afiliacion,empleado,funeraria);
 		
 	}
