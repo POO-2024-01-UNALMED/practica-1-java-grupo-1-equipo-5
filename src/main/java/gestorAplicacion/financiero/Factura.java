@@ -1,6 +1,9 @@
 package gestorAplicacion.financiero;
 import gestorAplicacion.personas.*;
 import gestorAplicacion.establecimientos.*;
+import java.util.ArrayList;
+import java.util.List;
+import gestorAplicacion.inventario.*;
 
 public class Factura {
 	//Atributos
@@ -12,17 +15,32 @@ public class Factura {
 	private Establecimiento Entidad;
 	private String Fecha;
 	private double precioFinal;
+	private List<Producto> listaProductos;
+
 
 	private final double IVA=0.19;
 	private static int facturasCreadas;
 	
 	
 	
-	//Constructor
+	//Constructor para crear la factura con clientes 
 	
-	public Factura(String producto, int precio) {
+	public Factura(String producto, double precio, String Fecha, Persona cliente) {
 		this.producto=producto;
 		this.precio=precio;
+		this.cliente= cliente;
+		this.Fecha=Fecha;
+		this.listaProductos = new ArrayList<>();
+		ID=facturasCreadas;
+		calcularTotal();
+		
+	}
+	
+	public Factura(String producto, double precio, String Fecha, Establecimiento Entidad) {
+		this.producto=producto;
+		this.precio=precio;
+		this.Fecha=Fecha;
+		this.Entidad= Entidad;
 		facturasCreadas++;
 		ID=facturasCreadas;
 		calcularTotal();
@@ -37,6 +55,12 @@ public class Factura {
     // Método para calcular el total con IVA
     private void calcularTotal() {
         total = precio + (precio * IVA);
+    }
+    // Método para agregar un producto a la lista
+    public void agregarProducto(Producto producto) {
+        listaProductos.add(producto);
+        precio += producto.getPrecio() * producto.getCantidad();
+        calcularTotal();
     }
 
 	
@@ -79,7 +103,37 @@ public class Factura {
 	public void setEntidad(Establecimiento entidad) {
 		Entidad = entidad;
 	}
-	
+	public List<Producto> getListaProductos() {
+        return listaProductos;
+    }
+
+	public String getFecha() {
+		return Fecha;
+	}
+
+	public void setFecha(String fecha) {
+		Fecha = fecha;
+	}
+
+	public double getPrecioFinal() {
+		return precioFinal;
+	}
+
+	public void setPrecioFinal(double precioFinal) {
+		this.precioFinal = precioFinal;
+	}
+
+	public static int getFacturasCreadas() {
+		return facturasCreadas;
+	}
+
+	public static void setFacturasCreadas(int facturasCreadas) {
+		Factura.facturasCreadas = facturasCreadas;
+	}
+
+	public void setListaProductos(List<Producto> listaProductos) {
+		this.listaProductos = listaProductos;
+	}
 	
 
 	
