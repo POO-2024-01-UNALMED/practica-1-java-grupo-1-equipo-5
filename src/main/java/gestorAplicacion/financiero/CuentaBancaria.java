@@ -3,7 +3,7 @@ package gestorAplicacion.financiero;
 import java.util.ArrayList;
 
 import gestorAplicacion.personas.Persona;
-import gestorAplicacion.inventario.Inventario;
+import gestorAplicacion.inventario.*;
 
 public class CuentaBancaria {
 	private String Banco;

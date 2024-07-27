@@ -21,19 +21,6 @@ public class Empleado extends Persona{
 		this.salario=salario;
 	}
 	
-	 // Método para mostrar información del empleado
-	@Override
-	public void mostrarInformacion() {
-        super.mostrarInformacion();
-        System.out.println("Cargo: " + cargo);
-        System.out.println("Salario: " + salario);
-        System.out.println("Disponible: " + (disponible ? "Sí" : "No"));
-    }
-	
-	
-	
-	
-	
 	//Metodos get y set
 	public String getCargo() {
 		return cargo;

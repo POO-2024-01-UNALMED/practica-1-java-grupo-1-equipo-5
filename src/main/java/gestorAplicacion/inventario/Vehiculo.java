@@ -26,7 +26,6 @@ public class Vehiculo {
 		this.tipoVehiculo=tipoVehiculo;
 		this.funeraria=funeraria;
 		this.marca = marca;
-		//this.modelo = modelo;
 		this.color = color;
 		this.placa = placa;
 		funeraria.agregarVehiculo(this);

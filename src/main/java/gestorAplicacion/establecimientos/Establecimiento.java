@@ -14,8 +14,7 @@ public class Establecimiento {
 	private String afiliacion;
 	private Empleado Jefe;
 	private Funeraria funeraria;
-	protected ArrayList<Cliente> clientes=new ArrayList<Cliente>();
-	ArrayList<Inventario> inventario=new ArrayList<Inventario>();  
+	protected ArrayList<Cliente> clientes=new ArrayList<Cliente>();  
 	public static ArrayList<Establecimiento> establecimientos = new ArrayList<Establecimiento>();
 	private double calificacion=5;
 	private ArrayList<Empleado> empleados=new ArrayList<Empleado>();
@@ -129,20 +128,7 @@ public class Establecimiento {
         }
         return vehiculosFiltrados;
     }
-	// Método para filtrar e imprimir empleados por puesto y disponibilidad
-    public void filtrarEmpleados(String Cargo, boolean disponibilidad) {
-        System.out.println("Empleados con Cargo '" + Cargo + "' y disponibilidad '" + (disponibilidad ? "Sí" : "No") + "':");
-        for (Empleado empleado : empleados) {
-            if (empleado.getCargo().equalsIgnoreCase(Cargo) && empleado.isDisponible() == disponibilidad) {
-                empleado.mostrarInformacion();
-            }
-        }
-    }
-	
-	
-	
-	
-	
+
 	
 	//metodos get y set
 	public String getNombre() {

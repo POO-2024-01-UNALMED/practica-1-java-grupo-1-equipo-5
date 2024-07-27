@@ -4,7 +4,7 @@ package gestorAplicacion.personas;
 
 import gestorAplicacion.financiero.*;
 
-public class Persona {
+public abstract class Persona {
 	
 	private String nombre;
 	private final long CC;
@@ -22,20 +22,6 @@ public class Persona {
 		this.cuentaBancaria=cuentaBancaria;
 	
 	}
-	// Método para mostrar información de la persona
-    public void mostrarInformacion() {
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Edad: " + edad);
-        System.out.println("Dirección: " + ubicacion);
-    }
-
-
-
-
-
-
-
-
 	public String getNombre() {
 		return nombre;
 	}

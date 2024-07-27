@@ -2,10 +2,9 @@ package gestorAplicacion.personas;
 
 import java.util.ArrayList;
 
-
 import gestorAplicacion.establecimientos.*;
 import gestorAplicacion.financiero.*;
-import gestorAplicacion.inventario.Inventario;
+import gestorAplicacion.inventario.*;
 
 public class Cliente extends Persona {
 	
@@ -15,7 +14,8 @@ public class Cliente extends Persona {
 	private String afiliacion; //oro, plata y bronce
 	//private Crematorio crematorio;
 	//private Cementerio cementerio;
-	private Inventario inventario; //(tumba o urna según corresponda)
+	private Urna urna=null;
+	private Tumba tumba= null;
 	private ArrayList<Persona> familiares=new ArrayList<Persona>();
 	private ArrayList<Factura> listadoFacturas=new ArrayList<Factura>();
 	
@@ -154,14 +154,24 @@ public class Cliente extends Persona {
 	public String getAfiliacion() {
 		return afiliacion;
 	}
+	public Urna getUrna() {
+		return urna;
+	}
+
+	public void setUrna(Urna urna) {
+		this.urna = urna;
+	}
+
+	public Tumba getTumba() {
+		return tumba;
+	}
+
+	public void setTumba(Tumba tumba) {
+		this.tumba = tumba;
+	}
+
 	public void setAfiliacion(String afiliacion) {
 		this.afiliacion=afiliacion;
-	}
-	public Inventario getInventario() {
-		return inventario;
-	}
-	public void setInventario(Inventario inventario) {
-		this.inventario=inventario;
 	}
 	//public Cementerio getCementerio() {
 		//return cementerio;
@@ -182,4 +192,5 @@ public class Cliente extends Persona {
 	public void setListadoFacturas(ArrayList<Factura> listadoFacturas) {
 		this.listadoFacturas=listadoFacturas;
 	}
+	
 }

@@ -87,13 +87,13 @@ public class Funeraria extends Establecimiento{
 		
 		if(tipoCementerio=="cuerpos") {
 			for(Cliente cliente: clientesFiltrados) {
-				if(cliente.getInventario() instanceof Tumba) {
+				if(cliente.getTumba() != null) {
 					clientes.add(cliente);
 				}//fin if
 			}//fin for
 			}else {
 				for(Cliente cliente: clientesFiltrados) {
-					if(cliente.getInventario() instanceof Urna) {
+					if(cliente.getUrna() != null ) {
 						clientes.add(cliente);
 					}//fin if
 				}//fin for
