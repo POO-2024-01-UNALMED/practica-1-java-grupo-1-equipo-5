@@ -30,6 +30,14 @@ public class CuentaBancaria {
             } 
         }
         
+}
+    
+    public void transaccion(double valor, CuentaBancaria cuentaAhorros) {
+    	double saldo = this.saldo - valor;
+    	setSaldo(saldo);
+    	double saldoCuentaAhorros = cuentaAhorros.saldo + valor;
+    	cuentaAhorros.setSaldo(saldoCuentaAhorros);
+        
     }
 	public String getBanco() {
 		return Banco;

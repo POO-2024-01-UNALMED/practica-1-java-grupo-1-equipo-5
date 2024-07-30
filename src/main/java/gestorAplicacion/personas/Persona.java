@@ -43,5 +43,11 @@ public abstract class Persona {
 	public void setUbicacion(String ubicacion) {
 		this.ubicacion=ubicacion;
 	}
+	public CuentaBancaria getCuentaBancaria() {
+		return this.cuentaBancaria;
+	}
+	public void setCuentaBancaria(CuentaBancaria cuentaBancaria) {
+		this.cuentaBancaria = cuentaBancaria;
+	}
 
 }

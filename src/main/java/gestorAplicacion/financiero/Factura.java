@@ -93,7 +93,6 @@ public class Factura {
 	public Persona getCliente() {
 		return cliente;
 	}
-
 	public void setCliente(Persona cliente) {
 		this.cliente = cliente;
 	}

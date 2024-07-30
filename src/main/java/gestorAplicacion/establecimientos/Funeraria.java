@@ -166,7 +166,54 @@ public ArrayList<Vehiculo> asignarVehiculo(String clienteFamiliar) {
 		clientes.add(cliente);
 	}
 	
-	
+public void cobroServiciosClientes(Funeraria funeraria) {
+		
+		for(Factura factura: listadoFacturas) {
+			
+			double totalFactura = factura.getTotal();
+			Persona cliente = factura.getCliente(); 
+			
+			if(totalFactura <= cliente.getCuentaBancaria().getSaldo() && cliente.getEdad() >= 18) {
+				
+				cliente.getCuentaBancaria().transaccion(totalFactura, Funeraria.cuentaAhorros);
+				((Cliente) cliente).getListadoFacturas().remove(factura);
+			}else {
+				for(Persona persona : ((Cliente) cliente).getFamiliares()) {
+					
+					if (persona instanceof Familiar) {
+						Familiar familiar = (Familiar) persona;
+				        if (familiar.getParentesco() != null) {
+				            if("conyugue".equals(familiar.getParentesco()) && familiar.getEdad() >= 18){
+				            	if(totalFactura <= familiar.getCuentaBancaria().getSaldo()) {
+				            		familiar.getCuentaBancaria().transaccion(totalFactura, Funeraria.cuentaAhorros);
+				    				((Cliente) cliente).getListadoFacturas().remove(factura);}
+				            	
+				        }else if("hijo".equals(familiar.getParentesco()) || "hija".equals(familiar.getParentesco())  && familiar.getEdad() >= 18) {
+				        	if(totalFactura <= familiar.getCuentaBancaria().getSaldo()) {
+			            		familiar.getCuentaBancaria().transaccion(totalFactura, Funeraria.cuentaAhorros);
+			    				((Cliente) cliente).getListadoFacturas().remove(factura);}
+				        	
+				        }else if("padre".equals(familiar.getParentesco()) || "madre".equals(familiar.getParentesco()) && familiar.getEdad() >= 18) {
+				        	if(totalFactura <= familiar.getCuentaBancaria().getSaldo()) {
+			            		familiar.getCuentaBancaria().transaccion(totalFactura, Funeraria.cuentaAhorros);
+			    				((Cliente) cliente).getListadoFacturas().remove(factura);}
+				      
+				        }else if("hermano".equals(familiar.getParentesco()) || "hermana".equals(familiar.getParentesco()) && familiar.getEdad() >= 18) {
+				        	if(totalFactura <= familiar.getCuentaBancaria().getSaldo()) {
+			            		familiar.getCuentaBancaria().transaccion(totalFactura, Funeraria.cuentaAhorros);
+			    				((Cliente) cliente).getListadoFacturas().remove(factura);}
+				        
+				        }else { if(totalFactura <= familiar.getCuentaBancaria().getSaldo()) {
+		            		familiar.getCuentaBancaria().transaccion(totalFactura, Funeraria.cuentaAhorros);
+		    				((Cliente) cliente).getListadoFacturas().remove(factura);}
+				        	
+				        }
+					}
+				}
+			}
+		}
+	}
+}
 	
 	
 	
