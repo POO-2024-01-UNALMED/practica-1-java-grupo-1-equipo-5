@@ -96,7 +96,7 @@ public class Establecimiento {
 	}
 	
 	//busca a un cliente en todas las funerarias por su atributo CC
-	public static Cliente buscarCliente(long CC) {
+	public static Cliente examinarCliente(long CC) {
 		
 		ArrayList<Establecimiento> funerarias= Establecimiento.filtarEstablecimiento("funeraria");
 		Cliente cliente=null;

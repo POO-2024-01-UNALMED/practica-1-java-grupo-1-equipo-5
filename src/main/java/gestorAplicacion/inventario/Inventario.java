@@ -8,6 +8,10 @@ public class Inventario {
 	private ArrayList<Urna> listadoUrnas =new ArrayList<Urna>();
 	private ArrayList<Vehiculo> listadoVehiculos= new ArrayList<Vehiculo>();
 	
+	
+	
+	
+	
 	//metodos get y set
 	public ArrayList<Ataud> getListadoAtaudes(){
 		return listadoAtaudes;

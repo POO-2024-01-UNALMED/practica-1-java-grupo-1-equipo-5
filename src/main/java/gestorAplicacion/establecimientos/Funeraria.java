@@ -123,6 +123,15 @@ public class Funeraria extends Establecimiento{
 		return clientesEdad;
 	}
 	
+	public Cliente buscarCliente(long IDcliente) {
+		for(Cliente auxCliente: clientes) {
+			if(auxCliente.getCC()==IDcliente) {
+				return auxCliente;
+			}//Fin if
+		}//Fin for
+	return null;
+	}
+	
 	
 	
 public ArrayList<Vehiculo> asignarVehiculo(String clienteFamiliar) {
