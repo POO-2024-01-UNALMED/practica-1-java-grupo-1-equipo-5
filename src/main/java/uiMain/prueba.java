@@ -41,7 +41,7 @@ public class prueba {
 		Funeraria funita = new Funeraria("funita", cuenta,cuenta);
 		Funeraria fumita = new Funeraria("fumita", cuenta,cuenta);
 		
-		Crematorio crematorio = new Crematorio ("cremi",56,35,cuenta,"oro", empleadito,funita); 
+		Crematorio crematorio = new Crematorio ("cremi","56",35,cuenta,"oro", empleadito,funita); 
 		Crematorio creno = new Crematorio ("cremi",56,78,cuenta,"oro", empleadito,fumita); 
 		Crematorio cremita = new Crematorio ("cremi",56,78,cuenta,"oro", empleadito,funita); 
 		

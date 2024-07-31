@@ -22,6 +22,10 @@ public abstract class Persona {
 		this.cuentaBancaria=cuentaBancaria;
 	
 	}
+	
+	public String toString() {
+		return nombre;
+	}
 	public String getNombre() {
 		return nombre;
 	}

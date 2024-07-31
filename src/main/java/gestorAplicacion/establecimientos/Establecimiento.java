@@ -128,6 +128,10 @@ public class Establecimiento {
         }
         return vehiculosFiltrados;
     }
+	
+	public String toString() {
+		return nombre;
+	}
 
 	
 	//metodos get y set

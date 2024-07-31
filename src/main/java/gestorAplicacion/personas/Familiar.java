@@ -19,7 +19,7 @@ public class Familiar extends Persona {
 	// Contructor mayores de edad
 	public Familiar(String nombre, long CC, int edad, String ubicacion, CuentaBancaria cuentaBancaria, String parentesco, int acompañantes ) {
 		super(nombre, CC, edad, ubicacion,cuentaBancaria);
-		this.parentesco = parentesco;
+		this.parentesco = parentesco; 
 		this.acompañantes = acompañantes;
 
 	}
@@ -42,6 +42,12 @@ public class Familiar extends Persona {
 		}
 		return false;
 	}
+	
+	@Override
+	public String toString() {
+		return getNombre()+" parentesco "+parentesco;
+	}
+	
 
 	// metodos get y set
 

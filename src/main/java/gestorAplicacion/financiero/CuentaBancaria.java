@@ -6,12 +6,12 @@ import gestorAplicacion.personas.Persona;
 import gestorAplicacion.inventario.*;
 
 public class CuentaBancaria {
-	private String Banco;
+	private Banco Banco;
 	private double saldo;
 	private long numeroCuenta;
 	private String titular;
 	
-	public CuentaBancaria(long numeroCuenta, String titular, double saldoInicial, String banco) {
+	public CuentaBancaria(long numeroCuenta, String titular, double saldoInicial, Banco banco) {
         this.numeroCuenta = numeroCuenta;
         this.titular = titular;
         this.saldo = saldoInicial;
@@ -39,10 +39,10 @@ public class CuentaBancaria {
     	cuentaAhorros.setSaldo(saldoCuentaAhorros);
         
     }
-	public String getBanco() {
+	public Banco getBanco() {
 		return Banco;
 	}
-	public void setBanco(String banco) {
+	public void setBanco(Banco banco) {
 		this.Banco=banco;
 	}
 	public double getSaldo() {
