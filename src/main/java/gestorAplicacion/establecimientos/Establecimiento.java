@@ -1,6 +1,8 @@
 package gestorAplicacion.establecimientos;
 
 import java.util.ArrayList;
+import java.time.LocalTime;
+import java.util.Random;
 
 import gestorAplicacion.financiero.*;
 import gestorAplicacion.inventario.*;
@@ -19,7 +21,7 @@ public class Establecimiento {
 	private double calificacion=5;
 	private ArrayList<Empleado> empleados=new ArrayList<Empleado>();
 	private ArrayList<Vehiculo> Vehiculos=new ArrayList<Vehiculo>();
-	
+	protected ArrayList<LocalTime> horarioEventos=new ArrayList<>();
 	
 	
 	private ArrayList<Establecimiento> listadoProveedores=new ArrayList<Establecimiento>();
@@ -153,9 +155,30 @@ public class Establecimiento {
         return vehiculosFiltrados;
     }
 	
+	public void generarHoras() {
+		
+		Random random=new Random();
+	
+		for(int a=0;a<3;a++) {
+			// Generar horas y minutos aleatorios
+            int horas = random.nextInt(24);  // Horas entre 0 y 23
+            int minutos = random.nextInt(60); // Minutos entre 0 y 59
+	        
+	        // Crear una instancia de LocalTime con la hora y minutos aleatorios
+            LocalTime horaGenerada = LocalTime.of(horas, minutos);
+            
+            horarioEventos.add(horaGenerada);
+	            
+			}
+	
+	}
+	
+	
 	public String toString() {
 		return nombre;
 	}
+	
+	
 
 	
 	//metodos get y set
