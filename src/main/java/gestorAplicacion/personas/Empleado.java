@@ -6,7 +6,7 @@ import gestorAplicacion.financiero.*;
 public class Empleado extends Persona{
 	//Atributos
 	private String jornada;
-	private String cargo;
+	private String cargo; //Cargos disponibles sepulturero - cremador - padre
 	private double salario;
 	private int Calificacion=5;
 	private boolean disponible= true;

@@ -68,7 +68,7 @@ public class Funeraria extends Establecimiento{
 		
 		
 		for(int i=0;i<empleados.size();i++) {
-			if(empleados.get(i).getCargo()==cargo & empleados.get(i).getJornada()==jornada) {
+			if(empleados.get(i).getCargo()==cargo & empleados.get(i).getJornada()==jornada & empleados.get(i).isDisponible()==true) {
 	
 				disponible.add(empleados.get(i));		
 				
@@ -83,45 +83,20 @@ public class Funeraria extends Establecimiento{
 	public ArrayList<Cliente> buscarCliente(String tipoCementerio, String adultoNiño){
 		
 		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
-		ArrayList<Cliente> clientesFiltrados=this.buscarCliente(adultoNiño);
 		
-		if(tipoCementerio=="cuerpos") {
-			for(Cliente cliente: clientesFiltrados) {
-				if(cliente.getTumba() != null) {
-					clientes.add(cliente);
-				}//fin if
-			}//fin for
-			}else {
-				for(Cliente cliente: clientesFiltrados) {
-					if(cliente.getUrna() != null ) {
-						clientes.add(cliente);
-					}//fin if
-				}//fin for
-				
-			}//fin else
+		//Cementerios asociados a la funeraria clasificados por tipo (cenizas o cuerpo)
+		ArrayList<Establecimiento> cementerios=Cementerio.cementerioPorTipo(Establecimiento.buscarPorFuneraria(this, "cementerio"), tipoCementerio);
+		
+		for (Establecimiento auxCementerio:cementerios) {
+			Cementerio cementerio=(Cementerio) auxCementerio;
+			clientes.addAll(cementerio.buscarCliente(adultoNiño));
+			
+		}
 		
 		return clientes;
 	}
 	
-	public ArrayList<Cliente> buscarCliente(String adultoNiño) {
-		
-		ArrayList<Cliente> clientesEdad= new ArrayList<Cliente>();
-		if(adultoNiño=="adulto") {
-			for(Cliente cliente: clientes) {
-				if(cliente.getCC()!=0) {
-					clientesEdad.add(cliente);
-				}//fin if
-			}//fin for
-		}else {
-			for(Cliente cliente: clientes) {
-				if(cliente.getCC()==0) {
-					clientesEdad.add(cliente);
-				}//fin if
-			}//fin for
-		}//fin else
-		
-		return clientesEdad;
-	}
+	
 	
 	public Cliente buscarCliente(long IDcliente) {
 		for(Cliente auxCliente: clientes) {

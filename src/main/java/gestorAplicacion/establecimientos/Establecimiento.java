@@ -37,7 +37,7 @@ public class Establecimiento {
 		establecimientos.add(this);
 	}
 	
-	//Constructor a ser llamado desde para clase Funeraria
+	//Constructor a ser llamado desde clase Funeraria
 	public Establecimiento (String nombre, CuentaBancaria cuentaCorriente) {
 		this.nombre=nombre;
 		this.cuentaCorriente=cuentaCorriente;
@@ -95,6 +95,29 @@ public class Establecimiento {
 		
 	}
 	
+	
+	public ArrayList<Cliente> buscarCliente(String adultoNiño) {
+		
+		ArrayList<Cliente> clientesEdad= new ArrayList<Cliente>();
+		if(adultoNiño=="adulto") {
+			for(Cliente cliente: clientes) {
+				if(cliente.getCC()!=0) {
+					clientesEdad.add(cliente);
+				}//fin if
+			}//fin for
+		}else {
+			for(Cliente cliente: clientes) {
+				if(cliente.getCC()==0) {
+					clientesEdad.add(cliente);
+				}//fin if
+			}//fin for
+		}//fin else
+		
+		return clientesEdad;
+	}
+	
+	
+	
 	//busca a un cliente en todas las funerarias por su atributo CC
 	public static Cliente examinarCliente(long CC) {
 		
@@ -112,6 +135,7 @@ public class Establecimiento {
 		}
 		return cliente;	
 	
+		
 	}
 	// Añadir Veiculos
 	public void agregarVehiculo(Vehiculo vehiculo) {

@@ -9,9 +9,7 @@ import gestorAplicacion.inventario.*;
 
 public class Crematorio extends Establecimiento{
 	//Atributos
-
-
-	//static ArrayList<Establecimiento> establecimientos = new ArrayList<Establecimiento>();
+	
 	
 	
 	//Constructor

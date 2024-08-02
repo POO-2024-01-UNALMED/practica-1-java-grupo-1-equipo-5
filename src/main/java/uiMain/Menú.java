@@ -14,8 +14,9 @@ public class Menú {
 		
 		Scanner scanner = new Scanner(System.in);
 		
-		Funeraria funeraria;
+		Funeraria funeraria=null;
 		Cliente cliente=null;
+		Crematorio crematorio=null;
 		
 		//Se escoge la funeraria con la que se va a realizar el procedimiento
 		ArrayList<Establecimiento> funerarias =Establecimiento.filtarEstablecimiento("funeraria");
@@ -42,13 +43,12 @@ public class Menú {
 		//Proceso de selección de cliente
 		System.out.println("[1] Buscar cliente mayor de edad");
 		System.out.println("[2] Buscar cliente menor de edad");
-		System.out.println("[3] Registrar cliente");
 		
 		System.out.print("Ingrese el índice correspondiente: ");
 		int indiceCliente = scanner.nextInt();
 		
 		//Validación de índice
-		while (indiceCliente<1 || indiceCliente>3) {
+		while (indiceCliente<1 || indiceCliente>2) {
 			System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
 			indiceCliente=scanner.nextInt();
 		}
@@ -87,7 +87,7 @@ public class Menú {
 						indice=0;
 						for(Cliente auxCliente:funeraria.buscarCliente("adulto")) {
 							indice+=1;
-							System.out.print("["+indice+"] "+ auxCliente);
+							System.out.println("["+indice+"] "+ auxCliente);
 						}
 						
 						System.out.print("Ingrese el índice del cliente: ");
@@ -97,6 +97,7 @@ public class Menú {
 							System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
 							indice=scanner.nextInt();
 						}
+						cliente=funeraria.buscarCliente("adulto").get(indice-1);
 						break;	
 						
 				}// Fin switch secundario
@@ -118,106 +119,77 @@ public class Menú {
 					System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
 					indice=scanner.nextInt();
 				}
+				cliente=funeraria.buscarCliente("niño").get(indice-1);
 				break;
-			case 3:
-				
-				//Proceso de registro nuevo cliente
-				System.out.println("[1] Cliente mayor de edad");
-				System.out.println("[2] Cliente menor de edad");
-				
-				System.out.print("Ingrese el índice correspondiente: ");
-				indiceCliente = scanner.nextInt();
-				
-				//Validación de índice
-				while (indiceCliente<1 || indiceCliente>2) {
-					System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
-					indiceCliente=scanner.nextInt();
-				}
-				//Validación de datos cliente
-				System.out.print("Ingrese nombre del cliente: ");
-				String nombre= scanner.next();
-
-				System.out.print("Ingrese la edad del cliente: ");
-				long CC =0;
-				int edad=scanner.nextInt();
-				//Si el cliente es mayor de edad se añade atributo CC y su edad debe ser mayor a 18 años
-				if(indiceCliente==1) {
-					//Validación de edad mayor a 18 años 
-					while(edad<18) {
-						System.out.print("La edad del cliente debe ser mayor de 18 años. Ingrese nuevamente la edad del cliente: ");
-						edad=scanner.nextInt();
-					}//Fin while
-					//Si el cliente es mayor de edad se asigna un CC distinto de 0
-					System.out.print("Ingrese CC del cliente: ");
-					CC=scanner.nextLong();
-					//Se valida que el CC del cliente no esté registrado en ninguna funeraria
-					while(Establecimiento.examinarCliente(CC)!= null) {
-						System.out.print("El CC del cliente ya está registrado. Ingrese CC del cliente: ");
-						CC=scanner.nextLong();
-					}//Fin while
-				}else {
-					while(edad>18) {
-						System.out.print("La edad del cliente debe ser menor de 18 años. Ingrese nuevamente la edad del cliente: ");
-						edad=scanner.nextInt();
-					}//Fin while
-					
-				}//Fin else
-				//Asignar al cliente nuevo con uno ya registrado para obtener datos de cuenta bancaria, afiliación y familiares
-				System.out.println("Asocie el nuevo cliente con uno ya registrado en la funeraria: ");
-				
-				indice=0;
-				//Buscar cliente en funeraria
-				for(Cliente auxCliente:funeraria.buscarCliente("adulto")) {
-					indice+=1;
-					System.out.println("["+indice+"] "+auxCliente);
-				}
-				//Asignar Cliente ya registrado como familiar de cliente nuevo
-				System.out.print("Indique el índice del cliente familiar del nuevo cliente:" );
-				int indiceFamiliar=scanner.nextInt();
-				while (indiceFamiliar<1 || indiceFamiliar>funeraria.buscarCliente("adulto").size()) {
-					System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
-					indiceFamiliar=scanner.nextInt();
-				}
-				Cliente familiarAsociado=funeraria.buscarCliente("adulto").get(indiceFamiliar-1);
-				ArrayList<Persona> listaFamiliares=new ArrayList<Persona>();
-				listaFamiliares.add(familiarAsociado);
-				//Se crea la instancia del nuevo cliente y con el que se desarrollará el proceso
-				cliente= new Cliente(nombre, CC, edad, null,familiarAsociado.getAfiliacion(),listaFamiliares);
-				//Se asignan los familiares de acuerdo al parentesco 
-				
-				System.out.println("[1] Padre/Madre");
-				System.out.println("[2] Hijo/Hija");
-				System.out.println("[3] Hermano/Hermana");
-				System.out.println("[4] Cónyuge");
-				System.out.print("Indique el índice del parentesco del cliente nuevo con el antiguo: ");
-				indiceFamiliar=scanner.nextInt();
-				//Validación de indice correcto
-				while(indiceFamiliar<1 || indiceFamiliar>4) {
-					System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
-					indiceFamiliar=scanner.nextInt();
-				}
-				//Se asigna de acuerdo a parentescos disponibles
-				String parentesco=null;
-				if(indiceFamiliar==1) {
-					parentesco="padre";
-				}else if(indiceFamiliar==2) {
-					parentesco="hijo";
-				}else if(indiceFamiliar==3) {
-					parentesco="hermano";
-				}else {
-					parentesco="conyuge";
-				}
-				//Se usa el método para agregar a familiares directos si no los hay igual se agrega como familiar al Cliente Antiguo
-				cliente.asignarParentesco(familiarAsociado,parentesco); 
-				funeraria.agregarCliente(cliente);
-				break;
-			
-			default:
-				System.out.println("Número fuera de rango");
 		}
 		
-		System.out.print(cliente);
-		System.out.print(funeraria);
+		//Disponibilidad en el crematorio
+		
+		//Crematorios que coincidan con la capacidad de acompañantes del cliente y con la afiliación del cliente
+		ArrayList<Establecimiento> crematorios=funeraria.buscarEstablecimientos("crematorio", cliente);
+		
+		System.out.println("Su afiliación es de tipo "+cliente.getAfiliacion());
+		System.out.print("Los crematorios disponibles para la afiliación "+cliente.getAfiliacion()+" son:");
+		
+		indice=1;
+		for(Establecimiento auxCrematorio:crematorios) {
+			System.out.println("["+indice+"] "+auxCrematorio);
+		}
+		System.out.print("Ingrese el índice del crematorio deseado: ");
+		indice=scanner.nextInt();
+		
+		//Validación 
+		while(indice<1 || indice>crematorios.size()-1) {
+			System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+			indice=scanner.nextInt();
+		}
+		
+		crematorio=(Crematorio)crematorios.get(indice-1);
+		
+		//Se debe establecer el empleado del crematorio
+		
+		System.out.print("Las jornadas disponibles son: ");
+		
+		//Se escoge empleado por jornada
+		String[] jornadas = {"Mañana","Tarde","Noche"};
+		
+		for(int i=0;i<3;i++) {
+			System.out.println("["+(i+1)+"] "+jornadas[i]);
+		}
+		
+		System.out.print("Ingrese el índice de la jornada deseada: ");
+		indice=scanner.nextInt();
+		
+		//Validación 
+		while(indice<1 || indice>3) {
+			System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+			indice=scanner.nextInt();
+			}
+		//Este método devuelve todos los empleados con atributo cargo cremador, con el atributo de jornada adecuado y que tengan su stributo disponible como true
+		ArrayList<Empleado> empleados = funeraria.buscarEmpleados("cremador", jornadas[indice-1]);
+		
+		System.out.println("Empleados disponibles en la jornada seleccionada");
+		indice=1;
+		for (Empleado auxEmpleado:empleados) {
+			System.out.println("["+indice+"] "+auxEmpleado);
+		}
+		
+		System.out.print("Ingrese el índice del empleado deseado: ");
+		indice=scanner.nextInt();
+		
+		//Validación 
+		while(indice<1 || indice>empleados.size()-1) {
+			System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+			indice=scanner.nextInt();
+			}
+		
+		Empleado empleadoCrematorio=empleados.get(indice-1);
+		
+		if(cliente.getCC()==0) {
+			
+		}
+		
+		
 		
 	}
 	
