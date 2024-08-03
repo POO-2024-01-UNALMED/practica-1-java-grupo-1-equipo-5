@@ -10,7 +10,7 @@ import gestorAplicacion.inventario.*;
 
 public class Crematorio extends Establecimiento{
 	//Atributos
-	LocalTime horaEventoActual;
+	
 	
 	
 	//Constructor
@@ -45,6 +45,8 @@ public class Crematorio extends Establecimiento{
 		return cementeriosDisponibles;
 		
 	}
+	
+
 	
 	
 	

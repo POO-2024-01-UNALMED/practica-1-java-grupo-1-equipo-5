@@ -2,11 +2,14 @@ package uiMain;
 
 import java.util.Scanner;
 
+
 import java.time.LocalTime;
 import java.util.ArrayList;
+
 import gestorAplicacion.establecimientos.*;
 import gestorAplicacion.financiero.CuentaBancaria;
 import gestorAplicacion.personas.*;
+import gestorAplicacion.inventario.Producto;
 
 public class Menú {
 	
@@ -19,6 +22,9 @@ public class Menú {
 		Funeraria funeraria=null;
 		Cliente cliente=null;
 		Crematorio crematorio=null;
+		Empleado empleadoCrematorio=null;
+		Iglesia iglesia=null;
+		ArrayList<Producto> productos=new ArrayList<Producto>();
 		
 		//Se escoge la funeraria con la que se va a realizar el procedimiento
 		ArrayList<Establecimiento> funerarias =Establecimiento.filtarEstablecimiento("funeraria");
@@ -133,7 +139,7 @@ public class Menú {
 		ArrayList<Establecimiento> crematorios=funeraria.buscarEstablecimientos("crematorio", cliente);
 		
 		System.out.println("Su afiliación es de tipo "+cliente.getAfiliacion());
-		System.out.print("Los crematorios disponibles para la afiliación "+cliente.getAfiliacion()+" son:");
+		System.out.println("Los crematorios disponibles para la afiliación "+cliente.getAfiliacion()+" son:");
 		
 		indice=1;
 		for(Establecimiento auxCrematorio:crematorios) {
@@ -148,10 +154,13 @@ public class Menú {
 			indice=scanner.nextInt();
 		}
 		
+		//asignación de crematorio
 		crematorio=(Crematorio)crematorios.get(indice-1);
+		System.out.print("Crematorio "+crematorio);
+		System.out.println("Empleados"+funeraria.getEmpleados());
 		
 		//Establecer horario crematorio
-		System.out.print("Horarios disponibles del crematorio:");
+		System.out.println("Horarios disponibles del crematorio:");
 		//Si no hay horarios en el crematorio se establecerán 3 nuevos horarios 
 		if(crematorio.getHorarioEventos().size()==0) {
 			crematorio.generarHoras();
@@ -177,8 +186,17 @@ public class Menú {
 			indice=scanner.nextInt();
 			}
 		
+		//Se asigna la hora en el atributo horaEvento para trabajar con esa hora el resto de la funcionalidad
+		crematorio.setHoraEvento(crematorio.getHorarioEventos().get(indice-1));
+		//Se elimina esa hora del ArrayList de HorarioEvento 
+		crematorio.eliminarHorario(crematorio.getHorarioEventos().get(indice-1));
+		
+		System.out.println("Hora "+crematorio.getHoraEvento());
+		
 		//Se debe establecer el empleado del crematorio y se da como parámetro la hora escogida
-		ArrayList<Empleado> empleados =funeraria.buscarEmpleados(crematorio.getHorarioEventos().get(indice-1), "cremador");
+		ArrayList<Empleado> empleados =funeraria.buscarEmpleados(crematorio.getHoraEvento(), "cremador");
+		
+		System.out.println("Empleados seleccionados en la jornada"+empleados);
 		
 		//Se escoge al empleado que cumpla con el atributo de cargo cremador y la jornada específica según la hora seleccionada
 		System.out.println("Empleados disponibles en la jornada seleccionada");
@@ -195,22 +213,26 @@ public class Menú {
 			System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
 			indice=scanner.nextInt();
 			}
+		//asignar empleado
+		empleadoCrematorio=empleados.get(indice-1);
 		
-		Empleado empleadoCrematorio=empleados.get(indice-1);
+		//Asignar Empleado en crematorio
+		crematorio.setEmpleado(empleadoCrematorio);
+		
 		
 		//Establecer iglesia para determinar religion del cliente 
 		
 		System.out.println("Seleccione la religión con la que se va a realizar la ceremonia del cliente");
 		
 		//Iglesias disponibles
-		ArrayList<Iglesia> iglesias = null;
+		ArrayList<Iglesia> iglesias = new ArrayList<Iglesia>();
 		
-		for(Iglesia iglesia:Iglesia.values()) {
+		for(Iglesia auxIglesia:Iglesia.values()) {
 			indice=1;
 			//Se imprimen y añaden a la lista solo las iglesias que permiten la cremación como acto final de la vida
-			if (iglesia.getCremacion()) {
-				iglesias.add(iglesia);
-				System.out.println("["+indice+"] "+iglesia);
+			if (auxIglesia.getCremacion()) {
+				iglesias.add(auxIglesia);
+				System.out.println("["+indice+"] "+auxIglesia);
 				indice++;
 			}
 		}
@@ -223,8 +245,18 @@ public class Menú {
 			}
 		
 		//Iglesia o religión escogida
-		Iglesia iglesia=iglesias.get(indice-1);
+		iglesia=iglesias.get(indice-1);
 		
+		//Se asigna la iglesia en el atributo iglesia en el crematorio designado para trabajar con este atributo el resto de la funcionalidad
+		crematorio.setiglesia(iglesia);
+		
+		//se crea el productoCrematorio para guardar registro de lo que se debe cobrar en la clase Factura respecto a crematorio 
+		Producto productoCrematorio= new Producto(crematorio);
+		//Se guardarán todos los productos que se empleen para organizar las facturas
+		productos.add(productoCrematorio);
+		
+		//Se imprimirá la invitación del evento
+		System.out.println(productoCrematorio.evento(cliente));
 		
 		
 		
@@ -237,7 +269,6 @@ public class Menú {
 		Funeraria funita = new Funeraria("funita", null,null);
 		Funeraria fumita = new Funeraria("fumita", null,null);
 		Funeraria fulanita = new Funeraria("fulanita", null,null);
-		Funeraria funcita = new Funeraria("funcita", null,null);
 		
 		//Cliente
 		Familiar b= new Familiar("Mario",123,45,"345",null,"padre",17);
@@ -258,8 +289,39 @@ public class Menú {
 		funita.agregarCliente(e1);
 		fumita.agregarCliente(d1);
 		fulanita.agregarCliente(c1);
-		funcita.agregarCliente(b1);
 		fumita.agregarCliente(a1);
+		
+		//Objetos crematorio-cementerio
+		Crematorio crematorio = new Crematorio ("crematorio","0054",35,null,"oro", null,funita); 
+		Crematorio creno = new Crematorio ("creno","0089",78,null,"oro", null,fumita); 
+		Crematorio cremita = new Crematorio ("cremita","0098",78,null,"oro", null,fulanita); 
+		
+		Cementerio cementerio = new Cementerio ("cremi","2090",78,null,"oro", null,"cenizas",fulanita); 
+		Cementerio cemi = new Cementerio ("cremi","9089",78,null,"oro", null,"cuerpos",fumita); 
+		Cementerio cemito = new Cementerio ("cremi","5490",78,null,"oro", null,"cenizas",funita); 
+		
+		//Objetos de la clase Empleado
+		Empleado empleado1 = new Empleado("Alberto",12345,"3456",null,"mañana","cremador",900000);
+		Empleado empleado2 = new Empleado("Maria",12345,"3456",null,"tarde","cremador",900000);
+		Empleado empleado3 = new Empleado("Anastasia",12345,"3456",null,"noche","cremador",900000);
+		Empleado empleado4 = new Empleado("Gilberto",12345,"3456",null,"mañana","cremador",900000);
+		Empleado empleado5 = new Empleado("Pepito",12345,"3456",null,"mañana","cremador",900000);
+		Empleado empleado6 = new Empleado("Camila",12345,"3456",null,"tarde","",900000);
+		Empleado empleado7 = new Empleado("Santiago",12345,"3456",null,"noche","cremador",900000);
+		Empleado empleado8 = new Empleado("Anastasio",12345,"3456",null,"tarde","cremador",900000);
+		
+		funita.agregarEmpleado(empleado1);
+		funita.agregarEmpleado(empleado2);
+		funita.agregarEmpleado(empleado3);
+		
+		fumita.agregarEmpleado(empleado5);
+		fumita.agregarEmpleado(empleado6);
+		
+		fulanita.agregarEmpleado(empleado4);
+		fulanita.agregarEmpleado(empleado7);
+		fulanita.agregarEmpleado(empleado8);
+		
+	
 		
 		
 		Scanner scanner = new Scanner(System.in);

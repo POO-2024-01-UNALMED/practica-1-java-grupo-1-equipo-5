@@ -1,6 +1,8 @@
 package uiMain;
 
 import gestorAplicacion.financiero.CuentaBancaria;
+
+import gestorAplicacion.inventario.*;
 import java.time.LocalTime;
 import gestorAplicacion.personas.*;
 import gestorAplicacion.establecimientos.*;
@@ -38,6 +40,9 @@ public class pruebaPersonas {
 	
 	System.out.println(cli2.getFamiliares());
 	
+	Crematorio crematorio = new Crematorio ("cremi","56",35,null,"oro", null,null); 
+	crematorio.agregarIglesia(Iglesia.BUDISMO);
+	
 	//metodos buscarCliente(adultoNiño) de la clase funeraria
 	Funeraria funi = new Funeraria("funi", null, null);
 	funi.agregarCliente(cli1);
@@ -51,6 +56,11 @@ public class pruebaPersonas {
 	 LocalTime horaGenerada2 = LocalTime.of(23, 54);
 	 
 	 System.out.print(horaGenerada.isBefore(horaGenerada2));
+	 
+	 Producto producto =new Producto(crematorio);
+	 System.out.println(producto.evento(cli1));
+	 System.out.println(cli1.getFamiliares());
+	 
 		
 	}
 	

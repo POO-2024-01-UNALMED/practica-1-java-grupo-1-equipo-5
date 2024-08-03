@@ -40,6 +40,9 @@ public enum Iglesia {
 	public boolean getCremacion() {
 		return cremacion;
 	}
+	public String getNombre() {
+		return nombre;
+	}
 
 	
 }

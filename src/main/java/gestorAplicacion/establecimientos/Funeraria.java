@@ -63,29 +63,30 @@ public class Funeraria extends Establecimiento{
 	
 	
 	
-	public ArrayList<Empleado> buscarEmpleados(String cargo, String jornada){
+	public ArrayList<Empleado> buscarEmpleados(String jornada, String cargo){
 		
 		ArrayList<Empleado> disponible=new ArrayList<Empleado>();
 		
 		
 		for(int i=0;i<empleados.size();i++) {
-			if(empleados.get(i).getCargo()==cargo & empleados.get(i).getJornada()==jornada & empleados.get(i).isDisponible()==true) {
-	
-				disponible.add(empleados.get(i));		
-				
-			}//fin if	
+			Empleado empleado=empleados.get(i);
+			if((empleado.getJornada()).equalsIgnoreCase(jornada) & (empleado.getCargo()).equals(cargo) & empleado.isDisponible()) {
+				disponible.add(empleados.get(i));
+			}
+		
+			//fin if	
 			
 		}//fin ciclo for
 		return disponible;
 			
 	}
 	
-	public ArrayList<Empleado> buscarEmpleados(LocalTime jornada2,String cargo){
+	public ArrayList<Empleado> buscarEmpleados(LocalTime horas,String cargo){
 		
 		String jornada;
-		if(jornada2.getHour()<12) {
+		if(horas.getHour()<12) {
 			jornada="mañana";
-		}else if(jornada2.getHour()<19) {
+		}else if(horas.getHour()<19) {
 			jornada="tarde";
 		}else {
 			jornada="noche";
@@ -159,6 +160,9 @@ public ArrayList<Vehiculo> asignarVehiculo(String clienteFamiliar) {
 	
 	public void agregarCliente(Cliente cliente) {
 		clientes.add(cliente);
+	}
+	public void agregarEmpleado(Empleado empleado) {
+		this.empleados.add(empleado);
 	}
 	
 public void cobroServiciosClientes(Funeraria funeraria) {

@@ -23,6 +23,8 @@ public class Establecimiento {
 	private ArrayList<Empleado> empleados=new ArrayList<Empleado>();
 	private ArrayList<Vehiculo> Vehiculos=new ArrayList<Vehiculo>();
 	protected ArrayList<LocalTime> horarioEventos=new ArrayList<>();
+	private LocalTime horaEvento;
+	private Iglesia iglesia;
 	
 	
 	private ArrayList<Establecimiento> listadoProveedores=new ArrayList<Establecimiento>();
@@ -174,6 +176,13 @@ public class Establecimiento {
 	
 	}
 	
+	public void agregarIglesia(Iglesia iglesia) {
+		this.iglesia=iglesia;
+	}
+	public void eliminarHorario(LocalTime hora) {
+		this.horarioEventos.remove(hora);
+	}
+	
 	
 	public String toString() {
 		return nombre;
@@ -222,6 +231,12 @@ public class Establecimiento {
 	public ArrayList<Cliente> getClientes(){
 		return clientes;
 	} 
+	public Empleado getEmpleado() {
+		return Jefe;
+	}
+	public void setEmpleado(Empleado empleado) {
+		Jefe=empleado;
+	}
 	public double getCalificacion() {
         return calificacion;
     }
@@ -238,6 +253,19 @@ public class Establecimiento {
     }
 	public ArrayList<LocalTime> getHorarioEventos(){
 		return horarioEventos;
+	}
+	
+	public LocalTime getHoraEvento() {
+		return horaEvento;
+	}
+	public void setHoraEvento(LocalTime horaEvento) {
+		this.horaEvento=horaEvento;
+	}
+	public Iglesia getIglesia() {
+		return iglesia;
+	}
+	public void setiglesia(Iglesia iglesia) {
+		this.iglesia=iglesia;
 	}
 
 }

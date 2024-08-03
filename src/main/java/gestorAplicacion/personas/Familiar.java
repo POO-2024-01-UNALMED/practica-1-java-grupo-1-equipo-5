@@ -45,7 +45,7 @@ public class Familiar extends Persona {
 	
 	@Override
 	public String toString() {
-		return getNombre()+" parentesco "+parentesco;
+		return parentesco.toUpperCase()+" "+getNombre();
 	}
 	
 

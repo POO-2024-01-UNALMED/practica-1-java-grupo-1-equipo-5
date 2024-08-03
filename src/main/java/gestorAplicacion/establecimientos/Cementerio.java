@@ -1,6 +1,7 @@
 package gestorAplicacion.establecimientos;
 import gestorAplicacion.inventario.*;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 import gestorAplicacion.inventario.*;
 
@@ -11,7 +12,7 @@ import gestorAplicacion.personas.*;
 public class Cementerio extends Establecimiento {
 	
 	private String tipo; //(cenizas o cuerpos)
-	//public static ArrayList<Establecimiento> establecimientos = new ArrayList<Establecimiento>();
+	
 	private ArrayList<Urna> urnas = new ArrayList<Urna>();
 	private ArrayList<Tumba> tumbas = new ArrayList<Tumba>();
 	//Constructor
@@ -50,15 +51,13 @@ public class Cementerio extends Establecimiento {
 		this.tumbas.add(tumba);
 	}	
 	
-	
-	
-	
 	public String getTipo() {
 		return tipo;
 	}
 	public void setTipo(String tipo) {
 		this.tipo=tipo;
 	}
+
 	
 
 	

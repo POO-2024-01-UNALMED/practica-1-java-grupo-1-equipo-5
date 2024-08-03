@@ -2,8 +2,9 @@ package uiMain;
 
 import java.util.ArrayList;
 
-import java.util.Scanner;
 
+import java.util.Scanner;
+import java.time.LocalTime;
 import gestorAplicacion.financiero.*;
 import gestorAplicacion.establecimientos.Funeraria;
 import gestorAplicacion.establecimientos.Cementerio;
@@ -49,9 +50,32 @@ public class PruebaVehiculo {
 		//Prueba personas
 		
 		
-		CuentaBancaria cuenta= new CuentaBancaria(1234, "Ale", 10000, "comeva");
+		CuentaBancaria cuenta= new CuentaBancaria(1234, "Ale", 10000, Banco.BANCO_BOGOTA);
+		
 		Funeraria funi = new Funeraria("funi", cuenta, cuenta);
 		Cementerio cemi =new Cementerio("cemi", "1010", 56, cuenta,"oro", null,"cenizas",funi);
+		
+		Empleado empleado1 = new Empleado("Alberto",12345,"3456",null,"mañana","cremador",900000);
+		Empleado empleado2 = new Empleado("Maria",12345,"3456",null,"tarde","cremador",900000);
+		Empleado empleado3 = new Empleado("Anastasia",12345,"3456",null,"noche","cremador",900000);
+		Empleado empleado4 = new Empleado("Gilberto",12345,"3456",null,"tarde","sepulturero",900000);
+		Empleado empleado5 = new Empleado("Pepito",12345,"3456",null,"mañana","cremador",900000);
+		Empleado empleado6 = new Empleado("Camila",12345,"3456",null,"tarde","",900000);
+		Empleado empleado7 = new Empleado("Santiago",12345,"3456",null,"noche","sepulturero",900000);
+		
+		funi.agregarEmpleado(empleado7);
+		funi.agregarEmpleado(empleado6);
+		funi.agregarEmpleado(empleado5);
+		funi.agregarEmpleado(empleado4);
+		funi.agregarEmpleado(empleado3);
+		funi.agregarEmpleado(empleado2);
+		funi.agregarEmpleado(empleado1);
+		
+		System.out.println("Empleado"+funi.getEmpleados());
+		
+		LocalTime hora=LocalTime.of(11, 50);
+		
+		System.out.println("Empleado seleccionado:"+funi.buscarEmpleados(hora,"cremador"));
 		
 		ArrayList<Persona> familiares = new ArrayList<Persona>();
 
