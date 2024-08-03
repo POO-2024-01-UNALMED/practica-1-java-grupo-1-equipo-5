@@ -4,6 +4,8 @@ import gestorAplicacion.establecimientos.*;
 import java.util.ArrayList;
 import java.util.List;
 import gestorAplicacion.inventario.*;
+import java.util.Comparator;
+import java.util.stream.Collectors;
 
 public class Factura {
 	//Atributos
@@ -16,6 +18,7 @@ public class Factura {
 	private String Fecha;
 	private double precioFinal;
 	private List<Producto> listaProductos;
+	private String Servicio ;
 
 
 	private final double IVA=0.19;
@@ -25,22 +28,24 @@ public class Factura {
 	
 	//Constructor para crear la factura con clientes 
 	
-	public Factura(String producto, double precio, String Fecha, Persona cliente) {
+	public Factura(String producto, double precio, String Fecha, Persona cliente,String Servicio) {
 		this.producto=producto;
 		this.precio=precio;
 		this.cliente= cliente;
 		this.Fecha=Fecha;
 		this.listaProductos = new ArrayList<>();
+		this.Servicio= Servicio;
 		ID=facturasCreadas;
 		calcularTotal();
 		
 	}
 	
-	public Factura(String producto, double precio, String Fecha, Establecimiento Entidad) {
+	public Factura(String producto, double precio, String Fecha, Establecimiento Entidad,String Servicio) {
 		this.producto=producto;
 		this.precio=precio;
 		this.Fecha=Fecha;
 		this.Entidad= Entidad;
+		this.Servicio= Servicio;
 		facturasCreadas++;
 		ID=facturasCreadas;
 		calcularTotal();
@@ -62,6 +67,15 @@ public class Factura {
         precio += producto.getPrecio() * producto.getCantidad();
         calcularTotal();
     }
+    
+    
+
+    public List<Producto> obtenerProductosOrdenadosPorPrecio() {
+        return listaProductos.stream()
+                             .sorted(Comparator.comparingDouble(Producto::getPrecio).reversed())
+                             .collect(Collectors.toList());
+    }
+
 
 	
 	//metodos get y set 
@@ -132,6 +146,14 @@ public class Factura {
 
 	public void setListaProductos(List<Producto> listaProductos) {
 		this.listaProductos = listaProductos;
+	}
+
+	public String getServicio() {
+		return Servicio;
+	}
+
+	public void setServicio(String servicio) {
+		Servicio = servicio;
 	}
 	
 

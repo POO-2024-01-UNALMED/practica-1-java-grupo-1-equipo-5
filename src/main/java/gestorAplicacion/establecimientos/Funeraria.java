@@ -213,8 +213,56 @@ public void cobroServiciosClientes(Funeraria funeraria) {
 		}
 	}
 }
-	
-	
+
+
+
+     public static Producto[] identificarProductosFaltantes(Funeraria funeraria) {
+         Producto[] productosVendidos = calcularProductosVendidos(funeraria);
+         Producto[] productosFaltantes = new Producto[0];
+
+         for (Producto producto : productosVendidos) {
+             if (producto.getCantidadVendida() < 10) {
+                 productosFaltantes = agregarProducto(productosFaltantes, producto);
+             }
+         }
+
+         return productosFaltantes;
+     }
+     
+     public static Producto[] calcularProductosVendidos(Funeraria fun) {
+         Producto[] productosVendidos = new Producto[0];
+         for (Factura factura : fun.getListadoFacturas()) {
+             for (Producto producto : factura.getListaProductos()) {
+                 productosVendidos = agregarProducto(productosVendidos, producto);
+             }
+         }
+         return productosVendidos;
+     }
+     
+     
+     public static Producto[] agregarProducto(Producto[] productosVendidos, Producto nuevoProducto) {
+    	    // Recorre el array de productos vendidos para encontrar si el producto ya existe
+    	    for (int i = 0; i < productosVendidos.length; i++) {
+    	        // Compara el nombre del producto existente con el nuevo producto
+    	        if (productosVendidos[i].getNombre().equals(nuevoProducto.getNombre())) {
+    	            // Si el producto ya existe, actualiza la cantidad vendida
+    	        	int cantidadActual = productosVendidos[i].getCantidadVendida();
+    	            productosVendidos[i].setCantidadVendida(cantidadActual + nuevoProducto.getCantidadVendida());
+    	            return productosVendidos;
+    	        }
+    	    }
+
+    	    // Si el producto no existe en el array, se crea un nuevo array con un tamaño mayor
+    	    Producto[] nuevosProductosVendidos = new Producto[productosVendidos.length + 1];
+    	    // Copia todos los productos del array original al nuevo array
+    	    System.arraycopy(productosVendidos, 0, nuevosProductosVendidos, 0, productosVendidos.length);
+    	    // Añade el nuevo producto al final del nuevo array
+    	    nuevosProductosVendidos[productosVendidos.length] = new Producto(nuevoProducto.getNombre(), nuevoProducto.getCantidadVendida());
+    	    // Retorna el nuevo array con el producto añadido
+    	    return nuevosProductosVendidos;
+    	}
+     
+     
 	
 	//metodos get y set
 	
@@ -231,7 +279,7 @@ public void cobroServiciosClientes(Funeraria funeraria) {
 		this.empleados=empleados;
 	}
 	
-	public ArrayList<Factura> getlistadoFacturas() {
+	public ArrayList<Factura> getListadoFacturas() {
 		return listadoFacturas;
 	} 
 	public void setlistadoFacturas(ArrayList<Factura> listadoFacturas) {

@@ -12,7 +12,11 @@ public class Producto {
     private String nombre;
     private double precio;
     private int cantidad;
+
     private Establecimiento establecimiento;
+
+    private int cantidadVendida=0;
+
     
     
     
@@ -24,6 +28,7 @@ public class Producto {
 		this.cantidad = cantidad;
 	}
     
+
     //Constructor para crear productos con establecimientos (Crematorio y Cementerio)
     public Producto(Establecimiento establecimiento) {
     	this.establecimiento=establecimiento;
@@ -65,6 +70,11 @@ public class Producto {
     	
     }
  
+ // Constructor que acepta nombre y cantidadVendida
+    public Producto(String nombre, int cantidadVendida) {
+        this.nombre = nombre;
+        this.cantidadVendida = cantidadVendida;
+    }
 
 	// Métodos getters y setters
     public String getNombre() {
@@ -90,4 +100,13 @@ public class Producto {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
+
+	public int getCantidadVendida() {
+		return cantidadVendida;
+	}
+
+	public void setCantidadVendida(int cantidadVendida) {
+		this.cantidadVendida = cantidadVendida;
+	}
+    
 }
