@@ -22,6 +22,7 @@ public class Menú {
 		Funeraria funeraria=null;
 		Cliente cliente=null;
 		Crematorio crematorio=null;
+		Cementerio cementerio =null;
 		Empleado empleadoCrematorio=null;
 		Iglesia iglesia=null;
 		ArrayList<Producto> productos=new ArrayList<Producto>();
@@ -123,7 +124,7 @@ public class Menú {
 				System.out.print("Ingrese el índice del cliente: ");
 				indice=scanner.nextInt();
 				//Validacion
-				while(indice<1 || indice>funeraria.buscarCliente("adulto").size()) {
+				while(indice<1 || indice>funeraria.buscarCliente("niño").size()) {
 					System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
 					indice=scanner.nextInt();
 				}
@@ -191,7 +192,6 @@ public class Menú {
 		//Se elimina esa hora del ArrayList de HorarioEvento 
 		crematorio.eliminarHorario(crematorio.getHorarioEventos().get(indice-1));
 		
-		System.out.println("Hora "+crematorio.getHoraEvento());
 		
 		//Se debe establecer el empleado del crematorio y se da como parámetro la hora escogida
 		ArrayList<Empleado> empleados =funeraria.buscarEmpleados(crematorio.getHoraEvento(), "cremador");
@@ -226,9 +226,8 @@ public class Menú {
 		
 		//Iglesias disponibles
 		ArrayList<Iglesia> iglesias = new ArrayList<Iglesia>();
-		
+		indice=1;
 		for(Iglesia auxIglesia:Iglesia.values()) {
-			indice=1;
 			//Se imprimen y añaden a la lista solo las iglesias que permiten la cremación como acto final de la vida
 			if (auxIglesia.getCremacion()) {
 				iglesias.add(auxIglesia);
@@ -257,6 +256,26 @@ public class Menú {
 		
 		//Se imprimirá la invitación del evento
 		System.out.println(productoCrematorio.evento(cliente));
+		
+		
+		//Definir el cementerio, de acuerdo a la hora fin del evento de cremación 
+		
+		ArrayList<Cementerio> cementerios =crematorio.cementeriodisponible(cliente);
+		
+		indice=1;
+		System.out.println("Cementerios diponibles después de la ceremonia de cremación ");
+		for(Cementerio auxCementerio:cementerios) {
+			System.out.println("["+indice+"] "+auxCementerio+" - Horarios disponibles "+ auxCementerio.getHorarioEventos().size());
+		}
+		System.out.print("Indique el índice del cementerio: ");
+		indice=scanner.nextInt();
+		//Validación 
+		while(indice<1 || indice>cementerios.size()) {
+			System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+			indice=scanner.nextInt();
+			}
+		
+		cementerio=cementerios.get(indice-1);
 		
 		
 		
@@ -292,7 +311,7 @@ public class Menú {
 		fumita.agregarCliente(a1);
 		
 		//Objetos crematorio-cementerio
-		Crematorio crematorio = new Crematorio ("crematorio","0054",35,null,"oro", null,funita); 
+		Crematorio crematorio = new Crematorio ("crematorio","0054",100,null,"oro", null,funita); 
 		Crematorio creno = new Crematorio ("creno","0089",78,null,"oro", null,fumita); 
 		Crematorio cremita = new Crematorio ("cremita","0098",78,null,"oro", null,fulanita); 
 		

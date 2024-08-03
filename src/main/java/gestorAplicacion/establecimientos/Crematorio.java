@@ -19,7 +19,9 @@ public class Crematorio extends Establecimiento{
 		
 	}
 	
-	public ArrayList<Cementerio> cementeriodisponible(LocalTime horaFin, Cliente cliente){
+	public ArrayList<Cementerio> cementeriodisponible(Cliente cliente){
+		
+		LocalTime horaFin =getIglesia().duracionEvento(getHoraEvento());
 		
 		ArrayList<Establecimiento> cementerios=getFuneraria().buscarCementerios("cenizas", cliente);
 		ArrayList<Cementerio> cementeriosDisponibles=new ArrayList<Cementerio>(); 
