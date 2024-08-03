@@ -1,5 +1,6 @@
 package gestorAplicacion.establecimientos;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 
 
@@ -78,6 +79,25 @@ public class Funeraria extends Establecimiento{
 		return disponible;
 			
 	}
+	
+	public ArrayList<Empleado> buscarEmpleados(LocalTime jornada2,String cargo){
+		
+		String jornada;
+		if(jornada2.getHour()<12) {
+			jornada="mañana";
+		}else if(jornada2.getHour()<19) {
+			jornada="tarde";
+		}else {
+			jornada="noche";
+		}
+		
+		return this.buscarEmpleados(jornada, cargo);
+	}
+	
+	
+	
+	
+	
 	
 	//busca al cliente por funeraria y por tipo de Cementerio
 	public ArrayList<Cliente> buscarCliente(String tipoCementerio, String adultoNiño){

@@ -1,6 +1,8 @@
 package uiMain;
 
 import java.util.Scanner;
+
+import java.time.LocalTime;
 import java.util.ArrayList;
 import gestorAplicacion.establecimientos.*;
 import gestorAplicacion.financiero.CuentaBancaria;
@@ -123,6 +125,8 @@ public class Menú {
 				break;
 		}
 		
+	
+		
 		//Disponibilidad en el crematorio
 		
 		//Crematorios que coincidan con la capacidad de acompañantes del cliente y con la afiliación del cliente
@@ -139,35 +143,44 @@ public class Menú {
 		indice=scanner.nextInt();
 		
 		//Validación 
-		while(indice<1 || indice>crematorios.size()-1) {
+		while(indice<1 || indice>crematorios.size()) {
 			System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
 			indice=scanner.nextInt();
 		}
 		
 		crematorio=(Crematorio)crematorios.get(indice-1);
 		
-		//Se debe establecer el empleado del crematorio
-		
-		System.out.print("Las jornadas disponibles son: ");
-		
-		//Se escoge empleado por jornada
-		String[] jornadas = {"Mañana","Tarde","Noche"};
-		
-		for(int i=0;i<3;i++) {
-			System.out.println("["+(i+1)+"] "+jornadas[i]);
+		//Establecer horario crematorio
+		System.out.print("Horarios disponibles del crematorio:");
+		//Si no hay horarios en el crematorio se establecerán 3 nuevos horarios 
+		if(crematorio.getHorarioEventos().size()==0) {
+			crematorio.generarHoras();
 		}
 		
-		System.out.print("Ingrese el índice de la jornada deseada: ");
+		indice=1;
+		for(LocalTime hora: crematorio.getHorarioEventos()) {
+			String indicador;
+			
+			if(hora.getHour()>12) {
+				indicador="Pm";
+			}else {indicador = "Am";}
+			
+			System.out.println("["+indice+"] "+hora+" "+indicador);
+			indice++;
+		}
+		System.out.print("Ingrese el índice para escoger el horario: ");
 		indice=scanner.nextInt();
 		
-		//Validación 
-		while(indice<1 || indice>3) {
+		//Validación
+		while(indice<1 || indice>crematorio.getHorarioEventos().size()) {
 			System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
 			indice=scanner.nextInt();
 			}
-		//Este método devuelve todos los empleados con atributo cargo cremador, con el atributo de jornada adecuado y que tengan su stributo disponible como true
-		ArrayList<Empleado> empleados = funeraria.buscarEmpleados("cremador", jornadas[indice-1]);
 		
+		//Se debe establecer el empleado del crematorio y se da como parámetro la hora escogida
+		ArrayList<Empleado> empleados =funeraria.buscarEmpleados(crematorio.getHorarioEventos().get(indice-1), "cremador");
+		
+		//Se escoge al empleado que cumpla con el atributo de cargo cremador y la jornada específica según la hora seleccionada
 		System.out.println("Empleados disponibles en la jornada seleccionada");
 		indice=1;
 		for (Empleado auxEmpleado:empleados) {
@@ -178,16 +191,40 @@ public class Menú {
 		indice=scanner.nextInt();
 		
 		//Validación 
-		while(indice<1 || indice>empleados.size()-1) {
+		while(indice<1 || indice>empleados.size()) {
 			System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
 			indice=scanner.nextInt();
 			}
 		
 		Empleado empleadoCrematorio=empleados.get(indice-1);
 		
-		if(cliente.getCC()==0) {
-			
+		//Establecer iglesia para determinar religion del cliente 
+		
+		System.out.println("Seleccione la religión con la que se va a realizar la ceremonia del cliente");
+		
+		//Iglesias disponibles
+		ArrayList<Iglesia> iglesias = null;
+		
+		for(Iglesia iglesia:Iglesia.values()) {
+			indice=1;
+			//Se imprimen y añaden a la lista solo las iglesias que permiten la cremación como acto final de la vida
+			if (iglesia.getCremacion()) {
+				iglesias.add(iglesia);
+				System.out.println("["+indice+"] "+iglesia);
+				indice++;
+			}
 		}
+		
+		indice=scanner.nextInt();
+		//Validación 
+		while(indice<1 || indice>iglesias.size()) {
+			System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+			indice=scanner.nextInt();
+			}
+		
+		//Iglesia o religión escogida
+		Iglesia iglesia=iglesias.get(indice-1);
+		
 		
 		
 		

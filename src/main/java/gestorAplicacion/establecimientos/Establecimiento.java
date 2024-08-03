@@ -1,6 +1,7 @@
 package gestorAplicacion.establecimientos;
 
 import java.util.ArrayList;
+
 import java.time.LocalTime;
 import java.util.Random;
 
@@ -235,6 +236,8 @@ public class Establecimiento {
     public void agregarEmpleado(Empleado empleado) {
         this.empleados.add(empleado);
     }
-	
+	public ArrayList<LocalTime> getHorarioEventos(){
+		return horarioEventos;
+	}
 
 }

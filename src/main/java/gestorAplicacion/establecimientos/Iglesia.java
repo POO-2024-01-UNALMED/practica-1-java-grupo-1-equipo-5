@@ -1,5 +1,7 @@
 package gestorAplicacion.establecimientos;
 
+import java.time.LocalTime;
+
 public enum Iglesia {
 	
 	HINDUISMO("Kamakhya Temple",7,true,4),
@@ -12,15 +14,31 @@ public enum Iglesia {
 	private String nombre;
 	private int sillas;
 	private boolean cremacion;
-	private int duracionCeremonia;
+	private int duracionCremacion;
 	
 	//Constructor 
-	private Iglesia(String nombre, int sillas, boolean cremacion,int duracionCeremonia) {
+	private Iglesia(String nombre, int sillas, boolean cremacion,int duracionCremacion) {
 		this.nombre=nombre;
 		this.sillas=sillas;
 		this.cremacion=cremacion;
-		this.duracionCeremonia=duracionCeremonia;
+		this.duracionCremacion=duracionCremacion;
 		
+	}
+	
+	public int getDuracionCremacion() {
+		return duracionCremacion;
+	}
+	
+	public LocalTime duracionEvento(LocalTime horaInicio) {
+		
+		LocalTime horaFinCremacion = horaInicio.plusHours(duracionCremacion);
+		
+		return horaFinCremacion;
+		
+	}
+	
+	public boolean getCremacion() {
+		return cremacion;
 	}
 
 	

@@ -1,6 +1,7 @@
 package uiMain;
 
 import gestorAplicacion.financiero.CuentaBancaria;
+import java.time.LocalTime;
 import gestorAplicacion.personas.*;
 import gestorAplicacion.establecimientos.*;
 import java.util.ArrayList;
@@ -46,7 +47,10 @@ public class pruebaPersonas {
 	
 	//buscar cliente de la clase establecimiento
 	
-	
+	 LocalTime horaGenerada = LocalTime.of(23, 55);
+	 LocalTime horaGenerada2 = LocalTime.of(23, 54);
+	 
+	 System.out.print(horaGenerada.isBefore(horaGenerada2));
 		
 	}
 	
