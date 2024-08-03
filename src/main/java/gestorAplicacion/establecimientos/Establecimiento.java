@@ -23,9 +23,12 @@ public class Establecimiento {
 	private ArrayList<Empleado> empleados=new ArrayList<Empleado>();
 	private ArrayList<Vehiculo> Vehiculos=new ArrayList<Vehiculo>();
 	protected ArrayList<LocalTime> horarioEventos=new ArrayList<>();
-	
-	
+	private ArrayList<Producto> productos = new ArrayList<Producto>();
 	private ArrayList<Establecimiento> listadoProveedores=new ArrayList<Establecimiento>();
+	
+	
+	
+	
 	
 	
 	//Constructor a ser llamado desde las clases Crematorio y Cementerio
@@ -174,6 +177,16 @@ public class Establecimiento {
 	
 	}
 	
+	// Método para verificar si el establecimiento tiene un producto por nombre
+    public boolean tieneProducto(String nombreProducto) {
+        for (Producto producto : productos) {
+            if (producto.getNombre().equals(nombreProducto)) {
+                return true;
+            }
+        }
+        return false;
+    }
+	
 	
 	public String toString() {
 		return nombre;
@@ -239,5 +252,31 @@ public class Establecimiento {
 	public ArrayList<LocalTime> getHorarioEventos(){
 		return horarioEventos;
 	}
+
+	public ArrayList<Vehiculo> getVehiculos() {
+		return Vehiculos;
+	}
+
+	public void setVehiculos(ArrayList<Vehiculo> vehiculos) {
+		Vehiculos = vehiculos;
+	}
+
+	public ArrayList<Producto> getProductos() {
+		return productos;
+	}
+
+	public void setProductos(ArrayList<Producto> productos) {
+		this.productos = productos;
+	}
+
+	public ArrayList<Establecimiento> getListadoProveedores() {
+		return listadoProveedores;
+	}
+
+	public void setListadoProveedores(ArrayList<Establecimiento> listadoProveedores) {
+		this.listadoProveedores = listadoProveedores;
+	}
+	
+	
 
 }

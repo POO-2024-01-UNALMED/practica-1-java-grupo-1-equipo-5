@@ -9,6 +9,7 @@ public class Empleado extends Persona{
 	private String cargo; //Cargos disponibles sepulturero - cremador - padre
 	private double salario;
 	private int Calificacion=5;
+	private int Experiencia;
 	private boolean disponible= true;
 	
 	
@@ -19,6 +20,14 @@ public class Empleado extends Persona{
 		this.jornada=jornada;
 		this.cargo=cargo;
 		this.salario=salario;
+	}
+	
+	public Empleado(String nombre, long CC, int edad, String ubicacion, CuentaBancaria cuentaBancaria,String jornada, String cargo, double salario, int Experiencia) {
+		super(nombre, CC, edad, ubicacion, cuentaBancaria);
+		this.jornada=jornada;
+		this.cargo=cargo;
+		this.salario=salario;
+		this.Experiencia= Experiencia;
 	}
 	
 	//Metodos get y set
@@ -50,5 +59,21 @@ public class Empleado extends Persona{
     public void setDisponible(boolean disponible) {
         this.disponible = disponible;
     }
+
+	public int getCalificacion() {
+		return Calificacion;
+	}
+
+	public void setCalificacion(int calificacion) {
+		Calificacion = calificacion;
+	}
+
+	public int getExperiencia() {
+		return Experiencia;
+	}
+
+	public void setExperiencia(int experiencia) {
+		Experiencia = experiencia;
+	}
 	
 }

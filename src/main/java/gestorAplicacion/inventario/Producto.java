@@ -6,6 +6,7 @@ public class Producto {
     private String nombre;
     private double precio;
     private int cantidad;
+    private int cantidadVendida=0;
     
     
     
@@ -16,6 +17,12 @@ public class Producto {
 		this.precio = precio;
 		this.cantidad = cantidad;
 	}
+    
+ // Constructor que acepta nombre y cantidadVendida
+    public Producto(String nombre, int cantidadVendida) {
+        this.nombre = nombre;
+        this.cantidadVendida = cantidadVendida;
+    }
 
 	// Métodos getters y setters
     public String getNombre() {
@@ -41,4 +48,13 @@ public class Producto {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
+
+	public int getCantidadVendida() {
+		return cantidadVendida;
+	}
+
+	public void setCantidadVendida(int cantidadVendida) {
+		this.cantidadVendida = cantidadVendida;
+	}
+    
 }
