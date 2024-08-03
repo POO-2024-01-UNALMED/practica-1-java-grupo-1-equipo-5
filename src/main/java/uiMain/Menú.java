@@ -233,10 +233,10 @@ public class Menú {
 			if (auxIglesia.getCremacion()) {
 				iglesias.add(auxIglesia);
 				System.out.println("["+indice+"] "+auxIglesia);
-				indice++;
+				indice+=1;
 			}
 		}
-		
+		System.out.print("Indique el índice de la religión escogida: ");
 		indice=scanner.nextInt();
 		//Validación 
 		while(indice<1 || indice>iglesias.size()) {
