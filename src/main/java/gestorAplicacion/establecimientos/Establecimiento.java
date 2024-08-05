@@ -280,7 +280,7 @@ public class Establecimiento {
 	public Iglesia getIglesia() {
 		return iglesia;
 	}
-	public void setiglesia(Iglesia iglesia) {
+	public void setIglesia(Iglesia iglesia) {
 		this.iglesia=iglesia;
 	}
 

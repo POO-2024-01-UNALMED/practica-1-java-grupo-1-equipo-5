@@ -247,7 +247,7 @@ public class Menú {
 		iglesia=iglesias.get(indice-1);
 		
 		//Se asigna la iglesia en el atributo iglesia en el crematorio designado para trabajar con este atributo el resto de la funcionalidad
-		crematorio.setiglesia(iglesia);
+		crematorio.setIglesia(iglesia);
 		
 		//se crea el productoCrematorio para guardar registro de lo que se debe cobrar en la clase Factura respecto a crematorio 
 		Producto productoCrematorio= new Producto(crematorio);
@@ -276,6 +276,14 @@ public class Menú {
 			}
 		
 		cementerio=cementerios.get(indice-1);
+		//Se añade la iglesia seleccionada a cementerio
+		cementerio.setIglesia(iglesia);
+		
+		//Seleccionar Urna
+		
+		System.out.println("Seleccione el tipo de categoría para la urna del cliente");
+		System.out.prinln("[0] Se mostrarán las urnas disponibles de acuerdo a su peso ")
+		
 		
 		
 		

@@ -4,51 +4,49 @@ import gestorAplicacion.establecimientos.Cementerio;
 import gestorAplicacion.financiero.*;
 import gestorAplicacion.personas.Cliente;
 
-public class Urna extends Producto {
+public class Urna extends Inventario {
 
-	//private Factura factura;
-	private Cementerio cementerio;
-	private Cliente cliente;
-	private int tamaño;//"pequeño", "mediano", "grande"
-	private int categoria;
-	private String tipo; // "fija" "ordinaria"
-	
+	private String tipo; // "fija" u "ordinaria" 
+
 	//Constructor
-	public Urna(String nombre, double precio, int cantidad, Cementerio cementerio, Cliente cliente, int tamaño,
-			int categoria, String tipo) {
-		super(nombre, precio, cantidad);
-		this.cementerio = cementerio;
-		this.cliente = cliente;
-		this.tamaño = tamaño;
-		this.categoria = categoria;
-		this.tipo = tipo;
-		cementerio.agregarUrnas(this); //Si el cementerio es de cenizas se agregarán urnas y si el cementerio es de cuerpos se agregarán tumbas
+	public Urna(Cementerio cementerio,double tamaño,int categoria,String tipo) {
+		super(cementerio,tamaño,categoria);
+		this.tipo=tipo;
+		if(cementerio.getTipo().equals("cenizas")) {
+			cementerio.agregarInventario(this);
+		}
+	}
+		
+		
+		public double determinarTamaño(double peso) {
+			//Se estima que se necesitan alrededor de 1 pulgada cúbica (aproximadamente 16.4 cm³) de espacio en la urna por cada libra (0.45 kg) del peso del cuerpo antes de la cremación.
+			//Se necesita calcular el volumen de acuerdo al peso y al tamaño base en cm^3
+			//El peso estará dado en kg 
+			
+			double tamañoBase=16.4;
+			double volumenNecesario=16.4*peso; //En centimetros cúbicos
+			
+			return volumenNecesario;	
+			
+		}
+		
+		public String getTipo() {
+			return tipo;
+		}
+		
+		
 	}
 	
 	
-	public void agregarCliente(Cliente cliente) {
-		this.cliente=cliente;
-		this.cementerio.getFuneraria().getClientes().add(cliente);
-		this.cementerio.getClientes().add(cliente);
-	}
+	
 
 	
 	
 	
 	
 	
-	//metodos get y set
-	
-	
-	
-	//public Factura getFactura() {
-		//return factura;
-	//}
-	//public void setFactura(Factura factura) {
-		//this.factura=factura;
-	//}
 	
 	
 	
 
-}
+
