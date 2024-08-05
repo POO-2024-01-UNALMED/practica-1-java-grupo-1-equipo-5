@@ -6,17 +6,32 @@ import gestorAplicacion.personas.Persona;
 import gestorAplicacion.inventario.*;
 
 public class CuentaBancaria {
-	private Banco Banco;
+	private String banco;
+	private double bolsilloTrabajadores;
+	private double bolsilloInventario;
+	private double bolsilloTransporte;
+	private double bolsilloEstablecimientos;
 	private double saldo;
 	private long numeroCuenta;
 	private String titular;
 	
-	public CuentaBancaria(long numeroCuenta, String titular, double saldoInicial, Banco banco) {
+	
+	public CuentaBancaria(long numeroCuenta, String titular, double saldoInicial, String banco) {
         this.numeroCuenta = numeroCuenta;
         this.titular = titular;
         this.saldo = saldoInicial;
-        this.Banco = banco;
+        this.banco = banco;
     }
+	
+	public CuentaBancaria(long numeroCuenta, String titular, double bolsilloTrabajadores, double bolsilloInventario, double bolsilloTransporte, double bolsilloEstablecimientos, String banco) {
+        this.numeroCuenta = numeroCuenta;
+        this.titular = titular;
+        this.bolsilloTrabajadores = bolsilloTrabajadores;
+        this.bolsilloTransporte = bolsilloTransporte;
+        this.bolsilloInventario = bolsilloInventario;
+        this.bolsilloEstablecimientos = bolsilloEstablecimientos;
+        this.banco = banco;
+	}
     public void depositar(double cantidad) {
         if (cantidad > 0) {
             saldo += cantidad;
@@ -33,17 +48,37 @@ public class CuentaBancaria {
 }
     
     public void transaccion(double valor, CuentaBancaria cuentaAhorros) {
-    	double saldo = this.saldo - valor;
-    	setSaldo(saldo);
+    	
+    	if(this.getBanco() == cuentaAhorros.getBanco()) {
+    		double saldo = this.saldo - valor;
+    		setSaldo(saldo);
+    	}
+    	else {
+    		
+    		String Nbanco = this.banco;
+    		Banco banco = Banco.valueOf(Nbanco);
+    		double cobroAdicional = banco.getCobroAdicional();
+    		double saldo = this.saldo -(valor + cobroAdicional);
+		    setSaldo(saldo);
+    		
+    	}
+    	
+    	
     	double saldoCuentaAhorros = cuentaAhorros.saldo + valor;
     	cuentaAhorros.setSaldo(saldoCuentaAhorros);
-        
+    	
+    	String Nbanco = this.banco;
+		Banco banco = Banco.valueOf(Nbanco);
+    	double porcentajeInteres = banco.getInteres();
+        double interes = cuentaAhorros.getSaldo() * porcentajeInteres;
+        double saldoFinal = cuentaAhorros.getSaldo() - interes;
+        cuentaAhorros.setSaldo(saldoFinal);
     }
-	public Banco getBanco() {
-		return Banco;
+	public String getBanco() {
+		return banco;
 	}
-	public void setBanco(Banco banco) {
-		this.Banco=banco;
+	public void setBanco(String banco) {
+		this.banco=banco;
 	}
 	public double getSaldo() {
 		return saldo;
@@ -56,5 +91,37 @@ public class CuentaBancaria {
 	}
 	public void setNumero(long numero) {
 		this.numeroCuenta=numero;
+	}
+	
+	public double getBolsilloTrabajadores() {
+		return this.bolsilloTrabajadores;
+	}
+	
+	public void setBolsilloTrabajadores(double bolsilloTrabajadores) {
+		this.bolsilloTrabajadores = bolsilloTrabajadores;
+	}
+	
+	public double getBolsilloInventario() {
+		return this.bolsilloInventario;
+	}
+	
+	public void setBolsilloInventario(double bolsilloInventario) {
+		this.bolsilloInventario = bolsilloInventario;
+	}
+	
+	public double getBolsilloTransporte() {
+		return this.bolsilloTransporte;
+	}
+	
+	public void setBolsilloTransporte(double bolsilloTransporte) {
+		this.bolsilloTransporte = bolsilloTransporte;
+	}
+	
+	public double getBolsilloEstablecimientos() {
+		return this.bolsilloEstablecimientos;
+	}
+	
+	public void setBolsilloEstablecimientos(double bolsilloEstablecimientos) {
+		this.bolsilloEstablecimientos = bolsilloEstablecimientos;
 	}
 }

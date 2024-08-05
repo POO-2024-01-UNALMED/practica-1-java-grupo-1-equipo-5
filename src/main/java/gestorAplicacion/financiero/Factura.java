@@ -19,6 +19,7 @@ public class Factura {
 	private double precioFinal;
 	private List<Producto> listaProductos;
 	private String Servicio ;
+	
 
 
 	private final double IVA=0.19;
@@ -155,6 +156,8 @@ public class Factura {
 	public void setServicio(String servicio) {
 		Servicio = servicio;
 	}
+	
+	
 	
 
 	
