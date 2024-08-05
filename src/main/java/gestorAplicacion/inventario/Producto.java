@@ -108,5 +108,13 @@ public class Producto {
 	public void setCantidadVendida(int cantidadVendida) {
 		this.cantidadVendida = cantidadVendida;
 	}
+	
+	public Establecimiento getEstablecimiento() {
+		return establecimiento;
+	}
+	
+	public void setEstablecimiento(Establecimiento establecimiento) {
+		this.establecimiento = establecimiento;
+	}
     
 }
