@@ -307,20 +307,55 @@ public class Menú {
 			System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
 			indice=scanner.nextInt();
 			}
-		
+		//Urna designada para asignar al cliente
 		Urna urna =(Urna)urnas.get(indice-1);
+		//Cliente agregado en la urna correspondiente
+		urna.agregarCliente(cliente);
 		
+		//Tipo de categoria para la urna
 		System.out.println("Seleccione el tipo de categoría para la urna del cliente");
-		System.out.println("[0] Se puede escoger un arreglo floral");
-		System.out.println("[1] Se pueden escoger un arreglo floral y material para la Urna");
-		System.out.println("[2] Se pueden escoger dos arreglos florales y material para la Urna");
+		System.out.println("[0] Se puede escoger dos arreglo floral");
+		System.out.println("[1] Se pueden escoger cuatro arreglo floral y material para la Urna");
+		System.out.println("[2] Se pueden escoger cuatro arreglos florales y material para la Urna");
 		
 		int categoria =scanner.nextInt();
+		urna.setCategoria(categoria);
 		
 		while(categoria<0 || categoria>2) {
 			System.out.println("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
 			categoria=scanner.nextInt();
 		}
+		//Se genera la cantidad de adornos según corresponda 
+		urna.generarAdornos("flores");
+		urna.generarAdornos("material");
+		
+		System.out.println("Seleccione las flores que adornarán la urna");
+		
+		String [] flores = {"Rosas", "Lirios", "Claveles", "Orquídeas", "Peonías"};
+		
+		int numero=0;
+		indice=1;
+		if(categoria==0) {
+			numero=2;
+		}else {numero=4;}
+		while(numero>0) {
+			for(String flor:flores) {
+				System.out.print("["+indice+"] "+flor+" cantidad disponible: "+urna.contarAdorno(flor, "flores"));
+				indice+=1;
+			}
+			System.out.println("Indique el índice de las flores que quiere agregar: ");
+			indice=scanner.nextInt();
+			//Validación
+			while(indice<1 || indice>flores.length) {
+				System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+				indice=scanner.nextInt();
+				}
+			
+			urna.eliminarAdorno(flores[indice-1], "flores");
+			
+			numero-=1;
+		}
+		
 		
 		
 		

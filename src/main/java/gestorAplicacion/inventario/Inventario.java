@@ -1,6 +1,7 @@
 package gestorAplicacion.inventario;
 
 import java.util.ArrayList;
+
 import java.util.Collections;
 
 import gestorAplicacion.establecimientos.Cementerio;
@@ -14,7 +15,7 @@ public abstract class Inventario {
 	private int categoria;
 	
 	private ArrayList<String> flores = new ArrayList<String>();
-	
+	private ArrayList<String> material = new ArrayList<String>();
 	
 	
 	//Constructor
@@ -41,6 +42,20 @@ public abstract class Inventario {
 		this.tamaño=determinarTamaño(tamaño);
 	}
 	
+	public int contarAdorno(String adorno,String floresMaterial) {
+		int conteo=0;
+		if(floresMaterial.equals("flores")) {
+			 conteo = Collections.frequency(flores, adorno);
+		}else{conteo = Collections.frequency(material, adorno);}
+		
+		return conteo;
+	}
+	
+	public void eliminarAdorno(String adorno, String floresMaterial) {
+		if(floresMaterial.equals("flores")) {
+			flores.remove(adorno);
+		}else {material.remove(adorno);} 
+	}
 	
 	public Cliente getCliente() {
 		return cliente;
@@ -61,6 +76,13 @@ public abstract class Inventario {
 	}
 	public void setFlores(ArrayList<String> flores){
 		this.flores=flores;
+	}
+	
+	public ArrayList<String> getMaterial(){
+		return material;
+	}
+	public void setMateriañ(ArrayList<String> material){
+		this.material=material;
 	}
 	
 	

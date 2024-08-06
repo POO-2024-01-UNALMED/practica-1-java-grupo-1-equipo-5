@@ -28,22 +28,34 @@ public class Urna extends Inventario {
 			String[] floresUrnas={"Rosas", "Lirios", "Claveles", "Orquídeas", "Peonías"};
 			
 			String[] arregloAuxiliar;
+			boolean validacion=false;
+			
 			
 			if(tipoAdorno.equals("flores")) {
 				arregloAuxiliar=floresUrnas;
+				if(getFlores().size()==0) {validacion=true;}
+		
 			}else {
 				arregloAuxiliar=tipoMaterial();
+				if(getMaterial().size()==0) {validacion=true;}
 			}
 			
-			int numeroAleatorio = (int) (Math.random() * 4);
+			if(validacion) {
+				
+				int numeroAleatorio = (int) (Math.random() * 4);
+				
+				for(String arreglo:arregloAuxiliar) {
+					while(numeroAleatorio>0) {
+						if(tipoAdorno.equals("flores")) {
+							getFlores().add(arreglo);
+						}else {getMaterial().add(arreglo);}
 			
-			for(String arreglo:arregloAuxiliar) {
-				while(numeroAleatorio>0) {
-					getFlores().add(arreglo);
-				}
+					}//Fin while
+				}//Fin for
+			}//Fin if validacion
+			
 				
-			}
-				
+			
 		}
 	
 		@Override
