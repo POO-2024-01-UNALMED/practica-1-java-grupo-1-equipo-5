@@ -1,21 +1,27 @@
 package gestorAplicacion.inventario;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import gestorAplicacion.establecimientos.Cementerio;
 import gestorAplicacion.personas.Cliente;
 
 public abstract class Inventario {
+	private String nombre;
 	private Cementerio cementerio;
 	private Cliente cliente;
 	private double tamaño; //Número 
 	private int categoria;
 	
+	private ArrayList<String> flores = new ArrayList<String>();
+	
+	
+	
 	//Constructor
-	protected Inventario(Cementerio cementerio,double tamaño,int categoria) {
+	protected Inventario(String nombre,Cementerio cementerio,double tamaño) {
+		this.nombre=nombre;
 		this.cementerio = cementerio;
-		this.tamaño=tamaño;
-		this.categoria = categoria;
+		this.tamaño=determinarTamaño(tamaño);
 		 //Si el cementerio es de cenizas se agregarán Objetos de la clase Urna y si el cementerio es de cuerpos se agregarán objetos de la clase Tumba
 	}
 
@@ -26,9 +32,14 @@ public abstract class Inventario {
 	}
 	
 	
+	
+	public abstract void generarAdornos(String tipoAdorno);
+	
 	public abstract double determinarTamaño(double tamaño);
 	
-	//public abstract void setTamaño(double Tamaño);
+	public void setTamaño(double Tamaño) {
+		this.tamaño=determinarTamaño(tamaño);
+	}
 	
 	
 	public Cliente getCliente() {
@@ -37,6 +48,21 @@ public abstract class Inventario {
 	public int getCategoria() {
 		return categoria;
 	}
+	public void setCategoria(int categoria) {
+		this.categoria=categoria;
+	}
+	
+	public double getTamaño() {
+		return tamaño;
+	}
+	
+	public ArrayList<String> getFlores(){
+		return flores;
+	}
+	public void setFlores(ArrayList<String> flores){
+		this.flores=flores;
+	}
+	
 	
 	
 

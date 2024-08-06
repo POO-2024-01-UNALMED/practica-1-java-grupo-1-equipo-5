@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import gestorAplicacion.establecimientos.*;
 import gestorAplicacion.financiero.CuentaBancaria;
 import gestorAplicacion.personas.*;
+import gestorAplicacion.inventario.Inventario;
 import gestorAplicacion.inventario.Producto;
+import gestorAplicacion.inventario.Urna;
 
 public class Menú {
 	
@@ -281,9 +283,44 @@ public class Menú {
 		
 		//Seleccionar Urna
 		
-		System.out.println("Seleccione el tipo de categoría para la urna del cliente");
-		System.out.prinln("[0] Se mostrarán las urnas disponibles de acuerdo a su peso ")
+		System.out.println("Ingrese un número de 0 a 120 que indique el peso en kg del cliente: ");
+		double peso=scanner.nextDouble();
 		
+		while(peso<0 || peso>120) {
+			System.out.println("El número ingresado está fuera de rango. Ingrese nuevamente el peso en kg: ");
+			peso=scanner.nextDouble();
+		}
+		
+		ArrayList<Inventario> urnas =cementerio.disponibilidadInventario("urna", peso);
+		
+		System.out.println("Escoja la urna de su preferencia: ");
+		indice=1;
+		for(Inventario auxUrna:urnas) {
+			System.out.println("["+indice+"] "+auxUrna);
+			indice+=1;
+		}
+		
+		System.out.print("Indique el índice de la Urna: ");
+		indice=scanner.nextInt();
+		//Validación 
+		while(indice<1 || indice>cementerios.size()) {
+			System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+			indice=scanner.nextInt();
+			}
+		
+		Urna urna =(Urna)urnas.get(indice-1);
+		
+		System.out.println("Seleccione el tipo de categoría para la urna del cliente");
+		System.out.println("[0] Se puede escoger un arreglo floral");
+		System.out.println("[1] Se pueden escoger un arreglo floral y material para la Urna");
+		System.out.println("[2] Se pueden escoger dos arreglos florales y material para la Urna");
+		
+		int categoria =scanner.nextInt();
+		
+		while(categoria<0 || categoria>2) {
+			System.out.println("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+			categoria=scanner.nextInt();
+		}
 		
 		
 		

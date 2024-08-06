@@ -42,7 +42,7 @@ public class Cementerio extends Establecimiento {
 	}
 	
 	//Recibe como parámetro un String "urna" o "tumba"
-	public ArrayList<Inventario> disponibilidadInventario(String urnaTumba, int categoria){
+	public ArrayList<Inventario> disponibilidadInventario(String urnaTumba, double tamaño){
 		
 		ArrayList<Inventario> inventarioDisponible=new ArrayList<Inventario>();
 		ArrayList<Inventario> auxInventario = new ArrayList<Inventario>();
@@ -54,7 +54,7 @@ public class Cementerio extends Establecimiento {
 		}
 		
 		for(Inventario auxUrnaTumba: auxInventario) {
-			if (auxUrnaTumba.getCliente()==null & auxUrnaTumba.getCategoria()==categoria){
+			if (auxUrnaTumba.getCliente()==null & auxUrnaTumba.getTamaño()>auxUrnaTumba.determinarTamaño(tamaño)){
 				inventarioDisponible.add(auxUrnaTumba);
 			}//Fin if
 		}//Fin for 
