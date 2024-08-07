@@ -205,6 +205,7 @@ public class Establecimiento {
 	}
 	
 	
+	
 
 	
 	//metodos get y set

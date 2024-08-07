@@ -16,47 +16,46 @@ public class Crematorio extends Establecimiento{
 	//Constructor
 	public Crematorio(String nombre, String ubicacion, int capacidad, CuentaBancaria cuentaCorriente,String afiliacion, Empleado empleado,Funeraria funeraria) {
 		super(nombre,ubicacion,capacidad,cuentaCorriente,afiliacion,empleado,funeraria);
-		
-	}
+		}
 	
-	public ArrayList<Cementerio> cementeriodisponible(Cliente cliente){
+	public void cambiarHorarios(ArrayList<Establecimiento> cementerios){
 		
 		LocalTime horaFin =getIglesia().duracionEvento(getHoraEvento());
 		
-		ArrayList<Establecimiento> cementerios=getFuneraria().buscarCementerios("cenizas", cliente);
-		ArrayList<Cementerio> cementeriosDisponibles=new ArrayList<Cementerio>(); 
-		
 		for(Establecimiento auxCementerio:cementerios) {
+			
+			int randomNumber = (int)(Math.random() * (3)) + 1;
 			Cementerio cementerio =(Cementerio) auxCementerio; 
-			if(cementerio.horarioEventos.size()==0){
-				cementerio.generarHoras();
-			}
 			
-			for(LocalTime hora: cementerio.horarioEventos) {
-				if(!(horaFin.isBefore(hora))){
-					cementerio.horarioEventos.remove(hora);
-				}//Fin if
-			}//fon for
-			
-			if(cementerio.horarioEventos.size()>0) {
-				cementeriosDisponibles.add(cementerio);
-			}
-			
-		}//Fin for principal
+			while(randomNumber>0) {
+				int min = horaFin.getHour();
+				int max = 23;
+				// Genera un número aleatorio entre min (inclusive) y max (inclusive)
+				int horas = (int)(Math.random() * (max - min + 1)) + min;
+				int minutos = (int)(Math.random() * (60));
+
+				LocalTime horaGenerada = LocalTime.of(horas, minutos);
+	            auxCementerio.horarioEventos.add(horaGenerada);
 		
-		return cementeriosDisponibles;
+			}
+		
+	
+		
+		
+	}
+		
 		
 	}
 	
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+

@@ -164,6 +164,9 @@ public ArrayList<Vehiculo> asignarVehiculo(String clienteFamiliar) {
 	public void agregarEmpleado(Empleado empleado) {
 		this.empleados.add(empleado);
 	}
+	public void eliminarCliente(Cliente cliente) {
+		clientes.remove(cliente);
+	}
 	
 public void cobroServiciosClientes(Cliente cliente) {
 		
