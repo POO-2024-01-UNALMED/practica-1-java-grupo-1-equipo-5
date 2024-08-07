@@ -18,16 +18,15 @@ public abstract class Inventario {
 	private ArrayList<String> inventarioMaterial = new ArrayList<String>();
 	
 	private ArrayList<String> floresSeleccionadas;
-	private ArrayList<String> materialSeleccionado;
+	private String materialSeleccionado= "por defecto";
 	
 	static public String [] flores = {"Rosas", "Lirios", "Claveles", "Orquídeas", "Peonías"};
-	
+	static public String [] material = {"Madera", "Metal", "Cerámica", "Vidrio", "Bambu","Piedra"};
 	//Constructor
-	protected Inventario(String nombre,Cementerio cementerio,double tamaño,int categoria) {
+	protected Inventario(String nombre,Cementerio cementerio,double tamaño) {
 		this.nombre=nombre;
 		this.cementerio = cementerio;
 		this.tamaño=determinarTamaño(tamaño);
-		this.categoria=categoria;
 		 //Si el cementerio es de cenizas se agregarán Objetos de la clase Urna y si el cementerio es de cuerpos se agregarán objetos de la clase Tumba
 	}
 
@@ -56,13 +55,17 @@ public abstract class Inventario {
 		return conteo;
 	}
 	
-	public void agregarFlores(String adorno, String floresMaterial) {
+	public void agregarAdorno(String adorno, String floresMaterial) {
 		if(floresMaterial.equals("flores")) {
 			floresSeleccionadas.add(adorno);
 			inventarioFlores.remove(adorno);
-		}else {inventarioMaterial.remove(adorno); materialSeleccionado.add(adorno);} 
+		}else {inventarioMaterial.remove(adorno); materialSeleccionado=adorno;} 
 	}
 	
+	@Override
+	public String toString() {
+		return nombre;
+	}
 	
 
 	
@@ -91,9 +94,24 @@ public abstract class Inventario {
 	public ArrayList<String> getMaterial(){
 		return inventarioMaterial;
 	}
-	public void setMateria(ArrayList<String> material){
+	public void setMaterial(ArrayList<String> material){
 		this.inventarioMaterial=material;
 	}
+	
+	public ArrayList<String> getFloresSeleccionadas(){
+		return floresSeleccionadas;
+	}
+	
+	public String getMaterialSeleccionado() {
+		return materialSeleccionado;
+	}
+	
+	public void setMaterialSeleccionado(String material){
+		this.materialSeleccionado=material;
+	}
+	
+
+	
 	
 	
 	

@@ -14,8 +14,8 @@ public class Urna extends Inventario {
 	private ArrayList<String> materialUrna;
 
 	//Constructor
-	public Urna(String nombre,Cementerio cementerio,double peso,String tipo, int categoria) {
-		super(nombre,cementerio,peso,categoria);
+	public Urna(String nombre,Cementerio cementerio,double peso,String tipo) {
+		super(nombre,cementerio,peso);
 		this.tipo=tipo;
 		if(cementerio.getTipo().equals("cenizas")) {
 			cementerio.agregarInventario(this);

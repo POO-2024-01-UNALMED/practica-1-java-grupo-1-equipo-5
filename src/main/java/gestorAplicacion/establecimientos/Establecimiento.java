@@ -177,7 +177,7 @@ public class Establecimiento {
 	        // Crear una instancia de LocalTime con la hora y minutos aleatorios
             LocalTime horaGenerada = LocalTime.of(horas, minutos);
             
-            horarioEventos.add(horaGenerada);
+            this.horarioEventos.add(horaGenerada);
 	            
 			}
 	
