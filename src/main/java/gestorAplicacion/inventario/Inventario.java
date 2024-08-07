@@ -14,15 +14,20 @@ public abstract class Inventario {
 	private double tamaño; //Número 
 	private int categoria;
 	
-	private ArrayList<String> flores = new ArrayList<String>();
-	private ArrayList<String> material = new ArrayList<String>();
+	private ArrayList<String> inventarioFlores = new ArrayList<String>();
+	private ArrayList<String> inventarioMaterial = new ArrayList<String>();
 	
+	private ArrayList<String> floresSeleccionadas;
+	private ArrayList<String> materialSeleccionado;
+	
+	static public String [] flores = {"Rosas", "Lirios", "Claveles", "Orquídeas", "Peonías"};
 	
 	//Constructor
-	protected Inventario(String nombre,Cementerio cementerio,double tamaño) {
+	protected Inventario(String nombre,Cementerio cementerio,double tamaño,int categoria) {
 		this.nombre=nombre;
 		this.cementerio = cementerio;
 		this.tamaño=determinarTamaño(tamaño);
+		this.categoria=categoria;
 		 //Si el cementerio es de cenizas se agregarán Objetos de la clase Urna y si el cementerio es de cuerpos se agregarán objetos de la clase Tumba
 	}
 
@@ -45,17 +50,22 @@ public abstract class Inventario {
 	public int contarAdorno(String adorno,String floresMaterial) {
 		int conteo=0;
 		if(floresMaterial.equals("flores")) {
-			 conteo = Collections.frequency(flores, adorno);
-		}else{conteo = Collections.frequency(material, adorno);}
+			 conteo = Collections.frequency(inventarioFlores, adorno);
+		}else{conteo = Collections.frequency(inventarioMaterial, adorno);}
 		
 		return conteo;
 	}
 	
-	public void eliminarAdorno(String adorno, String floresMaterial) {
+	public void agregarFlores(String adorno, String floresMaterial) {
 		if(floresMaterial.equals("flores")) {
-			flores.remove(adorno);
-		}else {material.remove(adorno);} 
+			floresSeleccionadas.add(adorno);
+			inventarioFlores.remove(adorno);
+		}else {inventarioMaterial.remove(adorno); materialSeleccionado.add(adorno);} 
 	}
+	
+	
+
+	
 	
 	public Cliente getCliente() {
 		return cliente;
@@ -72,17 +82,17 @@ public abstract class Inventario {
 	}
 	
 	public ArrayList<String> getFlores(){
-		return flores;
+		return inventarioFlores;
 	}
 	public void setFlores(ArrayList<String> flores){
-		this.flores=flores;
+		this.inventarioFlores=flores;
 	}
 	
 	public ArrayList<String> getMaterial(){
-		return material;
+		return inventarioMaterial;
 	}
-	public void setMateriañ(ArrayList<String> material){
-		this.material=material;
+	public void setMateria(ArrayList<String> material){
+		this.inventarioMaterial=material;
 	}
 	
 	

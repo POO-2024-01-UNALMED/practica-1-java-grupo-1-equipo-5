@@ -1,8 +1,9 @@
 package gestorAplicacion.inventario;
 
-import gestorAplicacion.establecimientos.Cementerio;
+import java.util.Random;
 import java.util.ArrayList;
 
+import gestorAplicacion.establecimientos.Cementerio;
 import gestorAplicacion.financiero.*;
 import gestorAplicacion.personas.Cliente;
 
@@ -13,8 +14,8 @@ public class Urna extends Inventario {
 	private ArrayList<String> materialUrna;
 
 	//Constructor
-	public Urna(String nombre,Cementerio cementerio,double peso,int categoria,String tipo) {
-		super(nombre,cementerio,peso);
+	public Urna(String nombre,Cementerio cementerio,double peso,String tipo, int categoria) {
+		super(nombre,cementerio,peso,categoria);
 		this.tipo=tipo;
 		if(cementerio.getTipo().equals("cenizas")) {
 			cementerio.agregarInventario(this);
@@ -25,7 +26,7 @@ public class Urna extends Inventario {
 		@Override
 		public void generarAdornos(String tipoAdorno){
 			
-			String[] floresUrnas={"Rosas", "Lirios", "Claveles", "Orquídeas", "Peonías"};
+			String[] floresUrnas=Inventario.flores;
 			
 			String[] arregloAuxiliar;
 			boolean validacion=false;
@@ -41,8 +42,8 @@ public class Urna extends Inventario {
 			}
 			
 			if(validacion) {
-				
-				int numeroAleatorio = (int) (Math.random() * 4);
+				 Random random = new Random();
+				int numeroAleatorio = random.nextInt(3);
 				
 				for(String arreglo:arregloAuxiliar) {
 					while(numeroAleatorio>0) {

@@ -314,8 +314,8 @@ public class Menú {
 		
 		//Tipo de categoria para la urna
 		System.out.println("Seleccione el tipo de categoría para la urna del cliente");
-		System.out.println("[0] Se puede escoger dos arreglo floral");
-		System.out.println("[1] Se pueden escoger cuatro arreglo floral y material para la Urna");
+		System.out.println("[0] Se puede escoger dos arreglos florales");
+		System.out.println("[1] Se pueden escoger cuatro arreglos floral y material para la Urna");
 		System.out.println("[2] Se pueden escoger cuatro arreglos florales y material para la Urna");
 		
 		int categoria =scanner.nextInt();
@@ -331,7 +331,7 @@ public class Menú {
 		
 		System.out.println("Seleccione las flores que adornarán la urna");
 		
-		String [] flores = {"Rosas", "Lirios", "Claveles", "Orquídeas", "Peonías"};
+		String [] flores = Inventario.flores;
 		
 		int numero=0;
 		indice=1;
@@ -351,7 +351,8 @@ public class Menú {
 				indice=scanner.nextInt();
 				}
 			
-			urna.eliminarAdorno(flores[indice-1], "flores");
+			urna.agregarFlores(flores[indice-1], "flores");
+			
 			
 			numero-=1;
 		}
