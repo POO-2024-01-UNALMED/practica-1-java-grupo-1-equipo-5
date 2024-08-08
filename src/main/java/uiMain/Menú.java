@@ -25,7 +25,6 @@ public class Menú {
 		Cliente cliente=null;
 		Crematorio crematorio=null;
 		Cementerio cementerio =null;
-		Empleado empleadoCrematorio=null;
 		Iglesia iglesia=null;
 		ArrayList<Producto> productos=new ArrayList<Producto>();
 		
@@ -181,15 +180,14 @@ public class Menú {
 				
 				//asignación de crematorio
 				crematorio=(Crematorio)crematorios.get(indice-1);
-				System.out.print("Crematorio "+crematorio);
+				
 			
 				
 				//Establecer horario crematorio
 				System.out.println("Horarios disponibles del crematorio:");
-				//Si no hay horarios en el crematorio se establecerán 3 nuevos horarios 
-				if(crematorio.getHorarioEventos().size()==0) {
-					crematorio.generarHoras();
-				}
+				//Se establecen 3 horarios de acuerdo a la jornada de los empleados con cargo "cremador"
+				crematorio.generarHoras();
+			
 				
 				indice=1;
 				for(LocalTime hora: crematorio.getHorarioEventos()) {
@@ -220,7 +218,6 @@ public class Menú {
 				//Se debe establecer el empleado del crematorio y se da como parámetro la hora escogida
 				ArrayList<Empleado> empleados =funeraria.buscarEmpleados(crematorio.getHoraEvento(), "cremador");
 				
-
 				
 				//Se escoge al empleado que cumpla con el atributo de cargo cremador y la jornada específica según la hora seleccionada
 				System.out.println("Empleados disponibles en la jornada seleccionada");
@@ -237,12 +234,13 @@ public class Menú {
 					System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
 					indice=scanner.nextInt();
 					}
-				//asignar empleado
-				empleadoCrematorio=empleados.get(indice-1);
 				
 				//Asignar Empleado en crematorio
-				crematorio.setEmpleado(empleadoCrematorio);
+				crematorio.setEmpleado(empleados.get(indice-1));
 				
+				//Salto
+				System.out.println();
+			
 				
 				//Establecer iglesia para determinar religion del cliente 
 				
@@ -292,7 +290,7 @@ public class Menú {
 				ArrayList<Establecimiento> cementerios =funeraria.buscarCementerios("cenizas", cliente);
 				//Se establecen los horarios del cementerio de acuerdo a la finalización de ceremonia de cremación
 				crematorio.cambiarHorarios(cementerios);
-				System.out.println(funeraria.buscarCementerios("cenizas", cliente));
+				
 				indice=1;
 				//Se imprimen los cementerios
 				System.out.println("Cementerios disponibles");
@@ -337,9 +335,18 @@ public class Menú {
 				//Se elimina esa hora del ArrayList de HorarioEvento 
 				crematorio.eliminarHorario(cementerio.getHorarioEventos().get(indice-1));
 				
+				//Salto
+				System.out.println();
+				
 				//Seleccionar Urna
+				
+				System.out.println("El tipo de urnas disponibles para su religión son: ");
+				for(String tipo:crematorio.getIglesia().getTipoUrnas()) {
+					System.out.println(tipo);
+				}
+				
 				//Se necesita el peso del cliente para asignar la urna
-				System.out.println("Ingrese un número de 0 a 120 que indique el peso en kg del cliente: ");
+				System.out.print("Ingrese un número de 0 a 120 que indique el peso en kg del cliente: ");
 				double peso=scanner.nextDouble();
 				//Validación
 				while(peso<0 || peso>120) {
@@ -348,25 +355,41 @@ public class Menú {
 				}
 				//Se filtran las urnas para que correspondan con el peso del cliente
 				ArrayList<Inventario> urnas =cementerio.disponibilidadInventario("urna", peso);
-				//Se imprimen las urnas disponibles
-				System.out.println("Escoja la urna de su preferencia: ");
-				indice=1;
-				for(Inventario auxUrna:urnas) {
-					System.out.println("["+indice+"] "+auxUrna);
-					indice+=1;
+				
+				Urna urna=null;
+				
+				if(urnas.size()==0) {
+					System.out.println("No se encontraron urnas disponibles para el cliente, se deberá añadir una provisional");
+					String tipo=cementerio.getIglesia().getTipoUrnas()[0];
+					urna=new Urna("Urna provisional",cementerio,peso,tipo);
+					System.out.println(urna+ " añadida");
+					
+					//Cliente agregado en la urna correspondiente
+					urna.agregarCliente(cliente);
+					
+				}else {
+					//Se imprimen las urnas disponibles
+					System.out.println("Escoja la urna de su preferencia: ");
+					indice=1;
+					for(Inventario auxUrna:urnas) {
+						System.out.println("["+indice+"] "+auxUrna);
+						indice+=1;
+					}
+					
+					System.out.print("Indique el índice de la Urna: ");
+					indice=scanner.nextInt();
+					//Validación 
+					while(indice<1 || indice>urnas.size()) {
+						System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+						indice=scanner.nextInt();
+						}
+					//Urna designada para asignar al cliente
+					urna =(Urna)urnas.get(indice-1);
+					//Cliente agregado en la urna correspondiente
+					urna.agregarCliente(cliente);
+					
 				}
 				
-				System.out.print("Indique el índice de la Urna: ");
-				indice=scanner.nextInt();
-				//Validación 
-				while(indice<1 || indice>cementerios.size()) {
-					System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
-					indice=scanner.nextInt();
-					}
-				//Urna designada para asignar al cliente
-				Urna urna =(Urna)urnas.get(indice-1);
-				//Cliente agregado en la urna correspondiente
-				urna.agregarCliente(cliente);
 				
 				//Tipo de categoria para la urna
 				System.out.println("Seleccione el tipo de categoría para la urna del cliente");
@@ -374,13 +397,16 @@ public class Menú {
 				System.out.println("[1] Se pueden escoger dos arreglos florales y material para la Urna");
 				System.out.println("[2] Se pueden escoger cuatro arreglos florales y material para la Urna");
 				
+				System.out.print("Indique el índice de la categoría deseada: ");
 				int categoria =scanner.nextInt();
-				urna.setCategoria(categoria);
+				
 				
 				while(categoria<0 || categoria>2) {
 					System.out.println("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
 					categoria=scanner.nextInt();
 				}
+				//Se agrega la categoría de la urna
+				urna.setCategoria(categoria);
 				//Se genera la cantidad de adornos según corresponda 
 				urna.generarAdornos("flores");
 				urna.generarAdornos("material");
@@ -393,18 +419,19 @@ public class Menú {
 				System.out.println("Seleccione las flores que adornarán la urna");
 				
 				int numero=0;
-				indice=1;
+		
 				//Si la categoria es 0 solo se podrán escoger 2 flores del arreglo
 				if(categoria==0) {
 					numero=2;
 				}else {numero=4; urna.setMaterialSeleccionado(null);} //Se cambia el materialSeleccionado con valor null para poder agregar uno
 				while(numero>0) {
+					indice=1;
 					for(String flor:flores) {
 						//Se cuenta la cantidad que hay de cada una de las flores
-						System.out.print("["+indice+"] "+flor+" cantidad disponible: "+urna.contarAdorno(flor, "flores"));
+						System.out.println("["+indice+"] "+flor+" cantidad disponible: "+urna.contarAdorno(flor, "flores"));
 						indice+=1;
 					}
-					System.out.println("Indique el índice de las flores que quiere agregar: ");
+					System.out.print("Indique el índice de las flores que quiere agregar: ");
 					indice=scanner.nextInt();
 					//Validación
 					while(indice<1 || indice>flores.length) {
@@ -415,6 +442,9 @@ public class Menú {
 					urna.agregarAdorno(flores[indice-1], "flores");
 					
 					numero-=1;
+					
+					//Salto
+					System.out.println();
 				}
 				
 				indice=1;
@@ -422,10 +452,14 @@ public class Menú {
 					System.out.println("Indique el material de su preferencia");
 					for(String material:materiales) {
 						//Se cuenta la cantidad que hay de cada uno de los materiales disponibles en Inventario.material
-						System.out.print("["+indice+"] "+material+" cantidad disponible: "+urna.contarAdorno(material, "material"));
+						System.out.println("["+indice+"] "+material+" cantidad disponible: "+urna.contarAdorno(material, "material"));
 						indice+=1;
 					}
-					while(indice<1 || indice>flores.length) {
+					
+					System.out.print("Indique el índice del material que quiere agregar: ");
+					indice=scanner.nextInt();
+					
+					while(indice<1 || indice>materiales.length) {
 						System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
 						indice=scanner.nextInt();
 						}
@@ -474,6 +508,8 @@ public class Menú {
 				
 	}//Fin while validación existencia de crematorio
 			
+		//Salto
+		System.out.println();
 			
 			
 		}//Fin funcionalidadCrematorio

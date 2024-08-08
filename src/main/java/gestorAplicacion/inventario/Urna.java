@@ -31,7 +31,6 @@ public class Urna extends Inventario {
 			String[] arregloAuxiliar;
 			boolean validacion=false;
 			
-			
 			if(tipoAdorno.equals("flores")) {
 				arregloAuxiliar=floresUrnas;
 				if(getFlores().size()==0) {validacion=true;}
@@ -43,14 +42,15 @@ public class Urna extends Inventario {
 			
 			if(validacion) {
 				 Random random = new Random();
-				int numeroAleatorio = random.nextInt(3);
+				
 				
 				for(String arreglo:arregloAuxiliar) {
+					int numeroAleatorio = random.nextInt(2)+1;
 					while(numeroAleatorio>0) {
 						if(tipoAdorno.equals("flores")) {
 							getFlores().add(arreglo);
 						}else {getMaterial().add(arreglo);}
-			
+						numeroAleatorio-=1;
 					}//Fin while
 				}//Fin for
 			}//Fin if validacion
@@ -83,6 +83,12 @@ public class Urna extends Inventario {
 			return material;
 			
 		} 
+		
+		
+		@Override
+		public String toString() {
+			return getNombre()+" de tipo "+tipo;
+		}
 		
 		public String getTipo() {
 			return tipo;

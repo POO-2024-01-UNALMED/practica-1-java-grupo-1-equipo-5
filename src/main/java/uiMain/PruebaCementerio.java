@@ -7,6 +7,7 @@ import gestorAplicacion.establecimientos.Funeraria;
 import gestorAplicacion.establecimientos.Iglesia;
 import gestorAplicacion.inventario.Urna;
 import gestorAplicacion.personas.Cliente;
+import gestorAplicacion.personas.Empleado;
 import gestorAplicacion.personas.Familiar;
 import gestorAplicacion.personas.Persona;
 
@@ -72,9 +73,20 @@ public class PruebaCementerio {
 		cemi.setIglesia(Iglesia.TAOISMO);
 		System.out.println(cemi.disponibilidadInventario("urna", 50));
 		
-		urna1.generarAdornos("flores");
+		urna1.generarAdornos("material");
 		
-		System.out.println("ff"+urna1.getFlores());
+		System.out.println("material"+urna1.getMaterial());
+		
+		Empleado empleado1 = new Empleado("Alberto",12345,"3456",null,"noche","cremador",900000);
+		Empleado empleado2 = new Empleado("Maria",12345,"3456",null,"mañana","cremador",900000);
+		Empleado empleado3 = new Empleado("Anastasia",12345,"3456",null,"noche","cremador",900000);
+		
+		fulanita.agregarEmpleado(empleado3);
+		fulanita.agregarEmpleado(empleado2);
+		fulanita.agregarEmpleado(empleado1);
+		cremita.generarHoras();
+		
+		System.out.println(cremita.getHorarioEventos());
 		
 	}
 	

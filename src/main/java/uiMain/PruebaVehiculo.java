@@ -50,10 +50,10 @@ public class PruebaVehiculo {
 		//Prueba personas
 		
 		
-		CuentaBancaria cuenta= new CuentaBancaria(1234, "Ale", 10000, Banco.BANCO_BOGOTA);
+		//CuentaBancaria cuenta= new CuentaBancaria(1234, "Ale", 10000, Banco.BANCO_BOGOTA);
 		
-		Funeraria funi = new Funeraria("funi", cuenta, cuenta);
-		Cementerio cemi =new Cementerio("cemi", "1010", 56, cuenta,"oro", null,"cenizas",funi);
+		Funeraria funi = new Funeraria("funi", null, null);
+		Cementerio cemi =new Cementerio("cemi", "1010", 56, null,"oro", null,"cenizas",funi);
 		
 		Empleado empleado1 = new Empleado("Alberto",12345,"3456",null,"mañana","cremador",900000);
 		Empleado empleado2 = new Empleado("Maria",12345,"3456",null,"tarde","cremador",900000);
@@ -79,10 +79,10 @@ public class PruebaVehiculo {
 		
 		ArrayList<Persona> familiares = new ArrayList<Persona>();
 
-		Familiar fam1 =new Familiar("fam1", 123, 19, "0010", cuenta, "hermano", 18);
-		Familiar fam2 =new Familiar("fam2", 124, 20, "0020", cuenta, "hijo", 17);
-		Familiar fam3 =new Familiar("fam3", 125, 21, "1020", cuenta, "padre", 14);
-		Familiar fam4 =new Familiar("fam4", 126, 22, "2005", cuenta, "padre", 16);
+		Familiar fam1 =new Familiar("fam1", 123, 19, "0010", null, "hermano", 18);
+		Familiar fam2 =new Familiar("fam2", 124, 20, "0020", null, "hijo", 17);
+		Familiar fam3 =new Familiar("fam3", 125, 21, "1020", null, "padre", 14);
+		Familiar fam4 =new Familiar("fam4", 126, 22, "2005", null, "padre", 16);
 		
 		//familiares.add(fam1);
 		familiares.add(fam1);
@@ -90,7 +90,7 @@ public class PruebaVehiculo {
 		familiares.add(fam3);
 		familiares.add(fam4);
 		
-		Cliente cli1=new Cliente("cli1", 127, 19, cuenta,"oro", familiares);
+		Cliente cli1=new Cliente("cli1", 127, 19, null,"oro", familiares);
 		
 		Vehiculo veh1= new Vehiculo(TipoVehiculo.BERLINA, funi ,"xd", "azul", "XYZW");
 		Vehiculo veh2= new Vehiculo(TipoVehiculo.BUS, funi ,"xd", "azul", "XYZW");
@@ -110,6 +110,7 @@ public class PruebaVehiculo {
 		Vehiculo vehiculoCliente=vehiculosCliente.get(indiceCliente);
 		vehiculoCliente.agregarPasajero(cli1);	
 		
+		//Pasajeros
 		System.out.println(vehiculoCliente.getPasajeros());
 		
 		ArrayList<Persona> listaFamiliares = cli1.getFamiliares();

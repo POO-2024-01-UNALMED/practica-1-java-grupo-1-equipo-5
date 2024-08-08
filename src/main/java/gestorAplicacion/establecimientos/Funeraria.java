@@ -70,7 +70,7 @@ public class Funeraria extends Establecimiento{
 		
 		for(int i=0;i<empleados.size();i++) {
 			Empleado empleado=empleados.get(i);
-			if((empleado.getJornada()).equalsIgnoreCase(jornada) & (empleado.getCargo()).equals(cargo) & empleado.isDisponible()) {
+			if((empleado.getJornada()).equalsIgnoreCase(jornada) & (empleado.getCargo()).equals(cargo)) {
 				disponible.add(empleados.get(i));
 			}
 		
@@ -84,9 +84,9 @@ public class Funeraria extends Establecimiento{
 	public ArrayList<Empleado> buscarEmpleados(LocalTime horas,String cargo){
 		
 		String jornada;
-		if(horas.getHour()<12) {
+		if(horas.getHour()<=14 & horas.getHour()>=6 ) {
 			jornada="mañana";
-		}else if(horas.getHour()<19) {
+		}else if(horas.getHour()<=22 & horas.getHour()>=15) {
 			jornada="tarde";
 		}else {
 			jornada="noche";

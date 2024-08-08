@@ -17,7 +17,7 @@ public abstract class Inventario {
 	private ArrayList<String> inventarioFlores = new ArrayList<String>();
 	private ArrayList<String> inventarioMaterial = new ArrayList<String>();
 	
-	private ArrayList<String> floresSeleccionadas;
+	private ArrayList<String> floresSeleccionadas=new ArrayList<String>();
 	private String materialSeleccionado= "por defecto";
 	
 	static public String [] flores = {"Rosas", "Lirios", "Claveles", "Orquídeas", "Peonías"};
@@ -69,7 +69,9 @@ public abstract class Inventario {
 	
 
 	
-	
+	public String getNombre() {
+		return nombre;
+	}
 	public Cliente getCliente() {
 		return cliente;
 	}
