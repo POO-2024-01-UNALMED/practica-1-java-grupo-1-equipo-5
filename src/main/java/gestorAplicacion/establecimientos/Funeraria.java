@@ -16,6 +16,7 @@ public class Funeraria extends Establecimiento{
 	private ArrayList<Empleado> empleados=new ArrayList<Empleado>();
 	
 	private ArrayList<Factura> listadoFacturas=new ArrayList<Factura>();
+	private ArrayList<Factura> listadoFacturasPorPagar=new ArrayList<Factura>();
 	private ArrayList<Vehiculo> vehiculos=new ArrayList<Vehiculo>();
     
     
@@ -27,7 +28,10 @@ public class Funeraria extends Establecimiento{
 		super(nombre,cuentaCorriente);
 		this.cuentaAhorros=cuentaAhorros;
 		
+		
 	}
+	
+
 	
 	//Sirve para buscar establecimientos de tipo Cementerio o Crematorio que estén asociados a la funeraria y que concuerden con el atributo afiliacón y acompañantes del cliente 
 	public ArrayList<Establecimiento> buscarEstablecimientos(String tipoEstablecimiento,Cliente cliente){
@@ -176,7 +180,7 @@ public void cobroServiciosClientes(Cliente cliente) {
 			 
 			if(totalFactura <= cliente.getCuentaBancaria().getSaldo() && cliente.getEdad() >= 18) {
 				
-				cliente.getCuentaBancaria().transaccion(totalFactura, Funeraria.cuentaAhorros);
+				cliente.getCuentaBancaria().transaccionCuentaAhorros(totalFactura, Funeraria.cuentaAhorros);
 				((Cliente) cliente).getListadoFacturas().remove(factura);
 			}else {
 				for(Persona persona : ((Cliente) cliente).getFamiliares()) {
@@ -186,26 +190,26 @@ public void cobroServiciosClientes(Cliente cliente) {
 				        if (familiar.getParentesco() != null) {
 				            if("conyugue".equals(familiar.getParentesco()) && familiar.getEdad() >= 18){
 				            	if(totalFactura <= familiar.getCuentaBancaria().getSaldo()) {
-				            		familiar.getCuentaBancaria().transaccion(totalFactura, Funeraria.cuentaAhorros);
+				            		familiar.getCuentaBancaria().transaccionCuentaAhorros(totalFactura, Funeraria.cuentaAhorros);
 				    				((Cliente) cliente).getListadoFacturas().remove(factura);}
 				            	
 				        }else if("hijo".equals(familiar.getParentesco()) || "hija".equals(familiar.getParentesco())  && familiar.getEdad() >= 18) {
 				        	if(totalFactura <= familiar.getCuentaBancaria().getSaldo()) {
-			            		familiar.getCuentaBancaria().transaccion(totalFactura, Funeraria.cuentaAhorros);
+			            		familiar.getCuentaBancaria().transaccionCuentaAhorros(totalFactura, Funeraria.cuentaAhorros);
 			    				((Cliente) cliente).getListadoFacturas().remove(factura);}
 				        	
 				        }else if("padre".equals(familiar.getParentesco()) || "madre".equals(familiar.getParentesco()) && familiar.getEdad() >= 18) {
 				        	if(totalFactura <= familiar.getCuentaBancaria().getSaldo()) {
-			            		familiar.getCuentaBancaria().transaccion(totalFactura, Funeraria.cuentaAhorros);
+			            		familiar.getCuentaBancaria().transaccionCuentaAhorros(totalFactura, Funeraria.cuentaAhorros);
 			    				((Cliente) cliente).getListadoFacturas().remove(factura);}
 				      
 				        }else if("hermano".equals(familiar.getParentesco()) || "hermana".equals(familiar.getParentesco()) && familiar.getEdad() >= 18) {
 				        	if(totalFactura <= familiar.getCuentaBancaria().getSaldo()) {
-			            		familiar.getCuentaBancaria().transaccion(totalFactura, Funeraria.cuentaAhorros);
+			            		familiar.getCuentaBancaria().transaccionCuentaAhorros(totalFactura, Funeraria.cuentaAhorros);
 			    				((Cliente) cliente).getListadoFacturas().remove(factura);}
 				        
 				        }else { if(totalFactura <= familiar.getCuentaBancaria().getSaldo() && familiar.getEdad() >= 18) {
-		            		familiar.getCuentaBancaria().transaccion(totalFactura, Funeraria.cuentaAhorros);
+		            		familiar.getCuentaBancaria().transaccionCuentaAhorros(totalFactura, Funeraria.cuentaAhorros);
 		    				((Cliente) cliente).getListadoFacturas().remove(factura);}
 				        	
 				        }
@@ -222,16 +226,13 @@ public void cobroServiciosClientes(Cliente cliente) {
     		 
     		 String tipoServicio = factura.getServicio();
     		 double totalFactura = factura.getTotal();
-    		 if(tipoServicio == "establecimiento") {
+    		 
     			 Producto producto = factura.getListaProductos().get(0);
     			 Establecimiento establecimiento = producto.getEstablecimiento();
+    			  this.getCuentaCorriente().transaccion(totalFactura, establecimiento.getCuentaCorriente());}
     			 
-    			 if(establecimiento instanceof Crematorio) {
-    				 
-    				 this.getCuentaCorriente().transaccion(totalFactura, establecimiento.getCuentaCorriente() );;
-    			 }
-    		 }
-    	 }
+    		
+    	 
     	 
      }
 
@@ -306,6 +307,11 @@ public void cobroServiciosClientes(Cliente cliente) {
 	public void setlistadoFacturas(ArrayList<Factura> listadoFacturas) {
 		this.listadoFacturas=listadoFacturas;
 	}
-	
+	public  ArrayList<Factura> getListadoFacturasPorPagar() {
+		return listadoFacturasPorPagar;
+	} 
+	public void setlistadoFacturasPorPagar(ArrayList<Factura> listadoFacturasPorPagar) {
+		this.listadoFacturasPorPagar=listadoFacturasPorPagar;
+	}
 	
 }

@@ -47,7 +47,7 @@ public class CuentaBancaria {
         
 }
     
-    public void transaccion(double valor, CuentaBancaria cuentaAhorros) {
+    public void transaccionCuentaAhorros(double valor, CuentaBancaria cuentaAhorros) {
     	
     	if(this.getBanco() == cuentaAhorros.getBanco()) {
     		double saldo = this.saldo - valor;
@@ -73,6 +73,21 @@ public class CuentaBancaria {
         double interes = cuentaAhorros.getSaldo() * porcentajeInteres;
         double saldoFinal = cuentaAhorros.getSaldo() - interes;
         cuentaAhorros.setSaldo(saldoFinal);
+    }
+    public void transaccion(double valor, CuentaBancaria cuentaCorriente) {
+    	if(this.getBanco() == cuentaCorriente.getBanco()) {
+    		double saldo = this.saldo - valor;
+    		setSaldo(saldo);
+    	}
+    	else {
+    		
+    		String Nbanco = this.banco;
+    		Banco banco = Banco.valueOf(Nbanco);
+    		double cobroAdicional = banco.getCobroAdicional();
+    		double saldo = this.saldo -(valor + cobroAdicional);
+		    setSaldo(saldo);
+    		
+    	}
     }
 	public String getBanco() {
 		return banco;

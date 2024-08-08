@@ -10,6 +10,7 @@ public class Empleado extends Persona{
 	private double salario;
 	private int Calificacion=5;
 	private int Experiencia;
+	private int trabajosHechos;
 	private boolean disponible= true;
 	
 	
@@ -57,7 +58,10 @@ public class Empleado extends Persona{
     }
 
     public void setDisponible(boolean disponible) {
-        this.disponible = disponible;
+        if(!this.disponible && disponible) {
+        	this.trabajosHechos++;
+        }
+    	this.disponible = disponible;
     }
 
 	public int getCalificacion() {
