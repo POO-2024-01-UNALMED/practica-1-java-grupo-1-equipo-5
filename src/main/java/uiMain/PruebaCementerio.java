@@ -5,6 +5,7 @@ import gestorAplicacion.establecimientos.Crematorio;
 import gestorAplicacion.establecimientos.Establecimiento;
 import gestorAplicacion.establecimientos.Funeraria;
 import gestorAplicacion.establecimientos.Iglesia;
+import gestorAplicacion.inventario.Urna;
 import gestorAplicacion.personas.Cliente;
 import gestorAplicacion.personas.Familiar;
 import gestorAplicacion.personas.Persona;
@@ -59,6 +60,22 @@ public class PruebaCementerio {
 		System.out.println(cementerio.getHorarioEventos());
 		System.out.println(cemi.getHorarioEventos());
 		System.out.println(cemito.getHorarioEventos());
+		
+		
+		System.out.println(fumita.buscarCementerios("cenizas", a1));
+		
+		Urna urna1=new Urna("Urnita1",cemi,70,"fija");
+		Urna urna2=new Urna("Urnita2",cemi,90,"ordinaria");
+		Urna urna3=new Urna("Urnita3",cemi,50,"ordinaria");
+		Urna urna4=new Urna("Urnita4",cemi,80,"fija");
+		
+		cemi.setIglesia(Iglesia.TAOISMO);
+		System.out.println(cemi.disponibilidadInventario("urna", 50));
+		
+		urna1.generarAdornos("flores");
+		
+		System.out.println("ff"+urna1.getFlores());
+		
 	}
 	
 	

@@ -54,7 +54,7 @@ public class Cementerio extends Establecimiento {
 		}
 		
 		for(Inventario auxUrnaTumba: auxInventario) {
-			if (auxUrnaTumba.getCliente()==null & auxUrnaTumba.getTamaño()>auxUrnaTumba.determinarTamaño(tamaño)){
+			if (auxUrnaTumba.getCliente()==null & auxUrnaTumba.getTamaño()>=auxUrnaTumba.determinarTamaño(tamaño)){
 				inventarioDisponible.add(auxUrnaTumba);
 			}//Fin if
 		}//Fin for 

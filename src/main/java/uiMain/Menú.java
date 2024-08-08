@@ -292,7 +292,7 @@ public class Menú {
 				ArrayList<Establecimiento> cementerios =funeraria.buscarCementerios("cenizas", cliente);
 				//Se establecen los horarios del cementerio de acuerdo a la finalización de ceremonia de cremación
 				crematorio.cambiarHorarios(cementerios);
-				
+				System.out.println(funeraria.buscarCementerios("cenizas", cliente));
 				indice=1;
 				//Se imprimen los cementerios
 				System.out.println("Cementerios disponibles");
@@ -504,7 +504,7 @@ public class Menú {
 		Cliente b1 = new Cliente("b1",123,17,null,"oro",familiar);
 		Cliente c1 = new Cliente("c1",123,17,null,"oro",familiar);
 		Cliente d1 = new Cliente("d1",123,17,null,"oro",familiar);
-		Cliente e1 = new Cliente("e1",123,17,null,"plata",familiar);
+		Cliente e1 = new Cliente("e1",123,17,null,"oro",familiar);
 		
 		funita.agregarCliente(e1);
 		fumita.agregarCliente(d1);
@@ -513,7 +513,7 @@ public class Menú {
 		
 		//Objetos crematorio-cementerio
 		Crematorio crematorio = new Crematorio ("crematorio","0054",100,null,"oro", null,funita); 
-		Crematorio creno = new Crematorio ("creno","0089",78,null,"plata", null,fumita); 
+		Crematorio creno = new Crematorio ("creno","0089",78,null,"oro", null,fumita); 
 		Crematorio cremita = new Crematorio ("cremita","0098",78,null,"oro", null,fulanita); 
 		
 		Cementerio cementerio = new Cementerio ("cementerio","2090",78,null,"oro", null,"cenizas",fulanita); 
@@ -530,7 +530,7 @@ public class Menú {
 		Empleado empleado3 = new Empleado("Anastasia",12345,"3456",null,"noche","cremador",900000);
 		Empleado empleado4 = new Empleado("Gilberto",12345,"3456",null,"mañana","cremador",900000);
 		Empleado empleado5 = new Empleado("Pepito",12345,"3456",null,"mañana","cremador",900000);
-		Empleado empleado6 = new Empleado("Camila",12345,"3456",null,"tarde","",900000);
+		Empleado empleado6 = new Empleado("Camila",12345,"3456",null,"tarde","cremador",900000);
 		Empleado empleado7 = new Empleado("Santiago",12345,"3456",null,"noche","cremador",900000);
 		Empleado empleado8 = new Empleado("Anastasio",12345,"3456",null,"tarde","cremador",900000);
 		

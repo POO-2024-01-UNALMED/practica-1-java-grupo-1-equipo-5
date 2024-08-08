@@ -1,6 +1,7 @@
 package gestorAplicacion.establecimientos;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.time.LocalTime;
 
 import gestorAplicacion.personas.*;
@@ -21,9 +22,10 @@ public class Crematorio extends Establecimiento{
 	public void cambiarHorarios(ArrayList<Establecimiento> cementerios){
 		
 		LocalTime horaFin =getIglesia().duracionEvento(getHoraEvento());
+		Random random=new Random();
 		
 		for(Establecimiento auxCementerio:cementerios) {
-			
+		
 			int randomNumber = (int)(Math.random() * (3)) + 1;
 			Cementerio cementerio =(Cementerio) auxCementerio; 
 			
@@ -36,6 +38,7 @@ public class Crematorio extends Establecimiento{
 
 				LocalTime horaGenerada = LocalTime.of(horas, minutos);
 	            auxCementerio.horarioEventos.add(horaGenerada);
+	            randomNumber-=1;
 		
 			}
 		
