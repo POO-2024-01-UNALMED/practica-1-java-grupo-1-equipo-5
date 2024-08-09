@@ -124,7 +124,7 @@ public class Funeraria extends Establecimiento{
 	
 	
 	public Cliente buscarCliente(long IDcliente) {
-		for(Cliente auxCliente: clientes) {
+		for(Cliente auxCliente: this.clientes) {
 			if(auxCliente.getCC()==IDcliente) {
 				return auxCliente;
 			}//Fin if

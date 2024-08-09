@@ -14,8 +14,7 @@ public class Cliente extends Persona {
 	private String afiliacion; //oro, plata y bronce
 	//private Crematorio crematorio;
 	//private Cementerio cementerio;
-	private Urna urna=null;
-	private Tumba tumba= null;
+	private Inventario inventario; 
 	private ArrayList<Persona> familiares=new ArrayList<Persona>();
 	private ArrayList<Factura> listadoFacturas=new ArrayList<Factura>();
 	
@@ -154,20 +153,13 @@ public class Cliente extends Persona {
 	public String getAfiliacion() {
 		return afiliacion;
 	}
-	public Urna getUrna() {
-		return urna;
+
+	public Inventario getInventario() {
+		return inventario;
 	}
 
-	public void setUrna(Urna urna) {
-		this.urna = urna;
-	}
-
-	public Tumba getTumba() {
-		return tumba;
-	}
-
-	public void setTumba(Tumba tumba) {
-		this.tumba = tumba;
+	public void setInventario(Inventario inventario) {
+		this.inventario = inventario;
 	}
 
 	public void setAfiliacion(String afiliacion) {

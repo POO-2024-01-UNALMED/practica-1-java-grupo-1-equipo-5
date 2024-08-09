@@ -86,6 +86,13 @@ public abstract class Inventario {
 		return tamaño;
 	}
 	
+	public Cementerio getCementerio() {
+		return cementerio;
+	}
+	public void setCementerio(Cementerio cementerio) {
+		this.cementerio=cementerio;
+	}
+	
 	public ArrayList<String> getFlores(){
 		return inventarioFlores;
 	}
