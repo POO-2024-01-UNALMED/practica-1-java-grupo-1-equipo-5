@@ -64,8 +64,6 @@ public class Cementerio extends Establecimiento {
 	
 	public ArrayList<Inventario> tipoUrna(){
 		
-		ArrayList<Inventario> urnasPorTipo=new ArrayList<Inventario>();
-		String tipo;
 		Iglesia iglesia=this.getIglesia();
 		
 		if(iglesia == Iglesia.BUDISMO) {
@@ -74,10 +72,35 @@ public class Cementerio extends Establecimiento {
 			return inventario;
 			
 		}else if (iglesia ==Iglesia.HINDUISMO) {
-			tipo="ordinaria";
+			return urnasPorTipo("ordinaria");
 		}else if(iglesia==Iglesia.TAOISMO) {
-			tipo="fija";
+			return urnasPorTipo("fija");
 		}else{return inventario;}
+	
+	}
+	
+	public ArrayList<Inventario> inventarioDefault(){
+		
+		ArrayList<Inventario> porDefecto=new ArrayList<Inventario>();
+		ArrayList<Inventario> auxInventario=new ArrayList<Inventario>();
+		
+		if(this.tipo.equals("cenizas")) {auxInventario=urnasPorTipo("fija");
+		
+		}else {auxInventario=inventario;}
+		
+		for(Inventario urnaTumba: auxInventario) {
+			if(urnaTumba.getNombre().equals("default")) {
+				porDefecto.add(urnaTumba);
+			}
+			
+		}//Fin for
+		return porDefecto;
+		
+	}
+	
+	public ArrayList<Inventario> urnasPorTipo(String tipo){
+		
+		ArrayList<Inventario> urnasPorTipo =new ArrayList<Inventario>();
 		
 		for(Inventario auxInventario:inventario) {
 			if(auxInventario instanceof Urna) {
@@ -86,13 +109,10 @@ public class Cementerio extends Establecimiento {
 					urnasPorTipo.add(urna);
 				}//Fin if
 			}//Fin if principal
-		}
+		}//Fin for
 		
 		return urnasPorTipo;
-		
-		
-		
-	}
+	} 
 	
 	
 	

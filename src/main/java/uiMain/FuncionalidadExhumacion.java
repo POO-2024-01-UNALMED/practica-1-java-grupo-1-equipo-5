@@ -85,7 +85,7 @@ public class FuncionalidadExhumacion {
 			Funeraria funeraria=(Funeraria) funerarias.get(indiceFuneraria-1);
 			
 			System.out.println("[1] Buscar cliente en cementerios de cuerpos");
-			System.out.println("[2] Buscar cliente con urna fija marcada 'por defecto')");
+			System.out.println("[2] Buscar clientes con urna fija o tumba marcada como 'default')");
 			
 			System.out.print("Ingrese el índice correspondiente: ");
 			indice = scanner.nextInt();
@@ -129,12 +129,74 @@ public class FuncionalidadExhumacion {
 						indice=scanner.nextInt();
 					}
 					
+					cliente=clientes.get(indice-1);		
+					
+					break;
+					
+				case 2:
+					
+					System.out.println("[1] Buscar tumbas marcadas como 'default'");
+					System.out.println("[2] Buscar urnas marcadas como 'default'");
+					
+					System.out.print("Ingrese el índice correspondiente: ");
+					indice = scanner.nextInt();
+					
+					//Validación de índice
+					while (indice<1 || indice>2) {
+						System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+						indice=scanner.nextInt();
+					}
 					
 					
+					//Se traen todos los cementerios por funeraria
+					ArrayList<Establecimiento> cementeriosPorFuneraria=Establecimiento.buscarPorFuneraria(funeraria, "cementerio");
+					
+					String tipo=null;
+					String mensaje1=null;
+					String mensaje2=null;
+					
+					switch(indice) {
+					
+						case 1:
+							tipo="cuerpos";
+							mensaje1="Cementerios de cuerpos";
+							mensaje2="Cantidad tumbas default";
+							break;
+						
+						case 2: 
+							tipo="cenizas";
+							mensaje1="Cementerios de cenizas";
+							mensaje2="Cantidad urnas default";
+							break;
+								
+					}//Fin switch secundario
+					
+					//Se traen todos los cementerios de la funeraria con el atributo de tipo correspondiente ("cuerpos" o "cenizas")
+					ArrayList<Establecimiento> cementerios=Cementerio.cementerioPorTipo(cementeriosPorFuneraria, tipo);
+					
+					System.out.println(mensaje1);
+					indice=1;
+					for(Establecimiento auxCementerio:cementerios) {
+						int cantidadDefault=((Cementerio) auxCementerio).inventarioDefault().size();
+						System.out.println("["+indice+"] "+auxCementerio+" - "+mensaje2+": "+cantidadDefault);
+						indice+=1;
+					}
+					
+					System.out.print("Ingrese el índice correspondiente: ");
+					indice = scanner.nextInt();
+					
+					//Validación de índice
+					while (indice<1 || indice>cementerios.size()) {
+						System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+						indice=scanner.nextInt();
+					}
+					
+					System.out.println(")
+					
 				
+				break;
 				
-				
-			}
+			}//Fin switch
 			
 		
 			

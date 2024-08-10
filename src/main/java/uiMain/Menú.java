@@ -361,8 +361,8 @@ public class Menú {
 				if(urnas.size()==0) {
 					System.out.println("No se encontraron urnas disponibles para el cliente, se deberá añadir una provisional");
 					String tipo=cementerio.getIglesia().getTipoUrnas()[0];
-					urna=new Urna("Urna provisional",cementerio,peso,tipo);
-					System.out.println(urna+ " añadida");
+					urna=new Urna("default",cementerio,peso,tipo);
+					System.out.println("Urna "+urna+ " añadida");
 					
 					//Cliente agregado en la urna correspondiente
 					urna.agregarCliente(cliente);
