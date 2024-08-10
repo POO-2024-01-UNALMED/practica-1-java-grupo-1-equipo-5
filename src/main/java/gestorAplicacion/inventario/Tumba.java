@@ -10,7 +10,7 @@ public class Tumba extends Inventario{
 	
 	//Constructor
 	public Tumba(String nombre,Cementerio cementerio,double tamaño,int categoria) {
-		super(nombre,cementerio,tamaño);
+		super(nombre,cementerio,tamaño,categoria);
 		if(cementerio.getTipo().equals("cuerpos")) {
 			cementerio.agregarInventario(this);
 		}

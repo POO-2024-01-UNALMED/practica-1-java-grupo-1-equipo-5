@@ -42,7 +42,7 @@ public class Cementerio extends Establecimiento {
 	}
 	
 	//Recibe como parámetro un String "urna" o "tumba"
-	public ArrayList<Inventario> disponibilidadInventario(String urnaTumba, double tamaño){
+	public ArrayList<Inventario> disponibilidadInventario(String urnaTumba, double tamaño, int edad){
 		
 		ArrayList<Inventario> inventarioDisponible=new ArrayList<Inventario>();
 		ArrayList<Inventario> auxInventario = new ArrayList<Inventario>();
@@ -54,12 +54,39 @@ public class Cementerio extends Establecimiento {
 		}
 		
 		for(Inventario auxUrnaTumba: auxInventario) {
-			if (auxUrnaTumba.getCliente()==null & auxUrnaTumba.getTamaño()>=auxUrnaTumba.determinarTamaño(tamaño)){
+			if (auxUrnaTumba.getCliente()==null & auxUrnaTumba.getTamaño()>=auxUrnaTumba.determinarTamaño(tamaño) & auxUrnaTumba.getCategoria()==auxUrnaTumba.determinarCategoria(edad)){
 				inventarioDisponible.add(auxUrnaTumba);
 			}//Fin if
 		}//Fin for 
 		return inventarioDisponible;
 	}
+	
+	
+	public Inventario inventarioRecomendado(ArrayList<Inventario> inventario) {
+		
+		
+		if (inventario.size()==0) {
+            return null;
+        }
+		
+		double menor = inventario.get(0).getTamaño();
+		Inventario recomendado=inventario.get(0);
+		inventario.remove(0);
+		
+		for(Inventario auxInventario:inventario) {
+			if(auxInventario.getTamaño()<menor) {
+				menor=auxInventario.getTamaño();
+				recomendado=auxInventario;
+			}
+		}
+		
+		 return recomendado;
+        
+        }
+       
+	
+	
+	
 	
 	
 	public ArrayList<Inventario> tipoUrna(){

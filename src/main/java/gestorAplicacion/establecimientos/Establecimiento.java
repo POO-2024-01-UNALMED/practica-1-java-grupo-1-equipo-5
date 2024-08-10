@@ -112,13 +112,13 @@ public class Establecimiento {
 		
 		ArrayList<Cliente> clientesEdad= new ArrayList<Cliente>();
 		if(adultoNiño=="adulto") {
-			for(Cliente cliente: clientes) {
+			for(Cliente cliente: this.clientes) {
 				if(cliente.getCC()!=0) {
 					clientesEdad.add(cliente);
 				}//fin if
 			}//fin for
 		}else {
-			for(Cliente cliente: clientes) {
+			for(Cliente cliente: this.clientes) {
 				if(cliente.getCC()==0) {
 					clientesEdad.add(cliente);
 				}//fin if

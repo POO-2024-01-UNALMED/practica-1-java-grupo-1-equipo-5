@@ -15,7 +15,7 @@ public class FuncionalidadExhumacion {
 		
 		
 		Cliente cliente=null;
-		Tumba tumba=null;
+		Inventario urnaTumba=null;
 		Cementerio cementerio =null;
 		
 		//Breve descripción de la funcionalidad para los usuarios
@@ -85,7 +85,7 @@ public class FuncionalidadExhumacion {
 			Funeraria funeraria=(Funeraria) funerarias.get(indiceFuneraria-1);
 			
 			System.out.println("[1] Buscar cliente en cementerios de cuerpos");
-			System.out.println("[2] Buscar clientes con urna fija o tumba marcada como 'default')");
+			System.out.println("[2] Buscar clientes con urna fija o tumba marcada como 'default'");
 			
 			System.out.print("Ingrese el índice correspondiente: ");
 			indice = scanner.nextInt();
@@ -100,7 +100,7 @@ public class FuncionalidadExhumacion {
 				case 1:
 					
 					System.out.println("Clientes mayor de edad");
-					
+					//Busca en la funeraria seleccionada los cementerios de cuerpos 
 					ArrayList<Cliente> clientes= funeraria.buscarCliente("cuerpos", "adulto");
 					
 					indice=1;
@@ -131,6 +131,7 @@ public class FuncionalidadExhumacion {
 					
 					cliente=clientes.get(indice-1);		
 					
+					
 					break;
 					
 				case 2:
@@ -160,13 +161,13 @@ public class FuncionalidadExhumacion {
 						case 1:
 							tipo="cuerpos";
 							mensaje1="Cementerios de cuerpos";
-							mensaje2="Cantidad tumbas default";
+							mensaje2="Tumbas";
 							break;
 						
 						case 2: 
 							tipo="cenizas";
 							mensaje1="Cementerios de cenizas";
-							mensaje2="Cantidad urnas default";
+							mensaje2="Urnas";
 							break;
 								
 					}//Fin switch secundario
@@ -177,8 +178,9 @@ public class FuncionalidadExhumacion {
 					System.out.println(mensaje1);
 					indice=1;
 					for(Establecimiento auxCementerio:cementerios) {
+						//Se muestran los cementerios correspondientes y se busca la cantidad que se encuentra en el ArrayList de inventario que tiene como valor "default" en su atributo nombre
 						int cantidadDefault=((Cementerio) auxCementerio).inventarioDefault().size();
-						System.out.println("["+indice+"] "+auxCementerio+" - "+mensaje2+": "+cantidadDefault);
+						System.out.println("["+indice+"] "+auxCementerio+" - Cantidad de "+mensaje2+" marcadas como default: "+cantidadDefault);
 						indice+=1;
 					}
 					
@@ -190,22 +192,222 @@ public class FuncionalidadExhumacion {
 						System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
 						indice=scanner.nextInt();
 					}
+					//Asignación de cementerio escogido
+					cementerio=(Cementerio)cementerios.get(indice-1);
+					System.out.println(mensaje2+" marcadas como default");
 					
-					System.out.println(")
+					//Búsqueda de inventario que tenga como valor "default" en su atributo nombre
+					ArrayList<Inventario> inventarioDefault=cementerio.inventarioDefault();
 					
+					indice=1;
+					for(Inventario auxTumbaUrna:inventarioDefault) {
+						System.out.println("["+indice+"] "+mensaje2+" marcadas como "+auxTumbaUrna+" - Cliente: "+auxTumbaUrna.getCliente());
+						indice+=1;
+					}
+					
+					System.out.print("Ingrese el índice correspondiente: ");
+					indice = scanner.nextInt();
+					
+					//Validación de índice
+					while (indice<1 || indice>inventarioDefault.size()) {
+						System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+						indice=scanner.nextInt();
+					}
+					
+					//Asignación del cliente
+					cliente=inventarioDefault.get(indice-1).getCliente();
+					
+						
 				
 				break;
 				
-			}//Fin switch
-			
+			}//Fin switch		
 		
-			
+		}//Fin switch principal
 		
+		//Se asigna el objeto de tipo Urna o Tumba que tenga agregado el cliente
+		urnaTumba=cliente.getInventario();
+		//Asignar funeraria
+		cementerio=cliente.getInventario().getCementerio();
+		
+		//Escoger religión del cliente
+		
+		
+		//Proceso exhumación del cuerpo
+		
+		System.out.println();
+		
+		System.out.println("Opciones para la exhumación del cuerpo del cliente "+cliente.getNombre());
+		
+		int max=1;
+		System.out.println("[1] Trasladar al cliente a una Urna fija en otro cementerio de cenizas");
+		String mensaje="Urna";
+		//Si el cliente tiene agregado un objeto de tipo Tumba es porque esta en un cementerio de cuerpos y puede ser llevado a otro, 
+		//pero si tiene agregado un objeto de tipo Urna no puede ser trasladado a un cementerio de cuerpos
+		if(urnaTumba instanceof Tumba) {
+			System.out.println("[2] Trasladar al cliente a una Tumba en otro cementerio de cuerpos"); 
+			mensaje="Tumba";
+			max=2;
+			}
+		
+		System.out.print("Ingrese el índice correspondiente: ");
+		indice = scanner.nextInt();
+		
+		
+		//Validación de índice
+		while (indice<1 || indice>max) {
+			System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+			indice=scanner.nextInt();
+		}
+		
+		//Datos para la exhumacion
+		double pesoEstatura=0;
+		int edad=0;
+		String tipo1=null;
+		String tipo2=null;
+		
+		//Establecer iglesia para determinar religion del cliente 
+		System.out.println("Seleccione la religión con la que se va a realizar la ceremonia del cliente");
+		//Iglesias disponibles
+		ArrayList<Iglesia> iglesias = new ArrayList<Iglesia>();
+		indice=1;
+		
+		switch(indice) {
+		
+		case 1:
+			
+			for(Iglesia auxIglesia:Iglesia.values()) {
+				//Se imprimen y añaden a la lista solo las iglesias que permiten la cremación como acto final de la vida
+				if (auxIglesia.getCremacion()) {
+					iglesias.add(auxIglesia);
+					System.out.println("["+indice+"] "+auxIglesia);
+					indice+=1;
+				}
+			}
+			
+
+			System.out.print("Ingrese el peso del cliente: ");
+			pesoEstatura=scanner.nextDouble();
+			tipo1="cenizas";
+			tipo2="urna";
+			
+			break;
+		
+		case 2:
+			
+			for(Iglesia auxIglesia:Iglesia.values()) {
+				System.out.println("["+indice+"] "+auxIglesia);
+				indice+=1;
+			}
+			
+			System.out.print("Ingrese la estatura del cliente: ");
+			pesoEstatura=scanner.nextDouble();
+			tipo1="cuerpos";
+			tipo2="urna";
+			
+			break;
+		
+		}//Fin switch principal
+		
+		
+		System.out.print("Indique el índice de la religión escogida: ");
+		indice=scanner.nextInt();
+		//Validación 
+		while(indice<1 || indice>iglesias.size()) {
+			System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+			indice=scanner.nextInt();
+			}
+		
+		cementerio.setIglesia(iglesias.get(indice-1));
+	
+		
+		System.out.print("Ingrese la edad del cliente: ");
+		edad=scanner.nextInt();
+		
+		
+		System.out.println("La afiliación del cliente es "+cliente.getAfiliacion());
+		
+		//Busco los cementerios del tipo solicitado en la funeraria que cumplan con las restricciones solicitadas 
+		ArrayList<Establecimiento> cementeriosPorTipo = cementerio.getFuneraria().buscarCementerios(tipo1, cliente);
+		
+		//Elimino el cementerio en el que actualmente está el cliente
+		cementeriosPorTipo.remove(cementerio);
+		
+		ArrayList<Establecimiento> cementerios=new ArrayList<Establecimiento>();
+		
+		for(Establecimiento auxCementerio:cementeriosPorTipo) {
+			Cementerio auxCementerio2=(Cementerio)auxCementerio;
+			if(auxCementerio2.disponibilidadInventario(tipo2,pesoEstatura,edad).size()!=0) {
+				cementerios.add(auxCementerio2);
+			}
+		}
+		
+		indice=1;
+		for(Establecimiento auxCementerio: cementerios) {
+			Cementerio auxCementerio2 = (Cementerio) auxCementerio;
+			System.out.println("["+indice+"] "+auxCementerio2+" Inventario disponible: ("+auxCementerio2.disponibilidadInventario(tipo2,pesoEstatura,edad).size()+")");
+			indice+=1;
+		}
+		while(indice<1 || indice>cementerios.size()) {
+			System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+			indice=scanner.nextInt();
+			}
+		
+		////////////////////////////////////////////////////////////////////////////////////////////
+		Cementerio nuevoCementerio=(Cementerio) cementerios.get(indice-1);
+		
+		//Escoger opción más adecuada para cliente en cuánto a tamaño de la tumba comparado con estatura del cliente
+		System.out.println("[1] Opción más adecuada en cuanto a tamaño: "+ nuevoCementerio.inventarioRecomendado(nuevoCementerio.disponibilidadInventario(tipo2,pesoEstatura,edad)));
+		System.out.println("[2] Buscar entre las otras opciones");
+		
+		System.out.print("Ingrese el índice correspondiente: ");
+		indice = scanner.nextInt();
+		
+		//Validación de índice
+		while (indice<1 || indice>2) {
+			System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+			indice=scanner.nextInt();
+		}
+		
+		////////////////////////////////////////////////////////////////////////////////////////////////////7
+		Inventario nuevaUrnaTumba;
+		switch(indice) {
+			case 1:
+				nuevaUrnaTumba=nuevoCementerio.inventarioRecomendado(nuevoCementerio.disponibilidadInventario(tipo2,pesoEstatura,edad));
+				break;
+			
+			case 2: 
+				ArrayList<Inventario> disponible=nuevoCementerio.disponibilidadInventario(tipo2, pesoEstatura, edad);
+				disponible.remove(nuevoCementerio.inventarioRecomendado(nuevoCementerio.disponibilidadInventario(tipo2,pesoEstatura,edad)));
+				indice=1;
+				for(Inventario auxInventario: disponible ) {
+					System.out.println("["+indice+"] "+auxInventario);
+					indice+=1;
+				}
+				
+				System.out.print("Ingrese el índice correspondiente: ");
+				indice = scanner.nextInt();
+				
+				//Validación de índice
+				while (indice<1 || indice>disponible.size()) {
+					System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+					indice=scanner.nextInt();
+				}
+				
+				nuevaUrnaTumba=disponible.get(indice-1);
+				
+				break;
 		}
 		
 		
 		
-	}
+		
+		
+			
+		
+		
+		
+	}//Fin metodo funcionalidadExhumacion
 	
 
-}
+}//Fin clase

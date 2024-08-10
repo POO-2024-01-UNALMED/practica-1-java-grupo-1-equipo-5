@@ -23,11 +23,11 @@ public abstract class Inventario {
 	static public String [] flores = {"Rosas", "Lirios", "Claveles", "Orquídeas", "Peonías"};
 	static public String [] material = {"Madera", "Metal", "Cerámica", "Vidrio", "Bambu","Piedra"};
 	//Constructor
-	protected Inventario(String nombre,Cementerio cementerio,double tamaño) {
+	protected Inventario(String nombre,Cementerio cementerio,double tamaño,int categoria) {
 		this.nombre=nombre;
 		this.cementerio = cementerio;
 		this.tamaño=determinarTamaño(tamaño);
-		 //Si el cementerio es de cenizas se agregarán Objetos de la clase Urna y si el cementerio es de cuerpos se agregarán objetos de la clase Tumba
+		this.categoria=categoria;		 //Si el cementerio es de cenizas se agregarán Objetos de la clase Urna y si el cementerio es de cuerpos se agregarán objetos de la clase Tumba
 	}
 
 	
@@ -36,6 +36,14 @@ public abstract class Inventario {
 		this.cementerio.getClientes().add(cliente);
 	}
 	
+	public int determinarCategoria(int edad) {
+		int categoria=0;
+		if(edad<60 & edad>30) {
+			categoria=1;
+		}else {categoria=2;}
+		
+		return categoria;
+	}
 	
 	
 	public abstract void generarAdornos(String tipoAdorno);

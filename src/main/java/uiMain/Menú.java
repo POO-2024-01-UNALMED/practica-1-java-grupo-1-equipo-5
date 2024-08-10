@@ -353,15 +353,31 @@ public class Menú {
 					System.out.println("El número ingresado está fuera de rango. Ingrese nuevamente el peso en kg: ");
 					peso=scanner.nextDouble();
 				}
+				
+				//Tipo de categoria para la urna
+				System.out.println("Seleccione el tipo de categoría para la urna del cliente");
+				System.out.println("[0] Se puede escoger dos arreglos florales");
+				System.out.println("[1] Se pueden escoger dos arreglos florales y material para la Urna");
+				System.out.println("[2] Se pueden escoger cuatro arreglos florales y material para la Urna");
+				
+				System.out.print("Indique el índice de la categoría deseada: ");
+				int categoria =scanner.nextInt();
+				
+				
+				while(categoria<0 || categoria>2) {
+					System.out.println("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+					categoria=scanner.nextInt();
+				}
+				
 				//Se filtran las urnas para que correspondan con el peso del cliente
-				ArrayList<Inventario> urnas =cementerio.disponibilidadInventario("urna", peso);
+				ArrayList<Inventario> urnas =cementerio.disponibilidadInventario("urna", peso,categoria);
 				
 				Urna urna=null;
 				
 				if(urnas.size()==0) {
 					System.out.println("No se encontraron urnas disponibles para el cliente, se deberá añadir una provisional");
 					String tipo=cementerio.getIglesia().getTipoUrnas()[0];
-					urna=new Urna("default",cementerio,peso,tipo);
+					urna=new Urna("default",cementerio,peso,1,tipo);
 					System.out.println("Urna "+urna+ " añadida");
 					
 					//Cliente agregado en la urna correspondiente
@@ -391,22 +407,6 @@ public class Menú {
 				}
 				
 				
-				//Tipo de categoria para la urna
-				System.out.println("Seleccione el tipo de categoría para la urna del cliente");
-				System.out.println("[0] Se puede escoger dos arreglos florales");
-				System.out.println("[1] Se pueden escoger dos arreglos florales y material para la Urna");
-				System.out.println("[2] Se pueden escoger cuatro arreglos florales y material para la Urna");
-				
-				System.out.print("Indique el índice de la categoría deseada: ");
-				int categoria =scanner.nextInt();
-				
-				
-				while(categoria<0 || categoria>2) {
-					System.out.println("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
-					categoria=scanner.nextInt();
-				}
-				//Se agrega la categoría de la urna
-				urna.setCategoria(categoria);
 				//Se genera la cantidad de adornos según corresponda 
 				urna.generarAdornos("flores");
 				urna.generarAdornos("material");
@@ -573,20 +573,20 @@ public class Menú {
 		
 		//Urna 
 		
-		Urna urna1=new Urna("Urnita1",cemi,70,"fija");
-		Urna urna2=new Urna("Urnita2",cemi,90,"ordinaria");
-		Urna urna3=new Urna("Urnita3",cemi,50,"ordinaria");
-		Urna urna4=new Urna("Urnita4",cemi,60,"fija");
+		Urna urna1=new Urna("Urnita1",cemi,70,1,"fija");
+		Urna urna2=new Urna("Urnita2",cemi,90,0,"ordinaria");
+		Urna urna3=new Urna("Urnita3",cemi,50,0,"ordinaria");
+		Urna urna4=new Urna("Urnita4",cemi,60,1,"fija");
 		
-		Urna urna5=new Urna("Urnita5",cementerio,70,"fija");
-		Urna urna6=new Urna("Urnita6",cementerio,50,"ordinaria");
-		Urna urna7=new Urna("Urnita7",cementerio,40,"ordinaria");
-		Urna urna8=new Urna("Urnita8",cementerio,60,"fija");
+		Urna urna5=new Urna("Urnita5",cementerio,70,2,"fija");
+		Urna urna6=new Urna("Urnita6",cementerio,50,2,"ordinaria");
+		Urna urna7=new Urna("Urnita7",cementerio,40,2,"ordinaria");
+		Urna urna8=new Urna("Urnita8",cementerio,60,1,"fija");
 		
-		Urna urna9=new Urna("Urnita9",cemito,70,"fija");
-		Urna urna10=new Urna("Urnita10",cemito,50,"fija");
-		Urna urna11=new Urna("Urnita11",cemito,40,"ordinaria");
-		Urna urna12=new Urna("Urnita12",cemito,60,"fija");
+		Urna urna9=new Urna("Urnita9",cemito,70,0,"fija");
+		Urna urna10=new Urna("Urnita10",cemito,50,1,"fija");
+		Urna urna11=new Urna("Urnita11",cemito,40,2,"ordinaria");
+		Urna urna12=new Urna("Urnita12",cemito,60,1,"fija");
 		
 		
 		
@@ -607,6 +607,7 @@ public class Menú {
 		Scanner scanner = new Scanner(System.in);
 		
 		System.out.println("[1] Funcionalidad crematorio");
+		System.out.println("[2] Funcionalidad Exhumación");
 		
 		System.out.print("Ingrese el índice de la funcionalidad: ");
 		int opcion =scanner.nextInt();
@@ -615,6 +616,9 @@ public class Menú {
 			
 		case 1:
 			funcionalidadCrematorio();
+			break;
+		case 2:
+			FuncionalidadExhumacion.funcionalidadExhumacion();
 			break;
 			
 		default:
