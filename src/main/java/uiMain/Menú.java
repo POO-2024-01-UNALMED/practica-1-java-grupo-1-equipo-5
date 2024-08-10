@@ -12,6 +12,7 @@ import gestorAplicacion.personas.*;
 import gestorAplicacion.inventario.Inventario;
 import gestorAplicacion.inventario.Producto;
 import gestorAplicacion.inventario.Urna;
+import gestorAplicacion.inventario.Tumba;
 
 public class Menú {
 	
@@ -556,9 +557,9 @@ public class Menú {
 		Cementerio cemi = new Cementerio ("cemi","9089",78,null,"oro", null,"cenizas",fumita); 
 		Cementerio cemito = new Cementerio ("cemito","5490",78,null,"oro", null,"cenizas",funita); 
 		
-		//Cementerio cementerio1 = new Cementerio ("cementerio1","2090",78,null,"oro", null,"cenizas",fulanita); 
-		//Cementerio cemi1 = new Cementerio ("cemi1","9089",78,null,"oro", null,"cenizas",fumita); 
-		//Cementerio cemito1 = new Cementerio ("cemito1","5490",78,null,"oro", null,"cenizas",funita);
+		Cementerio cementerio1 = new Cementerio ("cementerio1","2090",78,null,"oro", null,"cuerpos",fulanita); 
+		Cementerio cemi1 = new Cementerio ("cemi1","9089",78,null,"oro", null,"cuerpos",fumita); 
+		Cementerio cemito1 = new Cementerio ("cemito1","5490",78,null,"oro", null,"cuerpos",funita);
 		
 		//Objetos de la clase Empleado
 		Empleado empleado1 = new Empleado("Alberto",12345,"3456",null,"mañana","cremador",900000);
@@ -571,22 +572,22 @@ public class Menú {
 		Empleado empleado8 = new Empleado("Anastasio",12345,"3456",null,"tarde","cremador",900000);
 		
 		
-		//Urna 
+		//Urnas vacías
 		
 		Urna urna1=new Urna("Urnita1",cemi,70,1,"fija");
 		Urna urna2=new Urna("Urnita2",cemi,90,0,"ordinaria");
 		Urna urna3=new Urna("Urnita3",cemi,50,0,"ordinaria");
 		Urna urna4=new Urna("Urnita4",cemi,60,1,"fija");
 		
-		Urna urna5=new Urna("Urnita5",cementerio,70,2,"fija");
-		Urna urna6=new Urna("Urnita6",cementerio,50,2,"ordinaria");
+		Urna urna5=new Urna("default",cementerio,70,2,"fija");
+		Urna urna6=new Urna("default",cementerio,50,2,"ordinaria");
 		Urna urna7=new Urna("Urnita7",cementerio,40,2,"ordinaria");
 		Urna urna8=new Urna("Urnita8",cementerio,60,1,"fija");
 		
-		Urna urna9=new Urna("Urnita9",cemito,70,0,"fija");
+		Urna urna9=new Urna("default",cemito,70,0,"fija");
 		Urna urna10=new Urna("Urnita10",cemito,50,1,"fija");
 		Urna urna11=new Urna("Urnita11",cemito,40,2,"ordinaria");
-		Urna urna12=new Urna("Urnita12",cemito,60,1,"fija");
+		Urna urna12=new Urna("default",cemito,60,1,"fija");
 		
 		
 		
@@ -601,7 +602,62 @@ public class Menú {
 		fulanita.agregarEmpleado(empleado7);
 		fulanita.agregarEmpleado(empleado8);
 		
+		
+		//Funcionalidad Exhumacion
+		
+		Cliente n1 = new Cliente("n1",123,35,null,"oro",familiar);
+		Cliente n2 = new Cliente("n2",123,37,null,"oro",familiar);
+		Cliente n3 = new Cliente("n3",123,39,null,"oro",familiar);
+		Cliente n4 = new Cliente("n4",123,41,null,"oro",familiar);
+		Cliente n5 = new Cliente("n5",123,25,null,"oro",familiar);
+		
+		Cliente n6 = new Cliente("n6",123,35,null,"oro",familiar);
+		Cliente n7 = new Cliente("n7",123,37,null,"oro",familiar);
+		Cliente n8 = new Cliente("n8",123,39,null,"oro",familiar);
+		Cliente n9 = new Cliente("n9",123,41,null,"oro",familiar);
+		Cliente n10 = new Cliente("n10",123,25,null,"oro",familiar);
+		
+		Urna urna13=new Urna("Urnita13",cemi,70,1,"fija");
+		Urna urna14=new Urna("Urnita14",cemi,90,0,"ordinaria");
+		Urna urna15=new Urna("Urnita15",cemi,50,0,"ordinaria");
+		
+		
+		Urna urna17=new Urna("default",cementerio,70,2,"fija");
+		Urna urna18=new Urna("default",cementerio,50,2,"ordinaria");
+		Urna urna19=new Urna("Urnita719",cementerio,40,2,"ordinaria");
+		
+		
+		Urna urna21=new Urna("default",cemito,70,0,"fija");
+		Urna urna22=new Urna("Urnita22",cemito,50,1,"fija");
+		Urna urna23=new Urna("Urnita23",cemito,40,2,"ordinaria");
+
+		
+		Tumba tumba1=new Tumba("Tumbita1",cemi1,1.70,1);
+		Tumba tumba2=new Tumba("Tumbita2",cemi1,1.50,2);
+		Tumba tumba3=new Tumba("Tumbita3",cemito1,1.60,3);
+		
+		Tumba tumba4=new Tumba("Tumbita4",cemito1,1.50,1);
+		Tumba tumba5=new Tumba("Tumbita5",cementerio1,1.50,2);
+		Tumba tumba6=new Tumba("Tumbita6",cementerio1,1.50,3);
+		
+		Tumba tumba7=new Tumba("Tumbita7",cementerio1,1.50,1);
+		Tumba tumba8=new Tumba("Tumbita8",cementerio1,1.50,2);
+		Tumba tumba9=new Tumba("Tumbita9",cementerio1,1.50,3);
+		
+		
+		urna13.agregarCliente(n1);
+		urna14.agregarCliente(n2);
+		urna15.agregarCliente(n3);
+		urna17.agregarCliente(n5);
+		
+		tumba1.agregarCliente(n4);
+		tumba2.agregarCliente(n7);
+		tumba3.agregarCliente(n8);
+		tumba4.agregarCliente(n9);
+		tumba5.agregarCliente(n10);
 	
+		
+		
 		
 		
 		Scanner scanner = new Scanner(System.in);

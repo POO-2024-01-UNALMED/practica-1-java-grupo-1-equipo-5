@@ -34,6 +34,7 @@ public abstract class Inventario {
 	public void agregarCliente(Cliente cliente) {
 		this.cliente=cliente;
 		this.cementerio.getClientes().add(cliente);
+		this.cliente.setInventario(this);
 	}
 	
 	public int determinarCategoria(int edad) {

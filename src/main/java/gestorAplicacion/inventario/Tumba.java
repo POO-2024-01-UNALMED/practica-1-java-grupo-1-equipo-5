@@ -27,6 +27,10 @@ public class Tumba extends Inventario{
 		double volumenTumba=ancho*profundidad*(largo+0.5);
 		return volumenTumba;
 	}
+	
+	public void generarAdornos(String tipoAdorno) {
+		
+	}
 
 	
 	

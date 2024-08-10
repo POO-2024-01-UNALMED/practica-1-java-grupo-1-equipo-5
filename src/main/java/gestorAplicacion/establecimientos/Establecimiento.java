@@ -128,6 +128,13 @@ public class Establecimiento {
 		return clientesEdad;
 	}
 	
+	public void agregarCliente(Cliente cliente) {
+		this.clientes.add(cliente);
+	}
+	public void eliminarCliente(Cliente cliente) {
+		this.clientes.remove(cliente);
+	}
+	
 	
 	
 	//busca a un cliente en todas las funerarias por su atributo CC

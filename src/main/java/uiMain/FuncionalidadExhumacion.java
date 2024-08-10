@@ -1,11 +1,13 @@
 package uiMain;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import gestorAplicacion.establecimientos.*;
 import gestorAplicacion.personas.Cliente;
 import gestorAplicacion.inventario.*;
+import gestorAplicacion.personas.*;
 
 public class FuncionalidadExhumacion {
 	
@@ -230,10 +232,19 @@ public class FuncionalidadExhumacion {
 		//Asignar funeraria
 		cementerio=cliente.getInventario().getCementerio();
 		
-		//Escoger religión del cliente
-		
 		
 		//Proceso exhumación del cuerpo
+		
+		//Datos para la exhumacion
+		
+		double pesoEstatura=0;
+		int edad=0;
+		String tipo1=null;
+		String tipo2=null;
+				
+				
+		//Iglesias disponibles
+		ArrayList<Iglesia> iglesias = new ArrayList<Iglesia>();
 		
 		System.out.println();
 		
@@ -260,22 +271,19 @@ public class FuncionalidadExhumacion {
 			indice=scanner.nextInt();
 		}
 		
-		//Datos para la exhumacion
-		double pesoEstatura=0;
-		int edad=0;
-		String tipo1=null;
-		String tipo2=null;
-		
-		//Establecer iglesia para determinar religion del cliente 
-		System.out.println("Seleccione la religión con la que se va a realizar la ceremonia del cliente");
-		//Iglesias disponibles
-		ArrayList<Iglesia> iglesias = new ArrayList<Iglesia>();
-		indice=1;
-		
+	
 		switch(indice) {
 		
 		case 1:
 			
+			System.out.print("Ingrese el peso del cliente: ");
+			pesoEstatura=scanner.nextDouble();
+			tipo1="cenizas";
+			tipo2="urna";
+			
+			//Establecer iglesia para determinar religion del cliente 
+			System.out.println("Seleccione la religión con la que se va a realizar la ceremonia del cliente");
+			indice=1;
 			for(Iglesia auxIglesia:Iglesia.values()) {
 				//Se imprimen y añaden a la lista solo las iglesias que permiten la cremación como acto final de la vida
 				if (auxIglesia.getCremacion()) {
@@ -286,24 +294,24 @@ public class FuncionalidadExhumacion {
 			}
 			
 
-			System.out.print("Ingrese el peso del cliente: ");
-			pesoEstatura=scanner.nextDouble();
-			tipo1="cenizas";
-			tipo2="urna";
+			
 			
 			break;
 		
 		case 2:
 			
-			for(Iglesia auxIglesia:Iglesia.values()) {
-				System.out.println("["+indice+"] "+auxIglesia);
-				indice+=1;
-			}
-			
 			System.out.print("Ingrese la estatura del cliente: ");
 			pesoEstatura=scanner.nextDouble();
 			tipo1="cuerpos";
 			tipo2="urna";
+			
+			//Establecer iglesia para determinar religion del cliente 
+			System.out.println("Seleccione la religión con la que se va a realizar la ceremonia del cliente");
+			indice=1;
+			for(Iglesia auxIglesia:Iglesia.values()) {
+				System.out.println("["+indice+"] "+auxIglesia);
+				indice+=1;
+			}
 			
 			break;
 		
@@ -320,9 +328,7 @@ public class FuncionalidadExhumacion {
 		
 		cementerio.setIglesia(iglesias.get(indice-1));
 	
-		
-		System.out.print("Ingrese la edad del cliente: ");
-		edad=scanner.nextInt();
+		edad=cliente.getEdad();
 		
 		
 		System.out.println("La afiliación del cliente es "+cliente.getAfiliacion());
@@ -397,7 +403,82 @@ public class FuncionalidadExhumacion {
 				nuevaUrnaTumba=disponible.get(indice-1);
 				
 				break;
+				
+				
+		}//Fin switch
+		
+		//Asignacion de tumba
+		nuevaUrnaTumba.agregarCliente(cliente);
+		
+		
+		//Asignación de equipo de empleados 
+		
+		//Seleccionar la hora
+		
+		//Establecer horas de acuerdo a empleado Sepulturero disponibles  
+		cementerio.generarHoras();
+		
+		indice=1;
+		for(LocalTime hora: cementerio.getHorarioEventos()) {
+			String indicador;
+			
+			if(hora.getHour()>12) {
+				indicador="Pm";
+			}else {indicador = "Am";}
+			
+			System.out.println("["+indice+"] "+hora+" "+indicador);
+			indice++;
 		}
+		System.out.print("Ingrese el índice para escoger el horario: ");
+		indice=scanner.nextInt();
+		
+		//Validación
+		while(indice<1 || indice>cementerio.getHorarioEventos().size()) {
+			System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+			indice=scanner.nextInt();
+			}
+		
+		//Se asigna la hora en el atributo horaEvento para trabajar con esa hora el resto de la funcionalidad
+		cementerio.setHoraEvento(cementerio.getHorarioEventos().get(indice-1));
+		//Se elimina esa hora del ArrayList de HorarioEvento 
+		cementerio.eliminarHorario(cementerio.getHorarioEventos().get(indice-1));
+		
+		
+		//Seleccionar sepulturero
+		
+		ArrayList<Empleado> empleados=cementerio.getFuneraria().buscarEmpleados(cementerio.getHoraEvento(), "sepulturero");
+		indice=1;
+		for(Empleado auxEmpleado:empleados) {
+			System.out.println("["+indice+"] "+auxEmpleado);
+		}
+		System.out.print("Ingrese el índice para escoger el empleado: ");
+		indice=scanner.nextInt();
+		
+		//Validación
+		while(indice<1 || indice>empleados.size()) {
+			System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+			indice=scanner.nextInt();
+			}
+		
+		//Asignar empleado a cementerio
+		cementerio.setEmpleado(empleados.get(indice-1));
+		
+		//Seleccionar Forense
+		
+		empleados=cementerio.getFuneraria().buscarEmpleados(cementerio.getHoraEvento(), "forense");
+		
+		for(Empleado auxEmpleado:empleados) {
+			System.out.println("["+indice+"] "+auxEmpleado);
+		}
+		System.out.print("Ingrese el índice para escoger el empleado: ");
+		indice=scanner.nextInt();
+		
+		//Validación
+		while(indice<1 || indice>empleados.size()) {
+			System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+			indice=scanner.nextInt();
+			}
+		
 		
 		
 		
