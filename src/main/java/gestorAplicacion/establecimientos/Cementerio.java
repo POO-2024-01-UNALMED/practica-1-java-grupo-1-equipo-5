@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import gestorAplicacion.inventario.*;
 
 import gestorAplicacion.financiero.CuentaBancaria;
+import gestorAplicacion.financiero.Factura;
 import gestorAplicacion.personas.*;
 
 
@@ -83,6 +84,8 @@ public class Cementerio extends Establecimiento {
 		 return recomendado;
         
         }
+	
+	
        
 	
 	
@@ -140,6 +143,40 @@ public class Cementerio extends Establecimiento {
 		
 		return urnasPorTipo;
 	} 
+	
+	public String organizarIglesia(Cliente cliente) {
+		
+		ArrayList<Persona> familiares =cliente.getFamiliares();
+		int sillas=getIglesia().getSillas();
+	
+		String organizacion="";
+		ArrayList<Producto> productos = new ArrayList<Producto>();
+		
+		cliente.getInventario().generarAdornos("flores");
+		
+		
+		int contador=1;
+		while(familiares.size()!=0 & sillas!=0) {
+			Familiar familiar = cliente.designarFamiliar(familiares);
+			String flor=cliente.getInventario().getFlores().get(0);
+			organizacion+="Silla ["+contador+"] - Familiar "+familiar+" Flores para decorar silla -  "+ flor+"\n";
+			
+			//AgregarProducto a la lista
+			productos.add(new Producto(flor,Inventario.precios(flor),1));
+			//Borrar a familiar designado
+			familiares.remove(familiar);
+			//Borrar adorno
+			cliente.getInventario().getFlores().remove(flor);
+			
+			sillas-=1;
+			
+		}
+		
+		cliente.agregarFactura(new Factura(productos));
+		
+		return organizacion;	
+		
+	}
 	
 	
 	

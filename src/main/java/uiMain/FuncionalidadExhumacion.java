@@ -481,6 +481,37 @@ public class FuncionalidadExhumacion {
 		
 		
 		
+		//Seleccionar al padre u obispo 
+		int categoria=cliente.getInventario().getCategoria();
+		String empleado=null;
+		if(categoria==0) {empleado="obispo";}
+		else {empleado="padre";}
+		
+		System.out.println("Dada la categoria ["+categoria+"] su ceremonia puede ser celebrada por los siguientes religiosos");
+		
+		empleados = cementerio.getFuneraria().buscarEmpleados(cementerio.getHoraEvento().plusHours(3), empleado);
+		
+		for(Empleado auxEmpleado:empleados) {
+			if(categoria==0) {
+				System.out.println(cementerio.getIglesia().getReligiosoAltoRango()+" "+auxEmpleado);
+			}else {
+				System.out.println(cementerio.getIglesia().getReligioso()+" "+auxEmpleado);
+			}
+		}
+		
+		System.out.print("Ingrese el índice para escoger al religioso: ");
+		indice=scanner.nextInt();
+		
+		//Validación
+		while(indice<1 || indice>empleados.size()) {
+			System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+			indice=scanner.nextInt();
+			}
+		
+		System.out.println(cementerio.organizarIglesia(cliente));
+		
+		
+		
 		
 		
 		

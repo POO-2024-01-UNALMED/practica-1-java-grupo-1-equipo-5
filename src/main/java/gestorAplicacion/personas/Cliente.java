@@ -142,6 +142,10 @@ public class Cliente extends Persona {
 			
 		}
 		
+		public void agregarFactura(Factura factura) {
+			listadoFacturas.add(factura);
+		}
+		
 		
 	
 	

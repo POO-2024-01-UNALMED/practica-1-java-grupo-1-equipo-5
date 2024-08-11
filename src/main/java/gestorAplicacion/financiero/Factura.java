@@ -1,11 +1,16 @@
 package gestorAplicacion.financiero;
 import gestorAplicacion.personas.*;
+
 import gestorAplicacion.establecimientos.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+
 import gestorAplicacion.inventario.*;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.stream.Collectors;
+
 
 public class Factura {
 	//Atributos
@@ -52,6 +57,45 @@ public class Factura {
 		calcularTotal();
 		
 	}
+	
+	public Factura(ArrayList<Producto> productos) {
+		listaProductos=productos;
+		ajustarProductos();
+		facturasCreadas++;
+		ID=facturasCreadas;
+	}
+	
+	
+	public void ajustarProductos() {
+		
+		//Nueva lista de productos
+		ArrayList<Producto> productos=new ArrayList<Producto>();
+		
+		// Usar un HashMap para contar las ocurrencias de cada nombre
+        Map<String, Integer> nameCountMap = new HashMap<>();
+        
+        for (Producto producto : listaProductos) {
+            String nombre = producto.getNombre();
+            nameCountMap.put(nombre, nameCountMap.getOrDefault(nombre, 0) + 1);
+        }
+        
+        for (Map.Entry<String, Integer> entrada : nameCountMap.entrySet()) {
+        	productos.add(new Producto(entrada.getKey(),Inventario.precios(entrada.getKey()),entrada.getValue()));
+ 
+        }//Fin for
+        
+        listaProductos=productos;
+	}
+		
+
+	        
+
+	      
+	
+	
+	
+	
+	
 	// Método para aplicar un descuento al precio de la factura
     public void aplicarDescuento(double porcentaje) {
         if (porcentaje > 0 && porcentaje <= 100) {

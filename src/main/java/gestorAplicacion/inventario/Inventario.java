@@ -1,8 +1,10 @@
 package gestorAplicacion.inventario;
 
 import java.util.ArrayList;
-
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 import gestorAplicacion.establecimientos.Cementerio;
 import gestorAplicacion.personas.Cliente;
@@ -13,6 +15,9 @@ public abstract class Inventario {
 	private Cliente cliente;
 	private double tamaño; //Número 
 	private int categoria;
+	
+	public static int precioFlores=35000;
+	public static int precioMateriales=45000;
 	
 	private ArrayList<String> inventarioFlores = new ArrayList<String>();
 	private ArrayList<String> inventarioMaterial = new ArrayList<String>();
@@ -47,9 +52,29 @@ public abstract class Inventario {
 	}
 	
 	
+	public static double precios(String adorno) {
+		
+		String[] arregloCompleto = Stream.concat(Arrays.stream(flores), Arrays.stream(material)).toArray(String[]::new);
+		double precio=30000;
+		int indice=0;
+		
+		for (int i = 0; i < arregloCompleto.length; i++) {
+	            if (arregloCompleto[i].equals(adorno)) {
+	                indice=i;
+	            }
+	            
+		}
+		
+		return precio+indice*5000;
+	        
+	}
+	
+	
 	public abstract void generarAdornos(String tipoAdorno);
 	
 	public abstract double determinarTamaño(double tamaño);
+	
+	
 	
 	public void setTamaño(double Tamaño) {
 		this.tamaño=determinarTamaño(tamaño);

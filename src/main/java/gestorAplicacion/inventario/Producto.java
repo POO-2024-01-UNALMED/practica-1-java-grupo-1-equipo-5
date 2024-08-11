@@ -50,7 +50,7 @@ public class Producto {
     		Cementerio cementerio=(Cementerio) establecimiento;
     		if( ((Cementerio)establecimiento).getTipo()=="cuerpos")
     			concepto="Entierro";
-    	}else {concepto="Entrega de cenizas";}
+    	}else {concepto="Entierro de cenizas";}
     	
     	for(Persona familiar:cliente.getFamiliares()) {
     		familiares=familiares+familiar+"\n";
@@ -69,6 +69,8 @@ public class Producto {
     	return evento;
     	
     }
+    
+    
  
  // Constructor que acepta nombre y cantidadVendida
     public Producto(String nombre, int cantidadVendida) {
