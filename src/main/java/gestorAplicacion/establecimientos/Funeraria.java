@@ -183,7 +183,7 @@ public void cobroServiciosClientes(Cliente cliente) {
 					if (persona instanceof Familiar) {
 						Familiar familiar = (Familiar) persona;
 				        if (familiar.getParentesco() != null) {
-				            if("conyugue".equals(familiar.getParentesco()) && familiar.getEdad() >= 18){
+				            if("conyuge".equals(familiar.getParentesco()) && familiar.getEdad() >= 18){
 				            	if(totalFactura <= familiar.getCuentaBancaria().getSaldo()) {
 				            		familiar.getCuentaBancaria().transaccionCuentaAhorros(totalFactura, Funeraria.cuentaAhorros);
 				    				((Cliente) cliente).getListadoFacturas().remove(factura);}
