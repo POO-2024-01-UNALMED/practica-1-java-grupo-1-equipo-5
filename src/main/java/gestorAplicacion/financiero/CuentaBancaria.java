@@ -139,4 +139,21 @@ public class CuentaBancaria {
 	public void setBolsilloEstablecimientos(double bolsilloEstablecimientos) {
 		this.bolsilloEstablecimientos = bolsilloEstablecimientos;
 	}
+
+	public long getNumeroCuenta() {
+		return numeroCuenta;
+	}
+
+	public void setNumeroCuenta(long numeroCuenta) {
+		this.numeroCuenta = numeroCuenta;
+	}
+
+	public String getTitular() {
+		return titular;
+	}
+
+	public void setTitular(String titular) {
+		this.titular = titular;
+	}
+	
 }

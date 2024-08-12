@@ -102,6 +102,7 @@ public abstract class Inventario {
 	}
 	
 
+	//mMtodos get y sett
 	
 	public String getNombre() {
 		return nombre;
@@ -152,6 +153,72 @@ public abstract class Inventario {
 	public void setMaterialSeleccionado(String material){
 		this.materialSeleccionado=material;
 	}
+
+
+	public static int getPrecioFlores() {
+		return precioFlores;
+	}
+
+
+	public static void setPrecioFlores(int precioFlores) {
+		Inventario.precioFlores = precioFlores;
+	}
+
+
+	public static int getPrecioMateriales() {
+		return precioMateriales;
+	}
+
+
+	public static void setPrecioMateriales(int precioMateriales) {
+		Inventario.precioMateriales = precioMateriales;
+	}
+
+
+	public ArrayList<String> getInventarioFlores() {
+		return inventarioFlores;
+	}
+
+
+	public void setInventarioFlores(ArrayList<String> inventarioFlores) {
+		this.inventarioFlores = inventarioFlores;
+	}
+
+
+	public ArrayList<String> getInventarioMaterial() {
+		return inventarioMaterial;
+	}
+
+
+	public void setInventarioMaterial(ArrayList<String> inventarioMaterial) {
+		this.inventarioMaterial = inventarioMaterial;
+	}
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+
+	public void setFloresSeleccionadas(ArrayList<String> floresSeleccionadas) {
+		this.floresSeleccionadas = floresSeleccionadas;
+	}
+
+
+	public static void setFlores(String[] flores) {
+		Inventario.flores = flores;
+	}
+
+
+	public static void setMaterial(String[] material) {
+		Inventario.material = material;
+	}
+	
 	
 
 	

@@ -12,6 +12,7 @@ public class Empleado extends Persona{
 	private int Experiencia;
 	private int trabajosHechos;
 	private boolean disponible= true;
+	private String descripcionCalificacion; // Se utiliza al momento de las encuestas
 	
 	
 		
@@ -79,5 +80,22 @@ public class Empleado extends Persona{
 	public void setExperiencia(int experiencia) {
 		Experiencia = experiencia;
 	}
+
+	public int getTrabajosHechos() {
+		return trabajosHechos;
+	}
+
+	public void setTrabajosHechos(int trabajosHechos) {
+		this.trabajosHechos = trabajosHechos;
+	}
+
+	public String getDescripcionCalificacion() {
+		return descripcionCalificacion;
+	}
+
+	public void setDescripcionCalificacion(String descripcionCalificacion) {
+		this.descripcionCalificacion = descripcionCalificacion;
+	}
+	
 	
 }
