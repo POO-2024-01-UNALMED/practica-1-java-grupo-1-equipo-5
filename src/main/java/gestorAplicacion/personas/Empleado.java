@@ -98,4 +98,12 @@ public class Empleado extends Persona{
 	}
 	
 	
+	public int getTrabajosHechos() {
+		return this.trabajosHechos;
+	}
+	
+	public void setTrabajosHechos(int trabajosHechos) {
+		
+		this.trabajosHechos = trabajosHechos;
+	}
 }
