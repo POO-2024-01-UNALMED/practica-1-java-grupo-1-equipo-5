@@ -317,6 +317,27 @@ public void cobroServiciosClientes(Cliente cliente) {
     	 
      }
      
+     
+     public void gestionarTrasnsporte(Cliente cliente) {
+ 		ArrayList<Vehiculo> vehiculos =this.vehiculos;
+ 		ArrayList<Persona> familiaresMenores = new ArrayList<Persona>();
+ 		ArrayList<Persona> familiaresMayores = new ArrayList<Persona>();
+ 		
+ 		for(Persona familiar: cliente.getFamiliares()) {
+ 			if(familiar.getCC()==0) {
+ 				familiaresMenores.add(familiar);
+ 			}else {familiaresMayores.add(familiar);}
+ 			
+ 		}//Fin for
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+     
+     }
+     
 	
 	//metodos get y set
 	

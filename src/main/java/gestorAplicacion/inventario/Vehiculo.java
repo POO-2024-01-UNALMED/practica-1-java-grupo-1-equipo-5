@@ -1,6 +1,7 @@
 package gestorAplicacion.inventario;
 
 
+import gestorAplicacion.personas.Cliente;
 import gestorAplicacion.personas.Empleado;
 import gestorAplicacion.establecimientos.Establecimiento;
 import gestorAplicacion.personas.Persona;
@@ -11,7 +12,6 @@ import gestorAplicacion.establecimientos.Funeraria;
 public class Vehiculo {
 	private TipoVehiculo tipoVehiculo; //Es un Enum
 	private Funeraria funeraria;
-	private String marca;
 	// private String modelo; Este se puede reemplazar pot tipoVehículo
     private String color;
     private Boolean estado=true; // true si está disponible, false si no lo está
@@ -19,28 +19,25 @@ public class Vehiculo {
 	private Empleado conductor;
 	private ArrayList<String> ruta=new ArrayList<String>();
 	private ArrayList<Persona> pasajeros = new ArrayList<Persona>();
-	private int capacidad;
+
 	
 	
 	// Constructor
-	public Vehiculo(TipoVehiculo tipoVehiculo,Funeraria funeraria,String marca, String color, String placa) {
+	public Vehiculo(TipoVehiculo tipoVehiculo,Funeraria funeraria,String color, String placa) {
 		this.tipoVehiculo=tipoVehiculo;
 		this.funeraria=funeraria;
-		this.marca = marca;
 		this.color = color;
 		this.placa = placa;
 		funeraria.agregarVehiculo(this);
 		}
 	// Constructor con capacidad por si nesecitan el otro constructor
-	public Vehiculo(TipoVehiculo tipoVehiculo,Funeraria funeraria,String marca, String color, String placa, int capaciadad) {
-		this.tipoVehiculo=tipoVehiculo;
-		this.funeraria=funeraria;
-		this.marca = marca;
-		this.color = color;
-		this.placa = placa;
-		this.capacidad = capaciadad;
-		funeraria.agregarVehiculo(this);
-		}
+	//public Vehiculo(TipoVehiculo tipoVehiculo,Funeraria funeraria,String color, String placa) {
+		//this.tipoVehiculo=tipoVehiculo;
+		//this.funeraria=funeraria;
+		//this.color = color;
+		//this.placa = placa;
+		//funeraria.agregarVehiculo(this);
+		//}
 	
 	
 	
@@ -81,6 +78,7 @@ public class Vehiculo {
 		return ruta;
 	}
 	
+	
 
 	
 	
@@ -120,12 +118,6 @@ public class Vehiculo {
 	public void setRuta(ArrayList<String> ruta) {
 		this.ruta=ruta;
 	}
-	public boolean isDisponible() {
-        return estado;
-    }
-	public void setDisponible(boolean estado) {
-		this.estado=estado;
-	}
 	public ArrayList<Persona> getPasajeros(){
 		return pasajeros;
 	}
@@ -135,29 +127,17 @@ public class Vehiculo {
 	public void setFuneraria(Funeraria funeraria) {
 		this.funeraria = funeraria;
 	}
-	public String getMarca() {
-		return marca;
-	}
-	public void setMarca(String marca) {
-		this.marca = marca;
-	}
 	public String getColor() {
 		return color;
 	}
 	public void setColor(String color) {
 		this.color = color;
 	}
-	public Boolean getEstado() {
+	public Boolean isEstado() {
 		return estado;
 	}
 	public void setEstado(Boolean estado) {
 		this.estado = estado;
-	}
-	public int getCapacidad() {
-		return capacidad;
-	}
-	public void setCapacidad(int capacidad) {
-		this.capacidad = capacidad;
 	}
 	public void setTipoVehiculo(TipoVehiculo tipoVehiculo) {
 		this.tipoVehiculo = tipoVehiculo;
