@@ -379,13 +379,5 @@ public void pagoTrabajadores(Empleado empleado) {
 		Funeraria.cuentaAhorros = cuentaAhorros;
 	}
 
-	public void setListadoFacturas(ArrayList<Factura> listadoFacturas) {
-		this.listadoFacturas = listadoFacturas;
-	}
-
-	public void setListadoFacturasPorPagar(ArrayList<Factura> listadoFacturasPorPagar) {
-		this.listadoFacturasPorPagar = listadoFacturasPorPagar;
-	}
-	
 	
 }

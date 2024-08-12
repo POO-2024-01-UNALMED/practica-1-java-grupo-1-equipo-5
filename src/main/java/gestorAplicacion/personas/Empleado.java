@@ -81,14 +81,6 @@ public class Empleado extends Persona{
 		Experiencia = experiencia;
 	}
 
-	public int getTrabajosHechos() {
-		return trabajosHechos;
-	}
-
-	public void setTrabajosHechos(int trabajosHechos) {
-		this.trabajosHechos = trabajosHechos;
-	}
-
 	public String getDescripcionCalificacion() {
 		return descripcionCalificacion;
 	}

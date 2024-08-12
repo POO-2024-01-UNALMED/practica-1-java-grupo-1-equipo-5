@@ -238,8 +238,7 @@ public class CuentaBancaria implements Banco {
 		this.bolsilloEstablecimientos = bolsilloEstablecimientos;
 		this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos;
 	}
-<<<<<<< Updated upstream
-
+	
 	public long getNumeroCuenta() {
 		return numeroCuenta;
 	}
@@ -256,17 +255,13 @@ public class CuentaBancaria implements Banco {
 		this.titular = titular;
 	}
 	
-}
-=======
+
 	
 	public double getInteres() {
 		return this.interes; 
 	}
 	public double getCobroAdicional(){
 		return this.cobroAdicional;
-	}
-		
-	}
 	
-
->>>>>>> Stashed changes
+	}
+}
