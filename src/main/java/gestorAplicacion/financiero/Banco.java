@@ -1,27 +1,33 @@
 package gestorAplicacion.financiero;
 
-public enum Banco {
+public interface Banco{
 	
-	BANCOLOMBIA(0.0005, 1800),
-	DAVIVIENDA(0.08, 2000),
-	BBVA(0.005, 1500),
-	BANCO_BOGOTA(0.0001, 1600),
-	BANCO_OCCIDENTE(0.02, 2200);
-  
-	final double interes;
-	final double cobroAdicional;
+	double INTERES_BANCOLOMBIA = 0.0005;
+	double COBRO_ADICIONAL_BANCOLOMBIA = 1800;
+	double INTERES_DAVIVIENDA = 0.08;
+	double COBRO_ADICIONAL_DAVIVIENDA = 2000;
+	double INTERES_BBVA = 0.005;
+	double COBRO_ADICIONAL_BBVA = 1500;
+	double INTERES_BANCO_BOGOTA = 0.0001;
+	double COBRO_ADICIONAL_BANCO_BOGOTA = 1600;
+	double INTERES_BANCO_OCCIDENTE = 0.02;
+	double COBRO_ADICIONAL_BANCO_OCCIDENTE = 2200;
 	
-	Banco(double interes, double cobroAdicional){
-		this.interes = interes;
-		this.cobroAdicional = cobroAdicional;
+
+	double getInteres();
 	
-}
-	public double getInteres() {
-		return interes;
+	double getCobroAdicional();
+	
+	void depositar(double cantidad, String tipo);
+	
+	void retirar(double cantidad, String tipo);
+	
+	double obtenerSaldo();
+	
+	default void consultarEstadoCuenta() {
+		
+	double saldo = obtenerSaldo();
+		
 	}
-	public double getCobroAdicional() {
-		return cobroAdicional;
-	}
-	
 	
 }

@@ -173,7 +173,7 @@ public void cobroServiciosClientes(Cliente cliente) {
 			
 			double totalFactura = factura.getTotal();
 			 
-			if(totalFactura <= cliente.getCuentaBancaria().getSaldo() && cliente.getEdad() >= 18) {
+			if(totalFactura <= cliente.getCuentaBancaria().obtenerSaldo() && cliente.getEdad() >= 18) {
 				
 				cliente.getCuentaBancaria().transaccionCuentaAhorros(totalFactura, Funeraria.cuentaAhorros);
 				((Cliente) cliente).getListadoFacturas().remove(factura);
@@ -184,26 +184,26 @@ public void cobroServiciosClientes(Cliente cliente) {
 						Familiar familiar = (Familiar) persona;
 				        if (familiar.getParentesco() != null) {
 				            if("conyuge".equals(familiar.getParentesco()) && familiar.getEdad() >= 18){
-				            	if(totalFactura <= familiar.getCuentaBancaria().getSaldo()) {
+				            	if(totalFactura <= familiar.getCuentaBancaria().obtenerSaldo()) {
 				            		familiar.getCuentaBancaria().transaccionCuentaAhorros(totalFactura, Funeraria.cuentaAhorros);
 				    				((Cliente) cliente).getListadoFacturas().remove(factura);}
 				            	
 				        }else if("hijo".equals(familiar.getParentesco()) || "hija".equals(familiar.getParentesco())  && familiar.getEdad() >= 18) {
-				        	if(totalFactura <= familiar.getCuentaBancaria().getSaldo()) {
+				        	if(totalFactura <= familiar.getCuentaBancaria().obtenerSaldo()) {
 			            		familiar.getCuentaBancaria().transaccionCuentaAhorros(totalFactura, Funeraria.cuentaAhorros);
 			    				((Cliente) cliente).getListadoFacturas().remove(factura);}
 				        	
 				        }else if("padre".equals(familiar.getParentesco()) || "madre".equals(familiar.getParentesco()) && familiar.getEdad() >= 18) {
-				        	if(totalFactura <= familiar.getCuentaBancaria().getSaldo()) {
+				        	if(totalFactura <= familiar.getCuentaBancaria().obtenerSaldo()) {
 			            		familiar.getCuentaBancaria().transaccionCuentaAhorros(totalFactura, Funeraria.cuentaAhorros);
 			    				((Cliente) cliente).getListadoFacturas().remove(factura);}
 				      
 				        }else if("hermano".equals(familiar.getParentesco()) || "hermana".equals(familiar.getParentesco()) && familiar.getEdad() >= 18) {
-				        	if(totalFactura <= familiar.getCuentaBancaria().getSaldo()) {
+				        	if(totalFactura <= familiar.getCuentaBancaria().obtenerSaldo()) {
 			            		familiar.getCuentaBancaria().transaccionCuentaAhorros(totalFactura, Funeraria.cuentaAhorros);
 			    				((Cliente) cliente).getListadoFacturas().remove(factura);}
 				        
-				        }else { if(totalFactura <= familiar.getCuentaBancaria().getSaldo() && familiar.getEdad() >= 18) {
+				        }else { if(totalFactura <= familiar.getCuentaBancaria().obtenerSaldo() && familiar.getEdad() >= 18) {
 		            		familiar.getCuentaBancaria().transaccionCuentaAhorros(totalFactura, Funeraria.cuentaAhorros);
 		    				((Cliente) cliente).getListadoFacturas().remove(factura);}
 				        	
@@ -224,14 +224,35 @@ public void cobroServiciosClientes(Cliente cliente) {
     		 
     			 Producto producto = factura.getListaProductos().get(0);
     			 Establecimiento establecimiento = producto.getEstablecimiento();
-    			  this.getCuentaCorriente().transaccion(totalFactura, establecimiento.getCuentaCorriente());}
+    			  this.getCuentaCorriente().transaccion(totalFactura, establecimiento.getCuentaCorriente(), "bolsilloInventario");}
     			 
     		
     	 
     	 
      }
+public void pagoTrabajadores(Empleado empleado) {
+    	 
+    	 int trabajos = empleado.getTrabajosHechos();
+    	 
+    	 int calificacion = empleado.getCalificacion();
+    	 
+    	 double paga = empleado.getSalario();
+    	 if(trabajos >= 2 && 5 >= trabajos) {
+    		  paga *= 1;
+    	}   else if(trabajos > 5 && trabajos <= 9) {
+    	     paga += (paga*0.02);}
+    	 else if(trabajos > 9 ) {
+    	     paga +=(paga*0.04);
+    	     
+     }if(calificacion == 5) {
+    	 paga += (paga*0.05);
+     }
+     
+     this.getCuentaCorriente().transaccion(paga, empleado.getCuentaBancaria(), "bolsilloTrabajadores");
+    	 
+     
 
-
+}
 
      public static Producto[] identificarProductosFaltantes(Funeraria funeraria) {
          Producto[] productosVendidos = calcularProductosVendidos(funeraria);
@@ -379,13 +400,5 @@ public void cobroServiciosClientes(Cliente cliente) {
 		Funeraria.cuentaAhorros = cuentaAhorros;
 	}
 
-	public void setListadoFacturas(ArrayList<Factura> listadoFacturas) {
-		this.listadoFacturas = listadoFacturas;
-	}
-
-	public void setListadoFacturasPorPagar(ArrayList<Factura> listadoFacturasPorPagar) {
-		this.listadoFacturasPorPagar = listadoFacturasPorPagar;
-	}
-	
 	
 }

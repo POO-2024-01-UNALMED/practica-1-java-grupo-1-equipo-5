@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import gestorAplicacion.personas.Persona;
 import gestorAplicacion.inventario.*;
 
-public class CuentaBancaria {
+public class CuentaBancaria implements Banco {
 	private String banco;
 	private double bolsilloTrabajadores;
 	private double bolsilloInventario;
@@ -14,38 +14,102 @@ public class CuentaBancaria {
 	private double saldo;
 	private long numeroCuenta;
 	private String titular;
+    private double interes ;
+    private double cobroAdicional;
 	
 	
 	public CuentaBancaria(long numeroCuenta, String titular, double saldoInicial, String banco) {
-        this.numeroCuenta = numeroCuenta;
+        this.establecerValores(banco);
+		this.numeroCuenta = numeroCuenta;
         this.titular = titular;
         this.saldo = saldoInicial;
         this.banco = banco;
     }
 	
 	public CuentaBancaria(long numeroCuenta, String titular, double bolsilloTrabajadores, double bolsilloInventario, double bolsilloTransporte, double bolsilloEstablecimientos, String banco) {
-        this.numeroCuenta = numeroCuenta;
+        this.establecerValores(banco);
+		this.numeroCuenta = numeroCuenta;
         this.titular = titular;
         this.bolsilloTrabajadores = bolsilloTrabajadores;
         this.bolsilloTransporte = bolsilloTransporte;
         this.bolsilloInventario = bolsilloInventario;
         this.bolsilloEstablecimientos = bolsilloEstablecimientos;
         this.banco = banco;
+        this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos;
 	}
-    public void depositar(double cantidad) {
-        if (cantidad > 0) {
+	
+	private void establecerValores(String banco) {
+		switch(banco.toUpperCase()) {
+		case "BANCOLOMBIA":
+            this.interes = INTERES_BANCOLOMBIA;
+            this.cobroAdicional = COBRO_ADICIONAL_BANCOLOMBIA;
+            break;
+        case "DAVIVIENDA":
+            this.interes = INTERES_DAVIVIENDA;
+            this.cobroAdicional = COBRO_ADICIONAL_DAVIVIENDA;
+            break;
+		case "BBVA":
+		    this.interes = INTERES_BBVA;
+		    this.cobroAdicional = COBRO_ADICIONAL_DAVIVIENDA;
+		    break;
+		case "BANCO_BOGOTA":
+		    this.interes = INTERES_BANCO_BOGOTA;
+		    this.cobroAdicional = COBRO_ADICIONAL_BANCO_BOGOTA;
+		    break;
+		case "BANCO_OCCIDENTE":
+		    this.interes = INTERES_BANCO_OCCIDENTE;
+		    this.cobroAdicional = COBRO_ADICIONAL_BANCO_OCCIDENTE;
+		    break;
+		}
+	}
+    public void depositar(double cantidad, String tipo) {
+        if(tipo == "saldo") {
+    	   if (cantidad > 0) {
             saldo += cantidad;
         }
+      }else if(tipo == "bolsilloTrabajadores") {
+    	  if (cantidad > 0) {
+              bolsilloTrabajadores += cantidad;
+              this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos;
+      }}else if(tipo == "bolsilloInventario") {
+    	  if (cantidad > 0) {
+              bolsilloInventario += cantidad;
+              this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos;
+      }}else if(tipo == "bolsilloTransporte") {
+    	  if (cantidad > 0) {
+              bolsilloTransporte += cantidad;
+              this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos;
+      }}else if(tipo == "bolsilloEstablecimientos") {
+    	  if (cantidad > 0) {
+              bolsilloEstablecimientos += cantidad;
+              this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos;
+      }}
     }
 
-    public void retirar(double cantidad) {
-        if (cantidad > 0) {
-            if (cantidad <= saldo) {
-                saldo -= cantidad;
-            } 
-        }
-        
-}
+    public void retirar(double cantidad, String tipo) {
+    	if(tipo == "saldo") {
+     	   if (cantidad <= saldo) {
+               saldo -= cantidad;
+           }
+         }else if(tipo == "bolsilloTrabajadores") {
+       	  if (cantidad <= bolsilloTrabajadores) {
+                 bolsilloTrabajadores -= cantidad;
+                 this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos;
+         }}else if(tipo == "bolsilloInventario") {
+       	  if (cantidad <= bolsilloInventario) {
+                 bolsilloInventario -= cantidad;
+                 this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos;
+         }}else if(tipo == "bolsilloTransporte") {
+       	  if (cantidad <= bolsilloTransporte) {
+                 bolsilloTransporte -= cantidad;
+                 this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos;
+         }}else if(tipo == "bolsilloEstablecimientos") {
+       	  if (cantidad <= bolsilloEstablecimientos) {
+                 bolsilloEstablecimientos -= cantidad;
+                 this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos;
+         }}
+       }
+
     
     public void transaccionCuentaAhorros(double valor, CuentaBancaria cuentaAhorros) {
     	
@@ -55,9 +119,7 @@ public class CuentaBancaria {
     	}
     	else {
     		
-    		String Nbanco = this.banco;
-    		Banco banco = Banco.valueOf(Nbanco);
-    		double cobroAdicional = banco.getCobroAdicional();
+    		double cobroAdicional = this.getCobroAdicional();
     		double saldo = this.saldo -(valor + cobroAdicional);
 		    setSaldo(saldo);
     		
@@ -66,36 +128,69 @@ public class CuentaBancaria {
     	
     	double saldoCuentaAhorros = cuentaAhorros.saldo + valor;
     	cuentaAhorros.setSaldo(saldoCuentaAhorros);
-    	
-    	String Nbanco = this.banco;
-		Banco banco = Banco.valueOf(Nbanco);
-    	double porcentajeInteres = banco.getInteres();
-        double interes = cuentaAhorros.getSaldo() * porcentajeInteres;
-        double saldoFinal = cuentaAhorros.getSaldo() - interes;
+    
+    	double porcentajeInteres = this.getInteres();
+        double interes = cuentaAhorros.obtenerSaldo() * porcentajeInteres;
+        double saldoFinal = cuentaAhorros.obtenerSaldo() - interes;
         cuentaAhorros.setSaldo(saldoFinal);
     }
-    public void transaccion(double valor, CuentaBancaria cuentaCorriente) {
+    public void transaccion(double valor, CuentaBancaria cuentaCorriente, String tipo) {
+    	
     	if(this.getBanco() == cuentaCorriente.getBanco()) {
-    		double saldo = this.saldo - valor;
-    		setSaldo(saldo);
-    	}
+    		if(tipo == "saldo") {
+    			double saldo = this.saldo - valor;
+    	   		setSaldo(saldo);
+    		}else if(tipo == "bolsilloTrabajadores") {
+    			double saldo1 = this.bolsilloTrabajadores - valor;
+    	   		setBolsilloTrabajadores(saldo1);
+    		}else if(tipo == "bolsilloInventario") {
+    			double saldo2 = this.bolsilloInventario - valor;
+    	   		setBolsilloInventario(saldo2);	
+    		}else if(tipo == "bolsilloTransporte") {
+    			double saldo3 = this.bolsilloTransporte - valor;
+    	   		setBolsilloTransporte(saldo3);
+    	    }else if(tipo == "bolsilloEstablecimientos") {
+    	    	double saldo4 = this.bolsilloEstablecimientos - valor;
+    	   		setBolsilloEstablecimientos(saldo4);
+    	    }
     	else {
     		
-    		String Nbanco = this.banco;
-    		Banco banco = Banco.valueOf(Nbanco);
-    		double cobroAdicional = banco.getCobroAdicional();
-    		double saldo = this.saldo -(valor + cobroAdicional);
-		    setSaldo(saldo);
+    		double cobroAdicional = this.getCobroAdicional();
+    		if(tipo == "saldo") {
+    			double saldo = this.saldo -(valor + cobroAdicional);
+    		    setSaldo(saldo);
+    		}else if(tipo == "bolsilloTrabajadores") {
+    			double saldo = this.bolsilloTrabajadores -(valor + cobroAdicional);
+    		    setBolsilloTrabajadores(saldo);
+    		}else if(tipo == "bolsilloInventario") {
+    			double saldo = this.bolsilloInventario -(valor + cobroAdicional);
+    		    setBolsilloInventario(saldo);
+    		}else if(tipo == "bolsilloTransporte") {
+    			double saldo = this.bolsilloTransporte -(valor + cobroAdicional);
+    		    setBolsilloTransporte(saldo);
+    	    }else if(tipo == "bolsilloEstablecimientos") {
+    	    	double saldo = this.bolsilloEstablecimientos -(valor + cobroAdicional);
+    		    setBolsilloEstablecimientos(saldo);
+    	    }
+    		
     		
     	}
+    		double saldoCuenta = cuentaCorriente.saldo + valor;
+        	cuentaCorriente.setSaldo(saldoCuenta);
+   
     }
+	   
+		
+   }
+
+
 	public String getBanco() {
 		return banco;
 	}
 	public void setBanco(String banco) {
 		this.banco=banco;
 	}
-	public double getSaldo() {
+	public double obtenerSaldo() {
 		return saldo;
 	}
 	public void setSaldo(double saldo) {
@@ -114,6 +209,7 @@ public class CuentaBancaria {
 	
 	public void setBolsilloTrabajadores(double bolsilloTrabajadores) {
 		this.bolsilloTrabajadores = bolsilloTrabajadores;
+		this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos;
 	}
 	
 	public double getBolsilloInventario() {
@@ -122,6 +218,7 @@ public class CuentaBancaria {
 	
 	public void setBolsilloInventario(double bolsilloInventario) {
 		this.bolsilloInventario = bolsilloInventario;
+		this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos;
 	}
 	
 	public double getBolsilloTransporte() {
@@ -130,6 +227,7 @@ public class CuentaBancaria {
 	
 	public void setBolsilloTransporte(double bolsilloTransporte) {
 		this.bolsilloTransporte = bolsilloTransporte;
+		this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos;
 	}
 	
 	public double getBolsilloEstablecimientos() {
@@ -138,8 +236,9 @@ public class CuentaBancaria {
 	
 	public void setBolsilloEstablecimientos(double bolsilloEstablecimientos) {
 		this.bolsilloEstablecimientos = bolsilloEstablecimientos;
+		this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos;
 	}
-
+	
 	public long getNumeroCuenta() {
 		return numeroCuenta;
 	}
@@ -156,4 +255,13 @@ public class CuentaBancaria {
 		this.titular = titular;
 	}
 	
+
+	
+	public double getInteres() {
+		return this.interes; 
+	}
+	public double getCobroAdicional(){
+		return this.cobroAdicional;
+	
+	}
 }
