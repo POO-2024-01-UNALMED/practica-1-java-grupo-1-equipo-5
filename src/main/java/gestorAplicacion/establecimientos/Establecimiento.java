@@ -23,6 +23,7 @@ public class Establecimiento {
 	private ArrayList<Empleado> empleados=new ArrayList<Empleado>();
 	private ArrayList<Vehiculo> Vehiculos=new ArrayList<Vehiculo>();
 	protected ArrayList<LocalTime> horarioEventos=new ArrayList<>();
+	private String descripcionCalificacion;
 
 	private LocalTime horaEvento;
 	private Iglesia iglesia;
@@ -340,6 +341,47 @@ public class Establecimiento {
 	public void setListadoProveedores(ArrayList<Establecimiento> listadoProveedores) {
 		this.listadoProveedores = listadoProveedores;
 	}
+
+	public Empleado getJefe() {
+		return Jefe;
+	}
+
+	public void setJefe(Empleado jefe) {
+		Jefe = jefe;
+	}
+
+	public static ArrayList<Establecimiento> getEstablecimientos() {
+		return establecimientos;
+	}
+
+	public static void setEstablecimientos(ArrayList<Establecimiento> establecimientos) {
+		Establecimiento.establecimientos = establecimientos;
+	}
+
+	public void setUbicacion(String ubicacion) {
+		this.ubicacion = ubicacion;
+	}
+
+	public void setClientes(ArrayList<Cliente> clientes) {
+		this.clientes = clientes;
+	}
+
+	public void setEmpleados(ArrayList<Empleado> empleados) {
+		this.empleados = empleados;
+	}
+
+	public void setHorarioEventos(ArrayList<LocalTime> horarioEventos) {
+		this.horarioEventos = horarioEventos;
+	}
+
+	public String getDescripcionCalificacion() {
+		return descripcionCalificacion;
+	}
+
+	public void setDescripcionCalificacion(String descripcionCalificacion) {
+		this.descripcionCalificacion = descripcionCalificacion;
+	}
+	
 	
 	
 

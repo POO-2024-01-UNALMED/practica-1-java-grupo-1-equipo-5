@@ -345,5 +345,26 @@ public void cobroServiciosClientes(Cliente cliente) {
 	public void setlistadoFacturasPorPagar(ArrayList<Factura> listadoFacturasPorPagar) {
 		this.listadoFacturasPorPagar=listadoFacturasPorPagar;
 	}
+
+	public ArrayList<Vehiculo> getVehiculos() {
+		return vehiculos;
+	}
+
+	public void setVehiculos(ArrayList<Vehiculo> vehiculos) {
+		this.vehiculos = vehiculos;
+	}
+
+	public static void setCuentaAhorros(CuentaBancaria cuentaAhorros) {
+		Funeraria.cuentaAhorros = cuentaAhorros;
+	}
+
+	public void setListadoFacturas(ArrayList<Factura> listadoFacturas) {
+		this.listadoFacturas = listadoFacturas;
+	}
+
+	public void setListadoFacturasPorPagar(ArrayList<Factura> listadoFacturasPorPagar) {
+		this.listadoFacturasPorPagar = listadoFacturasPorPagar;
+	}
+	
 	
 }

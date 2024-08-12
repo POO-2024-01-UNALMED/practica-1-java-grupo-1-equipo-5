@@ -19,6 +19,7 @@ public class Vehiculo {
 	private Empleado conductor;
 	private ArrayList<String> ruta=new ArrayList<String>();
 	private ArrayList<Persona> pasajeros = new ArrayList<Persona>();
+	private int capacidad;
 	
 	
 	// Constructor
@@ -30,6 +31,17 @@ public class Vehiculo {
 		this.placa = placa;
 		funeraria.agregarVehiculo(this);
 		}
+	// Constructor con capacidad por si nesecitan el otro constructor
+	public Vehiculo(TipoVehiculo tipoVehiculo,Funeraria funeraria,String marca, String color, String placa, int capaciadad) {
+		this.tipoVehiculo=tipoVehiculo;
+		this.funeraria=funeraria;
+		this.marca = marca;
+		this.color = color;
+		this.placa = placa;
+		this.capacidad = capaciadad;
+		funeraria.agregarVehiculo(this);
+		}
+	
 	
 	
 	public ArrayList<String> generarTrayectoria(Establecimiento establecimientoInicio,ArrayList<Persona> pasajeros,Establecimiento establecimientoFinal){
@@ -117,6 +129,43 @@ public class Vehiculo {
 	public ArrayList<Persona> getPasajeros(){
 		return pasajeros;
 	}
+	public Funeraria getFuneraria() {
+		return funeraria;
+	}
+	public void setFuneraria(Funeraria funeraria) {
+		this.funeraria = funeraria;
+	}
+	public String getMarca() {
+		return marca;
+	}
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
+	public Boolean getEstado() {
+		return estado;
+	}
+	public void setEstado(Boolean estado) {
+		this.estado = estado;
+	}
+	public int getCapacidad() {
+		return capacidad;
+	}
+	public void setCapacidad(int capacidad) {
+		this.capacidad = capacidad;
+	}
+	public void setTipoVehiculo(TipoVehiculo tipoVehiculo) {
+		this.tipoVehiculo = tipoVehiculo;
+	}
+	public void setPasajeros(ArrayList<Persona> pasajeros) {
+		this.pasajeros = pasajeros;
+	}
+	
 	
 
 }
