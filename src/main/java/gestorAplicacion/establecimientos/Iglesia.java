@@ -14,18 +14,18 @@ public enum Iglesia {
 	private String nombre;
 	private int sillas;
 	private boolean cremacion;
-	private int duracionCremacion;
+	private int duracionEvento;
 	private String[] tipoUrnas;
 	private String religioso;
 	private String religiosoAltoRango;
 	
 	
 	//Constructor 
-	private Iglesia(String nombre, int sillas, boolean cremacion,int duracionCremacion,String[] tipoUrnas,String religioso,String religiosoAltoRango) {
+	private Iglesia(String nombre, int sillas, boolean cremacion,int duracionEvento,String[] tipoUrnas,String religioso,String religiosoAltoRango) {
 		this.nombre=nombre;
 		this.sillas=sillas;
 		this.cremacion=cremacion;
-		this.duracionCremacion=duracionCremacion;
+		this.duracionEvento=duracionEvento;
 		this.tipoUrnas=tipoUrnas;
 		this.religioso=religioso;
 		this.religiosoAltoRango=religiosoAltoRango;
@@ -33,12 +33,12 @@ public enum Iglesia {
 	}
 	
 	public int getDuracionCremacion() {
-		return duracionCremacion;
+		return duracionEvento;
 	}
 	
 	public LocalTime duracionEvento(LocalTime horaInicio) {
 		
-		LocalTime horaFinCremacion = horaInicio.plusHours(duracionCremacion);
+		LocalTime horaFinCremacion = horaInicio.plusHours(duracionEvento);
 		
 		return horaFinCremacion;
 		
