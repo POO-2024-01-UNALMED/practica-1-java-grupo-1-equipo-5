@@ -35,8 +35,22 @@ public enum TipoVehiculo {
 	public boolean getFamiliar() {
 		return familiar;
 	}
+
 	public double getPrecio() {
 		return precio;
+
+
+	public void setCapacidad(int capacidad) {
+		this.capacidad = capacidad;
+	}
+
+	public void setCliente(boolean cliente) {
+		this.cliente = cliente;
+	}
+
+	public void setFamiliar(boolean familiar) {
+		this.familiar = familiar;
+
 	}
 	
 }

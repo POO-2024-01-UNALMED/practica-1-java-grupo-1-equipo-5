@@ -19,7 +19,12 @@ public class Vehiculo {
 	private String placa;
 	private Empleado conductor;
 	private ArrayList<String> ruta=new ArrayList<String>();
+
 	private ArrayList<Familiar> pasajeros = new ArrayList<Familiar>();
+
+
+	private int Capacidad;
+
 
 	
 	
@@ -32,13 +37,14 @@ public class Vehiculo {
 		funeraria.agregarVehiculo(this);
 		}
 	// Constructor con capacidad por si nesecitan el otro constructor
-	//public Vehiculo(TipoVehiculo tipoVehiculo,Funeraria funeraria,String color, String placa) {
-		//this.tipoVehiculo=tipoVehiculo;
-		//this.funeraria=funeraria;
-		//this.color = color;
-		//this.placa = placa;
-		//funeraria.agregarVehiculo(this);
-		//}
+	public Vehiculo(TipoVehiculo tipoVehiculo,Funeraria funeraria,String color, String placa, int capacidad) {
+		this.tipoVehiculo=tipoVehiculo;
+		this.funeraria=funeraria;
+		this.color = color;
+		this.placa = placa;
+		funeraria.agregarVehiculo(this);
+		this.Capacidad = capacidad;
+		}
 	
 	
 	
@@ -194,6 +200,11 @@ public class Vehiculo {
 	public void setPasajeros(ArrayList<Familiar> pasajeros) {
 		this.pasajeros = pasajeros;
 	}
+
+	public Boolean getEstado() {
+		return estado;
+	}
+	
 	
 	
 
