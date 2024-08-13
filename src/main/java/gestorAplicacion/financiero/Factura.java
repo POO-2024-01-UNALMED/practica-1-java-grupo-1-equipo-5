@@ -86,6 +86,25 @@ public class Factura {
         
         listaProductos=productos;
 	}
+	
+	public double totalFactura() {
+		total=0;
+		for(Producto producto:listaProductos) {
+			total+=producto.getPrecio()*producto.getCantidad();
+		}
+		
+		return total;
+	}
+	
+	public String retornarFactura() {
+		
+		String factura="";
+		for(Producto producto:listaProductos) {
+			factura+="Concepto: "+producto.getNombre()+" - Precio unitario: "+producto.getPrecio()+" - Cantidad: "+producto.getCantidad()+"\n";
+		}
+		factura+="\n Total: "+totalFactura();
+		return factura;
+	}
 		
 
 	        

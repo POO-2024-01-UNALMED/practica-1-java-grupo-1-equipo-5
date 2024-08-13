@@ -403,38 +403,42 @@ public void pedirCredito() {
     	 ArrayList<Establecimiento> cementeriosFiltrados = new ArrayList<Establecimiento>(); 
 
     	 System.out.println(cementerios);
-    	 
-    	 for(Establecimiento cementerio:cementerios) {
-    		 Cementerio auxCementerio=(Cementerio)cementerio;
-    		 //Se crean máximo 3 horarios para cada cementerio 
-    		 auxCementerio.generarHoras();
-    		 //Se recorre por cada uno de los horarios generados para filtrar qué horarios están después de la hora que se decidió hacer la misa
-    		 System.out.println(auxCementerio.getHorarioEventos());
+    	 //while(cementeriosFiltrados.size()==0) {
     		 
-    		 ArrayList<LocalTime> horasAuxiliares=new ArrayList<LocalTime>();
-    		 for (LocalTime auxHora:auxCementerio.getHorarioEventos() ) {
-    			 //Si la hora es antes de que la ceremonia termine se elimina el horario
-    			 if(!(auxHora.isBefore(iglesia.duracionEvento(hora)))){
-    				 horasAuxiliares.add(auxHora);
-    			 }//Fin if
-    		 }//Fin for
-    		 //Si no hay horarios disponibles o no hay tumbas que cumplan los filtros de disponibilidaInventario el cementerio se elimina
-    		 if(horasAuxiliares.size()!=0 && auxCementerio.disponibilidadInventario("tumba", estatura, cliente.getEdad()).size()!=0) {
-    			 cementeriosFiltrados.add(auxCementerio);
-    		 }
+    		 for(Establecimiento cementerio:cementerios) {
+        		 Cementerio auxCementerio=(Cementerio)cementerio;
+        		 //Se crean máximo 3 horarios para cada cementerio 
+        		 auxCementerio.generarHoras();
+        		 //Se recorre por cada uno de los horarios generados para filtrar qué horarios están después de la hora que se decidió hacer la misa
+        		 
+        		 ArrayList<LocalTime> horasAuxiliares=new ArrayList<LocalTime>();
+        		 for (LocalTime auxHora:auxCementerio.getHorarioEventos() ) {
+        			 //Si la hora es antes de que la ceremonia termine se elimina el horario
+        			 if(auxHora.isBefore(iglesia.duracionEvento(hora))){
+        				 horasAuxiliares.add(auxHora);
+        			 }//Fin if
+        		 }//Fin for
+        		 System.out.println("disponibilidad: "+auxCementerio.disponibilidadInventario("tumba", estatura, cliente.getEdad()));
+        		 //Si no hay horarios disponibles o no hay tumbas que cumplan los filtros de disponibilidaInventario el cementerio se elimina
+        		 if(horasAuxiliares.size()!=0 && auxCementerio.disponibilidadInventario("tumba", estatura, cliente.getEdad()).size()!=0) {
+        			 cementeriosFiltrados.add(auxCementerio);
+        		 }
+        		 
+        	 }//Fin for principal
+        	 
+        	 //Se recorre cada cementerio filtrado y se cambia el horario del evento, la iglesia y se busca a un empleado para agregarlo
+        	 for(Establecimiento cementerio:cementeriosFiltrados) {
+        		 Cementerio auxCementerio=(Cementerio)cementerio;
+        		 auxCementerio.setHoraEvento(auxCementerio.getHorarioEventos().get(0));
+        		 //busca empleado de acuerdo a la hora 
+        		 auxCementerio.setEmpleado(this.buscarEmpleados(auxCementerio.getHoraEvento(), "sepulturero").get(0));
+        		 auxCementerio.setIglesia(iglesia);
+        	 }//Fin For
+        	 
+        	 System.out.println(cementeriosFiltrados);
     		 
-    	 }//Fin for principal
+    	 //}
     	 
-    	 //Se recorre cada cementerio filtrado y se cambia el horario del evento, la iglesia y se busca a un empleado para agregarlo
-    	 for(Establecimiento cementerio:cementeriosFiltrados) {
-    		 Cementerio auxCementerio=(Cementerio)cementerio;
-    		 auxCementerio.setHoraEvento(auxCementerio.getHorarioEventos().get(0));
-    		 //busca empleado de acuerdo a la hora 
-    		 auxCementerio.setEmpleado(this.buscarEmpleados(auxCementerio.getHoraEvento(), "sepulturero").get(0));
-    		 auxCementerio.setIglesia(iglesia);
-    	 }//Fin For
-    	 
-    	 System.out.println(cementeriosFiltrados);
     	 
     	 return cementeriosFiltrados;
     	 

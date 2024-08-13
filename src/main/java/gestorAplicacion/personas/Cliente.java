@@ -163,6 +163,52 @@ public class Cliente extends Persona {
 		return familiaresFiltrados;
 	} 
 	
+	public String pagoInmediato(String tipoAdorno) {
+		
+		inventario.generarAdornos(tipoAdorno);
+		ArrayList<String> arreglo;
+		ArrayList<Producto> productos=new ArrayList<Producto>();
+		ArrayList<Familiar> familiares=this.familiares;
+		Familiar familiarDesignado = null;
+		boolean validacionPago=false;
+		String pagoInmediato="";
+		
+		if(tipoAdorno.equals("flores")) {
+			arreglo=inventario.getFlores();
+		}else {arreglo=inventario.getMaterial();}
+		
+		for(String inventario: arreglo) {
+			productos.add(new Producto(inventario,Inventario.precios(inventario),1));
+		}
+		
+		Factura factura=new Factura(productos);
+		
+		double total=factura.totalFactura();
+		
+		while(validacionPago==false) {
+			familiarDesignado = designarFamiliar(familiares);
+			
+			if (familiares.size()==0) {return "No es posible hacer el cobro de la factura. No se podrán agregar adornos";}
+			
+			if(familiarDesignado.getCC()!=0 && familiarDesignado.getCuentaBancaria().getSaldo()>=total) {
+				familiarDesignado.getCuentaBancaria().transaccionCuentaAhorros(total, inventario.getCementerio().getFuneraria().getCuentaAhorros());
+				validacionPago=true;
+			}//Fin if
+			
+			familiares.remove(familiarDesignado);
+			
+			
+			
+		}
+		
+		return pagoInmediato="Concepto: Pago Adornos Tumba\n"
+				    + "Cliente: "+familiarDesignado+"\n"
+				    + factura.retornarFactura();
+		
+		
+		
+		
+	}
 	
 	
 	

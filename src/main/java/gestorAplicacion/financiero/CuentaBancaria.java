@@ -268,7 +268,7 @@ public class CuentaBancaria implements Banco {
 		return this.cobroAdicional;
 	
 	}
-<<<<<<< Updated upstream
+
 
 	public double getSaldo() {
 		return saldo;
@@ -282,7 +282,7 @@ public class CuentaBancaria implements Banco {
 		this.cobroAdicional = cobroAdicional;
 	}
 	
-=======
+
 	
 	public Factura getCredito() {
 		return this.credito;
@@ -291,5 +291,5 @@ public class CuentaBancaria implements Banco {
 	public void setCredito(Factura credito) {
 		this.credito = credito;
 	}
->>>>>>> Stashed changes
+
 }

@@ -10,6 +10,7 @@ import gestorAplicacion.establecimientos.Establecimiento;
 import gestorAplicacion.establecimientos.Funeraria;
 import gestorAplicacion.establecimientos.Iglesia;
 import gestorAplicacion.inventario.Inventario;
+import gestorAplicacion.inventario.Tumba;
 import gestorAplicacion.personas.Cliente;
 import gestorAplicacion.personas.Persona;
 
@@ -23,6 +24,7 @@ public class FuncionalidadEntierro {
 		Funeraria funeraria;
 		Cliente cliente=null;
 		Iglesia iglesia;
+		Tumba tumba=null;
 		
 		//Se escoge la funeraria con la que se va a realizar el procedimiento
 				ArrayList<Establecimiento> funerarias =Establecimiento.filtarEstablecimiento("funeraria");
@@ -189,16 +191,22 @@ public class FuncionalidadEntierro {
 				indice=1;
 				for(Inventario urnaTumba:inventarioDisponible) {
 
-		    		 System.out.println("["+indice+"] "+urnaTumba+" con ("+auxCementerio.disponibilidadInventario("tumba", estatura, cliente.getEdad()).size()+") tumbas disponibles");
+		    		 System.out.println("["+indice+"] "+urnaTumba);
 				}
 				
-				System.out.print("Indique el índice del cementerio escogido: ");
+				System.out.print("Indique el índice de la tumba escogida: ");
 				indice=scanner.nextInt();
 				
-				while(indice<1 || indice>cementerios.size()) {
+				while(indice<1 || indice>inventarioDisponible.size()) {
 					System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
 					indice=scanner.nextInt();
 				}
+				
+				tumba=(Tumba)inventarioDisponible.get(indice-1);
+				
+				cliente.pagoInmediato("flores");
+				
+				
 				
 	}//Fin metodo funcionalidadEntierro
 }//Fin clase

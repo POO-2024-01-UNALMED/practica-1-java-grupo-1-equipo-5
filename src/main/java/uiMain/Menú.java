@@ -523,13 +523,15 @@ public class Menú {
 		
 		//Objetos de prueba
 		//Funerarias
-		Funeraria funita = new Funeraria("funita", null,null);
-		Funeraria fumita = new Funeraria("fumita", null,null);
-		Funeraria fulanita = new Funeraria("fulanita", null,null);
+		
+		CuentaBancaria cuenta = new CuentaBancaria(123, "Alfredo", 1000000, "Ala");
+		Funeraria funita = new Funeraria("funita", cuenta,cuenta);
+		Funeraria fumita = new Funeraria("fumita", cuenta,cuenta);
+		Funeraria fulanita = new Funeraria("fulanita", cuenta,cuenta);
 		
 		//Cliente
-		Familiar b= new Familiar("Mario",123,45,"345",null,"padre",17);
-		Familiar e= new Familiar("Alberto",123,45,"345",null,"conyugue",17);
+		Familiar b= new Familiar("Mario",123,45,"345",cuenta,"padre",17);
+		Familiar e= new Familiar("Alberto",123,45,"345",cuenta,"conyugue",17);
 		
 		
 		
@@ -563,7 +565,7 @@ public class Menú {
 		
 		//Objetos de la clase Empleado
 		Empleado empleado1 = new Empleado("Alberto",12345,"3456",null,"mañana","sepulturero",900000);
-		Empleado empleado2 = new Empleado("Maria",12345,"3456",null,"tarde","cremador",900000);
+		Empleado empleado2 = new Empleado("Maria",12345,"3456",null,"noche","sepulturero",900000);
 		Empleado empleado3 = new Empleado("Anastasia",12345,"3456",null,"noche","cremador",900000);
 		Empleado empleado4 = new Empleado("Gilberto",12345,"3456",null,"mañana","cremador",900000);
 		Empleado empleado5 = new Empleado("Pepito",12345,"3456",null,"mañana","sepulturero",900000);
@@ -634,7 +636,7 @@ public class Menú {
 		
 		Tumba tumba1=new Tumba("Tumbita1",cemi1,1.70,1);
 		Tumba tumba2=new Tumba("Tumbita2",cemi1,1.50,2);
-		Tumba tumba3=new Tumba("Tumbita3",cemito1,1.60,3);
+		Tumba tumba3=new Tumba("Tumbita3",cemito1,1.60,0);
 		
 		Tumba tumba4=new Tumba("Tumbita4",cemito1,1.50,1);
 		Tumba tumba5=new Tumba("Tumbita5",cementerio1,1.50,2);

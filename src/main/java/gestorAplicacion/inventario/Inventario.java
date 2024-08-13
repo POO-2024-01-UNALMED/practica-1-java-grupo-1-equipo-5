@@ -74,6 +74,10 @@ public abstract class Inventario {
 	
 	public abstract double determinarTamaño(double tamaño);
 	
+	boolean validacion=false;
+	
+	
+	
 	
 	
 	public void setTamaño(double Tamaño) {
