@@ -430,7 +430,7 @@ public void pedirCredito() {
     		 Cementerio auxCementerio=(Cementerio)cementerio;
     		 auxCementerio.setHoraEvento(auxCementerio.getHorarioEventos().get(0));
     		 //busca empleado de acuerdo a la hora 
-    		 auxCementerio.setEmpleado(this.buscarEmpleados(cementerio.getHoraEvento(), "sepulturero").get(0));
+    		 auxCementerio.setEmpleado(this.buscarEmpleados(auxCementerio.getHoraEvento(), "sepulturero").get(0));
     		 auxCementerio.setIglesia(iglesia);
     	 }//Fin For
     	 
