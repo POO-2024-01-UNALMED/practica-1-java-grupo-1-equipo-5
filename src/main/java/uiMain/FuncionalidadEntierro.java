@@ -9,6 +9,7 @@ import gestorAplicacion.establecimientos.Cementerio;
 import gestorAplicacion.establecimientos.Establecimiento;
 import gestorAplicacion.establecimientos.Funeraria;
 import gestorAplicacion.establecimientos.Iglesia;
+import gestorAplicacion.inventario.Inventario;
 import gestorAplicacion.personas.Cliente;
 import gestorAplicacion.personas.Persona;
 
@@ -169,7 +170,7 @@ public class FuncionalidadEntierro {
 				indice=1;
 				for(Establecimiento cementerio:cementerios) {
 		    		 Cementerio auxCementerio=(Cementerio)cementerio;
-		    		 System.out.println("["+indice+"] "+auxCementerio+" con ("+auxCementerio.disponibilidadInventario("tumba", estatura, cliente.getEdad())+") tumbas disponibles");
+		    		 System.out.println("["+indice+"] "+auxCementerio+" con ("+auxCementerio.disponibilidadInventario("tumba", estatura, cliente.getEdad()).size()+") tumbas disponibles");
 				}
 				
 				System.out.print("Indique el índice del cementerio escogido: ");
@@ -181,8 +182,23 @@ public class FuncionalidadEntierro {
 				}
 				
 				
+				Cementerio cementerio = (Cementerio) cementerios.get(indice-1);
 				
+				ArrayList<Inventario> inventarioDisponible=cementerio.disponibilidadInventario("tumba", estatura, cliente.getEdad());
 				
+				indice=1;
+				for(Inventario urnaTumba:inventarioDisponible) {
+
+		    		 System.out.println("["+indice+"] "+urnaTumba+" con ("+auxCementerio.disponibilidadInventario("tumba", estatura, cliente.getEdad()).size()+") tumbas disponibles");
+				}
+				
+				System.out.print("Indique el índice del cementerio escogido: ");
+				indice=scanner.nextInt();
+				
+				while(indice<1 || indice>cementerios.size()) {
+					System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+					indice=scanner.nextInt();
+				}
 				
 	}//Fin metodo funcionalidadEntierro
 }//Fin clase
