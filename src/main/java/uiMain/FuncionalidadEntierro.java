@@ -57,7 +57,7 @@ public class FuncionalidadEntierro {
 					indiceCliente=scanner.nextInt();
 				}
 				
-				switch(indice) {
+				switch(indiceCliente) {
 					case 1:
 						//Buscar los clientes adultos (que tengan atributo CC distinto de 0) por la funeraria escogida
 						indice=0;
@@ -65,7 +65,7 @@ public class FuncionalidadEntierro {
 							indice+=1;
 							System.out.println("["+indice+"] "+ auxCliente);
 						}
-					
+						System.out.println(cliente);
 						//Validacion cliente adulto
 						if(funeraria.buscarCliente("adulto").size()!=0) {
 							System.out.print("Ingrese el índice del cliente: ");
@@ -76,6 +76,7 @@ public class FuncionalidadEntierro {
 								indice=scanner.nextInt();
 							}
 							cliente=funeraria.buscarCliente("adulto").get(indice-1);
+							System.out.println(cliente);
 							
 						}//Validación existencia cliente adulto
 						
@@ -114,7 +115,7 @@ public class FuncionalidadEntierro {
 				System.out.println("Indique su religión para celebrar el entierro");
 				
 				//Iglesias disponibles
-				ArrayList<Iglesia> iglesias = new ArrayList<Iglesia>();
+				//ArrayList<Iglesia> iglesias = new ArrayList<Iglesia>();
 				indice=1;
 				for(Iglesia auxIglesia:Iglesia.values()) {
 					System.out.println("["+indice+"] "+auxIglesia);
@@ -124,13 +125,13 @@ public class FuncionalidadEntierro {
 				System.out.print("Indique el índice de la religión escogida: ");
 				indice=scanner.nextInt();
 				//Validación 
-				while(indice<1 || indice>iglesias.size()) {
+				while(indice<1 || indice>Iglesia.values().length) {
 					System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
 					indice=scanner.nextInt();
 					
 				}
 				
-				iglesia=iglesias.get(indice-1);
+				iglesia=Iglesia.values()[indice-1];
 				
 				System.out.print("Ingrese una hora para realizar la ceremonia religiosa (0-23): ");
 				int hora=scanner.nextInt();

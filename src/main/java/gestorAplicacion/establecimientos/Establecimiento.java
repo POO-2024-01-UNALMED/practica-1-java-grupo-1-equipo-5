@@ -166,7 +166,7 @@ public class Establecimiento {
 	public ArrayList<Vehiculo> filtrarVehiculosSinConductorYDisponibles() {
         ArrayList<Vehiculo> vehiculosFiltrados = new ArrayList<>();
         for (Vehiculo vehiculo : Vehiculos) {
-            if (vehiculo.getConductor() == null && vehiculo.isDisponible()) {
+            if (vehiculo.getConductor() == null && vehiculo.isEstado()) {
                 vehiculosFiltrados.add(vehiculo);
             }
         }
@@ -209,6 +209,7 @@ public class Establecimiento {
 	        
 	        // Crear una instancia de LocalTime con la hora y minutos aleatorios
             LocalTime horaGenerada = LocalTime.of(horas, minutos);
+            System.out.println("Hora generada: "+this.horarioEventos);
             
             this.horarioEventos.add(horaGenerada);
 	            

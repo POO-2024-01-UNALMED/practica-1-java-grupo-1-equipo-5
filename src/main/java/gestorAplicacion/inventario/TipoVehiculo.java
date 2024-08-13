@@ -2,22 +2,24 @@ package gestorAplicacion.inventario;
 
 public enum TipoVehiculo {
 	
-	BERLINA(4,false,true),//Hasta 4 acompañantes - familiares y cliente (si va el cliente irían 3 acompañantes)
-	CARROZA(1,true,false), // Hasta 1 acompañante
-	FAETON(4,false,true), //Hasta 4 acompañantes
-	COCHEFUNEBRE(1,true,false), //1 persona - solo cliente
-	BUS(6,false,true), // 6 personas
-	COCHERESPETO(8,false,true), //8 personas - solo familiares
-	CUPE(1,true,false); //una persona - solo cliente
+	BERLINA(4,false,true,70000),//Hasta 4 acompañantes - familiares y cliente (si va el cliente irían 3 acompañantes)
+	CARROZA(1,true,false,150000), // Hasta 1 acompañante
+	FAETON(4,false,true,120000), //Hasta 4 acompañantes
+	COCHEFUNEBRE(1,true,false,80000), //1 persona - solo cliente
+	BUS(6,false,true,50000), // 6 personas
+	COCHERESPETO(8,false,true,75000), //8 personas - solo familiares
+	CUPE(2,false,true,65000); //una persona - solo cliente
 	
 	private int capacidad; //capacidad carro de personas 
 	private boolean cliente;  // atributo para reconocer si es posible agregar objetod de tipo Cliente
 	private boolean familiar; // atributo para reconocer si es posible agregar objetod de tipo Familiar
+	private double precio;
 	
-	private TipoVehiculo(int capacidad, boolean cliente, boolean familiar) {
+	private TipoVehiculo(int capacidad, boolean cliente, boolean familiar,double precio) {
 		this.capacidad=capacidad;
 		this.cliente=cliente;
 		this.familiar=familiar;
+		this.precio=precio;
 	}
 	
 	public String toString() {
@@ -33,4 +35,8 @@ public enum TipoVehiculo {
 	public boolean getFamiliar() {
 		return familiar;
 	}
+	public double getPrecio() {
+		return precio;
+	}
+	
 }

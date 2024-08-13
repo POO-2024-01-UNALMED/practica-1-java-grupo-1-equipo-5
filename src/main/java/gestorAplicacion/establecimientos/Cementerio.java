@@ -146,7 +146,7 @@ public class Cementerio extends Establecimiento {
 	
 	public String organizarIglesia(Cliente cliente) {
 		
-		ArrayList<Persona> familiares =cliente.getFamiliares();
+		ArrayList<Familiar> familiares =cliente.getFamiliares();
 		int sillas=getIglesia().getSillas();
 	
 		String organizacion="";

@@ -2,7 +2,7 @@ package gestorAplicacion.establecimientos;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
-
+import java.util.Collections;
 
 import gestorAplicacion.financiero.*;
 import gestorAplicacion.inventario.*;
@@ -134,30 +134,44 @@ public class Funeraria extends Establecimiento{
 	
 	
 	
-public ArrayList<Vehiculo> asignarVehiculo(String clienteFamiliar) {
+	public String asignarVehiculo() {
 		
-		ArrayList<Vehiculo> vehiculosDisponibles=new ArrayList<Vehiculo>();
+		String vehiculosDisponibles="";
+		ArrayList<TipoVehiculo> tipoVehiculos = new ArrayList<TipoVehiculo>();
 		
-		if(clienteFamiliar=="cliente") {
-			for(Vehiculo auxVehiculo: vehiculos) {
-				TipoVehiculo vehiculo=auxVehiculo.getTipoVehiculo();
-				if(vehiculo.getCliente()) {
-					vehiculosDisponibles.add(auxVehiculo);
-				}
+		for(Vehiculo vehiculo:vehiculos) {
+			
+			if(vehiculo.isEstado()) {
+				tipoVehiculos.add(vehiculo.getTipoVehiculo());
 			}
-		}else {
-			for(Vehiculo auxVehiculo: vehiculos) {
-				TipoVehiculo vehiculo=auxVehiculo.getTipoVehiculo();
-				if(vehiculo.getFamiliar()) {
-					vehiculosDisponibles.add(auxVehiculo);
-				}//fin if
-		}//fin for
-	}//fin else
+		}
+		
+		for(TipoVehiculo vehiculo:TipoVehiculo.values()) {
+			
+			int cantidadVehiculos = Collections.frequency(tipoVehiculos, vehiculo);
+			if(cantidadVehiculos>0) {
+				vehiculosDisponibles+=vehiculo.name()+" Disponibles ("+cantidadVehiculos+") capacidad - "+vehiculo.getCapacidad()+"\n";	
+			}
+			
+		}
 		
 		return vehiculosDisponibles;
 		
 	}
+	
+	public Vehiculo buscarTipoVehiculo(TipoVehiculo tipoVehiculo) {
+		
+		for(Vehiculo vehiculo:vehiculos){
+			if(vehiculo.isEstado() && vehiculo.getTipoVehiculo()==tipoVehiculo) {
+				return vehiculo;
+			}
+		}
+		
+		return null;
+	}
 
+	
+	
 	public void agregarVehiculo(Vehiculo vehiculo) {
 		vehiculos.add(vehiculo);
 	}
@@ -303,53 +317,85 @@ public void pagoTrabajadores(Empleado empleado) {
      
      public ArrayList<Establecimiento> gestionEntierro(Cliente cliente,Iglesia iglesia,LocalTime hora,double estatura) {
     	 
-    	 ArrayList<Establecimiento> cementerios =this.buscarCementerios("cuerpos", cliente);     
-    	 
+    	 ArrayList<Establecimiento> cementerios =this.buscarCementerios("cuerpos", cliente); 
+    	 ArrayList<Establecimiento> cementeriosFiltrados = new ArrayList<Establecimiento>(); 
+
+    	 System.out.println(cementerios);
     	 
     	 for(Establecimiento cementerio:cementerios) {
     		 Cementerio auxCementerio=(Cementerio)cementerio;
     		 //Se crean máximo 3 horarios para cada cementerio 
     		 auxCementerio.generarHoras();
     		 //Se recorre por cada uno de los horarios generados para filtrar qué horarios están después de la hora que se decidió hacer la misa
+    		 System.out.println(auxCementerio.getHorarioEventos());
+    		 
+    		 ArrayList<LocalTime> horasAuxiliares=new ArrayList<LocalTime>();
     		 for (LocalTime auxHora:auxCementerio.getHorarioEventos() ) {
     			 //Si la hora es antes de que la ceremonia termine se elimina el horario
-    			 if(auxHora.isBefore(iglesia.duracionEvento(hora))){
-    				 auxCementerio.eliminarHorario(auxHora);
+    			 if(!(auxHora.isBefore(iglesia.duracionEvento(hora)))){
+    				 horasAuxiliares.add(auxHora);
     			 }//Fin if
     		 }//Fin for
     		 //Si no hay horarios disponibles o no hay tumbas que cumplan los filtros de disponibilidaInventario el cementerio se elimina
-    		 if(auxCementerio.getHorarioEventos().size()==0 || auxCementerio.disponibilidadInventario("tumba", estatura, cliente.getEdad()).size()==0) {
-    			 cementerios.remove(auxCementerio);
+    		 if(horasAuxiliares.size()!=0 && auxCementerio.disponibilidadInventario("tumba", estatura, cliente.getEdad()).size()!=0) {
+    			 cementeriosFiltrados.add(auxCementerio);
     		 }
     		 
     	 }//Fin for principal
     	 
     	 //Se recorre cada cementerio filtrado y se cambia el horario del evento, la iglesia y se busca a un empleado para agregarlo
-    	 for(Establecimiento cementerio:cementerios) {
+    	 for(Establecimiento cementerio:cementeriosFiltrados) {
     		 Cementerio auxCementerio=(Cementerio)cementerio;
-    		 auxCementerio.setHoraEvento(getHorarioEventos().get(0));
+    		 auxCementerio.setHoraEvento(auxCementerio.getHorarioEventos().get(0));
     		 //busca empleado de acuerdo a la hora 
     		 auxCementerio.setEmpleado(this.buscarEmpleados(cementerio.getHoraEvento(), "sepulturero").get(0));
     		 auxCementerio.setIglesia(iglesia);
     	 }//Fin For
     	 
+    	 System.out.println(cementeriosFiltrados);
     	 
-    	 return cementerios;
+    	 return cementeriosFiltrados;
     	 
      }
      
      
-     public void gestionarTrasnsporte(Cliente cliente) {
- 		ArrayList<Vehiculo> vehiculos =this.vehiculos;
- 		ArrayList<Persona> familiaresMenores = new ArrayList<Persona>();
- 		ArrayList<Persona> familiaresMayores = new ArrayList<Persona>();
+     public String gestionarTrasnsporte(Cliente cliente, ArrayList<Vehiculo> vehiculos, LocalTime hora) {
+
+ 		ArrayList<Familiar> familiares = cliente.getFamiliares();
+ 		ArrayList<Empleado> conductores = this.buscarEmpleados(hora, "conductor");
+ 		String gestionTransporte ="Resumen de su transporte - Hora de llegada transporte: "+hora+"\n";
  		
- 		for(Persona familiar: cliente.getFamiliares()) {
- 			if(familiar.getCC()==0) {
- 				familiaresMenores.add(familiar);
- 			}else {familiaresMayores.add(familiar);}
+ 		int indice=1;
+ 		while(familiares.size()!=0) {
  			
- 		}//Fin for
+ 			Vehiculo vehiculoAsignar=vehiculos.get(0);
+ 			vehiculoAsignar.agregarPasajeros(familiares);
+ 			vehiculoAsignar.setConductor(conductores.get(0));
+ 			
+ 			gestionTransporte+="\nVehiculo ["+indice+"]";
+ 			gestionTransporte+=vehiculoAsignar.productoVehiculo()+"\n";
+ 			gestionTransporte+="Conductor: "+vehiculoAsignar.getConductor();
+ 			
+ 			if(conductores.size()!=1) {
+ 				conductores.remove(0);
+ 			}
+ 			
+ 			for(Familiar familiar:vehiculoAsignar.getPasajeros()) {
+ 				familiares.remove(familiar);
+ 			}
+ 			vehiculoAsignar.setEstado(true);
+ 			vehiculos.remove(0);
+ 		}
+ 		
+ 		return gestionTransporte;
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+     }
  		
  		
  		
@@ -357,7 +403,7 @@ public void pagoTrabajadores(Empleado empleado) {
  		
  		
      
-     }
+     
      
 	
 	//metodos get y set

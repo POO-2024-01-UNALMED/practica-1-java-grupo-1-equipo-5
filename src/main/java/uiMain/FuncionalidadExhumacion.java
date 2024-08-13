@@ -19,6 +19,7 @@ public class FuncionalidadExhumacion {
 		Cliente cliente=null;
 		Inventario urnaTumba=null;
 		Cementerio cementerio =null;
+		Inventario nuevaUrnaTumba=null;
 		
 		//Breve descripción de la funcionalidad para los usuarios
 		System.out.println("La exhumación es el proceso de retirar un cuerpo de su lugar de sepultura");
@@ -321,12 +322,12 @@ public class FuncionalidadExhumacion {
 		System.out.print("Indique el índice de la religión escogida: ");
 		indice=scanner.nextInt();
 		//Validación 
-		while(indice<1 || indice>iglesias.size()) {
+		while(indice<1 || indice>Iglesia.values().length) {
 			System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
 			indice=scanner.nextInt();
 			}
 		
-		cementerio.setIglesia(iglesias.get(indice-1));
+		cementerio.setIglesia(Iglesia.values()[indice-1]);
 	
 		edad=cliente.getEdad();
 		
@@ -376,7 +377,7 @@ public class FuncionalidadExhumacion {
 		}
 		
 		////////////////////////////////////////////////////////////////////////////////////////////////////7
-		Inventario nuevaUrnaTumba;
+		
 		switch(indice) {
 			case 1:
 				nuevaUrnaTumba=nuevoCementerio.inventarioRecomendado(nuevoCementerio.disponibilidadInventario(tipo2,pesoEstatura,edad));

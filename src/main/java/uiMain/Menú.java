@@ -533,7 +533,7 @@ public class Menú {
 		
 		
 		
-		ArrayList<Persona> familiar=new ArrayList<Persona>();
+		ArrayList<Familiar> familiar=new ArrayList<Familiar>();
 		familiar.add(b);
 		familiar.add(e);
 		
@@ -562,13 +562,13 @@ public class Menú {
 		Cementerio cemito1 = new Cementerio ("cemito1","5490",78,null,"oro", null,"cuerpos",funita);
 		
 		//Objetos de la clase Empleado
-		Empleado empleado1 = new Empleado("Alberto",12345,"3456",null,"mañana","cremador",900000);
+		Empleado empleado1 = new Empleado("Alberto",12345,"3456",null,"mañana","sepulturero",900000);
 		Empleado empleado2 = new Empleado("Maria",12345,"3456",null,"tarde","cremador",900000);
 		Empleado empleado3 = new Empleado("Anastasia",12345,"3456",null,"noche","cremador",900000);
 		Empleado empleado4 = new Empleado("Gilberto",12345,"3456",null,"mañana","cremador",900000);
-		Empleado empleado5 = new Empleado("Pepito",12345,"3456",null,"mañana","cremador",900000);
+		Empleado empleado5 = new Empleado("Pepito",12345,"3456",null,"mañana","sepulturero",900000);
 		Empleado empleado6 = new Empleado("Camila",12345,"3456",null,"tarde","cremador",900000);
-		Empleado empleado7 = new Empleado("Santiago",12345,"3456",null,"noche","cremador",900000);
+		Empleado empleado7 = new Empleado("Santiago",12345,"3456",null,"noche","sepulturero",900000);
 		Empleado empleado8 = new Empleado("Anastasio",12345,"3456",null,"tarde","cremador",900000);
 		
 		
@@ -615,7 +615,7 @@ public class Menú {
 		Cliente n7 = new Cliente("n7",123,37,null,"oro",familiar);
 		Cliente n8 = new Cliente("n8",123,39,null,"oro",familiar);
 		Cliente n9 = new Cliente("n9",123,41,null,"oro",familiar);
-		Cliente n10 = new Cliente("n10",123,25,null,"oro",familiar);
+		Cliente n10= new Cliente("n10",123,25,null,"oro",familiar);
 		
 		Urna urna13=new Urna("Urnita13",cemi,70,1,"fija");
 		Urna urna14=new Urna("Urnita14",cemi,90,0,"ordinaria");
@@ -664,6 +664,7 @@ public class Menú {
 		
 		System.out.println("[1] Funcionalidad crematorio");
 		System.out.println("[2] Funcionalidad Exhumación");
+		System.out.println("[3] Funcionalidad Entierro");
 		
 		System.out.print("Ingrese el índice de la funcionalidad: ");
 		int opcion =scanner.nextInt();
@@ -675,6 +676,9 @@ public class Menú {
 			break;
 		case 2:
 			FuncionalidadExhumacion.funcionalidadExhumacion();
+			break;
+		case 3:
+			FuncionalidadEntierro.funcionalidadEntierro();
 			break;
 			
 		default:

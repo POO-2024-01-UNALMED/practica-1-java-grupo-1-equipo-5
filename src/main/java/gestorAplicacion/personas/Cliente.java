@@ -15,25 +15,28 @@ public class Cliente extends Persona {
 	//private Crematorio crematorio;
 	//private Cementerio cementerio;
 	private Inventario inventario; 
-	private ArrayList<Persona> familiares=new ArrayList<Persona>();
+	private ArrayList<Familiar> familiares=new ArrayList<Familiar>();
 	private ArrayList<Factura> listadoFacturas=new ArrayList<Factura>();
 	
 	
 	//Contructor mayores de edad
-	public Cliente(String nombre, long CC, int edad, CuentaBancaria cuentaBancaria,String afiliacion, ArrayList<Persona> familiares) {
+	public Cliente(String nombre, long CC, int edad, CuentaBancaria cuentaBancaria,String afiliacion, ArrayList<Familiar> familiares) {
 		super(nombre, CC, edad, null, cuentaBancaria);
 		this.afiliacion=afiliacion;
 		this.familiares=familiares;
 	}
 	
 	//Contructor menores de edad
-		public Cliente(String nombre,int edad, String plan,ArrayList<Persona> familiares) {
+		public Cliente(String nombre,int edad, String plan,ArrayList<Familiar> familiares) {
 			this(nombre, 0, edad,null, plan,familiares);
 		}
 		
+		
+		
+		
 		//autorizar procedimiento de exhumacion y cremacion del cliente
 		public String autorizar() {
-			ArrayList<Persona> familiares=this.familiares;
+			ArrayList<Familiar> familiares=this.familiares;
 			Familiar familiarDesignado= this.designarFamiliar(familiares);
 			String mensaje =" autoriza la solicitud";
 			
@@ -124,7 +127,7 @@ public class Cliente extends Persona {
 		}
 	
 		
-		public Familiar designarFamiliar(ArrayList<Persona> familiares) {
+		public Familiar designarFamiliar(ArrayList<Familiar> familiares) {
 			
 			String[] parentescos ={"conyuge","hijo","padre","hermano"};
 			
@@ -147,6 +150,18 @@ public class Cliente extends Persona {
 		}
 		
 		
+	public static ArrayList<Familiar> familiaresPorEdad(String adultoNiño,ArrayList<Familiar> familiares){
+		
+		ArrayList<Familiar> familiaresFiltrados = new ArrayList<Familiar>();
+		
+		for(Familiar familiar: familiares) {
+ 			if(familiar.getCC()==0 && adultoNiño.equals("niño") ) {
+ 				familiaresFiltrados.add(familiar);
+ 			}else {familiaresFiltrados.add(familiar);}
+ 			
+	}
+		return familiaresFiltrados;
+	} 
 	
 	
 	
@@ -154,7 +169,7 @@ public class Cliente extends Persona {
 	//metodos get y set
 	
 	
-	public String getAfiliacion() {
+	public String getAfiliacion(){
 		return afiliacion;
 	}
 
@@ -176,10 +191,10 @@ public class Cliente extends Persona {
 		//this.cementerio=cementerio;
 	//}
 	
-	public ArrayList<Persona> getFamiliares() {
+	public ArrayList<Familiar> getFamiliares() {
 		return familiares;
 	}
-	public void setFamiliares(ArrayList<Persona> familiares) {
+	public void setFamiliares(ArrayList<Familiar> familiares) {
 		this.familiares=familiares;
 	}
 	public ArrayList<Factura> getListadoFacturas() {

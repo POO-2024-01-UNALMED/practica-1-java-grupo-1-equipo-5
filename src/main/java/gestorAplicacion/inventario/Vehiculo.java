@@ -3,6 +3,7 @@ package gestorAplicacion.inventario;
 
 import gestorAplicacion.personas.Cliente;
 import gestorAplicacion.personas.Empleado;
+import gestorAplicacion.personas.Familiar;
 import gestorAplicacion.establecimientos.Establecimiento;
 import gestorAplicacion.personas.Persona;
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ public class Vehiculo {
 	private String placa;
 	private Empleado conductor;
 	private ArrayList<String> ruta=new ArrayList<String>();
-	private ArrayList<Persona> pasajeros = new ArrayList<Persona>();
+	private ArrayList<Familiar> pasajeros = new ArrayList<Familiar>();
 
 	
 	
@@ -78,11 +79,59 @@ public class Vehiculo {
 		return ruta;
 	}
 	
+	public void agregarPasajeros(ArrayList<Familiar> familiares) {
+		ArrayList<Familiar> familiaresMenores = Cliente.familiaresPorEdad("niño",familiares);
+ 		ArrayList<Familiar> familiaresMayores = Cliente.familiaresPorEdad("adulto",familiares);
+ 		
+ 		int capacidad =tipoVehiculo.getCapacidad();
+ 		while (capacidad>0) {
+ 	
+ 			if(capacidad%2==0 && familiaresMenores.size()!=0) {
+ 				
+ 				Familiar familiarMenor=familiaresMenores.get(0);
+ 				pasajeros.add(familiarMenor);
+ 				pasajeros.add(familiarMenor.getResponsable());
+ 				
+ 				familiaresMenores.remove(familiarMenor);
+ 				familiaresMayores.remove(familiarMenor.getResponsable());
+ 				capacidad-=2;
+ 				}
+ 			
+ 			else if (familiaresMayores.size()!=0 && capacidad!=0) {
+ 				    Familiar familiarMayor=familiaresMenores.get(0);
+ 					pasajeros.add(familiarMayor);
+ 					familiaresMayores.remove(familiarMayor);
+ 					capacidad-=1;
+ 				}
+ 			else {break;}
+ 			
+ 		}
+ 				
+ 				
+ 			//Fin for
+ 			
+ 			
+ 		}
+ 		
+	public String productoVehiculo() {
+		String producto="Vehículo "+tipoVehiculo.name()+" - color: "+color+" - placa: "+placa+"\n";
+		
+		ArrayList<Familiar> auxPasajeros=pasajeros;
+		
+		while(auxPasajeros.size()>0) {
+			Familiar pasajero= auxPasajeros.get(0);
+			if(pasajero.getCC()==0) {
+				producto+="Familiar menor de edad: "+pasajero+" Acudiente: "+pasajero.getResponsable()+"\n";
+			}else {producto+="Familiar: "+pasajero+"\n";} 
+		
+		}
+	    	return producto;
+	    }
 	
 
 	
 	
-	public void agregarPasajero(Persona pasajero) {
+	public void agregarPasajero(Familiar pasajero) {
 		
 		pasajeros.add(pasajero);
 		
@@ -118,7 +167,7 @@ public class Vehiculo {
 	public void setRuta(ArrayList<String> ruta) {
 		this.ruta=ruta;
 	}
-	public ArrayList<Persona> getPasajeros(){
+	public ArrayList<Familiar> getPasajeros(){
 		return pasajeros;
 	}
 	public Funeraria getFuneraria() {
@@ -142,7 +191,7 @@ public class Vehiculo {
 	public void setTipoVehiculo(TipoVehiculo tipoVehiculo) {
 		this.tipoVehiculo = tipoVehiculo;
 	}
-	public void setPasajeros(ArrayList<Persona> pasajeros) {
+	public void setPasajeros(ArrayList<Familiar> pasajeros) {
 		this.pasajeros = pasajeros;
 	}
 	

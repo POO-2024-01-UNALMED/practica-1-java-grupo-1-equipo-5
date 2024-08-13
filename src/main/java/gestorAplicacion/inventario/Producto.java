@@ -4,6 +4,7 @@ import java.time.LocalTime;
 
 import gestorAplicacion.establecimientos.*;
 import gestorAplicacion.personas.Cliente;
+import gestorAplicacion.personas.Familiar;
 import gestorAplicacion.personas.Persona;
 
 public class Producto {
@@ -14,6 +15,7 @@ public class Producto {
     private int cantidad;
 
     private Establecimiento establecimiento;
+    private Vehiculo vehiculo;
 
     private int cantidadVendida=0;
 
@@ -32,6 +34,15 @@ public class Producto {
     //Constructor para crear productos con establecimientos (Crematorio y Cementerio)
     public Producto(Establecimiento establecimiento) {
     	this.establecimiento=establecimiento;
+    	this.nombre=establecimiento.getNombre();
+
+    }
+    
+    public Producto(Vehiculo vehiculo) {
+    	this.vehiculo=vehiculo;
+    	this.nombre=vehiculo.getTipoVehiculo().name();
+    	this.precio=vehiculo.getTipoVehiculo().getPrecio();
+    	
     }
     
     
@@ -69,6 +80,10 @@ public class Producto {
     	return evento;
     	
     }
+    
+   
+    
+    
     
     
  
