@@ -264,4 +264,17 @@ public class CuentaBancaria implements Banco {
 		return this.cobroAdicional;
 	
 	}
+
+	public double getSaldo() {
+		return saldo;
+	}
+
+	public void setInteres(double interes) {
+		this.interes = interes;
+	}
+
+	public void setCobroAdicional(double cobroAdicional) {
+		this.cobroAdicional = cobroAdicional;
+	}
+	
 }

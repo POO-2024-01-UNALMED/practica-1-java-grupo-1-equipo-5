@@ -166,7 +166,7 @@ public class Establecimiento {
 	public ArrayList<Vehiculo> filtrarVehiculosSinConductorYDisponibles() {
         ArrayList<Vehiculo> vehiculosFiltrados = new ArrayList<>();
         for (Vehiculo vehiculo : Vehiculos) {
-            if (vehiculo.getConductor() == null && vehiculo.isDisponible()) {
+            if (vehiculo.getConductor() == null && vehiculo.isEstado()) {
                 vehiculosFiltrados.add(vehiculo);
             }
         }
@@ -381,6 +381,7 @@ public class Establecimiento {
 	public void setDescripcionCalificacion(String descripcionCalificacion) {
 		this.descripcionCalificacion = descripcionCalificacion;
 	}
+	
 	
 	
 	
