@@ -37,7 +37,8 @@ public enum TipoVehiculo {
 	}
 
 	public double getPrecio() {
-		return precio;
+		return this.precio;
+	}
 
 
 	public void setCapacidad(int capacidad) {

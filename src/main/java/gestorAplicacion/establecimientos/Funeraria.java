@@ -317,7 +317,7 @@ public void pagoTrabajadores(Empleado empleado) {
   
 }
 public void pedirCredito() {
-	if()
+	//if()
 	ArrayList<Establecimiento> establecimientos = Funeraria.buscarPorFuneraria(this, "cementerio");
 	ArrayList<Establecimiento> establecimient = Funeraria.buscarPorFuneraria(this, "crematorio");
 	establecimientos.addAll(establecimient);
