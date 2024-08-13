@@ -16,6 +16,7 @@ public class CuentaBancaria implements Banco {
 	private String titular;
     private double interes ;
     private double cobroAdicional;
+    private Factura credito;
 	
 	
 	public CuentaBancaria(long numeroCuenta, String titular, double saldoInicial, String banco) {
@@ -115,13 +116,14 @@ public class CuentaBancaria implements Banco {
     	
     	if(this.getBanco() == cuentaAhorros.getBanco()) {
     		double saldo = this.saldo - valor;
-    		setSaldo(saldo);
-    	}
+    		this.setSaldo(saldo);
+ 
+    	}   
     	else {
     		
     		double cobroAdicional = this.getCobroAdicional();
     		double saldo = this.saldo -(valor + cobroAdicional);
-		    setSaldo(saldo);
+		    this.setSaldo(saldo);
     		
     	}
     	
@@ -133,6 +135,7 @@ public class CuentaBancaria implements Banco {
         double interes = cuentaAhorros.obtenerSaldo() * porcentajeInteres;
         double saldoFinal = cuentaAhorros.obtenerSaldo() - interes;
         cuentaAhorros.setSaldo(saldoFinal);
+       
     }
     public void transaccion(double valor, CuentaBancaria cuentaCorriente, String tipo) {
     	
@@ -182,6 +185,7 @@ public class CuentaBancaria implements Banco {
 	   
 		
    }
+    
 
 
 	public String getBanco() {
@@ -264,6 +268,7 @@ public class CuentaBancaria implements Banco {
 		return this.cobroAdicional;
 	
 	}
+<<<<<<< Updated upstream
 
 	public double getSaldo() {
 		return saldo;
@@ -277,4 +282,14 @@ public class CuentaBancaria implements Banco {
 		this.cobroAdicional = cobroAdicional;
 	}
 	
+=======
+	
+	public Factura getCredito() {
+		return this.credito;
+	}
+	
+	public void setCredito(Factura credito) {
+		this.credito = credito;
+	}
+>>>>>>> Stashed changes
 }
