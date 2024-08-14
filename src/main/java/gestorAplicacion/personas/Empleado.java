@@ -98,4 +98,5 @@ public class Empleado extends Persona{
 		
 		this.trabajosHechos = trabajosHechos;
 	}
+	
 }

@@ -197,6 +197,13 @@ public class Cementerio extends Establecimiento {
 		return inventario;
 	}
 
+
+
+	public void setInventario(ArrayList<Inventario> inventario) {
+		this.inventario = inventario;
+	}
+	
+
 	
 
 }

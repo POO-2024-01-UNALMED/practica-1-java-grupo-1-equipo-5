@@ -24,6 +24,7 @@ public class Establecimiento {
 	private ArrayList<Vehiculo> Vehiculos=new ArrayList<Vehiculo>();
 	protected ArrayList<LocalTime> horarioEventos=new ArrayList<>();
 	private String descripcionCalificacion;
+	private ArrayList<Vehiculo> vehiculosEnVenta =new ArrayList<>();
 
 	private LocalTime horaEvento;
 	private Iglesia iglesia;
@@ -382,6 +383,17 @@ public class Establecimiento {
 	public void setDescripcionCalificacion(String descripcionCalificacion) {
 		this.descripcionCalificacion = descripcionCalificacion;
 	}
+	public ArrayList<Vehiculo> getVehiculosEnVenta() {
+        return vehiculosEnVenta;
+    }
+
+    public void agregarVehiculoEnVenta(Vehiculo vehiculo) {
+        vehiculosEnVenta.add(vehiculo);
+    }
+
+    public void removerVehiculoEnVenta(Vehiculo vehiculo) {
+        vehiculosEnVenta.remove(vehiculo);
+    }
 	
 	
 	

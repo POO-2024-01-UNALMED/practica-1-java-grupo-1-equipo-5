@@ -308,5 +308,6 @@ public class CuentaBancaria implements Banco {
 	public void setCredito(Factura credito) {
 		this.credito = credito;
 	}
+	
 
 }

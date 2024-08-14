@@ -75,5 +75,6 @@ public class Familiar extends Persona {
 	public void setResponsable(Familiar responsable) {
 		this.responsable = responsable;
 	}
+	
 
 }

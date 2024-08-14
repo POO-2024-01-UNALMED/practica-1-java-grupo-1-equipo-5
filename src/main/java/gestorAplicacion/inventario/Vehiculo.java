@@ -19,6 +19,7 @@ public class Vehiculo {
 	private String placa;
 	private Empleado conductor;
 	private ArrayList<String> ruta=new ArrayList<String>();
+	private int Precio;
 
 	private ArrayList<Familiar> pasajeros = new ArrayList<Familiar>();
 
@@ -45,6 +46,7 @@ public class Vehiculo {
 		funeraria.agregarVehiculo(this);
 		this.Capacidad = capacidad;
 		}
+	
 	
 	
 	
