@@ -11,6 +11,7 @@ public class CuentaBancaria implements Banco {
 	private double bolsilloInventario;
 	private double bolsilloTransporte;
 	private double bolsilloEstablecimientos;
+	private double bolsilloPagoCredito;
 	private double saldo;
 	private long numeroCuenta;
 	private String titular;
@@ -27,7 +28,7 @@ public class CuentaBancaria implements Banco {
         this.banco = banco;
     }
 	
-	public CuentaBancaria(long numeroCuenta, String titular, double bolsilloTrabajadores, double bolsilloInventario, double bolsilloTransporte, double bolsilloEstablecimientos, String banco) {
+	public CuentaBancaria(long numeroCuenta, String titular, double bolsilloTrabajadores, double bolsilloInventario, double bolsilloTransporte, double bolsilloEstablecimientos, double bolsilloPagoCredito, String banco) {
         this.establecerValores(banco);
 		this.numeroCuenta = numeroCuenta;
         this.titular = titular;
@@ -35,8 +36,9 @@ public class CuentaBancaria implements Banco {
         this.bolsilloTransporte = bolsilloTransporte;
         this.bolsilloInventario = bolsilloInventario;
         this.bolsilloEstablecimientos = bolsilloEstablecimientos;
+        this.bolsilloPagoCredito = bolsilloPagoCredito;
         this.banco = banco;
-        this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos;
+        this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos + bolsilloPagoCredito;
 	}
 	
 	private void establecerValores(String banco) {
@@ -71,19 +73,23 @@ public class CuentaBancaria implements Banco {
       }else if(tipo == "bolsilloTrabajadores") {
     	  if (cantidad > 0) {
               bolsilloTrabajadores += cantidad;
-              this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos;
+              this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos + bolsilloPagoCredito;
       }}else if(tipo == "bolsilloInventario") {
     	  if (cantidad > 0) {
               bolsilloInventario += cantidad;
-              this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos;
+              this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos + bolsilloPagoCredito;
       }}else if(tipo == "bolsilloTransporte") {
     	  if (cantidad > 0) {
               bolsilloTransporte += cantidad;
-              this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos;
+              this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos + bolsilloPagoCredito;
       }}else if(tipo == "bolsilloEstablecimientos") {
     	  if (cantidad > 0) {
               bolsilloEstablecimientos += cantidad;
-              this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos;
+              this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos + bolsilloPagoCredito;
+      }}else if(tipo == "bolsilloPagoCredito") {
+    	  if (cantidad > 0) {
+              bolsilloPagoCredito += cantidad;
+              this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos + bolsilloPagoCredito;
       }}
     }
 
@@ -95,20 +101,24 @@ public class CuentaBancaria implements Banco {
          }else if(tipo == "bolsilloTrabajadores") {
        	  if (cantidad <= bolsilloTrabajadores) {
                  bolsilloTrabajadores -= cantidad;
-                 this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos;
+                 this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos + bolsilloPagoCredito;
          }}else if(tipo == "bolsilloInventario") {
        	  if (cantidad <= bolsilloInventario) {
                  bolsilloInventario -= cantidad;
-                 this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos;
+                 this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos + bolsilloPagoCredito;
          }}else if(tipo == "bolsilloTransporte") {
        	  if (cantidad <= bolsilloTransporte) {
                  bolsilloTransporte -= cantidad;
-                 this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos;
+                 this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos + bolsilloPagoCredito;
          }}else if(tipo == "bolsilloEstablecimientos") {
        	  if (cantidad <= bolsilloEstablecimientos) {
                  bolsilloEstablecimientos -= cantidad;
-                 this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos;
-         }}
+                 this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos + bolsilloPagoCredito;
+         }} else if(tipo == "bolsilloPagoCredito") {
+    	  if (cantidad <= bolsilloPagoCredito) {
+              bolsilloPagoCredito -= cantidad;
+              this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos + bolsilloPagoCredito;
+      }}
        }
 
     
@@ -213,7 +223,7 @@ public class CuentaBancaria implements Banco {
 	
 	public void setBolsilloTrabajadores(double bolsilloTrabajadores) {
 		this.bolsilloTrabajadores = bolsilloTrabajadores;
-		this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos;
+		this.saldo = this.bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos + bolsilloPagoCredito;
 	}
 	
 	public double getBolsilloInventario() {
@@ -222,7 +232,7 @@ public class CuentaBancaria implements Banco {
 	
 	public void setBolsilloInventario(double bolsilloInventario) {
 		this.bolsilloInventario = bolsilloInventario;
-		this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos;
+		this.saldo = bolsilloTrabajadores + bolsilloTransporte + this.bolsilloInventario + bolsilloEstablecimientos + bolsilloPagoCredito;
 	}
 	
 	public double getBolsilloTransporte() {
@@ -231,7 +241,7 @@ public class CuentaBancaria implements Banco {
 	
 	public void setBolsilloTransporte(double bolsilloTransporte) {
 		this.bolsilloTransporte = bolsilloTransporte;
-		this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos;
+		this.saldo = bolsilloTrabajadores + this.bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos + bolsilloPagoCredito;
 	}
 	
 	public double getBolsilloEstablecimientos() {
@@ -240,7 +250,14 @@ public class CuentaBancaria implements Banco {
 	
 	public void setBolsilloEstablecimientos(double bolsilloEstablecimientos) {
 		this.bolsilloEstablecimientos = bolsilloEstablecimientos;
-		this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos;
+		this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + this.bolsilloEstablecimientos + bolsilloPagoCredito;
+	}
+	public double getBolsilloPagoCredito() {
+		return this.bolsilloPagoCredito;
+	}
+	public void setBolsilloPagoCredito(double bolsilloPagoCredito) {
+		this.bolsilloPagoCredito = bolsilloPagoCredito;
+		this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos + this.bolsilloPagoCredito;
 	}
 	
 	public long getNumeroCuenta() {
