@@ -23,6 +23,7 @@ public class Factura {
 	private String Fecha;
 	private double precioFinal;
 	private List<Producto> listaProductos;
+	private double porcentajeCreditoPorPagar = 1.0;
 	private String Servicio ;
 	
 
@@ -218,6 +219,14 @@ public class Factura {
 
 	public void setServicio(String servicio) {
 		Servicio = servicio;
+	}
+	
+	public double getPorcentajeCreditoPorPagar() {
+		return this.porcentajeCreditoPorPagar;
+	}
+	
+	public void setPorcentajeCreditoPorPagar(double porcentajeCreditoPorPagar) {
+		this.porcentajeCreditoPorPagar = porcentajeCreditoPorPagar;
 	}
 	
 	

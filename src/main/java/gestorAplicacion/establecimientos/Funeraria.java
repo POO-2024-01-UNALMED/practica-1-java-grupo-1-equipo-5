@@ -320,8 +320,8 @@ public void pagoTrabajadores(Empleado empleado) {
      }
   
 }
-public void pedirCredito() {
-	//if()
+public String pedirCredito() {
+	if(this.getCuentaCorriente().getCredito() == null || this.getCuentaCorriente().getCredito().getPorcentajeCreditoPorPagar() <= 0.5) {
 	ArrayList<Establecimiento> establecimientos = Funeraria.buscarPorFuneraria(this, "cementerio");
 	ArrayList<Establecimiento> establecimient = Funeraria.buscarPorFuneraria(this, "crematorio");
 	establecimientos.addAll(establecimient);
@@ -348,9 +348,77 @@ public void pedirCredito() {
 		this.getCuentaCorriente().depositar(div, "bolsilloTransporte");
 		this.getCuentaCorriente().depositar(div, "bolsilloInventario");
 		this.getCuentaCorriente().depositar(div, "bolsilloEstablecimientos");
+		montoCredito += (this.getCuentaCorriente().getInteres() * montoCredito);
 		Factura credito = new Factura("credito", montoCredito, "2024", this, "credito");
+		this.getListadoFacturas();
 		this.getCuentaCorriente().setCredito(credito);
+		return "Credito aceptado";}
+	else {
+		return "Credito rechazado";}
 	}
+
+public String pagarCredito(double porcentaje) {
+    if (esPorcentajeValido(porcentaje)) {
+        if (tieneCreditoPendiente()) {
+            double porcentajeFaltante = getPorcentajeFaltante();
+            double valorFaltante = getValorFaltante();
+
+            if (porcentaje <= porcentajeFaltante) {
+                return procesarPago(porcentaje, porcentajeFaltante, valorFaltante);
+            } else {
+                return "El porcentaje es mayor a lo que falta por pagar";
+            }
+        } else {
+            return "No hay crédito que pagar";
+        }
+    } else {
+        return "El porcentaje no es válido";
+    }
+}
+
+private boolean esPorcentajeValido(double porcentaje) {
+    return porcentaje == 1.0 || porcentaje == 0.8 || porcentaje == 0.6 || porcentaje == 0.4 || porcentaje == 0.2;
+}
+
+private boolean tieneCreditoPendiente() {
+    return this.getCuentaCorriente().getCredito() != null;
+}
+
+private double getPorcentajeFaltante() {
+    return this.getCuentaCorriente().getCredito().getPorcentajeCreditoPorPagar();
+}
+
+private double getValorFaltante() {
+    return this.getCuentaCorriente().getCredito().getPrecio();
+}
+
+private String procesarPago(double porcentaje, double porcentajeFaltante, double valorFaltante) {
+    if (this.getCuentaCorriente().getBolsilloPagoCredito() >= valorFaltante) {
+        double pago = calcularPago(porcentaje, valorFaltante);
+        this.getCuentaCorriente().retirar(pago, "bolsilloPagoCredito");
+        actualizarCredito(porcentajeFaltante, valorFaltante, pago);
+        return "Pago exitoso";
+    } else {
+        return "Dinero insuficiente";
+    }
+}
+
+private double calcularPago(double porcentaje, double valorFaltante) {
+    return valorFaltante * porcentaje;
+}
+
+private void actualizarCredito(double porcentajeFaltante, double valorFaltante, double pago) {
+    double nuevoPorcentajeFaltante = porcentajeFaltante - pago / valorFaltante;
+    double nuevoValorFaltante = valorFaltante - pago;
+
+    if (nuevoPorcentajeFaltante == 0) {
+        this.getCuentaCorriente().setCredito(null);
+    } else {
+        this.getCuentaCorriente().getCredito().setPorcentajeCreditoPorPagar(nuevoPorcentajeFaltante);
+        this.getCuentaCorriente().getCredito().setPrecio(nuevoValorFaltante);
+    }
+}
+		
 	
 
 
