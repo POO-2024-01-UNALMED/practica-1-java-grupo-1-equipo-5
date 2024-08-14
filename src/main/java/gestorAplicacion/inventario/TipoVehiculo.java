@@ -53,5 +53,10 @@ public enum TipoVehiculo {
 		this.familiar = familiar;
 
 	}
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+	
 	
 }

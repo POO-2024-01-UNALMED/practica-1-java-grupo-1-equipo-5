@@ -53,5 +53,6 @@ public abstract class Persona {
 	public void setCuentaBancaria(CuentaBancaria cuentaBancaria) {
 		this.cuentaBancaria = cuentaBancaria;
 	}
+	
 
 }

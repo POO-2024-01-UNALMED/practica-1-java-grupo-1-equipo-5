@@ -64,5 +64,38 @@ public enum Iglesia {
 	public String getReligiosoAltoRango() {
 		return religiosoAltoRango;
 	}
+
+	public int getDuracionEvento() {
+		return duracionEvento;
+	}
+
+	public void setDuracionEvento(int duracionEvento) {
+		this.duracionEvento = duracionEvento;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setSillas(int sillas) {
+		this.sillas = sillas;
+	}
+
+	public void setCremacion(boolean cremacion) {
+		this.cremacion = cremacion;
+	}
+
+	public void setTipoUrnas(String[] tipoUrnas) {
+		this.tipoUrnas = tipoUrnas;
+	}
+
+	public void setReligioso(String religioso) {
+		this.religioso = religioso;
+	}
+
+	public void setReligiosoAltoRango(String religiosoAltoRango) {
+		this.religiosoAltoRango = religiosoAltoRango;
+	}
+	
 	
 }

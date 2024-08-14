@@ -601,5 +601,18 @@ private void actualizarCredito(double porcentajeFaltante, double valorFaltante, 
 		Funeraria.cuentaAhorros = cuentaAhorros;
 	}
 
+
+
+	public void setListadoFacturas(ArrayList<Factura> listadoFacturas) {
+		this.listadoFacturas = listadoFacturas;
+	}
+
+
+
+	public void setListadoFacturasPorPagar(ArrayList<Factura> listadoFacturasPorPagar) {
+		this.listadoFacturasPorPagar = listadoFacturasPorPagar;
+	}
+	
+
 	
 }

@@ -214,6 +214,13 @@ public class Vehiculo {
 	public Boolean getEstado() {
 		return estado;
 	}
+	public int getCapacidad() {
+		return Capacidad;
+	}
+	public void setCapacidad(int capacidad) {
+		Capacidad = capacidad;
+	}
+	
 	
 	
 	

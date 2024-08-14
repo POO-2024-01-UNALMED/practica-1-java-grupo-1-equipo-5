@@ -93,6 +93,32 @@ public class Urna extends Inventario {
 		public String getTipo() {
 			return tipo;
 		}
+
+
+		public ArrayList<String> getFloresUrna() {
+			return floresUrna;
+		}
+
+
+		public void setFloresUrna(ArrayList<String> floresUrna) {
+			this.floresUrna = floresUrna;
+		}
+
+
+		public ArrayList<String> getMaterialUrna() {
+			return materialUrna;
+		}
+
+
+		public void setMaterialUrna(ArrayList<String> materialUrna) {
+			this.materialUrna = materialUrna;
+		}
+
+
+		public void setTipo(String tipo) {
+			this.tipo = tipo;
+		}
+		
 		
 		
 	}
