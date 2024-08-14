@@ -401,7 +401,7 @@ public void pedirCredito() {
     	 
     	 ArrayList<Establecimiento> cementerios =this.buscarCementerios("cuerpos", cliente); 
     	 ArrayList<Establecimiento> cementeriosFiltrados = new ArrayList<Establecimiento>(); 
-
+    	 /////////////////////////////////////////
     	 System.out.println(cementerios);
     	 //while(cementeriosFiltrados.size()==0) {
     		 
@@ -411,17 +411,21 @@ public void pedirCredito() {
         		 auxCementerio.generarHoras();
         		 //Se recorre por cada uno de los horarios generados para filtrar qué horarios están después de la hora que se decidió hacer la misa
         		 
-        		 ArrayList<LocalTime> horasAuxiliares=new ArrayList<LocalTime>();
-        		 for (LocalTime auxHora:auxCementerio.getHorarioEventos() ) {
+        		 //ArrayList<LocalTime> horasAuxiliares=new ArrayList<LocalTime>();
+        		 //for (LocalTime auxHora:auxCementerio.getHorarioEventos() ) {
         			 //Si la hora es antes de que la ceremonia termine se elimina el horario
-        			 if(auxHora.isBefore(iglesia.duracionEvento(hora))){
-        				 horasAuxiliares.add(auxHora);
-        			 }//Fin if
-        		 }//Fin for
+        			 //if(auxHora.isBefore(iglesia.duracionEvento(hora))){
+        				// horasAuxiliares.add(auxHora);
+        			 //}//Fin if
+        		 //}//Fin for
         		 System.out.println("disponibilidad: "+auxCementerio.disponibilidadInventario("tumba", estatura, cliente.getEdad()));
         		 //Si no hay horarios disponibles o no hay tumbas que cumplan los filtros de disponibilidaInventario el cementerio se elimina
-        		 if(horasAuxiliares.size()!=0 && auxCementerio.disponibilidadInventario("tumba", estatura, cliente.getEdad()).size()!=0) {
+        		 if(auxCementerio.disponibilidadInventario("tumba", estatura, cliente.getEdad()).size()!=0) {
         			 cementeriosFiltrados.add(auxCementerio);
+        		 }
+        		 
+        		 if(cementeriosFiltrados.size()==0) {
+        			 new Tumba("default", cementerios.get(0),estatura,determinar)
         		 }
         		 
         	 }//Fin for principal
