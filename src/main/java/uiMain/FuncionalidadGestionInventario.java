@@ -238,11 +238,11 @@ public class FuncionalidadGestionInventario {
 
         // Aquí asumimos que cada establecimiento puede tener vehículos a la venta
         for (Establecimiento est : funeraria.getListadoProveedores()) {
-            for (Vehiculo vehiculo : est.getVehiculosEnVenta()) { // Supongamos que hay un método para obtener vehículos en venta
+            for (Vehiculo vehiculo : est.getVehiculosEnVenta()) { 
                 System.out.println("Establecimiento: " + est.getNombre() + ", Calificación: " + est.getCalificacion());
                 System.out.println("  Vehículo: " + vehiculo.getTipoVehiculo() + ", Capacidad: " + vehiculo.getCapacidad() + ", Precio: " + vehiculo.getPrecio());
                 
-                // Representación visual del vehículo
+                // vehículo de forma visual
                 System.out.println("   ______");
                 System.out.println("  /|_||_\\`.__");
                 System.out.println(" (   _    _ _\\");
@@ -252,8 +252,8 @@ public class FuncionalidadGestionInventario {
                 String respuesta = scanner.next();
                 if (respuesta.equalsIgnoreCase("S")) {
                     // Aquí se realizaría la compra y la actualización de la lista de vehículos de la funeraria
-                    funeraria.agregarVehiculo(vehiculo); // Método para agregar el vehículo a la funeraria
-                    est.removerVehiculoEnVenta(vehiculo); // Método para remover el vehículo del establecimiento
+                    funeraria.agregarVehiculo(vehiculo); 
+                    est.removerVehiculoEnVenta(vehiculo); 
                     System.out.println("Vehículo comprado exitosamente.");
                 }
             }

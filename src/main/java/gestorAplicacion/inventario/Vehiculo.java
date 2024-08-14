@@ -24,28 +24,30 @@ public class Vehiculo {
 	private ArrayList<Familiar> pasajeros = new ArrayList<Familiar>();
 
 
-	private int Capacidad;
+	private int Capacidad;// Es para la funcionalidad inventario y me sirve como espacio para unas cosas
 
 
 	
 	
 	// Constructor
-	public Vehiculo(TipoVehiculo tipoVehiculo,Funeraria funeraria,String color, String placa) {
+	public Vehiculo(TipoVehiculo tipoVehiculo,Funeraria funeraria,String color, String placa, int Precio, int Capacidad) {
 		this.tipoVehiculo=tipoVehiculo;
 		this.funeraria=funeraria;
 		this.color = color;
 		this.placa = placa;
+		this.Precio= Precio;
+		this.Capacidad= Capacidad;
 		funeraria.agregarVehiculo(this);
 		}
 	// Constructor con capacidad por si nesecitan el otro constructor
-	public Vehiculo(TipoVehiculo tipoVehiculo,Funeraria funeraria,String color, String placa, int capacidad) {
-		this.tipoVehiculo=tipoVehiculo;
-		this.funeraria=funeraria;
-		this.color = color;
-		this.placa = placa;
-		funeraria.agregarVehiculo(this);
-		this.Capacidad = capacidad;
-		}
+	//public Vehiculo(TipoVehiculo tipoVehiculo,Funeraria funeraria,String color, String placa, int capacidad) {
+		//this.tipoVehiculo=tipoVehiculo;
+		//this.funeraria=funeraria;
+		//this.color = color;
+		//this.placa = placa;
+		//funeraria.agregarVehiculo(this);
+		//this.Capacidad = capacidad;
+		//}
 	
 	
 	
@@ -222,6 +224,13 @@ public class Vehiculo {
 	public void setCapacidad(int capacidad) {
 		Capacidad = capacidad;
 	}
+	public int getPrecio() {
+		return Precio;
+	}
+	public void setPrecio(int precio) {
+		Precio = precio;
+	}
+	
 	
 	
 	
