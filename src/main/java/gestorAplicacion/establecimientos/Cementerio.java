@@ -55,7 +55,8 @@ public class Cementerio extends Establecimiento {
 		}
 		
 		for(Inventario auxUrnaTumba: auxInventario) {
-			if (auxUrnaTumba.getCliente()==null & auxUrnaTumba.getTamaño()>=auxUrnaTumba.determinarTamaño(tamaño) & auxUrnaTumba.getCategoria()==auxUrnaTumba.determinarCategoria(edad)){
+	
+			if (auxUrnaTumba.getCliente()==null & auxUrnaTumba.getTamaño()>=auxUrnaTumba.determinarTamaño(tamaño) & auxUrnaTumba.getCategoria()==auxUrnaTumba.determinarCategoria(edad)) { //& auxUrnaTumba.getCategoria()==auxUrnaTumba.determinarCategoria(edad)){
 				inventarioDisponible.add(auxUrnaTumba);
 			}//Fin if
 		}//Fin for 
@@ -158,7 +159,7 @@ public class Cementerio extends Establecimiento {
 		int contador=1;
 		while(familiares.size()!=0 & sillas!=0) {
 			Familiar familiar = cliente.designarFamiliar(familiares);
-			String flor=cliente.getInventario().getFlores().get(0);
+			String flor=cliente.getInventario().getInventarioFlores().get(0);
 			organizacion+="Silla ["+contador+"] - Familiar "+familiar+" Flores para decorar silla -  "+ flor+"\n";
 			
 			//AgregarProducto a la lista
@@ -166,7 +167,7 @@ public class Cementerio extends Establecimiento {
 			//Borrar a familiar designado
 			familiares.remove(familiar);
 			//Borrar adorno
-			cliente.getInventario().getFlores().remove(flor);
+			cliente.getInventario().getInventarioFlores().remove(flor);
 			
 			sillas-=1;
 			
@@ -192,7 +193,9 @@ public class Cementerio extends Establecimiento {
 		this.tipo=tipo;
 	}
 
-	
+	public ArrayList<Inventario> getInventario() {
+		return inventario;
+	}
 
 	
 

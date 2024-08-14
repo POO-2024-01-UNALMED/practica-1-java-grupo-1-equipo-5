@@ -11,7 +11,9 @@ import gestorAplicacion.financiero.CuentaBancaria;
 import gestorAplicacion.personas.*;
 import gestorAplicacion.inventario.Inventario;
 import gestorAplicacion.inventario.Producto;
+import gestorAplicacion.inventario.TipoVehiculo;
 import gestorAplicacion.inventario.Urna;
+import gestorAplicacion.inventario.Vehiculo;
 import gestorAplicacion.inventario.Tumba;
 
 public class Menú {
@@ -574,6 +576,38 @@ public class Menú {
 		Empleado empleado8 = new Empleado("Anastasio",12345,"3456",null,"tarde","cremador",900000);
 		
 		
+		//Conductores
+		Empleado empleado9 = new Empleado("Camila",12345,"3456",null,"mañana","conductor",900000);
+		Empleado empleado10 = new Empleado("Santiago",12345,"3456",null,"tarde","conductor",900000);
+		Empleado empleado11 = new Empleado("Anastasio",12345,"3456",null,"noche","conductor",900000);
+		
+		fulanita.agregarEmpleado(empleado11);
+		fulanita.agregarEmpleado(empleado10);
+		fulanita.agregarEmpleado(empleado9);
+		
+		funita.agregarEmpleado(empleado11);
+		funita.agregarEmpleado(empleado10);
+		funita.agregarEmpleado(empleado9);
+		
+		fumita.agregarEmpleado(empleado11);
+		fumita.agregarEmpleado(empleado10);
+		fumita.agregarEmpleado(empleado9);
+		
+		//AgregarVehiculos
+		
+		Vehiculo veh1= new Vehiculo(TipoVehiculo.BERLINA,fulanita,"azul", "2345");
+		Vehiculo veh2= new Vehiculo(TipoVehiculo.BUS,fulanita,"azul", "2345");
+		Vehiculo veh3= new Vehiculo(TipoVehiculo.CARROZA,fulanita,"azul", "2345");
+		
+		Vehiculo veh4= new Vehiculo(TipoVehiculo.FAETON,funita,"azul", "2345");
+		Vehiculo veh5= new Vehiculo(TipoVehiculo.BUS,funita,"azul", "2345");
+		Vehiculo veh6= new Vehiculo(TipoVehiculo.COCHERESPETO,funita,"azul", "2345");
+		
+		Vehiculo veh7= new Vehiculo(TipoVehiculo.CUPE,fumita,"azul", "2345");
+		Vehiculo veh8= new Vehiculo(TipoVehiculo.BERLINA,fumita,"azul", "2345");
+		Vehiculo veh9= new Vehiculo(TipoVehiculo.CARROZA,fumita,"azul", "2345");
+		
+		
 		//Urnas vacías
 		
 		Urna urna1=new Urna("Urnita1",cemi,70,1,"fija");
@@ -634,17 +668,17 @@ public class Menú {
 		Urna urna23=new Urna("Urnita23",cemito,40,2,"ordinaria");
 
 		
-		Tumba tumba1=new Tumba("Tumbita1",cemi1,1.70,1);
-		Tumba tumba2=new Tumba("Tumbita2",cemi1,1.50,2);
+		Tumba tumba1=new Tumba("Tumbita1",cemi1,1.70,0);
+		Tumba tumba2=new Tumba("Tumbita2",cemi1,1.50,0);
 		Tumba tumba3=new Tumba("Tumbita3",cemito1,1.60,0);
 		
-		Tumba tumba4=new Tumba("Tumbita4",cemito1,1.50,1);
-		Tumba tumba5=new Tumba("Tumbita5",cementerio1,1.50,2);
-		Tumba tumba6=new Tumba("Tumbita6",cementerio1,1.50,3);
+		Tumba tumba4=new Tumba("Tumbita4",cemito1,1.50,0);
+		Tumba tumba5=new Tumba("Tumbita5",cementerio1,1.50,0);
+		Tumba tumba6=new Tumba("Tumbita6",cementerio1,1.50,0);
 		
-		Tumba tumba7=new Tumba("Tumbita7",cementerio1,1.50,1);
-		Tumba tumba8=new Tumba("Tumbita8",cementerio1,1.50,2);
-		Tumba tumba9=new Tumba("Tumbita9",cementerio1,1.50,3);
+		Tumba tumba7=new Tumba("Tumbita7",cementerio1,1.50,0);
+		Tumba tumba8=new Tumba("Tumbita8",cementerio1,1.50,0);
+		Tumba tumba9=new Tumba("Tumbita9",cementerio1,1.50,0);
 		
 		
 		urna13.agregarCliente(n1);

@@ -85,11 +85,14 @@ public class Vehiculo {
 		return ruta;
 	}
 	
-	public void agregarPasajeros(ArrayList<Familiar> familiares) {
+	public ArrayList<Familiar> agregarPasajeros(ArrayList<Familiar> familiares) {
 		ArrayList<Familiar> familiaresMenores = Cliente.familiaresPorEdad("niño",familiares);
  		ArrayList<Familiar> familiaresMayores = Cliente.familiaresPorEdad("adulto",familiares);
  		
+ 		ArrayList<Familiar> pasajeros =new ArrayList<Familiar>();
+ 		
  		int capacidad =tipoVehiculo.getCapacidad();
+ 	
  		while (capacidad>0) {
  	
  			if(capacidad%2==0 && familiaresMenores.size()!=0) {
@@ -101,17 +104,24 @@ public class Vehiculo {
  				familiaresMenores.remove(familiarMenor);
  				familiaresMayores.remove(familiarMenor.getResponsable());
  				capacidad-=2;
+ 		
  				}
  			
  			else if (familiaresMayores.size()!=0 && capacidad!=0) {
- 				    Familiar familiarMayor=familiaresMenores.get(0);
+ 				    Familiar familiarMayor=familiaresMayores.get(0);
  					pasajeros.add(familiarMayor);
+ 					
  					familiaresMayores.remove(familiarMayor);
  					capacidad-=1;
  				}
  			else {break;}
  			
+ 			
  		}
+ 	
+ 		setPasajeros(pasajeros);
+ 		return pasajeros;
+ 		
  				
  				
  			//Fin for
@@ -119,7 +129,7 @@ public class Vehiculo {
  			
  		}
  		
-	public String productoVehiculo() {
+	public String productoVehiculo(ArrayList<Familiar> pasajeros) {
 		String producto="Vehículo "+tipoVehiculo.name()+" - color: "+color+" - placa: "+placa+"\n";
 		
 		ArrayList<Familiar> auxPasajeros=pasajeros;
@@ -129,7 +139,7 @@ public class Vehiculo {
 			if(pasajero.getCC()==0) {
 				producto+="Familiar menor de edad: "+pasajero+" Acudiente: "+pasajero.getResponsable()+"\n";
 			}else {producto+="Familiar: "+pasajero+"\n";} 
-		
+			auxPasajeros.remove(pasajero);
 		}
 	    	return producto;
 	    }
@@ -174,7 +184,7 @@ public class Vehiculo {
 		this.ruta=ruta;
 	}
 	public ArrayList<Familiar> getPasajeros(){
-		return pasajeros;
+		return this.pasajeros;
 	}
 	public Funeraria getFuneraria() {
 		return funeraria;

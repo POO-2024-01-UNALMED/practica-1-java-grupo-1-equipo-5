@@ -127,23 +127,23 @@ public class PruebaEntierro {
 		Urna urna23=new Urna("Urnita23",cemito,40,2,"ordinaria");
 
 		
-		Tumba tumba1=new Tumba("Tumbita1",cemi1,1.70,1);
-		Tumba tumba2=new Tumba("Tumbita2",cemi1,1.50,2);
+		Tumba tumba1=new Tumba("Tumbita1",cemi1,1.70,0);
+		Tumba tumba2=new Tumba("Tumbita2",cemi1,1.50,0);
 		Tumba tumba3=new Tumba("Tumbita3",cemito1,1.60,2);
 		
 		Tumba tumba4=new Tumba("Tumbita4",cemito1,1.50,1);
-		Tumba tumba5=new Tumba("Tumbita5",cementerio1,1.50,2);
-		Tumba tumba6=new Tumba("Tumbita6",cementerio1,1.50,0);
+		Tumba tumba5=new Tumba("Tumbita5",cementerio1,1.70,2);
+		Tumba tumba6=new Tumba("Tumbita6",cementerio1,1.70,2);
 		
-		Tumba tumba7=new Tumba("Tumbita7",cementerio1,1.50,1);
-		Tumba tumba8=new Tumba("Tumbita8",cementerio1,1.50,2);
-		Tumba tumba9=new Tumba("Tumbita9",cementerio1,1.50,0);
+		Tumba tumba7=new Tumba("Tumbita7",cementerio1,1.70,2);
+		Tumba tumba8=new Tumba("Tumbita8",cementerio1,1.40,2);
+		Tumba tumba9=new Tumba("Tumbita9",cementerio1,1.40,2);
 		
 		
-		System.out.println(fulanita.gestionEntierro(c1, Iglesia.BUDISMO, LocalTime.of(15, 30), 1.5));
-		System.out.println(cementerio1.getEmpleado());
-		System.out.println(cementerio1.getIglesia());
-		System.out.println(cementerio1.getHoraEvento());
+		System.out.println(funita.gestionEntierro(c1, Iglesia.BUDISMO, 1.5));
+		System.out.println(cemito1.getEmpleado());
+		System.out.println(cemito1.getIglesia());
+		System.out.println(cemito1.getHoraEvento());
 		
 		System.out.println(c1.getEdad());
 		System.out.println("");
@@ -151,6 +151,19 @@ public class PruebaEntierro {
 		cementerio1.generarHoras();
 		System.out.println(cementerio1.getHorarioEventos());
 		System.out.println(fulanita.buscarEmpleados(cementerio1.getHorarioEventos().get(0), "sepulturero"));
+		
+		System.out.println(cemi1.disponibilidadInventario("tumba", 1.5, 17));
+		System.out.println(cementerio1.getInventario());
+		
+		System.out.println(tumba7.getCategoria()==tumba7.determinarCategoria(c1.getEdad()));
+		
+		Tumba tumbita1= new Tumba("default",cementerio1,1.5,17);
+		System.out.println(tumbita1.getCategoria());
+		
+		//tumba7.generarAdornos("material");
+		c1.setInventario(tumba7);
+		System.out.println("Tumba "+tumba7.getInventarioFlores());
+		System.out.println(c1.pagoInmediato("flores"));
 		
 	}
 

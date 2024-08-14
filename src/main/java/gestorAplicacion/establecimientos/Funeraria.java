@@ -141,7 +141,7 @@ public class Funeraria extends Establecimiento{
 		
 		for(Vehiculo vehiculo:vehiculos) {
 			
-			if(vehiculo.isEstado()) {
+			if(vehiculo.isEstado() && vehiculo.getTipoVehiculo().getFamiliar()) {
 				tipoVehiculos.add(vehiculo.getTipoVehiculo());
 			}
 		}
@@ -150,11 +150,14 @@ public class Funeraria extends Establecimiento{
 			
 			int cantidadVehiculos = Collections.frequency(tipoVehiculos, vehiculo);
 			if(cantidadVehiculos>0) {
-				vehiculosDisponibles+=vehiculo.name()+" Disponibles ("+cantidadVehiculos+") capacidad - "+vehiculo.getCapacidad()+"\n";	
+				vehiculosDisponibles+="Nombre: "+vehiculo.name()+" Disponibles ("+cantidadVehiculos+") capacidad - "+vehiculo.getCapacidad()+"\n";	
 			}
 			
 		}
 		
+		if(vehiculosDisponibles.equals("")) {
+			return null;
+		}
 		return vehiculosDisponibles;
 		
 	}
@@ -163,6 +166,7 @@ public class Funeraria extends Establecimiento{
 		
 		for(Vehiculo vehiculo:vehiculos){
 			if(vehiculo.isEstado() && vehiculo.getTipoVehiculo()==tipoVehiculo) {
+				vehiculo.setEstado(false);
 				return vehiculo;
 			}
 		}
@@ -397,38 +401,30 @@ public void pedirCredito() {
     	}
      
      
-     public ArrayList<Establecimiento> gestionEntierro(Cliente cliente,Iglesia iglesia,LocalTime hora,double estatura) {
+     public ArrayList<Establecimiento> gestionEntierro(Cliente cliente,Iglesia iglesia,double estatura) {
     	 
     	 ArrayList<Establecimiento> cementerios =this.buscarCementerios("cuerpos", cliente); 
     	 ArrayList<Establecimiento> cementeriosFiltrados = new ArrayList<Establecimiento>(); 
-    	 /////////////////////////////////////////
-    	 System.out.println(cementerios);
-    	 //while(cementeriosFiltrados.size()==0) {
+    	
     		 
     		 for(Establecimiento cementerio:cementerios) {
         		 Cementerio auxCementerio=(Cementerio)cementerio;
         		 //Se crean máximo 3 horarios para cada cementerio 
         		 auxCementerio.generarHoras();
-        		 //Se recorre por cada uno de los horarios generados para filtrar qué horarios están después de la hora que se decidió hacer la misa
+        	
         		 
-        		 //ArrayList<LocalTime> horasAuxiliares=new ArrayList<LocalTime>();
-        		 //for (LocalTime auxHora:auxCementerio.getHorarioEventos() ) {
-        			 //Si la hora es antes de que la ceremonia termine se elimina el horario
-        			 //if(auxHora.isBefore(iglesia.duracionEvento(hora))){
-        				// horasAuxiliares.add(auxHora);
-        			 //}//Fin if
-        		 //}//Fin for
-        		 System.out.println("disponibilidad: "+auxCementerio.disponibilidadInventario("tumba", estatura, cliente.getEdad()));
         		 //Si no hay horarios disponibles o no hay tumbas que cumplan los filtros de disponibilidaInventario el cementerio se elimina
         		 if(auxCementerio.disponibilidadInventario("tumba", estatura, cliente.getEdad()).size()!=0) {
         			 cementeriosFiltrados.add(auxCementerio);
         		 }
         		 
-        		 if(cementeriosFiltrados.size()==0) {
-        			 new Tumba("default", cementerios.get(0),estatura,determinar)
-        		 }
         		 
         	 }//Fin for principal
+    		 
+    		 if(cementeriosFiltrados.size()==0) {
+    			 new Tumba("default",(Cementerio) cementerios.get(0),estatura,cliente.getEdad());
+    			 cementeriosFiltrados.add(cementerios.get(0));
+    		 }
         	 
         	 //Se recorre cada cementerio filtrado y se cambia el horario del evento, la iglesia y se busca a un empleado para agregarlo
         	 for(Establecimiento cementerio:cementeriosFiltrados) {
@@ -439,9 +435,9 @@ public void pedirCredito() {
         		 auxCementerio.setIglesia(iglesia);
         	 }//Fin For
         	 
-        	 System.out.println(cementeriosFiltrados);
+     
     		 
-    	 //}
+    	
     	 
     	 
     	 return cementeriosFiltrados;
@@ -456,34 +452,35 @@ public void pedirCredito() {
  		String gestionTransporte ="Resumen de su transporte - Hora de llegada transporte: "+hora+"\n";
  		
  		int indice=1;
- 		while(familiares.size()!=0) {
+ 		while(familiares.size()!=0 & vehiculos.size()!=0) {
+ 			
  			
  			Vehiculo vehiculoAsignar=vehiculos.get(0);
- 			vehiculoAsignar.agregarPasajeros(familiares);
- 			vehiculoAsignar.setConductor(conductores.get(0));
+ 			ArrayList<Familiar> pasajeros = vehiculoAsignar.agregarPasajeros(familiares);
  			
+ 			vehiculoAsignar.setConductor(conductores.get(0));
+ 		
  			gestionTransporte+="\nVehiculo ["+indice+"]";
- 			gestionTransporte+=vehiculoAsignar.productoVehiculo()+"\n";
+ 			gestionTransporte+=vehiculoAsignar.productoVehiculo(familiares)+"\n";
+ 			
  			gestionTransporte+="Conductor: "+vehiculoAsignar.getConductor();
  			
  			if(conductores.size()!=1) {
  				conductores.remove(0);
  			}
  			
- 			for(Familiar familiar:vehiculoAsignar.getPasajeros()) {
+ 			for(Familiar familiar:pasajeros) {
  				familiares.remove(familiar);
+ 				
  			}
  			vehiculoAsignar.setEstado(true);
  			vehiculos.remove(0);
+ 			indice+=1;
  		}
  		
  		return gestionTransporte;
  		
- 		
- 		
- 		
- 		
- 		
+
  		
      }
  		

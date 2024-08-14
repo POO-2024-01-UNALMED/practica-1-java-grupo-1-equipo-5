@@ -10,7 +10,10 @@ import gestorAplicacion.establecimientos.Establecimiento;
 import gestorAplicacion.establecimientos.Funeraria;
 import gestorAplicacion.establecimientos.Iglesia;
 import gestorAplicacion.inventario.Inventario;
+import gestorAplicacion.inventario.Producto;
+import gestorAplicacion.inventario.TipoVehiculo;
 import gestorAplicacion.inventario.Tumba;
+import gestorAplicacion.inventario.Vehiculo;
 import gestorAplicacion.personas.Cliente;
 import gestorAplicacion.personas.Persona;
 
@@ -68,7 +71,7 @@ public class FuncionalidadEntierro {
 							indice+=1;
 							System.out.println("["+indice+"] "+ auxCliente);
 						}
-						System.out.println(cliente);
+						//System.out.println(cliente);
 						//Validacion cliente adulto
 						if(funeraria.buscarCliente("adulto").size()!=0) {
 							System.out.print("Ingrese el índice del cliente: ");
@@ -79,7 +82,7 @@ public class FuncionalidadEntierro {
 								indice=scanner.nextInt();
 							}
 							cliente=funeraria.buscarCliente("adulto").get(indice-1);
-							System.out.println(cliente);
+							//System.out.println(cliente);
 							
 						}//Validación existencia cliente adulto
 						
@@ -136,24 +139,7 @@ public class FuncionalidadEntierro {
 				
 				iglesia=Iglesia.values()[indice-1];
 				
-				System.out.print("Ingrese una hora para realizar la ceremonia religiosa (0-23): ");
-				int hora=scanner.nextInt();
-				//Validación 
-				while(hora<0 || hora>23) {
-					System.out.print("Hora fuera de rango. Ingrese una hora para realizar la ceremonia religiosa (0-23): : ");
-					hora=scanner.nextInt();
-					
-				}
-				System.out.print("Ingrese un número que indique los minutos (0-59): ");
-				int minutos=scanner.nextInt();
-				//Validación 
-				while(minutos<0 || minutos>59) {
-					System.out.print("Minutos fuera de rango. Indique los minutos (0-59): ");
-					hora=scanner.nextInt();
-			
-				}
 				
-				LocalTime auxHora = LocalTime.of(hora, minutos);
 				
 				//////////////////////////////////////////Invitación 
 				
@@ -167,12 +153,14 @@ public class FuncionalidadEntierro {
 				}
 				
 				System.out.println("Cementerios afiliación "+cliente.getAfiliacion());
-				ArrayList<Establecimiento> cementerios =funeraria.gestionEntierro(cliente, iglesia, auxHora, estatura);
+				//Se realiza el proceso de entierro en dónde se filtrará los cementerios 
+				ArrayList<Establecimiento> cementerios =funeraria.gestionEntierro(cliente, iglesia,estatura);
 				
 				indice=1;
 				for(Establecimiento cementerio:cementerios) {
 		    		 Cementerio auxCementerio=(Cementerio)cementerio;
 		    		 System.out.println("["+indice+"] "+auxCementerio+" con ("+auxCementerio.disponibilidadInventario("tumba", estatura, cliente.getEdad()).size()+") tumbas disponibles");
+		    		 indice+=1;
 				}
 				
 				System.out.print("Indique el índice del cementerio escogido: ");
@@ -186,27 +174,72 @@ public class FuncionalidadEntierro {
 				
 				Cementerio cementerio = (Cementerio) cementerios.get(indice-1);
 				
+				//Se crea un producto para agregarlo al Array de Productos y añadirlo a las facturas del cliente
+				Producto productoCementerio= new Producto(cementerio);
+				
+				//Invitación para Entierro
+				productoCementerio.evento(cliente);
+				
+				//Ya escogido el cementerio se muestra la disponibilidad de objetos Tumba con los filtros de estatura, categoria
 				ArrayList<Inventario> inventarioDisponible=cementerio.disponibilidadInventario("tumba", estatura, cliente.getEdad());
 				
 				indice=1;
 				for(Inventario urnaTumba:inventarioDisponible) {
 
 		    		 System.out.println("["+indice+"] "+urnaTumba);
+		    		 indice+=1;
 				}
 				
 				System.out.print("Indique el índice de la tumba escogida: ");
 				indice=scanner.nextInt();
 				
+				//Validacion
 				while(indice<1 || indice>inventarioDisponible.size()) {
 					System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
 					indice=scanner.nextInt();
 				}
 				
+				//Se asigna la tumba al cliente
 				tumba=(Tumba)inventarioDisponible.get(indice-1);
 				
-				cliente.pagoInmediato("flores");
+				//Se agrega el cliente a la tumba
+				tumba.agregarCliente(cliente);
 				
+				System.out.println("De acuerdo a la categoria de su tumba ("+tumba.getCategoria()+") se agregarán los adornos del cliente para el entierro");
+				System.out.println("Se generó la siguiente factura:");
+				System.out.println(cliente.pagoInmediato("flores"));
 				
+				System.out.println("");
+				//Gestión transporte
+				
+				ArrayList<Vehiculo> vehiculos =new ArrayList<Vehiculo>();
+				int cantidadFamiliares = cliente.getFamiliares().size();
+				
+				System.out.println("Se empezará con la gestión del transporte para el entierro");
+				
+				System.out.println("Vehiculos disponibles");
+				System.out.println("");
+				while(cantidadFamiliares>0) {
+					System.out.println("Cantidad de familiares que faltan por asignar carro: "+cantidadFamiliares);
+					System.out.println(funeraria.asignarVehiculo());
+					if(funeraria.asignarVehiculo()==null) {
+						System.out.println("No hay más carros disponibles");
+						break;
+					}
+					System.out.print("Ingrese el nombre del carro que quiera escoger: ");
+					String nombre = scanner.next();
+					TipoVehiculo tipoVehiculo = TipoVehiculo.valueOf(nombre.toUpperCase());
+					vehiculos.add(funeraria.buscarTipoVehiculo(tipoVehiculo));
+					cantidadFamiliares-=tipoVehiculo.getCapacidad();
+					
+				}
+			
+			String vehiculo=funeraria.gestionarTrasnsporte(cliente, vehiculos, iglesia.duracionEvento(cementerio.getHoraEvento()));
+			System.out.println(vehiculo);
+
+			
+			
+			
 				
 	}//Fin metodo funcionalidadEntierro
 }//Fin clase

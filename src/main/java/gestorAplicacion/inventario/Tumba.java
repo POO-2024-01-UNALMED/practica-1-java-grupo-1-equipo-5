@@ -32,7 +32,8 @@ public class Tumba extends Inventario{
 	@Override
 	public void generarAdornos(String tipoAdorno) {
 		
-		ArrayList<String> arregloAuxiliar;
+		String[] arregloAuxiliar;
+		Random random = new Random();
 		int numero;
 		
 		if(tipoAdorno.equals("flores")) {
@@ -41,21 +42,23 @@ public class Tumba extends Inventario{
 			}else if(getCategoria()==1) {
 				numero=2;
 			}else {numero=3;}
-			arregloAuxiliar=this.getInventarioFlores();
+			arregloAuxiliar=Inventario.flores;
 		}
 		else {
-			arregloAuxiliar=this.getMaterial();
-			numero=1;}
+			arregloAuxiliar=this.material;
+			int numeroAleatorio = random.nextInt(4)+1;
+			getInventarioMaterial().add(arregloAuxiliar[numeroAleatorio]); return;}
 		
-		Random random = new Random();
+	
+		
 		
 		for(String arreglo:arregloAuxiliar) {
 			
 			int numeroAleatorio = random.nextInt(numero)+1;
 			while(numeroAleatorio>0) {
 				if(tipoAdorno.equals("flores")) {
-					getFlores().add(arreglo);
-				}else {getMaterial().add(arreglo);}
+					getInventarioFlores().add(arreglo);
+				}
 				numeroAleatorio-=1;
 			}//Fin while
 		}//Fin for

@@ -32,7 +32,10 @@ public abstract class Inventario {
 		this.nombre=nombre;
 		this.cementerio = cementerio;
 		this.tamaño=determinarTamaño(tamaño);
-		this.categoria=categoria;		 //Si el cementerio es de cenizas se agregarán Objetos de la clase Urna y si el cementerio es de cuerpos se agregarán objetos de la clase Tumba
+		if(categoria>2) {
+			this.categoria=determinarCategoria(categoria);
+		}else {this.categoria=categoria;}
+	
 	}
 
 	
@@ -43,6 +46,7 @@ public abstract class Inventario {
 	}
 	
 	public int determinarCategoria(int edad) {
+		int categoria=0;
 		if(edad<30) {
 			categoria=0;
 		}
@@ -134,18 +138,18 @@ public abstract class Inventario {
 		this.cementerio=cementerio;
 	}
 	
-	public ArrayList<String> getFlores(){
-		return inventarioFlores;
+	public String[] getFlores(){
+		return flores;
 	}
-	public void setFlores(ArrayList<String> flores){
-		this.inventarioFlores=flores;
+	public void setFlores(String[] flores){
+		this.flores=flores;
 	}
 	
 	public ArrayList<String> getMaterial(){
 		return inventarioMaterial;
 	}
-	public void setMaterial(ArrayList<String> material){
-		this.inventarioMaterial=material;
+	public void setMaterial(String[] material){
+		this.material=material;
 	}
 	
 	public ArrayList<String> getFloresSeleccionadas(){
@@ -215,15 +219,6 @@ public abstract class Inventario {
 		this.floresSeleccionadas = floresSeleccionadas;
 	}
 
-
-	public static void setFlores(String[] flores) {
-		Inventario.flores = flores;
-	}
-
-
-	public static void setMaterial(String[] material) {
-		Inventario.material = material;
-	}
 	
 	
 

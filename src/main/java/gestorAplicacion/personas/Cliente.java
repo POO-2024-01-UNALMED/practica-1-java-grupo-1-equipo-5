@@ -157,7 +157,9 @@ public class Cliente extends Persona {
 		for(Familiar familiar: familiares) {
  			if(familiar.getCC()==0 && adultoNiño.equals("niño") ) {
  				familiaresFiltrados.add(familiar);
- 			}else {familiaresFiltrados.add(familiar);}
+ 				System.out.println("Menores ");
+ 			}else if(familiar.getCC()!=0 && adultoNiño.equals("adulto"))
+ 			{familiaresFiltrados.add(familiar);}
  			
 	}
 		return familiaresFiltrados;
@@ -174,8 +176,8 @@ public class Cliente extends Persona {
 		String pagoInmediato="";
 		
 		if(tipoAdorno.equals("flores")) {
-			arreglo=inventario.getFlores();
-		}else {arreglo=inventario.getMaterial();}
+			arreglo=inventario.getInventarioFlores();
+		}else {arreglo=inventario.getInventarioMaterial();}
 		
 		for(String inventario: arreglo) {
 			productos.add(new Producto(inventario,Inventario.precios(inventario),1));
@@ -201,8 +203,9 @@ public class Cliente extends Persona {
 			
 		}
 		
-		return pagoInmediato="Concepto: Pago Adornos Tumba\n"
-				    + "Cliente: "+familiarDesignado+"\n"
+		return pagoInmediato=
+				"Descrpción: Pago Adornos Entierro\n"
+				    + "Familiar: "+familiarDesignado+"\n"
 				    + factura.retornarFactura();
 		
 		
