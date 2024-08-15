@@ -24,12 +24,13 @@ public class Empleado extends Persona{
 		this.salario=salario;
 	}
 	
-	public Empleado(String nombre, long CC, int edad, String ubicacion, CuentaBancaria cuentaBancaria,String jornada, String cargo, double salario, int Experiencia) {
+	public Empleado(String nombre, long CC, int edad, String ubicacion, CuentaBancaria cuentaBancaria,String jornada, String cargo, double salario, int Experiencia,int trabajosHechos) {
 		super(nombre, CC, edad, ubicacion, cuentaBancaria);
 		this.jornada=jornada;
 		this.cargo=cargo;
 		this.salario=salario;
 		this.Experiencia= Experiencia;
+		this.trabajosHechos = trabajosHechos;
 	}
 	
 	//Metodos get y set
