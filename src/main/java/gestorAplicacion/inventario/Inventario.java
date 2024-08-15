@@ -25,8 +25,11 @@ public abstract class Inventario {
 	private ArrayList<String> floresSeleccionadas=new ArrayList<String>();
 	private String materialSeleccionado= "por defecto";
 	
-	static public String [] flores = {"Rosas", "Lirios", "Claveles", "Orquídeas", "Peonías"};
-	static public String [] material = {"Madera", "Metal", "Cerámica", "Vidrio", "Bambu","Piedra"};
+	static public final String [] flores = {"Rosas", "Lirios", "Claveles", "Orquídeas", "Peonías"};
+	static public final String [] material = {"Madera", "Metal", "Cerámica", "Vidrio", "Bambu","Piedra"};
+	
+	
+	private static ArrayList<Inventario> inventarioTotal =new ArrayList<Inventario>();
 	//Constructor
 	protected Inventario(String nombre,Cementerio cementerio,double tamaño,int categoria) {
 		this.nombre=nombre;
@@ -35,6 +38,8 @@ public abstract class Inventario {
 		if(categoria>2) {
 			this.categoria=determinarCategoria(categoria);
 		}else {this.categoria=categoria;}
+		inventarioTotal.add(this);
+		
 	
 	}
 
@@ -114,6 +119,11 @@ public abstract class Inventario {
 
 	//mMtodos get y sett
 	
+	
+	public static ArrayList<Inventario> getInventarioTotal(){
+		return inventarioTotal;
+	}
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -138,19 +148,15 @@ public abstract class Inventario {
 		this.cementerio=cementerio;
 	}
 	
-	public String[] getFlores(){
-		return flores;
+	public ArrayList<String> getFlores(){
+		return inventarioFlores;
 	}
-	public void setFlores(String[] flores){
-		this.flores=flores;
-	}
+	
 	
 	public ArrayList<String> getMaterial(){
 		return inventarioMaterial;
 	}
-	public void setMaterial(String[] material){
-		this.material=material;
-	}
+	
 	
 	public ArrayList<String> getFloresSeleccionadas(){
 		return floresSeleccionadas;

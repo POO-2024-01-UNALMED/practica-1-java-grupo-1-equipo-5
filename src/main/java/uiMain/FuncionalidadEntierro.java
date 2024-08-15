@@ -214,6 +214,8 @@ public class FuncionalidadEntierro {
 				
 				ArrayList<Vehiculo> vehiculos =new ArrayList<Vehiculo>();
 				int cantidadFamiliares = cliente.getFamiliares().size();
+				///
+				//System.out.println(cliente.getFamiliares());
 				
 				System.out.println("Se empezará con la gestión del transporte para el entierro");
 				

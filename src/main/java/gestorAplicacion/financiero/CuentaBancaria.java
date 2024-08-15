@@ -18,6 +18,8 @@ public class CuentaBancaria implements Banco {
     private double interes ;
     private double cobroAdicional;
     private Factura credito;
+    
+    private static ArrayList<CuentaBancaria> cuentas = new ArrayList<CuentaBancaria>(); 
 	
 	
 	public CuentaBancaria(long numeroCuenta, String titular, double saldoInicial, String banco) {
@@ -26,6 +28,7 @@ public class CuentaBancaria implements Banco {
         this.titular = titular;
         this.saldo = saldoInicial;
         this.banco = banco;
+        cuentas.add(this);
     }
 	
 	public CuentaBancaria(long numeroCuenta, String titular, double bolsilloTrabajadores, double bolsilloInventario, double bolsilloTransporte, double bolsilloEstablecimientos, double bolsilloPagoCredito, String banco) {
@@ -39,6 +42,7 @@ public class CuentaBancaria implements Banco {
         this.bolsilloPagoCredito = bolsilloPagoCredito;
         this.banco = banco;
         this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos + bolsilloPagoCredito;
+        cuentas.add(this);
 	}
 	
 	private void establecerValores(String banco) {
@@ -196,7 +200,9 @@ public class CuentaBancaria implements Banco {
 		
    }
     
-
+    public static ArrayList<CuentaBancaria> getCuentas(){
+    	return cuentas;
+    }
 
 	public String getBanco() {
 		return banco;

@@ -30,6 +30,7 @@ public class Factura {
 
 	private final double IVA=0.19;
 	private static int facturasCreadas;
+	private static ArrayList<Factura> facturas=new ArrayList<Factura>();
 	
 	
 	
@@ -44,6 +45,7 @@ public class Factura {
 		this.Servicio= Servicio;
 		ID=facturasCreadas;
 		calcularTotal();
+		facturas.add(this);
 		
 	}
 	
@@ -56,6 +58,7 @@ public class Factura {
 		facturasCreadas++;
 		ID=facturasCreadas;
 		calcularTotal();
+		facturas.add(this);
 		
 	}
 	
@@ -141,9 +144,16 @@ public class Factura {
                              .collect(Collectors.toList());
     }
 
-
+    
+    
 	
 	//metodos get y set 
+    
+    public static ArrayList<Factura> getFacturas(){
+    	return facturas;
+    }
+
+    
 	public int getID() {
 		return ID;
 	}

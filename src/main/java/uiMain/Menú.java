@@ -128,7 +128,7 @@ public class Menú {
 					indice=0;
 					for(Cliente auxCliente:funeraria.buscarCliente("niño")) {
 						indice+=1;
-						System.out.print("["+indice+"] "+ auxCliente);
+						System.out.println("["+indice+"] "+ auxCliente);
 					}
 					//Validación existencia cliente menor de edad
 					if(funeraria.buscarCliente("niño").size()!=0) {
@@ -359,8 +359,8 @@ public class Menú {
 				
 				//Tipo de categoria para la urna
 				System.out.println("Seleccione el tipo de categoría para la urna del cliente");
-				System.out.println("[0] Se puede escoger dos arreglos florales");
-				System.out.println("[1] Se pueden escoger dos arreglos florales y material para la Urna");
+				System.out.println("[0] Se puede escoger un arreglo florales");
+				System.out.println("[1] Se pueden escoger un arreglo floral y material para la Urna");
 				System.out.println("[2] Se pueden escoger cuatro arreglos florales y material para la Urna");
 				
 				System.out.print("Indique el índice de la categoría deseada: ");
@@ -424,9 +424,9 @@ public class Menú {
 				int numero=0;
 		
 				//Si la categoria es 0 solo se podrán escoger 2 flores del arreglo
-				if(categoria==0) {
-					numero=2;
-				}else {numero=4; urna.setMaterialSeleccionado(null);} //Se cambia el materialSeleccionado con valor null para poder agregar uno
+				if(categoria==0 || categoria==1) {
+					numero=1;
+				}else {numero=3; urna.setMaterialSeleccionado(null);} //Se cambia el materialSeleccionado con valor null para poder agregar uno
 				while(numero>0) {
 					indice=1;
 					for(String flor:flores) {
@@ -470,8 +470,8 @@ public class Menú {
 					urna.agregarAdorno(materiales[indice-1], "material");
 				}
 				
-				System.out.println("Flores seleccionadas"+ urna.getFloresSeleccionadas());
-				System.out.println("Material seleccionado"+ urna.getMaterialSeleccionado());
+				System.out.println("Flores seleccionadas: "+ urna.getFloresSeleccionadas());
+				System.out.println("Material seleccionado: "+ urna.getMaterialSeleccionado());
 				
 			}//fin if validación existencia crematorio disponible
 			
@@ -534,7 +534,7 @@ public class Menú {
 		//Cliente
 		Familiar b= new Familiar("Mario",123,45,"345",cuenta,"padre",17);
 		Familiar e= new Familiar("Alberto",123,45,"345",cuenta,"conyugue",17);
-		
+		Familiar c= new Familiar("Maria",5, "oro",e);
 		
 		
 		ArrayList<Familiar> familiar=new ArrayList<Familiar>();
@@ -545,7 +545,7 @@ public class Menú {
 		Cliente b1 = new Cliente("b1",123,17,null,"oro",familiar);
 		Cliente c1 = new Cliente("c1",123,17,null,"oro",familiar);
 		Cliente d1 = new Cliente("d1",123,17,null,"oro",familiar);
-		Cliente e1 = new Cliente("e1",123,17,null,"oro",familiar);
+		Cliente e1 = new Cliente("Alma",16, "oro",familiar);
 		
 		funita.agregarCliente(e1);
 		fumita.agregarCliente(d1);

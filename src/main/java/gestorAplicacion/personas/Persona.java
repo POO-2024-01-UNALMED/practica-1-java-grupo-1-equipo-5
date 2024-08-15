@@ -2,16 +2,18 @@ package gestorAplicacion.personas;
 
 
 
+import java.util.ArrayList;
+
 import gestorAplicacion.financiero.*;
 
-public abstract class Persona {
+public class Persona {
 	
 	private String nombre;
 	private final long CC;
 	private int edad;
 	private String ubicacion;
 	private CuentaBancaria cuentaBancaria;
-	
+	private static ArrayList<Persona> personas = new ArrayList<Persona>();
 	
 	
 	public Persona(String nombre, long CC, int edad, String ubicacion, CuentaBancaria cuentaBancaria) {
@@ -20,9 +22,14 @@ public abstract class Persona {
 		this.edad=edad;
 		this.ubicacion=ubicacion;
 		this.cuentaBancaria=cuentaBancaria;
+		personas.add(this);
 	
 	}
 	
+	
+	public static ArrayList<Persona> getPersonas(){
+		return personas;
+	}
 	public String toString() {
 		return nombre;
 	}

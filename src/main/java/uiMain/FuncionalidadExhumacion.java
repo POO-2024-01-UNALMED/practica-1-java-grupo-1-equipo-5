@@ -285,12 +285,14 @@ public class FuncionalidadExhumacion {
 			//Establecer iglesia para determinar religion del cliente 
 			System.out.println("Seleccione la religión con la que se va a realizar la ceremonia del cliente");
 			indice=1;
+			max=0;
 			for(Iglesia auxIglesia:Iglesia.values()) {
 				//Se imprimen y añaden a la lista solo las iglesias que permiten la cremación como acto final de la vida
 				if (auxIglesia.getCremacion()) {
 					iglesias.add(auxIglesia);
 					System.out.println("["+indice+"] "+auxIglesia);
 					indice+=1;
+					max+=1;
 				}
 			}
 			
@@ -309,9 +311,11 @@ public class FuncionalidadExhumacion {
 			//Establecer iglesia para determinar religion del cliente 
 			System.out.println("Seleccione la religión con la que se va a realizar la ceremonia del cliente");
 			indice=1;
+			max=0;
 			for(Iglesia auxIglesia:Iglesia.values()) {
 				System.out.println("["+indice+"] "+auxIglesia);
 				indice+=1;
+				max+=1;
 			}
 			
 			break;
@@ -322,7 +326,7 @@ public class FuncionalidadExhumacion {
 		System.out.print("Indique el índice de la religión escogida: ");
 		indice=scanner.nextInt();
 		//Validación 
-		while(indice<1 || indice>Iglesia.values().length) {
+		while(indice<1 || indice>max) {
 			System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
 			indice=scanner.nextInt();
 			}
@@ -355,6 +359,10 @@ public class FuncionalidadExhumacion {
 			System.out.println("["+indice+"] "+auxCementerio2+" Inventario disponible: ("+auxCementerio2.disponibilidadInventario(tipo2,pesoEstatura,edad).size()+")");
 			indice+=1;
 		}
+		
+		System.out.print("Ingrese el indice del cementerio: ");
+		indice=scanner.nextInt();
+		
 		while(indice<1 || indice>cementerios.size()) {
 			System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
 			indice=scanner.nextInt();

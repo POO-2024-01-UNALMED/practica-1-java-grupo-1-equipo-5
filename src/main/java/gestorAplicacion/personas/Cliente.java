@@ -170,7 +170,7 @@ public class Cliente extends Persona {
 		inventario.generarAdornos(tipoAdorno);
 		ArrayList<String> arreglo;
 		ArrayList<Producto> productos=new ArrayList<Producto>();
-		ArrayList<Familiar> familiares=this.familiares;
+		ArrayList<Familiar> familiaresA=this.familiares;
 		Familiar familiarDesignado = null;
 		boolean validacionPago=false;
 		String pagoInmediato="";
@@ -197,7 +197,7 @@ public class Cliente extends Persona {
 				validacionPago=true;
 			}//Fin if
 			
-			familiares.remove(familiarDesignado);
+			else{familiaresA.remove(familiarDesignado);}
 			
 			
 			

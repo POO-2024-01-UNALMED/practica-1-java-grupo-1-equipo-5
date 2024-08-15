@@ -33,7 +33,7 @@ public class Urna extends Inventario {
 			
 			if(tipoAdorno.equals("flores")) {
 				arregloAuxiliar=floresUrnas;
-				if(getFlores().length==0) {validacion=true;}
+				if(getFlores().size()==0) {validacion=true;}
 		
 			}else {
 				arregloAuxiliar=tipoMaterial();
@@ -48,8 +48,8 @@ public class Urna extends Inventario {
 					int numeroAleatorio = random.nextInt(2)+1;
 					while(numeroAleatorio>0) {
 						if(tipoAdorno.equals("flores")) {
-							getInventarioFlores().add(arreglo);
-						}else {getMaterial().add(arreglo);}
+							this.getFlores().add(arreglo);
+						}else {this.getMaterial().add(arreglo);}
 						numeroAleatorio-=1;
 					}//Fin while
 				}//Fin for
