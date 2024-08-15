@@ -13,6 +13,9 @@ public class pruebainventario {
 
 	public static void main(String[] args) {
 		
+		// jefes de los establecimientos.
+		//String nombre, long CC, int edad, String ubicacion, CuentaBancaria cuentaBancaria,String jornada, String cargo, double salario, int Experiencia)
+		Empleado jefe = new("Carlos",123,24,)
 	}
 
 }

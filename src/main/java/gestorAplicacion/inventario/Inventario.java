@@ -225,6 +225,16 @@ public abstract class Inventario {
 		this.floresSeleccionadas = floresSeleccionadas;
 	}
 
+
+	public boolean isValidacion() {
+		return validacion;
+	}
+
+
+	public void setValidacion(boolean validacion) {
+		this.validacion = validacion;
+	}
+
 	
 	
 

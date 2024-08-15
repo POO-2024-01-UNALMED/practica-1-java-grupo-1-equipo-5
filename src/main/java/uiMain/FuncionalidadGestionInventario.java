@@ -40,6 +40,12 @@ public class FuncionalidadGestionInventario {
             System.out.println("Seleccione una funeraria:");
             for (int i = 0; i < funerarias.length; i++) {
                 System.out.println((i + 1) + ". " + funerarias[i].getNombre());
+                System.out.println("   ____");
+                System.out.println("  /    \\");
+                System.out.println(" /______\\");
+                System.out.println(" |      |  " + funerarias[i].getNombre());
+                System.out.println(" |______|");
+                System.out.println();
             }
             System.out.println((funerarias.length + 1) + ". Cancelar");
 
@@ -47,7 +53,7 @@ public class FuncionalidadGestionInventario {
             if (seleccion >= 0 && seleccion < funerarias.length) {
                 return funerarias[seleccion];
             } else if (seleccion == funerarias.length) {
-                System.out.println("Programa cancelado.");
+                System.out.println("Proceso cancelado.");
                 System.exit(0);
             } else {
                 System.out.println("Selección inválida. Intente de nuevo.");
@@ -65,6 +71,12 @@ public class FuncionalidadGestionInventario {
         System.out.println("Productos más vendidos:");
         for (Producto producto : productosVendidos) {
             System.out.println("- " + producto.getNombre() + ": " + producto.getCantidadVendida());
+            System.out.println("- " + producto.getNombre() + ": " + producto.getCantidadVendida());
+            System.out.println("    ____");
+            System.out.println("   |    |");
+            System.out.println("   | " + producto.getNombre().charAt(0) + "  | " + producto.getCantidadVendida());
+            System.out.println("   |____|");
+            System.out.println();
         }
 
         System.out.println("------------------------");
@@ -115,6 +127,9 @@ public class FuncionalidadGestionInventario {
         List<Empleado> empleadosSeleccionados = new ArrayList<>();
         for (Empleado empleado : funeraria.getEmpleados()) {
             System.out.println(empleado.getNombre() + " (" + empleado.getCargo() + ") - Jornada: " + empleado.getJornada());
+            System.out.println("    O ");
+            System.out.println("   /|\\");
+            System.out.println("   / \\");
             System.out.println("¿Seleccionar este empleado? (S/N)");
             String respuesta = scanner.next();
             if (respuesta.equalsIgnoreCase("S")) {
@@ -128,6 +143,10 @@ public class FuncionalidadGestionInventario {
         List<Vehiculo> vehiculosSeleccionados = new ArrayList<>();
         for (Vehiculo vehiculo : funeraria.getVehiculos()) {
             System.out.println(vehiculo.getTipoVehiculo() + " - Capacidad: " + vehiculo.getCapacidad() + " - Conductor: " + vehiculo.getConductor().getNombre());
+            System.out.println("   ______");
+            System.out.println("  /|_||_\\`.__");
+            System.out.println(" (   _    _ _\\");
+            System.out.println(" =`-(_)--(_)-'");
             System.out.println("¿Seleccionar este vehículo? (S/N)");
             String respuesta = scanner.next();
             if (respuesta.equalsIgnoreCase("S")) {
@@ -215,7 +234,30 @@ public class FuncionalidadGestionInventario {
     }
 
     private static void comprarVehiculos(Funeraria funeraria, Scanner scanner) {
-        // Lógica para comprar vehículos
+        System.out.println("Vehículos disponibles para la compra:");
+
+        // Aquí asumimos que cada establecimiento puede tener vehículos a la venta
+        for (Establecimiento est : funeraria.getListadoProveedores()) {
+            for (Vehiculo vehiculo : est.getVehiculosEnVenta()) { 
+                System.out.println("Establecimiento: " + est.getNombre() + ", Calificación: " + est.getCalificacion());
+                System.out.println("  Vehículo: " + vehiculo.getTipoVehiculo() + ", Capacidad: " + vehiculo.getCapacidad() + ", Precio: " + vehiculo.getPrecio());
+                
+                // vehículo de forma visual
+                System.out.println("   ______");
+                System.out.println("  /|_||_\\`.__");
+                System.out.println(" (   _    _ _\\");
+                System.out.println(" =`-(_)--(_)-'");
+                
+                System.out.println("¿Desea comprar este vehículo? (S/N)");
+                String respuesta = scanner.next();
+                if (respuesta.equalsIgnoreCase("S")) {
+                    // Aquí se realizaría la compra y la actualización de la lista de vehículos de la funeraria
+                    funeraria.agregarVehiculo(vehiculo); 
+                    est.removerVehiculoEnVenta(vehiculo); 
+                    System.out.println("Vehículo comprado exitosamente.");
+                }
+            }
+        }
     }
     
     private static void realizarEncuesta(Funeraria funeraria, Scanner scanner) {
@@ -300,13 +342,13 @@ public class FuncionalidadGestionInventario {
             System.out.println("- " + producto.getNombre() + ": " + producto.getCantidad() + " unidades");
         }
 
-        // Aquí puedes agregar la lógica para confirmar la asignación y actualizar los inventarios o estados según sea necesario
+        
     }
 
 
     private static Funeraria[] inicializarFunerarias() {
         // Inicializa las funerarias y retorna el arreglo
-        return new Funeraria[]{ /* Inicializar aquí */ };
+        return new Funeraria[]{ };
     }
     
 }

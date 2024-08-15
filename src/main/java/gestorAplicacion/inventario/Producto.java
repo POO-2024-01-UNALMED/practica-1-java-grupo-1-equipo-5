@@ -133,5 +133,15 @@ public class Producto {
 	public void setEstablecimiento(Establecimiento establecimiento) {
 		this.establecimiento = establecimiento;
 	}
+
+
+	public Vehiculo getVehiculo() {
+		return vehiculo;
+	}
+
+
+	public void setVehiculo(Vehiculo vehiculo) {
+		this.vehiculo = vehiculo;
+	}
     
 }

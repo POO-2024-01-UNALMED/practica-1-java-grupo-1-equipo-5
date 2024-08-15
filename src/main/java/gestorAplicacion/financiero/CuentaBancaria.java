@@ -96,7 +96,15 @@ public class CuentaBancaria implements Banco {
               this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos + bolsilloPagoCredito;
       }}
     }
-
+public String infoCredito() {
+	if(this.getCredito() != null) {
+	return "ID: " + this.getCredito().getID() + "\n" +
+			"precio: " + this.getCredito().getPrecio() + "\n" +
+			"Porcentaje por pagar: " + this.getCredito().getPorcentajeCreditoPorPagar();}
+	else {
+		return "No hay credito activo";
+	}
+}
     public void retirar(double cantidad, String tipo) {
     	if(tipo == "saldo") {
      	   if (cantidad <= saldo) {
@@ -314,5 +322,6 @@ public class CuentaBancaria implements Banco {
 	public void setCredito(Factura credito) {
 		this.credito = credito;
 	}
+	
 
 }

@@ -288,7 +288,7 @@ public void cobroServiciosClientes(Cliente cliente) {
     	 
     	 
 
-public void pagoTrabajadores(Empleado empleado) {
+public String pagoTrabajadores(Empleado empleado) {
     	 
     	 int trabajos = empleado.getTrabajosHechos();
     	 
@@ -302,6 +302,10 @@ public void pagoTrabajadores(Empleado empleado) {
     		     }
     		     
     		     this.getCuentaCorriente().transaccion(paga, empleado.getCuentaBancaria(), "bolsilloTrabajadores");
+    		     empleado.setTrabajosHechos(0);
+    		     return "El trabajador ha hecho: " + trabajos +" trabajos,"+ "\n" +
+    		     "Y tiene una calificacion de: "  + calificacion + "\n" +
+    		     "por lo que obtuvo una paga de: " + paga;
     		  
     	}   else if(trabajos > 5 && trabajos <= 9) {
     	     paga += (paga*0.02);
@@ -309,7 +313,11 @@ public void pagoTrabajadores(Empleado empleado) {
     	    	 paga += (paga*0.05);
     	     }
     	     
-    	     this.getCuentaCorriente().transaccion(paga, empleado.getCuentaBancaria(), "bolsilloTrabajadores");}
+    	     this.getCuentaCorriente().transaccion(paga, empleado.getCuentaBancaria(), "bolsilloTrabajadores");
+    	     empleado.setTrabajosHechos(0);
+    	     return "El trabajador ha hecho: " + trabajos +" trabajos,"+ "\n" +
+    	     "Y tiene una calificacion de: "  + calificacion + "\n" +
+		     "por lo que obtuvo una paga de: " + paga;}
     	 else if(trabajos > 9 ) {
     	     paga +=(paga*0.04);
     	     if(calificacion == 5) {
@@ -317,6 +325,13 @@ public void pagoTrabajadores(Empleado empleado) {
     	     }
     	     
     	     this.getCuentaCorriente().transaccion(paga, empleado.getCuentaBancaria(), "bolsilloTrabajadores");
+    	     empleado.setTrabajosHechos(0);
+    	     return "El trabajador ha hecho: " + trabajos +" trabajos,"+ "\n" +
+    	     "Y tiene una calificacion de: "  + calificacion + "\n" +
+		     "por lo que obtuvo una paga de: " + paga;
+     }else {
+    	 return "El trabajador ha hecho: " + trabajos +","+ "\n" +
+    		     "por lo que no obtuvo una paga";
      }
   
 }
@@ -600,6 +615,19 @@ private void actualizarCredito(double porcentajeFaltante, double valorFaltante, 
 	public static void setCuentaAhorros(CuentaBancaria cuentaAhorros) {
 		Funeraria.cuentaAhorros = cuentaAhorros;
 	}
+
+
+
+	public void setListadoFacturas(ArrayList<Factura> listadoFacturas) {
+		this.listadoFacturas = listadoFacturas;
+	}
+
+
+
+	public void setListadoFacturasPorPagar(ArrayList<Factura> listadoFacturasPorPagar) {
+		this.listadoFacturasPorPagar = listadoFacturasPorPagar;
+	}
+	
 
 	
 }
