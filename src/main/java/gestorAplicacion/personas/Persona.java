@@ -2,25 +2,24 @@ package gestorAplicacion.personas;
 
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import gestorAplicacion.financiero.*;
 
-public class Persona {
+public class Persona implements Serializable{
 	
 	private String nombre;
 	private final long CC;
 	private int edad;
-	private String ubicacion;
 	private CuentaBancaria cuentaBancaria;
 	private static ArrayList<Persona> personas = new ArrayList<Persona>();
 	
 	
-	public Persona(String nombre, long CC, int edad, String ubicacion, CuentaBancaria cuentaBancaria) {
+	public Persona(String nombre, long CC, int edad, CuentaBancaria cuentaBancaria) {
 		this.nombre=nombre;
 		this.CC=CC;
 		this.edad=edad;
-		this.ubicacion=ubicacion;
 		this.cuentaBancaria=cuentaBancaria;
 		personas.add(this);
 	
@@ -47,12 +46,6 @@ public class Persona {
 	}
 	public void setEdad(int edad) {
 		this.edad=edad;
-	}
-	public String getUbicacion() {
-		return ubicacion;
-	}
-	public void setUbicacion(String ubicacion) {
-		this.ubicacion=ubicacion;
 	}
 	public CuentaBancaria getCuentaBancaria() {
 		return this.cuentaBancaria;

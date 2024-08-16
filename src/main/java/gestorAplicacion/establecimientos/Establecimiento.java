@@ -1,7 +1,7 @@
 package gestorAplicacion.establecimientos;
 
 import java.util.ArrayList;
-
+import java.io.Serializable;
 import java.time.LocalTime;
 import java.util.Random;
 
@@ -9,9 +9,9 @@ import gestorAplicacion.financiero.*;
 import gestorAplicacion.inventario.*;
 import gestorAplicacion.personas.*;
 
-public class Establecimiento {
+public class Establecimiento implements Serializable {
+	
 	private String nombre;
-	private String ubicacion;
 	private int capacidad;
 	private CuentaBancaria cuentaCorriente;
 	private String afiliacion;
@@ -40,9 +40,8 @@ public class Establecimiento {
 	
 	
 	//Constructor a ser llamado desde las clases Crematorio y Cementerio
-	public Establecimiento(String nombre, String ubicacion, int capacidad, CuentaBancaria cuentaCorriente,String afiliacion, Empleado empleado, Funeraria funeraria ) {
+	public Establecimiento(String nombre, int capacidad, CuentaBancaria cuentaCorriente,String afiliacion, Empleado empleado, Funeraria funeraria ) {
 		this.nombre=nombre;
-		this.ubicacion=ubicacion;
 		this.capacidad=capacidad;
 		this.cuentaCorriente=cuentaCorriente;
 		this.afiliacion=afiliacion;
@@ -250,12 +249,6 @@ public class Establecimiento {
 	public void setNombre(String nombre) {
 		this.nombre=nombre;
 	}
-	public String getUbicacion() {
-		return ubicacion;
-	}
-	public void setubicacion(String ubicacion) {
-		this.ubicacion=ubicacion;
-	}
 	public CuentaBancaria getCuentaCorriente() {
 		return cuentaCorriente;
 	}
@@ -360,9 +353,7 @@ public class Establecimiento {
 		Establecimiento.establecimientos = establecimientos;
 	}
 
-	public void setUbicacion(String ubicacion) {
-		this.ubicacion = ubicacion;
-	}
+
 
 	public void setClientes(ArrayList<Cliente> clientes) {
 		this.clientes = clientes;

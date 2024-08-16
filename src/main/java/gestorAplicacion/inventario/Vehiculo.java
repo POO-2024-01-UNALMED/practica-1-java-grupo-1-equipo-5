@@ -6,11 +6,13 @@ import gestorAplicacion.personas.Empleado;
 import gestorAplicacion.personas.Familiar;
 import gestorAplicacion.establecimientos.Establecimiento;
 import gestorAplicacion.personas.Persona;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import gestorAplicacion.establecimientos.Funeraria;
 
 
-public class Vehiculo {
+public class Vehiculo implements Serializable{
 	private TipoVehiculo tipoVehiculo; //Es un Enum
 	private Funeraria funeraria;
 	// private String modelo; Este se puede reemplazar pot tipoVehículo
@@ -58,42 +60,7 @@ public class Vehiculo {
 	
 	
 	
-	public ArrayList<String> generarTrayectoria(Establecimiento establecimientoInicio,ArrayList<Persona> pasajeros,Establecimiento establecimientoFinal){
-		
-		ArrayList<String> ruta=new ArrayList<String>();
-		String ubicacionInicial=establecimientoInicio.getUbicacion();
-		ruta.add(ubicacionInicial);
-		
-		for(Persona pasajero:pasajeros) {
-			
-			String ubicacionActual=ruta.get(ruta.size()-1);
-			String cardinal=ubicacionActual.substring(2,4);
-			
-			String ubicacionPasajero=pasajero.getUbicacion();
-			String cardinalPasajero=ubicacionPasajero.substring(2,4);
-			String puntoCardinal=ubicacionPasajero.substring(0,2);
-			
-			if(!cardinal.equals(cardinalPasajero)) {
-				ruta.add("00"+cardinalPasajero);	
-			}
-			ruta.add(puntoCardinal+cardinalPasajero);
-		}
-		
-		String ubicacionFinal=establecimientoFinal.getUbicacion();
-		String cardinalFinal=ubicacionFinal.substring(2,4);
-		String puntoCardinal=ubicacionFinal.substring(0,2);
-		
-		String ubicacionActual=ruta.get(ruta.size()-1);
-		String cardinal=ubicacionActual.substring(2,4);
-		
-		
-		if(!cardinalFinal.equals(cardinal)) {
-			ruta.add("00"+cardinalFinal);
-		}
-		ruta.add(puntoCardinal+cardinalFinal);
-		
-		return ruta;
-	}
+	
 	
 	public ArrayList<Familiar> agregarPasajeros(ArrayList<Familiar> familiares) {
 		ArrayList<Familiar> familiaresMenores = Cliente.familiaresPorEdad("niño",familiares);

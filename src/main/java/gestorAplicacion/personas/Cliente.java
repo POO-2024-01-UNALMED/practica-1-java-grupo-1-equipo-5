@@ -21,7 +21,7 @@ public class Cliente extends Persona {
 	
 	//Contructor mayores de edad
 	public Cliente(String nombre, long CC, int edad, CuentaBancaria cuentaBancaria,String afiliacion, ArrayList<Familiar> familiares) {
-		super(nombre, CC, edad, null, cuentaBancaria);
+		super(nombre, CC, edad, cuentaBancaria);
 		this.afiliacion=afiliacion;
 		this.familiares=familiares;
 	}

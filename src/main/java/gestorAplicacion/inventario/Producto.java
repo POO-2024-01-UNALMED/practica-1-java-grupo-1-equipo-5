@@ -74,7 +74,6 @@ public class Producto {
     			"\nInvita\n"+familiares+
     			"\n Hora de la Ceremonia: "+hora+
     			"\n Lugar de Cremación "+establecimiento.getNombre()+
-    			"\n Dirección: "+establecimiento.getUbicacion()+
     			"\n Centro religioso: "+nombreIglesia;
     	
     	return evento;

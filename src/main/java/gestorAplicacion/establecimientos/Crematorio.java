@@ -15,8 +15,8 @@ public class Crematorio extends Establecimiento{
 	
 	
 	//Constructor
-	public Crematorio(String nombre, String ubicacion, int capacidad, CuentaBancaria cuentaCorriente,String afiliacion, Empleado empleado,Funeraria funeraria) {
-		super(nombre,ubicacion,capacidad,cuentaCorriente,afiliacion,empleado,funeraria);
+	public Crematorio(String nombre, int capacidad, CuentaBancaria cuentaCorriente,String afiliacion, Empleado empleado,Funeraria funeraria) {
+		super(nombre,capacidad,cuentaCorriente,afiliacion,empleado,funeraria);
 		}
 	
 	public void cambiarHorarios(ArrayList<Establecimiento> cementerios){

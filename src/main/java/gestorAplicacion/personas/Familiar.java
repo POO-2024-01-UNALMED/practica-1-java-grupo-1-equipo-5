@@ -17,8 +17,8 @@ public class Familiar extends Persona {
 	// Sobrecarga de contructores
 
 	// Contructor mayores de edad
-	public Familiar(String nombre, long CC, int edad, String ubicacion, CuentaBancaria cuentaBancaria, String parentesco, int acompañantes ) {
-		super(nombre, CC, edad, ubicacion,cuentaBancaria);
+	public Familiar(String nombre, long CC, int edad, CuentaBancaria cuentaBancaria, String parentesco, int acompañantes ) {
+		super(nombre, CC, edad,cuentaBancaria);
 		this.parentesco = parentesco; 
 		this.acompañantes = acompañantes;
 
@@ -27,7 +27,7 @@ public class Familiar extends Persona {
 	// Contructor menores de edad
 		//Los menores de edad no tienen CC, no pueden tener acompañantes y su ubicacion será determinada por su familiar responsable
 	public Familiar(String nombre, int edad, String parentesco,Familiar responsable) {
-		super(nombre,0,edad,null,null);
+		super(nombre,0,edad,null);
 		this.parentesco=parentesco;
 		this.responsable=responsable;
 		

@@ -523,17 +523,163 @@ public class Menú {
 	
 	public static void main(String[] args) {
 		
+		//objetos cuenta Bancaria 
+		CuentaBancaria cuenta = new CuentaBancaria(123, "Alfredo", 1000000, "Ala");
+		
+		//Objetos Funeraria
+		
+		Funeraria funeraria1 = new Funeraria("Eterna Paz", cuenta,cuenta);
+		Funeraria funeraria2 = new Funeraria("Caminos de Luz", cuenta,cuenta);
+		Funeraria funeraria3 = new Funeraria("Recuerdos Eternos", cuenta,cuenta);
+		
+		//Objetos Cementerio
+		
+		//cementerios pertenecientes a F1 --> Funeraria 1 - cenizas
+		Cementerio cementerioF11Ce = new Cementerio ("Jardín de la Eternidad",78,cuenta,"oro", null,"cenizas",funeraria1); 
+		Cementerio cementerioF12Ce = new Cementerio ("Colina de la Paz",85,cuenta,"oro", null,"cenizas",funeraria1); 
+		
+		Cementerio cementerioF13Ce = new Cementerio ("Campos de tranquilidad",79,cuenta,"plata", null,"cenizas",funeraria1); 
+		Cementerio cementerioF14Ce = new Cementerio ("Valle del Silencio",78,cuenta,"plata", null,"cenizas",funeraria1);
+		 
+		Cementerio cementerioF15Ce = new Cementerio ("Rincón del Descanso",50,cuenta,"bronce", null,"cenizas",funeraria1); 
+		Cementerio cementerioF16Ce = new Cementerio ("Jardín de los Recuerdos",78,cuenta,"bronce", null,"cenizas",funeraria1); 
+		
+		
+		//cementerios pertenecientes a F1 --> Funeraria 1 - cuerpos
+		Cementerio cementerioF11Cu = new Cementerio ("Eternidad Verde",78,cuenta,"oro", null,"cuerpos",funeraria1); 
+		Cementerio cementerioF12Cu = new Cementerio ("Mirador de la Serenidad",85,cuenta,"oro", null,"cuerpos",funeraria1); 
+		
+		Cementerio cementerioF13Cu = new Cementerio ("Bosque de la Memoria",50,cuenta,"plata", null,"cuerpos",funeraria1); 
+		Cementerio cementerioF14Cu = new Cementerio ("Cementerio del Refugi",78,cuenta,"plata", null,"cuerpos",funeraria1);
+		 
+		Cementerio cementerioF15Cu = new Cementerio ("Paz y Esperanza",78,cuenta,"bronce", null,"cuerpos",funeraria1); 
+		Cementerio cementerioF16Cu = new Cementerio ("Sendero de la Tranquilidad",78,cuenta,"bronce", null,"cuerpos",funeraria1); 
+		
+		
+		//crematorios pertenecientes a F1 --> Funeraria 1
+		Crematorio crematorioF11 = new Crematorio ("Crematorio Luz y Paz",100,null,"oro", null,funeraria1); 
+		Crematorio crematorioF12 = new Crematorio ("Hogar de la Ascensión",78,null,"oro", null,funeraria1); 
+		
+		Crematorio crematorioF13 = new Crematorio ("Fuego de la Memoria",78,null,"plata", null,funeraria1); 
+		Crematorio crematorioF14 = new Crematorio ("Crematorio Serenidad Eterna",78,null,"plata", null,funeraria1);
+		
+		Crematorio crematorioF15 = new Crematorio ("Llama de la Eternidada",78,null,"bronce", null,funeraria1); 
+		Crematorio crematorioF16 = new Crematorio ("Refugio del Alba",78,null,"bronce", null,funeraria1);
+		
+		
+		
+				
+		//Objetos Cementerio
+				
+		//cementerios pertenecientes a F2 --> Funeraria 2 - cenizas
+		Cementerio cementerioF21Ce = new Cementerio ("Cementerio del Silencio",78,cuenta,"oro", null,"cenizas",funeraria2); 
+		Cementerio cementerioF22Ce = new Cementerio ("Campo de la Eternidad",85,cuenta,"oro", null,"cenizas",funeraria2); 
+				
+		Cementerio cementerioF23Ce = new Cementerio ("Bosque de la Serenidad",79,cuenta,"plata", null,"cenizas",funeraria2); 
+		Cementerio cementerioF24Ce = new Cementerio ("Jardines del Descanso",78,cuenta,"plata", null,"cenizas",funeraria2);
+				 
+		Cementerio cementerioF25Ce = new Cementerio ("Valle de la Paz Interior",50,cuenta,"bronce", null,"cenizas",funeraria2); 
+		Cementerio cementerioF26Ce = new Cementerio ("Luz del Recuerdo",78,cuenta,"bronce", null,"cenizas",funeraria2); 
+				
+				
+		//cementerios pertenecientes a F2 --> Funeraria 2 - cuerpos
+		Cementerio cementerioF21Cu = new Cementerio ("Colinas del Reposo",78,cuenta,"oro", null,"cuerpos",funeraria2); 
+		Cementerio cementerioF22Cu = new Cementerio ("Jardín de la Eternidad",85,cuenta,"oro", null,"cuerpos",funeraria2); 
+				
+		Cementerio cementerioF23Cu = new Cementerio ("Refugio de la Memoria",50,cuenta,"plata", null,"cuerpos",funeraria2); 
+		Cementerio cementerioF24Cu = new Cementerio ("Cementerio del Alba",78,cuenta,"plata", null,"cuerpos",funeraria2);
+				 
+		Cementerio cementerioF25Cu = new Cementerio ("Alameda de la Paz",78,cuenta,"bronce", null,"cuerpos",funeraria2); 
+		Cementerio cementerioF26Cu = new Cementerio ("Jardín del Silencio Eterno",78,cuenta,"bronce", null,"cuerpos",funeraria2); 
+				
+		
+		//crematorios pertenecientes a F2 --> Funeraria 2
+		Crematorio crematorioF21 = new Crematorio ("Crematorio del Silencio",100,null,"oro", null,funeraria2); 
+		Crematorio crematorioF22 = new Crematorio ("Ascenso y Tranquilidad",78,null,"oro", null,funeraria2); 
+		
+		Crematorio crematorioF23 = new Crematorio ("Brasa de Paz",78,null,"plata", null,funeraria2); 
+		Crematorio crematorioF24 = new Crematorio ("Eterna Luz Crematorio",78,null,"plata", null,funeraria2);
+		
+		Crematorio crematorioF25 = new Crematorio ("Crematorio del Renacer",78,null,"bronce", null,funeraria2); 
+		Crematorio crematorioF26 = new Crematorio ("Fuego y Serenidad",78,null,"bronce", null,funeraria2);		
+	
+		
+		
+		//objetos cementerio
+		
+		Cementerio cementerioF31Ce = new Cementerio ("Jardín de los Ángeles",78,cuenta,"oro", null,"cenizas",funeraria3); 
+		Cementerio cementerioF32Ce = new Cementerio ("Campo de la Tranquilidad",85,cuenta,"oro", null,"cenizas",funeraria3); 
+				
+		Cementerio cementerioF33Ce = new Cementerio ("Oasis de Paz",79,cuenta,"plata", null,"cenizas",funeraria3); 
+		Cementerio cementerioF34Ce = new Cementerio ("Colinas del Recuerdo",78,cuenta,"plata", null,"cenizas",funeraria3);
+				 
+		Cementerio cementerioF35Ce = new Cementerio ("Rincón del Silencio",50,cuenta,"bronce", null,"cenizas",funeraria3); 
+		Cementerio cementerioF36Ce = new Cementerio ("Eterna Armonía",78,cuenta,"bronce", null,"cenizas",funeraria3); 
+		
+		
+		//cementerios pertenecientes a F2 --> Funeraria 2 - cuerpos
+		Cementerio cementerioF31Cu = new Cementerio ("Bosque de los Sueños",78,cuenta,"oro", null,"cuerpos",funeraria3); 
+		Cementerio cementerioF32Cu = new Cementerio ("Pradera del Descanso",85,cuenta,"oro", null,"cuerpos",funeraria3); 
+						
+		Cementerio cementerioF33Cu = new Cementerio ("Refugio de la Memoria",50,cuenta,"plata", null,"cuerpos",funeraria3); 
+		Cementerio cementerioF34Cu = new Cementerio ("Sendero de la Memoria",78,cuenta,"plata", null,"cuerpos",funeraria3);
+						 
+		Cementerio cementerioF35Cu = new Cementerio ("Valle del Reposo",78,cuenta,"bronce", null,"cuerpos",funeraria3); 
+		Cementerio cementerioF36Cu = new Cementerio ("Jardines del Refugio",78,cuenta,"bronce", null,"cuerpos",funeraria3);
+		
+		
+		//crematorios pertenecientes a F2 --> Funeraria 2
+		Crematorio crematorioF31 = new Crematorio ("Crematorio del Horizonte",100,null,"oro", null,funeraria3); 
+		Crematorio crematorioF32 = new Crematorio ("Cenizas de la Eternidad	",78,null,"oro", null,funeraria3); 
+				
+		Crematorio crematorioF33 = new Crematorio ("Refugio de la Luz",78,null,"plata", null,funeraria3); 
+		Crematorio crematorioF34 = new Crematorio ("Fuego de Serenidad",78,null,"plata", null,funeraria3);
+				
+		Crematorio crematorioF35 = new Crematorio ("Crematorio del Horizonte Eterno",78,null,"bronce", null,funeraria3); 
+		Crematorio crematorioF36 = new Crematorio ("Crematorio Luz de la Eternidad",78,null,"bronce", null,funeraria3);	
+		
+		
+	
+		
+		
+		
+		
+		
+			
+				
+				
+		
+				
+				
+				
+				
+				
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
 		//Objetos de prueba
 		//Funerarias
 		
-		CuentaBancaria cuenta = new CuentaBancaria(123, "Alfredo", 1000000, "Ala");
+		cuenta = new CuentaBancaria(123, "Alfredo", 1000000, "Ala");
 		Funeraria funita = new Funeraria("funita", cuenta,cuenta);
 		Funeraria fumita = new Funeraria("fumita", cuenta,cuenta);
 		Funeraria fulanita = new Funeraria("fulanita", cuenta,cuenta);
 		
 		//Cliente
-		Familiar b= new Familiar("Mario",123,45,"345",cuenta,"padre",17);
-		Familiar e= new Familiar("Alberto",123,45,"345",cuenta,"conyugue",17);
+		Familiar b= new Familiar("Mario",123,45,cuenta,"padre",17);
+		Familiar e= new Familiar("Alberto",123,45,cuenta,"conyugue",17);
 		Familiar c= new Familiar("Maria",5, "oro",e);
 		
 		
@@ -595,17 +741,17 @@ public class Menú {
 		
 		//AgregarVehiculos
 		
-		Vehiculo veh1= new Vehiculo(TipoVehiculo.BERLINA,fulanita,"azul", "2345");
-		Vehiculo veh2= new Vehiculo(TipoVehiculo.BUS,fulanita,"azul", "2345");
-		Vehiculo veh3= new Vehiculo(TipoVehiculo.CARROZA,fulanita,"azul", "2345");
+		Vehiculo veh1= new Vehiculo(TipoVehiculo.BERLINA,fulanita,"azul", "2345",1);
+		Vehiculo veh2= new Vehiculo(TipoVehiculo.BUS,fulanita,"azul", "2345",2);
+		Vehiculo veh3= new Vehiculo(TipoVehiculo.CARROZA,fulanita,"azul", "2345",3);
 		
-		Vehiculo veh4= new Vehiculo(TipoVehiculo.FAETON,funita,"azul", "2345");
-		Vehiculo veh5= new Vehiculo(TipoVehiculo.BUS,funita,"azul", "2345");
-		Vehiculo veh6= new Vehiculo(TipoVehiculo.COCHERESPETO,funita,"azul", "2345");
+		Vehiculo veh4= new Vehiculo(TipoVehiculo.FAETON,funita,"azul", "2345",3);
+		Vehiculo veh5= new Vehiculo(TipoVehiculo.BUS,funita,"azul", "2345",3);
+		Vehiculo veh6= new Vehiculo(TipoVehiculo.COCHERESPETO,funita,"azul", "2345",3);
 		
-		Vehiculo veh7= new Vehiculo(TipoVehiculo.CUPE,fumita,"azul", "2345");
-		Vehiculo veh8= new Vehiculo(TipoVehiculo.BERLINA,fumita,"azul", "2345");
-		Vehiculo veh9= new Vehiculo(TipoVehiculo.CARROZA,fumita,"azul", "2345");
+		Vehiculo veh7= new Vehiculo(TipoVehiculo.CUPE,fumita,"azul", "2345",3);
+		Vehiculo veh8= new Vehiculo(TipoVehiculo.BERLINA,fumita,"azul", "2345",3);
+		Vehiculo veh9= new Vehiculo(TipoVehiculo.CARROZA,fumita,"azul", "2345",3);
 		
 		
 		//Urnas vacías
