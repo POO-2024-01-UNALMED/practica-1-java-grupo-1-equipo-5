@@ -23,14 +23,18 @@ public class Producto {
     
     
     
-    public Producto(String nombre, double precio, int cantidad) {
-		super();
+    public Producto(String nombre, double precio, int cantidad, int cantidadVendida) {
+		this.nombre = nombre;
+		this.precio = precio;
+		this.cantidad = cantidad;
+		this.cantidadVendida = cantidadVendida;
+	}
+	public Producto(String nombre, double precio, int cantidad) {
 		this.nombre = nombre;
 		this.precio = precio;
 		this.cantidad = cantidad;
 	}
     public Producto(String nombre, double precio, int cantidad, Establecimiento establecimiento) {
-		super();
 		this.establecimiento = establecimiento;
 		this.nombre = nombre;
 		this.precio = precio;

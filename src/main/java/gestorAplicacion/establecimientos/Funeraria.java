@@ -98,6 +98,9 @@ public class Funeraria extends Establecimiento{
 		
 		return this.buscarEmpleados(jornada, cargo);
 	}
+	public void agregarFactura(Factura factura) {
+        listadoFacturasPorPagar.add(factura);
+    }
 	
 	
 	

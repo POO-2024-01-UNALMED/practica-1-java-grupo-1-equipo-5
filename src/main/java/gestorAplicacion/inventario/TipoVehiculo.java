@@ -8,7 +8,8 @@ public enum TipoVehiculo {
 	COCHEFUNEBRE(1,true,false,80000), //1 persona - solo cliente
 	BUS(6,false,true,50000), // 6 personas
 	COCHERESPETO(8,false,true,75000), //8 personas - solo familiares
-	CUPE(2,false,true,65000); //una persona - solo cliente
+	CUPE(2,false,true,65000), //una persona - solo cliente
+	CAMION(5,false,false,69000);
 	
 	private int capacidad; //capacidad carro de personas 
 	private boolean cliente;  // atributo para reconocer si es posible agregar objetod de tipo Cliente

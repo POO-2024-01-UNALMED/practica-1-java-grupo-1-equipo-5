@@ -52,6 +52,17 @@ public class Factura implements Serializable{
 		
 	}
 	
+	
+	public Factura(String servicio) {
+		facturasCreadas++;
+		ID=facturasCreadas;
+		this.listaProductos = new ArrayList<>();
+		Servicio = servicio;
+		this.total= 0;
+		facturas.add(this);
+	}
+
+
 	public Factura(String producto, double precio, String Fecha, Establecimiento Entidad,String Servicio) {
 		this.producto=producto;
 		this.precio=precio;

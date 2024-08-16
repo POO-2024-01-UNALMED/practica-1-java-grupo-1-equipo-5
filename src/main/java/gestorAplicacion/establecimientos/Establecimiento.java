@@ -37,6 +37,7 @@ public class Establecimiento implements Serializable {
 	
 	
 	
+	//Contructor
 	
 	
 	//Constructor a ser llamado desde las clases Crematorio y Cementerio
@@ -50,6 +51,16 @@ public class Establecimiento implements Serializable {
 		establecimientos.add(this);
 	}
 	
+	public Establecimiento(String nombre, int capacidad, CuentaBancaria cuentaCorriente, Empleado jefe,double calificacion) {
+		this.nombre = nombre;
+		this.capacidad = capacidad;
+		this.cuentaCorriente = cuentaCorriente;
+		Jefe = jefe;
+		this.calificacion = calificacion;
+		establecimientos.add(this);
+		
+	}
+
 	//Constructor a ser llamado desde clase Funeraria
 	public Establecimiento (String nombre, CuentaBancaria cuentaCorriente) {
 		this.nombre=nombre;
@@ -389,5 +400,4 @@ public class Establecimiento implements Serializable {
 	
 	
 	
-
 }
