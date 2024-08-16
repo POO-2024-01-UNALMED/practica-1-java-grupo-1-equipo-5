@@ -10,7 +10,12 @@ import gestorAplicacion.establecimientos.Establecimiento;
 import gestorAplicacion.establecimientos.Funeraria;
 import gestorAplicacion.financiero.*;
 import gestorAplicacion.financiero.Factura;
+import gestorAplicacion.inventario.TipoVehiculo;
+import gestorAplicacion.inventario.Urna;
+import gestorAplicacion.inventario.Vehiculo;
 import gestorAplicacion.personas.*;
+import gestorAplicacion.inventario.*;
+import java.util.Iterator;
 
 
 
@@ -59,7 +64,7 @@ public class FuncionalidadFinanzas {
 				indiceHacer = scanner.nextInt();
 			}
 		}
-	    
+		 int a = 0;
 		switch(indiceHacer) {
 		case 1:
 			valido = true;
@@ -98,8 +103,13 @@ public class FuncionalidadFinanzas {
 			System.out.println("Cobro de  facturas del cliente: "+ cliente.getNombre()+", realizado correctamente");
 			break;
 		case 2:
-			valido = true;
-			break;
+		    valido = true;
+		    ArrayList<Factura> facturas = funeraria.getListadoFacturasPorPagar();
+		    ArrayList<String> resultados = funeraria.cobroFacturas(facturas);
+		    for (String resultado : resultados) {
+		        System.out.println(resultado);
+		    }
+		    break;
 		case 3:
 			valido = true;
 			ArrayList <Empleado> empleados = funeraria.getEmpleados();
@@ -170,6 +180,7 @@ public class FuncionalidadFinanzas {
 			}
 		case 5:
 			valido = true;
+			
 		     break;
 		default:
 			scanner.next();
@@ -181,38 +192,72 @@ public static void main(String[] args) {
 		
 	CuentaBancaria cuenta2 = new CuentaBancaria(19934, "funita", 3993, "BANCOLOMBIA");
 	    CuentaBancaria cuenta1 = new CuentaBancaria(199919, "a1", 39999, "BBVA");
-	    CuentaBancaria cuenta5 = new CuentaBancaria(199234234, "funita", 39999,999999,999999,999999,999999, "BBVA");
+	    CuentaBancaria cuenta5 = new CuentaBancaria(199234234, "funita", 39999,180000,400000,400000,4000000, "BBVA");
 		Funeraria funita = new Funeraria("funita", null, null);
 		Funeraria fumita = new Funeraria("fumita", null, null);
 		Funeraria fulanita = new Funeraria("fulanita", null, null);
-		Crematorio crematorio = new Crematorio ("crematorio","0054",100,null,"oro", null,funita); 
-		Crematorio creno = new Crematorio ("creno","0089",78,null,"oro", null,fumita); 
-		Crematorio cremita = new Crematorio ("cremita","0098",78,null,"oro", null,fulanita); 
+		Crematorio crematorio = new Crematorio ("crematorio",100,null,"oro", null,funita); 
+		Crematorio creno = new Crematorio ("creno",78,null,"oro", null,fumita); 
+		Crematorio cremita = new Crematorio ("cremita",78,null,"oro", null,fulanita); 
 		
-		Cementerio cementerio = new Cementerio ("cementerio","2090",78,null,"oro", null,"cenizas",fulanita); 
-		Cementerio cemi = new Cementerio ("cemi","9089",78,null,"oro", null,"cenizas",fumita); 
-		Cementerio cemito = new Cementerio ("cemito","5490",78,null,"oro", null,"cenizas",funita); 
+		Cementerio cementerio = new Cementerio ("cementerio",78,null,"oro", null,"cenizas",fulanita); 
+		Cementerio cemi = new Cementerio ("cemi",78,null,"oro", null,"cenizas",fumita); 
+		Cementerio cemito = new Cementerio ("cemito",78,null,"oro", null,"cenizas",funita); 
 		CuentaBancaria cuenta3 = new CuentaBancaria(32323, "b", 32324, "BBVA");
 		CuentaBancaria cuenta4 = new CuentaBancaria(342343, "e", 32, "BBVA");
 		CuentaBancaria cuenta8 = new CuentaBancaria(342343, "empleado1", 32, "BBVA");
-		
-		Cementerio cementerio1 = new Cementerio ("cementerio1","2090",78,null,"oro", null,"cuerpos",fulanita); 
-		Cementerio cemi1 = new Cementerio ("cemi1","9089",78,null,"oro", null,"cuerpos",fumita); 
-		Cementerio cemito1 = new Cementerio ("cemito1","5490",78,null,"oro", null,"cuerpos",funita);
-		Familiar b= new Familiar("Mario",123,45,"345",cuenta3,"padre",17);
-		Familiar e= new Familiar("Alberto",123,45,"345",cuenta4,"conyugue",17);
+		Cementerio cementerio1 = new Cementerio ("cementerio1",78,null,"oro", null,"cuerpos",fulanita); 
+		Cementerio cemi1 = new Cementerio ("cemi1",78,null,"oro", null,"cuerpos",fumita); 
+		Cementerio cemito1 = new Cementerio ("cemito1",78,null,"oro", null,"cuerpos",funita);
+		Familiar b= new Familiar("Mario",123,45,cuenta3,"padre",17);
+		Familiar e= new Familiar("Alberto",123,45,cuenta4,"conyugue",17);
 		ArrayList<Familiar> familiar=new ArrayList<Familiar>();
 		familiar.add(b);
 		familiar.add(e);
-		Empleado empleado1 = new Empleado("Alberto",12345,30,"3456",cuenta8,"mañana","sepulturero",900000,2,5);
-		Empleado empleado2 = new Empleado("Maria",12345,23,"3456",null,"noche","sepulturero",900000,3,5);
-		Empleado empleado3 = new Empleado("Anastasia",12345,43,"3456",null,"noche","cremador",900000,3,5);
-		Empleado empleado4 = new Empleado("Gilberto",12345,44,"3456",null,"mañana","cremador",900000,3,0);
-		Empleado empleado5 = new Empleado("Pepito",12345,18,"3456",null,"mañana","sepulturero",900000,1,0);
-		Empleado empleado6 = new Empleado("Camila",12345,33,"3456",null,"tarde","cremador",900000,0,3);
-		Empleado empleado7 = new Empleado("Santiago",12345,43,"3456",null,"noche","sepulturero",900000,32,5);
-		Empleado empleado8 = new Empleado("Anastasio",12345,43,"3456",null,"tarde","cremador",900000,5,2);
-
+		CuentaBancaria cuentaProveedor = new CuentaBancaria(1231232,"proveedor",1000000,"BBVA");
+		Establecimiento Proveedor = new Establecimiento("Proveedor", cuentaProveedor);
+		Empleado empleado1 = new Empleado("Alberto",12345,30,cuenta8,"mañana","sepulturero",900000,2,5);
+		Empleado empleado2 = new Empleado("Maria",12345,23,null,"noche","sepulturero",900000,3,5);
+		Empleado empleado3 = new Empleado("Anastasia",12345,43,null,"noche","cremador",900000,3,5);
+		Empleado empleado4 = new Empleado("Gilberto",12345,44,null,"mañana","cremador",900000,3,0);
+		Empleado empleado5 = new Empleado("Pepito",12345,18,null,"mañana","sepulturero",900000,1,0);
+		Empleado empleado6 = new Empleado("Camila",12345,33,null,"tarde","cremador",900000,0,3);
+		Empleado empleado7 = new Empleado("Santiago",12345,43,null,"noche","sepulturero",900000,32,5);
+		Empleado empleado8 = new Empleado("Anastasio",12345,43,null,"tarde","cremador",900000,5,2);
+		Vehiculo veh1= new Vehiculo(TipoVehiculo.BERLINA,fulanita,"azul", "2345",3232,3);
+		Vehiculo veh2= new Vehiculo(TipoVehiculo.BUS,fulanita,"azul", "2345",344,3);
+		Vehiculo veh3= new Vehiculo(TipoVehiculo.CARROZA,fulanita,"azul", "2345",234,4);
+		Producto producto1 =  new Producto(veh1, Proveedor);
+		Producto producto2 =  new Producto(veh2, Proveedor);
+		Producto producto3 =  new Producto(veh3, Proveedor);
+		Producto producto4 =  new Producto("Urnas",1000,3,Proveedor);
+		Producto producto5 =  new Producto("Urnas",1000,3,Proveedor);
+		Producto producto6 =  new Producto("Urnas",1000,3,Proveedor);
+		ArrayList<Producto> urnas=new ArrayList<Producto>();
+		ArrayList<Producto> transporte=new ArrayList<Producto>();
+		ArrayList<Producto> transporte1=new ArrayList<Producto>();
+		ArrayList<Producto> transporte2=new ArrayList<Producto>();
+		transporte.add(producto1);
+		transporte1.add(producto2);
+		transporte2.add(producto3);
+		urnas.add(producto4);
+		urnas.add(producto5);
+		urnas.add(producto6);
+		Factura factura9 = new Factura(urnas,"inventario");
+		Factura factura6 = new Factura(urnas,"inventario");
+        Factura factura5 = new Factura(transporte,"vehiculo");
+        Factura factura7 = new Factura(transporte1,"vehiculo");
+        Factura factura8 = new Factura(transporte2,"vehiculo");
+        factura7.totalFactura();
+        factura8.totalFactura();
+        factura6.totalFactura();
+        factura5.totalFactura();
+        factura9.totalFactura();
+        funita.getListadoFacturasPorPagar().add(factura7);
+		funita.getListadoFacturasPorPagar().add(factura8);
+		funita.getListadoFacturasPorPagar().add(factura9);
+        funita.getListadoFacturasPorPagar().add(factura5);
+		funita.getListadoFacturasPorPagar().add(factura6);
 		Cliente a1 = new Cliente("a1",12344,18,null,"oro",familiar);
 		Cliente b1 = new Cliente("b1",17,"oro",familiar);
 		funita.agregarCliente(a1);
@@ -225,9 +270,9 @@ public static void main(String[] args) {
 		funita.agregarEmpleado(empleado4);
 		funita.agregarEmpleado(empleado3);
 		Factura factura1 = new Factura("Funeral", 1000, "2772", a1, "Establecimiento");
-		a1.agregarFactura(factura1);
-	funcionalidadFinanzas();
-	
+		a1.agregarFactura(factura1);	
+		funcionalidadFinanzas();
+			
 
 }
 }
