@@ -78,11 +78,11 @@ public class FuncionalidadFinanzas {
 			System.out.print("Ingrese el índice del cementerio: ");
 			int indiceCementerio = scanner.nextInt();
 			
-			while(indice<1 || indice>cementerios.size()) {
+			while(indiceCementerio < 1 || indiceCementerio > cementerios.size()) {
 				System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
 				indiceCementerio=scanner.nextInt();
 				
-			}
+			} if(indiceCementerio > 0 && indiceCementerio<=cementerios.size()) {
 			Cementerio cementerio = (Cementerio) cementerios.get(indiceCementerio - 1);
 			ArrayList<Cliente> clientes = cementerio.getClientes();
 			indice = 0;
@@ -94,21 +94,35 @@ public class FuncionalidadFinanzas {
 			System.out.print("Ingrese el índice de los clientes: ");
 			int indiceCliente = scanner.nextInt();
 			
-			while(indice<1 || indice>clientes.size()) {
+			while(indiceCliente<1 || indice>clientes.size()) {
 				System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
 				indiceCliente=scanner.nextInt();
 			}
 			Cliente cliente = (Cliente) clientes.get(indiceCliente - 1);
 			funeraria.cobroServiciosClientes(cliente);	
-			System.out.println("Cobro de  facturas del cliente: "+ cliente.getNombre()+", realizado correctamente");
+			System.out.println("Cobro de  facturas del cliente: "+ cliente.getNombre()+", realizado correctamente");}
 			break;
 		case 2:
 		    valido = true;
+		    boolean continuarq = true;
+			while(continuarq) {
 		    ArrayList<Factura> facturas = funeraria.getListadoFacturasPorPagar();
-		    ArrayList<String> resultados = funeraria.cobroFacturas(facturas);
-		    for (String resultado : resultados) {
-		        System.out.println(resultado);
-		    }
+		    for(int i = 0; i < facturas.size();i++) {
+		    	Factura factura = facturas.get(i);
+		    	System.out.println("["+(i+1)+"]"+"Factura con ID: "+ factura.getID());}
+		    System.out.print("Ingrese el índice de las facturas: ");
+			int indiceFactura = scanner.nextInt();
+			scanner.nextLine();
+			
+			while(indiceFactura<1 || indice>facturas.size()) {
+				System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+				indiceFactura=scanner.nextInt();
+			}
+			Factura factura1 = (Factura) facturas.get(indiceFactura - 1);
+			System.out.println(funeraria.cobroFacturas(factura1));
+		    System.out.println("Desea realizar otra accion? (s/n): ");
+		    String respuesta1 = scanner.next();
+		    continuarq = respuesta1.equalsIgnoreCase("s");}
 		    break;
 		case 3:
 			valido = true;
@@ -180,8 +194,26 @@ public class FuncionalidadFinanzas {
 			}
 		case 5:
 			valido = true;
+			boolean continuarH = true;
+			while(continuarH) {
+			System.out.println("Que proceso quiere hacer ");
+			System.out.println("[1] Ver informe gastos");
+			System.out.println("[2] Reajuste");
 			
-		     break;
+			System.out.print("Ingrese el índice correspondiente: ");
+			int indiceReajuste = scanner.nextInt();
+			scanner.nextLine();
+			switch(indiceReajuste) {
+			case 1:
+				System.out.println(funeraria.informeGastosFacturas());
+				break;
+			case 2:
+			    System.out.println(funeraria.reajusteDinero());
+			break;
+			
+			}System.out.println("Desea realizar otra accion? (s/n): ");
+			String respuesta = scanner.nextLine();
+			continuarH = respuesta.equalsIgnoreCase("s");}
 		default:
 			scanner.next();
 			break;
@@ -193,6 +225,8 @@ public static void main(String[] args) {
 	CuentaBancaria cuenta2 = new CuentaBancaria(19934, "funita", 3993, "BANCOLOMBIA");
 	    CuentaBancaria cuenta1 = new CuentaBancaria(199919, "a1", 39999, "BBVA");
 	    CuentaBancaria cuenta5 = new CuentaBancaria(199234234, "funita", 39999,180000,400000,400000,4000000, "BBVA");
+	    CuentaBancaria cuenta6 = new CuentaBancaria(199234234, "fumita", 39999,180000,400000,400000,4000000, "BBVA");
+	    CuentaBancaria cuenta7 = new CuentaBancaria(199234234, "fulanita", 39999,180000,400000,400000,4000000, "BBVA");
 		Funeraria funita = new Funeraria("funita", null, null);
 		Funeraria fumita = new Funeraria("fumita", null, null);
 		Funeraria fulanita = new Funeraria("fulanita", null, null);
@@ -264,6 +298,8 @@ public static void main(String[] args) {
 		fumita.agregarCliente(b1);
 		Funeraria.setCuentaAhorros(cuenta2);
 		funita.setCuentaCorriente(cuenta5);
+		fulanita.setCuentaCorriente(cuenta6);
+		fumita.setCuentaCorriente(cuenta7);
 		a1.setCuentaBancaria(cuenta1);
 		cemito1.agregarCliente(a1);
 		funita.agregarEmpleado(empleado1);
