@@ -29,6 +29,13 @@ public class Producto {
 		this.precio = precio;
 		this.cantidad = cantidad;
 	}
+    public Producto(String nombre, double precio, int cantidad, Establecimiento establecimiento) {
+		super();
+		this.establecimiento = establecimiento;
+		this.nombre = nombre;
+		this.precio = precio;
+		this.cantidad = cantidad;
+	}
     
 
     //Constructor para crear productos con establecimientos (Crematorio y Cementerio)
@@ -42,6 +49,15 @@ public class Producto {
     	this.vehiculo=vehiculo;
     	this.nombre=vehiculo.getTipoVehiculo().name();
     	this.precio=vehiculo.getTipoVehiculo().getPrecio();
+    	this.cantidad = 1;
+    	
+    }
+    public Producto(Vehiculo vehiculo, Establecimiento establecimiento) {
+    	this.vehiculo=vehiculo;
+    	this.establecimiento = establecimiento;
+    	this.nombre=vehiculo.getTipoVehiculo().name();
+    	this.precio=vehiculo.getPrecio();
+    	this.cantidad = 1;
     	
     }
     

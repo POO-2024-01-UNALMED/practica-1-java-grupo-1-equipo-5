@@ -244,47 +244,117 @@ public void cobroServiciosClientes(Cliente cliente) {
 		}
 	}
 
+public ArrayList<String> cobroFacturas(ArrayList<Factura> facturas) {
+    ArrayList<String> resultados = new ArrayList<>();
+    int indice = 0;
+    for (int i = facturas.size() - 1;i >= 0;i--) {
+    	Factura factura = facturas.get(i);
+        String tipoServicio = factura.getServicio();
+        double totalFactura = factura.getTotal();
+       indice ++;;
+        String resultado = "";
 
-     public void cobroFacturas() {
-    	 
-    	 for(int i = listadoFacturasPorPagar.size() - 1; i >= 0; i--) {
-    		 
-    		 Factura factura = listadoFacturasPorPagar.get(i);
-    		 String tipoServicio = factura.getServicio();
-    		 double totalFactura = factura.getTotal();
-    		 if(tipoServicio == "vehiculo") {
-    			 if(totalFactura <= this.getCuentaCorriente().getBolsilloTransporte()) {
-    			 Producto producto = factura.getListaProductos().get(0);
-    			 Establecimiento establecimiento = producto.getEstablecimiento();
-    			 this.getCuentaCorriente().transaccion(totalFactura, establecimiento.getCuentaCorriente(), "bolsilloTransporte");
-    			 this.listadoFacturasPorPagar.remove(factura);}
-    			 }
-    		 else if(tipoServicio == "establecimiento") {
-    			 if(totalFactura <= this.getCuentaCorriente().getBolsilloEstablecimientos()) {
-    			 Producto producto = factura.getListaProductos().get(0);
-    			 Establecimiento establecimiento = producto.getEstablecimiento();
-    			  this.getCuentaCorriente().transaccion(totalFactura, establecimiento.getCuentaCorriente(), "bolsilloEstablecimientos");
-    			  this.listadoFacturasPorPagar.remove(factura);}
-    			 }
-    		 else if (tipoServicio == "empleado") {
-    			 if(totalFactura <= this.getCuentaCorriente().getBolsilloTrabajadores()) {
-    			 Producto producto = factura.getListaProductos().get(0);
-    			 Establecimiento establecimiento = producto.getEstablecimiento();
-    			 this.getCuentaCorriente().transaccion(totalFactura, establecimiento.getCuentaCorriente(), "bolsilloTrabajadores");
-    			 this.listadoFacturasPorPagar.remove(factura);}
-    			 }
-    		 else if(tipoServicio == "inventario") {
-    			 if(totalFactura <= this.getCuentaCorriente().getBolsilloInventario()) {
-    			 Producto producto = factura.getListaProductos().get(0);
-    			 Establecimiento establecimiento = producto.getEstablecimiento();
-    			 this.getCuentaCorriente().transaccion(totalFactura, establecimiento.getCuentaCorriente(), "bolsilloInventario");
-    			 this.listadoFacturasPorPagar.remove(factura);}
-    		 }
-    		 }
-    		 }
-    		 
+        if (tipoServicio.equals("vehiculo")) {
+            if (totalFactura <= this.getCuentaCorriente().getBolsilloTransporte()) {
+                Producto producto = factura.getListaProductos().get(0);
+                Establecimiento establecimiento = producto.getEstablecimiento();
+                this.getCuentaCorriente().transaccion(totalFactura, establecimiento.getCuentaCorriente(), "bolsilloTransporte");
+                System.out.println(totalFactura + indice);
+                this.listadoFacturas.add(0,factura);
+                this.listadoFacturasPorPagar.remove(i);
+                resultado = "Factura #: " + (indice) + ", ID: " + factura.getID() + " pagada con éxito";
+                
+            } else {
+                resultado = "No hay dinero suficiente para pagar la factura #: " + (indice) + ", ID: " + factura.getID();
+               
+            }
+        } else if (tipoServicio.equals("establecimiento")) {       	
+            if (totalFactura <= this.getCuentaCorriente().getBolsilloEstablecimientos()) {
+                Producto producto = factura.getListaProductos().get(0);
+                Establecimiento establecimiento = producto.getEstablecimiento();
+                this.getCuentaCorriente().transaccion(totalFactura, establecimiento.getCuentaCorriente(), "bolsilloEstablecimientos");
+                this.listadoFacturas.add(0,factura);
+                this.listadoFacturasPorPagar.remove(i);
+                resultado = "Factura #: " + (indice) + ", ID: " + factura.getID() + " pagada con éxito";
+                
+            } else {
+                resultado = "No hay dinero suficiente para pagar la factura #: " + (indice) + ", ID: " + factura.getID();
+                
+            }
+        } else if (tipoServicio.equals("empleado")) {
+            if (totalFactura <= this.getCuentaCorriente().getBolsilloTrabajadores()) {
+                Producto producto = factura.getListaProductos().get(0);
+                Establecimiento establecimiento = producto.getEstablecimiento();
+                this.getCuentaCorriente().transaccion(totalFactura, establecimiento.getCuentaCorriente(), "bolsilloTrabajadores");
+                this.listadoFacturas.add(0,factura);
+                this.listadoFacturasPorPagar.remove(i);
+                resultado = "Factura #: " + (indice) + ", ID: " + factura.getID() + " pagada con éxito";
+               
+            } else {
+                resultado = "No hay dinero suficiente para pagar la factura #: " + (indice) + ", ID: " + factura.getID();
+           
+            }
+        } else if (tipoServicio.equals("inventario")) {
+            if (totalFactura <= this.getCuentaCorriente().getBolsilloInventario()) {
+                Producto producto = factura.getListaProductos().get(0);
+                Establecimiento establecimiento = producto.getEstablecimiento();
+                this.getCuentaCorriente().transaccion(totalFactura, establecimiento.getCuentaCorriente(), "bolsilloInventario");
+                this.listadoFacturas.add(0,factura);
+                this.listadoFacturasPorPagar.remove(i);
+                resultado = "Factura #: " + (indice) + ", ID: " + factura.getID() + " pagada con éxito";
+            
+            } else {
+                resultado = "No hay dinero suficiente para pagar la factura #: " + (indice) + ", ID: " + factura.getID();
+                }
+        }
+
+        resultados.add(resultado);
+    }
+    return resultados;
+}
     			 
+    public String informeGastosFacturas() {
+    	double bolsilloInventario = 0;
+    	int facturasInventario = 0;
+    	double bolsilloTransporte = 0;
+    	int facturasTransporte = 0;
+    	double bolsilloEstablecimientos = 0;
+    	int facturasEstablecimientos = 0;
+    	double bolsilloPagoCredito = 0;
+    	int facturasPagoCredito = 0;
+    	double bolsilloTrabajadores = 0;
+    	int facturasTrabajadores = 0;
+    	for(int i = 0;i < this.listadoFacturas.size();i++) {
+    		Factura factura = this.listadoFacturas.get(i);
+    		if(factura.getServicio().equals("bolsilloInventario")) {
+    			bolsilloInventario += factura.getTotal();
+    			facturasInventario++;
+    		}else if(factura.getServicio().equals("bolsilloTransporte")) {
+    			bolsilloTransporte += factura.getTotal();
+    			facturasTransporte++;
+    		}else if(factura.getServicio().equals("bolsilloEstablecimientos")) {
+    			bolsilloEstablecimientos += factura.getTotal();
+    			facturasEstablecimientos++;
+    		}else if(factura.getServicio().equals("bolsilloTrabajadores")) {
+    			bolsilloTrabajadores += factura.getTotal();
+    			bolsilloTrabajadores++;
+    		}if(factura.getServicio().equals("bolsilloPagoCredito")) {
+    			bolsilloPagoCredito += factura.getTotal();
+    			facturasPagoCredito++;
+    		}
     		
+    	} return "Informe de gastos:"+"\n"+
+    	"Facturas inventario: " + facturasInventario+"\n"+
+    	"Gastos inventario: " + bolsilloInventario+"\n"+
+    	"Facturas inventario: " + facturasTransporte+"\n"+
+    	 "Gastos inventario: " + bolsilloTransporte+"\n"+
+         "Facturas inventario: " + facturasEstablecimientos+"\n"+
+         "Gastos inventario: " + bolsilloEstablecimientos+"\n"+
+    	 "Facturas inventario: " + facturasTrabajadores+"\n"+
+    	 "Gastos inventario: " + bolsilloTrabajadores+"\n"+
+         "Facturas inventario: " + facturasPagoCredito+"\n"+
+    	 "Gastos inventario: " + bolsilloPagoCredito;
+    }
     	 
     	 
 
@@ -364,7 +434,7 @@ public String pedirCredito() {
 		this.getCuentaCorriente().depositar(div, "bolsilloInventario");
 		this.getCuentaCorriente().depositar(div, "bolsilloEstablecimientos");
 		montoCredito += (this.getCuentaCorriente().getInteres() * montoCredito);
-		Factura credito = new Factura("credito", montoCredito, "2024", this, "credito");
+		Factura credito = new Factura("credito", montoCredito, "2024", this, "bolsilloPagoCredito");
 		this.getListadoFacturas();
 		this.getCuentaCorriente().setCredito(credito);
 		return "Credito aceptado";}
@@ -427,6 +497,8 @@ private void actualizarCredito(double porcentajeFaltante, double valorFaltante, 
     double nuevoValorFaltante = valorFaltante - pago;
 
     if (nuevoPorcentajeFaltante == 0) {
+    	Factura credito = this.getCuentaCorriente().getCredito();
+    	this.getListadoFacturas().add(credito);
         this.getCuentaCorriente().setCredito(null);
     } else {
         this.getCuentaCorriente().getCredito().setPorcentajeCreditoPorPagar(nuevoPorcentajeFaltante);

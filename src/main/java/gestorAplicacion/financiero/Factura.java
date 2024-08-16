@@ -45,6 +45,7 @@ public class Factura implements Serializable{
 		this.Fecha=Fecha;
 		this.listaProductos = new ArrayList<>();
 		this.Servicio= Servicio;
+		facturasCreadas++;
 		ID=facturasCreadas;
 		calcularTotal();
 		facturas.add(this);
@@ -63,10 +64,15 @@ public class Factura implements Serializable{
 		facturas.add(this);
 		
 	}
-	
 	public Factura(ArrayList<Producto> productos) {
 		listaProductos=productos;
 		ajustarProductos();
+		facturasCreadas++;
+		ID=facturasCreadas;
+	}
+	public Factura(ArrayList<Producto> productos, String servicio) {
+		listaProductos=productos;
+		this.Servicio = servicio;
 		facturasCreadas++;
 		ID=facturasCreadas;
 	}
