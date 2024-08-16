@@ -617,7 +617,7 @@ public class Menú {
 		Cementerio cementerioF36Ce = new Cementerio ("Eterna Armonía",78,cuenta,"bronce", null,"cenizas",funeraria3); 
 		
 		
-		//cementerios pertenecientes a F2 --> Funeraria 2 - cuerpos
+		//cementerios pertenecientes a F3 --> Funeraria 3 - cuerpos
 		Cementerio cementerioF31Cu = new Cementerio ("Bosque de los Sueños",78,cuenta,"oro", null,"cuerpos",funeraria3); 
 		Cementerio cementerioF32Cu = new Cementerio ("Pradera del Descanso",85,cuenta,"oro", null,"cuerpos",funeraria3); 
 						
@@ -628,7 +628,7 @@ public class Menú {
 		Cementerio cementerioF36Cu = new Cementerio ("Jardines del Refugio",78,cuenta,"bronce", null,"cuerpos",funeraria3);
 		
 		
-		//crematorios pertenecientes a F2 --> Funeraria 2
+		//crematorios pertenecientes a F3 --> Funeraria 3
 		Crematorio crematorioF31 = new Crematorio ("Crematorio del Horizonte",100,null,"oro", null,funeraria3); 
 		Crematorio crematorioF32 = new Crematorio ("Cenizas de la Eternidad	",78,null,"oro", null,funeraria3); 
 				

@@ -1,11 +1,12 @@
 package gestorAplicacion.financiero;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import gestorAplicacion.personas.Persona;
 import gestorAplicacion.inventario.*;
 
-public class CuentaBancaria implements Banco {
+public class CuentaBancaria implements Banco, Serializable{
 	private String banco;
 	private double bolsilloTrabajadores;
 	private double bolsilloInventario;

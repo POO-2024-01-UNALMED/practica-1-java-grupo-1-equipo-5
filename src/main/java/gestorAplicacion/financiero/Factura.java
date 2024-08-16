@@ -2,6 +2,8 @@ package gestorAplicacion.financiero;
 import gestorAplicacion.personas.*;
 
 import gestorAplicacion.establecimientos.*;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -12,7 +14,7 @@ import java.util.HashMap;
 import java.util.stream.Collectors;
 
 
-public class Factura {
+public class Factura implements Serializable{
 	//Atributos
 	private final int ID;
 	private String producto;

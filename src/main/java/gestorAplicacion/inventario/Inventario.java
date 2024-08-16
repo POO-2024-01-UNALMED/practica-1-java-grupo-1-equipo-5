@@ -1,5 +1,6 @@
 package gestorAplicacion.inventario;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -9,7 +10,7 @@ import java.util.stream.Stream;
 import gestorAplicacion.establecimientos.Cementerio;
 import gestorAplicacion.personas.Cliente;
 
-public abstract class Inventario {
+public abstract class Inventario implements Serializable{
 	private String nombre;
 	private Cementerio cementerio;
 	private Cliente cliente;
