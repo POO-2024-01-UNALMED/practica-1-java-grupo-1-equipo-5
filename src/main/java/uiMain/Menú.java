@@ -555,6 +555,7 @@ public class Menú {
 		Cementerio cementerioF15Cu = new Cementerio ("Paz y Esperanza",78,cuenta,"bronce", null,"cuerpos",funeraria1); 
 		Cementerio cementerioF16Cu = new Cementerio ("Sendero de la Tranquilidad",78,cuenta,"bronce", null,"cuerpos",funeraria1); 
 		
+		//Objetos Crematorio
 		
 		//crematorios pertenecientes a F1 --> Funeraria 1
 		Crematorio crematorioF11 = new Crematorio ("Crematorio Luz y Paz",100,null,"oro", null,funeraria1); 
@@ -566,7 +567,61 @@ public class Menú {
 		Crematorio crematorioF15 = new Crematorio ("Llama de la Eternidada",78,null,"bronce", null,funeraria1); 
 		Crematorio crematorioF16 = new Crematorio ("Refugio del Alba",78,null,"bronce", null,funeraria1);
 		
+		//Clientes F1 - Mayores de edad
 		
+		Cliente clienteF11 = new Cliente("Alejandro Rodríguez",123,30,null,"oro",familiar);
+		Cliente clienteF12 = new Cliente("Diego Martínez",1234,25,null,"oro",familiar);
+		
+		Cliente clienteF13 = new Cliente("Carlos Fernández",1235,90,null,"plata",familiar);
+		Cliente clienteF14 = new Cliente("María González",1236,57,null,"plata",familiar);
+		
+		Cliente clienteF15 = new Cliente("Laura Fernández",1237, "bronce",familiar);
+		Cliente clienteF16 = new Cliente("Isabel Rodríguez",1238, "bronce",familiar);
+	
+		
+		//Clientes F1 - Menores de edad
+		Cliente clienteF17 = new Cliente("Javier Gómez",5,"oro",familiar);
+		Cliente clienteF18 = new Cliente("Sofía Martínez",17,"oro",familiar);
+		
+		Cliente clienteF19 = new Cliente("Carolina López",15,"plata",familiar);
+		Cliente clienteF110 = new Cliente("Manuel López",13,"plata",familiar);
+		
+		
+		//Clientes F2 - Mayores de edad
+		
+		Cliente clienteF21 = new Cliente("Valeria Sánchez",231,30,null,"oro",familiar);
+		Cliente clienteF22 = new Cliente("Patricia Morales",232,25,null,"oro",familiar);
+				
+		Cliente clienteF23 = new Cliente("Gabriela García",233,90,null,"plata",familiar);
+		Cliente clienteF24 = new Cliente("Andrés Vargas",234,57,null,"plata",familiar);
+				
+		Cliente clienteF25 = new Cliente("Sergio Pérez",235, "bronce",familiar);
+		Cliente clienteF26 = new Cliente("Luis García",236, "bronce",familiar);
+		
+		String nombre,int edad, String plan,ArrayList<Familiar> familiares
+		
+		
+		
+		
+		
+		Rafael Morales
+		Pablo Sánchez
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		Ana Belén Ruiz
+		Claudia Romero
+		
+		funita.agregarCliente(e1);
+		fumita.agregarCliente(d1);
+		fulanita.agregarCliente(c1);
+		fumita.agregarCliente(a1);
 		
 				
 		//Objetos Cementerio
@@ -603,6 +658,7 @@ public class Menú {
 		Crematorio crematorioF25 = new Crematorio ("Crematorio del Renacer",78,null,"bronce", null,funeraria2); 
 		Crematorio crematorioF26 = new Crematorio ("Fuego y Serenidad",78,null,"bronce", null,funeraria2);		
 	
+		
 		
 		
 		//objetos cementerio

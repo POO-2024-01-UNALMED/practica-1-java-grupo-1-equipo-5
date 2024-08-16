@@ -14,6 +14,7 @@ public class Persona implements Serializable{
 	private int edad;
 	private CuentaBancaria cuentaBancaria;
 	private static ArrayList<Persona> personas = new ArrayList<Persona>();
+	private static long auxCC = 1000;
 	
 	
 	public Persona(String nombre, long CC, int edad, CuentaBancaria cuentaBancaria) {
@@ -22,6 +23,7 @@ public class Persona implements Serializable{
 		this.edad=edad;
 		this.cuentaBancaria=cuentaBancaria;
 		personas.add(this);
+		auxCC+=1;
 	
 	}
 	
