@@ -247,28 +247,23 @@ public void cobroServiciosClientes(Cliente cliente) {
 		}
 	}
 
-public ArrayList<String> cobroFacturas(ArrayList<Factura> facturas) {
-    ArrayList<String> resultados = new ArrayList<>();
-    int indice = 0;
-    for (int i = facturas.size() - 1;i >= 0;i--) {
-    	Factura factura = facturas.get(i);
+public String cobroFacturas(Factura factura) {
         String tipoServicio = factura.getServicio();
         double totalFactura = factura.getTotal();
-       indice ++;;
         String resultado = "";
-
+        int val = 0;
         if (tipoServicio.equals("vehiculo")) {
             if (totalFactura <= this.getCuentaCorriente().getBolsilloTransporte()) {
                 Producto producto = factura.getListaProductos().get(0);
                 Establecimiento establecimiento = producto.getEstablecimiento();
-                this.getCuentaCorriente().transaccion(totalFactura, establecimiento.getCuentaCorriente(), "bolsilloTransporte");
-                System.out.println(totalFactura + indice);
-                this.listadoFacturas.add(0,factura);
-                this.listadoFacturasPorPagar.remove(i);
-                resultado = "Factura #: " + (indice) + ", ID: " + factura.getID() + " pagada con éxito";
+                this.getCuentaCorriente().transaccion(totalFactura, establecimiento.getCuentaCorriente(), "bolsilloTransporte");                this.listadoFacturas.add(0,factura);
+                this.listadoFacturasPorPagar.remove(factura);
+                val++;
+                resultado = "Factura con ID: " + factura.getID() + " pagada con éxito";
                 
             } else {
-                resultado = "No hay dinero suficiente para pagar la factura #: " + (indice) + ", ID: " + factura.getID();
+            	val++;
+                resultado = "No hay dinero suficiente para pagar la factura con ID: " + factura.getID();
                
             }
         } else if (tipoServicio.equals("establecimiento")) {       	
@@ -277,12 +272,13 @@ public ArrayList<String> cobroFacturas(ArrayList<Factura> facturas) {
                 Establecimiento establecimiento = producto.getEstablecimiento();
                 this.getCuentaCorriente().transaccion(totalFactura, establecimiento.getCuentaCorriente(), "bolsilloEstablecimientos");
                 this.listadoFacturas.add(0,factura);
-                this.listadoFacturasPorPagar.remove(i);
-                resultado = "Factura #: " + (indice) + ", ID: " + factura.getID() + " pagada con éxito";
+                this.listadoFacturasPorPagar.remove(factura);
+                val++;
+                resultado = "Factura con ID: " + factura.getID() + " pagada con éxito";
                 
             } else {
-                resultado = "No hay dinero suficiente para pagar la factura #: " + (indice) + ", ID: " + factura.getID();
-                
+            	val++;
+                resultado = "No hay dinero suficiente para pagar la factura con ID: " + factura.getID();
             }
         } else if (tipoServicio.equals("empleado")) {
             if (totalFactura <= this.getCuentaCorriente().getBolsilloTrabajadores()) {
@@ -290,11 +286,13 @@ public ArrayList<String> cobroFacturas(ArrayList<Factura> facturas) {
                 Establecimiento establecimiento = producto.getEstablecimiento();
                 this.getCuentaCorriente().transaccion(totalFactura, establecimiento.getCuentaCorriente(), "bolsilloTrabajadores");
                 this.listadoFacturas.add(0,factura);
-                this.listadoFacturasPorPagar.remove(i);
-                resultado = "Factura #: " + (indice) + ", ID: " + factura.getID() + " pagada con éxito";
+                this.listadoFacturasPorPagar.remove(factura);
+                val++;
+                resultado = "Factura con ID: " + factura.getID() + " pagada con éxito";
                
             } else {
-                resultado = "No hay dinero suficiente para pagar la factura #: " + (indice) + ", ID: " + factura.getID();
+            	val++;
+                resultado = "No hay dinero suficiente para pagar la factura con ID: " + factura.getID();
            
             }
         } else if (tipoServicio.equals("inventario")) {
@@ -303,17 +301,15 @@ public ArrayList<String> cobroFacturas(ArrayList<Factura> facturas) {
                 Establecimiento establecimiento = producto.getEstablecimiento();
                 this.getCuentaCorriente().transaccion(totalFactura, establecimiento.getCuentaCorriente(), "bolsilloInventario");
                 this.listadoFacturas.add(0,factura);
-                this.listadoFacturasPorPagar.remove(i);
-                resultado = "Factura #: " + (indice) + ", ID: " + factura.getID() + " pagada con éxito";
+                this.listadoFacturasPorPagar.remove(factura);
+                val++;
+                resultado = "Factura con ID: " + factura.getID() + " pagada con éxito";
             
             } else {
-                resultado = "No hay dinero suficiente para pagar la factura #: " + (indice) + ", ID: " + factura.getID();
+            	val++;
+                resultado = "No hay dinero suficiente para pagar la factura con ID: " + factura.getID();
                 }
-        }
-
-        resultados.add(resultado);
-    }
-    return resultados;
+        }return resultado;
 }
     			 
     public String informeGastosFacturas() {
@@ -359,7 +355,65 @@ public ArrayList<String> cobroFacturas(ArrayList<Factura> facturas) {
     	 "Gastos inventario: " + bolsilloPagoCredito;
     }
     	 
-    	 
+    public String reajusteDinero() {
+    	
+	ArrayList<Establecimiento> funerarias = Establecimiento.filtarEstablecimiento("funeraria");
+	double inventarioMax = 0;
+	double transporteMax = 0;
+	double establecimientoMax = 0;
+	double trabajadoresMax = 0;
+	double creditoMax = 0;
+	Funeraria inventario = null;
+    Funeraria transporte = null;
+	Funeraria establecimiento = null;
+	Funeraria trabajadores = null;
+	Funeraria credito = null;
+	   for(int i = 0;i < funerarias.size();i++) {
+		   Funeraria funeraria = (Funeraria)funerarias.get(i);
+		   double bolsilloInventario = 0;
+			double bolsilloTransporte = 0;
+			double bolsilloEstablecimientos = 0;
+			double bolsilloPagoCredito = 0;
+			double bolsilloTrabajadores = 0;
+			for(int a = 0;a < funeraria.listadoFacturas.size();a++) {
+				Factura factura = this.listadoFacturas.get(a);
+				if(factura.getServicio().equals("bolsilloInventario")) {
+					bolsilloInventario += factura.getTotal();
+				}else if(factura.getServicio().equals("bolsilloTransporte")) {
+					bolsilloTransporte += factura.getTotal();
+				}else if(factura.getServicio().equals("bolsilloEstablecimientos")) {
+					bolsilloEstablecimientos += factura.getTotal();
+				}else if(factura.getServicio().equals("bolsilloTrabajadores")) {
+					bolsilloTrabajadores += factura.getTotal();
+				}if(factura.getServicio().equals("bolsilloPagoCredito")) {
+					bolsilloPagoCredito += factura.getTotal();
+				}}
+		   if(bolsilloInventario > inventarioMax) {
+			   inventario = funeraria;
+		   }
+		   if(bolsilloTransporte > transporteMax) {
+			   transporte = funeraria;
+		   }
+		   if(bolsilloEstablecimientos > establecimientoMax) {
+			   establecimiento = funeraria;
+		   }
+		   if(bolsilloTrabajadores > trabajadoresMax) {
+			   trabajadores = funeraria;
+		   }
+		   if(bolsilloPagoCredito > creditoMax) {
+			   credito = funeraria;
+		   }
+	   }cuentaAhorros.transaccion(100000, inventario.getCuentaCorriente(), "bolsilloInventario");
+	   cuentaAhorros.transaccion(100000, transporte.getCuentaCorriente(), "bolsilloTransporte");
+	   cuentaAhorros.transaccion(100000, establecimiento.getCuentaCorriente(), "bolsilloEstablecimientos");
+	   cuentaAhorros.transaccion(100000, trabajadores.getCuentaCorriente(), "bolsilloTrabajadores");
+	   cuentaAhorros.transaccion(100000, credito.getCuentaCorriente(), "bolsilloPagoCredito");
+	   return "La funeraria: " + inventario.getNombre() + "requiere mayor cantidad de dinero para actualizar el inventario, por lo que se le ha transferido 100000" + "\n" +
+	   "La funeraria: " + transporte.getNombre() + "requiere mayor cantidad de dinero para la compra y la gestion de vehiculos, por lo que se le ha transferido 100000" + "\n" +
+	   "La funeraria: " + establecimiento.getNombre() + "requiere mayor cantidad de dinero para el pago a los establecimientos, por lo que se le ha transferido 100000" + "\n" +
+	   "La funeraria: " + trabajadores.getNombre() + "requiere mayor cantidad de dinero para la contratacion y el pago de los empleados, por lo que se le ha transferido 100000" + "\n" +
+	   "La funeraria: " + credito.getNombre() + "requiere mayor cantidad de dinero para el pago de su credito, por lo que se le ha transferido 100000";
+    }
 
 public String pagoTrabajadores(Empleado empleado) {
     	 
