@@ -54,10 +54,10 @@ public abstract class Inventario implements Serializable{
 	
 	public int determinarCategoria(int edad) {
 		int categoria=0;
-		if(edad<30) {
+		if(edad<18) {
 			categoria=0;
 		}
-		else if(edad>30 && edad<60) {
+		else if(edad>=18 && edad<60) {
 			categoria=1;
 		}else {categoria=2;}
 		

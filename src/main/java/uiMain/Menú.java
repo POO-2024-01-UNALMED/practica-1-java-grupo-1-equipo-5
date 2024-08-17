@@ -170,6 +170,7 @@ public class Menú {
 				indice=1;
 				for(Establecimiento auxCrematorio:crematorios) {
 					System.out.println("["+indice+"] "+auxCrematorio);
+					indice+=1;
 				}
 				
 				System.out.print("Ingrese el índice del crematorio deseado: ");
@@ -227,6 +228,7 @@ public class Menú {
 				indice=1;
 				for (Empleado auxEmpleado:empleados) {
 					System.out.println("["+indice+"] "+auxEmpleado);
+					indice+=1;
 				}
 				
 				System.out.print("Ingrese el índice del empleado deseado: ");
@@ -300,6 +302,7 @@ public class Menú {
 				
 				for(Establecimiento auxCementerio:cementerios) {
 					System.out.println("["+indice+"] "+auxCementerio+" - Horarios disponibles "+ auxCementerio.getHorarioEventos().size());
+					indice+=1;
 				}
 				System.out.print("Indique el índice del cementerio: ");
 				indice=scanner.nextInt();
@@ -689,7 +692,7 @@ public class Menú {
 		
 		Urna urnaF1C11=new Urna("Urnita Eterna Paz",cementerioF11Ce,70,1,"fija");
 		Urna urnaF1C12=new Urna("Urnita Memoria Serene",cementerioF11Ce,80,0,"ordinaria");
-		Urna urnaF1C13=new Urna("Urnita Descanso Sagrado",cementerioF11Ce,10,0,"ordinaria");
+		Urna urnaF1C13=new Urna("Urnita Descanso Sagrado",cementerioF11Ce,60,0,"ordinaria");
 		Urna urnaF1C14=new Urna("Urnita Luz Eterna",cementerioF11Ce,60,1,"fija");
 		
 		
@@ -697,7 +700,7 @@ public class Menú {
 		
 		Urna urnaF1C21=new Urna("Urnita Tranquilidad Infinita",cementerioF12Ce,70,1,"fija");
 		Urna urnaF1C22=new Urna("Urnita Homenaje Perpetuo",cementerioF12Ce,80,0,"ordinaria");
-		Urna urnaF1C23=new Urna("Urnita Amanecer Sereno",cementerioF12Ce,10,0,"ordinaria");
+		Urna urnaF1C23=new Urna("Urnita Amanecer Sereno",cementerioF12Ce,70,0,"ordinaria");
 		Urna urnaF1C24=new Urna("Urnita Refugio del Alma",cementerioF12Ce,60,1,"fija");
 		
 		//Objetos Cementerio 3 Urna Cenizas
