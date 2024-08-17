@@ -1,6 +1,7 @@
 package gestorAplicacion.personas;
 
 
+import gestorAplicacion.establecimientos.Funeraria;
 import gestorAplicacion.financiero.*;
 
 public class Empleado extends Persona{
@@ -17,15 +18,16 @@ public class Empleado extends Persona{
 	
 		
 	//Constructor
-	public Empleado(String nombre, long CC, CuentaBancaria cuentaBancaria,String jornada, String cargo, double salario) {
-		super(nombre, CC, 0,  cuentaBancaria);
+	public Empleado(String nombre, CuentaBancaria cuentaBancaria,String jornada, String cargo, double salario,Funeraria funeraria) {
+		super(nombre, 0, 0,  cuentaBancaria);
 		this.jornada=jornada;
 		this.cargo=cargo;
 		this.salario=salario;
+		funeraria.agregarEmpleado(this);
 	}
 	
-	public Empleado(String nombre, long CC, int edad, CuentaBancaria cuentaBancaria,String jornada, String cargo, double salario, int Experiencia,int trabajosHechos) {
-		super(nombre, CC, edad, cuentaBancaria);
+	public Empleado(String nombre,int edad, CuentaBancaria cuentaBancaria,String jornada, String cargo, double salario, int Experiencia,int trabajosHechos) {
+		super(nombre, 0, edad, cuentaBancaria);
 		this.jornada=jornada;
 		this.cargo=cargo;
 		this.salario=salario;

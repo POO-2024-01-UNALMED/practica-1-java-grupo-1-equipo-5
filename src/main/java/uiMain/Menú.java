@@ -529,8 +529,94 @@ public class Menú {
 		//Objetos Funeraria
 		
 		Funeraria funeraria1 = new Funeraria("Eterna Paz", cuenta,cuenta);
+		
+		//Empleados sepultureros
+		
+		Empleado empleadoF11S= new Empleado("Adrián Vargas",null,"mañana","sepulturero",1000000,funeraria1);
+		Empleado empleadoF12S= new Empleado("Benjamín Díaz",null,"mañana","sepulturero",1000000,funeraria1);
+		Empleado empleadoF13S= new Empleado("Cristian Herrera",null,"tarde","sepulturero",1000000,funeraria1);
+		Empleado empleadoF14S= new Empleado("Diana Moreno",null,"tarde","sepulturero",1000000,funeraria1);
+		Empleado empleadoF15S= new Empleado("Gabriela Arias",null,"noche","sepulturero",1000000,funeraria1);
+		
+		
+		//Empleados cremador
+		
+		Empleado empleadoF11C= new Empleado("David Soto",null,"mañana","cremador",1000000,funeraria1);
+		Empleado empleadoF12C= new Empleado("Esteban Cordero",null,"mañana","cremador",1000000,funeraria1);
+		Empleado empleadoF13C= new Empleado("Federico Gil",null,"tarde","cremador",1000000,funeraria1);
+		Empleado empleadoF14C= new Empleado("Elena Vázquez",null,"noche","cremador",1000000,funeraria1);
+		Empleado empleadoF15C= new Empleado("Isabela López",null,"noche","cremador",1000000,funeraria1);
+		
+		
+		
 		Funeraria funeraria2 = new Funeraria("Caminos de Luz", cuenta,cuenta);
+		
+		//Empleados sepultureros
+		
+		Empleado empleadoF21S= new Empleado("Guillermo Romero",null,"mañana","sepulturero",1000000,funeraria2);
+		Empleado empleadoF22S= new Empleado("Jorge Álvarez",null,"tarde","sepulturero",1000000,funeraria2);
+		Empleado empleadoF23S= new Empleado("Florencia Pérez",null,"tarde","sepulturero",1000000,funeraria2);
+		Empleado empleadoF24S= new Empleado("Jazmín Navarro",null,"tarde","sepulturero",1000000,funeraria2);
+		Empleado empleadoF25S= new Empleado("Alicia Moreno",null,"noche","sepulturero",1000000,funeraria2);
+				
+				
+		//Empleados cremador
+				
+		Empleado empleadoF21C= new Empleado("Marco Ruiz",null,"noche","cremador",1000000,funeraria2);
+		Empleado empleadoF22C= new Empleado("Natalia Ortega",null,"mañana","cremador",1000000,funeraria2);
+		Empleado empleadoF23C= new Empleado("Casey Morales",null,"tarde","cremador",1000000,funeraria2);
+		Empleado empleadoF24C= new Empleado("Karla Soto",null,"noche","cremador",1000000,funeraria2);
+		Empleado empleadoF25C= new Empleado("Dakota Torres",null,"noche","cremador",1000000,funeraria2);
+		
+		
+		
+		
 		Funeraria funeraria3 = new Funeraria("Recuerdos Eternos", cuenta,cuenta);
+		
+		Empleado empleadoF31S= new Empleado("Nicolás Fernández",null,"mañana","sepulturero",1000000,funeraria3);
+		Empleado empleadoF32S= new Empleado("Alex Rivera",null,"tarde","sepulturero",1000000,funeraria3);
+		Empleado empleadoF33S= new Empleado("Elliot Cruz",null,"tarde","sepulturero",1000000,funeraria3);
+		Empleado empleadoF34S= new Empleado("Camila Silva",null,"mañana","sepulturero",1000000,funeraria3);
+		Empleado empleadoF35S= new Empleado("Harper Fernández",null,"noche","sepulturero",1000000,funeraria3);
+				
+				
+		//Empleados cremador
+				
+		Empleado empleadoF31C= new Empleado("Jesse Jiménez",null,"noche","cremador",1000000,funeraria3);
+		Empleado empleadoF32C= new Empleado("Logan Mendoza",null,"mañana","cremador",1000000,funeraria3);
+		Empleado empleadoF33C= new Empleado("Sam Vargas",null,"tarde","cremador",1000000,funeraria3);
+		Empleado empleadoF34C= new Empleado("Karla Soto",null,"mañana","cremador",1000000,funeraria3);
+		Empleado empleadoF35C= new Empleado("Taylor López",null,"noche","cremador",1000000,funeraria3);
+	
+		
+		//Empleados generales
+		
+		//Empleados conductor
+		
+		Empleado empleadoC1= new Empleado("Bruno Salgado",null,"mañana","conductor",1000000,funeraria1);
+		Empleado empleadoC2= new Empleado("Bárbara López",null,"mañana","conductor",1000000,funeraria1);
+		Empleado empleadoC3= new Empleado("Óscar Morales",null,"tarde","conductor",1000000,funeraria1);
+		Empleado empleadoC4= new Empleado("Dulce María Reyes",null,"tarde","conductor",1000000,funeraria1);
+		Empleado empleadoC5= new Empleado("Evelyn Rodríguez",null,"noche","conductor",1000000,funeraria1);
+		Empleado empleadoC6= new Empleado("Kevin Castillo",null,"noche","conductor",1000000,funeraria1);
+		
+		
+		//Agregar empleados a funeraria 2
+		funeraria2.agregarEmpleado(empleadoC1);
+		funeraria2.agregarEmpleado(empleadoC2);
+		funeraria2.agregarEmpleado(empleadoC3);
+		funeraria2.agregarEmpleado(empleadoC4);
+		funeraria2.agregarEmpleado(empleadoC5);
+		funeraria2.agregarEmpleado(empleadoC6);
+		
+		//Agregar empleados a funeraria 3
+		funeraria3.agregarEmpleado(empleadoC1);
+		funeraria3.agregarEmpleado(empleadoC2);
+		funeraria3.agregarEmpleado(empleadoC3);
+		funeraria3.agregarEmpleado(empleadoC4);
+		funeraria3.agregarEmpleado(empleadoC5);
+		funeraria3.agregarEmpleado(empleadoC6);
+		
 		
 		//Familiares Mujeres
 		Familiar a1= new Familiar("Mario",711,50,cuenta,"padre",17);
@@ -1000,6 +1086,7 @@ public class Menú {
 			
 		default:
 			System.out.println("Número fuera de rango");
+			break;
 		}
 		
 		
