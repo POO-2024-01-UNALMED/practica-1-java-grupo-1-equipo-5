@@ -257,7 +257,6 @@ public String cobroFacturas(Factura factura) {
                 Producto producto = factura.getListaProductos().get(0);
                 Establecimiento establecimiento = producto.getEstablecimiento();
                 this.getCuentaCorriente().transaccion(totalFactura, establecimiento.getCuentaCorriente(), "bolsilloTransporte");                this.listadoFacturas.add(0,factura);
-                this.listadoFacturas.add(factura);
                 this.listadoFacturasPorPagar.remove(factura);
                 val++;
                 resultado = "Factura con ID: " + factura.getID() + " pagada con éxito";
@@ -286,7 +285,6 @@ public String cobroFacturas(Factura factura) {
                 Producto producto = factura.getListaProductos().get(0);
                 Establecimiento establecimiento = producto.getEstablecimiento();
                 this.getCuentaCorriente().transaccion(totalFactura, establecimiento.getCuentaCorriente(), "bolsilloTrabajadores");
-                this.listadoFacturas.add(factura);
                 this.listadoFacturasPorPagar.remove(factura);
                 val++;
                 resultado = "Factura con ID: " + factura.getID() + " pagada con éxito";
@@ -326,19 +324,19 @@ public String cobroFacturas(Factura factura) {
     	int facturasTrabajadores = 0;
     	for(int i = 0;i < this.listadoFacturas.size();i++) {
     		Factura factura = this.listadoFacturas.get(i);
-    		if(factura.getServicio().equals("bolsilloInventario")) {
+    		if(factura.getServicio().equals("inventario")) {
     			bolsilloInventario += factura.getTotal();
     			facturasInventario++;
-    		}if(factura.getServicio().equals("bolsilloTransporte")) {
+    		}else if(factura.getServicio().equals("vehiculo")) {
     			bolsilloTransporte += factura.getTotal();
     			facturasTransporte++;
-    		}if(factura.getServicio().equals("bolsilloEstablecimientos")) {
+    		}else if(factura.getServicio().equals("establecimiento")) {
     			bolsilloEstablecimientos += factura.getTotal();
     			facturasEstablecimientos++;
-    		}if(factura.getServicio().equals("bolsilloTrabajadores")) {
+    		}else if(factura.getServicio().equals("empleado")) {
     			bolsilloTrabajadores += factura.getTotal();
-    			bolsilloTrabajadores++;
-    		}if(factura.getServicio().equals("bolsilloPagoCredito")) {
+    			facturasTrabajadores++;
+    		}else if(factura.getServicio().equals("credito")) {
     			bolsilloPagoCredito += factura.getTotal();
     			facturasPagoCredito++;
     		}
@@ -379,47 +377,52 @@ public String cobroFacturas(Factura factura) {
 			double bolsilloTrabajadores = 0;
 			for(int a = 0;a < funeraria.listadoFacturas.size();a++) {
 				Factura factura = this.listadoFacturas.get(a);
-				if(factura.getServicio().equals("bolsilloInventario")) {
+				if(factura.getServicio().equals("inventario")) {
 					bolsilloInventario += factura.getTotal();
-				}else if(factura.getServicio().equals("bolsilloTransporte")) {
+				}if(factura.getServicio().equals("vehiculo")) {
 					bolsilloTransporte += factura.getTotal();
-				}else if(factura.getServicio().equals("bolsilloEstablecimientos")) {
+				}if(factura.getServicio().equals("establecimiento")) {
 					bolsilloEstablecimientos += factura.getTotal();
-				}else if(factura.getServicio().equals("bolsilloTrabajadores")) {
+				}if(factura.getServicio().equals("empleado")) {
 					bolsilloTrabajadores += factura.getTotal();
-				}if(factura.getServicio().equals("bolsilloPagoCredito")) {
+				}if(factura.getServicio().equals("credito")) {
 					bolsilloPagoCredito += factura.getTotal();
 				}}
 		   if(bolsilloInventario > inventarioMax) {
+			   inventarioMax = bolsilloInventario;
 			   inventario = funeraria;
 		   }
 		   if(bolsilloTransporte > transporteMax) {
+			   transporteMax = bolsilloTransporte;
 			   transporte = funeraria;
 		   }
 		   if(bolsilloEstablecimientos > establecimientoMax) {
+			   establecimientoMax = bolsilloEstablecimientos;
 			   establecimiento = funeraria;
 		   }
 		   if(bolsilloTrabajadores > trabajadoresMax) {
+			   trabajadoresMax = bolsilloTrabajadores;
 			   trabajadores = funeraria;
 		   }
 		   if(bolsilloPagoCredito > creditoMax) {
+			   creditoMax = bolsilloPagoCredito;
 			   credito = funeraria;
 		   }}
 		   if(inventarioMax == 0) {resultado += "No hubo Funerarias que necesitaran un reajuste de dinero para inventario" + "\n";}
 		   else{cuentaAhorros.transaccion(100000, inventario.getCuentaCorriente(), "bolsilloInventario");
-		   resultado += "La funeraria: " + inventario.getNombre() + "requiere mayor cantidad de dinero para actualizar el inventario, por lo que se le ha transferido 100000" + "\n";}
+		   resultado += "La funeraria: " + inventario.getNombre() + " requiere mayor cantidad de dinero para actualizar el inventario, por lo que se le ha transferido 100000" + "\n";}
 		   if(transporteMax == 0) {resultado += "No hubo Funerarias que necesitaran un reajuste de dinero para transportes" + "\n";}
 		   else {cuentaAhorros.transaccion(100000, transporte.getCuentaCorriente(), "bolsilloTransporte");
-		   resultado += "La funeraria: " + transporte.getNombre() + "requiere mayor cantidad de dinero para la compra y la gestion de vehiculos, por lo que se le ha transferido 100000" + "\n";
+		   resultado += "La funeraria: " + transporte.getNombre() + " requiere mayor cantidad de dinero para la compra y la gestion de vehiculos, por lo que se le ha transferido 100000" + "\n";
 		   }if(establecimientoMax == 0) {resultado += "No hubo Funerarias que necesitaran un reajuste de dinero para establecimientos" + "\n";}
 		   else {cuentaAhorros.transaccion(100000, establecimiento.getCuentaCorriente(), "bolsilloEstablecimientos");
-		   resultado += "La funeraria: " + establecimiento.getNombre() + "requiere mayor cantidad de dinero para el pago a los establecimientos, por lo que se le ha transferido 100000" + "\n";}
+		   resultado += "La funeraria: " + establecimiento.getNombre() + " requiere mayor cantidad de dinero para el pago a los establecimientos, por lo que se le ha transferido 100000" + "\n";}
 		   if(trabajadoresMax == 0) {resultado += "No hubo Funerarias que necesitaran un reajuste de dinero para trabajadores" + "\n";}
 		   else {cuentaAhorros.transaccion(100000, trabajadores.getCuentaCorriente(), "bolsilloTrabajadores");
-		   resultado += "La funeraria: " + trabajadores.getNombre() + "requiere mayor cantidad de dinero para la contratacion y el pago de los empleados, por lo que se le ha transferido 100000" + "\n";}
+		   resultado += "La funeraria: " + trabajadores.getNombre() + " requiere mayor cantidad de dinero para la contratacion y el pago de los empleados, por lo que se le ha transferido 100000" + "\n";}
 		   if(creditoMax == 0) {resultado += "No hubo Funerarias que necesitaran un reajuste de dinero para credito" + "\n";}
 		   else {cuentaAhorros.transaccion(100000, credito.getCuentaCorriente(), "bolsilloPagoCredito");
-			   resultado +="La funeraria: " + credito.getNombre() + "requiere mayor cantidad de dinero para el pago de su credito, por lo que se le ha transferido 100000";}
+			   resultado +="La funeraria: " + credito.getNombre() + " requiere mayor cantidad de dinero para el pago de su credito, por lo que se le ha transferido 100000";}
 	   
 	   return resultado;
     }
@@ -441,7 +444,7 @@ public String pagoTrabajadores(Empleado empleado) {
     		     
     		     this.getCuentaCorriente().transaccion(paga, empleado.getCuentaBancaria(), "bolsilloTrabajadores");
     		     empleado.setTrabajosHechos(0);
-    		     this.listadoFacturas.add(new Factura("FacturaTrabajador", paga, "2024", this, "trabajador"));
+    		     this.listadoFacturas.add(new Factura("FacturaTrabajador", paga, "2024", this, "empleado"));
     		     return "El trabajador ha hecho: " + trabajos +" trabajos,"+ "\n" +
     		     "Y tiene una calificacion de: "  + calificacion + "\n" +
     		     "por lo que obtuvo una paga de: " + paga;
@@ -454,7 +457,7 @@ public String pagoTrabajadores(Empleado empleado) {
     	     
     	     this.getCuentaCorriente().transaccion(paga, empleado.getCuentaBancaria(), "bolsilloTrabajadores");
     	     empleado.setTrabajosHechos(0);
-    	     this.listadoFacturas.add(new Factura("FacturaTrabajador", paga, "2024", this, "trabajador"));
+    	     this.listadoFacturas.add(new Factura("FacturaTrabajador", paga, "2024", this, "empleado"));
     	     return "El trabajador ha hecho: " + trabajos +" trabajos,"+ "\n" +
     	     "Y tiene una calificacion de: "  + calificacion + "\n" +
 		     "por lo que obtuvo una paga de: " + paga;}
@@ -466,7 +469,7 @@ public String pagoTrabajadores(Empleado empleado) {
     	     
     	     this.getCuentaCorriente().transaccion(paga, empleado.getCuentaBancaria(), "bolsilloTrabajadores");
     	     empleado.setTrabajosHechos(0);
-    	     this.listadoFacturas.add(new Factura("FacturaTrabajador", paga, "2024", this, "trabajador"));
+    	     this.listadoFacturas.add(new Factura("FacturaTrabajador", paga, "2024", this, "empleado"));
     	     return "El trabajador ha hecho: " + trabajos +" trabajos,"+ "\n" +
     	     "Y tiene una calificacion de: "  + calificacion + "\n" +
 		     "por lo que obtuvo una paga de: " + paga;
@@ -506,7 +509,7 @@ public String pedirCredito() {
 		this.getCuentaCorriente().depositar(div, "bolsilloInventario");
 		this.getCuentaCorriente().depositar(div, "bolsilloEstablecimientos");
 		montoCredito += (this.getCuentaCorriente().getInteres() * montoCredito);
-		Factura credito = new Factura("credito", montoCredito, "2024", this, "bolsilloPagoCredito");
+		Factura credito = new Factura("credito", montoCredito, "2024", this, "credito");
 		
 		this.getCuentaCorriente().getCredito().add(credito);
 		return "Credito aceptado";}

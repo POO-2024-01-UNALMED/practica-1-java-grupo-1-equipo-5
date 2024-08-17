@@ -302,14 +302,14 @@ public static void main(String[] args) {
 		familiar.add(e);
 		CuentaBancaria cuentaProveedor = new CuentaBancaria(1231232,"proveedor",1000000,"BBVA");
 		Establecimiento Proveedor = new Establecimiento("Proveedor", cuentaProveedor);
-		Empleado empleado1 = new Empleado("Alberto",12345,30,cuenta8,"mañana","sepulturero",900000,2,5);
-		Empleado empleado2 = new Empleado("Maria",12345,23,null,"noche","sepulturero",900000,3,5);
-		Empleado empleado3 = new Empleado("Anastasia",12345,43,null,"noche","cremador",900000,3,5);
-		Empleado empleado4 = new Empleado("Gilberto",12345,44,null,"mañana","cremador",900000,3,0);
-		Empleado empleado5 = new Empleado("Pepito",12345,18,null,"mañana","sepulturero",900000,1,0);
-		Empleado empleado6 = new Empleado("Camila",12345,33,null,"tarde","cremador",900000,0,3);
-		Empleado empleado7 = new Empleado("Santiago",12345,43,null,"noche","sepulturero",900000,32,5);
-		Empleado empleado8 = new Empleado("Anastasio",12345,43,null,"tarde","cremador",900000,5,2);
+		Empleado empleado1 = new Empleado("Alberto",30,cuenta8,"mañana","sepulturero",9000,2,5);
+		Empleado empleado2 = new Empleado("Maria",23,null,"noche","sepulturero",9000,3,9);
+		Empleado empleado3 = new Empleado("Anastasia",43,null,"noche","cremador",10000,3,10);
+		Empleado empleado4 = new Empleado("Gilberto",44,null,"mañana","cremador",10000,3,0);
+		Empleado empleado5 = new Empleado("Pepito",18,null,"mañana","sepulturero",9000,1,0);
+		Empleado empleado6 = new Empleado("Camila",33,null,"tarde","cremador",10000,0,3);
+		Empleado empleado7 = new Empleado("Santiago",43,null,"noche","sepulturero",9000,32,5);
+		Empleado empleado8 = new Empleado("Anastasio",43,null,"tarde","cremador",10000,5,2);
 		Vehiculo veh1= new Vehiculo(TipoVehiculo.BERLINA,fulanita,"azul", "2345",3232,3);
 		Vehiculo veh2= new Vehiculo(TipoVehiculo.BUS,fulanita,"azul", "2345",344,3);
 		Vehiculo veh3= new Vehiculo(TipoVehiculo.CARROZA,fulanita,"azul", "2345",234,4);
@@ -319,7 +319,9 @@ public static void main(String[] args) {
 		Producto producto4 =  new Producto("Urnas",1000,3,Proveedor);
 		Producto producto5 =  new Producto("Urnas",1000,3,Proveedor);
 		Producto producto6 =  new Producto("Urnas",1000,3,Proveedor);
+		Producto producto7 =  new Producto("derechos de cremacion",10000,3,Proveedor);
 		ArrayList<Producto> urnas=new ArrayList<Producto>();
+		ArrayList<Producto> derechos = new ArrayList<Producto>();
 		ArrayList<Producto> transporte=new ArrayList<Producto>();
 		ArrayList<Producto> transporte1=new ArrayList<Producto>();
 		ArrayList<Producto> transporte2=new ArrayList<Producto>();
@@ -329,8 +331,10 @@ public static void main(String[] args) {
 		urnas.add(producto4);
 		urnas.add(producto5);
 		urnas.add(producto6);
+		derechos.add(producto7);
 		Factura factura9 = new Factura(urnas,"inventario");
 		Factura factura6 = new Factura(urnas,"inventario");
+		Factura factura10 = new Factura(derechos,"establecimiento");
         Factura factura5 = new Factura(transporte,"vehiculo");
         Factura factura7 = new Factura(transporte1,"vehiculo");
         Factura factura8 = new Factura(transporte2,"vehiculo");
@@ -339,6 +343,8 @@ public static void main(String[] args) {
         factura6.totalFactura();
         factura5.totalFactura();
         factura9.totalFactura();
+        factura10.totalFactura();
+        funita.getListadoFacturasPorPagar().add(factura10);
         funita.getListadoFacturasPorPagar().add(factura7);
 		funita.getListadoFacturasPorPagar().add(factura8);
 		funita.getListadoFacturasPorPagar().add(factura9);
@@ -357,8 +363,8 @@ public static void main(String[] args) {
 		funita.agregarEmpleado(empleado1);
 		funita.agregarEmpleado(empleado4);
 		funita.agregarEmpleado(empleado3);
-		Factura factura1 = new Factura("Funeral", 1000, "2772", a1, "Establecimiento");
-		a1.agregarFactura(factura1);	
+		Factura factura1 = new Factura("Funeral", 1000, "2772", a1, "establecimiento");
+		a1.agregarFactura(factura1);
 		funcionalidadFinanzas();
 			
 
