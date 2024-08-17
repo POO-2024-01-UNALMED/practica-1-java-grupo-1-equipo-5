@@ -101,6 +101,9 @@ public class Funeraria extends Establecimiento{
 	public void agregarFactura(Factura factura) {
         listadoFacturasPorPagar.add(factura);
     }
+	public void agregarFacturapagada(Factura factura) {
+        listadoFacturas.add(factura);
+    }
 	
 	
 	

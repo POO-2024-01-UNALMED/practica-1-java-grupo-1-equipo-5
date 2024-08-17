@@ -26,6 +26,7 @@ public class Empleado extends Persona{
 		funeraria.agregarEmpleado(this);
 	}
 	
+	
 	public Empleado(String nombre,int edad, CuentaBancaria cuentaBancaria,String jornada, String cargo, double salario, int Experiencia,int trabajosHechos) {
 		super(nombre, 0, edad, cuentaBancaria);
 		this.jornada=jornada;

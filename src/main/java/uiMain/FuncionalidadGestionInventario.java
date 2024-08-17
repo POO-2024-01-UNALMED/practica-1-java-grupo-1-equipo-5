@@ -383,17 +383,7 @@ public class FuncionalidadGestionInventario {
     	CuentaBancaria cuentaFun2 = new CuentaBancaria(1234, "Funeraria 2", 1000000, "Ala");
     	CuentaBancaria cuentaFun3 = new CuentaBancaria(12345, "Funeraria 3", 1000000, "Ala");
     	
-    	//cuenta bancaria establecimientos
-    	CuentaBancaria cuentalocal0 = new CuentaBancaria(123456, "local1 productos", 100000000, "Ala");
-    	CuentaBancaria cuentalocal1= new CuentaBancaria(123457L, "local2 productos", 100000000.00, "Ala");
-    	CuentaBancaria cuentalocal2= new CuentaBancaria(123458L, "local3 productos", 100000000.00, "Ala");
-    	CuentaBancaria cuentalocal3= new CuentaBancaria(123459L, "local4 productos", 100000000.00, "Ala");
-    	CuentaBancaria cuentalocal4= new CuentaBancaria(123460L, "local5 Vehiculos", 100000000.00, "Ala");
-    	CuentaBancaria cuentalocal5= new CuentaBancaria(123461L, "local6 Vehiculos", 100000000.00, "Ala");
-    	CuentaBancaria cuentalocal6= new CuentaBancaria(123462L, "local7 Vehiculos", 100000000.00, "Ala");
-    	CuentaBancaria cuentalocal7= new CuentaBancaria(123463L, "local8 Empleados", 100000000.00, "Ala");
-    	CuentaBancaria cuentalocal8= new CuentaBancaria(123464L, "local9 Empleados", 100000000.00, "Ala");
-    	CuentaBancaria cuentalocal9= new CuentaBancaria(123465L, "local10 Empleados", 100000000.00, "Ala");
+    	
 
     	
     	//Cuenta jefe
@@ -405,18 +395,30 @@ public class FuncionalidadGestionInventario {
     	Funeraria Fun2 = new Funeraria("Fun2",cuentaFun2,cuentaFun2);
     	Funeraria Fun3 = new Funeraria("Fun3",cuentaFun3,cuentaFun3);
     	
+    	//cuenta bancaria establecimientos
+    	CuentaBancaria cuentalocal0 = new CuentaBancaria(123456, "local1 productos", 100000000, "BANCOLOMBIA");
+    	CuentaBancaria cuentalocal1= new CuentaBancaria(123457L, "local2 productos", 100000000.00, "BANCOLOMBIA");
+    	CuentaBancaria cuentalocal2= new CuentaBancaria(123458L, "local3 productos", 100000000.00, "BANCOLOMBIA");
+    	CuentaBancaria cuentalocal3= new CuentaBancaria(123459L, "local4 productos", 100000000.00, "BANCOLOMBIA");
+    	CuentaBancaria cuentalocal4= new CuentaBancaria(123460L, "local5 Vehiculos", 100000000.00, "BANCOLOMBIA");
+    	CuentaBancaria cuentalocal5= new CuentaBancaria(123461L, "local6 Vehiculos", 100000000.00, "BANCOLOMBIA");
+    	CuentaBancaria cuentalocal6= new CuentaBancaria(123462L, "local7 Vehiculos", 100000000.00, "BANCOLOMBIA");
+    	CuentaBancaria cuentalocal7= new CuentaBancaria(123463L, "local8 Empleados", 100000000.00, "BANCOLOMBIA");
+    	CuentaBancaria cuentalocal8= new CuentaBancaria(123464L, "local9 Empleados", 100000000.00, "BANCOLOMBIA");
+    	CuentaBancaria cuentalocal9= new CuentaBancaria(123465L, "local10 Empleados", 100000000.00, "BANCOLOMBIA");
+    	
     	//Jefes establecimientos
     	//public Empleado(String nombre, long CC, CuentaBancaria cuentaBancaria,String jornada, String cargo, double salario
-    	Empleado jefe1 = new Empleado("Fernando López", 123456789L,cuentajefe , "mañana", "JEFE1", 5500.00);
-    	Empleado jefe2 = new Empleado("María García", 987654321L, cuentajefe, "tarde", "JEFE2", 5600.00);
-    	Empleado jefe3 = new Empleado("Carlos Pérez", 112233445L, cuentajefe, "noche", "JEFE3", 5700.00);
-    	Empleado jefe4 = new Empleado("Ana Martínez", 556677889L, cuentajefe, "mañana", "JEFE4", 5800.00);
-    	Empleado jefe5 = new Empleado("Luis Rodríguez", 998877665L, cuentajefe, "tarde", "JEFE5", 5900.00);
-    	Empleado jefe6 = new Empleado("Elena Fernández", 443322110L, cuentajefe, "noche", "JEFE6", 6000.00);
-    	Empleado jefe7 = new Empleado("Jorge Gómez", 667788990L, cuentajefe, "mañana", "JEFE7", 6100.00);
-    	Empleado jefe8 = new Empleado("Laura Díaz", 334455667L, cuentajefe, "tarde", "JEFE8", 6200.00);
-    	Empleado jefe9 = new Empleado("Pedro Ramírez", 776655443L, cuentajefe, "noche", "JEFE9", 6300.00);
-    	Empleado jefe10 = new Empleado("Sofía Torres", 221133445L, cuentajefe, "mañana", "JEFE10", 6400.00);
+    	Empleado jefe1 = new Empleado("Fernando López",cuentajefe , "mañana", "JEFE1", 5500.00, null);
+    	Empleado jefe2 = new Empleado("María García",  cuentajefe, "tarde", "JEFE2", 5600.00, null);
+    	Empleado jefe3 = new Empleado("Carlos Pérez",  cuentajefe, "noche", "JEFE3", 5700.00, null);
+    	Empleado jefe4 = new Empleado("Ana Martínez",  cuentajefe, "mañana", "JEFE4", 5800.00, null);
+    	Empleado jefe5 = new Empleado("Luis Rodríguez",  cuentajefe, "tarde", "JEFE5", 5900.00, null);
+    	Empleado jefe6 = new Empleado("Elena Fernández",  cuentajefe, "noche", "JEFE6", 6000.00, null);
+    	Empleado jefe7 = new Empleado("Jorge Gómez",  cuentajefe, "mañana", "JEFE7", 6100.00, null);
+    	Empleado jefe8 = new Empleado("Laura Díaz",  cuentajefe, "tarde", "JEFE8", 6200.00, null);
+    	Empleado jefe9 = new Empleado("Pedro Ramírez",  cuentajefe, "noche", "JEFE9", 6300.00, null);
+    	Empleado jefe10 = new Empleado("Sofía Torres",  cuentajefe, "mañana", "JEFE10", 6400.00, null);
     	
     	
     	//Establecimientos
@@ -425,12 +427,51 @@ public class FuncionalidadGestionInventario {
     	Establecimiento local2 = new Establecimiento("local2 productos",500,cuentalocal1,jefe2,5);
     	Establecimiento local3 = new Establecimiento("local3 productos",500,cuentalocal2,jefe3,5);
     	Establecimiento local4 = new Establecimiento("local4 productos",500,cuentalocal3,jefe4,5);
+    	Fun1.agregarProveedor(local1);
+    	Fun1.agregarProveedor(local2);
+    	Fun1.agregarProveedor(local3);
+    	Fun1.agregarProveedor(local4);
+    	
+    	Fun2.agregarProveedor(local1);
+    	Fun2.agregarProveedor(local2);
+    	Fun2.agregarProveedor(local3);
+    	Fun2.agregarProveedor(local4);
+    	
+    	Fun3.agregarProveedor(local1);
+    	Fun3.agregarProveedor(local2);
+    	Fun3.agregarProveedor(local3);
+    	Fun3.agregarProveedor(local4);
+    	
+    	
     	Establecimiento local5 = new Establecimiento("local5 Vehiculos",500,cuentalocal4,jefe5,5);
     	Establecimiento local6 = new Establecimiento("local6 Vehiculos",500,cuentalocal5,jefe6,5);
     	Establecimiento local7 = new Establecimiento("local7 Vehiculos",500,cuentalocal6,jefe7,5);
+    	Fun1.agregarProveedorVehiculo(local5);
+    	Fun1.agregarProveedorVehiculo(local6);
+    	Fun1.agregarProveedorVehiculo(local7);
+    	
+    	Fun2.agregarProveedorVehiculo(local5);
+    	Fun2.agregarProveedorVehiculo(local6);
+    	Fun2.agregarProveedorVehiculo(local7);
+    	
+    	Fun3.agregarProveedorVehiculo(local5);
+    	Fun3.agregarProveedorVehiculo(local6);
+    	Fun3.agregarProveedorVehiculo(local7);
+    	
     	Establecimiento local8 = new Establecimiento("local8 Empleados",500,cuentalocal7,jefe8,5);
     	Establecimiento local9 = new Establecimiento("local9 Empleados",500,cuentalocal8,jefe9,5);
     	Establecimiento local10 = new Establecimiento("local110 Empleados",500,cuentalocal9,jefe10,5);
+    	Fun1.agregarProveedorEmpleado(local8);
+    	Fun1.agregarProveedorEmpleado(local9);
+    	Fun1.agregarProveedorEmpleado(local10);
+    	
+    	Fun2.agregarProveedorEmpleado(local8);
+    	Fun2.agregarProveedorEmpleado(local9);
+    	Fun2.agregarProveedorEmpleado(local10);
+    	
+    	Fun3.agregarProveedorEmpleado(local8);
+    	Fun3.agregarProveedorEmpleado(local9);
+    	Fun3.agregarProveedorEmpleado(local10);
     	
     	//Empleados para funeraria
     	// Creación de las cuentas bancarias para los empleados
@@ -451,22 +492,42 @@ public class FuncionalidadGestionInventario {
     	CuentaBancaria cuenta15 = new CuentaBancaria(2020202020L, "Alberto Ramírez", 5400.00, "DAVIVIENDA");
 
         // Creación de los empleados funeraria
+    	//public Empleado(String nombre, CuentaBancaria cuentaBancaria,String jornada, String cargo, double salario,Funeraria funeraria)
        
-        Empleado empleado1 = new Empleado("Gabriel Soto", 123456789L, cuenta1, "mañana", "sepulturero", 3500.00);
-        Empleado empleado2 = new Empleado("Lucía Rivas", 234567891L, cuenta2, "tarde", "cremador", 3700.00);
-        Empleado empleado3 = new Empleado("Carlos Méndez", 345678912L, cuenta3, "noche", "padre", 3600.00);
-        Empleado empleado4 = new Empleado("Ana Vega", 456789123L, cuenta4, "mañana", "sepulturero", 3400.00);
-        Empleado empleado5 = new Empleado("Felipe Cruz", 567891234L, cuenta5, "tarde", "cremador", 3500.00);
-        Empleado empleado6 = new Empleado("Marta Herrera", 678912345L, cuenta6, "noche", "padre", 3700.00);
-        Empleado empleado7 = new Empleado("Luis Morales", 789123456L, cuenta7, "mañana", "sepulturero", 3600.00);
-        Empleado empleado8 = new Empleado("Elena Castillo", 891234567L, cuenta8, "tarde", "cremador", 3800.00);
-        Empleado empleado9 = new Empleado("Diego Torres", 912345678L, cuenta9, "noche", "padre", 3500.00);
-        Empleado empleado10 = new Empleado("Isabel Sánchez", 123987654L, cuenta10, "mañana", "sepulturero", 3400.00);
-        Empleado empleado11 = new Empleado("Miguel Ortega", 234876543L, cuenta11, "tarde", "cremador", 3700.00);
-        Empleado empleado12 = new Empleado("Claudia Jiménez", 345765432L, cuenta12, "noche", "padre", 3600.00);
-        Empleado empleado13 = new Empleado("Javier López", 456654321L, cuenta13, "mañana", "sepulturero", 3800.00);
-        Empleado empleado14 = new Empleado("Rosa Pérez", 567543210L, cuenta14, "tarde", "cremador", 3500.00);
-        Empleado empleado15 = new Empleado("Alberto Ramírez", 678432109L, cuenta15, "noche", "padre", 3900.00);
+        Empleado empleado1 = new Empleado("Gabriel Soto", cuenta1, "mañana", "sepulturero", 3500.00, null);
+        Empleado empleado2 = new Empleado("Lucía Rivas",  cuenta2, "tarde", "cremador", 3700.00, null);
+        Empleado empleado3 = new Empleado("Carlos Méndez",  cuenta3, "noche", "padre", 3600.00, null);
+        Empleado empleado4 = new Empleado("Ana Vega",  cuenta4, "mañana", "sepulturero", 3400.00, null);
+        Empleado empleado5 = new Empleado("Felipe Cruz",  cuenta5, "tarde", "cremador", 3500.00, null);
+        local8.agregarEmpleado(empleado1);
+        local8.agregarEmpleado(empleado2);
+        local8.agregarEmpleado(empleado3);
+        local8.agregarEmpleado(empleado4);
+        local8.agregarEmpleado(empleado5);
+        
+        Empleado empleado6 = new Empleado("Marta Herrera",  cuenta6, "noche", "padre", 3700.00, null);
+        Empleado empleado7 = new Empleado("Luis Morales",  cuenta7, "mañana", "sepulturero", 3600.00, null);
+        Empleado empleado8 = new Empleado("Elena Castillo",  cuenta8, "tarde", "cremador", 3800.00, null);
+        Empleado empleado9 = new Empleado("Diego Torres",  cuenta9, "noche", "padre", 3500.00, null);
+        Empleado empleado10 = new Empleado("Isabel Sánchez",  cuenta10, "mañana", "sepulturero", 3400.00, null);
+        local9.agregarEmpleado(empleado6);
+        local9.agregarEmpleado(empleado8);
+        local9.agregarEmpleado(empleado7);
+        local9.agregarEmpleado(empleado9);
+        local9.agregarEmpleado(empleado10);
+
+        
+        Empleado empleado11 = new Empleado("Miguel Ortega",  cuenta11, "tarde", "cremador", 3700.00, null);
+        Empleado empleado12 = new Empleado("Claudia Jiménez",  cuenta12, "noche", "padre", 3600.00, null);
+        Empleado empleado13 = new Empleado("Javier López", cuenta13, "mañana", "sepulturero", 3800.00, null);
+        Empleado empleado14 = new Empleado("Rosa Pérez", cuenta14, "tarde", "cremador", 3500.00, null);
+        Empleado empleado15 = new Empleado("Alberto Ramírez",  cuenta15, "noche", "padre", 3900.00, null);
+        local10.agregarEmpleado(empleado11);
+        local10.agregarEmpleado(empleado12);
+        local10.agregarEmpleado(empleado13);
+        local10.agregarEmpleado(empleado14);
+        local10.agregarEmpleado(empleado15);
+
         
         //vehiculos funerarias.
         //public Vehiculo(TipoVehiculo tipoVehiculo,Funeraria funeraria,String color, String placa, int Precio, int Capacidad)
@@ -474,34 +535,56 @@ public class FuncionalidadGestionInventario {
         Vehiculo berlina1 = new Vehiculo(TipoVehiculo.BERLINA, Fun1, "Negro", "ABC123", 70000, 4);
         Vehiculo berlina2 = new Vehiculo(TipoVehiculo.BERLINA, Fun2, "Gris", "DEF456", 72000, 4);
         Vehiculo berlina3 = new Vehiculo(TipoVehiculo.BERLINA, Fun3, "Azul", "GHI789", 71000, 4);
-
         Vehiculo carroza1 = new Vehiculo(TipoVehiculo.CARROZA, Fun1, "Negro", "JKL012", 150000, 1);
         Vehiculo carroza2 = new Vehiculo(TipoVehiculo.CARROZA,Fun2, "Blanco", "MNO345", 152000, 1);
         Vehiculo carroza3 = new Vehiculo(TipoVehiculo.CARROZA, Fun3, "Plata", "PQR678", 151000, 1);
-
         Vehiculo faeton1 = new Vehiculo(TipoVehiculo.FAETON, Fun1, "Negro", "STU901", 120000, 4);
         Vehiculo faeton2 = new Vehiculo(TipoVehiculo.FAETON, Fun2, "Blanco", "VWX234", 122000, 4);
+        local5.agregarVehiculoEnVenta(berlina1);
+        local5.agregarVehiculoEnVenta(berlina2);
+        local5.agregarVehiculoEnVenta(berlina3);
+        local5.agregarVehiculoEnVenta(carroza1);
+        local5.agregarVehiculoEnVenta(carroza2);
+        local5.agregarVehiculoEnVenta(carroza3);
+        local5.agregarVehiculoEnVenta(faeton1);
+        local5.agregarVehiculoEnVenta(faeton1);
+        
+        
         Vehiculo faeton3 = new Vehiculo(TipoVehiculo.FAETON, Fun3, "Rojo", "YZA567", 121000, 4);
-
         Vehiculo cocheFunebre1 = new Vehiculo(TipoVehiculo.COCHERESPETO, Fun1, "Negro", "BCD890", 75000, 8);
         Vehiculo cocheFunebre2 = new Vehiculo(TipoVehiculo.COCHERESPETO, Fun2, "Blanco", "EFG123", 76000, 8);
         Vehiculo cocheFunebre3 = new Vehiculo(TipoVehiculo.COCHERESPETO, Fun3, "Plata", "HIJ456", 75500, 8);
-
         Vehiculo bus1 = new Vehiculo(TipoVehiculo.BUS, Fun1, "Amarillo", "KLM789", 50000, 6);
         Vehiculo bus2 = new Vehiculo(TipoVehiculo.BUS, Fun2, "Verde", "NOP012", 51000, 6);
         Vehiculo bus3 = new Vehiculo(TipoVehiculo.BUS, Fun3, "Azul", "QRS345", 50500, 6);
-
         Vehiculo cocheRespeto1 = new Vehiculo(TipoVehiculo.COCHEFUNEBRE, Fun1, "Negro", "TUV678", 80000, 1);
+        local6.agregarVehiculoEnVenta(faeton3);
+        local6.agregarVehiculoEnVenta(cocheFunebre1);
+        local6.agregarVehiculoEnVenta(cocheFunebre2);
+        local6.agregarVehiculoEnVenta(cocheFunebre3);
+        local6.agregarVehiculoEnVenta(bus1);
+        local6.agregarVehiculoEnVenta(bus2);
+        local6.agregarVehiculoEnVenta(bus3);
+        local6.agregarVehiculoEnVenta(cocheRespeto1);
+        
+        
         Vehiculo cocheRespeto2 = new Vehiculo(TipoVehiculo.COCHEFUNEBRE, Fun2, "Gris", "WXY901", 82000, 1);
         Vehiculo cocheRespeto3 = new Vehiculo(TipoVehiculo.COCHEFUNEBRE, Fun3, "Blanco", "ZAB234", 81000, 1);
-
         Vehiculo cupe1 = new Vehiculo(TipoVehiculo.CUPE, Fun1, "Rojo", "CDE567", 65000, 2);
         Vehiculo cupe2 = new Vehiculo(TipoVehiculo.CUPE, Fun2, "Negro", "FGH890", 66000, 2);
         Vehiculo cupe3 = new Vehiculo(TipoVehiculo.CUPE, Fun3, "Azul", "IJK123", 65500, 2);
-
         Vehiculo camion1 = new Vehiculo(TipoVehiculo.CAMION, Fun1, "Blanco", "LMN456", 69000, 5);
         Vehiculo camion2 = new Vehiculo(TipoVehiculo.CAMION, Fun2, "Azul", "OPQ789", 70000, 5);
         Vehiculo camion3 = new Vehiculo(TipoVehiculo.CAMION, Fun3, "Negro", "RST012", 69500, 5);
+        local7.agregarVehiculoEnVenta(cocheRespeto2);
+        local7.agregarVehiculoEnVenta(cocheRespeto3);
+        local7.agregarVehiculoEnVenta(cupe1);
+        local7.agregarVehiculoEnVenta(cupe2);
+        local7.agregarVehiculoEnVenta(cupe3);
+        local7.agregarVehiculoEnVenta(camion1);
+        local7.agregarVehiculoEnVenta(camion2);
+        local7.agregarVehiculoEnVenta(camion3);
+        
         
         //productos que tiene la Funeraria 1
         //public Producto(String nombre, double precio, int cantidad, int cantidadVendida)
@@ -513,6 +596,14 @@ public class FuncionalidadGestionInventario {
         Producto recuerdo4F1 = new Producto("Portarretratos digitales", 120.0, 0, 45); // Sin stock
         Producto velasRojasF1 = new Producto("Velas rojas", 300.0, 7, 5); // Menos de 10 unidades
         Producto velasBlancasF1 = new Producto("Velas blancas", 300.0, 20, 30); // Más stock
+        Fun1.agregarProducto(trajesCaballeroF1);
+        Fun1.agregarProducto(vestidosDamaF1);
+        Fun1.agregarProducto(recuerdoF1);
+        Fun1.agregarProducto(recuerdo2F1);
+        Fun1.agregarProducto(recuerdo3F1);
+        Fun1.agregarProducto(recuerdo4F1);
+        Fun1.agregarProducto(velasRojasF1);
+        Fun1.agregarProducto(velasBlancasF1);
         
       //productos que tiene la Funeraria 2
         //public Producto(String nombre, double precio, int cantidad, int cantidadVendida)
@@ -524,6 +615,14 @@ public class FuncionalidadGestionInventario {
         Producto recuerdo4F2 = new Producto("Portarretratos digitales", 120.0, 15, 45);
         Producto velasRojasF2 = new Producto("Velas rojas", 300.0, 7, 20); // Menos de 10 unidades
         Producto velasBlancasF2 = new Producto("Velas blancas", 300.0, 0, 40); // Sin stock
+        Fun2.agregarProducto(trajesCaballeroF2);
+        Fun2.agregarProducto(vestidosDamaF2);
+        Fun2.agregarProducto(recuerdoF2);
+        Fun2.agregarProducto(recuerdo2F2);
+        Fun2.agregarProducto(recuerdo3F2);
+        Fun2.agregarProducto(recuerdo4F2);
+        Fun2.agregarProducto(velasRojasF2);
+        Fun2.agregarProducto(velasBlancasF2);
         
       //productos que tiene la Funeraria 3
         //public Producto(String nombre, double precio, int cantidad, int cantidadVendida)
@@ -535,6 +634,15 @@ public class FuncionalidadGestionInventario {
         Producto recuerdo4F3 = new Producto("Portarretratos digitales", 120.0, 35, 35); // Más stock
         Producto velasRojasF3 = new Producto("Velas rojas", 300.0, 7, 10); // Menos de 10 unidades
         Producto velasBlancasF3 = new Producto("Velas blancas", 300.0, 0, 50); // Sin stock
+        Fun3.agregarProducto(trajesCaballeroF3);
+        Fun3.agregarProducto(vestidosDamaF3);
+        Fun3.agregarProducto(recuerdoF3);
+        Fun3.agregarProducto(recuerdo2F3);
+        Fun3.agregarProducto(recuerdo3F3);
+        Fun3.agregarProducto(recuerdo4F3);
+        Fun3.agregarProducto(velasRojasF3);
+        Fun3.agregarProducto(velasBlancasF3);
+       
         
         //Facturas para funeraria 1
         Factura facturaF1_1 = new Factura("Trajes de caballero");
@@ -545,6 +653,14 @@ public class FuncionalidadGestionInventario {
         Factura facturaF1_6 = new Factura("Portarretratos digitales");
         Factura facturaF1_7 = new Factura("Velas rojas");
         Factura facturaF1_8 = new Factura("Velas blancas");
+        Fun1.agregarFacturapagada(facturaF1_1);
+        Fun1.agregarFacturapagada(facturaF1_2);
+        Fun1.agregarFacturapagada(facturaF1_3);
+        Fun1.agregarFacturapagada(facturaF1_4);
+        Fun1.agregarFacturapagada(facturaF1_5);
+        Fun1.agregarFacturapagada(facturaF1_6);
+        Fun1.agregarFacturapagada(facturaF1_7);
+        Fun1.agregarFacturapagada(facturaF1_8);
 
         
         // facturas para funeraria 2
@@ -556,6 +672,14 @@ public class FuncionalidadGestionInventario {
         Factura facturaF2_6 = new Factura("Portarretratos digitales");
         Factura facturaF2_7 = new Factura("Velas rojas");
         Factura facturaF2_8 = new Factura("Velas blancas");
+        Fun2.agregarFacturapagada(facturaF2_1);
+        Fun2.agregarFacturapagada(facturaF2_2);
+        Fun2.agregarFacturapagada(facturaF2_3);
+        Fun2.agregarFacturapagada(facturaF2_4);
+        Fun2.agregarFacturapagada(facturaF2_5);
+        Fun2.agregarFacturapagada(facturaF2_6);
+        Fun2.agregarFacturapagada(facturaF2_7);
+        Fun2.agregarFacturapagada(facturaF2_8);
 
         
         // facturas para funerarias 3
@@ -567,6 +691,14 @@ public class FuncionalidadGestionInventario {
         Factura facturaF3_6 = new Factura("Portarretratos digitales");
         Factura facturaF3_7 = new Factura("Velas rojas");
         Factura facturaF3_8 = new Factura("Velas blancas");
+        Fun3.agregarFacturapagada(facturaF3_1);
+        Fun3.agregarFacturapagada(facturaF3_2);
+        Fun3.agregarFacturapagada(facturaF3_3);
+        Fun3.agregarFacturapagada(facturaF3_4);
+        Fun3.agregarFacturapagada(facturaF3_5);
+        Fun3.agregarFacturapagada(facturaF3_6);
+        Fun3.agregarFacturapagada(facturaF3_7);
+        Fun3.agregarFacturapagada(facturaF3_8);
 
  
         
@@ -581,6 +713,15 @@ public class FuncionalidadGestionInventario {
         Producto recuerdo4VendidosF1 = new Producto("Portarretratos digitales", 120.0, 45, 45); 
         Producto velasRojasVendidosF1 = new Producto("Velas rojas", 300.0, 5, 5); 
         Producto velasBlancasVendidosF1 = new Producto("Velas blancas", 300.0, 30, 30); 
+        facturaF1_1.agregarProducto(trajesCaballeroVendidosF1);
+        facturaF1_2.agregarProducto(vestidosDamaVendidosF1);
+        facturaF1_3.agregarProducto(recuerdoVendidosF1);
+        facturaF1_4.agregarProducto(recuerdo2VendidosF1);
+        facturaF1_5.agregarProducto(recuerdo3VendidosF1);
+        facturaF1_6.agregarProducto(recuerdo4VendidosF1);
+        facturaF1_7.agregarProducto(velasRojasVendidosF1);
+        facturaF1_8.agregarProducto(velasBlancasVendidosF1);
+        
     
         // productos para las facturas de la funeraria 2
         Producto trajesCaballeroVendidosF2 = new Producto("Trajes de caballero", 998.0, 25, 25); 
@@ -591,6 +732,14 @@ public class FuncionalidadGestionInventario {
         Producto recuerdo4VendidosF2 = new Producto("Portarretratos digitales", 120.0, 45, 45);
         Producto velasRojasVendidosF2 = new Producto("Velas rojas", 300.0, 20, 20); 
         Producto velasBlancasVendidosF2 = new Producto("Velas blancas", 300.0, 40, 40); 
+        facturaF2_1.agregarProducto(trajesCaballeroVendidosF2);
+        facturaF2_2.agregarProducto(vestidosDamaVendidosF2);
+        facturaF2_3.agregarProducto(recuerdoVendidosF2);
+        facturaF2_4.agregarProducto(recuerdo2VendidosF2);
+        facturaF2_5.agregarProducto(recuerdo3VendidosF2);
+        facturaF2_6.agregarProducto(recuerdo4VendidosF2);
+        facturaF2_7.agregarProducto(velasRojasVendidosF2);
+        facturaF2_8.agregarProducto(velasBlancasVendidosF2);
         
         // productos para las facturas de la funeraria 3
 
@@ -598,19 +747,22 @@ public class FuncionalidadGestionInventario {
         Producto vestidosDamaVendidosF3 = new Producto("Vestidos de dama", 1200.0, 12, 12); 
         Producto recuerdoVendidosF3 = new Producto("Medalla conmemorativa", 100.0, 25, 25);
         Producto recuerdo2VendidosF3 = new Producto("Joyas conmemorativas", 250.0, 18, 18);
+        Producto recuerdo3VendidosF3 = new Producto("Álbumes de fotos", 300.0, 15, 15);
         Producto recuerdo4VendidosF3 = new Producto("Portarretratos digitales", 120.0, 35, 35); 
         Producto velasRojasVendidosF3 = new Producto("Velas rojas", 300.0, 10, 10); 
         Producto velasBlancasVendidosF3 = new Producto("Velas blancas", 300.0, 50, 50); 
         
+        facturaF3_1.agregarProducto(trajesCaballeroVendidosF3);
+        facturaF3_2.agregarProducto(vestidosDamaVendidosF3);
+        facturaF3_3.agregarProducto(recuerdoVendidosF3);
+        facturaF3_4.agregarProducto(recuerdo2VendidosF3);
+        facturaF3_5.agregarProducto(recuerdo3VendidosF3);
+        facturaF3_6.agregarProducto(recuerdo4VendidosF3);
+        facturaF3_7.agregarProducto(velasRojasVendidosF3);
+        facturaF3_8.agregarProducto(velasBlancasVendidosF3);
         
-        
-    	
-    	
-    	
-    	
-    	
 
-        return new Funeraria[]{funeraria1};
+        return new Funeraria[]{Fun1, Fun2, Fun3};
     }
     
 }

@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 public class Factura implements Serializable{
 	//Atributos
 	private final int ID;
-	private String producto;
+	private String producto; // Nombre del producto
 	private double precio;
 	private double total;
 	private Persona cliente;
@@ -53,11 +53,11 @@ public class Factura implements Serializable{
 	}
 	
 	
-	public Factura(String servicio) {
+	public Factura(String nombre) {
 		facturasCreadas++;
 		ID=facturasCreadas;
 		this.listaProductos = new ArrayList<>();
-		Servicio = servicio;
+		producto = nombre;
 		this.total= 0;
 		facturas.add(this);
 	}

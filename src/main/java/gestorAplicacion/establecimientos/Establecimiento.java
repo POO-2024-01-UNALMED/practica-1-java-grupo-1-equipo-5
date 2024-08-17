@@ -145,6 +145,10 @@ public class Establecimiento implements Serializable {
 	public void eliminarCliente(Cliente cliente) {
 		this.clientes.remove(cliente);
 	}
+	public void agregarProducto(Producto producto) {
+		productos.add(producto);
+	}
+
 	
 	
 	
@@ -171,6 +175,7 @@ public class Establecimiento implements Serializable {
 	public void agregarVehiculo(Vehiculo vehiculo) {
         Vehiculos.add(vehiculo);
     }
+	
 	
 	//Filtrar Vehiculos que Esten disponibles y sin conductor
 	public ArrayList<Vehiculo> filtrarVehiculosSinConductorYDisponibles() {
@@ -419,8 +424,15 @@ public class Establecimiento implements Serializable {
 	public void setVehiculosEnVenta(ArrayList<Vehiculo> vehiculosEnVenta) {
 		this.vehiculosEnVenta = vehiculosEnVenta;
 	}
-    
-	
+    public void agregarProveedorEmpleado(Establecimiento proveedor) {
+    	listadoProveedoresEmpleados.add(proveedor);
+    }
+    public void agregarProveedorVehiculo(Establecimiento proveedor) {
+    	listadoProveedores.add(proveedor);
+    }
+    public void agregarProveedor(Establecimiento proveedor) {
+    	listadoProveedoresVehiculos.add(proveedor);
+    }
 	
 	
 	
