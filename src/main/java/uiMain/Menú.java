@@ -532,6 +532,29 @@ public class Menú {
 		Funeraria funeraria2 = new Funeraria("Caminos de Luz", cuenta,cuenta);
 		Funeraria funeraria3 = new Funeraria("Recuerdos Eternos", cuenta,cuenta);
 		
+		//Familiares Mujeres
+		Familiar a1= new Familiar("Mario",711,50,cuenta,"padre",17);
+		Familiar a2= new Familiar("Alberto",712,32,cuenta,"conyuge",13);
+		Familiar a3= new Familiar("Carlos",713,37,cuenta,"hermano",17);
+		Familiar a4= new Familiar("Samantha",714,50,cuenta,"madre",17);
+		
+		//Familiares para todos
+		Familiar b1= new Familiar("Samuel",715,60,cuenta,"padre",17);
+		Familiar b2= new Familiar("Alma",716,30,cuenta,"hijo",13);
+		Familiar b3= new Familiar("Eduardo",717,37,cuenta,"hermano",17);
+		Familiar b4= new Familiar("Maria",5, "hermano",b3);
+		
+		//Familiares Hombres 
+		Familiar c1= new Familiar("Armando",718,50,cuenta,"padre",17);
+		Familiar c2= new Familiar("Catalina",719,32,cuenta,"conyuge",13);
+		Familiar c3= new Familiar("Sebastian",7110,37,cuenta,"hermano",17);
+		Familiar c4= new Familiar("Alba",7111,50,cuenta,"madre",17)
+		
+		(String nombre, int edad, String parentesco,Familiar responsable);
+		ArrayList<Familiar> familiar=new ArrayList<Familiar>();
+		familiar.add(b);
+		familiar.add(e);
+		
 		//Objetos Cementerio
 		
 		//cementerios pertenecientes a F1 --> Funeraria 1 - cenizas
@@ -598,14 +621,20 @@ public class Menú {
 		Cliente clienteF25 = new Cliente("Sergio Pérez",235, "bronce",familiar);
 		Cliente clienteF26 = new Cliente("Luis García",236, "bronce",familiar);
 		
+		
+		//Clientes F1 - Menores de edad
+		Cliente clienteF27 = new Cliente("Rafael Morales",5,"oro",familiar);
+		Cliente clienteF28 = new Cliente("Pablo Sánchez",17,"oro",familiar);
+				
+		Cliente clienteF29 = new Cliente("Ana Belén Ruiz",15,"bronce",familiar);
+		Cliente clienteF210 = new Cliente("Claudia Romero",13,"bronce",familiar);
+		
 		String nombre,int edad, String plan,ArrayList<Familiar> familiares
 		
 		
 		
 		
 		
-		Rafael Morales
-		Pablo Sánchez
 		
 		
 		
@@ -615,8 +644,10 @@ public class Menú {
 		
 		
 		
-		Ana Belén Ruiz
-		Claudia Romero
+		
+		
+		
+		
 		
 		funita.agregarCliente(e1);
 		fumita.agregarCliente(d1);
@@ -734,14 +765,7 @@ public class Menú {
 		Funeraria fulanita = new Funeraria("fulanita", cuenta,cuenta);
 		
 		//Cliente
-		Familiar b= new Familiar("Mario",123,45,cuenta,"padre",17);
-		Familiar e= new Familiar("Alberto",123,45,cuenta,"conyugue",17);
-		Familiar c= new Familiar("Maria",5, "oro",e);
 		
-		
-		ArrayList<Familiar> familiar=new ArrayList<Familiar>();
-		familiar.add(b);
-		familiar.add(e);
 		
 		Cliente a1 = new Cliente("a1",123,17,null,"oro",familiar);
 		Cliente b1 = new Cliente("b1",123,17,null,"oro",familiar);
