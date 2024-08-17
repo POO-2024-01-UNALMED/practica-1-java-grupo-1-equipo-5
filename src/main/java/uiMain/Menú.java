@@ -526,12 +526,80 @@ public class Menú {
 	
 	public static void main(String[] args) {
 		
+		//cuentasCorriente funerarias
+		CuentaBancaria cuenta1 = new CuentaBancaria(199234234, "Eterna Paz", 40000,40000,40000,40000,40000, "BBVA");
+	    CuentaBancaria cuenta2 = new CuentaBancaria(193739239, "Caminos de luz", 40000,40000,40000,40000,40000, "BANCOLOMBIA");
+	    CuentaBancaria cuenta3 = new CuentaBancaria(384627823, "Recuerdos eternos", 40000,40000,40000,40000,40000, "DAVIVIENDA");
+		    
+	    //cuentaAhorro funerarias
+	    CuentaBancaria cuenta4 = new CuentaBancaria(19934, "todasLasFunerarias", 3993, "BANCO_OCCIDENTE");
+	        
+	    //cuentaBancarias clientes
+	    CuentaBancaria cuenta5 = new CuentaBancaria(378273, "a1", 39999, "BBVA");
+	    CuentaBancaria cuenta6 = new CuentaBancaria(199919, "a2", 17271, "BANCOLOMBIA");
+	    CuentaBancaria cuenta7 = new CuentaBancaria(374388, "a3", 17212, "DAVIVIENDA");
+	    CuentaBancaria cuenta8 = new CuentaBancaria(347574, "a4", 34784, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta9 = new CuentaBancaria(477373, "a5", 37437, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta10 = new CuentaBancaria(234828, "b1", 28348, "BBVA");
+	    CuentaBancaria cuenta11 = new CuentaBancaria(373387, "b2", 23484, "BANCOLOMBIA");
+	    CuentaBancaria cuenta12 = new CuentaBancaria(138838, "b3", 23828, "DAVIVIENDA");
+	    CuentaBancaria cuenta13 = new CuentaBancaria(347734, "b4", 48238, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta14 = new CuentaBancaria(173743, "b5", 42734, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta15 = new CuentaBancaria(478474, "c1", 23424, "BBVA");
+	    CuentaBancaria cuenta16 = new CuentaBancaria(283882, "c2", 34564, "BANCOLOMBIA");
+	    CuentaBancaria cuenta17 = new CuentaBancaria(283823, "c3", 36464, "DAVIVIENDA");
+	    CuentaBancaria cuenta18 = new CuentaBancaria(382838, "c4", 57567, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta19 = new CuentaBancaria(238822, "c5", 86786, "BANCO_BOGOTA");
+	    
+	    //cuentasBancaria empleados
+	    CuentaBancaria cuenta20 = new CuentaBancaria(345354, "Alberto", 39999, "BBVA");
+	    CuentaBancaria cuenta21 = new CuentaBancaria(456456, "Julio", 17271, "BANCOLOMBIA");
+	    CuentaBancaria cuenta22 = new CuentaBancaria(575675, "Andres", 17212, "DAVIVIENDA");
+	    CuentaBancaria cuenta23 = new CuentaBancaria(678676, "Ismael", 34784, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta24 = new CuentaBancaria(345345, "Maria", 37437, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta25 = new CuentaBancaria(234234, "Susana", 28348, "BBVA");
+	    CuentaBancaria cuenta26 = new CuentaBancaria(324322, "Camilo", 23484, "BANCOLOMBIA");
+	    CuentaBancaria cuenta27 = new CuentaBancaria(567567, "Aron", 23828, "DAVIVIENDA");
+	    CuentaBancaria cuenta28 = new CuentaBancaria(228828, "Julieta", 48238, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta29 = new CuentaBancaria(454564, "Natalia", 42734, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta30 = new CuentaBancaria(831838, "Joseph", 23424, "BBVA");
+	    CuentaBancaria cuenta31 = new CuentaBancaria(456304, "Valentina", 34564, "BANCOLOMBIA");
+	    CuentaBancaria cuenta32 = new CuentaBancaria(305340, "Jorge", 36464, "DAVIVIENDA");
+	    CuentaBancaria cuenta33 = new CuentaBancaria(765646, "Francy", 57567, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta34 = new CuentaBancaria(300034, "Nancy", 86786, "BANCO_BOGOTA");
+			
+	    //cuentaBancaria establecimiento 
+	       //cuentacrematorios
+	       CuentaBancaria cuenta35 = new CuentaBancaria(234234, "La_13", 23484, "BANCOLOMBIA");
+	       CuentaBancaria cuenta36 = new CuentaBancaria(655345, "A_Todo_Mil", 23828, "DAVIVIENDA");
+	       CuentaBancaria cuenta37 = new CuentaBancaria(675667, "Crematorio_del_recuerdo", 48238, "BANCO_OCCIDENTE");
+	       CuentaBancaria cuenta38 = new CuentaBancaria(678786, "Puerta_del_cielo", 42734, "BANCO_BOGOTA");
+	       CuentaBancaria cuenta39 = new CuentaBancaria(897888, "La_ultima_despedida", 34564, "BANCOLOMBIA");
+	       CuentaBancaria cuenta40 = new CuentaBancaria(888888, "Memoria_eterna", 36464, "DAVIVIENDA");
+	       CuentaBancaria cuenta41 = new CuentaBancaria(342342, "La_llama_de_la_vida", 86786, "BANCO_BOGOTA");
+	       CuentaBancaria cuenta42 = new CuentaBancaria(623133, "El_faro_de_la_eternidad", 34784, "BANCO_OCCIDENTE");
+	       CuentaBancaria cuenta43 = new CuentaBancaria(238949, "La_puerta_de_la_eternidad", 37437, "BANCO_BOGOTA");
+	    
+	       //cuentacementerios
+	    
+	       CuentaBancaria cuenta44 = new CuentaBancaria(121321, "Jardines_de_la_eternidad", 23484, "BANCOLOMBIA");
+	       CuentaBancaria cuenta45 = new CuentaBancaria(465465, "Campos_de_paz", 23828, "DAVIVIENDA");
+	       CuentaBancaria cuenta46 = new CuentaBancaria(768767, "Monte_sacro", 48238, "BANCO_OCCIDENTE");
+	       CuentaBancaria cuenta47 = new CuentaBancaria(879789, "Parque_de_la_memoria_eterna", 23424, "BBVA");
+	       CuentaBancaria cuenta48 = new CuentaBancaria(242332, "Parque_de_la_eternidad", 36464, "DAVIVIENDA");
+	       CuentaBancaria cuenta49 = new CuentaBancaria(234232, "Jardines_del_recuerdo", 57567, "BANCO_OCCIDENTE");
+	       CuentaBancaria cuenta50 = new CuentaBancaria(768676, "Ciudad_de_los_angeles", 34784, "BANCO_OCCIDENTE");
+	       CuentaBancaria cuenta51 = new CuentaBancaria(876896, "Valle_de_la_serenidad", 37437, "BANCO_BOGOTA");
+	       CuentaBancaria cuenta52 = new CuentaBancaria(413212, "Santuario_de_la_eternidad", 28348, "BBVA");
+		
 		//objetos cuenta Bancaria 
 		CuentaBancaria cuenta = new CuentaBancaria(123, "Alfredo", 1000000, "Ala");
 		
 		//Objetos Funeraria
 		
 		Funeraria funeraria1 = new Funeraria("Eterna Paz", cuenta,cuenta);
+		Funeraria funeraria2 = new Funeraria("Caminos de Luz", cuenta,cuenta);
+		Funeraria funeraria3 = new Funeraria("Recuerdos Eternos", cuenta,cuenta);
 		
 		//Empleados sepultureros
 		
@@ -552,8 +620,6 @@ public class Menú {
 		
 		
 		
-		Funeraria funeraria2 = new Funeraria("Caminos de Luz", cuenta,cuenta);
-		
 		//Empleados sepultureros
 		
 		Empleado empleadoF21S= new Empleado("Guillermo Romero",null,"mañana","sepulturero",1000000,funeraria2);
@@ -571,10 +637,6 @@ public class Menú {
 		Empleado empleadoF24C= new Empleado("Karla Soto",null,"noche","cremador",1000000,funeraria2);
 		Empleado empleadoF25C= new Empleado("Dakota Torres",null,"noche","cremador",1000000,funeraria2);
 		
-		
-		
-		
-		Funeraria funeraria3 = new Funeraria("Recuerdos Eternos", cuenta,cuenta);
 		
 		Empleado empleadoF31S= new Empleado("Nicolás Fernández",null,"mañana","sepulturero",1000000,funeraria3);
 		Empleado empleadoF32S= new Empleado("Alex Rivera",null,"tarde","sepulturero",1000000,funeraria3);
