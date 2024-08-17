@@ -786,28 +786,6 @@ public class Menú {
 		Tumba tumbaF1C66=new Tumba("Tumbita Un Alma Valiente",cementerioF16Cu,1,2);
 		
 		
-		
-		
-		
-		Epitafios y Mensajes Conmemorativos
-		, 
-		
-		
-		Tu Luz Brilla en Nuestro Recuerdo
-		Eres Querido y Nunca Olvidado
-		, Un Corazón Inmortal
-		Tu Espíritu Vive en Cada Recuerdo Querido
-		 y a la Bondad
-		Descansa Tranquilo, Amado Nuestro
-		Tu Amor y Sabiduría Permanecen con Nosotros
-		
-		
-		
-		
-		
-		
-		
-		
 		//Objetos Crematorio
 		
 		//crematorios pertenecientes a F1 --> Funeraria 1
@@ -1193,227 +1171,78 @@ public class Menú {
 		funeraria3.agregarCliente(clienteF310);
 		
 		
+		Vehiculo veh1= new Vehiculo(TipoVehiculo.BERLINA,funeraria1,"azul", "2345",1);
+		Vehiculo veh2= new Vehiculo(TipoVehiculo.BUS,funeraria1,"rojo", "2345",2);
+		Vehiculo veh3= new Vehiculo(TipoVehiculo.CARROZA,funeraria1,"verde", "2345",3);
+		
+		Vehiculo veh4= new Vehiculo(TipoVehiculo.FAETON,funeraria1,"amarillo", "2345",3);
+		Vehiculo veh5= new Vehiculo(TipoVehiculo.BUS,funeraria1,"amarillo", "2345",3);
+		Vehiculo veh6= new Vehiculo(TipoVehiculo.COCHERESPETO,funeraria1,"rojo", "2345",3);
+		
+		Vehiculo veh7= new Vehiculo(TipoVehiculo.CUPE,funeraria1,"rosado", "2345",3);
+		Vehiculo veh8= new Vehiculo(TipoVehiculo.BERLINA,funeraria1,"azul", "2345",3);
+		Vehiculo veh9= new Vehiculo(TipoVehiculo.CARROZA,funeraria1,"azul", "2345",3);
+		
+		//Agregar vehiculos en  funeraria 2
+		funeraria2.agregarVehiculo(veh1);
+		funeraria2.agregarVehiculo(veh2);
+		funeraria2.agregarVehiculo(veh3);
+		funeraria2.agregarVehiculo(veh4);
+		funeraria2.agregarVehiculo(veh5);
+		funeraria2.agregarVehiculo(veh6);
+		funeraria2.agregarVehiculo(veh7);
+		
+		//Agregar vehiculos en  funeraria 3
+		funeraria3.agregarVehiculo(veh1);
+		funeraria3.agregarVehiculo(veh2);
+		funeraria3.agregarVehiculo(veh3);
+		funeraria3.agregarVehiculo(veh9);
+		funeraria3.agregarVehiculo(veh2);
+		funeraria3.agregarVehiculo(veh8);
+		funeraria3.agregarVehiculo(veh7);		
 		
 		
 		
 		
-		
-		
-			
-				
-				
-		
-				
-				
-				
-				
-				
-		
-		
-		
-		
-		
-		
-		
-		
-	
-		
-		
-		
-		
-		
-		
-		//Objetos de prueba
-		//Funerarias
-		
-		cuenta = new CuentaBancaria(123, "Alfredo", 1000000, "Ala");
-		Funeraria funita = new Funeraria("funita", cuenta,cuenta);
-		Funeraria fumita = new Funeraria("fumita", cuenta,cuenta);
-		Funeraria fulanita = new Funeraria("fulanita", cuenta,cuenta);
-		
-		//Cliente
-		
-		
-		Cliente a1 = new Cliente("a1",123,17,null,"oro",familiar);
-		Cliente b1 = new Cliente("b1",123,17,null,"oro",familiar);
-		Cliente c1 = new Cliente("c1",123,17,null,"oro",familiar);
-		Cliente d1 = new Cliente("d1",123,17,null,"oro",familiar);
-		Cliente e1 = new Cliente("Alma",16, "oro",familiar);
-		
-		funita.agregarCliente(e1);
-		fumita.agregarCliente(d1);
-		fulanita.agregarCliente(c1);
-		fumita.agregarCliente(a1);
-		
-		//Objetos crematorio-cementerio
-		Crematorio crematorio = new Crematorio ("crematorio","0054",100,null,"oro", null,funita); 
-		Crematorio creno = new Crematorio ("creno","0089",78,null,"oro", null,fumita); 
-		Crematorio cremita = new Crematorio ("cremita","0098",78,null,"oro", null,fulanita); 
-		
-		Cementerio cementerio = new Cementerio ("cementerio","2090",78,null,"oro", null,"cenizas",fulanita); 
-		Cementerio cemi = new Cementerio ("cemi","9089",78,null,"oro", null,"cenizas",fumita); 
-		Cementerio cemito = new Cementerio ("cemito","5490",78,null,"oro", null,"cenizas",funita); 
-		
-		Cementerio cementerio1 = new Cementerio ("cementerio1","2090",78,null,"oro", null,"cuerpos",fulanita); 
-		Cementerio cemi1 = new Cementerio ("cemi1","9089",78,null,"oro", null,"cuerpos",fumita); 
-		Cementerio cemito1 = new Cementerio ("cemito1","5490",78,null,"oro", null,"cuerpos",funita);
-		
-		//Objetos de la clase Empleado
-		Empleado empleado1 = new Empleado("Alberto",12345,"3456",null,"mañana","sepulturero",900000);
-		Empleado empleado2 = new Empleado("Maria",12345,"3456",null,"noche","sepulturero",900000);
-		Empleado empleado3 = new Empleado("Anastasia",12345,"3456",null,"noche","cremador",900000);
-		Empleado empleado4 = new Empleado("Gilberto",12345,"3456",null,"mañana","cremador",900000);
-		Empleado empleado5 = new Empleado("Pepito",12345,"3456",null,"mañana","sepulturero",900000);
-		Empleado empleado6 = new Empleado("Camila",12345,"3456",null,"tarde","cremador",900000);
-		Empleado empleado7 = new Empleado("Santiago",12345,"3456",null,"noche","sepulturero",900000);
-		Empleado empleado8 = new Empleado("Anastasio",12345,"3456",null,"tarde","cremador",900000);
-		
-		
-		//Conductores
-		Empleado empleado9 = new Empleado("Camila",12345,"3456",null,"mañana","conductor",900000);
-		Empleado empleado10 = new Empleado("Santiago",12345,"3456",null,"tarde","conductor",900000);
-		Empleado empleado11 = new Empleado("Anastasio",12345,"3456",null,"noche","conductor",900000);
-		
-		fulanita.agregarEmpleado(empleado11);
-		fulanita.agregarEmpleado(empleado10);
-		fulanita.agregarEmpleado(empleado9);
-		
-		funita.agregarEmpleado(empleado11);
-		funita.agregarEmpleado(empleado10);
-		funita.agregarEmpleado(empleado9);
-		
-		fumita.agregarEmpleado(empleado11);
-		fumita.agregarEmpleado(empleado10);
-		fumita.agregarEmpleado(empleado9);
-		
-		//AgregarVehiculos
-		
-		Vehiculo veh1= new Vehiculo(TipoVehiculo.BERLINA,fulanita,"azul", "2345",1);
-		Vehiculo veh2= new Vehiculo(TipoVehiculo.BUS,fulanita,"azul", "2345",2);
-		Vehiculo veh3= new Vehiculo(TipoVehiculo.CARROZA,fulanita,"azul", "2345",3);
-		
-		Vehiculo veh4= new Vehiculo(TipoVehiculo.FAETON,funita,"azul", "2345",3);
-		Vehiculo veh5= new Vehiculo(TipoVehiculo.BUS,funita,"azul", "2345",3);
-		Vehiculo veh6= new Vehiculo(TipoVehiculo.COCHERESPETO,funita,"azul", "2345",3);
-		
-		Vehiculo veh7= new Vehiculo(TipoVehiculo.CUPE,fumita,"azul", "2345",3);
-		Vehiculo veh8= new Vehiculo(TipoVehiculo.BERLINA,fumita,"azul", "2345",3);
-		Vehiculo veh9= new Vehiculo(TipoVehiculo.CARROZA,fumita,"azul", "2345",3);
-		
-		
-		//Urnas vacías
-		
-		Urna urna1=new Urna("Urnita1",cemi,70,1,"fija");
-		Urna urna2=new Urna("Urnita2",cemi,90,0,"ordinaria");
-		Urna urna3=new Urna("Urnita3",cemi,50,0,"ordinaria");
-		Urna urna4=new Urna("Urnita4",cemi,60,1,"fija");
-		
-		Urna urna5=new Urna("default",cementerio,70,2,"fija");
-		Urna urna6=new Urna("default",cementerio,50,2,"ordinaria");
-		Urna urna7=new Urna("Urnita7",cementerio,40,2,"ordinaria");
-		Urna urna8=new Urna("Urnita8",cementerio,60,1,"fija");
-		
-		Urna urna9=new Urna("default",cemito,70,0,"fija");
-		Urna urna10=new Urna("Urnita10",cemito,50,1,"fija");
-		Urna urna11=new Urna("Urnita11",cemito,40,2,"ordinaria");
-		Urna urna12=new Urna("default",cemito,60,1,"fija");
-		
-		
-		
-		funita.agregarEmpleado(empleado1);
-		funita.agregarEmpleado(empleado2);
-		funita.agregarEmpleado(empleado3);
-		
-		fumita.agregarEmpleado(empleado5);
-		fumita.agregarEmpleado(empleado6);
-		
-		fulanita.agregarEmpleado(empleado4);
-		fulanita.agregarEmpleado(empleado7);
-		fulanita.agregarEmpleado(empleado8);
 		
 		
 		//Funcionalidad Exhumacion
 		
-		Cliente n1 = new Cliente("n1",123,35,null,"oro",familiar);
-		Cliente n2 = new Cliente("n2",123,37,null,"oro",familiar);
-		Cliente n3 = new Cliente("n3",123,39,null,"oro",familiar);
-		Cliente n4 = new Cliente("n4",123,41,null,"oro",familiar);
-		Cliente n5 = new Cliente("n5",123,25,null,"oro",familiar);
-		
-		Cliente n6 = new Cliente("n6",123,35,null,"oro",familiar);
-		Cliente n7 = new Cliente("n7",123,37,null,"oro",familiar);
-		Cliente n8 = new Cliente("n8",123,39,null,"oro",familiar);
-		Cliente n9 = new Cliente("n9",123,41,null,"oro",familiar);
-		Cliente n10= new Cliente("n10",123,25,null,"oro",familiar);
-		
-		Urna urna13=new Urna("Urnita13",cemi,70,1,"fija");
-		Urna urna14=new Urna("Urnita14",cemi,90,0,"ordinaria");
-		Urna urna15=new Urna("Urnita15",cemi,50,0,"ordinaria");
-		
-		
-		Urna urna17=new Urna("default",cementerio,70,2,"fija");
-		Urna urna18=new Urna("default",cementerio,50,2,"ordinaria");
-		Urna urna19=new Urna("Urnita719",cementerio,40,2,"ordinaria");
-		
-		
-		Urna urna21=new Urna("default",cemito,70,0,"fija");
-		Urna urna22=new Urna("Urnita22",cemito,50,1,"fija");
-		Urna urna23=new Urna("Urnita23",cemito,40,2,"ordinaria");
-
-		
-		Tumba tumba1=new Tumba("Tumbita1",cemi1,1.70,0);
-		Tumba tumba2=new Tumba("Tumbita2",cemi1,1.50,0);
-		Tumba tumba3=new Tumba("Tumbita3",cemito1,1.60,0);
-		
-		Tumba tumba4=new Tumba("Tumbita4",cemito1,1.50,0);
-		Tumba tumba5=new Tumba("Tumbita5",cementerio1,1.50,0);
-		Tumba tumba6=new Tumba("Tumbita6",cementerio1,1.50,0);
-		
-		Tumba tumba7=new Tumba("Tumbita7",cementerio1,1.50,0);
-		Tumba tumba8=new Tumba("Tumbita8",cementerio1,1.50,0);
-		Tumba tumba9=new Tumba("Tumbita9",cementerio1,1.50,0);
-		
-		
-		urna13.agregarCliente(n1);
-		urna14.agregarCliente(n2);
-		urna15.agregarCliente(n3);
-		urna17.agregarCliente(n5);
-		
-		tumba1.agregarCliente(n4);
-		tumba2.agregarCliente(n7);
-		tumba3.agregarCliente(n8);
-		tumba4.agregarCliente(n9);
-		tumba5.agregarCliente(n10);
-	
-		
-		
-		
-		
+		boolean validacion=true;
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("[1] Funcionalidad crematorio");
-		System.out.println("[2] Funcionalidad Exhumación");
-		System.out.println("[3] Funcionalidad Entierro");
 		
-		System.out.print("Ingrese el índice de la funcionalidad: ");
-		int opcion =scanner.nextInt();
-		
-		switch (opcion) {
+		while(validacion) {
 			
-		case 1:
-			funcionalidadCrematorio();
-			break;
-		case 2:
-			FuncionalidadExhumacion.funcionalidadExhumacion();
-			break;
-		case 3:
-			FuncionalidadEntierro.funcionalidadEntierro();
-			break;
+			System.out.println("[1] Funcionalidad crematorio");
+			System.out.println("[2] Funcionalidad Exhumación");
+			System.out.println("[3] Funcionalidad Entierro");
 			
-		default:
-			System.out.println("Número fuera de rango");
-			break;
+			System.out.print("Ingrese el índice de la funcionalidad: ");
+			int opcion =scanner.nextInt();
+			
+			switch (opcion) {
+				
+			case 1:
+				funcionalidadCrematorio();
+				break;
+			case 2:
+				FuncionalidadExhumacion.funcionalidadExhumacion();
+				break;
+			case 3:
+				FuncionalidadEntierro.funcionalidadEntierro();
+				break;
+				
+			default:
+				System.out.println("Número fuera de rango");
+				validacion=false;
+				break;
+			}
+			
+			
 		}
+		
+		
 		
 		
 		

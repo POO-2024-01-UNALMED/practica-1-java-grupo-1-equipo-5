@@ -49,6 +49,7 @@ public abstract class Inventario implements Serializable{
 		this.cliente=cliente;
 		this.cementerio.getClientes().add(cliente);
 		this.cliente.setInventario(this);
+		this.cementerio.getFuneraria().getClientes().remove(cliente);
 	}
 	
 	public int determinarCategoria(int edad) {
