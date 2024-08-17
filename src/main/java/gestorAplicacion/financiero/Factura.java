@@ -80,12 +80,16 @@ public class Factura implements Serializable{
 		ajustarProductos();
 		facturasCreadas++;
 		ID=facturasCreadas;
+		calcularTotal();
+		facturas.add(this);
 	}
 	public Factura(ArrayList<Producto> productos, String servicio) {
 		listaProductos=productos;
 		this.Servicio = servicio;
 		facturasCreadas++;
 		ID=facturasCreadas;
+		calcularTotal();
+		facturas.add(this);
 	}
 	
 	
