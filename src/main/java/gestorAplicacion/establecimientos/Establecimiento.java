@@ -195,35 +195,39 @@ public class Establecimiento implements Serializable {
 		}else if(this instanceof Cementerio) {
 			cargo="sepulturero";
 		}
+		if (this.horarioEventos.size()==0) {
+			
+			if(this.getFuneraria().buscarEmpleados("mañana", cargo).size()!=0) {
+				horaMin=6;
+				horaMax=14;
+			}else if(this.getFuneraria().buscarEmpleados("tarde", cargo).size()!=0){
+				if(horaMin==0) {horaMin=15; horaMax=22;}
+				else {horaMax=22;}
+			}else if(this.getFuneraria().buscarEmpleados("noche", cargo).size()!=0) {
+				if(horaMin==0) {horaMax=30; horaMin=23;}
+				else if(horaMin==15) {horaMax=30;}
+				else if(horaMax==14) {horaMin=23; horaMax=38;}
+				else {horaMin=0; horaMax=23;}
+				
+			}
+			
 		
-		if(this.getFuneraria().buscarEmpleados("mañana", cargo).size()!=0) {
-			horaMin=6;
-			horaMax=14;
-		}else if(this.getFuneraria().buscarEmpleados("tarde", cargo).size()!=0){
-			if(horaMin==0) {horaMin=15; horaMax=22;}
-			else {horaMax=22;}
-		}else if(this.getFuneraria().buscarEmpleados("noche", cargo).size()!=0) {
-			if(horaMin==0) {horaMax=30; horaMin=23;}
-			else if(horaMin==15) {horaMax=30;}
-			else if(horaMax==14) {horaMin=23; horaMax=38;}
-			else {horaMin=0; horaMax=23;}
+			for(int a=0;a<3;a++) {
+				// Generar horas y minutos aleatorios 
+	        	int horas= random.nextInt(horaMax - horaMin + 1) + horaMin; // Horas entre horasMin y horasMax
+	            if(horas>23) {horas-=24;}
+	            int minutos = random.nextInt(60); // Minutos entre 0 y 59
+		        
+		        // Crear una instancia de LocalTime con la hora y minutos aleatorios
+	            LocalTime horaGenerada = LocalTime.of(horas, minutos);
+	            
+	            
+	            this.horarioEventos.add(horaGenerada);
+		            
+				}
 			
 		}
 		
-	
-		for(int a=0;a<3;a++) {
-			// Generar horas y minutos aleatorios 
-        	int horas= random.nextInt(horaMax - horaMin + 1) + horaMin; // Horas entre horasMin y horasMax
-            if(horas>23) {horas-=24;}
-            int minutos = random.nextInt(60); // Minutos entre 0 y 59
-	        
-	        // Crear una instancia de LocalTime con la hora y minutos aleatorios
-            LocalTime horaGenerada = LocalTime.of(horas, minutos);
-            
-            
-            this.horarioEventos.add(horaGenerada);
-	            
-			}
 	
 	}
 	
