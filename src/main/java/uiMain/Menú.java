@@ -617,6 +617,7 @@ public class Menú {
 		funeraria3.agregarEmpleado(empleadoC5);
 		funeraria3.agregarEmpleado(empleadoC6);
 		
+		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
 		//Familiares Mujeres
 		Familiar a1= new Familiar("Mario",711,50,cuenta,"padre",17);
@@ -683,6 +684,129 @@ public class Menú {
 		 
 		Cementerio cementerioF15Cu = new Cementerio ("Paz y Esperanza",78,cuenta,"bronce", null,"cuerpos",funeraria1); 
 		Cementerio cementerioF16Cu = new Cementerio ("Sendero de la Tranquilidad",78,cuenta,"bronce", null,"cuerpos",funeraria1); 
+		
+		//Objetos Cementerio 1 Cenizas 
+		
+		Urna urnaF1C11=new Urna("Urnita Eterna Paz",cementerioF11Ce,70,1,"fija");
+		Urna urnaF1C12=new Urna("Urnita Memoria Serene",cementerioF11Ce,80,0,"ordinaria");
+		Urna urnaF1C13=new Urna("Urnita Descanso Sagrado",cementerioF11Ce,10,0,"ordinaria");
+		Urna urnaF1C14=new Urna("Urnita Luz Eterna",cementerioF11Ce,60,1,"fija");
+		
+		
+		//Objetos Cementerio 2 Urna Cenizas
+		
+		Urna urnaF1C21=new Urna("Urnita Tranquilidad Infinita",cementerioF12Ce,70,1,"fija");
+		Urna urnaF1C22=new Urna("Urnita Homenaje Perpetuo",cementerioF12Ce,80,0,"ordinaria");
+		Urna urnaF1C23=new Urna("Urnita Amanecer Sereno",cementerioF12Ce,10,0,"ordinaria");
+		Urna urnaF1C24=new Urna("Urnita Refugio del Alma",cementerioF12Ce,60,1,"fija");
+		
+		//Objetos Cementerio 3 Urna Cenizas
+		
+		Urna urnaF1C31=new Urna("Urnita Oasis de Recuerdo",cementerioF13Ce,70,1,"fija");
+		Urna urnaF1C32=new Urna("Urnita Sombra Amada",cementerioF13Ce,80,0,"ordinaria");
+		Urna urnaF1C33=new Urna("Urnita Caja de la Verdad",cementerioF13Ce,10,0,"ordinaria");
+		Urna urnaF1C34=new Urna("Urnita Urna de la Democracia",cementerioF13Ce,60,1,"fija");
+		
+		//Objetos Cementerio 4 Urna Cenizas
+		
+		Urna urnaF1C41=new Urna("Urnita Voz del Pueblo",cementerioF14Ce,70,1,"fija");
+		Urna urnaF1C42=new Urna("Urnita Cámara de Decisiones",cementerioF14Ce,80,0,"ordinaria");
+		Urna urnaF1C43=new Urna("Urnita Bóveda de Opiniones",cementerioF14Ce,10,0,"ordinaria");
+		Urna urnaF1C44=new Urna("Urnita Recinto Electoral",cementerioF14Ce,60,1,"fija");
+		
+		//Objetos Cementerio 5 Urna Cenizas
+		
+		Urna urnaF1C51=new Urna("Urnita Contenedor de Voluntades",cementerioF15Ce,70,1,"fija");
+		Urna urnaF1C52=new Urna("Urnita Caja de Equidad",cementerioF15Ce,80,0,"ordinaria");
+		Urna urnaF1C53=new Urna("Urnita de la Justicia",cementerioF15Ce,10,0,"ordinaria");
+		Urna urnaF1C54=new Urna("Urnita Escudo Electoral",cementerioF15Ce,60,1,"fija");
+		
+		//Objetos Cementerio 6 Urna Cenizas
+		
+		Urna urnaF1C61=new Urna("Urnita Cápsula de Sueños",cementerioF16Ce,70,1,"fija");
+		Urna urnaF1C62=new Urna("Urnita Templo de Belleza",cementerioF16Ce,80,0,"ordinaria");
+		Urna urnaF1C63=new Urna("Urnita Misterio Dorado",cementerioF16Ce,10,0,"ordinaria");
+		Urna urnaF1C64=new Urna("Urnita Joyero de Recuerdos",cementerioF16Ce,60,1,"fija");
+		
+		
+		/////////////////////////////// 
+		
+		//Objetos Cementerio 1 Tumba Cuerpos
+		
+		Tumba tumbaF1C11=new Tumba("Tumbita Aquí Reposa un Corazón Noble",cementerioF11Cu,1.70,0);
+		Tumba tumbaF1C12=new Tumba("Tumbita Amado por Siempre",cementerioF11Cu,1.10,0);
+		Tumba tumbaF1C13=new Tumba("Tumbita Siempre en Nuestros Corazones",cementerioF11Cu,1.60,1);
+		Tumba tumbaF1C14=new Tumba("Tumbita Un Alma Inmortal",cementerioF11Cu,1.20,1);
+		Tumba tumbaF1C15=new Tumba("Tumbita Tu Luz Nos Guía",cementerioF11Cu,1.75,2);
+		Tumba tumbaF1C16=new Tumba("Tumbita Querido y Recordado",cementerioF11Cu,1,2);
+	
+		//Objetos Cementerio 2 Tumba Cuerpos
+		
+		Tumba tumbaF1C21=new Tumba("Tumbita Descansa en Paz, Amado",cementerioF12Cu,1.70,0);
+		Tumba tumbaF1C22=new Tumba("Tumbita Tu Memoria Vive en Nosotros",cementerioF12Cu,1.10,0);
+		Tumba tumbaF1C23=new Tumba("Tumbita El Amor Trasciende",cementerioF12Cu,1.60,1);
+		Tumba tumbaF1C24=new Tumba("Tumbita Una Vida Lleno de Amor",cementerioF12Cu,1.20,1);
+		Tumba tumbaF1C25=new Tumba("Tumbita Copa del Encanto",cementerioF12Cu,1.75,2);
+		Tumba tumbaF1C26=new Tumba("Tumbita Portal de Arte",cementerioF12Cu,1,2);
+		
+		//Objetos Cementerio 3 Tumba Cuerpos
+		
+		Tumba tumbaF1C31=new Tumba("Tumbita Esfera de Serenidad",cementerioF13Cu,1.70,0);
+		Tumba tumbaF1C32=new Tumba("Tumbita Reflejo de Elegancia",cementerioF13Cu,1.10,0);
+		Tumba tumbaF1C33=new Tumba("Tumbita Caja de Maravillas",cementerioF13Cu,1.60,1);
+		Tumba tumbaF1C34=new Tumba("Tumbita Jardín del Recuerdo",cementerioF13Cu,1.20,1);
+		Tumba tumbaF1C35=new Tumba("Tumbita Refugio del Alma",cementerioF13Cu,1.75,2);
+		Tumba tumbaF1C36=new Tumba("Tumbita Lugar de Serenidad",cementerioF13Cu,1,2);
+		
+		//Objetos Cementerio 4 Tumba Cuerpos
+		
+		Tumba tumbaF1C41=new Tumba("Tumbita Eterna Luz",cementerioF14Cu,1.70,0);
+		Tumba tumbaF1C42=new Tumba("Tumbita Sombra Sagrada",cementerioF14Cu,1.10,0);
+		Tumba tumbaF1C43=new Tumba("Tumbita Cámara del Silencio",cementerioF14Cu,1.60,1);
+		Tumba tumbaF1C44=new Tumba("Tumbita Rincón de Paz",cementerioF14Cu,1.20,1);
+		Tumba tumbaF1C45=new Tumba("Tumbita Hogar de Paz",cementerioF14Cu,1.75,2);
+		Tumba tumbaF1C46=new Tumba("Tumbita Sendero de Tranquilidad",cementerioF14Cu,1,2);
+		
+		//Objetos Cementerio 5 Tumba Cuerpos
+		
+		Tumba tumbaF1C51=new Tumba("Tumbita Velo de Recuerdo",cementerioF15Cu,1.70,0);
+		Tumba tumbaF1C52=new Tumba("Tumbita Cascada de Paz",cementerioF15Cu,1.10,0);
+		Tumba tumbaF1C53=new Tumba("Tumbita Refugio Perpetuo",cementerioF15Cu,1.60,1);
+		Tumba tumbaF1C54=new Tumba("Tumbita Sombra de Amor",cementerioF15Cu,1.20,1);
+		Tumba tumbaF1C55=new Tumba("Tumbita Eterna Quietud",cementerioF15Cu,1.75,2);
+		Tumba tumbaF1C56=new Tumba("Tumbita Altar de Recuerdos",cementerioF15Cu,1,2);
+	
+		//Objetos Cementerio 6 Tumba Cuerpos
+		
+		Tumba tumbaF1C61=new Tumba("Tumbita Una Vida de Amor y Bondad",cementerioF16Cu,1.70,0);
+		Tumba tumbaF1C62=new Tumba("Tumbita Siempre en Nuestro Corazón y Pensamiento",cementerioF16Cu,1.10,0);
+		Tumba tumbaF1C63=new Tumba("Tumbita En Tu Ausencia",cementerioF16Cu,1.60,1);
+		Tumba tumbaF1C64=new Tumba("Tumbita Tu Presencia es Más Fuerte",cementerioF16Cu,1.20,1);
+		Tumba tumbaF1C65=new Tumba("Tumbita Una Vida Dedicada al Amor",cementerioF16Cu,1.75,2);
+		Tumba tumbaF1C66=new Tumba("Tumbita Una Alma Valiente",cementerioF16Cu,1,2);
+		
+		
+		
+		
+		
+		Epitafios y Mensajes Conmemorativos
+		, 
+		
+		
+		Tu Luz Brilla en Nuestro Recuerdo
+		Eres Querido y Nunca Olvidado
+		, Un Corazón Inmortal
+		Tu Espíritu Vive en Cada Recuerdo Querido
+		 y a la Bondad
+		Descansa Tranquilo, Amado Nuestro
+		Tu Amor y Sabiduría Permanecen con Nosotros
+		
+		
+		
+		
+		
+		
+		
 		
 		//Objetos Crematorio
 		
