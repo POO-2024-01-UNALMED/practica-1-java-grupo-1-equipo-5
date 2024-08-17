@@ -384,16 +384,16 @@ public class FuncionalidadGestionInventario {
     	CuentaBancaria cuentaFun3 = new CuentaBancaria(12345, "Funeraria 3", 1000000, "Ala");
     	
     	//cuenta bancaria establecimientos
-    	CuentaBancaria cuentalocal0 = new CuentaBancaria(123456, "LOCALES", 100000000, "Ala");
-    	CuentaBancaria cuentalocal1= new CuentaBancaria(123457L, "LOCALES", 100000000.00, "Ala");
-    	CuentaBancaria cuentalocal2= new CuentaBancaria(123458L, "LOCALES", 100000000.00, "Ala");
-    	CuentaBancaria cuentalocal3= new CuentaBancaria(123459L, "LOCALES", 100000000.00, "Ala");
-    	CuentaBancaria cuentalocal4= new CuentaBancaria(123460L, "LOCALES", 100000000.00, "Ala");
-    	CuentaBancaria cuentalocal5= new CuentaBancaria(123461L, "LOCALES", 100000000.00, "Ala");
-    	CuentaBancaria cuentalocal6= new CuentaBancaria(123462L, "LOCALES", 100000000.00, "Ala");
-    	CuentaBancaria cuentalocal7= new CuentaBancaria(123463L, "LOCALES", 100000000.00, "Ala");
-    	CuentaBancaria cuentalocal8= new CuentaBancaria(123464L, "LOCALES", 100000000.00, "Ala");
-    	CuentaBancaria cuentalocal9= new CuentaBancaria(123465L, "LOCALES", 100000000.00, "Ala");
+    	CuentaBancaria cuentalocal0 = new CuentaBancaria(123456, "local1 productos", 100000000, "Ala");
+    	CuentaBancaria cuentalocal1= new CuentaBancaria(123457L, "local2 productos", 100000000.00, "Ala");
+    	CuentaBancaria cuentalocal2= new CuentaBancaria(123458L, "local3 productos", 100000000.00, "Ala");
+    	CuentaBancaria cuentalocal3= new CuentaBancaria(123459L, "local4 productos", 100000000.00, "Ala");
+    	CuentaBancaria cuentalocal4= new CuentaBancaria(123460L, "local5 Vehiculos", 100000000.00, "Ala");
+    	CuentaBancaria cuentalocal5= new CuentaBancaria(123461L, "local6 Vehiculos", 100000000.00, "Ala");
+    	CuentaBancaria cuentalocal6= new CuentaBancaria(123462L, "local7 Vehiculos", 100000000.00, "Ala");
+    	CuentaBancaria cuentalocal7= new CuentaBancaria(123463L, "local8 Empleados", 100000000.00, "Ala");
+    	CuentaBancaria cuentalocal8= new CuentaBancaria(123464L, "local9 Empleados", 100000000.00, "Ala");
+    	CuentaBancaria cuentalocal9= new CuentaBancaria(123465L, "local10 Empleados", 100000000.00, "Ala");
 
     	
     	//Cuenta jefe
@@ -421,16 +421,16 @@ public class FuncionalidadGestionInventario {
     	
     	//Establecimientos
     	//public Establecimiento(String nombre, int capacidad, CuentaBancaria cuentaCorriente, Empleado jefe,double calificacion)
-    	Establecimiento local1 = new Establecimiento("local1",500,cuentalocal0,jefe1,5);
-    	Establecimiento local2 = new Establecimiento("local2",500,cuentalocal1,jefe2,5);
-    	Establecimiento local3 = new Establecimiento("local3",500,cuentalocal2,jefe3,5);
-    	Establecimiento local4 = new Establecimiento("local4",500,cuentalocal3,jefe4,5);
-    	Establecimiento local5 = new Establecimiento("local5",500,cuentalocal4,jefe5,5);
-    	Establecimiento local6 = new Establecimiento("local6",500,cuentalocal5,jefe6,5);
-    	Establecimiento local7 = new Establecimiento("local7",500,cuentalocal6,jefe7,5);
-    	Establecimiento local8 = new Establecimiento("local8",500,cuentalocal7,jefe8,5);
-    	Establecimiento local9 = new Establecimiento("local9",500,cuentalocal8,jefe9,5);
-    	Establecimiento local10 = new Establecimiento("local110",500,cuentalocal9,jefe10,5);
+    	Establecimiento local1 = new Establecimiento("local1 productos",500,cuentalocal0,jefe1,5);
+    	Establecimiento local2 = new Establecimiento("local2 productos",500,cuentalocal1,jefe2,5);
+    	Establecimiento local3 = new Establecimiento("local3 productos",500,cuentalocal2,jefe3,5);
+    	Establecimiento local4 = new Establecimiento("local4 productos",500,cuentalocal3,jefe4,5);
+    	Establecimiento local5 = new Establecimiento("local5 Vehiculos",500,cuentalocal4,jefe5,5);
+    	Establecimiento local6 = new Establecimiento("local6 Vehiculos",500,cuentalocal5,jefe6,5);
+    	Establecimiento local7 = new Establecimiento("local7 Vehiculos",500,cuentalocal6,jefe7,5);
+    	Establecimiento local8 = new Establecimiento("local8 Empleados",500,cuentalocal7,jefe8,5);
+    	Establecimiento local9 = new Establecimiento("local9 Empleados",500,cuentalocal8,jefe9,5);
+    	Establecimiento local10 = new Establecimiento("local110 Empleados",500,cuentalocal9,jefe10,5);
     	
     	//Empleados para funeraria
     	// Creación de las cuentas bancarias para los empleados
