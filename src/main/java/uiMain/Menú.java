@@ -889,8 +889,259 @@ public class Menú {
         
     }
 	
-		
-		
+  //______________________________________________________________________________________________________________________________________
+  // funcionalidad  Finanzas
+    
+  		public static void funcionalidadFinanzas() {
+    		
+    		Scanner scanner = new Scanner(System.in);
+    		
+    		ArrayList<Establecimiento> funerarias =Establecimiento.filtarEstablecimiento("funeraria");
+    		System.out.println("Seleccione la funeraria correspondiente");
+    		int indice=0;
+    		for(Establecimiento auxFuneraria:funerarias) {
+    			indice+=1;
+    			System.out.println("["+indice+"]"+auxFuneraria);
+    		}
+    	
+    		System.out.print("Ingrese el índice correspondiente: ");
+    		int indiceFuneraria=scanner.nextInt();
+    		
+    		
+    		while (indiceFuneraria<1 || indiceFuneraria>funerarias.size()) {
+    			System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+    			indiceFuneraria=scanner.nextInt();
+    		}
+    		
+    		Funeraria funeraria=(Funeraria) funerarias.get(indiceFuneraria-1);
+    		boolean continuarY = true;
+    		while(continuarY) {
+    		boolean valido = false;
+    		int indiceHacer = 0 ;
+    		System.out.println("Que proceso quiere hacer ");
+    		System.out.println("[1] Cobro clientes");
+    		System.out.println("[2] Pagar facturas ");
+    		System.out.println("[3] Pago empleados");
+    		System.out.println("[4] credito");
+    		System.out.println("[5] reajuste de dinero");
+    		
+    		System.out.print("Ingrese el índice correspondiente: ");
+    	    indiceHacer = scanner.nextInt();
+    		while(!valido) {
+    		
+    			if(indiceHacer >= 1 && indiceHacer <= 5) {
+    				valido = true;
+    			}else {
+    				System.out.println("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+    				indiceHacer = scanner.nextInt();
+    			}
+    		}
+    		 int a = 0;
+    		switch(indiceHacer) {
+    		case 1:
+    			valido = true;
+    			ArrayList<Establecimiento> cementerios = funeraria.cementerios();
+    			indice=0;
+    			for(Establecimiento cementerio: cementerios) {
+    				indice+=1;
+    				System.out.println("["+indice+"] "+ cementerio);
+    			}
+    			
+    			System.out.print("Ingrese el índice del cementerio: ");
+    			int indiceCementerio = scanner.nextInt();
+    			
+    			while(indiceCementerio < 1 || indiceCementerio > cementerios.size()) {
+    				System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+    				indiceCementerio=scanner.nextInt();
+    				
+    			} 
+    			Cementerio cementerio = (Cementerio) cementerios.get(indiceCementerio - 1);
+    			ArrayList<Cliente> clientes = cementerio.getClientes();
+    			indice = 0;
+    			if(clientes.size() > 0) {
+    			for(Cliente cliente: clientes) {
+    				indice+=1;
+    				System.out.println("["+indice+"] "+ cliente);
+    			}
+    			
+    			System.out.print("Ingrese el índice de los clientes: ");
+    			int indiceCliente = scanner.nextInt();
+    			
+    			while(indiceCliente<1 || indiceCliente>clientes.size()) {
+    				System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+    				indiceCliente=scanner.nextInt();
+    			}
+    			Cliente cliente = (Cliente) clientes.get(indiceCliente - 1);
+    			int cantidadFacturas = cliente.getListadoFacturas().size();
+    			if(cantidadFacturas > 0 ) {
+    			funeraria.cobroServiciosClientes(cliente);	
+    			System.out.println("Cobro de  facturas del cliente: "+ cliente.getNombre()+", realizado correctamente");}
+    			else { System.out.println("No hay facturas que cobrar");}}else{System.out.println("No hay clientes disponibles");}
+    			break;
+    		case 2:
+    		    valido = true;
+    		    boolean continuarq = true;
+    			while(continuarq) {
+    		    ArrayList<Factura> facturas = funeraria.getListadoFacturasPorPagar();
+    		    if(facturas.size() > 0) {
+    		    for(int i = 0; i < facturas.size();i++) {
+    		    	Factura factura = facturas.get(i);
+    		    	System.out.println("["+(i+1)+"]"+"Factura con ID: "+ factura.getID());}
+    		    System.out.print("Ingrese el índice de las facturas: ");
+    			int indiceFactura = scanner.nextInt();
+    			scanner.nextLine();
+    			
+    			while(indiceFactura<1 || indiceFactura>facturas.size()) {
+    				System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+    				indiceFactura=scanner.nextInt();
+    			}
+    			Factura factura1 = (Factura) facturas.get(indiceFactura - 1);
+    			System.out.println(funeraria.cobroFacturas(factura1));
+    		    System.out.println("Desea pagar otra factura? (s/n): ");
+    		    String respuesta1 = scanner.next();
+    		    continuarq = respuesta1.equalsIgnoreCase("s");}else{System.out.println("No hay facturas disponibles");
+    		    break;}}
+    		    break;
+    		case 3:
+    			valido = true;
+    			ArrayList <Empleado> empleados = funeraria.getEmpleados();
+    			for(int i = 0; i < empleados.size();i++) {
+    				System.out.println("["+(i+1)+"] "+ empleados.get(i).getNombre());
+    			}
+    		
+    			System.out.print("Ingrese el índice correspondiente: ");
+    			int indiceEmpleado=scanner.nextInt();
+    			while (indiceEmpleado <1 || indiceEmpleado>empleados.size()) {
+    				System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+    				indiceEmpleado=scanner.nextInt();
+    			}
+    			
+    			Empleado empleado=(Empleado) empleados.get(indiceEmpleado-1);
+    			
+    			System.out.println(funeraria.pagoTrabajadores(empleado));
+    			break;
+    		case 4:
+    			valido = true;
+    			boolean continuar = true;
+    			while(continuar) {
+    			System.out.println("Que proceso quiere hacer ");
+    			System.out.println("[1] Pedir credito");
+    			System.out.println("[2] Pagar credito");
+    			System.out.println("[3] Ver credito");
+    			
+    			System.out.print("Ingrese el índice correspondiente: ");
+    			int indiceCredito = scanner.nextInt();
+    			while (indiceCredito < 1 || indiceCredito > 3) {
+    				System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+    				indiceCredito=scanner.nextInt();
+    			}
+    			ArrayList<Factura> creditos = funeraria.getCuentaCorriente().getCredito();
+    				switch(indiceCredito) {		
+    			case 1:
+    				System.out.println(funeraria.pedirCredito());
+    				break;
+    			case 2:
+    				if(creditos.size() > 0) {
+    				    for(int i = 0; i < creditos.size();i++) {
+    				    	Factura factura = creditos.get(i);
+    				    	System.out.println("["+(i+1)+"]"+"Credito con ID: "+ factura.getID());}
+    				    System.out.print("Ingrese el índice del credito: ");
+    					int indiceCredito1 = scanner.nextInt();
+    					scanner.nextLine();
+    					
+    					while(indiceCredito1<1 || indiceCredito1>creditos.size()) {
+    						System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+    						indiceCredito1=scanner.nextInt();
+    					}
+    				System.out.println("Que porcentaje desea pagar ");
+    			System.out.println("[1] 100%");
+    			System.out.println("[2] 80%");
+    			System.out.println("[3] 60%");
+    			System.out.println("[4] 40%");
+    			System.out.println("[5] 20%");
+    			System.out.print("Ingrese el índice correspondiente: ");
+    			int indicePorcentaje = scanner.nextInt();
+    			while (indicePorcentaje <1 || indicePorcentaje>5) {
+    				System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+    				indicePorcentaje=scanner.nextInt();
+    			}
+
+    			switch(indicePorcentaje) {
+    			case 1:
+    				System.out.println(funeraria.pagarCredito(indiceCredito1 - 1,1.0));
+    				break;
+    			case 2:
+    				System.out.println(funeraria.pagarCredito(indiceCredito1 - 1, 0.8));
+    				break;
+    			case 3:
+    				System.out.println(funeraria.pagarCredito(indiceCredito1 - 1,0.6));
+    				break;
+    			case 4:
+    				System.out.println(funeraria.pagarCredito(indiceCredito1 - 1,0.4));
+    				break;
+    			case 5:
+    				System.out.println(funeraria.pagarCredito(indiceCredito1 - 1,0.2));
+    				break;
+    			}}
+    			break;
+    			case 3:
+    				if(creditos.size() > 0) {
+    				    for(int i = 0; i < creditos.size();i++) {
+    				    	Factura factura = creditos.get(i);
+    				    	System.out.println("["+(i+1)+"]"+"Credito con ID: "+ factura.getID());}
+    				    System.out.print("Ingrese el índice del credito: ");
+    					int indiceCredito2 = scanner.nextInt();
+    					scanner.nextLine();
+    					
+    					while(indiceCredito2<1 || indiceCredito2>creditos.size()) {
+    						System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+    						indiceCredito2=scanner.nextInt();
+    					}
+    				System.out.println(funeraria.getCuentaCorriente().infoCredito(indiceCredito2 - 1));
+    			break;
+    			
+    				}}System.out.println("Desea realizar otra accion de credito? (s/n): ");
+    			String respuesta = scanner.next();
+    			continuar = respuesta.equalsIgnoreCase("s");
+    			}
+    			break;
+    		case 5:
+    			valido = true;
+    			boolean continuarH = true;
+    			while(continuarH) {
+    			System.out.println("Que proceso quiere hacer ");
+    			System.out.println("[1] Ver informe gastos");
+    			System.out.println("[2] Reajuste");
+    			
+    			System.out.print("Ingrese el índice correspondiente: ");
+    			int indiceReajuste = scanner.nextInt();
+    			scanner.nextLine();
+    			while(indiceReajuste<1 || indiceReajuste>2) {
+    				System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+    				indiceReajuste=scanner.nextInt();
+    			}
+    			switch(indiceReajuste) {
+    			case 1:
+    				System.out.println(funeraria.informeGastosFacturas());
+    				break;
+    			case 2:
+    			    System.out.println(funeraria.reajusteDinero());
+    			break;
+    			
+    			}System.out.println("Desea realizar otra accion en reajuste? (s/n): ");
+    			String respuesta = scanner.nextLine();
+    			continuarH = respuesta.equalsIgnoreCase("s");
+    		}break;
+    		}System.out.println("Desea realizar otro proceso con la funeraria? (s/n): ");
+    		String respuestape = scanner.next();
+    		if(respuestape.equalsIgnoreCase("s")) {
+    			continuarY = true;
+    		}else {
+    			continuarY = false;
+    			break;
+    		}
+    	}}
+    		
 		
 	
 	
@@ -903,7 +1154,7 @@ public class Menú {
 		    
 	    //cuentaAhorro funerarias
 	    CuentaBancaria cuenta4 = new CuentaBancaria(19934, "todasLasFunerarias", 3993, "BANCO_OCCIDENTE");
-	        
+	    CuentaBancaria cuenta = new CuentaBancaria(123, "Alfredo", 1000000, "Ala"); 
 	    //cuentaBancarias clientes
 	    CuentaBancaria cuenta5 = new CuentaBancaria(378273, "a1", 39999, "BBVA");
 	    CuentaBancaria cuenta6 = new CuentaBancaria(199919, "a2", 17271, "BANCOLOMBIA");
@@ -922,16 +1173,16 @@ public class Menú {
 	    CuentaBancaria cuenta19 = new CuentaBancaria(238822, "c5", 86786, "BANCO_BOGOTA");
 	    
 	    //cuentasBancaria empleados
-	    CuentaBancaria cuenta20 = new CuentaBancaria(345354, "Alberto", 39999, "BBVA");
-	    CuentaBancaria cuenta21 = new CuentaBancaria(456456, "Julio", 17271, "BANCOLOMBIA");
-	    CuentaBancaria cuenta22 = new CuentaBancaria(575675, "Andres", 17212, "DAVIVIENDA");
-	    CuentaBancaria cuenta23 = new CuentaBancaria(678676, "Ismael", 34784, "BANCO_OCCIDENTE");
-	    CuentaBancaria cuenta24 = new CuentaBancaria(345345, "Maria", 37437, "BANCO_BOGOTA");
-	    CuentaBancaria cuenta25 = new CuentaBancaria(234234, "Susana", 28348, "BBVA");
-	    CuentaBancaria cuenta26 = new CuentaBancaria(324322, "Camilo", 23484, "BANCOLOMBIA");
-	    CuentaBancaria cuenta27 = new CuentaBancaria(567567, "Aron", 23828, "DAVIVIENDA");
-	    CuentaBancaria cuenta28 = new CuentaBancaria(228828, "Julieta", 48238, "BANCO_OCCIDENTE");
-	    CuentaBancaria cuenta29 = new CuentaBancaria(454564, "Natalia", 42734, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta20 = new CuentaBancaria(345354, "Adrián Vargas", 39999, "BBVA");
+	    CuentaBancaria cuenta21 = new CuentaBancaria(456456, "Benjamín Díaz", 17271, "BANCOLOMBIA");
+	    CuentaBancaria cuenta22 = new CuentaBancaria(575675, "Cristian Herrera", 17212, "DAVIVIENDA");
+	    CuentaBancaria cuenta23 = new CuentaBancaria(678676, "Diana Moreno", 34784, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta24 = new CuentaBancaria(345345, "Gabriela Arias", 37437, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta25 = new CuentaBancaria(234234, "David Soto", 28348, "BBVA");
+	    CuentaBancaria cuenta26 = new CuentaBancaria(324322, "Esteban Cordero", 23484, "BANCOLOMBIA");
+	    CuentaBancaria cuenta27 = new CuentaBancaria(567567, "Federico Gil", 23828, "DAVIVIENDA");
+	    CuentaBancaria cuenta28 = new CuentaBancaria(228828, "Elena Vázquez", 48238, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta29 = new CuentaBancaria(454564, "Isabela López", 42734, "BANCO_BOGOTA");
 	    CuentaBancaria cuenta30 = new CuentaBancaria(831838, "Joseph", 23424, "BBVA");
 	    CuentaBancaria cuenta31 = new CuentaBancaria(456304, "Valentina", 34564, "BANCOLOMBIA");
 	    CuentaBancaria cuenta32 = new CuentaBancaria(305340, "Jorge", 36464, "DAVIVIENDA");
@@ -961,32 +1212,29 @@ public class Menú {
 	       CuentaBancaria cuenta50 = new CuentaBancaria(768676, "Ciudad_de_los_angeles", 34784, "BANCO_OCCIDENTE");
 	       CuentaBancaria cuenta51 = new CuentaBancaria(876896, "Valle_de_la_serenidad", 37437, "BANCO_BOGOTA");
 	       CuentaBancaria cuenta52 = new CuentaBancaria(413212, "Santuario_de_la_eternidad", 28348, "BBVA");
-		
-		//objetos cuenta Bancaria 
-		CuentaBancaria cuenta = new CuentaBancaria(123, "Alfredo", 1000000, "Ala");
-		
+ 
 		//Objetos Funeraria
 		
-		Funeraria funeraria1 = new Funeraria("Eterna Paz", cuenta,cuenta);
-		Funeraria funeraria2 = new Funeraria("Caminos de Luz", cuenta,cuenta);
-		Funeraria funeraria3 = new Funeraria("Recuerdos Eternos", cuenta,cuenta);
+		Funeraria funeraria1 = new Funeraria("Eterna Paz", cuenta1,cuenta4);
+		Funeraria funeraria2 = new Funeraria("Caminos de Luz", cuenta2,cuenta4);
+		Funeraria funeraria3 = new Funeraria("Recuerdos Eternos", cuenta3,cuenta4);
 		
 		//Empleados sepultureros
 		
-		Empleado empleadoF11S= new Empleado("Adrián Vargas",null,"mañana","sepulturero",1000000,funeraria1);
-		Empleado empleadoF12S= new Empleado("Benjamín Díaz",null,"mañana","sepulturero",1000000,funeraria1);
-		Empleado empleadoF13S= new Empleado("Cristian Herrera",null,"tarde","sepulturero",1000000,funeraria1);
-		Empleado empleadoF14S= new Empleado("Diana Moreno",null,"tarde","sepulturero",1000000,funeraria1);
-		Empleado empleadoF15S= new Empleado("Gabriela Arias",null,"noche","sepulturero",1000000,funeraria1);
+		Empleado empleadoF11S= new Empleado("Adrián Vargas",cuenta20,"mañana","sepulturero",1000000,funeraria1);
+		Empleado empleadoF12S= new Empleado("Benjamín Díaz",cuenta21,"mañana","sepulturero",1000000,funeraria1);
+		Empleado empleadoF13S= new Empleado("Cristian Herrera",cuenta22,"tarde","sepulturero",1000000,funeraria1);
+		Empleado empleadoF14S= new Empleado("Diana Moreno",cuenta23,"tarde","sepulturero",1000000,funeraria1);
+		Empleado empleadoF15S= new Empleado("Gabriela Arias",cuenta24,"noche","sepulturero",1000000,funeraria1);
 		
 		
 		//Empleados cremador
 		
-		Empleado empleadoF11C= new Empleado("David Soto",null,"mañana","cremador",1000000,funeraria1);
-		Empleado empleadoF12C= new Empleado("Esteban Cordero",null,"mañana","cremador",1000000,funeraria1);
-		Empleado empleadoF13C= new Empleado("Federico Gil",null,"tarde","cremador",1000000,funeraria1);
-		Empleado empleadoF14C= new Empleado("Elena Vázquez",null,"noche","cremador",1000000,funeraria1);
-		Empleado empleadoF15C= new Empleado("Isabela López",null,"noche","cremador",1000000,funeraria1);
+		Empleado empleadoF11C= new Empleado("David Soto",cuenta25,"mañana","cremador",1000000,funeraria1);
+		Empleado empleadoF12C= new Empleado("Esteban Cordero",cuenta26,"mañana","cremador",1000000,funeraria1);
+		Empleado empleadoF13C= new Empleado("Federico Gil",cuenta27,"tarde","cremador",1000000,funeraria1);
+		Empleado empleadoF14C= new Empleado("Elena Vázquez",cuenta28,"noche","cremador",1000000,funeraria1);
+		Empleado empleadoF15C= new Empleado("Isabela López",cuenta29,"noche","cremador",1000000,funeraria1);
 		
 		
 		
@@ -2238,7 +2486,7 @@ public class Menú {
 			case 4:
 				FuncionalidadGestionInventario(funerarias);
 				break;
-				
+			case 5:	
 				
 			default:
 				System.out.println("Número fuera de rango");

@@ -273,7 +273,11 @@ public class FuncionalidadFinanzas {
 	}}
 	
 public static void main(String[] args) {
-		
+	
+	//proveedor
+	CuentaBancaria cuentaProveedor = new CuentaBancaria(1231232,"proveedor",1000000,"BBVA");
+	Establecimiento Proveedor = new Establecimiento("Proveedor", cuentaProveedor);
+	
 	//cuentasCorriente funerarias
 	CuentaBancaria cuenta1 = new CuentaBancaria(199234234, "funita", 40000,40000,40000,40000,40000, "BBVA");
     CuentaBancaria cuenta2 = new CuentaBancaria(193739239, "fumita", 40000,40000,40000,40000,40000, "BANCOLOMBIA");
@@ -339,7 +343,35 @@ public static void main(String[] args) {
        CuentaBancaria cuenta50 = new CuentaBancaria(768676, "Ciudad_de_los_angeles", 34784, "BANCO_OCCIDENTE");
        CuentaBancaria cuenta51 = new CuentaBancaria(876896, "Valle_de_la_serenidad", 37437, "BANCO_BOGOTA");
        CuentaBancaria cuenta52 = new CuentaBancaria(413212, "Santuario_de_la_eternidad", 28348, "BBVA");
+       
+    //CuentaBancaria Familiares
+       CuentaBancaria cuenta53 = new CuentaBancaria(456454, "Mario", 23484, "BANCOLOMBIA");
+       CuentaBancaria cuenta54 = new CuentaBancaria(678678, "Alberto", 23828, "DAVIVIENDA");
+       CuentaBancaria cuenta55 = new CuentaBancaria(899999, "Juliana", 48238, "BANCO_OCCIDENTE");
+       CuentaBancaria cuenta56 = new CuentaBancaria(787788, "Michel", 23424, "BBVA");
+       CuentaBancaria cuenta57 = new CuentaBancaria(454545, "Sebastian", 36464, "DAVIVIENDA");
+       CuentaBancaria cuenta58 = new CuentaBancaria(232323, "Natalia", 57567, "BANCO_OCCIDENTE");
+       CuentaBancaria cuenta59 = new CuentaBancaria(453455, "Valeria", 34784, "BANCO_OCCIDENTE");
+       CuentaBancaria cuenta60 = new CuentaBancaria(121211, "Juana", 37437, "BANCO_BOGOTA");
     
+    //CuentaBancarias empleados   
+       CuentaBancaria cuenta61 = new CuentaBancaria(345345, "Alberto", 23484, "BANCOLOMBIA");
+       CuentaBancaria cuenta62 = new CuentaBancaria(565555, "Maria", 23828, "DAVIVIENDA");
+       CuentaBancaria cuenta63 = new CuentaBancaria(766677, "Anastasia", 48238, "BANCO_OCCIDENTE");
+       CuentaBancaria cuenta64 = new CuentaBancaria(676767, "Gilberto", 23424, "BBVA");
+       CuentaBancaria cuenta65 = new CuentaBancaria(767666, "Pepito", 36464, "DAVIVIENDA");
+       CuentaBancaria cuenta66 = new CuentaBancaria(344434, "Camilo", 57567, "BANCO_OCCIDENTE");
+       CuentaBancaria cuenta67 = new CuentaBancaria(223335, "Santiago", 34784, "BANCO_OCCIDENTE");
+       CuentaBancaria cuenta68 = new CuentaBancaria(134443, "Anastasio", 37437, "BANCO_BOGOTA");
+       
+    //CuentaBancaria clientes
+       CuentaBancaria cuenta69 = new CuentaBancaria(122211, "Aurora", 23484, "BANCOLOMBIA");
+       CuentaBancaria cuenta70 = new CuentaBancaria(709900, "Lyra", 48238, "BANCO_OCCIDENTE");
+       CuentaBancaria cuenta71 = new CuentaBancaria(770070, "Ophelia", 36464, "DAVIVIENDA");
+       CuentaBancaria cuenta72 = new CuentaBancaria(890070, "Atticus", 34784, "BANCO_OCCIDENTE");
+       CuentaBancaria cuenta73 = new CuentaBancaria(976799, "Sage", 23484, "BANCOLOMBIA");
+       CuentaBancaria cuenta74 = new CuentaBancaria(507057, "Capian", 48238, "BANCO_OCCIDENTE");
+   
     //Funerarias
     Funeraria funita = new Funeraria("funita",cuenta1, cuenta4);
 	Funeraria fumita = new Funeraria("fumita", cuenta2, cuenta4);
@@ -347,54 +379,105 @@ public static void main(String[] args) {
 		
 	//Cementerios
 	Cementerio Jardines_de_la_eternidad = new Cementerio ("Jardines_de_la_eternidad",78,cuenta44,"oro", null,"cenizas",fulanita); 
-	Cementerio Campos_de_paz = new Cementerio ("Campos_de_paz",78,cuenta45,"oro", null,"cenizas",fumita); 
+	Cementerio Campos_de_paz = new Cementerio ("Campos_de_paz",78,cuenta45,"oro", null,"cuerpos",fumita); 
 	Cementerio Monte_sacro = new Cementerio ("Monte_sacro",78,cuenta46,"oro", null,"cenizas",funita); 
-	Cementerio Parque_de_la_memoria_eterna = new Cementerio ("Parque_de_la_memoria_eterna",78,cuenta47,"oro", null,"cenizas",fulanita); 
+	Cementerio Parque_de_la_memoria_eterna = new Cementerio ("Parque_de_la_memoria_eterna",78,cuenta47,"oro", null,"cuerpos",fulanita); 
 	Cementerio Jardines_del_recuerdo = new Cementerio ("Jardines_del_recuerdo",78,cuenta48,"oro", null,"cenizas",fumita); 
-	Cementerio Parque_de_la_eternidad = new Cementerio ("Parque_de_la_eternidad",78,cuenta49,"oro", null,"cenizas",fulanita); 
+	Cementerio Parque_de_la_eternidad = new Cementerio ("Parque_de_la_eternidad",78,cuenta49,"oro", null,"cuerpos",fulanita); 
 	Cementerio Ciudad_de_los_angeles = new Cementerio ("Ciudad_de_los_angeles",78,cuenta50,"oro", null,"cenizas",funita); 
-	Cementerio Valle_de_la_cerenidad = new Cementerio ("Valle_de_la_cerenidad",78,cuenta51,"oro", null,"cenizas",fumita); 
+	Cementerio Valle_de_la_cerenidad = new Cementerio ("Valle_de_la_cerenidad",78,cuenta51,"oro", null,"cuerpos",fumita); 
 	Cementerio Santuario_de_la_eternidad = new Cementerio ("Santuario_de_la_eternidad",78,cuenta52,"oro", null,"cenizas",funita); 
 		
+	//crematorios	
 		
-		
-		
-		
-		
-		Crematorio Jardines_de_la_eternidad = new Crematorio ("Jardines_de_la_eternidad",100,null,"oro", null,funita); 
-		Crematorio Campos_de_paz = new Crematorio ("Campos_de_paz",78,null,"oro", null,fumita); 
-		Crematorio Monte_sacro = new Crematorio ("Monte_sacro",78,null,"oro", null,fulanita); 
-		Crematorio Jardines_de_la_reflexion = new Crematorio ("Jardines_de_la_reflexion",100,null,"oro", null,funita); 
-		Crematorio Parque_de_la_memoria_eterna = new Crematorio ("Parque_de_la_memoria_eterna",78,null,"oro", null,fumita); 
-		Crematorio Cementerio_de_la_trinidad = new Crematorio ("Cementerio_de_la_trinidad",78,null,"oro", null,fulanita); 
-		Crematorio crematorio = new Crematorio ("crematorio",100,null,"oro", null,funita); 
-		Crematorio creno = new Crematorio ("creno",78,null,"oro", null,fumita); 
-		Crematorio  = new Crematorio ("cremita",78,null,"oro", null,fulanita); 
-		
-	
 
-		CuentaBancaria cuenta3 = new CuentaBancaria(32323, "b", 32324, "BBVA");
-		CuentaBancaria cuenta4 = new CuentaBancaria(342343, "e", 32, "BBVA");
-		CuentaBancaria cuenta8 = new CuentaBancaria(342343, "empleado1", 32, "BBVA");
-		Cementerio cementerio1 = new Cementerio ("cementerio1",78,null,"oro", null,"cuerpos",fulanita); 
-		Cementerio cemi1 = new Cementerio ("cemi1",78,null,"oro", null,"cuerpos",fumita); 
-		Cementerio cemito1 = new Cementerio ("cemito1",78,null,"oro", null,"cuerpos",funita);
-		Familiar b= new Familiar("Mario",123,45,cuenta3,"padre",17);
-		Familiar e= new Familiar("Alberto",123,45,cuenta4,"conyugue",17);
-		ArrayList<Familiar> familiar=new ArrayList<Familiar>();
-		familiar.add(b);
-		familiar.add(e);
-		CuentaBancaria cuentaProveedor = new CuentaBancaria(1231232,"proveedor",1000000,"BBVA");
-		Establecimiento Proveedor = new Establecimiento("Proveedor", cuentaProveedor);
-		Empleado empleado1 = new Empleado("Alberto",30,cuenta8,"mañana","sepulturero",9000,2,5);
-		Empleado empleado2 = new Empleado("Maria",23,null,"noche","sepulturero",9000,3,9);
-		Empleado empleado3 = new Empleado("Anastasia",43,null,"noche","cremador",10000,3,10);
-		Empleado empleado4 = new Empleado("Gilberto",44,null,"mañana","cremador",10000,3,0);
-		Empleado empleado5 = new Empleado("Pepito",18,null,"mañana","sepulturero",9000,1,0);
-		Empleado empleado6 = new Empleado("Camila",33,null,"tarde","cremador",10000,0,3);
-		Empleado empleado7 = new Empleado("Santiago",43,null,"noche","sepulturero",9000,32,5);
-		Empleado empleado8 = new Empleado("Anastasio",43,null,"tarde","cremador",10000,5,2);
-		Vehiculo veh1= new Vehiculo(TipoVehiculo.BERLINA,fulanita,"azul", "2345",3232,3);
+	Crematorio La_13 = new Crematorio ("La_13",100,null,"oro", null,funita); 
+	Crematorio A_Todo_Mil = new Crematorio ("A_Todo_Mil",78,null,"oro", null,fumita); 
+	Crematorio Crematorio_del_recuerdo = new Crematorio ("Crematorio_del_recuerdo",78,null,"oro", null,fulanita); 
+	Crematorio Puerta_del_cielo = new Crematorio ("Puerta_del_cielo",100,null,"oro", null,funita); 
+	Crematorio La_ultima_despedida = new Crematorio ("La_ultima_despedida",78,null,"oro", null,fumita); 
+	Crematorio Memoria_eterna = new Crematorio ("Memoria_eterna",78,null,"oro", null,fulanita); 
+	Crematorio La_llama_de_la_vida = new Crematorio ("La_llama_de_la_vida",100,null,"oro", null,funita); 
+	Crematorio El_faro_de_la_eternidad = new Crematorio ("El_faro_de_la_eternidad",78,null,"oro", null,fumita); 
+	Crematorio La_puerta_de_la_eternidad = new Crematorio ("La_puerta_de_la_eternidad",78,null,"oro", null,fulanita);	
+		 
+		
+	//Familiares	
+	Familiar Mario = new Familiar("Mario",16341,40,cuenta53,"padre",17);
+	Familiar Alberto = new Familiar("Alberto",15332,38,cuenta54,"conyugue",17);
+	Familiar Juliana = new Familiar("Juliana",13423,25,cuenta55,"padre",17);
+	Familiar Michael = new Familiar("Michael",12345,18,cuenta56,"conyugue",17);
+	Familiar Sebastian = new Familiar("Sebastian",12375,70,cuenta57,"padre",17);
+	Familiar Natalia = new Familiar("Natalia",14356,20,cuenta58,"conyugue",17);
+	Familiar Valeria = new Familiar("Valeria",52376,29,cuenta59,"padre",17);
+	Familiar Juana = new Familiar("Juana",22356,38,cuenta60,"conyugue",17);
+	Familiar Miguel = new Familiar("Miguel",16,"hermano",Juana);
+	Familiar Juan = new Familiar("Juan",17,"hijo", Michael);
+	Familiar Ismael = new Familiar("Ismael",3,"hermano",Mario);
+	Familiar Daniel = new Familiar("Daniel",12,"hijo",Alberto);
+	Familiar Daniela = new Familiar("Daniela",7,"hermano",Juliana);
+	Familiar Estefania = new Familiar("Estefania",8,"hijo",Sebastian);
+	Familiar Emma = new Familiar("Emma",9,"hermano",Natalia);
+	Familiar Mia = new Familiar("Mia",10,"hijo",Valeria);
+	
+	//Familias
+	ArrayList<Familiar> familia1=new ArrayList<Familiar>();
+	ArrayList<Familiar> familia2=new ArrayList<Familiar>();
+	ArrayList<Familiar> familia3=new ArrayList<Familiar>();
+	   
+	    //agregarFamiliar
+		familia1.add(Mario);
+		familia1.add(Natalia);
+		familia1.add(Emma);
+		familia1.add(Ismael);
+		familia2.add(Juliana);
+		familia2.add(Daniel);
+		familia2.add(Alberto);
+		familia2.add(Daniel);
+		familia3.add(Michael);
+		familia3.add(Juana);
+		familia3.add(Miguel);
+		familia3.add(Juan);
+		
+	//Empleados	
+	Empleado empleado1 = new Empleado("Alberto",30,cuenta61,"mañana","sepulturero",9000,2,5);
+	Empleado empleado2 = new Empleado("Maria",23,cuenta61,"noche","sepulturero",9000,3,9);
+	Empleado empleado3 = new Empleado("Anastasia",43,cuenta63,"noche","cremador",10000,3,10);
+	Empleado empleado4 = new Empleado("Gilberto",44,cuenta64,"mañana","cremador",10000,3,0);
+	Empleado empleado5 = new Empleado("Pepito",18,cuenta65,"mañana","sepulturero",9000,1,0);
+	Empleado empleado6 = new Empleado("Camila",33,cuenta66,"tarde","cremador",10000,0,3);
+	Empleado empleado7 = new Empleado("Santiago",43,cuenta67,"noche","sepulturero",9000,32,5);
+	Empleado empleado8 = new Empleado("Anastasio",43,cuenta68,"tarde","cremador",10000,5,2);
+		
+	//clientes
+	Cliente Aurora = new Cliente("Aurora",12344,18,cuenta69,"oro",familia1);
+	Cliente Saskia = new Cliente("Saskia",17,"oro",familia2);
+	Cliente Lyra = new Cliente("Lyra",12344,34,cuenta70,"oro",familia3);
+	Cliente Vesper = new Cliente("Vesper",13,"oro",familia1);
+	Cliente Ophelia = new Cliente("Ophelia",12344,65,cuenta71,"oro",familia2);
+	Cliente Clio = new Cliente("Clio",6,"oro",familia3);
+	Cliente Atticus = new Cliente("Atticus",12344,34,cuenta72,"oro",familia1);
+	Cliente Kaius = new Cliente("Kaius",4,"oro",familia2);
+	Cliente Sage = new Cliente("Sage",12344,64,cuenta73,"oro",familia3);
+	Cliente Orion = new Cliente("Orion",14,"oro",familia1);
+	Cliente Caspian = new Cliente("Caspian",12344,39,cuenta74,"oro",familia2);
+	Cliente Rowan = new Cliente("Rowan",13,"oro",familia3);
+	
+	//Agregar clientes
+	funita.agregarCliente(Aurora);
+	funita.agregarCliente(Rowan);
+	funita.agregarCliente(Saskia);
+	funita.agregarCliente(Caspian);
+	fumita.agregarCliente(Lyra);
+	fumita.agregarCliente(Orion);
+	fumita.agregarCliente(Vesper);
+	fumita.agregarCliente(Kaius);
+	fulanita.agregarCliente(Ophelia);
+	fulanita.agregarCliente(Sage);
+	fulanita.agregarCliente(Clio);
+	fulanita.agregarCliente(Atticus);
+	
+	Vehiculo veh1= new Vehiculo(TipoVehiculo.BERLINA,fulanita,"azul", "2345",3232,3);
 		Vehiculo veh2= new Vehiculo(TipoVehiculo.BUS,fulanita,"azul", "2345",344,3);
 		Vehiculo veh3= new Vehiculo(TipoVehiculo.CARROZA,fulanita,"azul", "2345",234,4);
 		Producto producto1 =  new Producto(veh1, Proveedor);
@@ -434,11 +517,6 @@ public static void main(String[] args) {
 		funita.getListadoFacturasPorPagar().add(factura9);
         funita.getListadoFacturasPorPagar().add(factura5);
 		funita.getListadoFacturasPorPagar().add(factura6);
-		Cliente a1 = new Cliente("a1",12344,18,null,"oro",familiar);
-		Cliente b1 = new Cliente("b1",17,"oro",familiar);
-		funita.agregarCliente(a1);
-		fumita.agregarCliente(b1);
-		Funeraria.setCuentaAhorros(cuenta2);
 		funita.setCuentaCorriente(cuenta5);
 		fulanita.setCuentaCorriente(cuenta6);
 		fumita.setCuentaCorriente(cuenta7);
