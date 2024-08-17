@@ -257,6 +257,7 @@ public String cobroFacturas(Factura factura) {
                 Producto producto = factura.getListaProductos().get(0);
                 Establecimiento establecimiento = producto.getEstablecimiento();
                 this.getCuentaCorriente().transaccion(totalFactura, establecimiento.getCuentaCorriente(), "bolsilloTransporte");                this.listadoFacturas.add(0,factura);
+                this.listadoFacturas.add(factura);
                 this.listadoFacturasPorPagar.remove(factura);
                 val++;
                 resultado = "Factura con ID: " + factura.getID() + " pagada con éxito";
@@ -271,7 +272,7 @@ public String cobroFacturas(Factura factura) {
                 Producto producto = factura.getListaProductos().get(0);
                 Establecimiento establecimiento = producto.getEstablecimiento();
                 this.getCuentaCorriente().transaccion(totalFactura, establecimiento.getCuentaCorriente(), "bolsilloEstablecimientos");
-                this.listadoFacturas.add(0,factura);
+                this.listadoFacturas.add(factura);
                 this.listadoFacturasPorPagar.remove(factura);
                 val++;
                 resultado = "Factura con ID: " + factura.getID() + " pagada con éxito";
@@ -285,7 +286,7 @@ public String cobroFacturas(Factura factura) {
                 Producto producto = factura.getListaProductos().get(0);
                 Establecimiento establecimiento = producto.getEstablecimiento();
                 this.getCuentaCorriente().transaccion(totalFactura, establecimiento.getCuentaCorriente(), "bolsilloTrabajadores");
-                this.listadoFacturas.add(0,factura);
+                this.listadoFacturas.add(factura);
                 this.listadoFacturasPorPagar.remove(factura);
                 val++;
                 resultado = "Factura con ID: " + factura.getID() + " pagada con éxito";
@@ -300,7 +301,7 @@ public String cobroFacturas(Factura factura) {
                 Producto producto = factura.getListaProductos().get(0);
                 Establecimiento establecimiento = producto.getEstablecimiento();
                 this.getCuentaCorriente().transaccion(totalFactura, establecimiento.getCuentaCorriente(), "bolsilloInventario");
-                this.listadoFacturas.add(0,factura);
+                this.listadoFacturas.add(factura);
                 this.listadoFacturasPorPagar.remove(factura);
                 val++;
                 resultado = "Factura con ID: " + factura.getID() + " pagada con éxito";
@@ -328,13 +329,13 @@ public String cobroFacturas(Factura factura) {
     		if(factura.getServicio().equals("bolsilloInventario")) {
     			bolsilloInventario += factura.getTotal();
     			facturasInventario++;
-    		}else if(factura.getServicio().equals("bolsilloTransporte")) {
+    		}if(factura.getServicio().equals("bolsilloTransporte")) {
     			bolsilloTransporte += factura.getTotal();
     			facturasTransporte++;
-    		}else if(factura.getServicio().equals("bolsilloEstablecimientos")) {
+    		}if(factura.getServicio().equals("bolsilloEstablecimientos")) {
     			bolsilloEstablecimientos += factura.getTotal();
     			facturasEstablecimientos++;
-    		}else if(factura.getServicio().equals("bolsilloTrabajadores")) {
+    		}if(factura.getServicio().equals("bolsilloTrabajadores")) {
     			bolsilloTrabajadores += factura.getTotal();
     			bolsilloTrabajadores++;
     		}if(factura.getServicio().equals("bolsilloPagoCredito")) {
@@ -345,20 +346,21 @@ public String cobroFacturas(Factura factura) {
     	} return "Informe de gastos:"+"\n"+
     	"Facturas inventario: " + facturasInventario+"\n"+
     	"Gastos inventario: " + bolsilloInventario+"\n"+
-    	"Facturas inventario: " + facturasTransporte+"\n"+
-    	 "Gastos inventario: " + bolsilloTransporte+"\n"+
-         "Facturas inventario: " + facturasEstablecimientos+"\n"+
-         "Gastos inventario: " + bolsilloEstablecimientos+"\n"+
-    	 "Facturas inventario: " + facturasTrabajadores+"\n"+
-    	 "Gastos inventario: " + bolsilloTrabajadores+"\n"+
-         "Facturas inventario: " + facturasPagoCredito+"\n"+
-    	 "Gastos inventario: " + bolsilloPagoCredito;
+    	"Facturas transporte: " + facturasTransporte+"\n"+
+    	 "Gastos transporte: " + bolsilloTransporte+"\n"+
+         "Facturas establecimientos: " + facturasEstablecimientos+"\n"+
+         "Gastos establecimientos: " + bolsilloEstablecimientos+"\n"+
+    	 "Facturas trabajadores: " + facturasTrabajadores+"\n"+
+    	 "Gastos trabajadores: " + bolsilloTrabajadores+"\n"+
+         "Facturas pago credito: " + facturasPagoCredito+"\n"+
+    	 "Gastos credito: " + bolsilloPagoCredito;
     }
     	 
     public String reajusteDinero() {
     	
 	ArrayList<Establecimiento> funerarias = Establecimiento.filtarEstablecimiento("funeraria");
 	double inventarioMax = 0;
+	String resultado = "";
 	double transporteMax = 0;
 	double establecimientoMax = 0;
 	double trabajadoresMax = 0;
@@ -402,18 +404,27 @@ public String cobroFacturas(Factura factura) {
 		   }
 		   if(bolsilloPagoCredito > creditoMax) {
 			   credito = funeraria;
-		   }
-	   }cuentaAhorros.transaccion(100000, inventario.getCuentaCorriente(), "bolsilloInventario");
-	   cuentaAhorros.transaccion(100000, transporte.getCuentaCorriente(), "bolsilloTransporte");
-	   cuentaAhorros.transaccion(100000, establecimiento.getCuentaCorriente(), "bolsilloEstablecimientos");
-	   cuentaAhorros.transaccion(100000, trabajadores.getCuentaCorriente(), "bolsilloTrabajadores");
-	   cuentaAhorros.transaccion(100000, credito.getCuentaCorriente(), "bolsilloPagoCredito");
-	   return "La funeraria: " + inventario.getNombre() + "requiere mayor cantidad de dinero para actualizar el inventario, por lo que se le ha transferido 100000" + "\n" +
-	   "La funeraria: " + transporte.getNombre() + "requiere mayor cantidad de dinero para la compra y la gestion de vehiculos, por lo que se le ha transferido 100000" + "\n" +
-	   "La funeraria: " + establecimiento.getNombre() + "requiere mayor cantidad de dinero para el pago a los establecimientos, por lo que se le ha transferido 100000" + "\n" +
-	   "La funeraria: " + trabajadores.getNombre() + "requiere mayor cantidad de dinero para la contratacion y el pago de los empleados, por lo que se le ha transferido 100000" + "\n" +
-	   "La funeraria: " + credito.getNombre() + "requiere mayor cantidad de dinero para el pago de su credito, por lo que se le ha transferido 100000";
+		   }}
+		   if(inventarioMax == 0) {resultado += "No hubo Funerarias que necesitaran un reajuste de dinero para inventario" + "\n";}
+		   else{cuentaAhorros.transaccion(100000, inventario.getCuentaCorriente(), "bolsilloInventario");
+		   resultado += "La funeraria: " + inventario.getNombre() + "requiere mayor cantidad de dinero para actualizar el inventario, por lo que se le ha transferido 100000" + "\n";}
+		   if(transporteMax == 0) {resultado += "No hubo Funerarias que necesitaran un reajuste de dinero para transportes" + "\n";}
+		   else {cuentaAhorros.transaccion(100000, transporte.getCuentaCorriente(), "bolsilloTransporte");
+		   resultado += "La funeraria: " + transporte.getNombre() + "requiere mayor cantidad de dinero para la compra y la gestion de vehiculos, por lo que se le ha transferido 100000" + "\n";
+		   }if(establecimientoMax == 0) {resultado += "No hubo Funerarias que necesitaran un reajuste de dinero para establecimientos" + "\n";}
+		   else {cuentaAhorros.transaccion(100000, establecimiento.getCuentaCorriente(), "bolsilloEstablecimientos");
+		   resultado += "La funeraria: " + establecimiento.getNombre() + "requiere mayor cantidad de dinero para el pago a los establecimientos, por lo que se le ha transferido 100000" + "\n";}
+		   if(trabajadoresMax == 0) {resultado += "No hubo Funerarias que necesitaran un reajuste de dinero para trabajadores" + "\n";}
+		   else {cuentaAhorros.transaccion(100000, trabajadores.getCuentaCorriente(), "bolsilloTrabajadores");
+		   resultado += "La funeraria: " + trabajadores.getNombre() + "requiere mayor cantidad de dinero para la contratacion y el pago de los empleados, por lo que se le ha transferido 100000" + "\n";}
+		   if(creditoMax == 0) {resultado += "No hubo Funerarias que necesitaran un reajuste de dinero para credito" + "\n";}
+		   else {cuentaAhorros.transaccion(100000, credito.getCuentaCorriente(), "bolsilloPagoCredito");
+			   resultado +="La funeraria: " + credito.getNombre() + "requiere mayor cantidad de dinero para el pago de su credito, por lo que se le ha transferido 100000";}
+	   
+	   return resultado;
     }
+	   
+	  
 
 public String pagoTrabajadores(Empleado empleado) {
     	 
@@ -430,6 +441,7 @@ public String pagoTrabajadores(Empleado empleado) {
     		     
     		     this.getCuentaCorriente().transaccion(paga, empleado.getCuentaBancaria(), "bolsilloTrabajadores");
     		     empleado.setTrabajosHechos(0);
+    		     this.listadoFacturas.add(new Factura("FacturaTrabajador", paga, "2024", this, "trabajador"));
     		     return "El trabajador ha hecho: " + trabajos +" trabajos,"+ "\n" +
     		     "Y tiene una calificacion de: "  + calificacion + "\n" +
     		     "por lo que obtuvo una paga de: " + paga;
@@ -442,6 +454,7 @@ public String pagoTrabajadores(Empleado empleado) {
     	     
     	     this.getCuentaCorriente().transaccion(paga, empleado.getCuentaBancaria(), "bolsilloTrabajadores");
     	     empleado.setTrabajosHechos(0);
+    	     this.listadoFacturas.add(new Factura("FacturaTrabajador", paga, "2024", this, "trabajador"));
     	     return "El trabajador ha hecho: " + trabajos +" trabajos,"+ "\n" +
     	     "Y tiene una calificacion de: "  + calificacion + "\n" +
 		     "por lo que obtuvo una paga de: " + paga;}
@@ -453,6 +466,7 @@ public String pagoTrabajadores(Empleado empleado) {
     	     
     	     this.getCuentaCorriente().transaccion(paga, empleado.getCuentaBancaria(), "bolsilloTrabajadores");
     	     empleado.setTrabajosHechos(0);
+    	     this.listadoFacturas.add(new Factura("FacturaTrabajador", paga, "2024", this, "trabajador"));
     	     return "El trabajador ha hecho: " + trabajos +" trabajos,"+ "\n" +
     	     "Y tiene una calificacion de: "  + calificacion + "\n" +
 		     "por lo que obtuvo una paga de: " + paga;
@@ -463,7 +477,8 @@ public String pagoTrabajadores(Empleado empleado) {
   
 }
 public String pedirCredito() {
-	if(this.getCuentaCorriente().getCredito() == null || this.getCuentaCorriente().getCredito().getPorcentajeCreditoPorPagar() <= 0.5) {
+	if(this.getCuentaCorriente().getCredito().size() < 3 ) {
+	if(this.getCuentaCorriente().getCredito().size() == 0 || (this.getCuentaCorriente().getCredito().get(this.getCuentaCorriente().getCredito().size() - 1).getPorcentajeCreditoPorPagar() <= 0.5)) {
 	ArrayList<Establecimiento> establecimientos = Funeraria.buscarPorFuneraria(this, "cementerio");
 	ArrayList<Establecimiento> establecimient = Funeraria.buscarPorFuneraria(this, "crematorio");
 	establecimientos.addAll(establecimient);
@@ -492,56 +507,36 @@ public String pedirCredito() {
 		this.getCuentaCorriente().depositar(div, "bolsilloEstablecimientos");
 		montoCredito += (this.getCuentaCorriente().getInteres() * montoCredito);
 		Factura credito = new Factura("credito", montoCredito, "2024", this, "bolsilloPagoCredito");
-		this.getListadoFacturas();
-		this.getCuentaCorriente().setCredito(credito);
+		
+		this.getCuentaCorriente().getCredito().add(credito);
 		return "Credito aceptado";}
 	else {
 		return "Credito rechazado";}
-	}
+	}else{return "Ya tiene el maximo de creditos activos al tiempo";}}
 
-public String pagarCredito(double porcentaje) {
-    if (esPorcentajeValido(porcentaje)) {
-        if (tieneCreditoPendiente()) {
-            double porcentajeFaltante = getPorcentajeFaltante();
-            double valorFaltante = getValorFaltante();
-
+public String pagarCredito(int indiceCredito, double porcentaje) {
+    if (indiceCredito >= 0 && indiceCredito < this.getCuentaCorriente().getCredito().size()) {
+        Factura credito = this.getCuentaCorriente().getCredito().get(indiceCredito);
+        if (credito != null) {
+            double porcentajeFaltante = credito.getPorcentajeCreditoPorPagar();
+            double valorFaltante = credito.getPrecio();
             if (porcentaje <= porcentajeFaltante) {
-                return procesarPago(porcentaje, porcentajeFaltante, valorFaltante);
+                double pago = calcularPago(porcentaje, valorFaltante);
+                if (getCuentaCorriente().getBolsilloPagoCredito() >= pago) {
+                    getCuentaCorriente().retirar(pago, "bolsilloPagoCredito");
+                    actualizarCredito(credito, porcentajeFaltante, valorFaltante, pago);
+                    return "Pago exitoso";
+                } else {
+                    return "Dinero insuficiente";
+                }
             } else {
                 return "El porcentaje es mayor a lo que falta por pagar";
             }
         } else {
-            return "No hay crédito que pagar";
+            return "Crédito no encontrado";
         }
     } else {
-        return "El porcentaje no es válido";
-    }
-}
-
-private boolean esPorcentajeValido(double porcentaje) {
-    return porcentaje == 1.0 || porcentaje == 0.8 || porcentaje == 0.6 || porcentaje == 0.4 || porcentaje == 0.2;
-}
-
-private boolean tieneCreditoPendiente() {
-    return this.getCuentaCorriente().getCredito() != null;
-}
-
-private double getPorcentajeFaltante() {
-    return this.getCuentaCorriente().getCredito().getPorcentajeCreditoPorPagar();
-}
-
-private double getValorFaltante() {
-    return this.getCuentaCorriente().getCredito().getPrecio();
-}
-
-private String procesarPago(double porcentaje, double porcentajeFaltante, double valorFaltante) {
-    if (this.getCuentaCorriente().getBolsilloPagoCredito() >= valorFaltante) {
-        double pago = calcularPago(porcentaje, valorFaltante);
-        this.getCuentaCorriente().retirar(pago, "bolsilloPagoCredito");
-        actualizarCredito(porcentajeFaltante, valorFaltante, pago);
-        return "Pago exitoso";
-    } else {
-        return "Dinero insuficiente";
+        return "Índice de crédito inválido" + indiceCredito + porcentaje;
     }
 }
 
@@ -549,20 +544,17 @@ private double calcularPago(double porcentaje, double valorFaltante) {
     return valorFaltante * porcentaje;
 }
 
-private void actualizarCredito(double porcentajeFaltante, double valorFaltante, double pago) {
+private void actualizarCredito(Factura credito, double porcentajeFaltante, double valorFaltante, double pago) {
     double nuevoPorcentajeFaltante = porcentajeFaltante - pago / valorFaltante;
     double nuevoValorFaltante = valorFaltante - pago;
-
     if (nuevoPorcentajeFaltante == 0) {
-    	Factura credito = this.getCuentaCorriente().getCredito();
-    	this.getListadoFacturas().add(credito);
-        this.getCuentaCorriente().setCredito(null);
+        getCuentaCorriente().getCredito().remove(credito);
+        this.getListadoFacturas().add(credito);
     } else {
-        this.getCuentaCorriente().getCredito().setPorcentajeCreditoPorPagar(nuevoPorcentajeFaltante);
-        this.getCuentaCorriente().getCredito().setPrecio(nuevoValorFaltante);
+        credito.setPorcentajeCreditoPorPagar(nuevoPorcentajeFaltante);
+        credito.setPrecio(nuevoValorFaltante);
     }
 }
-		
 	
 
 

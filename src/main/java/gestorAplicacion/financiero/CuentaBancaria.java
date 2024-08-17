@@ -18,7 +18,7 @@ public class CuentaBancaria implements Banco, Serializable{
 	private String titular;
     private double interes ;
     private double cobroAdicional;
-    private Factura credito;
+    private ArrayList<Factura> credito = new ArrayList<Factura>();
     
     private static ArrayList<CuentaBancaria> cuentas = new ArrayList<CuentaBancaria>(); 
 	
@@ -97,13 +97,14 @@ public class CuentaBancaria implements Banco, Serializable{
               this.saldo = bolsilloTrabajadores + bolsilloTransporte + bolsilloInventario + bolsilloEstablecimientos + bolsilloPagoCredito;
       }}
     }
-public String infoCredito() {
-	if(this.getCredito() != null) {
-	return "ID: " + this.getCredito().getID() + "\n" +
-			"precio: " + this.getCredito().getPrecio() + "\n" +
-			"Porcentaje por pagar: " + this.getCredito().getPorcentajeCreditoPorPagar();}
+public String infoCredito(int credito) {
+	ArrayList<Factura> creditos = this.getCredito();
+	if(creditos.size() > 0) {
+	return "ID: " + creditos.get(credito).getID() + "\n" +
+			"precio: " + creditos.get(credito).getPrecio() + "\n" +
+			"Porcentaje por pagar: " + creditos.get(credito).getPorcentajeCreditoPorPagar();}
 	else {
-		return "No hay credito activo";
+		return "No hay credito activo con ese indice";
 	}
 }
     public void retirar(double cantidad, String tipo) {
@@ -316,11 +317,11 @@ public String infoCredito() {
 	
 
 	
-	public Factura getCredito() {
+	public ArrayList<Factura> getCredito() {
 		return this.credito;
 	}
 	
-	public void setCredito(Factura credito) {
+	public void setCredito(ArrayList<Factura> credito) {
 		this.credito = credito;
 	}
 	

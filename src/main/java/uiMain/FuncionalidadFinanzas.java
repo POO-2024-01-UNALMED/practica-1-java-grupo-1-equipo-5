@@ -44,6 +44,8 @@ public class FuncionalidadFinanzas {
 		}
 		
 		Funeraria funeraria=(Funeraria) funerarias.get(indiceFuneraria-1);
+		boolean continuarY = true;
+		while(continuarY) {
 		boolean valido = false;
 		int indiceHacer = 0 ;
 		System.out.println("Que proceso quiere hacer ");
@@ -82,10 +84,11 @@ public class FuncionalidadFinanzas {
 				System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
 				indiceCementerio=scanner.nextInt();
 				
-			} if(indiceCementerio > 0 && indiceCementerio<=cementerios.size()) {
+			} 
 			Cementerio cementerio = (Cementerio) cementerios.get(indiceCementerio - 1);
 			ArrayList<Cliente> clientes = cementerio.getClientes();
 			indice = 0;
+			if(clientes.size() > 0) {
 			for(Cliente cliente: clientes) {
 				indice+=1;
 				System.out.println("["+indice+"] "+ cliente);
@@ -94,19 +97,23 @@ public class FuncionalidadFinanzas {
 			System.out.print("Ingrese el índice de los clientes: ");
 			int indiceCliente = scanner.nextInt();
 			
-			while(indiceCliente<1 || indice>clientes.size()) {
+			while(indiceCliente<1 || indiceCliente>clientes.size()) {
 				System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
 				indiceCliente=scanner.nextInt();
 			}
 			Cliente cliente = (Cliente) clientes.get(indiceCliente - 1);
+			int cantidadFacturas = cliente.getListadoFacturas().size();
+			if(cantidadFacturas > 0 ) {
 			funeraria.cobroServiciosClientes(cliente);	
 			System.out.println("Cobro de  facturas del cliente: "+ cliente.getNombre()+", realizado correctamente");}
+			else { System.out.println("No hay facturas que cobrar");}}else{System.out.println("No hay clientes disponibles");}
 			break;
 		case 2:
 		    valido = true;
 		    boolean continuarq = true;
 			while(continuarq) {
 		    ArrayList<Factura> facturas = funeraria.getListadoFacturasPorPagar();
+		    if(facturas.size() > 0) {
 		    for(int i = 0; i < facturas.size();i++) {
 		    	Factura factura = facturas.get(i);
 		    	System.out.println("["+(i+1)+"]"+"Factura con ID: "+ factura.getID());}
@@ -114,15 +121,16 @@ public class FuncionalidadFinanzas {
 			int indiceFactura = scanner.nextInt();
 			scanner.nextLine();
 			
-			while(indiceFactura<1 || indice>facturas.size()) {
+			while(indiceFactura<1 || indiceFactura>facturas.size()) {
 				System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
 				indiceFactura=scanner.nextInt();
 			}
 			Factura factura1 = (Factura) facturas.get(indiceFactura - 1);
 			System.out.println(funeraria.cobroFacturas(factura1));
-		    System.out.println("Desea realizar otra accion? (s/n): ");
+		    System.out.println("Desea pagar otra factura? (s/n): ");
 		    String respuesta1 = scanner.next();
-		    continuarq = respuesta1.equalsIgnoreCase("s");}
+		    continuarq = respuesta1.equalsIgnoreCase("s");}else{System.out.println("No hay facturas disponibles");
+		    break;}}
 		    break;
 		case 3:
 			valido = true;
@@ -153,11 +161,28 @@ public class FuncionalidadFinanzas {
 			
 			System.out.print("Ingrese el índice correspondiente: ");
 			int indiceCredito = scanner.nextInt();
-			switch(indiceCredito) {
+			while (indiceCredito < 1 || indiceCredito > 3) {
+				System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+				indiceCredito=scanner.nextInt();
+			}
+			ArrayList<Factura> creditos = funeraria.getCuentaCorriente().getCredito();
+				switch(indiceCredito) {		
 			case 1:
 				System.out.println(funeraria.pedirCredito());
 				break;
 			case 2:
+				if(creditos.size() > 0) {
+				    for(int i = 0; i < creditos.size();i++) {
+				    	Factura factura = creditos.get(i);
+				    	System.out.println("["+(i+1)+"]"+"Credito con ID: "+ factura.getID());}
+				    System.out.print("Ingrese el índice del credito: ");
+					int indiceCredito1 = scanner.nextInt();
+					scanner.nextLine();
+					
+					while(indiceCredito1<1 || indiceCredito1>creditos.size()) {
+						System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+						indiceCredito1=scanner.nextInt();
+					}
 				System.out.println("Que porcentaje desea pagar ");
 			System.out.println("[1] 100%");
 			System.out.println("[2] 80%");
@@ -166,32 +191,50 @@ public class FuncionalidadFinanzas {
 			System.out.println("[5] 20%");
 			System.out.print("Ingrese el índice correspondiente: ");
 			int indicePorcentaje = scanner.nextInt();
+			while (indicePorcentaje <1 || indicePorcentaje>5) {
+				System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+				indicePorcentaje=scanner.nextInt();
+			}
+
 			switch(indicePorcentaje) {
 			case 1:
-				System.out.println(funeraria.pagarCredito(1.0));
+				System.out.println(funeraria.pagarCredito(indiceCredito1 - 1,1.0));
 				break;
 			case 2:
-				System.out.println(funeraria.pagarCredito(0.8));
+				System.out.println(funeraria.pagarCredito(indiceCredito1 - 1, 0.8));
 				break;
 			case 3:
-				System.out.println(funeraria.pagarCredito(0.6));
+				System.out.println(funeraria.pagarCredito(indiceCredito1 - 1,0.6));
 				break;
 			case 4:
-				System.out.println(funeraria.pagarCredito(0.4));
+				System.out.println(funeraria.pagarCredito(indiceCredito1 - 1,0.4));
 				break;
 			case 5:
-				System.out.println(funeraria.pagarCredito(0.2));
+				System.out.println(funeraria.pagarCredito(indiceCredito1 - 1,0.2));
 				break;
-			}
+			}}
 			break;
 			case 3:
-				System.out.println(funeraria.getCuentaCorriente().infoCredito());
+				if(creditos.size() > 0) {
+				    for(int i = 0; i < creditos.size();i++) {
+				    	Factura factura = creditos.get(i);
+				    	System.out.println("["+(i+1)+"]"+"Credito con ID: "+ factura.getID());}
+				    System.out.print("Ingrese el índice del credito: ");
+					int indiceCredito2 = scanner.nextInt();
+					scanner.nextLine();
+					
+					while(indiceCredito2<1 || indiceCredito2>creditos.size()) {
+						System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+						indiceCredito2=scanner.nextInt();
+					}
+				System.out.println(funeraria.getCuentaCorriente().infoCredito(indiceCredito2 - 1));
 			break;
 			
-			}System.out.println("Desea realizar otra accion? (s/n): ");
+				}}System.out.println("Desea realizar otra accion de credito? (s/n): ");
 			String respuesta = scanner.next();
 			continuar = respuesta.equalsIgnoreCase("s");
 			}
+			break;
 		case 5:
 			valido = true;
 			boolean continuarH = true;
@@ -203,6 +246,10 @@ public class FuncionalidadFinanzas {
 			System.out.print("Ingrese el índice correspondiente: ");
 			int indiceReajuste = scanner.nextInt();
 			scanner.nextLine();
+			while(indiceReajuste<1 || indiceReajuste>2) {
+				System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
+				indiceReajuste=scanner.nextInt();
+			}
 			switch(indiceReajuste) {
 			case 1:
 				System.out.println(funeraria.informeGastosFacturas());
@@ -211,14 +258,19 @@ public class FuncionalidadFinanzas {
 			    System.out.println(funeraria.reajusteDinero());
 			break;
 			
-			}System.out.println("Desea realizar otra accion? (s/n): ");
+			}System.out.println("Desea realizar otra accion en reajuste? (s/n): ");
 			String respuesta = scanner.nextLine();
-			continuarH = respuesta.equalsIgnoreCase("s");}
-		default:
-			scanner.next();
+			continuarH = respuesta.equalsIgnoreCase("s");
+		}break;
+		}System.out.println("Desea realizar otro proceso con la funeraria? (s/n): ");
+		String respuestape = scanner.next();
+		if(respuestape.equalsIgnoreCase("s")) {
+			continuarY = true;
+		}else {
+			continuarY = false;
 			break;
 		}
-	}
+	}}
 	
 public static void main(String[] args) {
 		
