@@ -536,11 +536,11 @@ public class Menú {
 		Familiar a1= new Familiar("Mario",711,50,cuenta,"padre",17);
 		Familiar a2= new Familiar("Alberto",712,32,cuenta,"conyuge",13);
 		Familiar a3= new Familiar("Carlos",713,37,cuenta,"hermano",17);
-		Familiar a4= new Familiar("Samantha",714,50,cuenta,"madre",17);
+		Familiar a4= new Familiar("Samantha",714,50,cuenta,"padre",17);
 		
 		//Familiares para todos
 		Familiar b1= new Familiar("Samuel",715,60,cuenta,"padre",17);
-		Familiar b2= new Familiar("Alma",716,30,cuenta,"hijo",13);
+		Familiar b2= new Familiar("Alma",716,60,cuenta,"padre",13);
 		Familiar b3= new Familiar("Eduardo",717,37,cuenta,"hermano",17);
 		Familiar b4= new Familiar("Maria",5, "hermano",b3);
 		
@@ -548,12 +548,32 @@ public class Menú {
 		Familiar c1= new Familiar("Armando",718,50,cuenta,"padre",17);
 		Familiar c2= new Familiar("Catalina",719,32,cuenta,"conyuge",13);
 		Familiar c3= new Familiar("Sebastian",7110,37,cuenta,"hermano",17);
-		Familiar c4= new Familiar("Alba",7111,50,cuenta,"madre",17)
+		Familiar c4= new Familiar("Alba",7111,25,cuenta,"hijo",17);
 		
-		(String nombre, int edad, String parentesco,Familiar responsable);
-		ArrayList<Familiar> familiar=new ArrayList<Familiar>();
-		familiar.add(b);
-		familiar.add(e);
+		
+		//Listas de familiares A
+		ArrayList<Familiar> familiarA=new ArrayList<Familiar>();
+		familiarA.add(a1);
+		familiarA.add(a2);
+		familiarA.add(a3);
+		familiarA.add(a4);
+		
+		//Listas de familiares B
+		ArrayList<Familiar> familiarB=new ArrayList<Familiar>();
+		familiarB.add(b1);
+		familiarB.add(b2);
+		familiarB.add(b3);
+		familiarB.add(b4);
+		
+		//Listas de familiares C
+		ArrayList<Familiar> familiarC=new ArrayList<Familiar>();
+		familiarC.add(c1);
+		familiarC.add(c2);
+		familiarC.add(c3);
+		familiarC.add(c4);
+		
+		
+		
 		
 		//Objetos Cementerio
 		
@@ -592,62 +612,24 @@ public class Menú {
 		
 		//Clientes F1 - Mayores de edad
 		
-		Cliente clienteF11 = new Cliente("Alejandro Rodríguez",123,30,null,"oro",familiar);
-		Cliente clienteF12 = new Cliente("Diego Martínez",1234,25,null,"oro",familiar);
+		Cliente clienteF11 = new Cliente("Alejandro Rodríguez",123,30,null,"oro",familiarC);
+		Cliente clienteF12 = new Cliente("Diego Martínez",1234,25,null,"oro",familiarC);
 		
-		Cliente clienteF13 = new Cliente("Carlos Fernández",1235,90,null,"plata",familiar);
-		Cliente clienteF14 = new Cliente("María González",1236,57,null,"plata",familiar);
+		Cliente clienteF13 = new Cliente("Carlos Fernández",1235,90,null,"plata",familiarB);
+		Cliente clienteF14 = new Cliente("María González",1236,57,null,"plata",familiarB);
 		
-		Cliente clienteF15 = new Cliente("Laura Fernández",1237, "bronce",familiar);
-		Cliente clienteF16 = new Cliente("Isabel Rodríguez",1238, "bronce",familiar);
+		Cliente clienteF15 = new Cliente("Laura Fernández",1237,21,null,"bronce",familiarC);
+		Cliente clienteF16 = new Cliente("Isabel Rodríguez",1238,50,null,"bronce",familiarC);
 	
 		
 		//Clientes F1 - Menores de edad
-		Cliente clienteF17 = new Cliente("Javier Gómez",5,"oro",familiar);
-		Cliente clienteF18 = new Cliente("Sofía Martínez",17,"oro",familiar);
+		Cliente clienteF17 = new Cliente("Javier Gómez",5,"oro",familiarB);
+		Cliente clienteF18 = new Cliente("Sofía Martínez",17,"oro",familiarB);
 		
-		Cliente clienteF19 = new Cliente("Carolina López",15,"plata",familiar);
-		Cliente clienteF110 = new Cliente("Manuel López",13,"plata",familiar);
+		Cliente clienteF19 = new Cliente("Carolina López",15,"plata",familiarB);
+		Cliente clienteF110 = new Cliente("Manuel López",13,"plata",familiarB);
 		
-		
-		//Clientes F2 - Mayores de edad
-		
-		Cliente clienteF21 = new Cliente("Valeria Sánchez",231,30,null,"oro",familiar);
-		Cliente clienteF22 = new Cliente("Patricia Morales",232,25,null,"oro",familiar);
-				
-		Cliente clienteF23 = new Cliente("Gabriela García",233,90,null,"plata",familiar);
-		Cliente clienteF24 = new Cliente("Andrés Vargas",234,57,null,"plata",familiar);
-				
-		Cliente clienteF25 = new Cliente("Sergio Pérez",235, "bronce",familiar);
-		Cliente clienteF26 = new Cliente("Luis García",236, "bronce",familiar);
-		
-		
-		//Clientes F1 - Menores de edad
-		Cliente clienteF27 = new Cliente("Rafael Morales",5,"oro",familiar);
-		Cliente clienteF28 = new Cliente("Pablo Sánchez",17,"oro",familiar);
-				
-		Cliente clienteF29 = new Cliente("Ana Belén Ruiz",15,"bronce",familiar);
-		Cliente clienteF210 = new Cliente("Claudia Romero",13,"bronce",familiar);
-		
-		String nombre,int edad, String plan,ArrayList<Familiar> familiares
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
 		
 		funita.agregarCliente(e1);
 		fumita.agregarCliente(d1);
@@ -689,8 +671,28 @@ public class Menú {
 		Crematorio crematorioF25 = new Crematorio ("Crematorio del Renacer",78,null,"bronce", null,funeraria2); 
 		Crematorio crematorioF26 = new Crematorio ("Fuego y Serenidad",78,null,"bronce", null,funeraria2);		
 	
+		//Clientes F2 - Mayores de edad
+		
+		Cliente clienteF21 = new Cliente("Valeria Sánchez",231,30,null,"oro",familiarA);
+		Cliente clienteF22 = new Cliente("Patricia Morales",232,25,null,"oro",familiarA);
+								
+		Cliente clienteF23 = new Cliente("Gabriela García",233,90,null,"plata",familiarA);
+		Cliente clienteF24 = new Cliente("Andrés Vargas",234,57,null,"plata",familiarC);
+								
+		Cliente clienteF25 = new Cliente("Sergio Pérez",235,35,null, "bronce",familiarC);
+		Cliente clienteF26 = new Cliente("Luis García",236,50,null, "bronce",familiarC);
+						
+						
+		//Clientes F2 - Menores de edad
+		Cliente clienteF27 = new Cliente("Rafael Morales",5,"oro",familiarB);
+		Cliente clienteF28 = new Cliente("Pablo Sánchez",17,"oro",familiarB);
+								
+		Cliente clienteF29 = new Cliente("Ana Belén Ruiz",15,"bronce",familiarB);
+		Cliente clienteF210 = new Cliente("Claudia Romero",13,"bronce",familiarB);
+				
 		
 		
+		//Funeraria 3
 		
 		//objetos cementerio
 		
@@ -725,8 +727,27 @@ public class Menú {
 		Crematorio crematorioF35 = new Crematorio ("Crematorio del Horizonte Eterno",78,null,"bronce", null,funeraria3); 
 		Crematorio crematorioF36 = new Crematorio ("Crematorio Luz de la Eternidad",78,null,"bronce", null,funeraria3);	
 		
+		//Clientes F3 - Mayores de edad
 		
-	
+		Cliente clienteF31 = new Cliente("Ana Torres",3111,30,null,"oro",familiarA);
+		Cliente clienteF32 = new Cliente("Beatriz Sánchez",3112,25,null,"oro",familiarA);
+										
+		Cliente clienteF33 = new Cliente("Alex Cruz",3113,90,null,"plata",familiarC);
+		Cliente clienteF34 = new Cliente("Dani Morales",3114,57,null,"plata",familiarC);
+										
+		Cliente clienteF35 = new Cliente("Lucía González",3115,50,null, "bronce",familiarB);
+		Cliente clienteF36 = new Cliente("Jordan Silva",3115,30,null, "bronce",familiarA);
+								
+								
+		//Clientes F3 - Menores de edad
+		Cliente clienteF37 = new Cliente("Fernanda Salazar",5,"oro",familiarB);
+		Cliente clienteF38 = new Cliente("Carmen Vega",17,"oro",familiarB);
+										
+		Cliente clienteF39 = new Cliente("Kim Hernández",15,"bronce",familiarB);
+		Cliente clienteF310 = new Cliente("Morgan López",13,"bronce",familiarB);
+		
+		
+		
 		
 		
 		
