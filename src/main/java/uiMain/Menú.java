@@ -630,13 +630,21 @@ public class Menú {
 		Cliente clienteF110 = new Cliente("Manuel López",13,"plata",familiarB);
 		
 	
+		//AgregarClientes
+		funeraria1.agregarCliente(clienteF11);
+		funeraria1.agregarCliente(clienteF12);
+		funeraria1.agregarCliente(clienteF13);
+		funeraria1.agregarCliente(clienteF14);
+		funeraria1.agregarCliente(clienteF15);
+		funeraria1.agregarCliente(clienteF16);
+		funeraria1.agregarCliente(clienteF17);
+		funeraria1.agregarCliente(clienteF18);
+		funeraria1.agregarCliente(clienteF19);
+		funeraria1.agregarCliente(clienteF110);
 		
-		funita.agregarCliente(e1);
-		fumita.agregarCliente(d1);
-		fulanita.agregarCliente(c1);
-		fumita.agregarCliente(a1);
 		
-				
+		//Funeraraia 2
+		
 		//Objetos Cementerio
 				
 		//cementerios pertenecientes a F2 --> Funeraria 2 - cenizas
@@ -649,7 +657,7 @@ public class Menú {
 		Cementerio cementerioF25Ce = new Cementerio ("Valle de la Paz Interior",50,cuenta,"bronce", null,"cenizas",funeraria2); 
 		Cementerio cementerioF26Ce = new Cementerio ("Luz del Recuerdo",78,cuenta,"bronce", null,"cenizas",funeraria2); 
 				
-				
+			
 		//cementerios pertenecientes a F2 --> Funeraria 2 - cuerpos
 		Cementerio cementerioF21Cu = new Cementerio ("Colinas del Reposo",78,cuenta,"oro", null,"cuerpos",funeraria2); 
 		Cementerio cementerioF22Cu = new Cementerio ("Jardín de la Eternidad",85,cuenta,"oro", null,"cuerpos",funeraria2); 
@@ -690,6 +698,19 @@ public class Menú {
 		Cliente clienteF29 = new Cliente("Ana Belén Ruiz",15,"bronce",familiarB);
 		Cliente clienteF210 = new Cliente("Claudia Romero",13,"bronce",familiarB);
 				
+		
+		//AgregarClientes
+		funeraria2.agregarCliente(clienteF21);
+		funeraria2.agregarCliente(clienteF22);
+		funeraria2.agregarCliente(clienteF23);
+		funeraria2.agregarCliente(clienteF24);
+		funeraria2.agregarCliente(clienteF25);
+		funeraria2.agregarCliente(clienteF26);
+		funeraria2.agregarCliente(clienteF27);
+		funeraria2.agregarCliente(clienteF28);
+		funeraria2.agregarCliente(clienteF29);
+		funeraria2.agregarCliente(clienteF210);
+		
 		
 		
 		//Funeraria 3
@@ -745,6 +766,19 @@ public class Menú {
 										
 		Cliente clienteF39 = new Cliente("Kim Hernández",15,"bronce",familiarB);
 		Cliente clienteF310 = new Cliente("Morgan López",13,"bronce",familiarB);
+		
+		
+		//AgregarClientes
+		funeraria3.agregarCliente(clienteF31);
+		funeraria3.agregarCliente(clienteF32);
+		funeraria3.agregarCliente(clienteF33);
+		funeraria3.agregarCliente(clienteF34);
+		funeraria3.agregarCliente(clienteF35);
+		funeraria3.agregarCliente(clienteF36);
+		funeraria3.agregarCliente(clienteF37);
+		funeraria3.agregarCliente(clienteF38);
+		funeraria3.agregarCliente(clienteF39);
+		funeraria3.agregarCliente(clienteF310);
 		
 		
 		
