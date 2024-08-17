@@ -28,9 +28,8 @@ public class Establecimiento implements Serializable {
 
 	private LocalTime horaEvento;
 	private Iglesia iglesia;
-	
-	
-
+	private ArrayList<Establecimiento> listadoProveedoresVehiculos=new ArrayList<Establecimiento>();
+	private ArrayList<Establecimiento> listadoProveedoresEmpleados=new ArrayList<Establecimiento>();
 	private ArrayList<Producto> productos = new ArrayList<Producto>();
 	private ArrayList<Establecimiento> listadoProveedores=new ArrayList<Establecimiento>();
 	
@@ -396,6 +395,27 @@ public class Establecimiento implements Serializable {
     public void removerVehiculoEnVenta(Vehiculo vehiculo) {
         vehiculosEnVenta.remove(vehiculo);
     }
+
+	public ArrayList<Establecimiento> getListadoProveedoresVehiculos() {
+		return listadoProveedoresVehiculos;
+	}
+
+	public void setListadoProveedoresVehiculos(ArrayList<Establecimiento> listadoProveedoresVehiculos) {
+		this.listadoProveedoresVehiculos = listadoProveedoresVehiculos;
+	}
+
+	public ArrayList<Establecimiento> getListadoProveedoresEmpleados() {
+		return listadoProveedoresEmpleados;
+	}
+
+	public void setListadoProveedoresEmpleados(ArrayList<Establecimiento> listadoProveedoresEmpleados) {
+		this.listadoProveedoresEmpleados = listadoProveedoresEmpleados;
+	}
+
+	public void setVehiculosEnVenta(ArrayList<Vehiculo> vehiculosEnVenta) {
+		this.vehiculosEnVenta = vehiculosEnVenta;
+	}
+    
 	
 	
 	

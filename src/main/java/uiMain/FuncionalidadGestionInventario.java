@@ -252,7 +252,7 @@ public class FuncionalidadGestionInventario {
 
     private static void contratarEmpleados(Funeraria funeraria, Scanner scanner) {
         System.out.println("Empleados disponibles para contratación:");
-        for (Establecimiento est : funeraria.getListadoProveedores()) {
+        for (Establecimiento est : funeraria.getListadoProveedoresEmpleados()) {
             for (Empleado empleado : est.getEmpleados()) {
                 System.out.println("Establecimiento: " + est.getNombre() + ", Calificación: " + est.getCalificacion());
                 System.out.println("  Empleado: " + empleado.getNombre() + ", Cargo: " + empleado.getCargo() + ", Experiencia: " + empleado.getExperiencia() + " años, Edad: " + empleado.getEdad());
@@ -266,7 +266,7 @@ public class FuncionalidadGestionInventario {
         System.out.println("Vehículos disponibles para la compra:");
 
         // Aquí asumimos que cada establecimiento puede tener vehículos a la venta
-        for (Establecimiento est : funeraria.getListadoProveedores()) {
+        for (Establecimiento est : funeraria.getListadoProveedoresVehiculos()) {
             for (Vehiculo vehiculo : est.getVehiculosEnVenta()) { 
                 System.out.println("Establecimiento: " + est.getNombre() + ", Calificación: " + est.getCalificacion());
                 System.out.println("  Vehículo: " + vehiculo.getTipoVehiculo() + ", Capacidad: " + vehiculo.getCapacidad() + ", Precio: " + vehiculo.getPrecio());
@@ -384,7 +384,17 @@ public class FuncionalidadGestionInventario {
     	CuentaBancaria cuentaFun3 = new CuentaBancaria(12345, "Funeraria 3", 1000000, "Ala");
     	
     	//cuenta bancaria establecimientos
-    	CuentaBancaria cuentalocal = new CuentaBancaria(123456, "LOCALES", 100000000, "Ala");
+    	CuentaBancaria cuentalocal0 = new CuentaBancaria(123456, "LOCALES", 100000000, "Ala");
+    	CuentaBancaria cuentalocal1= new CuentaBancaria(123457L, "LOCALES", 100000000.00, "Ala");
+    	CuentaBancaria cuentalocal2= new CuentaBancaria(123458L, "LOCALES", 100000000.00, "Ala");
+    	CuentaBancaria cuentalocal3= new CuentaBancaria(123459L, "LOCALES", 100000000.00, "Ala");
+    	CuentaBancaria cuentalocal4= new CuentaBancaria(123460L, "LOCALES", 100000000.00, "Ala");
+    	CuentaBancaria cuentalocal5= new CuentaBancaria(123461L, "LOCALES", 100000000.00, "Ala");
+    	CuentaBancaria cuentalocal6= new CuentaBancaria(123462L, "LOCALES", 100000000.00, "Ala");
+    	CuentaBancaria cuentalocal7= new CuentaBancaria(123463L, "LOCALES", 100000000.00, "Ala");
+    	CuentaBancaria cuentalocal8= new CuentaBancaria(123464L, "LOCALES", 100000000.00, "Ala");
+    	CuentaBancaria cuentalocal9= new CuentaBancaria(123465L, "LOCALES", 100000000.00, "Ala");
+
     	
     	//Cuenta jefe
     	CuentaBancaria cuentajefe = new CuentaBancaria(123456, "jefe1", 100000000, "Ala");
@@ -411,16 +421,16 @@ public class FuncionalidadGestionInventario {
     	
     	//Establecimientos
     	//public Establecimiento(String nombre, int capacidad, CuentaBancaria cuentaCorriente, Empleado jefe,double calificacion)
-    	Establecimiento local1 = new Establecimiento("local1",500,cuentalocal,jefe1,5);
-    	Establecimiento local2 = new Establecimiento("local2",500,cuentalocal,jefe2,5);
-    	Establecimiento local3 = new Establecimiento("local3",500,cuentalocal,jefe3,5);
-    	Establecimiento local4 = new Establecimiento("local4",500,cuentalocal,jefe4,5);
-    	Establecimiento local5 = new Establecimiento("local5",500,cuentalocal,jefe5,5);
-    	Establecimiento local6 = new Establecimiento("local6",500,cuentalocal,jefe6,5);
-    	Establecimiento local7 = new Establecimiento("local7",500,cuentalocal,jefe7,5);
-    	Establecimiento local8 = new Establecimiento("local8",500,cuentalocal,jefe8,5);
-    	Establecimiento local9 = new Establecimiento("local9",500,cuentalocal,jefe9,5);
-    	Establecimiento local10 = new Establecimiento("local110",500,cuentalocal,jefe10,5);
+    	Establecimiento local1 = new Establecimiento("local1",500,cuentalocal0,jefe1,5);
+    	Establecimiento local2 = new Establecimiento("local2",500,cuentalocal1,jefe2,5);
+    	Establecimiento local3 = new Establecimiento("local3",500,cuentalocal2,jefe3,5);
+    	Establecimiento local4 = new Establecimiento("local4",500,cuentalocal3,jefe4,5);
+    	Establecimiento local5 = new Establecimiento("local5",500,cuentalocal4,jefe5,5);
+    	Establecimiento local6 = new Establecimiento("local6",500,cuentalocal5,jefe6,5);
+    	Establecimiento local7 = new Establecimiento("local7",500,cuentalocal6,jefe7,5);
+    	Establecimiento local8 = new Establecimiento("local8",500,cuentalocal7,jefe8,5);
+    	Establecimiento local9 = new Establecimiento("local9",500,cuentalocal8,jefe9,5);
+    	Establecimiento local10 = new Establecimiento("local110",500,cuentalocal9,jefe10,5);
     	
     	//Empleados para funeraria
     	// Creación de las cuentas bancarias para los empleados
@@ -536,14 +546,6 @@ public class FuncionalidadGestionInventario {
         Factura facturaF1_7 = new Factura("Velas rojas");
         Factura facturaF1_8 = new Factura("Velas blancas");
 
-        Factura facturaF1_9 = new Factura("Trajes de caballero, Medalla conmemorativa");
-        Factura facturaF1_10 = new Factura("Vestidos de dama, Joyas conmemorativas");
-        Factura facturaF1_11 = new Factura("Portarretratos digitales, Velas rojas");
-        Factura facturaF1_12 = new Factura("Álbumes de fotos, Velas blancas");
-
-        Factura facturaF1_13 = new Factura("Trajes de caballero, Joyas conmemorativas, Portarretratos digitales");
-        Factura facturaF1_14 = new Factura("Vestidos de dama, Medalla conmemorativa, Velas blancas");
-        Factura facturaF1_15 = new Factura("Álbumes de fotos, Velas rojas, Portarretratos digitales");
         
         // facturas para funeraria 2
         Factura facturaF2_1 = new Factura("Trajes de caballero");
@@ -555,14 +557,6 @@ public class FuncionalidadGestionInventario {
         Factura facturaF2_7 = new Factura("Velas rojas");
         Factura facturaF2_8 = new Factura("Velas blancas");
 
-        Factura facturaF2_9 = new Factura("Trajes de caballero, Medalla conmemorativa");
-        Factura facturaF2_10 = new Factura("Vestidos de dama, Joyas conmemorativas");
-        Factura facturaF2_11 = new Factura("Portarretratos digitales, Velas rojas");
-        Factura facturaF2_12 = new Factura("Álbumes de fotos, Velas blancas");
-
-        Factura facturaF2_13 = new Factura("Trajes de caballero, Joyas conmemorativas, Portarretratos digitales");
-        Factura facturaF2_14 = new Factura("Vestidos de dama, Medalla conmemorativa, Velas blancas");
-        Factura facturaF2_15 = new Factura("Álbumes de fotos, Velas rojas, Portarretratos digitales");
         
         // facturas para funerarias 3
         Factura facturaF3_1 = new Factura("Trajes de caballero");
@@ -574,27 +568,39 @@ public class FuncionalidadGestionInventario {
         Factura facturaF3_7 = new Factura("Velas rojas");
         Factura facturaF3_8 = new Factura("Velas blancas");
 
-        Factura facturaF3_9 = new Factura("Trajes de caballero, Medalla conmemorativa");
-        Factura facturaF3_10 = new Factura("Vestidos de dama, Joyas conmemorativas");
-        Factura facturaF3_11 = new Factura("Portarretratos digitales, Velas rojas");
-        Factura facturaF3_12 = new Factura("Álbumes de fotos, Velas blancas");
-
-        Factura facturaF3_13 = new Factura("Trajes de caballero, Joyas conmemorativas, Portarretratos digitales");
-        Factura facturaF3_14 = new Factura("Vestidos de dama, Medalla conmemorativa, Velas blancas");
-        Factura facturaF3_15 = new Factura("Álbumes de fotos, Velas rojas, Portarretratos digitales");
+ 
         
         // productos para las facturas de la funeraria 1
+      
+        
+        Producto trajesCaballeroVendidosF1 = new Producto("Trajes de caballero", 998.0, 10, 10);
+        Producto vestidosDamaVendidosF1 = new Producto("Vestidos de dama", 1200.0, 20, 20);
+        Producto recuerdoVendidosF1 = new Producto("Medalla conmemorativa", 100.0, 12, 12); 
+        Producto recuerdo2VendidosF1 = new Producto("Joyas conmemorativas", 250.0, 15, 15); 
+        Producto recuerdo3VendidosF1 = new Producto("Álbumes de fotos", 300.0, 18, 18); 
+        Producto recuerdo4VendidosF1 = new Producto("Portarretratos digitales", 120.0, 45, 45); 
+        Producto velasRojasVendidosF1 = new Producto("Velas rojas", 300.0, 5, 5); 
+        Producto velasBlancasVendidosF1 = new Producto("Velas blancas", 300.0, 30, 30); 
     
-        Producto trajesCaballeroVendidosF1 = new Producto("Trajes de caballero", 998.0, 1, 0);
-        Producto vestidosDamaVendidosF1 = new Producto("Vestidos de dama", 1200.0, 1, 0);
-        Producto medallaConmemorativaVendidosF1 = new Producto("Medalla conmemorativa", 100.0, 1, 0);
-        Producto joyasConmemorativasVendidosF1 = new Producto("Joyas conmemorativas", 250.0, 1, 0);
-        Producto albumesFotosVendidosF1 = new Producto("Álbumes de fotos", 300.0, 1, 0);
-        Producto portarretratosDigitalesVendidosF1 = new Producto("Portarretratos digitales", 120.0, 1, 0);
-        Producto velasRojasVendidasF1 = new Producto("Velas rojas", 300.0, 1, 0);
-        Producto velasBlancasVendidasF1 = new Producto("Velas blancas", 300.0, 1, 0);
+        // productos para las facturas de la funeraria 2
+        Producto trajesCaballeroVendidosF2 = new Producto("Trajes de caballero", 998.0, 25, 25); 
+        Producto vestidosDamaVendidosF2 = new Producto("Vestidos de dama", 1200.0, 9, 9); 
+        Producto recuerdoVendidosF2 = new Producto("Medalla conmemorativa", 100.0, 20, 20);
+        Producto recuerdo2VendidosF2 = new Producto("Joyas conmemorativas", 250.0, 10, 10); 
+        Producto recuerdo3VendidosF2 = new Producto("Álbumes de fotos", 300.0, 12, 12); 
+        Producto recuerdo4VendidosF2 = new Producto("Portarretratos digitales", 120.0, 45, 45);
+        Producto velasRojasVendidosF2 = new Producto("Velas rojas", 300.0, 20, 20); 
+        Producto velasBlancasVendidosF2 = new Producto("Velas blancas", 300.0, 40, 40); 
+        
+        // productos para las facturas de la funeraria 3
 
-
+        Producto trajesCaballeroVendidosF3 = new Producto("Trajes de caballero", 998.0, 30, 30); 
+        Producto vestidosDamaVendidosF3 = new Producto("Vestidos de dama", 1200.0, 12, 12); 
+        Producto recuerdoVendidosF3 = new Producto("Medalla conmemorativa", 100.0, 25, 25);
+        Producto recuerdo2VendidosF3 = new Producto("Joyas conmemorativas", 250.0, 18, 18);
+        Producto recuerdo4VendidosF3 = new Producto("Portarretratos digitales", 120.0, 35, 35); 
+        Producto velasRojasVendidosF3 = new Producto("Velas rojas", 300.0, 10, 10); 
+        Producto velasBlancasVendidosF3 = new Producto("Velas blancas", 300.0, 50, 50); 
         
         
         
