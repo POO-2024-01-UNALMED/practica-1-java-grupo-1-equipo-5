@@ -664,7 +664,7 @@ private void actualizarCredito(Factura credito, double porcentajeFaltante, doubl
  			
  			vehiculoAsignar.setConductor(conductores.get(0));
  		
- 			gestionTransporte+="\nVehiculo ["+indice+"]";
+ 			gestionTransporte+="\nVehiculo ["+indice+"] ";
  			gestionTransporte+=vehiculoAsignar.productoVehiculo(familiares)+"\n";
  			
  			gestionTransporte+="Conductor: "+vehiculoAsignar.getConductor();

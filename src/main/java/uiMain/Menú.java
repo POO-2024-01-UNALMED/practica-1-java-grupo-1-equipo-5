@@ -1374,9 +1374,32 @@ public class Menú {
 		Tumba tumbaF1C61E=new Tumba("Tumbita La Luz de Nuestra Vida",cementerioF16Cu,1.70,1);
 		Tumba tumbaF1C62E=new Tumba("Tumbita Aquí La Memoria Vive",cementerioF16Cu,1.50,0);
 		Tumba tumbaF1C63E=new Tumba("default",cementerioF16Cu,1.60,0);
-
 		
 		
+		//Agregar clientes a tumbas
+		tumbaF1C11E.agregarCliente(clienteF11ET);
+		tumbaF1C12E.agregarCliente(clienteF12ET);
+		tumbaF1C13E.agregarCliente(clienteF13ET);
+		
+		tumbaF1C21E.agregarCliente(clienteF14ET);
+		tumbaF1C22E.agregarCliente(clienteF15ET);
+		tumbaF1C23E.agregarCliente(clienteF16ET);
+		
+		tumbaF1C31E.agregarCliente(clienteF17ET);
+		tumbaF1C32E.agregarCliente(clienteF18ET);
+		tumbaF1C33E.agregarCliente(clienteF19ET);
+		
+		tumbaF1C41E.agregarCliente(clienteF110ET);
+		tumbaF1C42E.agregarCliente(clienteF111ET);
+		tumbaF1C43E.agregarCliente(clienteF112ET);
+		
+		tumbaF1C51E.agregarCliente(clienteF113ET);
+		tumbaF1C52E.agregarCliente(clienteF114ET);
+		tumbaF1C53E.agregarCliente(clienteF115ET);
+		
+		tumbaF1C61E.agregarCliente(clienteF116ET);
+		tumbaF1C62E.agregarCliente(clienteF117ET);
+		tumbaF1C63E.agregarCliente(clienteF118ET);
 		
 			
 		
