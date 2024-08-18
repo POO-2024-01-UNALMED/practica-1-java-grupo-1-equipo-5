@@ -143,7 +143,7 @@ public class FuncionalidadEntierro {
 				
 				//////////////////////////////////////////Invitación 
 				
-				System.out.print("Para organizar los detalles del entierro. Indique la estatura del cliente: ");
+				System.out.print("Para organizar los detalles del entierro. Indique la estatura del cliente en metros (Utilice la coma para ingresar el dato): ");
 				double estatura =scanner.nextDouble();
 				
 				while(estatura<0 || estatura>2.50) {
@@ -178,10 +178,11 @@ public class FuncionalidadEntierro {
 				Producto productoCementerio= new Producto(cementerio);
 				
 				//Invitación para Entierro
-				productoCementerio.evento(cliente);
+				System.out.println(productoCementerio.evento(cliente));
 				
 				//Ya escogido el cementerio se muestra la disponibilidad de objetos Tumba con los filtros de estatura, categoria
 				ArrayList<Inventario> inventarioDisponible=cementerio.disponibilidadInventario("tumba", estatura, cliente.getEdad());
+				
 				
 				indice=1;
 				for(Inventario urnaTumba:inventarioDisponible) {
@@ -204,6 +205,10 @@ public class FuncionalidadEntierro {
 				
 				//Se agrega el cliente a la tumba
 				tumba.agregarCliente(cliente);
+				
+				
+				
+				System.out.println("Resumen de los datos de entierro");
 				
 				System.out.println("De acuerdo a la categoria de su tumba ("+tumba.getCategoria()+") se agregarán los adornos del cliente para el entierro");
 				System.out.println("Se generó la siguiente factura:");

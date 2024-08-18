@@ -56,11 +56,13 @@ public class FuncionalidadExhumacion {
 					System.out.println("El cliente no se encuentra registrado");
 					System.out.print("Ingrese CC del cliente: ");
 					CC = scanner.nextLong();
+				}else{
+					if(cliente.getInventario() == null) {
+						System.out.println("El cliente está registrado pero no es apto para la exhumación"); cliente=null;
 				}
 			}
-				if(!(cliente.getInventario() instanceof Tumba)) {
-					System.out.println("El cliente está registrado pero no es apto para la exhumación"); cliente=null;
-				}
+			}	
+			
 				
 				break;
 				
@@ -362,7 +364,10 @@ public class FuncionalidadExhumacion {
 			System.out.println("No se encontró inventario disponible");
 			System.out.println("Se deberá añadir inventario tipo default");
 			for(Establecimiento auxCementerio:cementeriosPorTipo) {
-				new Urna("default",(Cementerio)auxCementerio,pesoEstatura,edad,"fija");
+				if (tipo1.equals("cenizas")) {
+					new Urna("default",(Cementerio)auxCementerio,pesoEstatura,edad,"fija");
+				}else {new Tumba("default",(Cementerio)auxCementerio,pesoEstatura,edad);}
+				
 				cementerios.add(auxCementerio);
 			}
 			

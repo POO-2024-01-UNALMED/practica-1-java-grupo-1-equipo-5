@@ -68,8 +68,11 @@ public class Establecimiento implements Serializable {
 	}
 	
 	//Este método sirve para clasificar por el tipo más específico de los objetos que son o heredan de la clase Establecimiento
+	//El método recibe un parámetro tipo String que indica que objeto especifico que hereda de establecimiento se quiere buscar
 	public static ArrayList<Establecimiento> filtarEstablecimiento(String establecimiento){
 		ArrayList<Establecimiento> filtrados=new ArrayList<Establecimiento>();
+		
+		//Todos los objetos de tipo Establecimiento o que hereden de esta clase se guardan en un ArrayList estático llamado establecimientos
 		
 		if(establecimiento=="cementerio") {
 			for(int i=0;i<establecimientos.size();i++) {
@@ -118,6 +121,9 @@ public class Establecimiento implements Serializable {
 		
 	}
 	
+	//Filtra a los clientes en adulto o Niño a través de su atributo CC
+	//Recibe un parámetro de tipo String que debe ser "adulto" para buscar a los clientes que tenga un atributo CC distinto de 0 
+	//y "niño" para buscar a los clientes que tengan un atributo CC igual a 0 
 	
 	public ArrayList<Cliente> buscarCliente(String adultoNiño) {
 		
@@ -428,12 +434,11 @@ public class Establecimiento implements Serializable {
     	listadoProveedoresEmpleados.add(proveedor);
     }
     public void agregarProveedorVehiculo(Establecimiento proveedor) {
-    	listadoProveedoresVehiculos.add(proveedor);
-    }
-    public void agregarProveedor(Establecimiento proveedor) {
     	listadoProveedores.add(proveedor);
     }
-    
+    public void agregarProveedor(Establecimiento proveedor) {
+    	listadoProveedoresVehiculos.add(proveedor);
+    }
 	
 	
 	
