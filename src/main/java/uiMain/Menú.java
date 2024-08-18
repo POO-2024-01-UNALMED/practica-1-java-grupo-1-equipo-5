@@ -1721,94 +1721,147 @@ public class Menú {
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
 		//Familiares Mujeres
-		Familiar a1= new Familiar("Mario",711,50,cuenta9FA,"padre",17);
-		Familiar a2= new Familiar("Alberto",712,32,cuenta10FA,"conyuge",13);
-		Familiar a3= new Familiar("Carlos",713,37,cuenta11FA,"hermano",17);
-		Familiar a4= new Familiar("Samantha",714,50,cuenta12FA,"padre",17);
+		Familiar F11= new Familiar("Mario",711,50,cuenta9FA,"padre",17);
+		Familiar F12= new Familiar("Alberto",712,32,cuenta10FA,"conyuge",13);
+		Familiar F13= new Familiar("Carlos",713,37,cuenta11FA,"hermano",17);
+		Familiar F14= new Familiar("Samantha",714,50,cuenta12FA,"padre",17);
 		
 		//Familiares para todos
-		Familiar b1= new Familiar("Samuel",715,60,cuenta13FA,"padre",17);
-		Familiar b2= new Familiar("Alma",716,60,cuenta14FA,"padre",13);
-		Familiar b3= new Familiar("Eduardo",717,37,cuenta15FA,"hermano",17);
-		Familiar b4= new Familiar("Maria",5, "hermano",b3);
+		Familiar F15= new Familiar("Samuel",715,60,cuenta13FA,"padre",17);
+		Familiar F16= new Familiar("Alma",716,60,cuenta14FA,"padre",13);
+		Familiar F17= new Familiar("Eduardo",717,37,cuenta15FA,"hermano",17);
+		Familiar F18= new Familiar("Maria",5, "hermano",F17);
 		
 		//Familiares Hombres 
-		Familiar c1= new Familiar("Armando",718,50,cuenta16FA,"padre",17);
-		Familiar c2= new Familiar("Catalina",719,32,cuenta17FA,"conyuge",13);
-		Familiar c3= new Familiar("Sebastian",7110,37,cuenta18FA,"hermano",17);
-		Familiar c4= new Familiar("Alba",7111,25,cuenta19FA,"hijo",17);
+		Familiar F19= new Familiar("Armando",718,50,cuenta16FA,"padre",17);
+		Familiar F110= new Familiar("Catalina",719,32,cuenta17FA,"conyuge",13);
+		Familiar F111= new Familiar("Sebastian",7110,37,cuenta18FA,"hermano",17);
+		Familiar F112= new Familiar("Alba",7111,25,cuenta19FA,"hijo",17);
 		
 		//Nuevos Familiares
-		Familiar d1 = new Familiar("Saskia",16341,40,cuenta1FA,"padre",17);
-		Familiar d2 = new Familiar("Orion",22356,38,cuenta8FA,"conyugue",17);
-		Familiar d3 = new Familiar("Aurora",16,"hermano",d1);
-		Familiar d4 = new Familiar("Kymani",10,"hijo",d2);
+		Familiar F113 = new Familiar("Saskia",16341,40,cuenta1FA,"padre",17);
+		Familiar F114 = new Familiar("Orion",22356,38,cuenta8FA,"conyugue",17);
+		Familiar F115 = new Familiar("Aurora",16,"hermano",F113);
+		Familiar F116 = new Familiar("Kymani",10,"hijo",F114);
 		
-		Familiar e1 = new Familiar("Lyra",15332,38,cuenta2FA,"conyugue",17);
-		Familiar e2 = new Familiar("Sage",52376,29,cuenta7FA,"padre",17);
-		Familiar e3 = new Familiar("Clio",17,"hijo", e1);
-		Familiar e4 = new Familiar("Zarek",9,"hermano",e2);
+		Familiar F117 = new Familiar("Lyra",15332,38,cuenta2FA,"conyugue",17);
+		Familiar F118 = new Familiar("Sage",52376,29,cuenta7FA,"padre",17);
+		Familiar F119 = new Familiar("Clio",17,"hijo", F117);
+		Familiar F120 = new Familiar("Zarek",9,"hermano",F118);
 		
-		Familiar f1 = new Familiar("Vesper",13423,25,cuenta3FA,"padre",17);
-		Familiar f2 = new Familiar("Kaius",14356,20,cuenta6FA,"conyugue",17);
-		Familiar f3 = new Familiar("Xanthea",3,"hermano",f1);
-		Familiar f4 = new Familiar("Rowan",8,"hijo",f2);
+		Familiar F121 = new Familiar("Vesper",13423,25,cuenta3FA,"padre",17);
+		Familiar F122 = new Familiar("Kaius",14356,20,cuenta6FA,"conyugue",17);
+		Familiar F123 = new Familiar("Xanthea",3,"hermano",F121);
+		Familiar F124 = new Familiar("Rowan",8,"hijo",F122);
 		
-		Familiar g1 = new Familiar("Ophelia",12345,18,cuenta4FA,"conyugue",17);
-		Familiar g2 = new Familiar("Atticus",12375,70,cuenta5FA,"padre",17);
-		Familiar g3 = new Familiar("Lyriel",12,"hijo",g1);
-		Familiar g4 = new Familiar("Caspian",7,"hermano",g2);
+		Familiar F125 = new Familiar("Ophelia",12345,18,cuenta4FA,"conyugue",17);
+		Familiar F126 = new Familiar("Atticus",12375,70,cuenta5FA,"padre",17);
+		Familiar F127 = new Familiar("Lyriel",12,"hijo",F125);
+		Familiar F128 = new Familiar("Caspian",7,"hermano",F126);
+		
+		Familiar F129 = new Familiar("Ophelia",12345,18,cuenta4FA,"conyugue",17);
+		Familiar F130 = new Familiar("Atticus",12375,70,cuenta5FA,"padre",17);
+		Familiar F131 = new Familiar("Lyriel",12,"hijo",F129);
+		Familiar F132 = new Familiar("Caspian",7,"hermano",F130);
+		
+
 		
 		
 		//Listas de familiares A
 		ArrayList<Familiar> familiarA=new ArrayList<Familiar>();
-		familiarA.add(a1);
-		familiarA.add(a2);
-		familiarA.add(a3);
-		familiarA.add(a4);
+		familiarA.add(F11);
+		familiarA.add(F12);
+		familiarA.add(F13);
+		familiarA.add(F14);
 		
 		//Listas de familiares B
 		ArrayList<Familiar> familiarB=new ArrayList<Familiar>();
-		familiarB.add(b1);
-		familiarB.add(b2);
-		familiarB.add(b3);
-		familiarB.add(b4);
+		familiarB.add(F15);
+		familiarB.add(F16);
+		familiarB.add(F17);
+		familiarB.add(F18);
 		
 		//Listas de familiares C
 		ArrayList<Familiar> familiarC=new ArrayList<Familiar>();
-		familiarC.add(c1);
-		familiarC.add(c2);
-		familiarC.add(c3);
-		familiarC.add(c4);
+		familiarC.add(F19);
+		familiarC.add(F110);
+		familiarC.add(F111);
+		familiarC.add(F112);
 		
 		//Listas de familiares D
 		ArrayList<Familiar> familiarD=new ArrayList<Familiar>();
-		familiarC.add(d1);
-		familiarC.add(d2);
-		familiarC.add(d3);
-		familiarC.add(d4);
+		familiarC.add(F113);
+		familiarC.add(F114);
+		familiarC.add(F115);
+		familiarC.add(F116);
 		
 		//Listas de familiares E
 		ArrayList<Familiar> familiarE=new ArrayList<Familiar>();
-		familiarC.add(e1);
-		familiarC.add(e2);
-		familiarC.add(e3);
-		familiarC.add(e4);
+		familiarC.add(F117);
+		familiarC.add(F118);
+		familiarC.add(F119);
+		familiarC.add(F120);
 		
 		//Listas de familiares F
 		ArrayList<Familiar> familiarF=new ArrayList<Familiar>();
-		familiarC.add(f1);
-		familiarC.add(f2);
-		familiarC.add(f3);
-		familiarC.add(f4);
+		familiarC.add(F121);
+		familiarC.add(F122);
+		familiarC.add(F123);
+		familiarC.add(F124);
 		
 		//Listas de familiares G
 		ArrayList<Familiar> familiarG=new ArrayList<Familiar>();
-		familiarC.add(g1);
-		familiarC.add(g2);
-		familiarC.add(g3);
-		familiarC.add(g4);
+		familiarC.add(F125);
+		familiarC.add(F126);
+		familiarC.add(F127);
+		familiarC.add(F128);
 		
+		//Familiares menores de edad con el indicativo M
+		Familiar F11M= new Familiar("Carla",715,60,cuenta13FA,"padre",17);
+		Familiar F12M= new Familiar("Armando",716,60,cuenta14FA,"padre",13);
+		Familiar F13M= new Familiar("Vanesa",717,37,cuenta15FA,"hermano",17);
+		Familiar F14M= new Familiar("Maria",5, "hermano",F13M);
+		
+		Familiar F15M= new Familiar("Alicia",715,60,cuenta13FA,"padre",17);
+		Familiar F16M= new Familiar("Anastasio",716,60,cuenta14FA,"padre",13);
+		Familiar F17M= new Familiar("Miranda",717,37,cuenta15FA,"hermano",17);
+		Familiar F18M= new Familiar("Maria",5, "hermano",F17M);
+		
+		Familiar F19M= new Familiar("Samuel",715,60,cuenta13FA,"padre",17);
+		Familiar F110M= new Familiar("Carla",716,60,cuenta14FA,"padre",13);
+		Familiar F111M= new Familiar("Eduardo",717,37,cuenta15FA,"hermano",17);
+		Familiar F112M= new Familiar("Maria",5, "hermano",F111M);
+		
+		Familiar F113M= new Familiar("Eduardo",715,60,cuenta13FA,"padre",17);
+		Familiar F114M= new Familiar("Alma",716,60,cuenta14FA,"padre",13);
+		Familiar F115M= new Familiar("Eduardo",717,37,cuenta15FA,"hermano",17);
+		Familiar F116M= new Familiar("Maria",5, "hermano",F115M);
+		
+		//Listas de familiares para menores de edad con el indicativo M
+		
+		ArrayList<Familiar> familiarAM=new ArrayList<Familiar>();
+		familiarAM.add(F11M);
+		familiarAM.add(F12M);
+		familiarAM.add(F13M);
+		familiarAM.add(F14M);
+		
+		ArrayList<Familiar> familiarBM=new ArrayList<Familiar>();
+		familiarBM.add(F15M);
+		familiarBM.add(F16M);
+		familiarBM.add(F17M);
+		familiarBM.add(F18M);
+		
+		ArrayList<Familiar> familiarCM=new ArrayList<Familiar>();
+		familiarCM.add(F19M);
+		familiarCM.add(F110M);
+		familiarCM.add(F111M);
+		familiarCM.add(F112M);
+		
+		ArrayList<Familiar> familiarDM=new ArrayList<Familiar>();
+		familiarDM.add(F113M);
+		familiarDM.add(F114M);
+		familiarDM.add(F115M);
+		familiarDM.add(F116M);
 		
 		//Objetos Cementerio
 		
@@ -1852,28 +1905,28 @@ public class Menú {
 		
 		Urna urnaF1C31=new Urna("Urnita Oasis de Recuerdo",cementerioF13Ce,70,1,"fija");
 		Urna urnaF1C32=new Urna("Urnita Sombra Amada",cementerioF13Ce,80,0,"ordinaria");
-		Urna urnaF1C33=new Urna("Urnita Caja de la Verdad",cementerioF13Ce,10,0,"ordinaria");
+		Urna urnaF1C33=new Urna("Urnita Caja de la Verdad",cementerioF13Ce,50,0,"ordinaria");
 		Urna urnaF1C34=new Urna("Urnita Urna de la Democracia",cementerioF13Ce,60,1,"fija");
 		
 		//Objetos Cementerio 4 Urna Cenizas
 		
 		Urna urnaF1C41=new Urna("Urnita Voz del Pueblo",cementerioF14Ce,70,1,"fija");
 		Urna urnaF1C42=new Urna("Urnita Cámara de Decisiones",cementerioF14Ce,80,0,"ordinaria");
-		Urna urnaF1C43=new Urna("Urnita Bóveda de Opiniones",cementerioF14Ce,10,0,"ordinaria");
+		Urna urnaF1C43=new Urna("Urnita Bóveda de Opiniones",cementerioF14Ce,70,0,"ordinaria");
 		Urna urnaF1C44=new Urna("Urnita Recinto Electoral",cementerioF14Ce,60,1,"fija");
 		
 		//Objetos Cementerio 5 Urna Cenizas
 		
 		Urna urnaF1C51=new Urna("Urnita Contenedor de Voluntades",cementerioF15Ce,70,1,"fija");
 		Urna urnaF1C52=new Urna("Urnita Caja de Equidad",cementerioF15Ce,80,0,"ordinaria");
-		Urna urnaF1C53=new Urna("Urnita de la Justicia",cementerioF15Ce,10,0,"ordinaria");
+		Urna urnaF1C53=new Urna("Urnita de la Justicia",cementerioF15Ce,70,0,"ordinaria");
 		Urna urnaF1C54=new Urna("Urnita Escudo Electoral",cementerioF15Ce,60,1,"fija");
 		
 		//Objetos Cementerio 6 Urna Cenizas
 		
 		Urna urnaF1C61=new Urna("Urnita Cápsula de Sueños",cementerioF16Ce,70,1,"fija");
 		Urna urnaF1C62=new Urna("Urnita Templo de Belleza",cementerioF16Ce,80,0,"ordinaria");
-		Urna urnaF1C63=new Urna("Urnita Misterio Dorado",cementerioF16Ce,10,0,"ordinaria");
+		Urna urnaF1C63=new Urna("Urnita Misterio Dorado",cementerioF16Ce,60,0,"ordinaria");
 		Urna urnaF1C64=new Urna("Urnita Joyero de Recuerdos",cementerioF16Ce,60,1,"fija");
 		
 		
@@ -1882,56 +1935,56 @@ public class Menú {
 		//Objetos Cementerio 1 Tumba Cuerpos
 		
 		Tumba tumbaF1C11=new Tumba("Tumbita Aquí Reposa un Corazón Noble",cementerioF11Cu,1.70,0);
-		Tumba tumbaF1C12=new Tumba("Tumbita Amado por Siempre",cementerioF11Cu,1.10,0);
+		Tumba tumbaF1C12=new Tumba("Tumbita Amado por Siempre",cementerioF11Cu,1.60,0);
 		Tumba tumbaF1C13=new Tumba("Tumbita Siempre en Nuestros Corazones",cementerioF11Cu,1.60,1);
-		Tumba tumbaF1C14=new Tumba("Tumbita Un Alma Inmortal",cementerioF11Cu,1.20,1);
+		Tumba tumbaF1C14=new Tumba("Tumbita Un Alma Inmortal",cementerioF11Cu,1.80,1);
 		Tumba tumbaF1C15=new Tumba("Tumbita Tu Luz Nos Guía",cementerioF11Cu,1.75,2);
-		Tumba tumbaF1C16=new Tumba("Tumbita Querido y Recordado",cementerioF11Cu,1,2);
+		Tumba tumbaF1C16=new Tumba("Tumbita Querido y Recordado",cementerioF11Cu,1.50,1);
 	
 		//Objetos Cementerio 2 Tumba Cuerpos
 		
 		Tumba tumbaF1C21=new Tumba("Tumbita Descansa en Paz, Amado",cementerioF12Cu,1.70,0);
 		Tumba tumbaF1C22=new Tumba("Tumbita Tu Memoria Vive en Nosotros",cementerioF12Cu,1.10,0);
 		Tumba tumbaF1C23=new Tumba("Tumbita El Amor Trasciende",cementerioF12Cu,1.60,1);
-		Tumba tumbaF1C24=new Tumba("Tumbita Una Vida Lleno de Amor",cementerioF12Cu,1.20,1);
+		Tumba tumbaF1C24=new Tumba("Tumbita Una Vida Lleno de Amor",cementerioF12Cu,1.70,1);
 		Tumba tumbaF1C25=new Tumba("Tumbita Copa del Encanto",cementerioF12Cu,1.75,2);
-		Tumba tumbaF1C26=new Tumba("Tumbita Portal de Arte",cementerioF12Cu,1,2);
+		Tumba tumbaF1C26=new Tumba("Tumbita Portal de Arte",cementerioF12Cu,1.8,2);
 		
 		//Objetos Cementerio 3 Tumba Cuerpos
 		
 		Tumba tumbaF1C31=new Tumba("Tumbita Esfera de Serenidad",cementerioF13Cu,1.70,0);
-		Tumba tumbaF1C32=new Tumba("Tumbita Reflejo de Elegancia",cementerioF13Cu,1.10,0);
+		Tumba tumbaF1C32=new Tumba("Tumbita Reflejo de Elegancia",cementerioF13Cu,1.90,0);
 		Tumba tumbaF1C33=new Tumba("Tumbita Caja de Maravillas",cementerioF13Cu,1.60,1);
-		Tumba tumbaF1C34=new Tumba("Tumbita Jardín del Recuerdo",cementerioF13Cu,1.20,1);
+		Tumba tumbaF1C34=new Tumba("Tumbita Jardín del Recuerdo",cementerioF13Cu,1.60,1);
 		Tumba tumbaF1C35=new Tumba("Tumbita Refugio del Alma",cementerioF13Cu,1.75,2);
-		Tumba tumbaF1C36=new Tumba("Tumbita Lugar de Serenidad",cementerioF13Cu,1,2);
+		Tumba tumbaF1C36=new Tumba("Tumbita Lugar de Serenidad",cementerioF13Cu,1.50,2);
 		
 		//Objetos Cementerio 4 Tumba Cuerpos
 		
-		Tumba tumbaF1C41=new Tumba("Tumbita Eterna Luz",cementerioF14Cu,1.70,0);
-		Tumba tumbaF1C42=new Tumba("Tumbita Sombra Sagrada",cementerioF14Cu,1.10,0);
+		Tumba tumbaF1C41=new Tumba("Tumbita Eterna Luz",cementerioF14Cu,1.60,0);
+		Tumba tumbaF1C42=new Tumba("Tumbita Sombra Sagrada",cementerioF14Cu,1.70,0);
 		Tumba tumbaF1C43=new Tumba("Tumbita Cámara del Silencio",cementerioF14Cu,1.60,1);
-		Tumba tumbaF1C44=new Tumba("Tumbita Rincón de Paz",cementerioF14Cu,1.20,1);
+		Tumba tumbaF1C44=new Tumba("Tumbita Rincón de Paz",cementerioF14Cu,1.80,1);
 		Tumba tumbaF1C45=new Tumba("Tumbita Hogar de Paz",cementerioF14Cu,1.75,2);
-		Tumba tumbaF1C46=new Tumba("Tumbita Sendero de Tranquilidad",cementerioF14Cu,1,2);
+		Tumba tumbaF1C46=new Tumba("Tumbita Sendero de Tranquilidad",cementerioF14Cu,1.5,2);
 		
 		//Objetos Cementerio 5 Tumba Cuerpos
 		
 		Tumba tumbaF1C51=new Tumba("Tumbita Velo de Recuerdo",cementerioF15Cu,1.70,0);
-		Tumba tumbaF1C52=new Tumba("Tumbita Cascada de Paz",cementerioF15Cu,1.10,0);
+		Tumba tumbaF1C52=new Tumba("Tumbita Cascada de Paz",cementerioF15Cu,1.60,0);
 		Tumba tumbaF1C53=new Tumba("Tumbita Refugio Perpetuo",cementerioF15Cu,1.60,1);
-		Tumba tumbaF1C54=new Tumba("Tumbita Sombra de Amor",cementerioF15Cu,1.20,1);
+		Tumba tumbaF1C54=new Tumba("Tumbita Sombra de Amor",cementerioF15Cu,1.70,1);
 		Tumba tumbaF1C55=new Tumba("Tumbita Eterna Quietud",cementerioF15Cu,1.75,2);
-		Tumba tumbaF1C56=new Tumba("Tumbita Altar de Recuerdos",cementerioF15Cu,1,2);
+		Tumba tumbaF1C56=new Tumba("Tumbita Altar de Recuerdos",cementerioF15Cu,1.80,2);
 	
 		//Objetos Cementerio 6 Tumba Cuerpos
 		
 		Tumba tumbaF1C61=new Tumba("Tumbita Una Vida de Amor y Bondad",cementerioF16Cu,1.70,0);
-		Tumba tumbaF1C62=new Tumba("Tumbita Siempre en Nuestro Corazón y Pensamiento",cementerioF16Cu,1.10,0);
+		Tumba tumbaF1C62=new Tumba("Tumbita Siempre en Nuestro Corazón y Pensamiento",cementerioF16Cu,1.30,0);
 		Tumba tumbaF1C63=new Tumba("Tumbita En Tu Ausencia",cementerioF16Cu,1.60,1);
-		Tumba tumbaF1C64=new Tumba("Tumbita Tu Presencia es Más Fuerte",cementerioF16Cu,1.20,1);
+		Tumba tumbaF1C64=new Tumba("Tumbita Tu Presencia es Más Fuerte",cementerioF16Cu,1.50,1);
 		Tumba tumbaF1C65=new Tumba("Tumbita Una Vida Dedicada al Amor",cementerioF16Cu,1.75,2);
-		Tumba tumbaF1C66=new Tumba("Tumbita Un Alma Valiente",cementerioF16Cu,1,2);
+		Tumba tumbaF1C66=new Tumba("Tumbita Un Alma Valiente",cementerioF16Cu,1.60,2);
 		
 		
 		//Objetos Crematorio
@@ -1949,21 +2002,21 @@ public class Menú {
 		//Clientes F1 - Mayores de edad
 		
 		Cliente clienteF11 = new Cliente("Alejandro Rodríguez",123,30,cuenta1CL,"oro",familiarC);
-		Cliente clienteF12 = new Cliente("Diego Martínez",1234,25,cuenta2CL,"oro",familiarC);
+		Cliente clienteF12 = new Cliente("Diego Martínez",1234,25,cuenta2CL,"oro",familiarE);
 		
-		Cliente clienteF13 = new Cliente("Carlos Fernández",1235,90,cuenta3CL,"plata",familiarB);
+		Cliente clienteF13 = new Cliente("Carlos Fernández",1235,90,cuenta3CL,"plata",familiarD);
 		Cliente clienteF14 = new Cliente("María González",1236,57,cuenta4CL,"plata",familiarB);
 		
-		Cliente clienteF15 = new Cliente("Laura Fernández",1237,21,cuenta5CL,"bronce",familiarC);
-		Cliente clienteF16 = new Cliente("Isabel Rodríguez",1238,50,cuenta6CL,"bronce",familiarC);
+		Cliente clienteF15 = new Cliente("Laura Fernández",1237,21,cuenta5CL,"bronce",familiarA);
+		Cliente clienteF16 = new Cliente("Isabel Rodríguez",1238,50,cuenta6CL,"bronce",familiarF);
 	
 		
 		//Clientes F1 - Menores de edad
-		Cliente clienteF17 = new Cliente("Javier Gómez",5,"oro",familiarB);
-		Cliente clienteF18 = new Cliente("Sofía Martínez",17,"oro",familiarB);
+		Cliente clienteF17 = new Cliente("Javier Gómez",5,"oro",familiarAM);
+		Cliente clienteF18 = new Cliente("Sofía Martínez",17,"oro",familiarBM);
 		
-		Cliente clienteF19 = new Cliente("Carolina López",15,"plata",familiarB);
-		Cliente clienteF110 = new Cliente("Manuel López",13,"plata",familiarB);
+		Cliente clienteF19 = new Cliente("Carolina López",15,"plata",familiarCM);
+		Cliente clienteF110 = new Cliente("Manuel López",13,"plata",familiarDM);
 		
 	
 		//AgregarClientes
@@ -2053,20 +2106,20 @@ public class Menú {
 		//Objetos Cementerio 1 Tumba Cuerpos
 		
 		Tumba tumbaF2C11=new Tumba("Tumbita Aquí Reposa un Corazón Noble",cementerioF21Cu,1.70,1);
-		Tumba tumbaF2C12=new Tumba("Tumbita Amado por Siempre",cementerioF21Cu,1.10,0);
+		Tumba tumbaF2C12=new Tumba("Tumbita Amado por Siempre",cementerioF21Cu,1.60,0);
 		Tumba tumbaF2C13=new Tumba("Tumbita Siempre en Nuestros Corazones",cementerioF21Cu,1.60,1);
 		Tumba tumbaF2C14=new Tumba("Tumbita Un Alma Inmortal",cementerioF21Cu,1.20,1);
 		Tumba tumbaF2C15=new Tumba("Tumbita Tu Luz Nos Guía",cementerioF21Cu,1.55,2);
-		Tumba tumbaF2C16=new Tumba("Tumbita Querido y Recordado",cementerioF21Cu,1,2);
+		Tumba tumbaF2C16=new Tumba("Tumbita Querido y Recordado",cementerioF21Cu,1.5,2);
 	
 		//Objetos Cementerio 2 Tumba Cuerpos
 		
 		Tumba tumbaF2C21=new Tumba("Tumbita Descansa en Paz, Amado",cementerioF22Cu,1.70,0);
-		Tumba tumbaF2C22=new Tumba("Tumbita Tu Memoria Vive en Nosotros",cementerioF22Cu,1.10,0);
+		Tumba tumbaF2C22=new Tumba("Tumbita Tu Memoria Vive en Nosotros",cementerioF22Cu,1.60,0);
 		Tumba tumbaF2C23=new Tumba("Tumbita El Amor Trasciende",cementerioF22Cu,1.80,1);
-		Tumba tumbaF2C24=new Tumba("Tumbita Una Vida Lleno de Amor",cementerioF22Cu,1.20,1);
+		Tumba tumbaF2C24=new Tumba("Tumbita Una Vida Lleno de Amor",cementerioF22Cu,1.60,1);
 		Tumba tumbaF2C25=new Tumba("Tumbita Copa del Encanto",cementerioF22Cu,1.75,2);
-		Tumba tumbaF2C26=new Tumba("Tumbita Portal de Arte",cementerioF22Cu,1.20,2);
+		Tumba tumbaF2C26=new Tumba("Tumbita Portal de Arte",cementerioF22Cu,1.70,2);
 		
 		//Objetos Cementerio 3 Tumba Cuerpos
 		
