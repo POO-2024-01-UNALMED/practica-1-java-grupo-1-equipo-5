@@ -212,8 +212,7 @@ public void cobroServiciosClientes(Cliente cliente) {
 		for(int i = cliente.getListadoFacturas().size() - 1; i >= 0; i--) {
 			Factura factura = cliente.getListadoFacturas().get(i);
 			double totalFactura = factura.getTotal();
-			if(totalFactura <= cliente.getCuentaBancaria().obtenerSaldo() && cliente.getEdad() >= 18) {
-				
+			if(cliente.getCuentaBancaria() != null && totalFactura <= cliente.getCuentaBancaria().obtenerSaldo() && cliente.getEdad() >= 18) {
 				cliente.getCuentaBancaria().transaccionCuentaAhorros(totalFactura, Funeraria.cuentaAhorros);
 				((Cliente) cliente).getListadoFacturas().remove(factura);
 			}else {

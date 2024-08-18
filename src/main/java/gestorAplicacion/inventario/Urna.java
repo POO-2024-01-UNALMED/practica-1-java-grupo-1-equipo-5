@@ -71,7 +71,6 @@ public class Urna extends Inventario {
 			return volumenNecesario;	
 			
 		}
-		
 		public String[] tipoMaterial(){
 			String[] material= {"Madera", "Metal", "Cerámica"};
 			

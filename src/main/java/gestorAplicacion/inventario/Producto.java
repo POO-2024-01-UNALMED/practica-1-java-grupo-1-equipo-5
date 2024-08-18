@@ -16,7 +16,9 @@ public class Producto {
 
     private Establecimiento establecimiento;
     private Vehiculo vehiculo;
-
+    private Urna urna;
+    private Tumba tumba;
+    
     private int cantidadVendida=0;
 
     
@@ -48,6 +50,13 @@ public class Producto {
     	this.nombre=establecimiento.getNombre();
     	this.cantidad=1;
 
+    }public Producto(Urna urna, int cantidadFlores){
+    	this.urna = urna;
+    	this.precio = urna.precioTotal(cantidadFlores);
+    }
+    public Producto(Tumba tumba, int cantidadFlores){
+    	this.tumba = tumba;
+    	this.precio = tumba.precioTotal(cantidadFlores);
     }
     
     public Producto(Vehiculo vehiculo) {

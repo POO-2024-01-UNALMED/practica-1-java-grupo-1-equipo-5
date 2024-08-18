@@ -4059,6 +4059,181 @@ public class Menú {
 		funeraria3.getListadoFacturasPorPagar().add(new Factura(servicios2F3,"establecimiento"));
 		funeraria3.getListadoFacturasPorPagar().add(new Factura(servicios3F3,"establecimiento"));
 		
+		//Facturas clientes Funeraria 1
+		
+		//Productos Urnas
+		Producto productoF11E = new Producto(urnaF1C11E,1);
+		Producto productoF12E = new Producto(urnaF1C12E,2);
+		Producto productoF13E = new Producto(urnaF1C13E,3);
+
+		Producto productoF14E = new Producto(urnaF1C21E,4);
+		Producto productoF15E = new Producto(urnaF1C22E,5);
+		Producto productoF16E = new Producto(urnaF1C23E,1);
+
+		Producto productoF17E = new Producto(urnaF1C31E,2);
+		Producto productoF18E = new Producto(urnaF1C32E,3);
+		Producto productoF19E = new Producto(urnaF1C33E,4);
+
+		Producto productoF110E = new Producto(urnaF1C41E,5);
+		Producto productoF111E = new Producto(urnaF1C42E,1);
+		Producto productoF112E = new Producto(urnaF1C43E,2);
+
+		Producto productoF113E = new Producto(urnaF1C51E,3);
+		Producto productoF114E = new Producto(urnaF1C52E,4);
+		Producto productoF115E = new Producto(urnaF1C53E,5);
+
+		Producto productoF116E = new Producto(urnaF1C61E,1);
+		Producto productoF117E = new Producto(urnaF1C62E,2);
+		Producto productoF118E = new Producto(urnaF1C63E,3);
+		
+		//Productos Tumba
+		Producto productoF11ET = new Producto(tumbaF1C11E,1);
+		Producto productoF12ET = new Producto(tumbaF1C12E,2);
+		Producto productoF13ET = new Producto(tumbaF1C13E,3);
+
+		Producto productoF14ET = new Producto(tumbaF1C21E,4);
+		Producto productoF15ET = new Producto(tumbaF1C22E,5);
+		Producto productoF16ET = new Producto(tumbaF1C23E,1);
+
+		Producto productoF17ET = new Producto(tumbaF1C31E,2);
+		Producto productoF18ET = new Producto(tumbaF1C32E,3);
+		Producto productoF19ET = new Producto(tumbaF1C33E,4);
+
+		Producto productoF110ET = new Producto(tumbaF1C41E,5);
+		Producto productoF111ET = new Producto(tumbaF1C42E,1);
+		Producto productoF112ET = new Producto(tumbaF1C43E,2);
+
+		Producto productoF113ET = new Producto(tumbaF1C51E,3);
+		Producto productoF114ET = new Producto(tumbaF1C52E,4);
+		Producto productoF115ET = new Producto(tumbaF1C53E,5);
+
+		Producto productoF116ET = new Producto(tumbaF1C61E,1);
+		Producto productoF117ET = new Producto(tumbaF1C62E,2);
+		Producto productoF118ET = new Producto(tumbaF1C63E,3);
+		
+		//ArrayList productos urnas
+		ArrayList<Producto> productoF1U1= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U2= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U3= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U4= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U5= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U6= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U7= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U8= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U9= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U10= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U11= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U12= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U13= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U14= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U15= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U16= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U17= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U18= new ArrayList<Producto>();
+		
+		//ArrayList productos tumbas
+		ArrayList<Producto> productoF1T1= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T2= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T3= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T4= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T5= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T6= new ArrayList<Producto>();
+	    ArrayList<Producto> productoF1T7= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T8= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T9= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T10= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T11= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T12= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T13= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T14= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T15= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T16= new ArrayList<Producto>();
+	    ArrayList<Producto> productoF1T17= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T18= new ArrayList<Producto>();
+		
+		// agregar objetos Array
+				
+		productoF1U1.add(productoF11E);
+	    productoF1U2.add(productoF12E);
+	    productoF1U3.add(productoF13E);
+	    productoF1U6.add(productoF14E);
+	    productoF1U5.add(productoF15E);
+		productoF1U6.add(productoF16E);
+		productoF1U7.add(productoF17E);
+		productoF1U8.add(productoF18E);
+		productoF1U9.add(productoF19E);
+	    productoF1U10.add(productoF110E);
+		productoF1U11.add(productoF111E);
+		productoF1U12.add(productoF112E);
+		productoF1U13.add(productoF113E);
+		productoF1U14.add(productoF114E);
+		productoF1U15.add(productoF115E);
+		productoF1U16.add(productoF116E);
+		productoF1U17.add(productoF117E);
+		productoF1U18.add(productoF118E);
+		
+		productoF1T1.add(productoF11ET);
+	    productoF1T2.add(productoF12ET);
+	    productoF1T3.add(productoF13ET);
+	    productoF1T6.add(productoF14ET);
+	    productoF1T5.add(productoF15ET);
+		productoF1T6.add(productoF16ET);
+		productoF1T7.add(productoF17ET);
+		productoF1T8.add(productoF18ET);
+		productoF1T9.add(productoF19ET);
+	    productoF1T10.add(productoF110ET);
+		productoF1T11.add(productoF111ET);
+		productoF1T12.add(productoF112ET);
+		productoF1T13.add(productoF113ET);
+		productoF1T14.add(productoF114ET);
+		productoF1T15.add(productoF115ET);
+		productoF1T16.add(productoF116ET);
+		productoF1T17.add(productoF117ET);
+		productoF1T18.add(productoF118ET);
+		
+		//Facturas clientes 
+		
+		clienteF11E.getListadoFacturas().add(new Factura(productoF1U1));
+		clienteF12E.getListadoFacturas().add(new Factura(productoF1U2));
+		clienteF13E.getListadoFacturas().add(new Factura(productoF1U3));
+		clienteF14E.getListadoFacturas().add(new Factura(productoF1U4));
+		clienteF15E.getListadoFacturas().add(new Factura(productoF1U5));
+		clienteF16E.getListadoFacturas().add(new Factura(productoF1U6));
+		clienteF17E.getListadoFacturas().add(new Factura(productoF1U7));
+		clienteF18E.getListadoFacturas().add(new Factura(productoF1U8));
+		clienteF19E.getListadoFacturas().add(new Factura(productoF1U9));
+		clienteF110E.getListadoFacturas().add(new Factura(productoF1U10));
+		clienteF111E.getListadoFacturas().add(new Factura(productoF1U11));
+		clienteF112E.getListadoFacturas().add(new Factura(productoF1U12));
+		clienteF113E.getListadoFacturas().add(new Factura(productoF1U13));
+		clienteF114E.getListadoFacturas().add(new Factura(productoF1U14));
+		clienteF115E.getListadoFacturas().add(new Factura(productoF1U15));
+		clienteF116E.getListadoFacturas().add(new Factura(productoF1U16));
+		clienteF117E.getListadoFacturas().add(new Factura(productoF1U17));
+		clienteF118E.getListadoFacturas().add(new Factura(productoF1U18));
+		
+		clienteF11ET.getListadoFacturas().add(new Factura(productoF1T1));
+		clienteF12ET.getListadoFacturas().add(new Factura(productoF1T2));
+		clienteF13ET.getListadoFacturas().add(new Factura(productoF1T3));
+		clienteF14ET.getListadoFacturas().add(new Factura(productoF1T4));
+		clienteF15ET.getListadoFacturas().add(new Factura(productoF1T5));
+		clienteF16ET.getListadoFacturas().add(new Factura(productoF1T6));
+		clienteF17ET.getListadoFacturas().add(new Factura(productoF1T7));
+		clienteF18ET.getListadoFacturas().add(new Factura(productoF1T8));
+		clienteF19ET.getListadoFacturas().add(new Factura(productoF1T9));
+		clienteF110ET.getListadoFacturas().add(new Factura(productoF1T10));
+		clienteF111ET.getListadoFacturas().add(new Factura(productoF1T11));
+		clienteF112ET.getListadoFacturas().add(new Factura(productoF1T12));
+		clienteF113ET.getListadoFacturas().add(new Factura(productoF1T13));
+		clienteF114ET.getListadoFacturas().add(new Factura(productoF1T14));
+		clienteF115ET.getListadoFacturas().add(new Factura(productoF1T15));
+		clienteF116ET.getListadoFacturas().add(new Factura(productoF1T16));
+		clienteF117ET.getListadoFacturas().add(new Factura(productoF1T17));
+		clienteF118ET.getListadoFacturas().add(new Factura(productoF1T18));
+		
+		
+		
+		
 		
 		Funeraria[] funerarias = new Funeraria[]{funeraria1, funeraria2, funeraria1};
 		
