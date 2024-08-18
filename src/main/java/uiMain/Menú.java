@@ -1344,7 +1344,7 @@ public class Menú {
 		    
 	    //cuentaAhorro funerarias
 	    CuentaBancaria cuenta4F = new CuentaBancaria(19934, "todasLasFunerarias", 3993, "BANCO_OCCIDENTE");
-	    CuentaBancaria cuenta = new CuentaBancaria(123, "Alfredo", 1000000, "Ala"); 
+	   
 	    
 	    
 	    //cuentasBancaria empleados
@@ -1460,6 +1460,27 @@ public class Menú {
 	    CuentaBancaria cuenta16CR = new CuentaBancaria(275674, "Fuego de Serenidad", 17212, "DAVIVIENDA");
 	    CuentaBancaria cuenta17CR = new CuentaBancaria(520542, "Crematorio del Horizonte Eterno", 34784, "BANCO_OCCIDENTE");
 	    CuentaBancaria cuenta18CR = new CuentaBancaria(234849, "Crematorio Luz de la Eternidad", 37437, "BANCO_BOGOTA");
+	    
+	    //Cuenta familiares
+	    CuentaBancaria cuenta1FA = new CuentaBancaria(345653, "Saskia", 172121, "DAVIVIENDA");
+	    CuentaBancaria cuenta2FA = new CuentaBancaria(456457, "Lyra", 3478411, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta3FA = new CuentaBancaria(567577, "Vesper", 374371, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta4FA = new CuentaBancaria(567577, "Ophelia", 2834811, "BBVA");
+	    CuentaBancaria cuenta5FA = new CuentaBancaria(394849, "Atticus", 23484, "BANCOLOMBIA");
+	    CuentaBancaria cuenta6FA = new CuentaBancaria(234053, "Kaius", 2382811, "DAVIVIENDA");
+	    CuentaBancaria cuenta7FA = new CuentaBancaria(323255, "Sage", 482381, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta8FA = new CuentaBancaria(235230, "Orion", 4273411, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta9FA = new CuentaBancaria(345345, "Mario", 23424, "BBVA");
+	    CuentaBancaria cuenta10FA = new CuentaBancaria(556466, "Alberto", 3456411, "BANCOLOMBIA");
+	    CuentaBancaria cuenta11FA = new CuentaBancaria(657475, "Carlos", 3646411, "DAVIVIENDA");
+	    CuentaBancaria cuenta12FA = new CuentaBancaria(256756, "Samantha", 5756711, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta13FA = new CuentaBancaria(648907, "Samuel", 86786, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta14FA = new CuentaBancaria(578070, "Alma", 57567, "BBVA");
+	    CuentaBancaria cuenta15FA = new CuentaBancaria(230030, "Eduardo", 86786, "BANCOLOMBIA");
+	    CuentaBancaria cuenta16FA = new CuentaBancaria(348500, "Armando", 172127, "DAVIVIENDA");
+	    CuentaBancaria cuenta17FA = new CuentaBancaria(545396, "Catalina", 3478455, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta18FA = new CuentaBancaria(223949, "Sebastian", 374375, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta19FA = new CuentaBancaria(104940, "Alba", 172121, "DAVIVIENDA");
 	    
 	    //Objetos Funeraria
 		
@@ -1622,22 +1643,43 @@ public class Menú {
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
 		//Familiares Mujeres
-		Familiar a1= new Familiar("Mario",711,50,cuenta,"padre",17);
-		Familiar a2= new Familiar("Alberto",712,32,cuenta,"conyuge",13);
-		Familiar a3= new Familiar("Carlos",713,37,cuenta,"hermano",17);
-		Familiar a4= new Familiar("Samantha",714,50,cuenta,"padre",17);
+		Familiar a1= new Familiar("Mario",711,50,cuenta9FA,"padre",17);
+		Familiar a2= new Familiar("Alberto",712,32,cuenta10FA,"conyuge",13);
+		Familiar a3= new Familiar("Carlos",713,37,cuenta11FA,"hermano",17);
+		Familiar a4= new Familiar("Samantha",714,50,cuenta12FA,"padre",17);
 		
 		//Familiares para todos
-		Familiar b1= new Familiar("Samuel",715,60,cuenta,"padre",17);
-		Familiar b2= new Familiar("Alma",716,60,cuenta,"padre",13);
-		Familiar b3= new Familiar("Eduardo",717,37,cuenta,"hermano",17);
+		Familiar b1= new Familiar("Samuel",715,60,cuenta13FA,"padre",17);
+		Familiar b2= new Familiar("Alma",716,60,cuenta14FA,"padre",13);
+		Familiar b3= new Familiar("Eduardo",717,37,cuenta15FA,"hermano",17);
 		Familiar b4= new Familiar("Maria",5, "hermano",b3);
 		
 		//Familiares Hombres 
-		Familiar c1= new Familiar("Armando",718,50,cuenta,"padre",17);
-		Familiar c2= new Familiar("Catalina",719,32,cuenta,"conyuge",13);
-		Familiar c3= new Familiar("Sebastian",7110,37,cuenta,"hermano",17);
-		Familiar c4= new Familiar("Alba",7111,25,cuenta,"hijo",17);
+		Familiar c1= new Familiar("Armando",718,50,cuenta16FA,"padre",17);
+		Familiar c2= new Familiar("Catalina",719,32,cuenta17FA,"conyuge",13);
+		Familiar c3= new Familiar("Sebastian",7110,37,cuenta18FA,"hermano",17);
+		Familiar c4= new Familiar("Alba",7111,25,cuenta19FA,"hijo",17);
+		
+		//Nuevos Familiares
+		Familiar d1 = new Familiar("Saskia",16341,40,cuenta1FA,"padre",17);
+		Familiar d2 = new Familiar("Orion",22356,38,cuenta8FA,"conyugue",17);
+		Familiar d3 = new Familiar("Aurora",16,"hermano",d1);
+		Familiar d4 = new Familiar("Kymani",10,"hijo",d2);
+		
+		Familiar e1 = new Familiar("Lyra",15332,38,cuenta2FA,"conyugue",17);
+		Familiar e2 = new Familiar("Sage",52376,29,cuenta7FA,"padre",17);
+		Familiar e3 = new Familiar("Clio",17,"hijo", e1);
+		Familiar e4 = new Familiar("Zarek",9,"hermano",e2);
+		
+		Familiar f1 = new Familiar("Vesper",13423,25,cuenta3FA,"padre",17);
+		Familiar f2 = new Familiar("Kaius",14356,20,cuenta6FA,"conyugue",17);
+		Familiar f3 = new Familiar("Xanthea",3,"hermano",f1);
+		Familiar f4 = new Familiar("Rowan",8,"hijo",f2);
+		
+		Familiar g1 = new Familiar("Ophelia",12345,18,cuenta4FA,"conyugue",17);
+		Familiar g2 = new Familiar("Atticus",12375,70,cuenta5FA,"padre",17);
+		Familiar g3 = new Familiar("Lyriel",12,"hijo",g1);
+		Familiar g4 = new Familiar("Caspian",7,"hermano",g2);
 		
 		
 		//Listas de familiares A
@@ -1661,7 +1703,33 @@ public class Menú {
 		familiarC.add(c3);
 		familiarC.add(c4);
 		
+		//Listas de familiares D
+		ArrayList<Familiar> familiarD=new ArrayList<Familiar>();
+		familiarC.add(d1);
+		familiarC.add(d2);
+		familiarC.add(d3);
+		familiarC.add(d4);
 		
+		//Listas de familiares E
+		ArrayList<Familiar> familiarE=new ArrayList<Familiar>();
+		familiarC.add(e1);
+		familiarC.add(e2);
+		familiarC.add(e3);
+		familiarC.add(e4);
+		
+		//Listas de familiares F
+		ArrayList<Familiar> familiarF=new ArrayList<Familiar>();
+		familiarC.add(f1);
+		familiarC.add(f2);
+		familiarC.add(f3);
+		familiarC.add(f4);
+		
+		//Listas de familiares G
+		ArrayList<Familiar> familiarG=new ArrayList<Familiar>();
+		familiarC.add(g1);
+		familiarC.add(g2);
+		familiarC.add(g3);
+		familiarC.add(g4);
 		
 		
 		//Objetos Cementerio
