@@ -105,6 +105,10 @@ public abstract class Inventario implements Serializable{
 		
 		return conteo;
 	}
+	public double precioTotal(int cantidadF ) {
+		double precio = cantidadF * Inventario.getPrecioFlores() + Inventario.getPrecioMateriales();
+	return precio;
+	}
 	
 	public void agregarAdorno(String adorno, String floresMaterial) {
 		if(floresMaterial.equals("flores")) {

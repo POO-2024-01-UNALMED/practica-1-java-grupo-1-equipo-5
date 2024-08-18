@@ -1495,6 +1495,79 @@ public class Menú {
 	    CuentaBancaria cuenta17FA = new CuentaBancaria(545396, "Catalina", 3478455, "BANCO_OCCIDENTE");
 	    CuentaBancaria cuenta18FA = new CuentaBancaria(223949, "Sebastian", 374375, "BANCO_BOGOTA");
 	    CuentaBancaria cuenta19FA = new CuentaBancaria(104940, "Alba", 172121, "DAVIVIENDA");
+	    CuentaBancaria cuenta20FA = new CuentaBancaria(456456, "Libia", 172121, "DAVIVIENDA");              
+  	    CuentaBancaria cuenta21FA = new CuentaBancaria(878977, "Armando", 3478411, "BANCO_OCCIDENTE");     
+  	    CuentaBancaria cuenta22FA = new CuentaBancaria(890890, "Andres", 374371, "BANCO_BOGOTA");       
+  	    CuentaBancaria cuenta23FA = new CuentaBancaria(100001, "Catalina", 2834811, "BBVA");             
+  	    CuentaBancaria cuenta24FA = new CuentaBancaria(100003, "Alma", 23484, "BANCOLOMBIA");        
+  	    CuentaBancaria cuenta25FA = new CuentaBancaria(100004, "Mar", 2382811, "DAVIVIENDA");         
+  	    CuentaBancaria cuenta26FA = new CuentaBancaria(322222, "Eduardo", 482381, "BANCO_OCCIDENTE");      
+  	    CuentaBancaria cuenta27FA = new CuentaBancaria(100043, "Carmen", 4273411, "BANCO_BOGOTA");       
+  	    CuentaBancaria cuenta28FA = new CuentaBancaria(123131, "Catalina", 23424, "BBVA");                 
+  	    CuentaBancaria cuenta29FA = new CuentaBancaria(111192, "Carlos", 3456411, "BANCOLOMBIA");     
+  	    CuentaBancaria cuenta30FA = new CuentaBancaria(333322, "Pablo", 3646411, "DAVIVIENDA");       
+  	    CuentaBancaria cuenta31FA = new CuentaBancaria(234444, "Sol", 5756711, "BANCO_OCCIDENTE");
+  	    CuentaBancaria cuenta32FA = new CuentaBancaria(123122, "Andres", 86786, "BANCO_BOGOTA");       
+  	    CuentaBancaria cuenta33FA = new CuentaBancaria(534444, "Vanessa", 57567, "BBVA");                 
+  	    CuentaBancaria cuenta34FA = new CuentaBancaria(232322, "Carlos", 86786, "BANCOLOMBIA");       
+  	    CuentaBancaria cuenta35FA = new CuentaBancaria(332423, "Carla", 172127, "DAVIVIENDA");       
+  	    CuentaBancaria cuenta36FA = new CuentaBancaria(345344, "Catalina", 3478455, "BANCO_OCCIDENTE");
+  	    CuentaBancaria cuenta37FA = new CuentaBancaria(266667, "David", 374375, "BANCO_BOGOTA");   
+  	    CuentaBancaria cuenta38FA = new CuentaBancaria(107888, "Esteban", 172121, "DAVIVIENDA");          
+  	    CuentaBancaria cuenta39FA = new CuentaBancaria(122223, "Luisa", 172121, "DAVIVIENDA");              
+	    CuentaBancaria cuenta40FA = new CuentaBancaria(102102, "Maria", 3478411, "BANCO_OCCIDENTE");     
+	    CuentaBancaria cuenta41FA = new CuentaBancaria(234211, "Eduardo", 374371, "BANCO_BOGOTA");       
+	    CuentaBancaria cuenta42FA = new CuentaBancaria(100441, "Mario", 2834811, "BBVA");             
+	    CuentaBancaria cuenta43FA = new CuentaBancaria(102342, "Catalina", 23484, "BANCOLOMBIA");        
+	    CuentaBancaria cuenta44FA = new CuentaBancaria(100454, "Hugo", 2382811, "DAVIVIENDA");         
+	    CuentaBancaria cuenta45FA = new CuentaBancaria(322456, "Hugo", 482381, "BANCO_OCCIDENTE");      
+	    CuentaBancaria cuenta46FA = new CuentaBancaria(100566, "Sol", 4273411, "BANCO_BOGOTA");       
+	    CuentaBancaria cuenta47FA = new CuentaBancaria(345345, "Daniel", 23424, "BBVA"); 
+	    CuentaBancaria cuenta48FA = new CuentaBancaria(455585, "Carla", 3456411, "BANCOLOMBIA");     
+        CuentaBancaria cuenta49FA = new CuentaBancaria(100012, "Armando", 3646411, "DAVIVIENDA");       
+        CuentaBancaria cuenta50FA = new CuentaBancaria(123131, "Vanesa", 5756711, "BANCO_OCCIDENTE");
+        CuentaBancaria cuenta51FA = new CuentaBancaria(223423, "Alicia", 86786, "BANCO_BOGOTA");       
+        CuentaBancaria cuenta52FA = new CuentaBancaria(556756, "Anastasio", 57567, "BBVA");                 
+        CuentaBancaria cuenta53FA = new CuentaBancaria(678644, "Miranda", 86786, "BANCOLOMBIA");                   
+        CuentaBancaria cuenta54FA = new CuentaBancaria(234235, "Samuel", 172127, "DAVIVIENDA");       
+        CuentaBancaria cuenta55FA = new CuentaBancaria(245645, "Carla", 3478455, "BANCO_OCCIDENTE");
+        CuentaBancaria cuenta56FA = new CuentaBancaria(656766, "Eduardo", 374375, "BANCO_BOGOTA");   
+        CuentaBancaria cuenta57FA = new CuentaBancaria(245245, "Eduardo", 172121, "DAVIVIENDA");
+        CuentaBancaria cuenta58FA = new CuentaBancaria(467867, "Alma", 172121, "DAVIVIENDA");              
+  	    CuentaBancaria cuenta59FA = new CuentaBancaria(789789, "Eduardo", 3478411, "BANCO_OCCIDENTE");           	    
+  	    CuentaBancaria cuenta60FA = new CuentaBancaria(455564, "Camila", 374371, "BANCO_BOGOTA");       
+  	    CuentaBancaria cuenta61FA = new CuentaBancaria(100456, "Luis", 2834811, "BBVA");             
+  	    CuentaBancaria cuenta62FA = new CuentaBancaria(145645, "Tomas", 23484, "BANCOLOMBIA");        
+  	    CuentaBancaria cuenta63FA = new CuentaBancaria(105675, "Andres", 2382811, "DAVIVIENDA");               	    
+  	    CuentaBancaria cuenta64FA = new CuentaBancaria(455645, "Vanesa", 482381, "BANCO_OCCIDENTE");      
+  	    CuentaBancaria cuenta65FA = new CuentaBancaria(123423, "Carlos", 4273411, "BANCO_BOGOTA");       
+  	    CuentaBancaria cuenta66FA = new CuentaBancaria(145655, "Juan Jose", 23424, "BBVA");                 
+  	    CuentaBancaria cuenta67FA = new CuentaBancaria(654444, "Nicolas", 3456411, "BANCOLOMBIA");      	    
+  	    CuentaBancaria cuenta68FA = new CuentaBancaria(344553, "Mateo", 3646411, "DAVIVIENDA");       
+  	    CuentaBancaria cuenta69FA = new CuentaBancaria(456566, "Mariana", 5756711, "BANCO_OCCIDENTE");
+  	    CuentaBancaria cuenta70FA = new CuentaBancaria(777566, "Esteban", 86786, "BANCO_BOGOTA");       
+  	    CuentaBancaria cuenta71FA = new CuentaBancaria(545555, "David", 57567, "BBVA");                       	    
+  	    CuentaBancaria cuenta72FA = new CuentaBancaria(567777, "Jireh", 86786, "BANCOLOMBIA");       
+  	    CuentaBancaria cuenta73FA = new CuentaBancaria(456444, "Carlos", 172127, "DAVIVIENDA");       
+  	    CuentaBancaria cuenta74FA = new CuentaBancaria(678677, "Carla", 3478455, "BANCO_OCCIDENTE");
+  	    CuentaBancaria cuenta75FA = new CuentaBancaria(767888, "Carolina", 374375, "BANCO_BOGOTA");   
+  	    CuentaBancaria cuenta76FA = new CuentaBancaria(887665, "Carla", 172121, "DAVIVIENDA");          
+  	    CuentaBancaria cuenta77FA = new CuentaBancaria(345550, "Luis", 172121, "DAVIVIENDA");              
+	    CuentaBancaria cuenta78FA = new CuentaBancaria(123423, "Tomas", 3478411, "BANCO_OCCIDENTE");     
+	    CuentaBancaria cuenta79FA = new CuentaBancaria(456455, "Andres", 374371, "BANCO_BOGOTA");       
+	    CuentaBancaria cuenta80FA = new CuentaBancaria(565777, "Rodrigo", 2834811, "BBVA");             
+	    CuentaBancaria cuenta81FA = new CuentaBancaria(123233, "Carlos", 23484, "BANCOLOMBIA");  
+	    CuentaBancaria cuenta82FA = new CuentaBancaria(145677, "Juan Jose", 2382811, "DAVIVIENDA");         
+	    CuentaBancaria cuenta83FA = new CuentaBancaria(567576, "Nicolas", 482381, "BANCO_OCCIDENTE");      
+	    CuentaBancaria cuenta84FA = new CuentaBancaria(177765, "Jimena", 4273411, "BANCO_BOGOTA");       
+	    CuentaBancaria cuenta85FA = new CuentaBancaria(334555, "Maria Jose", 23424, "BBVA");                 
+	    CuentaBancaria cuenta86FA = new CuentaBancaria(342333, "Esteban", 3456411, "BANCOLOMBIA");     
+        CuentaBancaria cuenta87FA = new CuentaBancaria(222220, "David", 3646411, "DAVIVIENDA");       
+        CuentaBancaria cuenta88FA = new CuentaBancaria(200002, "David", 5756711, "BANCO_OCCIDENTE");
+        CuentaBancaria cuenta89FA = new CuentaBancaria(300004, "Carlos", 86786, "BANCO_BOGOTA");       
+        CuentaBancaria cuenta90FA = new CuentaBancaria(400004, "Armando", 57567, "BBVA");                 
+        CuentaBancaria cuenta91FA = new CuentaBancaria(500004, "Carolina", 86786, "BANCOLOMBIA");  
+	    
 	    
 	    //Cuenta clientes
 	    CuentaBancaria cuenta1CL = new CuentaBancaria(373273, "Alejandro Rodríguez", 374371, "BANCO_BOGOTA");
@@ -1774,61 +1847,61 @@ public class Menú {
 		Familiar F23 = new Familiar("Lyriel",12,"hijo",F21);
 		Familiar F24 = new Familiar("Caspian",7,"hermano",F22);
 		
-		Familiar F25 = new Familiar("Libia",12345,18,cuenta4FA,"conyugue",17);
-		Familiar F26 = new Familiar("Armando",12375,70,cuenta5FA,"padre",17);
+		Familiar F25 = new Familiar("Libia",12345,18,cuenta20FA,"conyugue",17);
+		Familiar F26 = new Familiar("Armando",12375,70,cuenta21FA,"padre",17);
 		Familiar F27 = new Familiar("Geronimo",12,"hijo",F26);
 		Familiar F28 = new Familiar("Alicia",7,"hermano",F25);
 		
-		Familiar F29 = new Familiar("Andres",12345,18,cuenta4FA,"conyugue",17);
-		Familiar F210 = new Familiar("Catalina",12375,70,cuenta5FA,"padre",17);
+		Familiar F29 = new Familiar("Andres",12345,18,cuenta22FA,"conyugue",17);
+		Familiar F210 = new Familiar("Catalina",12375,70,cuenta23FA,"padre",17);
 		Familiar F211 = new Familiar("Lucas",12,"hijo",F29);
 		Familiar F212 = new Familiar("Caspian",7,"hermano",F210);
 		
-		Familiar F213= new Familiar("Alma",715,60,cuenta13FA,"padre",17);
-		Familiar F214= new Familiar("Mar",716,60,cuenta14FA,"padre",13);
-		Familiar F215= new Familiar("Eduardo",717,37,cuenta15FA,"hermano",17);
+		Familiar F213= new Familiar("Alma",715,60,cuenta24FA,"padre",17);
+		Familiar F214= new Familiar("Mar",716,60,cuenta25FA,"padre",13);
+		Familiar F215= new Familiar("Eduardo",717,37,cuenta26FA,"hermano",17);
 		Familiar F216= new Familiar("Andres",5, "hermano",F214);
 		
-		Familiar F217= new Familiar("Carmen",715,60,cuenta13FA,"padre",17);
-		Familiar F218= new Familiar("Catalina",716,60,cuenta14FA,"padre",13);
-		Familiar F219= new Familiar("Carlos",717,37,cuenta15FA,"hermano",17);
+		Familiar F217= new Familiar("Carmen",715,60,cuenta27FA,"padre",17);
+		Familiar F218= new Familiar("Catalina",716,60,cuenta28FA,"padre",13);
+		Familiar F219= new Familiar("Carlos",717,37,cuenta29FA,"hermano",17);
 		Familiar F220= new Familiar("Azul",5, "hermano",F217);
 		
-		Familiar F221= new Familiar("Pablo",715,60,cuenta13FA,"padre",17);
-		Familiar F222= new Familiar("Sol",716,60,cuenta14FA,"padre",13);
-		Familiar F223= new Familiar("Andres",717,37,cuenta15FA,"hermano",17);
+		Familiar F221= new Familiar("Pablo",715,60,cuenta30FA,"padre",17);
+		Familiar F222= new Familiar("Sol",716,60,cuenta31FA,"padre",13);
+		Familiar F223= new Familiar("Andres",717,37,cuenta32FA,"hermano",17);
 		Familiar F224= new Familiar("Carlos",5, "hermano",F221);
 		
 		//Funeraria 3
 		
-		Familiar F31 = new Familiar("Vanessa",12345,18,cuenta4FA,"conyugue",17);
-		Familiar F32 = new Familiar("Carlos",12375,70,cuenta5FA,"padre",17);
+		Familiar F31 = new Familiar("Vanessa",12345,18,cuenta33FA,"conyugue",17);
+		Familiar F32 = new Familiar("Carlos",12375,70,cuenta34FA,"padre",17);
 		Familiar F33 = new Familiar("Camila",12,"hijo",F21);
 		Familiar F34 = new Familiar("Cuasquer",7,"hermano",F32);
 		
-		Familiar F35 = new Familiar("Carla",12345,18,cuenta4FA,"conyugue",17);
-		Familiar F36 = new Familiar("Catalina",12375,70,cuenta5FA,"padre",17);
+		Familiar F35 = new Familiar("Carla",12345,18,cuenta35FA,"conyugue",17);
+		Familiar F36 = new Familiar("Catalina",12375,70,cuenta36FA,"padre",17);
 		Familiar F37 = new Familiar("Manuel",12,"hijo",F36);
 		Familiar F38 = new Familiar("Jose",7,"hermano",F35);
 		
-		Familiar F39 = new Familiar("David",12345,18,cuenta4FA,"conyugue",17);
-		Familiar F310 = new Familiar("Esteban",12375,70,cuenta5FA,"padre",17);
+		Familiar F39 = new Familiar("David",12345,18,cuenta37FA,"conyugue",17);
+		Familiar F310 = new Familiar("Esteban",12375,70,cuenta38FA,"padre",17);
 		Familiar F311 = new Familiar("Lucas",12,"hijo",F39);
 		Familiar F312 = new Familiar("Carlos",7,"hermano",F310);
 		
-		Familiar F313= new Familiar("Luisa",715,60,cuenta13FA,"padre",17);
-		Familiar F314= new Familiar("Maria",716,60,cuenta14FA,"padre",13);
-		Familiar F315= new Familiar("Eduardo",717,37,cuenta15FA,"hermano",17);
+		Familiar F313= new Familiar("Luisa",715,60,cuenta39FA,"padre",17);
+		Familiar F314= new Familiar("Maria",716,60,cuenta40FA,"padre",13);
+		Familiar F315= new Familiar("Eduardo",717,37,cuenta41FA,"hermano",17);
 		Familiar F316= new Familiar("Andres",5, "hermano",F314);
 		
-		Familiar F317= new Familiar("Mario",715,60,cuenta13FA,"padre",17);
-		Familiar F318= new Familiar("Catalina",716,60,cuenta14FA,"padre",13);
-		Familiar F319= new Familiar("Hugo",717,37,cuenta15FA,"hermano",17);
+		Familiar F317= new Familiar("Mario",715,60,cuenta42FA,"padre",17);
+		Familiar F318= new Familiar("Catalina",716,60,cuenta43FA,"padre",13);
+		Familiar F319= new Familiar("Hugo",717,37,cuenta44FA,"hermano",17);
 		Familiar F320= new Familiar("Azul",5, "hermano",F317);
 		
-		Familiar F321= new Familiar("Hugo",715,60,cuenta13FA,"padre",17);
-		Familiar F322= new Familiar("Sol",716,60,cuenta14FA,"padre",13);
-		Familiar F323= new Familiar("Daniel",717,37,cuenta15FA,"hermano",17);
+		Familiar F321= new Familiar("Hugo",715,60,cuenta45FA,"padre",17);
+		Familiar F322= new Familiar("Sol",716,60,cuenta46FA,"padre",13);
+		Familiar F323= new Familiar("Daniel",717,37,cuenta47FA,"hermano",17);
 		Familiar F324= new Familiar("Carlos",5, "hermano",F321);
 		
 		
@@ -1968,69 +2041,69 @@ public class Menú {
 		
 		//Funeraria 1
 		
-		Familiar F11M= new Familiar("Carla",715,60,cuenta13FA,"padre",17);
-		Familiar F12M= new Familiar("Armando",716,60,cuenta14FA,"padre",13);
-		Familiar F13M= new Familiar("Vanesa",717,37,cuenta15FA,"hermano",17);
+		Familiar F11M= new Familiar("Carla",715,60,cuenta48FA,"padre",17);
+		Familiar F12M= new Familiar("Armando",716,60,cuenta49FA,"padre",13);
+		Familiar F13M= new Familiar("Vanesa",717,37,cuenta50FA,"hermano",17);
 		Familiar F14M= new Familiar("Maria",5, "hermano",F13M);
 		
-		Familiar F15M= new Familiar("Alicia",715,60,cuenta13FA,"padre",17);
-		Familiar F16M= new Familiar("Anastasio",716,60,cuenta14FA,"padre",13);
-		Familiar F17M= new Familiar("Miranda",717,37,cuenta15FA,"hermano",17);
+		Familiar F15M= new Familiar("Alicia",715,60,cuenta51FA,"padre",17);
+		Familiar F16M= new Familiar("Anastasio",716,60,cuenta52FA,"padre",13);
+		Familiar F17M= new Familiar("Miranda",717,37,cuenta53FA,"hermano",17);
 		Familiar F18M= new Familiar("Maria",5, "hermano",F17M);
 		
-		Familiar F19M= new Familiar("Samuel",715,60,cuenta13FA,"padre",17);
-		Familiar F110M= new Familiar("Carla",716,60,cuenta14FA,"padre",13);
-		Familiar F111M= new Familiar("Eduardo",717,37,cuenta15FA,"hermano",17);
+		Familiar F19M= new Familiar("Samuel",715,60,cuenta54FA,"padre",17);
+		Familiar F110M= new Familiar("Carla",716,60,cuenta55FA,"padre",13);
+		Familiar F111M= new Familiar("Eduardo",717,37,cuenta56FA,"hermano",17);
 		Familiar F112M= new Familiar("Maria",5, "hermano",F111M);
 		
-		Familiar F113M= new Familiar("Eduardo",715,60,cuenta13FA,"padre",17);
-		Familiar F114M= new Familiar("Alma",716,60,cuenta14FA,"padre",13);
-		Familiar F115M= new Familiar("Eduardo",717,37,cuenta15FA,"hermano",17);
+		Familiar F113M= new Familiar("Eduardo",715,60,cuenta57FA,"padre",17);
+		Familiar F114M= new Familiar("Alma",716,60,cuenta58FA,"padre",13);
+		Familiar F115M= new Familiar("Eduardo",717,37,cuenta59FA,"hermano",17);
 		Familiar F116M= new Familiar("Maria",5, "hermano",F115M);
 		
 		//Funeraria 2
 		
-		Familiar F21M= new Familiar("Camila",715,60,cuenta13FA,"padre",17);
-		Familiar F22M= new Familiar("Luis",716,60,cuenta14FA,"padre",13);
-		Familiar F23M= new Familiar("Tomas",717,37,cuenta15FA,"hermano",17);
-		Familiar F24M= new Familiar("Andres",717,37,cuenta15FA,"hermano",17);
+		Familiar F21M= new Familiar("Camila",715,60,cuenta60FA,"padre",17);
+		Familiar F22M= new Familiar("Luis",716,60,cuenta61FA,"padre",13);
+		Familiar F23M= new Familiar("Tomas",717,37,cuenta62FA,"hermano",17);
+		Familiar F24M= new Familiar("Andres",717,37,cuenta63FA,"hermano",17);
 		
-		Familiar F25M= new Familiar("Vanesa",715,60,cuenta13FA,"padre",17);
-		Familiar F26M= new Familiar("Carlos",716,60,cuenta14FA,"padre",13);
-		Familiar F27M= new Familiar("Juan Jose",717,37,cuenta15FA,"hermano",17);
-		Familiar F28M= new Familiar("Nicolas",717,37,cuenta15FA,"hermano",17);
+		Familiar F25M= new Familiar("Vanesa",715,60,cuenta64FA,"padre",17);
+		Familiar F26M= new Familiar("Carlos",716,60,cuenta65FA,"padre",13);
+		Familiar F27M= new Familiar("Juan Jose",717,37,cuenta66FA,"hermano",17);
+		Familiar F28M= new Familiar("Nicolas",717,37,cuenta67FA,"hermano",17);
 		
-		Familiar F29M= new Familiar("Mateo",715,60,cuenta13FA,"padre",17);
-		Familiar F210M= new Familiar("Mariana",716,60,cuenta14FA,"padre",13);
-		Familiar F211M= new Familiar("Esteban",717,37,cuenta15FA,"hermano",17);
-		Familiar F212M= new Familiar("David",717,37,cuenta15FA,"hermano",17);
+		Familiar F29M= new Familiar("Mateo",715,60,cuenta68FA,"padre",17);
+		Familiar F210M= new Familiar("Mariana",716,60,cuenta69FA,"padre",13);
+		Familiar F211M= new Familiar("Esteban",717,37,cuenta70FA,"hermano",17);
+		Familiar F212M= new Familiar("David",717,37,cuenta71FA,"hermano",17);
 		
-		Familiar F213M= new Familiar("Jireh",715,60,cuenta13FA,"padre",17);
-		Familiar F214M= new Familiar("Carlos",716,60,cuenta14FA,"padre",13);
-		Familiar F215M= new Familiar("Carla",717,37,cuenta15FA,"hermano",17);
-		Familiar F216M= new Familiar("Carolina",717,37,cuenta15FA,"hermano",17);
+		Familiar F213M= new Familiar("Jireh",715,60,cuenta72FA,"padre",17);
+		Familiar F214M= new Familiar("Carlos",716,60,cuenta73FA,"padre",13);
+		Familiar F215M= new Familiar("Carla",717,37,cuenta74FA,"hermano",17);
+		Familiar F216M= new Familiar("Carolina",717,37,cuenta75FA,"hermano",17);
 		
 		//Funeraria 3
 		
-		Familiar F31M= new Familiar("Carla",715,60,cuenta13FA,"padre",17);
-		Familiar F32M= new Familiar("Luis",716,60,cuenta14FA,"padre",13);
-		Familiar F33M= new Familiar("Tomas",717,37,cuenta15FA,"hermano",17);
-		Familiar F34M= new Familiar("Andres",717,37,cuenta15FA,"hermano",17);
+		Familiar F31M= new Familiar("Carla",715,60,cuenta76FA,"padre",17);
+		Familiar F32M= new Familiar("Luis",716,60,cuenta77FA,"padre",13);
+		Familiar F33M= new Familiar("Tomas",717,37,cuenta78FA,"hermano",17);
+		Familiar F34M= new Familiar("Andres",717,37,cuenta79FA,"hermano",17);
 		
-		Familiar F35M= new Familiar("Rodrigo",715,60,cuenta13FA,"padre",17);
-		Familiar F36M= new Familiar("Carlos",716,60,cuenta14FA,"padre",13);
-		Familiar F37M= new Familiar("Juan Jose",717,37,cuenta15FA,"hermano",17);
-		Familiar F38M= new Familiar("Nicolas",717,37,cuenta15FA,"hermano",17);
+		Familiar F35M= new Familiar("Rodrigo",715,60,cuenta80FA,"padre",17);
+		Familiar F36M= new Familiar("Carlos",716,60,cuenta81FA,"padre",13);
+		Familiar F37M= new Familiar("Juan Jose",717,37,cuenta82FA,"hermano",17);
+		Familiar F38M= new Familiar("Nicolas",717,37,cuenta83FA,"hermano",17);
 		
-		Familiar F39M= new Familiar("Jimena",715,60,cuenta13FA,"padre",17);
-		Familiar F310M= new Familiar("Maria Jose",716,60,cuenta14FA,"padre",13);
-		Familiar F311M= new Familiar("Esteban",717,37,cuenta15FA,"hermano",17);
-		Familiar F312M= new Familiar("David",717,37,cuenta15FA,"hermano",17);
+		Familiar F39M= new Familiar("Jimena",715,60,cuenta84FA,"padre",17);
+		Familiar F310M= new Familiar("Maria Jose",716,60,cuenta85FA,"padre",13);
+		Familiar F311M= new Familiar("Esteban",717,37,cuenta86FA,"hermano",17);
+		Familiar F312M= new Familiar("David",717,37,cuenta87FA,"hermano",17);
 		
-		Familiar F313M= new Familiar("David",715,60,cuenta13FA,"padre",17);
-		Familiar F314M= new Familiar("Carlos",716,60,cuenta14FA,"padre",13);
-		Familiar F315M= new Familiar("Armando",717,37,cuenta15FA,"hermano",17);
-		Familiar F316M= new Familiar("Carolina",717,37,cuenta15FA,"hermano",17);
+		Familiar F313M= new Familiar("David",715,60,cuenta88FA,"padre",17);
+		Familiar F314M= new Familiar("Carlos",716,60,cuenta89FA,"padre",13);
+		Familiar F315M= new Familiar("Armando",717,37,cuenta90FA,"hermano",17);
+		Familiar F316M= new Familiar("Carolina",717,37,cuenta91FA,"hermano",17);
 		
 		//Listas de familiares para menores de edad con el indicativo M
 		
@@ -4059,7 +4132,522 @@ public class Menú {
 		funeraria3.getListadoFacturasPorPagar().add(new Factura(servicios2F3,"establecimiento"));
 		funeraria3.getListadoFacturasPorPagar().add(new Factura(servicios3F3,"establecimiento"));
 		
+		//Facturas clientes Funeraria 1
 		
+		//Productos Urnas
+		Producto productoF11E = new Producto(urnaF1C11E,1);
+		Producto productoF12E = new Producto(urnaF1C12E,2);
+		Producto productoF13E = new Producto(urnaF1C13E,3);
+
+		Producto productoF14E = new Producto(urnaF1C21E,4);
+		Producto productoF15E = new Producto(urnaF1C22E,5);
+		Producto productoF16E = new Producto(urnaF1C23E,1);
+
+		Producto productoF17E = new Producto(urnaF1C31E,2);
+		Producto productoF18E = new Producto(urnaF1C32E,3);
+		Producto productoF19E = new Producto(urnaF1C33E,4);
+
+		Producto productoF110E = new Producto(urnaF1C41E,5);
+		Producto productoF111E = new Producto(urnaF1C42E,1);
+		Producto productoF112E = new Producto(urnaF1C43E,2);
+
+		Producto productoF113E = new Producto(urnaF1C51E,3);
+		Producto productoF114E = new Producto(urnaF1C52E,4);
+		Producto productoF115E = new Producto(urnaF1C53E,5);
+
+		Producto productoF116E = new Producto(urnaF1C61E,1);
+		Producto productoF117E = new Producto(urnaF1C62E,2);
+		Producto productoF118E = new Producto(urnaF1C63E,3);
+		
+		//Productos Tumba
+		Producto productoF11ET = new Producto(tumbaF1C11E,1);
+		Producto productoF12ET = new Producto(tumbaF1C12E,2);
+		Producto productoF13ET = new Producto(tumbaF1C13E,3);
+
+		Producto productoF14ET = new Producto(tumbaF1C21E,4);
+		Producto productoF15ET = new Producto(tumbaF1C22E,5);
+		Producto productoF16ET = new Producto(tumbaF1C23E,1);
+
+		Producto productoF17ET = new Producto(tumbaF1C31E,2);
+		Producto productoF18ET = new Producto(tumbaF1C32E,3);
+		Producto productoF19ET = new Producto(tumbaF1C33E,4);
+
+		Producto productoF110ET = new Producto(tumbaF1C41E,5);
+		Producto productoF111ET = new Producto(tumbaF1C42E,1);
+		Producto productoF112ET = new Producto(tumbaF1C43E,2);
+
+		Producto productoF113ET = new Producto(tumbaF1C51E,3);
+		Producto productoF114ET = new Producto(tumbaF1C52E,4);
+		Producto productoF115ET = new Producto(tumbaF1C53E,5);
+
+		Producto productoF116ET = new Producto(tumbaF1C61E,1);
+		Producto productoF117ET = new Producto(tumbaF1C62E,2);
+		Producto productoF118ET = new Producto(tumbaF1C63E,3);
+		
+		//ArrayList productos urnas
+		ArrayList<Producto> productoF1U1= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U2= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U3= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U4= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U5= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U6= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U7= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U8= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U9= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U10= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U11= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U12= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U13= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U14= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U15= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U16= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U17= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1U18= new ArrayList<Producto>();
+		
+		//ArrayList productos tumbas
+		ArrayList<Producto> productoF1T1= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T2= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T3= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T4= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T5= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T6= new ArrayList<Producto>();
+	    ArrayList<Producto> productoF1T7= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T8= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T9= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T10= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T11= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T12= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T13= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T14= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T15= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T16= new ArrayList<Producto>();
+	    ArrayList<Producto> productoF1T17= new ArrayList<Producto>();
+		ArrayList<Producto> productoF1T18= new ArrayList<Producto>();
+		
+		// agregar objetos Array
+				
+		productoF1U1.add(productoF11E);
+	    productoF1U2.add(productoF12E);
+	    productoF1U3.add(productoF13E);
+	    productoF1U6.add(productoF14E);
+	    productoF1U5.add(productoF15E);
+		productoF1U6.add(productoF16E);
+		productoF1U7.add(productoF17E);
+		productoF1U8.add(productoF18E);
+		productoF1U9.add(productoF19E);
+	    productoF1U10.add(productoF110E);
+		productoF1U11.add(productoF111E);
+		productoF1U12.add(productoF112E);
+		productoF1U13.add(productoF113E);
+		productoF1U14.add(productoF114E);
+		productoF1U15.add(productoF115E);
+		productoF1U16.add(productoF116E);
+		productoF1U17.add(productoF117E);
+		productoF1U18.add(productoF118E);
+		
+		productoF1T1.add(productoF11ET);
+	    productoF1T2.add(productoF12ET);
+	    productoF1T3.add(productoF13ET);
+	    productoF1T6.add(productoF14ET);
+	    productoF1T5.add(productoF15ET);
+		productoF1T6.add(productoF16ET);
+		productoF1T7.add(productoF17ET);
+		productoF1T8.add(productoF18ET);
+		productoF1T9.add(productoF19ET);
+	    productoF1T10.add(productoF110ET);
+		productoF1T11.add(productoF111ET);
+		productoF1T12.add(productoF112ET);
+		productoF1T13.add(productoF113ET);
+		productoF1T14.add(productoF114ET);
+		productoF1T15.add(productoF115ET);
+		productoF1T16.add(productoF116ET);
+		productoF1T17.add(productoF117ET);
+		productoF1T18.add(productoF118ET);
+		
+		//Facturas clientes 
+		
+		clienteF11E.getListadoFacturas().add(new Factura(productoF1U1));
+		clienteF12E.getListadoFacturas().add(new Factura(productoF1U2));
+		clienteF13E.getListadoFacturas().add(new Factura(productoF1U3));
+		clienteF14E.getListadoFacturas().add(new Factura(productoF1U4));
+		clienteF15E.getListadoFacturas().add(new Factura(productoF1U5));
+		clienteF16E.getListadoFacturas().add(new Factura(productoF1U6));
+		clienteF17E.getListadoFacturas().add(new Factura(productoF1U7));
+		clienteF18E.getListadoFacturas().add(new Factura(productoF1U8));
+		clienteF19E.getListadoFacturas().add(new Factura(productoF1U9));
+		clienteF110E.getListadoFacturas().add(new Factura(productoF1U10));
+		clienteF111E.getListadoFacturas().add(new Factura(productoF1U11));
+		clienteF112E.getListadoFacturas().add(new Factura(productoF1U12));
+		clienteF113E.getListadoFacturas().add(new Factura(productoF1U13));
+		clienteF114E.getListadoFacturas().add(new Factura(productoF1U14));
+		clienteF115E.getListadoFacturas().add(new Factura(productoF1U15));
+		clienteF116E.getListadoFacturas().add(new Factura(productoF1U16));
+		clienteF117E.getListadoFacturas().add(new Factura(productoF1U17));
+		clienteF118E.getListadoFacturas().add(new Factura(productoF1U18));
+		
+		clienteF11ET.getListadoFacturas().add(new Factura(productoF1T1));
+		clienteF12ET.getListadoFacturas().add(new Factura(productoF1T2));
+		clienteF13ET.getListadoFacturas().add(new Factura(productoF1T3));
+		clienteF14ET.getListadoFacturas().add(new Factura(productoF1T4));
+		clienteF15ET.getListadoFacturas().add(new Factura(productoF1T5));
+		clienteF16ET.getListadoFacturas().add(new Factura(productoF1T6));
+		clienteF17ET.getListadoFacturas().add(new Factura(productoF1T7));
+		clienteF18ET.getListadoFacturas().add(new Factura(productoF1T8));
+		clienteF19ET.getListadoFacturas().add(new Factura(productoF1T9));
+		clienteF110ET.getListadoFacturas().add(new Factura(productoF1T10));
+		clienteF111ET.getListadoFacturas().add(new Factura(productoF1T11));
+		clienteF112ET.getListadoFacturas().add(new Factura(productoF1T12));
+		clienteF113ET.getListadoFacturas().add(new Factura(productoF1T13));
+		clienteF114ET.getListadoFacturas().add(new Factura(productoF1T14));
+		clienteF115ET.getListadoFacturas().add(new Factura(productoF1T15));
+		clienteF116ET.getListadoFacturas().add(new Factura(productoF1T16));
+		clienteF117ET.getListadoFacturas().add(new Factura(productoF1T17));
+		clienteF118ET.getListadoFacturas().add(new Factura(productoF1T18));
+		
+		//Facturas clientes Funeraria 2
+		
+		//Productos Urnas
+		Producto productoF21E = new Producto(urnaF2C11E,1);
+		Producto productoF22E = new Producto(urnaF2C12E,2);
+		Producto productoF23E = new Producto(urnaF2C13E,3);
+
+		Producto productoF24E = new Producto(urnaF2C21E,4);
+		Producto productoF25E = new Producto(urnaF2C22E,5);
+		Producto productoF26E = new Producto(urnaF2C23E,1);
+
+		Producto productoF27E = new Producto(urnaF2C31E,2);
+		Producto productoF28E = new Producto(urnaF2C32E,3);
+		Producto productoF29E = new Producto(urnaF2C33E,4);
+
+		Producto productoF210E = new Producto(urnaF2C41E,5);
+		Producto productoF211E = new Producto(urnaF2C42E,1);
+		Producto productoF212E = new Producto(urnaF2C43E,2);
+
+		Producto productoF213E = new Producto(urnaF2C51E,3);
+		Producto productoF214E = new Producto(urnaF2C52E,4);
+		Producto productoF215E = new Producto(urnaF2C53E,5);
+
+		Producto productoF216E = new Producto(urnaF2C61E,1);
+		Producto productoF217E = new Producto(urnaF2C62E,2);
+		Producto productoF218E = new Producto(urnaF2C63E,3);
+				
+		//Productos Tumba
+		Producto productoF21ET = new Producto(tumbaF2C11E,1);
+		Producto productoF22ET = new Producto(tumbaF2C12E,2);
+		Producto productoF23ET = new Producto(tumbaF2C13E,3);
+
+		Producto productoF24ET = new Producto(tumbaF2C21E,4);
+		Producto productoF25ET = new Producto(tumbaF2C22E,5);
+		Producto productoF26ET = new Producto(tumbaF2C23E,1);
+
+		Producto productoF27ET = new Producto(tumbaF2C31E,2);
+		Producto productoF28ET = new Producto(tumbaF2C32E,3);
+		Producto productoF29ET = new Producto(tumbaF2C33E,4);
+
+		Producto productoF210ET = new Producto(tumbaF2C41E,5);
+		Producto productoF211ET = new Producto(tumbaF2C42E,1);
+		Producto productoF212ET = new Producto(tumbaF2C43E,2);
+
+		Producto productoF213ET = new Producto(tumbaF2C51E,3);
+		Producto productoF214ET = new Producto(tumbaF2C52E,4);
+		Producto productoF215ET = new Producto(tumbaF2C53E,5);
+
+		Producto productoF216ET = new Producto(tumbaF2C61E,1);
+		Producto productoF217ET = new Producto(tumbaF2C62E,2);
+		Producto productoF218ET = new Producto(tumbaF2C63E,3);
+				
+		//ArrayList productos urnas
+		ArrayList<Producto> productoF2U1= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2U2= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2U3= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2U4= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2U5= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2U6= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2U7= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2U8= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2U9= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2U10= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2U11= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2U12= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2U13= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2U14= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2U15= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2U16= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2U17= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2U18= new ArrayList<Producto>();
+				
+		//ArrayList productos tumbas
+		ArrayList<Producto> productoF2T1= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2T2= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2T3= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2T4= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2T5= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2T6= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2T7= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2T8= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2T9= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2T10= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2T11= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2T12= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2T13= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2T14= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2T15= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2T16= new ArrayList<Producto>();
+		ArrayList<Producto> productoF2T17= new ArrayList<Producto>();
+	    ArrayList<Producto> productoF2T18= new ArrayList<Producto>();
+				
+		// agregar objetos Array
+						
+		productoF2U1.add(productoF21E);
+		productoF2U2.add(productoF22E);
+	    productoF2U3.add(productoF23E);
+	    productoF2U6.add(productoF24E);
+		productoF2U5.add(productoF25E);
+	    productoF2U6.add(productoF26E);
+		productoF2U7.add(productoF27E);
+		productoF2U8.add(productoF28E);
+		productoF2U9.add(productoF29E);
+		productoF2U10.add(productoF210E);
+		productoF2U11.add(productoF211E);
+		productoF2U12.add(productoF212E);
+		productoF2U13.add(productoF213E);
+		productoF2U14.add(productoF214E);
+		productoF2U15.add(productoF215E);
+		productoF2U16.add(productoF216E);
+		productoF2U17.add(productoF217E);
+		productoF2U18.add(productoF218E);
+				
+	    productoF2T1.add(productoF21ET);
+		productoF2T2.add(productoF22ET);
+		productoF2T3.add(productoF23ET);
+	    productoF2T6.add(productoF24ET);
+		productoF2T5.add(productoF25ET);
+		productoF2T6.add(productoF26ET);
+		productoF2T7.add(productoF27ET);
+		productoF2T8.add(productoF28ET);
+		productoF2T9.add(productoF29ET);
+		productoF2T10.add(productoF210ET);
+		productoF2T11.add(productoF211ET);
+		productoF2T12.add(productoF212ET);
+		productoF2T13.add(productoF213ET);
+		productoF2T14.add(productoF214ET);
+		productoF2T15.add(productoF215ET);
+		productoF2T16.add(productoF216ET);
+		productoF2T17.add(productoF217ET);
+		productoF2T18.add(productoF218ET);
+				
+		//Facturas clientes 
+				
+	    clienteF21E.getListadoFacturas().add(new Factura(productoF2U1));
+		clienteF22E.getListadoFacturas().add(new Factura(productoF2U2));
+		clienteF23E.getListadoFacturas().add(new Factura(productoF2U3));
+		clienteF24E.getListadoFacturas().add(new Factura(productoF2U4));
+		clienteF25E.getListadoFacturas().add(new Factura(productoF2U5));
+		clienteF26E.getListadoFacturas().add(new Factura(productoF2U6));
+		clienteF27E.getListadoFacturas().add(new Factura(productoF2U7));
+		clienteF28E.getListadoFacturas().add(new Factura(productoF2U8));
+		clienteF29E.getListadoFacturas().add(new Factura(productoF2U9));
+		clienteF210E.getListadoFacturas().add(new Factura(productoF2U10));
+		clienteF211E.getListadoFacturas().add(new Factura(productoF2U11));
+		clienteF212E.getListadoFacturas().add(new Factura(productoF2U12));
+		clienteF213E.getListadoFacturas().add(new Factura(productoF2U13));
+		clienteF214E.getListadoFacturas().add(new Factura(productoF2U14));
+		clienteF215E.getListadoFacturas().add(new Factura(productoF2U15));
+		clienteF216E.getListadoFacturas().add(new Factura(productoF2U16));
+		clienteF217E.getListadoFacturas().add(new Factura(productoF2U17));
+		clienteF218E.getListadoFacturas().add(new Factura(productoF2U18));
+				
+		clienteF21ET.getListadoFacturas().add(new Factura(productoF2T1));
+		clienteF22ET.getListadoFacturas().add(new Factura(productoF2T2));
+		clienteF23ET.getListadoFacturas().add(new Factura(productoF2T3));
+		clienteF24ET.getListadoFacturas().add(new Factura(productoF2T4));
+		clienteF25ET.getListadoFacturas().add(new Factura(productoF2T5));
+		clienteF26ET.getListadoFacturas().add(new Factura(productoF2T6));
+		clienteF27ET.getListadoFacturas().add(new Factura(productoF2T7));
+		clienteF28ET.getListadoFacturas().add(new Factura(productoF2T8));
+		clienteF29ET.getListadoFacturas().add(new Factura(productoF2T9));
+		clienteF210ET.getListadoFacturas().add(new Factura(productoF2T10));
+		clienteF211ET.getListadoFacturas().add(new Factura(productoF2T11));
+		clienteF212ET.getListadoFacturas().add(new Factura(productoF2T12));
+		clienteF213ET.getListadoFacturas().add(new Factura(productoF2T13));
+		clienteF214ET.getListadoFacturas().add(new Factura(productoF2T14));
+		clienteF215ET.getListadoFacturas().add(new Factura(productoF2T15));
+		clienteF216ET.getListadoFacturas().add(new Factura(productoF2T16));
+		clienteF217ET.getListadoFacturas().add(new Factura(productoF2T17));
+		clienteF218ET.getListadoFacturas().add(new Factura(productoF2T18));
+		
+		//Facturas clientes Funeraria 3
+				
+		//Productos Urnas
+		Producto productoF31E = new Producto(urnaF3C11E,1);
+		Producto productoF32E = new Producto(urnaF3C12E,2);
+		Producto productoF33E = new Producto(urnaF3C13E,3);
+
+		Producto productoF34E = new Producto(urnaF3C21E,4);
+		Producto productoF35E = new Producto(urnaF3C22E,5);
+		Producto productoF36E = new Producto(urnaF3C23E,1);
+
+		Producto productoF37E = new Producto(urnaF3C31E,2);
+		Producto productoF38E = new Producto(urnaF3C32E,3);
+		Producto productoF39E = new Producto(urnaF3C33E,4);
+
+		Producto productoF310E = new Producto(urnaF3C41E,5);
+		Producto productoF311E = new Producto(urnaF3C42E,1);
+		Producto productoF312E = new Producto(urnaF3C43E,2);
+
+		Producto productoF313E = new Producto(urnaF3C51E,3);
+		Producto productoF314E = new Producto(urnaF3C52E,4);
+		Producto productoF315E = new Producto(urnaF3C53E,5);
+
+		Producto productoF316E = new Producto(urnaF3C61E,1);
+		Producto productoF317E = new Producto(urnaF3C62E,2);
+		Producto productoF318E = new Producto(urnaF3C63E,3);
+				
+		//Productos Tumba
+		Producto productoF31ET = new Producto(tumbaF3C11E,1);
+		Producto productoF32ET = new Producto(tumbaF3C12E,2);
+		Producto productoF33ET = new Producto(tumbaF3C13E,3);
+
+		Producto productoF34ET = new Producto(tumbaF3C21E,4);
+		Producto productoF35ET = new Producto(tumbaF3C22E,5);
+		Producto productoF36ET = new Producto(tumbaF3C23E,1);
+
+		Producto productoF37ET = new Producto(tumbaF3C31E,2);
+		Producto productoF38ET = new Producto(tumbaF3C32E,3);
+		Producto productoF39ET = new Producto(tumbaF3C33E,4);
+
+		Producto productoF310ET = new Producto(tumbaF3C41E,5);
+		Producto productoF311ET = new Producto(tumbaF3C42E,1);
+		Producto productoF312ET = new Producto(tumbaF3C43E,2);
+
+		Producto productoF313ET = new Producto(tumbaF3C51E,3);
+		Producto productoF314ET = new Producto(tumbaF3C52E,4);
+		Producto productoF315ET = new Producto(tumbaF3C53E,5);
+
+		Producto productoF316ET = new Producto(tumbaF3C61E,1);
+		Producto productoF317ET = new Producto(tumbaF3C62E,2);
+		Producto productoF318ET = new Producto(tumbaF3C63E,3);
+				
+		//ArrayList productos urnas
+		ArrayList<Producto> productoF3U1= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3U2= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3U3= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3U4= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3U5= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3U6= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3U7= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3U8= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3U9= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3U10= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3U11= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3U12= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3U13= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3U14= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3U15= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3U16= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3U17= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3U18= new ArrayList<Producto>();
+				
+		//ArrayList productos tumbas
+		ArrayList<Producto> productoF3T1= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3T2= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3T3= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3T4= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3T5= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3T6= new ArrayList<Producto>();
+	    ArrayList<Producto> productoF3T7= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3T8= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3T9= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3T10= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3T11= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3T12= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3T13= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3T14= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3T15= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3T16= new ArrayList<Producto>();
+	    ArrayList<Producto> productoF3T17= new ArrayList<Producto>();
+		ArrayList<Producto> productoF3T18= new ArrayList<Producto>();
+				
+		// agregar objetos Array
+						
+		productoF3U1.add(productoF31E);
+	    productoF3U2.add(productoF32E);
+	    productoF3U3.add(productoF33E);
+	    productoF3U6.add(productoF34E);
+	    productoF3U5.add(productoF35E);
+		productoF3U6.add(productoF36E);
+		productoF3U7.add(productoF37E);
+		productoF3U8.add(productoF38E);
+		productoF3U9.add(productoF39E);
+	    productoF3U10.add(productoF310E);
+		productoF3U11.add(productoF311E);
+		productoF3U12.add(productoF312E);
+		productoF3U13.add(productoF313E);
+		productoF3U14.add(productoF314E);
+		productoF3U15.add(productoF315E);
+		productoF3U16.add(productoF316E);
+		productoF3U17.add(productoF317E);
+		productoF3U18.add(productoF318E);
+				
+		productoF3T1.add(productoF31ET);
+	    productoF3T2.add(productoF32ET);
+	    productoF3T3.add(productoF33ET);
+	    productoF3T6.add(productoF34ET);
+	    productoF3T5.add(productoF35ET);
+		productoF3T6.add(productoF36ET);
+		productoF3T7.add(productoF37ET);
+		productoF3T8.add(productoF38ET);
+		productoF3T9.add(productoF39ET);
+		productoF3T10.add(productoF310ET);
+	    productoF3T11.add(productoF311ET);
+		productoF3T12.add(productoF312ET);
+		productoF3T13.add(productoF313ET);
+		productoF3T14.add(productoF314ET);
+		productoF3T15.add(productoF315ET);
+		productoF3T16.add(productoF316ET);
+		productoF3T17.add(productoF317ET);
+		productoF3T18.add(productoF318ET);
+				
+		//Facturas clientes 
+				
+		clienteF31E.getListadoFacturas().add(new Factura(productoF3U1));
+		clienteF32E.getListadoFacturas().add(new Factura(productoF3U2));
+		clienteF33E.getListadoFacturas().add(new Factura(productoF3U3));
+		clienteF34E.getListadoFacturas().add(new Factura(productoF3U4));
+		clienteF35E.getListadoFacturas().add(new Factura(productoF3U5));
+		clienteF36E.getListadoFacturas().add(new Factura(productoF3U6));
+		clienteF37E.getListadoFacturas().add(new Factura(productoF3U7));
+		clienteF38E.getListadoFacturas().add(new Factura(productoF3U8));
+		clienteF39E.getListadoFacturas().add(new Factura(productoF3U9));
+		clienteF310E.getListadoFacturas().add(new Factura(productoF3U10));
+		clienteF311E.getListadoFacturas().add(new Factura(productoF3U11));
+		clienteF312E.getListadoFacturas().add(new Factura(productoF3U12));
+		clienteF313E.getListadoFacturas().add(new Factura(productoF3U13));
+		clienteF314E.getListadoFacturas().add(new Factura(productoF3U14));
+		clienteF315E.getListadoFacturas().add(new Factura(productoF3U15));
+		clienteF316E.getListadoFacturas().add(new Factura(productoF3U16));
+		clienteF317E.getListadoFacturas().add(new Factura(productoF3U17));
+		clienteF318E.getListadoFacturas().add(new Factura(productoF3U18));
+				
+		clienteF31ET.getListadoFacturas().add(new Factura(productoF3T1));
+		clienteF32ET.getListadoFacturas().add(new Factura(productoF3T2));
+		clienteF33ET.getListadoFacturas().add(new Factura(productoF3T3));
+		clienteF34ET.getListadoFacturas().add(new Factura(productoF3T4));
+		clienteF35ET.getListadoFacturas().add(new Factura(productoF3T5));
+		clienteF36ET.getListadoFacturas().add(new Factura(productoF3T6));
+		clienteF37ET.getListadoFacturas().add(new Factura(productoF3T7));
+		clienteF38ET.getListadoFacturas().add(new Factura(productoF3T8));
+		clienteF39ET.getListadoFacturas().add(new Factura(productoF3T9));
+		clienteF310ET.getListadoFacturas().add(new Factura(productoF3T10));
+		clienteF311ET.getListadoFacturas().add(new Factura(productoF3T11));
+		clienteF312ET.getListadoFacturas().add(new Factura(productoF3T12));
+		clienteF313ET.getListadoFacturas().add(new Factura(productoF3T13));
+		clienteF314ET.getListadoFacturas().add(new Factura(productoF3T14));
+		clienteF315ET.getListadoFacturas().add(new Factura(productoF3T15));
+		clienteF316ET.getListadoFacturas().add(new Factura(productoF3T16));
+		clienteF317ET.getListadoFacturas().add(new Factura(productoF3T17));
+		clienteF318ET.getListadoFacturas().add(new Factura(productoF3T18));
+	
 		Funeraria[] funerarias = new Funeraria[]{funeraria1, funeraria2, funeraria1};
 		
 		boolean validacion=true;
