@@ -9,7 +9,6 @@ import gestorAplicacion.establecimientos.Crematorio;
 import gestorAplicacion.establecimientos.Establecimiento;
 import gestorAplicacion.establecimientos.Funeraria;
 import gestorAplicacion.financiero.*;
-import gestorAplicacion.financiero.Factura;
 import gestorAplicacion.inventario.TipoVehiculo;
 import gestorAplicacion.inventario.Urna;
 import gestorAplicacion.inventario.Vehiculo;
@@ -528,7 +527,47 @@ public static void main(String[] args) {
 		Factura factura1 = new Factura("Funeral", 1000, "2772", a1, "establecimiento");
 		a1.agregarFactura(factura1);
 		funcionalidadFinanzas();
-			
+		//cuentaBancarias clientes
+	    CuentaBancaria cuenta5 = new CuentaBancaria(378273, "a1", 39999, "BBVA");
+	    CuentaBancaria cuenta6 = new CuentaBancaria(199919, "a2", 17271, "BANCOLOMBIA");
+	    CuentaBancaria cuenta7 = new CuentaBancaria(374388, "a3", 17212, "DAVIVIENDA");
+	    CuentaBancaria cuenta8 = new CuentaBancaria(347574, "a4", 34784, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta9 = new CuentaBancaria(477373, "a5", 37437, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta10 = new CuentaBancaria(234828, "b1", 28348, "BBVA");
+	    CuentaBancaria cuenta11 = new CuentaBancaria(373387, "b2", 23484, "BANCOLOMBIA");
+	    CuentaBancaria cuenta12 = new CuentaBancaria(138838, "b3", 23828, "DAVIVIENDA");
+	    CuentaBancaria cuenta13 = new CuentaBancaria(347734, "b4", 48238, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta14 = new CuentaBancaria(173743, "b5", 42734, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta15 = new CuentaBancaria(478474, "c1", 23424, "BBVA");
+	    CuentaBancaria cuenta16 = new CuentaBancaria(283882, "c2", 34564, "BANCOLOMBIA");
+	    CuentaBancaria cuenta17 = new CuentaBancaria(283823, "c3", 36464, "DAVIVIENDA");
+	    CuentaBancaria cuenta18 = new CuentaBancaria(382838, "c4", 57567, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta19 = new CuentaBancaria(238822, "c5", 86786, "BANCO_BOGOTA");		
 
 }
-}
+
+
+CuentaBancaria cuenta25CE = new CuentaBancaria(234243, "Jardín de los Ángeles", 17212, "DAVIVIENDA");
+CuentaBancaria cuenta26CE = new CuentaBancaria(545667, "Campo de la Tranquilidad", 34784, "BANCO_OCCIDENTE");
+CuentaBancaria cuenta27CE = new CuentaBancaria(667878, "Oasis de Paz", 37437, "BANCO_BOGOTA");
+CuentaBancaria cuenta28CE = new CuentaBancaria(707070, "Colinas del Recuerdo", 28348, "BBVA");
+CuentaBancaria cuenta29CE = new CuentaBancaria(124124, "Rincón del Silencio", 23484, "BANCOLOMBIA");
+CuentaBancaria cuenta30CE = new CuentaBancaria(546065, "Eterna Armonía", 23828, "DAVIVIENDA");
+CuentaBancaria cuenta31CE = new CuentaBancaria(634666, "Bosque de los Sueños", 48238, "BANCO_OCCIDENTE");
+CuentaBancaria cuenta32CE = new CuentaBancaria(284658, "Pradera del Descanso", 42734, "BANCO_BOGOTA");
+CuentaBancaria cuenta33CE = new CuentaBancaria(284654, "Refugio de la Memoria", 23424, "BBVA");
+CuentaBancaria cuenta34CE = new CuentaBancaria(474742, "Sendero de la Memoria", 34564, "BANCOLOMBIA");
+CuentaBancaria cuenta35CE = new CuentaBancaria(324727, "Valle del Reposo", 36464, "DAVIVIENDA");
+CuentaBancaria cuenta36CE = new CuentaBancaria(237474, "Jardines del Refugio", 57567, "BANCO_OCCIDENTE");
+CuentaBancaria cuenta10CE = new CuentaBancaria(656456, "Cementerio del Refugi", 86786, "BANCO_BOGOTA");
+CuentaBancaria cuenta11CE = new CuentaBancaria(567567, "Paz y Esperanza", 57567, "BBVA");
+CuentaBancaria cuenta12CE = new CuentaBancaria(349599, "Sendero de la Tranquilidad", 86786, "BANCOLOMBIA");
+
+//
+
+//
+
+
+CuentaBancaria cuenta25CE = new CuentaBancaria(423342, "Crematorio Serenidad Eterna", 17212, "DAVIVIENDA");
+CuentaBancaria cuenta26CE = new CuentaBancaria(345345, "Llama de la Eternidada", 34784, "BANCO_OCCIDENTE");
+CuentaBancaria cuenta27CE = new CuentaBancaria(454564, "Refugio del Alba", 37437, "BANCO_BOGOTA");
