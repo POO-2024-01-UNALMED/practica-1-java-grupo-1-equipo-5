@@ -32,8 +32,9 @@ public class Funeraria extends Establecimiento{
 	}
 	
 
-	
-	//Sirve para buscar establecimientos de tipo Cementerio o Crematorio que estén asociados a la funeraria y que concuerden con el atributo afiliacón y acompañantes del cliente 
+	//Recibe como primer parámetro un dato de tipo String que puede ser "crematorio" o "cementerio"
+	//Este método sirve para buscar establecimientos de tipo Cementerio o Crematorio que estén asociados a la funeraria y cumplan 2 restricciones
+	//Retorna un ArrayList<Establecimiento> con los objetos tipo Establecimiento filtrados 
 	public ArrayList<Establecimiento> buscarEstablecimientos(String tipoEstablecimiento,Cliente cliente){
 		
 		ArrayList<Establecimiento> establecimientosEvaluar= Establecimiento.buscarPorFuneraria(this, tipoEstablecimiento);
@@ -45,7 +46,8 @@ public class Funeraria extends Establecimiento{
 			
 			Establecimiento establecimiento=establecimientosEvaluar.get(i);
 			
-			
+			//La afiliación del cliente debe coincidir con la afiliación del Establecimiento
+			//La capacidad del Establecimiento debe ser mayor a la cantidad de Familiares de cliente que rotorna el método cantidadFamiliares()
 			if(establecimiento.getAfiliacion() == cliente.getAfiliacion() & establecimiento.getCapacidad() >= cliente.cantidadFamiliares()) {
 				establecimientosDisponibles.add(establecimiento);
 			}//fin ciclo if
@@ -66,7 +68,11 @@ public class Funeraria extends Establecimiento{
 	}
 	
 	
-	
+	//Recibe dos parámetros de tipo String, la jornada puede ser "mañana", "tarde" o "noche" y 
+	//el cargo puede ser "conductor","sepulturero","padre","obispo" o "cremador"
+	//Este método sirve para filtrar los elementos del arreglo empleados de objetos Empleado de acuerdo con
+	//la jornada y cargo que recibe como parámetros
+	//Devuelve un arreglo con los objetos de tipo Empleado filtrados
 	public ArrayList<Empleado> buscarEmpleados(String jornada, String cargo){
 		
 		ArrayList<Empleado> disponible=new ArrayList<Empleado>();
@@ -110,7 +116,7 @@ public class Funeraria extends Establecimiento{
 	
 	
 	
-	//busca al cliente por funeraria y por tipo de Cementerio
+	
 	public ArrayList<Cliente> buscarCliente(String tipoCementerio, String adultoNiño){
 		
 		ArrayList<Cliente> clientes = new ArrayList<Cliente>();

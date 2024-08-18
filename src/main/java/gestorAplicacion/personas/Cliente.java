@@ -35,54 +35,51 @@ public class Cliente extends Persona {
 		
 		
 		//autorizar procedimiento de exhumacion y cremacion del cliente
-		public String autorizar() {
-			ArrayList<Familiar> familiares=this.familiares;
-			Familiar familiarDesignado= this.designarFamiliar(familiares);
-			String mensaje =" autoriza la solicitud";
+		//public String autorizar() {
+			//ArrayList<Familiar> familiares=this.familiares;
+			//Familiar familiarDesignado= this.designarFamiliar(familiares);
+			//String mensaje =" autoriza la solicitud";
 			
-			for(Persona auxFamiliar: familiares) {
-				if(auxFamiliar instanceof Cliente) {
-					mensaje= " del cliente "+auxFamiliar.getNombre()+" autoriza la solicitud";
-					break;
-				}
-			}
+			//for(Persona auxFamiliar: familiares) {
+				//if(auxFamiliar instanceof Cliente) {
+					//mensaje= " del cliente "+auxFamiliar.getNombre()+" autoriza la solicitud";
+					//break;
+				//}
+			//}
 			
-			while (familiares.size()!=0) {
-				if (familiarDesignado !=null) {
-					if(numeroAutorizar() & familiarDesignado.getCC() !=0) {
-					return familiarDesignado.getParentesco() + mensaje;
-				}	else{
-						familiares.remove(familiarDesignado);
-						familiarDesignado=this.designarFamiliar(familiares);}
+			//while (familiares.size()!=0) {
+				//if (familiarDesignado !=null) {
+					//if(numeroAutorizar() & familiarDesignado.getCC() !=0) {
+					//return familiarDesignado.getParentesco() + mensaje;
+				//}	else{
+					//	familiares.remove(familiarDesignado);
+						//familiarDesignado=this.designarFamiliar(familiares);}
 				
-				}else {return "La solicitud no podrá ser autorizada";}
+				//}else {return "La solicitud no podrá ser autorizada";}
 						
-			}
-			return 	"La solicitud no podrá ser autorizada";
+			//}
+			//return 	"La solicitud no podrá ser autorizada";
 			
-		}
+		//}
 		
 		//apoyo a metodo autorizar
-		private boolean numeroAutorizar() {
-			int numero = (int) (Math.random() * 10);
-			if (numero < 6) {
-				return true;
-			}
-			return false;
-			}
+		//private boolean numeroAutorizar() {
+			//int numero = (int) (Math.random() * 10);
+			//if (numero < 6) {
+				//return true;
+			//}
+			//return false;
+			//}
 		
-		//metodo cantidad familiares
-		
+		//Devuelve la cantidad de Familiares y acompañantes que tiene cada Familiar 
 		public int cantidadFamiliares() {
 			int cantidadFamiliares=familiares.size();
 			
+			//Por cada familiar de ArrayList<Familiar> familiares se suma su atributo acompañantes  
 			for(Persona auxFamiliar: familiares) {
 				if(auxFamiliar.getCC()!=0 & auxFamiliar instanceof Familiar) {
 					int cantidad = ((Familiar) auxFamiliar).getAcompañantes();
 					cantidadFamiliares=cantidadFamiliares+cantidad;
-				if(auxFamiliar instanceof Cliente) {
-					cantidadFamiliares-=1;
-				}
 					
 				}//Fin if principal
 			}//fin ciclo for
@@ -92,39 +89,39 @@ public class Cliente extends Persona {
 		
 		//Este método se empleará para asignar a familiares del cliente únicamente que tengan un parentesco directo con le nuevo cliente de conyuge, hijo, padre, hermano 
 		
-		public void asignarParentesco(Cliente cliente, String parentesco) {
-			ArrayList<String> parentescos = new ArrayList<String>();
+		//public void asignarParentesco(Cliente cliente, String parentesco) {
+			//ArrayList<String> parentescos = new ArrayList<String>();
 			//familiares.add(cliente);
 			
-			if(parentesco=="conyuge") {
-				parentescos.add("hijo");
+			//if(parentesco=="conyuge") {
+				//parentescos.add("hijo");
 				
-			}else if(parentesco=="hijo") {
-				parentescos.add("conyuge");
-				parentescos.add("hijo");
+			//}else if(parentesco=="hijo") {
+				//parentescos.add("conyuge");
+				//parentescos.add("hijo");
 			
-			}else if(parentesco=="padre") {
-				parentescos.add("hermano");
-				parentescos.add("padre");
-			}else {
-				parentescos.add("padre");
-				parentescos.add("hermano");
-			}
+		//	}else if(parentesco=="padre") {
+			//	parentescos.add("hermano");
+				//parentescos.add("padre");
+			//}else {
+				//parentescos.add("padre");
+				//parentescos.add("hermano");
+			//}
 			
-			for (String auxParentesco: parentescos) {
-				for(Persona auxFamiliar: cliente.familiares) {
-					if(auxFamiliar instanceof Familiar) {
-						Familiar familiar= (Familiar) auxFamiliar;
-						if(familiar.getParentesco()==auxParentesco) {
-							familiares.add(familiar);
-						}//fin if
-					}//fin if principal
-				}//fin for 
-			}//fin for principal
+		//	for (String auxParentesco: parentescos) {
+			//	for(Persona auxFamiliar: cliente.familiares) {
+				//	if(auxFamiliar instanceof Familiar) {
+					//	Familiar familiar= (Familiar) auxFamiliar;
+						//if(familiar.getParentesco()==auxParentesco) {
+							//familiares.add(familiar);
+						//}//fin if
+					//}//fin if principal
+				//}//fin for 
+			//}//fin for principal
 			
 			
 			
-		}
+		//}
 	
 		
 		public Familiar designarFamiliar(ArrayList<Familiar> familiares) {

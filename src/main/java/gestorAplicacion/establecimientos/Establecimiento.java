@@ -97,17 +97,14 @@ public class Establecimiento implements Serializable {
 		return filtrados;
 	}
 	
-	//buscar por funeraria  //Devuelve el tipo de establecimiento más específico de acuerdo a la funeraria 
+	//Recibe como parámetro la funeraria por la que se quiere filtrar los establecimientos y un dato tipo String que puede ser "crematorio" o cementerio  
+	//Sirve para filtrar el tipo de establecimiento más específico de acuerdo a la funeraria 
+	//Devuelve una lista con objetos de tipo Cementerio o Crematorio que tengan asociados la funeraria que se ingresó como parámetro
 	public static ArrayList<Establecimiento> buscarPorFuneraria(Funeraria funeraria, String tipoEstablecimiento) {
 		
 		ArrayList<Establecimiento> establecimientosFuneraria = new ArrayList<Establecimiento>();
 		ArrayList<Establecimiento> establecimientosEvaluar = Establecimiento.filtarEstablecimiento(tipoEstablecimiento);
 		
-		//if (tipoEstablecimiento=="cementerio") {
-			//establecimientosEvaluar=Cementerio.establecimientos;
-		//}else if (tipoEstablecimiento=="crematorio") {
-			//establecimientosEvaluar=Crematorio.establecimientos;
-		//}
 		
 		for (int i=0;i<establecimientosEvaluar.size();i++) {
 			
@@ -194,7 +191,8 @@ public class Establecimiento implements Serializable {
         }
         return vehiculosFiltrados;
     }
-	
+	//Este método se usa para generar objetos de LocalTime de acuerdo al horario de trabajo de un Empleado con cargo "sepulturero" o "cremador"
+	//El método no retornará nada pero agregará los objetos creados al arreglo horarioEventos
 	public void generarHoras() {
 		
 		Random random=new Random();
@@ -203,18 +201,24 @@ public class Establecimiento implements Serializable {
 		int horaMax=0;
 		
 		if(this instanceof Crematorio) {
+			//Si el Establecimiento es de tipo Crematorio se necesitará que el Empleado tenga como atributo cargo "cremador"
 			cargo="cremador";
 		}else if(this instanceof Cementerio) {
+			//Si el Establecimiento es de tipo Crematorio se necesitará que el Empleado tenga como atributo cargo "sepulturero"
 			cargo="sepulturero";
 		}
+		
+		//Solo se añadirán más objetos al arreglo si está vacío 
 		if (this.horarioEventos.size()==0) {
-			
+			//Se verifica si en la funeraria seleccionada hay objetos de tipo Empleado con atributo jornada de tipo String "mañana" y cargo determinado
 			if(this.getFuneraria().buscarEmpleados("mañana", cargo).size()!=0) {
 				horaMin=6;
 				horaMax=14;
+			//Se verifica si en la funeraria seleccionada hay objetos de tipo Empleado con atributo jornada de tipo String "tarde" y cargo determinado
 			}else if(this.getFuneraria().buscarEmpleados("tarde", cargo).size()!=0){
 				if(horaMin==0) {horaMin=15; horaMax=22;}
 				else {horaMax=22;}
+			//Se verifica si en la funeraria seleccionada hay objetos de tipo Empleado con atributo jornada de tipo String "noche" y cargo determinado
 			}else if(this.getFuneraria().buscarEmpleados("noche", cargo).size()!=0) {
 				if(horaMin==0) {horaMax=30; horaMin=23;}
 				else if(horaMin==15) {horaMax=30;}
@@ -223,7 +227,7 @@ public class Establecimiento implements Serializable {
 				
 			}
 			
-		
+			//Se generan los horarios de forma aleatoria teniendo en cuenta el rango establecido para las horas del objeto LocalTime
 			for(int a=0;a<3;a++) {
 				// Generar horas y minutos aleatorios 
 	        	int horas= random.nextInt(horaMax - horaMin + 1) + horaMin; // Horas entre horasMin y horasMax
