@@ -1276,12 +1276,41 @@ public class Menú {
 		
 		//Empleados conductor
 		
-		Empleado empleadoC1= new Empleado("Bruno Salgado",null,"mañana","conductor",1000000,funeraria1);
-		Empleado empleadoC2= new Empleado("Bárbara López",null,"mañana","conductor",1000000,funeraria1);
-		Empleado empleadoC3= new Empleado("Óscar Morales",null,"tarde","conductor",1000000,funeraria1);
-		Empleado empleadoC4= new Empleado("Dulce María Reyes",null,"tarde","conductor",1000000,funeraria1);
-		Empleado empleadoC5= new Empleado("Evelyn Rodríguez",null,"noche","conductor",1000000,funeraria1);
-		Empleado empleadoC6= new Empleado("Kevin Castillo",null,"noche","conductor",1000000,funeraria1);
+		Empleado empleadoC1= new Empleado("Bruno Salgado",null,"mañana","conductor",10000,funeraria1);
+		Empleado empleadoC2= new Empleado("Bárbara López",null,"mañana","conductor",10000,funeraria1);
+		Empleado empleadoC3= new Empleado("Óscar Morales",null,"tarde","conductor",10000,funeraria1);
+		Empleado empleadoC4= new Empleado("Dulce María Reyes",null,"tarde","conductor",10000,funeraria1);
+		Empleado empleadoC5= new Empleado("Evelyn Rodríguez",null,"noche","conductor",10000,funeraria1);
+		Empleado empleadoC6= new Empleado("Kevin Castillo",null,"noche","conductor",10000,funeraria1);
+		
+		//Empleados forense 
+		
+		Empleado empleadoF1= new Empleado("Ana García",null,"mañana","forense",1000,funeraria1);
+		Empleado empleadoF2= new Empleado("Luca Rossi",null,"mañana","forense",1000,funeraria1);
+		Empleado empleadoF3= new Empleado("Ayesha Khan",null,"tarde","forense",1000,funeraria1);
+		Empleado empleadoF4= new Empleado("Jorge Martínez",null,"tarde","forense",1000,funeraria1);
+		Empleado empleadoF5= new Empleado("Sofia Petrov",null,"noche","forense",1000,funeraria1);
+		Empleado empleadoF6= new Empleado("Haruto Tanaka",null,"noche","forense",1000,funeraria1);
+		
+		//Empleados padre 
+		
+		Empleado empleadoP1= new Empleado("Elena Ivanova",null,"mañana","padre",1000,funeraria1);
+		Empleado empleadoP2= new Empleado("Amir Reza",null,"mañana","padre",1000,funeraria1);
+		Empleado empleadoP3= new Empleado("Mia Eriksson",null,"tarde","padre",1000,funeraria1);
+		Empleado empleadoP4= new Empleado("Dulce María Reyes",null,"tarde","padre",1000,funeraria1);
+		Empleado empleadoP5= new Empleado("Nina Jovanović",null,"noche","padre",1000,funeraria1);
+		Empleado empleadoP6= new Empleado("Kevin Castillo",null,"noche","padre",1000,funeraria1);
+		
+		//Empleados obispo 
+		
+		Empleado empleadoO1= new Empleado("Eli Cohen",null,"mañana","obispo",1000,funeraria1);
+		Empleado empleadoO2= new Empleado("Bárbara López",null,"mañana","obispo",1000,funeraria1);
+		Empleado empleadoO3= new Empleado("Marco Bianchi",null,"tarde","obispo",1000,funeraria1);
+		Empleado empleadoO4= new Empleado("Zara Ahmed",null,"tarde","obispo",1000,funeraria1);
+		Empleado empleadoO5= new Empleado("Evelyn Rodríguez",null,"noche","obispo",1000,funeraria1);
+		Empleado empleadoO6= new Empleado("Raj Patel",null,"noche","obispo",1000,funeraria1);
+		
+	
 		
 		
 		//Agregar empleados a funeraria 2
@@ -1292,6 +1321,27 @@ public class Menú {
 		funeraria2.agregarEmpleado(empleadoC5);
 		funeraria2.agregarEmpleado(empleadoC6);
 		
+		funeraria2.agregarEmpleado(empleadoF1);
+		funeraria2.agregarEmpleado(empleadoF2);
+		funeraria2.agregarEmpleado(empleadoF3);
+		funeraria2.agregarEmpleado(empleadoF4);
+		funeraria2.agregarEmpleado(empleadoF5);
+		funeraria2.agregarEmpleado(empleadoF6);
+		
+		funeraria2.agregarEmpleado(empleadoP1);
+		funeraria2.agregarEmpleado(empleadoP2);
+		funeraria2.agregarEmpleado(empleadoP3);
+		funeraria2.agregarEmpleado(empleadoP4);
+		funeraria2.agregarEmpleado(empleadoP5);
+		funeraria2.agregarEmpleado(empleadoP6);
+		
+		funeraria2.agregarEmpleado(empleadoO1);
+		funeraria2.agregarEmpleado(empleadoO2);
+		funeraria2.agregarEmpleado(empleadoO3);
+		funeraria2.agregarEmpleado(empleadoO4);
+		funeraria2.agregarEmpleado(empleadoO5);
+		funeraria2.agregarEmpleado(empleadoO6);
+		
 		//Agregar empleados a funeraria 3
 		funeraria3.agregarEmpleado(empleadoC1);
 		funeraria3.agregarEmpleado(empleadoC2);
@@ -1299,6 +1349,27 @@ public class Menú {
 		funeraria3.agregarEmpleado(empleadoC4);
 		funeraria3.agregarEmpleado(empleadoC5);
 		funeraria3.agregarEmpleado(empleadoC6);
+		
+		funeraria3.agregarEmpleado(empleadoF1);
+		funeraria3.agregarEmpleado(empleadoF2);
+		funeraria3.agregarEmpleado(empleadoF3);
+		funeraria3.agregarEmpleado(empleadoF4);
+		funeraria3.agregarEmpleado(empleadoF5);
+		funeraria3.agregarEmpleado(empleadoF6);
+		
+		funeraria3.agregarEmpleado(empleadoP1);
+		funeraria3.agregarEmpleado(empleadoP2);
+		funeraria3.agregarEmpleado(empleadoP3);
+		funeraria3.agregarEmpleado(empleadoP4);
+		funeraria3.agregarEmpleado(empleadoP5);
+		funeraria3.agregarEmpleado(empleadoP6);
+		
+		funeraria3.agregarEmpleado(empleadoO1);
+		funeraria3.agregarEmpleado(empleadoO2);
+		funeraria3.agregarEmpleado(empleadoO3);
+		funeraria3.agregarEmpleado(empleadoO4);
+		funeraria3.agregarEmpleado(empleadoO5);
+		funeraria3.agregarEmpleado(empleadoO6);
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
@@ -2082,6 +2153,396 @@ public class Menú {
 		tumbaF1C63E.agregarCliente(clienteF118ET);
 		
 		
+		
+		//Funeraria 2
+		
+		Cliente clienteF21E = new Cliente("Juan Pérez",3212,30,null,"oro",familiarA);
+		Cliente clienteF22E = new Cliente("Carlos Fernández",3213,25,null,"oro",familiarA);
+										
+		Cliente clienteF23E = new Cliente("Miguel Rodríguez",3213,90,null,"plata",familiarC);
+		Cliente clienteF24E = new Cliente("Dani Morales",3214,57,null,"plata",familiarC);
+										
+		Cliente clienteF25E = new Cliente("Pedro González",3215,50,null, "bronce",familiarB);
+		Cliente clienteF26E = new Cliente("José Martínez",3215,30,null, "bronce",familiarA);
+		
+
+		Cliente clienteF27E = new Cliente("María López",5,"oro",familiarB);
+		Cliente clienteF28E = new Cliente("Carmen García",17,"oro",familiarB);
+										
+		Cliente clienteF29E = new Cliente("Ana Torres",15,"bronce",familiarB);
+		Cliente clienteF210E = new Cliente("Isabel Ramírez",13,"bronce",familiarB);
+		
+
+		Cliente clienteF211E = new Cliente("Laura Morales",233,90,null,"plata",familiarA);
+		Cliente clienteF212E = new Cliente("Robert Jones",234,57,null,"plata",familiarC);
+								
+		Cliente clienteF213E = new Cliente("Olivia Miller",235,35,null, "bronce",familiarC);
+		Cliente clienteF214E = new Cliente("Sophia Moore",236,50,null, "bronce",familiarC);
+		
+
+		Cliente clienteF215E = new Cliente("James Smith",5,"oro",familiarB);
+		Cliente clienteF216E = new Cliente("David Brown",17,"oro",familiarB);
+										
+		Cliente clienteF217E = new Cliente("John Williams",15,"bronce",familiarB);
+		Cliente clienteF218E = new Cliente("Michael Johnson",13,"bronce",familiarB);
+		
+
+		
+		//Cementerio 1 Cenizas
+		Urna urnaF2C11E=new Urna("Urnita de la Esperanza",cementerioF21Ce,70,1,"fija");
+		Urna urnaF2C12E=new Urna("Urnita del Futuro",cementerioF21Ce,80,0,"fija");
+		Urna urnaF2C13E=new Urna("default",cementerioF21Ce,10,0,"ordinaria");
+		
+		
+		//Cementerio 2 Cenizas
+		Urna urnaF2C21E=new Urna("Urnita de la Sabiduría",cementerioF22Ce,70,1,"fija");
+		Urna urnaF2C22E=new Urna("Urnita de la Justicia",cementerioF22Ce,80,0,"ordinaria");
+		Urna urnaF2C23E=new Urna("default",cementerioF22Ce,90,0,"fija");
+	
+		
+		//Cementerio 3 Cenizas
+		Urna urnaF2C31E=new Urna("Urnita de la Confianza",cementerioF23Ce,70,1,"fija");
+		Urna urnaF2C32E=new Urna("Urnita del Progreso",cementerioF23Ce,80,0,"fija");
+		Urna urnaF2C33E=new Urna("default",cementerioF23Ce,90,1,"fija");
+	
+		
+		//Cementerio 4 Cenizas
+		Urna urnaF2C41E=new Urna("Urnita de la Verdadera Voz",cementerioF24Ce,70,1,"fija");
+		Urna urnaF2C42E=new Urna("Urnita de la Decisión",cementerioF24Ce,80,0,"fija");
+		Urna urnaF2C43E=new Urna("default",cementerioF24Ce,60,1,"fija");
+	
+		
+		//Cementerio 5 Cenizas
+		Urna urnaF2C51E=new Urna("Urnita del Cambio",cementerioF25Ce,70,2,"fija");
+		Urna urnaF2C52E=new Urna("Urnita del Pueblo",cementerioF25Ce,80,0,"fija");
+		Urna urnaF2C53E=new Urna("default",cementerioF25Ce,60,1,"ordinaria");
+	
+		
+		//Cementerio 6 Cenizas
+		Urna urnaF2C61E=new Urna("Urnita de la Transparencia",cementerioF26Ce,70,1,"fija");
+		Urna urnaF2C62E=new Urna("Urnita del Compromiso",cementerioF26Ce,80,0,"fija");
+		Urna urnaF2C63E=new Urna("default",cementerioF26Ce,60,0,"ordinaria");
+		
+	
+		//Agregar clientes
+		
+		urnaF2C11E.agregarCliente(clienteF21E);
+		urnaF2C12E.agregarCliente(clienteF22E);
+		urnaF2C13E.agregarCliente(clienteF23E);
+		
+		urnaF2C21E.agregarCliente(clienteF24E);
+		urnaF2C22E.agregarCliente(clienteF25E);
+		urnaF2C23E.agregarCliente(clienteF26E);
+		
+		urnaF2C31E.agregarCliente(clienteF27E);
+		urnaF2C32E.agregarCliente(clienteF28E);
+		urnaF2C33E.agregarCliente(clienteF29E);
+		
+		urnaF2C41E.agregarCliente(clienteF210E);
+		urnaF2C42E.agregarCliente(clienteF211E);
+		urnaF2C43E.agregarCliente(clienteF212E);
+		
+		urnaF2C51E.agregarCliente(clienteF213E);
+		urnaF2C52E.agregarCliente(clienteF214E);
+		urnaF2C53E.agregarCliente(clienteF215E);
+		
+		urnaF2C61E.agregarCliente(clienteF216E);
+		urnaF2C62E.agregarCliente(clienteF217E);
+		urnaF2C63E.agregarCliente(clienteF218E);
+	
+		
+		
+		//Clientes para tumbas
+		
+		
+		
+		Cliente clienteF21ET = new Cliente("Ezequiel Andrade",123,30,null,"oro",familiarC);
+		Cliente clienteF22ET = new Cliente("Damián Vargas",1234,25,null,"oro",familiarC);
+		
+		Cliente clienteF23ET = new Cliente("Octavio Salazar",1235,90,null,"plata",familiarB);
+		Cliente clienteF24ET = new Cliente("Leonardo Paredes",1236,57,null,"plata",familiarB);
+		
+		Cliente clienteF25ET = new Cliente("Ulises Ortega",1237,21,null,"bronce",familiarC);
+		Cliente clienteF26ET = new Cliente("Valeria Castro",1238,50,null,"bronce",familiarC);
+	
+		
+		Cliente clienteF27ET = new Cliente("Delfina Méndez",5,"oro",familiarB);
+		Cliente clienteF28ET = new Cliente("Mireya Delgado",17,"oro",familiarB);
+		
+		Cliente clienteF29ET = new Cliente("Renata Aguirre",15,"plata",familiarB);
+		Cliente clienteF210ET = new Cliente("Alma Guzmán",13,"plata",familiarB);
+		
+		Cliente clienteF211ET = new Cliente("Leo Cruz",1235,90,null,"plata",familiarB);
+		Cliente clienteF212ET = new Cliente("Luna Martínez",1236,57,null,"plata",familiarB);
+		
+		Cliente clienteF213ET = new Cliente("Lucas Moreno",1237,21,null,"bronce",familiarC);
+		Cliente clienteF214ET = new Cliente("Sofía Rodríguez",1238,50,null,"bronce",familiarC);
+	
+		
+		//Clientes F1 - Menores de edad
+		Cliente clienteF215ET = new Cliente("Aitana Gómez",5,"oro",familiarB);
+		Cliente clienteF216ET = new Cliente("Zoe García",17,"oro",familiarB);
+		
+		Cliente clienteF217ET = new Cliente("Ethan Ortega",15,"plata",familiarB);
+		Cliente clienteF218ET = new Cliente("Dylan Mendoza",13,"plata",familiarB);
+		
+		
+		
+		
+		//TUmbas
+		
+		//Cementerio 1
+		Tumba tumbaF2C11E=new Tumba("Tumbita Lugar de Paz",cementerioF21Cu,1.70,1);
+		Tumba tumbaF2C12E=new Tumba("Tumbita Descanso Eterno",cementerioF21Cu,1.50,0);
+		Tumba tumbaF2C13E=new Tumba("default",cementerioF21Cu,1.60,0);
+		
+		//Cementerio 2
+		Tumba tumbaF2C21E=new Tumba("Tumbita Siempre Recordado",cementerioF22Cu,1.70,1);
+		Tumba tumbaF2C22E=new Tumba("Tumbita En Honor a un Ser Querido",cementerioF22Cu,1.50,0);
+		Tumba tumbaF2C23E=new Tumba("default",cementerioF22Cu,1.50,0);
+		
+		//Cementerio 3
+		Tumba tumbaF2C31E=new Tumba("Tumbita Lugar de Serenidad",cementerioF23Cu,1.70,1);
+		Tumba tumbaF2C32E=new Tumba("Tumbita Eterna Paz",cementerioF23Cu,1.50,0);
+		Tumba tumbaF2C33E=new Tumba("default",cementerioF23Cu,1.60,0);
+
+		//Cementerio 4
+		Tumba tumbaF2C41E=new Tumba("Tumbita Un Alma Bella",cementerioF24Cu,1.70,1);
+		Tumba tumbaF2C42E=new Tumba("Tumbita En Paz y Serenidad",cementerioF24Cu,1.50,0);
+		Tumba tumbaF2C43E=new Tumba("default",cementerioF24Cu,1.70,0);
+		
+		//Cementerio 5
+		Tumba tumbaF2C51E=new Tumba("Tumbita Siempre en Nuestros Corazones",cementerioF25Cu,1.70,1);
+		Tumba tumbaF2C52E=new Tumba("Tumbita Aquí Descansa en Paz",cementerioF25Cu,1.50,0);
+		Tumba tumbaF2C53E=new Tumba("default",cementerioF25Cu,1.90,0);
+		
+		//Cementerio 6
+		Tumba tumbaF2C61E=new Tumba("Tumbita La Luz de Nuestra Vida",cementerioF26Cu,1.70,1);
+		Tumba tumbaF2C62E=new Tumba("Tumbita Aquí La Memoria Vive",cementerioF26Cu,1.50,0);
+		Tumba tumbaF2C63E=new Tumba("default",cementerioF26Cu,1.60,0);
+		
+		
+		//Agregar clientes a tumbas
+		tumbaF2C11E.agregarCliente(clienteF21ET);
+		tumbaF2C12E.agregarCliente(clienteF22ET);
+		tumbaF2C13E.agregarCliente(clienteF23ET);
+		
+		tumbaF2C21E.agregarCliente(clienteF24ET);
+		tumbaF2C22E.agregarCliente(clienteF25ET);
+		tumbaF2C23E.agregarCliente(clienteF26ET);
+		
+		tumbaF2C31E.agregarCliente(clienteF27ET);
+		tumbaF2C32E.agregarCliente(clienteF28ET);
+		tumbaF2C33E.agregarCliente(clienteF29ET);
+		
+		tumbaF2C41E.agregarCliente(clienteF210ET);
+		tumbaF2C42E.agregarCliente(clienteF211ET);
+		tumbaF2C43E.agregarCliente(clienteF212ET);
+		
+		tumbaF2C51E.agregarCliente(clienteF213ET);
+		tumbaF2C52E.agregarCliente(clienteF214ET);
+		tumbaF2C53E.agregarCliente(clienteF215ET);
+		
+		tumbaF2C61E.agregarCliente(clienteF216ET);
+		tumbaF2C62E.agregarCliente(clienteF217ET);
+		tumbaF2C63E.agregarCliente(clienteF218ET);
+		
+		
+		//Funeraria 3
+		
+		Cliente clienteF31E = new Cliente("Juan Pérez",3212,30,null,"oro",familiarA);
+		Cliente clienteF32E = new Cliente("Carlos Fernández",3213,25,null,"oro",familiarA);
+										
+		Cliente clienteF33E = new Cliente("Miguel Rodríguez",3213,90,null,"plata",familiarC);
+		Cliente clienteF34E = new Cliente("Dani Morales",3214,57,null,"plata",familiarC);
+										
+		Cliente clienteF35E = new Cliente("Pedro González",3215,50,null, "bronce",familiarB);
+		Cliente clienteF36E = new Cliente("José Martínez",3215,30,null, "bronce",familiarA);
+		
+
+		Cliente clienteF37E = new Cliente("María López",5,"oro",familiarB);
+		Cliente clienteF38E = new Cliente("Carmen García",17,"oro",familiarB);
+										
+		Cliente clienteF39E = new Cliente("Ana Torres",15,"bronce",familiarB);
+		Cliente clienteF310E = new Cliente("Isabel Ramírez",13,"bronce",familiarB);
+		
+
+		Cliente clienteF311E = new Cliente("Laura Morales",233,90,null,"plata",familiarA);
+		Cliente clienteF312E = new Cliente("Robert Jones",234,57,null,"plata",familiarC);
+								
+		Cliente clienteF313E = new Cliente("Olivia Miller",235,35,null, "bronce",familiarC);
+		Cliente clienteF314E = new Cliente("Sophia Moore",236,50,null, "bronce",familiarC);
+		
+
+		Cliente clienteF315E = new Cliente("James Smith",5,"oro",familiarB);
+		Cliente clienteF316E = new Cliente("David Brown",17,"oro",familiarB);
+										
+		Cliente clienteF317E = new Cliente("John Williams",15,"bronce",familiarB);
+		Cliente clienteF318E = new Cliente("Michael Johnson",13,"bronce",familiarB);
+		
+
+		
+		//Cementerio 1 Cenizas
+		Urna urnaF3C11E=new Urna("Urnita de la Esperanza",cementerioF31Ce,70,1,"fija");
+		Urna urnaF3C12E=new Urna("Urnita del Futuro",cementerioF31Ce,80,0,"fija");
+		Urna urnaF3C13E=new Urna("default",cementerioF31Ce,10,0,"ordinaria");
+		
+		
+		//Cementerio 2 Cenizas
+		Urna urnaF3C21E=new Urna("Urnita de la Sabiduría",cementerioF32Ce,70,1,"fija");
+		Urna urnaF3C22E=new Urna("Urnita de la Justicia",cementerioF32Ce,80,0,"ordinaria");
+		Urna urnaF3C23E=new Urna("default",cementerioF32Ce,90,0,"fija");
+	
+		
+		//Cementerio 3 Cenizas
+		Urna urnaF3C31E=new Urna("Urnita de la Confianza",cementerioF33Ce,70,1,"fija");
+		Urna urnaF3C32E=new Urna("Urnita del Progreso",cementerioF33Ce,80,0,"fija");
+		Urna urnaF3C33E=new Urna("default",cementerioF33Ce,90,0,"fija");
+	
+		
+		//Cementerio 4 Cenizas
+		Urna urnaF3C41E=new Urna("Urnita de la Verdadera Voz",cementerioF34Ce,70,1,"fija");
+		Urna urnaF3C42E=new Urna("Urnita de la Decisión",cementerioF34Ce,80,0,"fija");
+		Urna urnaF3C43E=new Urna("default",cementerioF34Ce,60,0,"fija");
+	
+		
+		//Cementerio 5 Cenizas
+		Urna urnaF3C51E=new Urna("Urnita del Cambio",cementerioF35Ce,70,1,"fija");
+		Urna urnaF3C52E=new Urna("Urnita del Pueblo",cementerioF35Ce,80,0,"fija");
+		Urna urnaF3C53E=new Urna("default",cementerioF35Ce,60,0,"ordinaria");
+	
+		
+		//Cementerio 6 Cenizas
+		Urna urnaF3C61E=new Urna("Urnita de la Transparencia",cementerioF36Ce,70,1,"fija");
+		Urna urnaF3C62E=new Urna("Urnita del Compromiso",cementerioF36Ce,80,0,"fija");
+		Urna urnaF3C63E=new Urna("default",cementerioF36Ce,60,0,"ordinaria");
+		
+	
+		//Agregar clientes
+		
+		urnaF3C11E.agregarCliente(clienteF31E);
+		urnaF3C12E.agregarCliente(clienteF32E);
+		urnaF3C13E.agregarCliente(clienteF33E);
+		
+		urnaF3C21E.agregarCliente(clienteF34E);
+		urnaF3C22E.agregarCliente(clienteF35E);
+		urnaF3C23E.agregarCliente(clienteF36E);
+		
+		urnaF3C31E.agregarCliente(clienteF37E);
+		urnaF3C32E.agregarCliente(clienteF38E);
+		urnaF3C33E.agregarCliente(clienteF39E);
+		
+		urnaF3C41E.agregarCliente(clienteF310E);
+		urnaF3C42E.agregarCliente(clienteF311E);
+		urnaF3C43E.agregarCliente(clienteF312E);
+		
+		urnaF3C51E.agregarCliente(clienteF313E);
+		urnaF3C52E.agregarCliente(clienteF314E);
+		urnaF3C53E.agregarCliente(clienteF315E);
+		
+		urnaF3C61E.agregarCliente(clienteF316E);
+		urnaF3C62E.agregarCliente(clienteF317E);
+		urnaF3C63E.agregarCliente(clienteF318E);
+	
+		
+		
+		//Clientes para tumbas
+		
+		
+		
+		Cliente clienteF31ET = new Cliente("Ezequiel Andrade",123,30,null,"oro",familiarC);
+		Cliente clienteF32ET = new Cliente("Damián Vargas",1234,25,null,"oro",familiarC);
+		
+		Cliente clienteF33ET = new Cliente("Octavio Salazar",1235,90,null,"plata",familiarB);
+		Cliente clienteF34ET = new Cliente("Leonardo Paredes",1236,57,null,"plata",familiarB);
+		
+		Cliente clienteF35ET = new Cliente("Ulises Ortega",1237,21,null,"bronce",familiarC);
+		Cliente clienteF36ET = new Cliente("Valeria Castro",1238,50,null,"bronce",familiarC);
+	
+		
+		Cliente clienteF37ET = new Cliente("Delfina Méndez",5,"oro",familiarB);
+		Cliente clienteF38ET = new Cliente("Mireya Delgado",17,"oro",familiarB);
+		
+		Cliente clienteF39ET = new Cliente("Renata Aguirre",15,"plata",familiarB);
+		Cliente clienteF310ET = new Cliente("Alma Guzmán",13,"plata",familiarB);
+		
+		Cliente clienteF311ET = new Cliente("Leo Cruz",1235,90,null,"plata",familiarB);
+		Cliente clienteF312ET = new Cliente("Luna Martínez",1236,57,null,"plata",familiarB);
+		
+		Cliente clienteF313ET = new Cliente("Lucas Moreno",1237,21,null,"bronce",familiarC);
+		Cliente clienteF314ET = new Cliente("Sofía Rodríguez",1238,50,null,"bronce",familiarC);
+	
+		
+		//Clientes F1 - Menores de edad
+		Cliente clienteF315ET = new Cliente("Aitana Gómez",5,"oro",familiarB);
+		Cliente clienteF316ET = new Cliente("Zoe García",17,"oro",familiarB);
+		
+		Cliente clienteF317ET = new Cliente("Ethan Ortega",15,"plata",familiarB);
+		Cliente clienteF318ET = new Cliente("Dylan Mendoza",13,"plata",familiarB);
+		
+		
+		
+		
+		//TUmbas
+		
+		//Cementerio 1
+		Tumba tumbaF3C11E=new Tumba("Tumbita Lugar de Paz",cementerioF31Cu,1.70,1);
+		Tumba tumbaF3C12E=new Tumba("Tumbita Descanso Eterno",cementerioF31Cu,1.50,0);
+		Tumba tumbaF3C13E=new Tumba("default",cementerioF31Cu,1.80,0);
+		
+		//Cementerio 2
+		Tumba tumbaF3C21E=new Tumba("Tumbita Siempre Recordado",cementerioF32Cu,1.70,1);
+		Tumba tumbaF3C22E=new Tumba("Tumbita En Honor a un Ser Querido",cementerioF32Cu,1.50,0);
+		Tumba tumbaF3C23E=new Tumba("default",cementerioF32Cu,1.10,0);
+		
+		//Cementerio 3
+		Tumba tumbaF3C31E=new Tumba("Tumbita Lugar de Serenidad",cementerioF33Cu,1.70,1);
+		Tumba tumbaF3C32E=new Tumba("Tumbita Eterna Paz",cementerioF33Cu,1.50,0);
+		Tumba tumbaF3C33E=new Tumba("default",cementerioF33Cu,1.10,0);
+
+		//Cementerio 4
+		Tumba tumbaF3C41E=new Tumba("Tumbita Un Alma Bella",cementerioF34Cu,1.70,1);
+		Tumba tumbaF3C42E=new Tumba("Tumbita En Paz y Serenidad",cementerioF34Cu,1.50,0);
+		Tumba tumbaF3C43E=new Tumba("default",cementerioF34Cu,1.10,0);
+		
+		//Cementerio 5
+		Tumba tumbaF3C51E=new Tumba("Tumbita Siempre en Nuestros Corazones",cementerioF35Cu,1.70,1);
+		Tumba tumbaF3C52E=new Tumba("Tumbita Aquí Descansa en Paz",cementerioF35Cu,1.50,0);
+		Tumba tumbaF3C53E=new Tumba("default",cementerioF35Cu,1.10,0);
+		
+		//Cementerio 6
+		Tumba tumbaF3C61E=new Tumba("Tumbita La Luz de Nuestra Vida",cementerioF36Cu,1.70,1);
+		Tumba tumbaF3C62E=new Tumba("Tumbita Aquí La Memoria Vive",cementerioF36Cu,1.50,0);
+		Tumba tumbaF3C63E=new Tumba("default",cementerioF36Cu,1.60,0);
+		
+		
+		//Agregar clientes a tumbas
+		tumbaF3C11E.agregarCliente(clienteF31ET);
+		tumbaF3C12E.agregarCliente(clienteF32ET);
+		tumbaF3C13E.agregarCliente(clienteF33ET);
+		
+		tumbaF3C21E.agregarCliente(clienteF34ET);
+		tumbaF3C22E.agregarCliente(clienteF35ET);
+		tumbaF3C23E.agregarCliente(clienteF36ET);
+		
+		tumbaF3C31E.agregarCliente(clienteF37ET);
+		tumbaF3C32E.agregarCliente(clienteF38ET);
+		tumbaF3C33E.agregarCliente(clienteF39ET);
+		
+		tumbaF3C41E.agregarCliente(clienteF310ET);
+		tumbaF3C42E.agregarCliente(clienteF311ET);
+		tumbaF3C43E.agregarCliente(clienteF312ET);
+		
+		tumbaF3C51E.agregarCliente(clienteF313ET);
+		tumbaF3C52E.agregarCliente(clienteF314ET);
+		tumbaF3C53E.agregarCliente(clienteF315ET);
+		
+		tumbaF3C61E.agregarCliente(clienteF316ET);
+		tumbaF3C62E.agregarCliente(clienteF317ET);
+		tumbaF3C63E.agregarCliente(clienteF318ET);
+		
+		
+		
 		//objetos de clase inventario
 		
 		//Cuenta jefe
@@ -2197,11 +2658,11 @@ public class Menú {
         local8.agregarEmpleado(empleado4);
         local8.agregarEmpleado(empleado5);
         
-        Empleado empleado6 = new Empleado("Marta Herrera",  empleadocuenta6, "noche", "padre", 3700.00, null);
-        Empleado empleado7 = new Empleado("Luis Morales",  empleadocuenta7, "mañana", "sepulturero", 3600.00, null);
-        Empleado empleado8 = new Empleado("Elena Castillo",  empleadocuenta8, "tarde", "cremador", 3800.00, null);
-        Empleado empleado9 = new Empleado("Diego Torres",  empleadocuenta9, "noche", "padre", 3500.00, null);
-        Empleado empleado10 = new Empleado("Isabel Sánchez",  empleadocuenta10, "mañana", "sepulturero", 3400.00, null);
+        Empleado empleado6 = new Empleado("Marta Herrera",  empleadocuenta6, "noche", "padre", 3700.00, funeraria1);
+        Empleado empleado7 = new Empleado("Luis Morales",  empleadocuenta7, "mañana", "sepulturero", 3600.00, funeraria1);
+        Empleado empleado8 = new Empleado("Elena Castillo",  empleadocuenta8, "tarde", "cremador", 3800.00, funeraria2);
+        Empleado empleado9 = new Empleado("Diego Torres",  empleadocuenta9, "noche", "padre", 3500.00, funeraria2);
+        Empleado empleado10 = new Empleado("Isabel Sánchez",  empleadocuenta10, "mañana", "sepulturero", 3400.00, funeraria3);
         local9.agregarEmpleado(empleado6);
         local9.agregarEmpleado(empleado8);
         local9.agregarEmpleado(empleado7);
@@ -2209,11 +2670,11 @@ public class Menú {
         local9.agregarEmpleado(empleado10);
 
         
-        Empleado empleado11 = new Empleado("Miguel Ortega",  empleadocuenta11, "tarde", "cremador", 3700.00, null);
-        Empleado empleado12 = new Empleado("Claudia Jiménez",  empleadocuenta12, "noche", "padre", 3600.00, null);
-        Empleado empleado13 = new Empleado("Javier López", empleadocuenta13, "mañana", "sepulturero", 3800.00, null);
-        Empleado empleado14 = new Empleado("Rosa Pérez", empleadocuenta14, "tarde", "cremador", 3500.00, null);
-        Empleado empleado15 = new Empleado("Alberto Ramírez",  empleadocuenta15, "noche", "padre", 3900.00, null);
+        Empleado empleado11 = new Empleado("Miguel Ortega",  empleadocuenta11, "tarde", "cremador", 3700.00, funeraria3);
+        Empleado empleado12 = new Empleado("Claudia Jiménez",  empleadocuenta12, "noche", "padre", 3600.00, funeraria1);
+        Empleado empleado13 = new Empleado("Javier López", empleadocuenta13, "mañana", "sepulturero", 3800.00, funeraria1);
+        Empleado empleado14 = new Empleado("Rosa Pérez", empleadocuenta14, "tarde", "cremador", 3500.00, funeraria2);
+        Empleado empleado15 = new Empleado("Alberto Ramírez",  empleadocuenta15, "noche", "padre", 3900.00, funeraria2);
         local10.agregarEmpleado(empleado11);
         local10.agregarEmpleado(empleado12);
         local10.agregarEmpleado(empleado13);

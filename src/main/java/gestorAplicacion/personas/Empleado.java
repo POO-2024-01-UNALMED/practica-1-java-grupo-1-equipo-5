@@ -13,6 +13,7 @@ public class Empleado extends Persona{
 	private int Experiencia;
 	private int trabajosHechos;
 	private boolean disponible= true;
+	private Funeraria funeraria;
 	private String descripcionCalificacion; // Se utiliza al momento de las encuestas
 	
 	
@@ -23,7 +24,10 @@ public class Empleado extends Persona{
 		this.jornada=jornada;
 		this.cargo=cargo;
 		this.salario=salario;
-		funeraria.agregarEmpleado(this);
+		if (funeraria != null) {
+			funeraria.agregarEmpleado(this);
+		}
+		
 	}
 	
 	

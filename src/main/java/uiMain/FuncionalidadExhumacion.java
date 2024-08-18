@@ -21,6 +21,7 @@ public class FuncionalidadExhumacion {
 		Cementerio cementerio =null;
 		Inventario nuevaUrnaTumba=null;
 		
+		System.out.println();
 		//Breve descripción de la funcionalidad para los usuarios
 		System.out.println("La exhumación es el proceso de retirar un cuerpo de su lugar de sepultura");
 		System.out.println();
@@ -68,6 +69,7 @@ public class FuncionalidadExhumacion {
 			
 			//Se escoge la funeraria con la que se va a realizar el procedimiento
 			ArrayList<Establecimiento> funerarias =Establecimiento.filtarEstablecimiento("funeraria");
+			System.out.println();
 			System.out.println("Seleccione la funeraria correspondiente");
 			indice=0;
 			for(Establecimiento auxFuneraria:funerarias) {
@@ -86,7 +88,7 @@ public class FuncionalidadExhumacion {
 			
 			//Se realiza especialización de tipos(Establecimiento - clase padre a Funeraria - clase hija) y se asigna la funeraria correspondiente
 			Funeraria funeraria=(Funeraria) funerarias.get(indiceFuneraria-1);
-			
+			System.out.println();
 			System.out.println("[1] Buscar cliente en cementerios de cuerpos");
 			System.out.println("[2] Buscar clientes con urna fija o tumba marcada como 'default'");
 			
@@ -101,7 +103,7 @@ public class FuncionalidadExhumacion {
 			
 			switch (indice) {
 				case 1:
-					
+					System.out.println();
 					System.out.println("Clientes mayor de edad");
 					//Busca en la funeraria seleccionada los cementerios de cuerpos 
 					ArrayList<Cliente> clientes= funeraria.buscarCliente("cuerpos", "adulto");
@@ -138,7 +140,7 @@ public class FuncionalidadExhumacion {
 					break;
 					
 				case 2:
-					
+					System.out.println();
 					System.out.println("[1] Buscar tumbas marcadas como 'default'");
 					System.out.println("[2] Buscar urnas marcadas como 'default'");
 					
@@ -336,7 +338,7 @@ public class FuncionalidadExhumacion {
 		edad=cliente.getEdad();
 		
 		
-		System.out.println("La afiliación del cliente es "+cliente.getAfiliacion());
+		System.out.println("La afiliación del cliente es "+cliente.getAfiliacion()+" se buscarán cementerios "+cliente.getAfiliacion()+" para su traslado");
 		
 		//Busco los cementerios del tipo solicitado en la funeraria que cumplan con las restricciones solicitadas 
 		ArrayList<Establecimiento> cementeriosPorTipo = cementerio.getFuneraria().buscarCementerios(tipo1, cliente);
@@ -369,6 +371,7 @@ public class FuncionalidadExhumacion {
 			}
 		
 		////////////////////////////////////////////////////////////////////////////////////////////
+		cementerio.getClientes().remove(cliente);
 		Cementerio nuevoCementerio=(Cementerio) cementerios.get(indice-1);
 		
 		//Escoger opción más adecuada para cliente en cuánto a tamaño de la tumba comparado con estatura del cliente
@@ -418,7 +421,10 @@ public class FuncionalidadExhumacion {
 		
 		//Asignacion de tumba
 		nuevaUrnaTumba.agregarCliente(cliente);
+		System.out.println();
+		System.out.println("Se realizó correctamente el cambio al cementerio "+nuevoCementerio);
 		
+		urnaTumba.setCliente(null);
 		
 		//Asignación de equipo de empleados 
 		
@@ -427,6 +433,7 @@ public class FuncionalidadExhumacion {
 		//Establecer horas de acuerdo a empleado Sepulturero disponibles  
 		cementerio.generarHoras();
 		
+		System.out.println("Seleccione el horario en el será realizada la actividad");
 		indice=1;
 		for(LocalTime hora: cementerio.getHorarioEventos()) {
 			String indicador;
@@ -455,6 +462,11 @@ public class FuncionalidadExhumacion {
 		
 		//Seleccionar sepulturero
 		
+		System.out.println();
+		System.out.println("Se inciiará con el proceso de selección de empleados");
+			
+		System.out.println();
+		System.out.println("Seleccione el empleado sepulturero disponible");
 		ArrayList<Empleado> empleados=cementerio.getFuneraria().buscarEmpleados(cementerio.getHoraEvento(), "sepulturero");
 		indice=1;
 		for(Empleado auxEmpleado:empleados) {
@@ -479,13 +491,14 @@ public class FuncionalidadExhumacion {
 		for(Empleado auxEmpleado:empleados) {
 			System.out.println("["+indice+"] "+auxEmpleado);
 		}
-		System.out.print("Ingrese el índice para escoger el empleado: ");
+		System.out.print("Ingrese el índice para escoger el empleado forense: ");
 		indice=scanner.nextInt();
 		
 		//Validación
 		while(indice<1 || indice>empleados.size()) {
 			System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
 			indice=scanner.nextInt();
+			indice+=1;
 			}
 		
 		
@@ -517,6 +530,9 @@ public class FuncionalidadExhumacion {
 			indice=scanner.nextInt();
 			}
 		
+		System.out.println();
+		
+		System.out.println("Dados los datos se organizará como estarán distribuidos los familiares en la Iglesia");
 		System.out.println(cementerio.organizarIglesia(cliente));
 		
 		

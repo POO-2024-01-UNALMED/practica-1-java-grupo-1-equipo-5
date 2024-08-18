@@ -120,7 +120,7 @@ public class Cementerio extends Establecimiento {
 		}else {auxInventario=inventario;}
 		
 		for(Inventario urnaTumba: auxInventario) {
-			if(urnaTumba.getNombre().equals("default")) {
+			if(urnaTumba.getNombre().equals("default") & urnaTumba.getCliente()!=null) {
 				porDefecto.add(urnaTumba);
 			}
 			
