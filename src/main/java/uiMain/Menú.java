@@ -1442,6 +1442,25 @@ public class Menú {
 	    CuentaBancaria cuenta36CE = new CuentaBancaria(237474, "Jardines del Refugio", 57567, "BANCO_OCCIDENTE");
 	    
 	    //Cuenta Crematorios
+	    CuentaBancaria cuenta1CR = new CuentaBancaria(456536, "Crematorio Luz y Paz", 17212, "DAVIVIENDA");
+	    CuentaBancaria cuenta2CR = new CuentaBancaria(456456, "Hogar de la Ascensión", 34784, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta3CR = new CuentaBancaria(456456, "Fuego de la Memoria", 37437, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta4CR = new CuentaBancaria(456456, "Crematorio Serenidad Eterna", 28348, "BBVA");
+	    CuentaBancaria cuenta5CR = new CuentaBancaria(567567, "Llama de la Eternidada", 23484, "BANCOLOMBIA");
+	    CuentaBancaria cuenta6CR = new CuentaBancaria(456456, "Refugio del Alba", 23828, "DAVIVIENDA");
+	    CuentaBancaria cuenta7CR = new CuentaBancaria(345969, "Crematorio del Silencio", 48238, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta8CR = new CuentaBancaria(560779, "Ascenso y Tranquilidad", 42734, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta9CR = new CuentaBancaria(567070, "Brasa de Paz", 23424, "BBVA");
+	    CuentaBancaria cuenta10CR = new CuentaBancaria(435552, "Eterna Luz Crematorio", 34564, "BANCOLOMBIA");
+	    CuentaBancaria cuenta11CR = new CuentaBancaria(345664, "Crematorio del Renacer", 36464, "DAVIVIENDA");
+	    CuentaBancaria cuenta12CR = new CuentaBancaria(246705, "Fuego y Serenidad", 57567, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta13CR = new CuentaBancaria(645345, "Crematorio del Horizonte", 86786, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta14CR = new CuentaBancaria(532485, "Cenizas de la Eternidad", 57567, "BBVA");
+	    CuentaBancaria cuenta15CR = new CuentaBancaria(234944, "Refugio de la Luz", 86786, "BANCOLOMBIA");
+	    CuentaBancaria cuenta16CR = new CuentaBancaria(275674, "Fuego de Serenidad", 17212, "DAVIVIENDA");
+	    CuentaBancaria cuenta17CR = new CuentaBancaria(520542, "Crematorio del Horizonte Eterno", 34784, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta18CR = new CuentaBancaria(234849, "Crematorio Luz de la Eternidad", 37437, "BANCO_BOGOTA");
+	    
 	    //Objetos Funeraria
 		
 		Funeraria funeraria1 = new Funeraria("Eterna Paz", cuenta1F,cuenta4F);
@@ -1772,14 +1791,14 @@ public class Menú {
 		//Objetos Crematorio
 		
 		//crematorios pertenecientes a F1 --> Funeraria 1
-		Crematorio crematorioF11 = new Crematorio ("Crematorio Luz y Paz",100,null,"oro", null,funeraria1); 
-		Crematorio crematorioF12 = new Crematorio ("Hogar de la Ascensión",78,null,"oro", null,funeraria1); 
+		Crematorio crematorioF11 = new Crematorio ("Crematorio Luz y Paz",100,cuenta1CR,"oro", null,funeraria1); 
+		Crematorio crematorioF12 = new Crematorio ("Hogar de la Ascensión",78,cuenta2CR,"oro", null,funeraria1); 
 		
-		Crematorio crematorioF13 = new Crematorio ("Fuego de la Memoria",78,null,"plata", null,funeraria1); 
-		Crematorio crematorioF14 = new Crematorio ("Crematorio Serenidad Eterna",78,null,"plata", null,funeraria1);
+		Crematorio crematorioF13 = new Crematorio ("Fuego de la Memoria",78,cuenta3CR,"plata", null,funeraria1); 
+		Crematorio crematorioF14 = new Crematorio ("Crematorio Serenidad Eterna",78,cuenta4CR,"plata", null,funeraria1);
 		
-		Crematorio crematorioF15 = new Crematorio ("Llama de la Eternidada",78,null,"bronce", null,funeraria1); 
-		Crematorio crematorioF16 = new Crematorio ("Refugio del Alba",78,null,"bronce", null,funeraria1);
+		Crematorio crematorioF15 = new Crematorio ("Llama de la Eternidada",78,cuenta5CR,"bronce", null,funeraria1); 
+		Crematorio crematorioF16 = new Crematorio ("Refugio del Alba",78,cuenta6CR,"bronce", null,funeraria1);
 		
 		//Clientes F1 - Mayores de edad
 		
@@ -1942,14 +1961,14 @@ public class Menú {
 		
 		
 		//crematorios pertenecientes a F2 --> Funeraria 2
-		Crematorio crematorioF21 = new Crematorio ("Crematorio del Silencio",100,null,"oro", null,funeraria2); 
-		Crematorio crematorioF22 = new Crematorio ("Ascenso y Tranquilidad",78,null,"oro", null,funeraria2); 
+		Crematorio crematorioF21 = new Crematorio ("Crematorio del Silencio",100,cuenta7CR,"oro", null,funeraria2); 
+		Crematorio crematorioF22 = new Crematorio ("Ascenso y Tranquilidad",78,cuenta8CR,"oro", null,funeraria2); 
 		
-		Crematorio crematorioF23 = new Crematorio ("Brasa de Paz",78,null,"plata", null,funeraria2); 
-		Crematorio crematorioF24 = new Crematorio ("Eterna Luz Crematorio",78,null,"plata", null,funeraria2);
+		Crematorio crematorioF23 = new Crematorio ("Brasa de Paz",78,cuenta9CR,"plata", null,funeraria2); 
+		Crematorio crematorioF24 = new Crematorio ("Eterna Luz Crematorio",78,cuenta10CR,"plata", null,funeraria2);
 		
-		Crematorio crematorioF25 = new Crematorio ("Crematorio del Renacer",78,null,"bronce", null,funeraria2); 
-		Crematorio crematorioF26 = new Crematorio ("Fuego y Serenidad",78,null,"bronce", null,funeraria2);		
+		Crematorio crematorioF25 = new Crematorio ("Crematorio del Renacer",78,cuenta11CR,"bronce", null,funeraria2); 
+		Crematorio crematorioF26 = new Crematorio ("Fuego y Serenidad",78,cuenta12CR,"bronce", null,funeraria2);		
 	
 		//Clientes F2 - Mayores de edad
 		
@@ -2112,14 +2131,14 @@ public class Menú {
 		
 		
 		//crematorios pertenecientes a F3 --> Funeraria 3
-		Crematorio crematorioF31 = new Crematorio ("Crematorio del Horizonte",100,null,"oro", null,funeraria3); 
-		Crematorio crematorioF32 = new Crematorio ("Cenizas de la Eternidad	",78,null,"oro", null,funeraria3); 
+		Crematorio crematorioF31 = new Crematorio ("Crematorio del Horizonte",100,cuenta13CR,"oro", null,funeraria3); 
+		Crematorio crematorioF32 = new Crematorio ("Cenizas de la Eternidad	",78,cuenta14CR,"oro", null,funeraria3); 
 				
-		Crematorio crematorioF33 = new Crematorio ("Refugio de la Luz",78,null,"plata", null,funeraria3); 
-		Crematorio crematorioF34 = new Crematorio ("Fuego de Serenidad",78,null,"plata", null,funeraria3);
+		Crematorio crematorioF33 = new Crematorio ("Refugio de la Luz",78,cuenta15CR,"plata", null,funeraria3); 
+		Crematorio crematorioF34 = new Crematorio ("Fuego de Serenidad",78,cuenta16CR,"plata", null,funeraria3);
 				
-		Crematorio crematorioF35 = new Crematorio ("Crematorio del Horizonte Eterno",78,null,"bronce", null,funeraria3); 
-		Crematorio crematorioF36 = new Crematorio ("Crematorio Luz de la Eternidad",78,null,"bronce", null,funeraria3);	
+		Crematorio crematorioF35 = new Crematorio ("Crematorio del Horizonte Eterno",78,cuenta17CR,"bronce", null,funeraria3); 
+		Crematorio crematorioF36 = new Crematorio ("Crematorio Luz de la Eternidad",78,cuenta18CR,"bronce", null,funeraria3);	
 		
 		//Clientes F3 - Mayores de edad
 		
