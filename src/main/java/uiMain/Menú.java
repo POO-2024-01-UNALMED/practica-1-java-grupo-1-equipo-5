@@ -1148,167 +1148,167 @@ public class Menú {
 	public static void main(String[] args) {
 		
 		//cuentasCorriente funerarias
-		CuentaBancaria cuenta1 = new CuentaBancaria(199234234, "Eterna Paz", 40000,40000,40000,40000,40000, "BBVA");
-	    CuentaBancaria cuenta2 = new CuentaBancaria(193739239, "Caminos de luz", 40000,40000,40000,40000,40000, "BANCOLOMBIA");
-	    CuentaBancaria cuenta3 = new CuentaBancaria(384627823, "Recuerdos eternos", 40000,40000,40000,40000,40000, "DAVIVIENDA");
+		CuentaBancaria cuenta1F = new CuentaBancaria(199234234, "Eterna Paz", 40000,40000,40000,40000,40000, "BBVA");
+	    CuentaBancaria cuenta2F = new CuentaBancaria(193739239, "Caminos de luz", 40000,40000,40000,40000,40000, "BANCOLOMBIA");
+	    CuentaBancaria cuenta3F = new CuentaBancaria(384627823, "Recuerdos eternos", 40000,40000,40000,40000,40000, "DAVIVIENDA");
 		    
 	    //cuentaAhorro funerarias
-	    CuentaBancaria cuenta4 = new CuentaBancaria(19934, "todasLasFunerarias", 3993, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta4F = new CuentaBancaria(19934, "todasLasFunerarias", 3993, "BANCO_OCCIDENTE");
 	    CuentaBancaria cuenta = new CuentaBancaria(123, "Alfredo", 1000000, "Ala"); 
-	    //cuentaBancarias clientes
-	    CuentaBancaria cuenta5 = new CuentaBancaria(378273, "a1", 39999, "BBVA");
-	    CuentaBancaria cuenta6 = new CuentaBancaria(199919, "a2", 17271, "BANCOLOMBIA");
-	    CuentaBancaria cuenta7 = new CuentaBancaria(374388, "a3", 17212, "DAVIVIENDA");
-	    CuentaBancaria cuenta8 = new CuentaBancaria(347574, "a4", 34784, "BANCO_OCCIDENTE");
-	    CuentaBancaria cuenta9 = new CuentaBancaria(477373, "a5", 37437, "BANCO_BOGOTA");
-	    CuentaBancaria cuenta10 = new CuentaBancaria(234828, "b1", 28348, "BBVA");
-	    CuentaBancaria cuenta11 = new CuentaBancaria(373387, "b2", 23484, "BANCOLOMBIA");
-	    CuentaBancaria cuenta12 = new CuentaBancaria(138838, "b3", 23828, "DAVIVIENDA");
-	    CuentaBancaria cuenta13 = new CuentaBancaria(347734, "b4", 48238, "BANCO_OCCIDENTE");
-	    CuentaBancaria cuenta14 = new CuentaBancaria(173743, "b5", 42734, "BANCO_BOGOTA");
-	    CuentaBancaria cuenta15 = new CuentaBancaria(478474, "c1", 23424, "BBVA");
-	    CuentaBancaria cuenta16 = new CuentaBancaria(283882, "c2", 34564, "BANCOLOMBIA");
-	    CuentaBancaria cuenta17 = new CuentaBancaria(283823, "c3", 36464, "DAVIVIENDA");
-	    CuentaBancaria cuenta18 = new CuentaBancaria(382838, "c4", 57567, "BANCO_OCCIDENTE");
-	    CuentaBancaria cuenta19 = new CuentaBancaria(238822, "c5", 86786, "BANCO_BOGOTA");
+	    
 	    
 	    //cuentasBancaria empleados
-	    CuentaBancaria cuenta20 = new CuentaBancaria(345354, "Adrián Vargas", 39999, "BBVA");
-	    CuentaBancaria cuenta21 = new CuentaBancaria(456456, "Benjamín Díaz", 17271, "BANCOLOMBIA");
-	    CuentaBancaria cuenta22 = new CuentaBancaria(575675, "Cristian Herrera", 17212, "DAVIVIENDA");
-	    CuentaBancaria cuenta23 = new CuentaBancaria(678676, "Diana Moreno", 34784, "BANCO_OCCIDENTE");
-	    CuentaBancaria cuenta24 = new CuentaBancaria(345345, "Gabriela Arias", 37437, "BANCO_BOGOTA");
-	    CuentaBancaria cuenta25 = new CuentaBancaria(234234, "David Soto", 28348, "BBVA");
-	    CuentaBancaria cuenta26 = new CuentaBancaria(324322, "Esteban Cordero", 23484, "BANCOLOMBIA");
-	    CuentaBancaria cuenta27 = new CuentaBancaria(567567, "Federico Gil", 23828, "DAVIVIENDA");
-	    CuentaBancaria cuenta28 = new CuentaBancaria(228828, "Elena Vázquez", 48238, "BANCO_OCCIDENTE");
-	    CuentaBancaria cuenta29 = new CuentaBancaria(454564, "Isabela López", 42734, "BANCO_BOGOTA");
-	    CuentaBancaria cuenta30 = new CuentaBancaria(831838, "Joseph", 23424, "BBVA");
-	    CuentaBancaria cuenta31 = new CuentaBancaria(456304, "Valentina", 34564, "BANCOLOMBIA");
-	    CuentaBancaria cuenta32 = new CuentaBancaria(305340, "Jorge", 36464, "DAVIVIENDA");
-	    CuentaBancaria cuenta33 = new CuentaBancaria(765646, "Francy", 57567, "BANCO_OCCIDENTE");
-	    CuentaBancaria cuenta34 = new CuentaBancaria(300034, "Nancy", 86786, "BANCO_BOGOTA");
-			
-	    //cuentaBancaria establecimiento 
-	       //cuentacrematorios
-	       CuentaBancaria cuenta35 = new CuentaBancaria(234234, "La_13", 23484, "BANCOLOMBIA");
-	       CuentaBancaria cuenta36 = new CuentaBancaria(655345, "A_Todo_Mil", 23828, "DAVIVIENDA");
-	       CuentaBancaria cuenta37 = new CuentaBancaria(675667, "Crematorio_del_recuerdo", 48238, "BANCO_OCCIDENTE");
-	       CuentaBancaria cuenta38 = new CuentaBancaria(678786, "Puerta_del_cielo", 42734, "BANCO_BOGOTA");
-	       CuentaBancaria cuenta39 = new CuentaBancaria(897888, "La_ultima_despedida", 34564, "BANCOLOMBIA");
-	       CuentaBancaria cuenta40 = new CuentaBancaria(888888, "Memoria_eterna", 36464, "DAVIVIENDA");
-	       CuentaBancaria cuenta41 = new CuentaBancaria(342342, "La_llama_de_la_vida", 86786, "BANCO_BOGOTA");
-	       CuentaBancaria cuenta42 = new CuentaBancaria(623133, "El_faro_de_la_eternidad", 34784, "BANCO_OCCIDENTE");
-	       CuentaBancaria cuenta43 = new CuentaBancaria(238949, "La_puerta_de_la_eternidad", 37437, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta1E = new CuentaBancaria(345354, "Adrián Vargas", 39999, "BBVA");
+	    CuentaBancaria cuenta2E = new CuentaBancaria(456456, "Benjamín Díaz", 17271, "BANCOLOMBIA");
+	    CuentaBancaria cuenta3E = new CuentaBancaria(575675, "Cristian Herrera", 17212, "DAVIVIENDA");
+	    CuentaBancaria cuenta4E = new CuentaBancaria(678676, "Diana Moreno", 34784, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta5E = new CuentaBancaria(345345, "Gabriela Arias", 37437, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta6E = new CuentaBancaria(234234, "David Soto", 28348, "BBVA");
+	    CuentaBancaria cuenta7E = new CuentaBancaria(324322, "Esteban Cordero", 23484, "BANCOLOMBIA");
+	    CuentaBancaria cuenta8E = new CuentaBancaria(567567, "Federico Gil", 23828, "DAVIVIENDA");
+	    CuentaBancaria cuenta9E = new CuentaBancaria(228828, "Elena Vázquez", 48238, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta10E = new CuentaBancaria(454564, "Isabela López", 42734, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta11E = new CuentaBancaria(324342, "Guillermo Romero", 39999, "BBVA");
+	    CuentaBancaria cuenta12E = new CuentaBancaria(546456, "Jorge Álvarez", 17271, "BANCOLOMBIA");
+	    CuentaBancaria cuenta13E = new CuentaBancaria(345345, "Florencia Pérez", 17212, "DAVIVIENDA");
+	    CuentaBancaria cuenta14E = new CuentaBancaria(645646, "Jazmín Navarro", 34784, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta15E = new CuentaBancaria(345354, "Alicia Moreno", 37437, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta16E = new CuentaBancaria(234234, "Marco Ruiz", 28348, "BBVA");
+	    CuentaBancaria cuenta17E = new CuentaBancaria(756567, "Natalia Ortega", 23484, "BANCOLOMBIA");
+	    CuentaBancaria cuenta18E = new CuentaBancaria(705006, "Casey Morales", 23828, "DAVIVIENDA");
+	    CuentaBancaria cuenta19E = new CuentaBancaria(245355, "Karla Soto", 48238, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta20E = new CuentaBancaria(456456, "Dakota Torres", 42734, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta21E = new CuentaBancaria(567555, "Nicolás Fernández", 23424, "BBVA");
+	    CuentaBancaria cuenta22E = new CuentaBancaria(345353, "Alex Rivera", 34564, "BANCOLOMBIA");
+	    CuentaBancaria cuenta23E = new CuentaBancaria(243234, "Elliot Cruz", 36464, "DAVIVIENDA");
+	    CuentaBancaria cuenta24E = new CuentaBancaria(456456, "Camila Silva", 57567, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta25E = new CuentaBancaria(768887, "Harper Fernández", 86786, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta26E = new CuentaBancaria(345345, "Jesse Jiménez", 39999, "BBVA");
+	    CuentaBancaria cuenta27E = new CuentaBancaria(678777, "Logan Mendoza", 17271, "BANCOLOMBIA");
+	    CuentaBancaria cuenta28E = new CuentaBancaria(788887, "Sam Vargas", 17212, "DAVIVIENDA");
+	    CuentaBancaria cuenta29E = new CuentaBancaria(232444, "Karla Soto", 34784, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta30E = new CuentaBancaria(323445, "Taylor López", 37437, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta31E = new CuentaBancaria(242432, "Bruno Salgado", 28348, "BBVA");
+	    CuentaBancaria cuenta32E = new CuentaBancaria(534577, "Bárbara López", 23484, "BANCOLOMBIA");
+	    CuentaBancaria cuenta33E = new CuentaBancaria(123456, "Óscar Morales", 23828, "DAVIVIENDA");
+	    CuentaBancaria cuenta34E = new CuentaBancaria(789012, "Dulce María Reyes", 48238, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta35E = new CuentaBancaria(324323, "Evelyn Rodríguez", 42734, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta36E = new CuentaBancaria(567777, "Kevin Castillo", 23424, "BBVA");
+	    CuentaBancaria cuenta37E = new CuentaBancaria(343345, "Ana García", 34564, "BANCOLOMBIA");
+	    CuentaBancaria cuenta38E = new CuentaBancaria(567766, "Luca Rossi", 36464, "DAVIVIENDA");
+	    CuentaBancaria cuenta39E = new CuentaBancaria(990987, "Ayesha Khan", 57567, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta40E = new CuentaBancaria(678980, "Jorge Martínez", 86786, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta41E = new CuentaBancaria(456777, "Sofia Petrov", 57567, "BBVA");
+	    CuentaBancaria cuenta42E = new CuentaBancaria(634443, "Haruto Tanaka", 86786, "BANCOLOMBIA");
+	    CuentaBancaria cuenta43E = new CuentaBancaria(745553, "Elena Ivanova", 17212, "DAVIVIENDA");
+	    CuentaBancaria cuenta44E = new CuentaBancaria(567567, "Amir Reza", 34784, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta45E = new CuentaBancaria(388678, "Mia Eriksson", 37437, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta46E = new CuentaBancaria(279899, "Dulce María Reyes", 28348, "BBVA");
+	    CuentaBancaria cuenta47E = new CuentaBancaria(597866, "Nina Jovanović", 23484, "BANCOLOMBIA");
+	    CuentaBancaria cuenta48E = new CuentaBancaria(124454, "Kevin Castillo", 23828, "DAVIVIENDA");
+	    CuentaBancaria cuenta49E = new CuentaBancaria(745666, "Eli Cohen", 48238, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta50E = new CuentaBancaria(323445, "Bárbara López", 42734, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta51E = new CuentaBancaria(567765, "Marco Bianchi", 23424, "BBVA");
+	    CuentaBancaria cuenta52E = new CuentaBancaria(333000, "Zara Ahmed", 34564, "BANCOLOMBIA");
+	    CuentaBancaria cuenta53E = new CuentaBancaria(450345, "Evelyn Rodríguez", 36464, "DAVIVIENDA");
+	    CuentaBancaria cuenta54E = new CuentaBancaria(913134, "Raj Patel", 57567, "BANCO_OCCIDENTE");
 	    
-	       //cuentacementerios
-	    
-	       CuentaBancaria cuenta44 = new CuentaBancaria(121321, "Jardines_de_la_eternidad", 23484, "BANCOLOMBIA");
-	       CuentaBancaria cuenta45 = new CuentaBancaria(465465, "Campos_de_paz", 23828, "DAVIVIENDA");
-	       CuentaBancaria cuenta46 = new CuentaBancaria(768767, "Monte_sacro", 48238, "BANCO_OCCIDENTE");
-	       CuentaBancaria cuenta47 = new CuentaBancaria(879789, "Parque_de_la_memoria_eterna", 23424, "BBVA");
-	       CuentaBancaria cuenta48 = new CuentaBancaria(242332, "Parque_de_la_eternidad", 36464, "DAVIVIENDA");
-	       CuentaBancaria cuenta49 = new CuentaBancaria(234232, "Jardines_del_recuerdo", 57567, "BANCO_OCCIDENTE");
-	       CuentaBancaria cuenta50 = new CuentaBancaria(768676, "Ciudad_de_los_angeles", 34784, "BANCO_OCCIDENTE");
-	       CuentaBancaria cuenta51 = new CuentaBancaria(876896, "Valle_de_la_serenidad", 37437, "BANCO_BOGOTA");
-	       CuentaBancaria cuenta52 = new CuentaBancaria(413212, "Santuario_de_la_eternidad", 28348, "BBVA");
- 
-		//Objetos Funeraria
+	    //Objetos Funeraria
 		
-		Funeraria funeraria1 = new Funeraria("Eterna Paz", cuenta1,cuenta4);
-		Funeraria funeraria2 = new Funeraria("Caminos de Luz", cuenta2,cuenta4);
-		Funeraria funeraria3 = new Funeraria("Recuerdos Eternos", cuenta3,cuenta4);
+		Funeraria funeraria1 = new Funeraria("Eterna Paz", cuenta1F,cuenta4F);
+		Funeraria funeraria2 = new Funeraria("Caminos de Luz", cuenta2F,cuenta4F);
+		Funeraria funeraria3 = new Funeraria("Recuerdos Eternos", cuenta3F,cuenta4F);
 		
 		//Empleados sepultureros
 		
-		Empleado empleadoF11S= new Empleado("Adrián Vargas",cuenta20,"mañana","sepulturero",1000000,funeraria1);
-		Empleado empleadoF12S= new Empleado("Benjamín Díaz",cuenta21,"mañana","sepulturero",1000000,funeraria1);
-		Empleado empleadoF13S= new Empleado("Cristian Herrera",cuenta22,"tarde","sepulturero",1000000,funeraria1);
-		Empleado empleadoF14S= new Empleado("Diana Moreno",cuenta23,"tarde","sepulturero",1000000,funeraria1);
-		Empleado empleadoF15S= new Empleado("Gabriela Arias",cuenta24,"noche","sepulturero",1000000,funeraria1);
+		Empleado empleadoF11S= new Empleado("Adrián Vargas",cuenta1E,"mañana","sepulturero",1000000,funeraria1);
+		Empleado empleadoF12S= new Empleado("Benjamín Díaz",cuenta2E,"mañana","sepulturero",1000000,funeraria1);
+		Empleado empleadoF13S= new Empleado("Cristian Herrera",cuenta3E,"tarde","sepulturero",1000000,funeraria1);
+		Empleado empleadoF14S= new Empleado("Diana Moreno",cuenta4E,"tarde","sepulturero",1000000,funeraria1);
+		Empleado empleadoF15S= new Empleado("Gabriela Arias",cuenta5E,"noche","sepulturero",1000000,funeraria1);
 		
 		
 		//Empleados cremador
 		
-		Empleado empleadoF11C= new Empleado("David Soto",cuenta25,"mañana","cremador",1000000,funeraria1);
-		Empleado empleadoF12C= new Empleado("Esteban Cordero",cuenta26,"mañana","cremador",1000000,funeraria1);
-		Empleado empleadoF13C= new Empleado("Federico Gil",cuenta27,"tarde","cremador",1000000,funeraria1);
-		Empleado empleadoF14C= new Empleado("Elena Vázquez",cuenta28,"noche","cremador",1000000,funeraria1);
-		Empleado empleadoF15C= new Empleado("Isabela López",cuenta29,"noche","cremador",1000000,funeraria1);
+		Empleado empleadoF11C= new Empleado("David Soto",cuenta6E,"mañana","cremador",1000000,funeraria1);
+		Empleado empleadoF12C= new Empleado("Esteban Cordero",cuenta7E,"mañana","cremador",1000000,funeraria1);
+		Empleado empleadoF13C= new Empleado("Federico Gil",cuenta8E,"tarde","cremador",1000000,funeraria1);
+		Empleado empleadoF14C= new Empleado("Elena Vázquez",cuenta9E,"noche","cremador",1000000,funeraria1);
+		Empleado empleadoF15C= new Empleado("Isabela López",cuenta10E,"noche","cremador",1000000,funeraria1);
 		
 		
 		
 		//Empleados sepultureros
 		
-		Empleado empleadoF21S= new Empleado("Guillermo Romero",null,"mañana","sepulturero",1000000,funeraria2);
-		Empleado empleadoF22S= new Empleado("Jorge Álvarez",null,"tarde","sepulturero",1000000,funeraria2);
-		Empleado empleadoF23S= new Empleado("Florencia Pérez",null,"tarde","sepulturero",1000000,funeraria2);
-		Empleado empleadoF24S= new Empleado("Jazmín Navarro",null,"tarde","sepulturero",1000000,funeraria2);
-		Empleado empleadoF25S= new Empleado("Alicia Moreno",null,"noche","sepulturero",1000000,funeraria2);
+		Empleado empleadoF21S= new Empleado("Guillermo Romero",cuenta11E,"mañana","sepulturero",1000000,funeraria2);
+		Empleado empleadoF22S= new Empleado("Jorge Álvarez",cuenta12E,"tarde","sepulturero",1000000,funeraria2);
+		Empleado empleadoF23S= new Empleado("Florencia Pérez",cuenta13E,"tarde","sepulturero",1000000,funeraria2);
+		Empleado empleadoF24S= new Empleado("Jazmín Navarro",cuenta14E,"tarde","sepulturero",1000000,funeraria2);
+		Empleado empleadoF25S= new Empleado("Alicia Moreno",cuenta15E,"noche","sepulturero",1000000,funeraria2);
 				
 				
 		//Empleados cremador
 				
-		Empleado empleadoF21C= new Empleado("Marco Ruiz",null,"noche","cremador",1000000,funeraria2);
-		Empleado empleadoF22C= new Empleado("Natalia Ortega",null,"mañana","cremador",1000000,funeraria2);
-		Empleado empleadoF23C= new Empleado("Casey Morales",null,"tarde","cremador",1000000,funeraria2);
-		Empleado empleadoF24C= new Empleado("Karla Soto",null,"noche","cremador",1000000,funeraria2);
-		Empleado empleadoF25C= new Empleado("Dakota Torres",null,"noche","cremador",1000000,funeraria2);
+		Empleado empleadoF21C= new Empleado("Marco Ruiz",cuenta16E,"noche","cremador",1000000,funeraria2);
+		Empleado empleadoF22C= new Empleado("Natalia Ortega",cuenta17E,"mañana","cremador",1000000,funeraria2);
+		Empleado empleadoF23C= new Empleado("Casey Morales",cuenta18E,"tarde","cremador",1000000,funeraria2);
+		Empleado empleadoF24C= new Empleado("Karla Soto",cuenta19E,"noche","cremador",1000000,funeraria2);
+		Empleado empleadoF25C= new Empleado("Dakota Torres",cuenta20E,"noche","cremador",1000000,funeraria2);
 		
 		
-		Empleado empleadoF31S= new Empleado("Nicolás Fernández",null,"mañana","sepulturero",1000000,funeraria3);
-		Empleado empleadoF32S= new Empleado("Alex Rivera",null,"tarde","sepulturero",1000000,funeraria3);
-		Empleado empleadoF33S= new Empleado("Elliot Cruz",null,"tarde","sepulturero",1000000,funeraria3);
-		Empleado empleadoF34S= new Empleado("Camila Silva",null,"mañana","sepulturero",1000000,funeraria3);
-		Empleado empleadoF35S= new Empleado("Harper Fernández",null,"noche","sepulturero",1000000,funeraria3);
+		Empleado empleadoF31S= new Empleado("Nicolás Fernández",cuenta21E,"mañana","sepulturero",1000000,funeraria3);
+		Empleado empleadoF32S= new Empleado("Alex Rivera",cuenta22E,"tarde","sepulturero",1000000,funeraria3);
+		Empleado empleadoF33S= new Empleado("Elliot Cruz",cuenta23E,"tarde","sepulturero",1000000,funeraria3);
+		Empleado empleadoF34S= new Empleado("Camila Silva",cuenta24E,"mañana","sepulturero",1000000,funeraria3);
+		Empleado empleadoF35S= new Empleado("Harper Fernández",cuenta25E,"noche","sepulturero",1000000,funeraria3);
 				
 				
 		//Empleados cremador
 				
-		Empleado empleadoF31C= new Empleado("Jesse Jiménez",null,"noche","cremador",1000000,funeraria3);
-		Empleado empleadoF32C= new Empleado("Logan Mendoza",null,"mañana","cremador",1000000,funeraria3);
-		Empleado empleadoF33C= new Empleado("Sam Vargas",null,"tarde","cremador",1000000,funeraria3);
-		Empleado empleadoF34C= new Empleado("Karla Soto",null,"mañana","cremador",1000000,funeraria3);
-		Empleado empleadoF35C= new Empleado("Taylor López",null,"noche","cremador",1000000,funeraria3);
+		Empleado empleadoF31C= new Empleado("Jesse Jiménez",cuenta26E,"noche","cremador",1000000,funeraria3);
+		Empleado empleadoF32C= new Empleado("Logan Mendoza",cuenta27E,"mañana","cremador",1000000,funeraria3);
+		Empleado empleadoF33C= new Empleado("Sam Vargas",cuenta28E,"tarde","cremador",1000000,funeraria3);
+		Empleado empleadoF34C= new Empleado("Karla Soto",cuenta29E,"mañana","cremador",1000000,funeraria3);
+		Empleado empleadoF35C= new Empleado("Taylor López",cuenta30E,"noche","cremador",1000000,funeraria3);
 	
 		
 		//Empleados generales
 		
 		//Empleados conductor
 		
-		Empleado empleadoC1= new Empleado("Bruno Salgado",null,"mañana","conductor",10000,funeraria1);
-		Empleado empleadoC2= new Empleado("Bárbara López",null,"mañana","conductor",10000,funeraria1);
-		Empleado empleadoC3= new Empleado("Óscar Morales",null,"tarde","conductor",10000,funeraria1);
-		Empleado empleadoC4= new Empleado("Dulce María Reyes",null,"tarde","conductor",10000,funeraria1);
-		Empleado empleadoC5= new Empleado("Evelyn Rodríguez",null,"noche","conductor",10000,funeraria1);
-		Empleado empleadoC6= new Empleado("Kevin Castillo",null,"noche","conductor",10000,funeraria1);
+		Empleado empleadoC1= new Empleado("Bruno Salgado",cuenta31E,"mañana","conductor",10000,funeraria1);
+		Empleado empleadoC2= new Empleado("Bárbara López",cuenta32E,"mañana","conductor",10000,funeraria1);
+		Empleado empleadoC3= new Empleado("Óscar Morales",cuenta33E,"tarde","conductor",10000,funeraria1);
+		Empleado empleadoC4= new Empleado("Dulce María Reyes",cuenta34E,"tarde","conductor",10000,funeraria1);
+		Empleado empleadoC5= new Empleado("Evelyn Rodríguez",cuenta35E,"noche","conductor",10000,funeraria1);
+		Empleado empleadoC6= new Empleado("Kevin Castillo",cuenta36E,"noche","conductor",10000,funeraria1);
 		
 		//Empleados forense 
 		
-		Empleado empleadoF1= new Empleado("Ana García",null,"mañana","forense",1000,funeraria1);
-		Empleado empleadoF2= new Empleado("Luca Rossi",null,"mañana","forense",1000,funeraria1);
-		Empleado empleadoF3= new Empleado("Ayesha Khan",null,"tarde","forense",1000,funeraria1);
-		Empleado empleadoF4= new Empleado("Jorge Martínez",null,"tarde","forense",1000,funeraria1);
-		Empleado empleadoF5= new Empleado("Sofia Petrov",null,"noche","forense",1000,funeraria1);
-		Empleado empleadoF6= new Empleado("Haruto Tanaka",null,"noche","forense",1000,funeraria1);
+		Empleado empleadoF1= new Empleado("Ana García",cuenta37E,"mañana","forense",1000,funeraria1);
+		Empleado empleadoF2= new Empleado("Luca Rossi",cuenta38E,"mañana","forense",1000,funeraria1);
+		Empleado empleadoF3= new Empleado("Ayesha Khan",cuenta39E,"tarde","forense",1000,funeraria1);
+		Empleado empleadoF4= new Empleado("Jorge Martínez",cuenta40E,"tarde","forense",1000,funeraria1);
+		Empleado empleadoF5= new Empleado("Sofia Petrov",cuenta41E,"noche","forense",1000,funeraria1);
+		Empleado empleadoF6= new Empleado("Haruto Tanaka",cuenta42E,"noche","forense",1000,funeraria1);
 		
 		//Empleados padre 
 		
-		Empleado empleadoP1= new Empleado("Elena Ivanova",null,"mañana","padre",1000,funeraria1);
-		Empleado empleadoP2= new Empleado("Amir Reza",null,"mañana","padre",1000,funeraria1);
-		Empleado empleadoP3= new Empleado("Mia Eriksson",null,"tarde","padre",1000,funeraria1);
-		Empleado empleadoP4= new Empleado("Dulce María Reyes",null,"tarde","padre",1000,funeraria1);
-		Empleado empleadoP5= new Empleado("Nina Jovanović",null,"noche","padre",1000,funeraria1);
-		Empleado empleadoP6= new Empleado("Kevin Castillo",null,"noche","padre",1000,funeraria1);
+		Empleado empleadoP1= new Empleado("Elena Ivanova",cuenta43E,"mañana","padre",1000,funeraria1);
+		Empleado empleadoP2= new Empleado("Amir Reza",cuenta44E,"mañana","padre",1000,funeraria1);
+		Empleado empleadoP3= new Empleado("Mia Eriksson",cuenta45E,"tarde","padre",1000,funeraria1);
+		Empleado empleadoP4= new Empleado("Dulce María Reyes",cuenta46E,"tarde","padre",1000,funeraria1);
+		Empleado empleadoP5= new Empleado("Nina Jovanović",cuenta47E,"noche","padre",1000,funeraria1);
+		Empleado empleadoP6= new Empleado("Kevin Castillo",cuenta48E,"noche","padre",1000,funeraria1);
 		
 		//Empleados obispo 
 		
-		Empleado empleadoO1= new Empleado("Eli Cohen",null,"mañana","obispo",1000,funeraria1);
-		Empleado empleadoO2= new Empleado("Bárbara López",null,"mañana","obispo",1000,funeraria1);
-		Empleado empleadoO3= new Empleado("Marco Bianchi",null,"tarde","obispo",1000,funeraria1);
-		Empleado empleadoO4= new Empleado("Zara Ahmed",null,"tarde","obispo",1000,funeraria1);
-		Empleado empleadoO5= new Empleado("Evelyn Rodríguez",null,"noche","obispo",1000,funeraria1);
-		Empleado empleadoO6= new Empleado("Raj Patel",null,"noche","obispo",1000,funeraria1);
+		Empleado empleadoO1= new Empleado("Eli Cohen",cuenta49E,"mañana","obispo",1000,funeraria1);
+		Empleado empleadoO2= new Empleado("Bárbara López",cuenta50E,"mañana","obispo",1000,funeraria1);
+		Empleado empleadoO3= new Empleado("Marco Bianchi",cuenta51E,"tarde","obispo",1000,funeraria1);
+		Empleado empleadoO4= new Empleado("Zara Ahmed",cuenta52E,"tarde","obispo",1000,funeraria1);
+		Empleado empleadoO5= new Empleado("Evelyn Rodríguez",cuenta53E,"noche","obispo",1000,funeraria1);
+		Empleado empleadoO6= new Empleado("Raj Patel",cuenta54E,"noche","obispo",1000,funeraria1);
 		
 	
 		
@@ -2925,10 +2925,11 @@ public class Menú {
 		
 		while(validacion) {
 			
-			System.out.println("[1] Funcionalidad crematorio");
+			System.out.println("[1] Funcionalidad Crematorio");
 			System.out.println("[2] Funcionalidad Exhumación");
 			System.out.println("[3] Funcionalidad Entierro");
 			System.out.println("[4] Funcionalidad Gestion de Inventario");
+			System.out.println("[5] Funcionalidad Finanzas");
 			
 			System.out.print("Ingrese el índice de la funcionalidad: ");
 			int opcion =scanner.nextInt();
@@ -2948,7 +2949,8 @@ public class Menú {
 				FuncionalidadGestionInventario(funerarias);
 				break;
 			case 5:	
-				
+				funcionalidadFinanzas();
+				break;
 			default:
 				System.out.println("Número fuera de rango");
 				validacion=false;
