@@ -440,7 +440,6 @@ public String pagoTrabajadores(Empleado empleado) {
     	 int trabajos = empleado.getTrabajosHechos();
     	 
     	 int calificacion = empleado.getCalificacion();
-    	 
     	 double paga = empleado.getSalario();
     	 if(trabajos >= 2 && 5 >= trabajos) {
     		  paga *= 1;

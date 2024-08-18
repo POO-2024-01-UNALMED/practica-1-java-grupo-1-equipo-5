@@ -1150,11 +1150,14 @@ public class Menú {
     			indice = 0;
     			if(clientes.size() > 0) {
     			for(Cliente cliente: clientes) {
+    				if(cliente.getListadoFacturas().size() > 0) {
     				indice+=1;
-    				System.out.println("["+indice+"] "+ cliente);
-    			}
-    			
-    			System.out.print("Ingrese el índice de los clientes: ");
+    				System.out.println("["+indice+"] "+ cliente);}
+    	
+    			}}
+    			if(indice == 0) {
+    				System.out.println("No hay clientes con facturas por pagar");}
+    			else{System.out.print("Ingrese el índice de los clientes: ");
     			int indiceCliente = scanner.nextInt();
     			
     			while(indiceCliente<1 || indiceCliente>clientes.size()) {
@@ -1166,7 +1169,7 @@ public class Menú {
     			if(cantidadFacturas > 0 ) {
     			funeraria.cobroServiciosClientes(cliente);	
     			System.out.println("Cobro de  facturas del cliente: "+ cliente.getNombre()+", realizado correctamente");}
-    			else { System.out.println("No hay facturas que cobrar");}}else{System.out.println("No hay clientes disponibles");}
+    			else { System.out.println("No hay facturas que cobrar");}}
     			break;
     		case 2:
     		    valido = true;
@@ -1196,10 +1199,20 @@ public class Menú {
     		case 3:
     			valido = true;
     			ArrayList <Empleado> empleados = funeraria.getEmpleados();
+    			ArrayList <Empleado> empleadosDispo = new ArrayList<Empleado>();
+    			boolean hayEmpleadosDisponibles = false;
+    			int indice4 = 0;
     			for(int i = 0; i < empleados.size();i++) {
-    				System.out.println("["+(i+1)+"] "+ empleados.get(i).getNombre());
-    			}
-    		
+    				Empleado empleado = empleados.get(i);
+    				if(empleado.getTrabajosHechos() > 0) {
+    					indice4++;
+    					empleadosDispo.add(empleado);
+    				System.out.println("["+indice4+"] "+ empleados.get(i).getNombre());
+    				hayEmpleadosDisponibles = true;
+    			}}
+    		    if(!hayEmpleadosDisponibles) {
+    		    	System.out.println("No hay empleados disponibles a los que pagar");
+    		    }else {
     			System.out.print("Ingrese el índice correspondiente: ");
     			int indiceEmpleado=scanner.nextInt();
     			while (indiceEmpleado <1 || indiceEmpleado>empleados.size()) {
@@ -1207,9 +1220,9 @@ public class Menú {
     				indiceEmpleado=scanner.nextInt();
     			}
     			
-    			Empleado empleado=(Empleado) empleados.get(indiceEmpleado-1);
+    			Empleado empleado=(Empleado) empleadosDispo.get(indiceEmpleado-1);
     			
-    			System.out.println(funeraria.pagoTrabajadores(empleado));
+    			System.out.println(funeraria.pagoTrabajadores(empleado));}
     			break;
     		case 4:
     			valido = true;
@@ -1339,9 +1352,9 @@ public class Menú {
 	public static void main(String[] args) {
 		
 		//cuentasCorriente funerarias
-		CuentaBancaria cuenta1F = new CuentaBancaria(199234234, "Eterna Paz", 40000,40000,40000,40000,40000, "BBVA");
-	    CuentaBancaria cuenta2F = new CuentaBancaria(193739239, "Caminos de luz", 40000,40000,40000,40000,40000, "BANCOLOMBIA");
-	    CuentaBancaria cuenta3F = new CuentaBancaria(384627823, "Recuerdos eternos", 40000,40000,40000,40000,40000, "DAVIVIENDA");
+		CuentaBancaria cuenta1F = new CuentaBancaria(199234234, "Eterna Paz", 4000000,4000000,4000000,4000000,4000000, "BBVA");
+	    CuentaBancaria cuenta2F = new CuentaBancaria(193739239, "Caminos de luz", 4000000,4000000,4000000,4000000,4000000, "BANCOLOMBIA");
+	    CuentaBancaria cuenta3F = new CuentaBancaria(384627823, "Recuerdos eternos", 4000000,4000000,4000000,4000000,4000000, "DAVIVIENDA");
 		    
 	    //cuentaAhorro funerarias
 	    CuentaBancaria cuenta4F = new CuentaBancaria(19934, "todasLasFunerarias", 3993, "BANCO_OCCIDENTE");
@@ -3801,42 +3814,251 @@ public class Menú {
       //objetos de clase finanzas
         
         //facturas Vehiculos funeraria1
-        Vehiculo vef1= new Vehiculo(TipoVehiculo.BERLINA,funeraria1,"azul", "2345",3232,3);
-		Vehiculo vef2= new Vehiculo(TipoVehiculo.BUS,funeraria1,"rojo", "3444",344,3);
-		Vehiculo vef3= new Vehiculo(TipoVehiculo.CARROZA,funeraria1,"amarillo", "2566",234,4);
-		Vehiculo vef4= new Vehiculo(TipoVehiculo.FAETON,funeraria1,"naranja", "2342",3232,3);
-		Vehiculo vef5= new Vehiculo(TipoVehiculo.COCHEFUNEBRE,funeraria1,"violeta", "3453",344,3);
-		Vehiculo vef6= new Vehiculo(TipoVehiculo.COCHERESPETO,funeraria1,"verde", "5476",234,4);
-		Vehiculo vef7= new Vehiculo(TipoVehiculo.CUPE,funeraria1,"negro", "4564",3232,3);
-		Vehiculo vef8= new Vehiculo(TipoVehiculo.CAMION,funeraria1,"marron", "2665",344,3);
+        Vehiculo ve1F1= new Vehiculo(TipoVehiculo.BERLINA,funeraria1,"azul", "2345",70000,3);
+		Vehiculo ve2F1= new Vehiculo(TipoVehiculo.BUS,funeraria1,"rojo", "3444",50000,3);
+		Vehiculo ve3F1= new Vehiculo(TipoVehiculo.CARROZA,funeraria1,"amarillo", "2566",150000,4);
+		Vehiculo ve4F1= new Vehiculo(TipoVehiculo.FAETON,funeraria1,"naranja", "2342",120000,3);
+		Vehiculo ve5F1= new Vehiculo(TipoVehiculo.COCHEFUNEBRE,funeraria1,"violeta", "3453",80000,3);
+		Vehiculo ve6F1= new Vehiculo(TipoVehiculo.COCHERESPETO,funeraria1,"verde", "5476",75000,4);
+		Vehiculo ve7F1= new Vehiculo(TipoVehiculo.CUPE,funeraria1,"negro", "4564",65000,3);
+		Vehiculo ve8F1 = new Vehiculo(TipoVehiculo.CAMION,funeraria1,"marron", "2665",69000,3);
 		
-		Producto producto1 =  new Producto(vef1, local1);
-		Producto producto2 =  new Producto(vef2, local1);
-		Producto producto3 =  new Producto(vef3, local2);
-		Producto producto4 =  new Producto(vef4, local2);
-		Producto producto5 =  new Producto(vef5, local3);
-		Producto producto6 =  new Producto(vef6, local3);
-		Producto producto7 =  new Producto(vef7, local4);
-		Producto producto8 =  new Producto(vef8, local4);
+		Producto producto1F1 =  new Producto(ve1F1, local1);
+		Producto producto2F1 =  new Producto(ve2F1, local1);
+		Producto producto3F1 =  new Producto(ve3F1, local2);
+		Producto producto4F1 =  new Producto(ve4F1, local2);
+		Producto producto5F1 =  new Producto(ve5F1, local3);
+		Producto producto6F1 =  new Producto(ve6F1, local3);
+		Producto producto7F1 =  new Producto(ve7F1, local4);
+		Producto producto8F1 =  new Producto(ve8F1, local4);
 		
-		ArrayList<Producto> vehiculos1=new ArrayList<Producto>();
-		ArrayList<Producto> vehiculos2=new ArrayList<Producto>();
-		ArrayList<Producto> vehiculos3=new ArrayList<Producto>();
-		ArrayList<Producto> vehiculos4=new ArrayList<Producto>();
+		ArrayList<Producto> vehiculos1F1=new ArrayList<Producto>();
+		ArrayList<Producto> vehiculos2F1=new ArrayList<Producto>();
+		ArrayList<Producto> vehiculos3F1=new ArrayList<Producto>();
+		ArrayList<Producto> vehiculos4F1=new ArrayList<Producto>();
 		
-		vehiculos1.add(producto1);
-		vehiculos1.add(producto2);
-		vehiculos2.add(producto3);
-		vehiculos2.add(producto4);
-		vehiculos3.add(producto5);
-		vehiculos3.add(producto6);
-		vehiculos4.add(producto7);
-		vehiculos4.add(producto8);
+		vehiculos1F1.add(producto1F1);
+		vehiculos1F1.add(producto2F1);
+		vehiculos2F1.add(producto3F1);
+		vehiculos2F1.add(producto4F1);
+		vehiculos3F1.add(producto5F1);
+		vehiculos3F1.add(producto6F1);
+		vehiculos4F1.add(producto7F1);
+		vehiculos4F1.add(producto8F1);
 		
-		funeraria1.getListadoFacturasPorPagar().add(new Factura(vehiculos1,"vehiculo"));
-		funeraria1.getListadoFacturasPorPagar().add(new Factura(vehiculos2,"vehiculo"));
-		funeraria1.getListadoFacturasPorPagar().add(new Factura(vehiculos3,"vehiculo"));
-		funeraria1.getListadoFacturasPorPagar().add(new Factura(vehiculos4,"vehiculo"));
+		funeraria1.getListadoFacturasPorPagar().add(new Factura(vehiculos1F1,"vehiculo"));
+		funeraria1.getListadoFacturasPorPagar().add(new Factura(vehiculos2F1,"vehiculo"));
+		funeraria1.getListadoFacturasPorPagar().add(new Factura(vehiculos3F1,"vehiculo"));
+		funeraria1.getListadoFacturasPorPagar().add(new Factura(vehiculos4F1,"vehiculo"));
+		
+		//facturas Vehiculos funeraria2
+		Vehiculo ve1F2= new Vehiculo(TipoVehiculo.BERLINA,funeraria2,"azul", "2345",70000,3);
+		Vehiculo ve2F2= new Vehiculo(TipoVehiculo.BUS,funeraria2,"rojo", "3444",50000,3);
+		Vehiculo ve3F2= new Vehiculo(TipoVehiculo.CARROZA,funeraria2,"amarillo", "2566",150000,4);
+		Vehiculo ve4F2= new Vehiculo(TipoVehiculo.FAETON,funeraria2,"naranja", "2342",120000,3);
+		Vehiculo ve5F2= new Vehiculo(TipoVehiculo.COCHEFUNEBRE,funeraria2,"violeta", "3453",80000,3);
+		Vehiculo ve6F2= new Vehiculo(TipoVehiculo.COCHERESPETO,funeraria2,"verde", "5476",75000,4);
+		Vehiculo ve7F2= new Vehiculo(TipoVehiculo.CUPE,funeraria2,"negro", "4564",65000,3);
+		Vehiculo ve8F2= new Vehiculo(TipoVehiculo.CAMION,funeraria2,"marron", "2665",69000,3);
+		
+		Producto producto1F2 =  new Producto(ve1F2, local1);
+		Producto producto2F2 =  new Producto(ve2F2, local1);
+		Producto producto3F2 =  new Producto(ve3F2, local2);
+		Producto producto4F2 =  new Producto(ve4F2, local2);
+		Producto producto5F2 =  new Producto(ve5F2, local3);
+		Producto producto6F2 =  new Producto(ve6F2, local3);
+		Producto producto7F2 =  new Producto(ve7F2, local4);
+		Producto producto8F2 =  new Producto(ve8F2, local4);
+		
+		ArrayList<Producto> vehiculos1F2=new ArrayList<Producto>();
+		ArrayList<Producto> vehiculos2F2=new ArrayList<Producto>();
+		ArrayList<Producto> vehiculos3F2=new ArrayList<Producto>();
+		ArrayList<Producto> vehiculos4F2=new ArrayList<Producto>();
+		
+		vehiculos1F2.add(producto1F2);
+		vehiculos1F2.add(producto8F2);
+		vehiculos2F2.add(producto3F2);
+		vehiculos2F2.add(producto7F2);
+		vehiculos3F2.add(producto5F2);
+		vehiculos3F2.add(producto2F2);
+		vehiculos4F2.add(producto4F2);
+		vehiculos4F2.add(producto6F2);
+		
+		funeraria2.getListadoFacturasPorPagar().add(new Factura(vehiculos1F2,"vehiculo"));
+		funeraria2.getListadoFacturasPorPagar().add(new Factura(vehiculos2F2,"vehiculo"));
+		funeraria2.getListadoFacturasPorPagar().add(new Factura(vehiculos3F2,"vehiculo"));
+		funeraria2.getListadoFacturasPorPagar().add(new Factura(vehiculos4F2,"vehiculo"));
+		
+		//facturas Vehiculos funeraria3
+		Vehiculo ve1F3= new Vehiculo(TipoVehiculo.BERLINA,funeraria3,"azul", "2345",70000,3);
+		Vehiculo ve2F3= new Vehiculo(TipoVehiculo.BUS,funeraria3,"rojo", "3444",50000,3);
+		Vehiculo ve3F3= new Vehiculo(TipoVehiculo.CARROZA,funeraria3,"amarillo", "2566",150000,4);
+		Vehiculo ve4F3= new Vehiculo(TipoVehiculo.FAETON,funeraria3,"naranja", "2342",120000,3);
+		Vehiculo ve5F3= new Vehiculo(TipoVehiculo.COCHEFUNEBRE,funeraria3,"violeta", "3453",80000,3);
+		Vehiculo ve6F3= new Vehiculo(TipoVehiculo.COCHERESPETO,funeraria3,"verde", "5476",75000,4);
+		Vehiculo ve7F3= new Vehiculo(TipoVehiculo.CUPE,funeraria3,"negro", "4564",65000,3);
+		Vehiculo ve8F3= new Vehiculo(TipoVehiculo.CAMION,funeraria3,"marron", "2665",69000,3);
+		
+		Producto producto1F3 =  new Producto(ve1F3, local1);
+		Producto producto2F3 =  new Producto(ve2F3, local1);
+		Producto producto3F3 =  new Producto(ve3F3, local2);
+		Producto producto4F3 =  new Producto(ve4F3, local2);
+		Producto producto5F3 =  new Producto(ve5F3, local3);
+		Producto producto6F3 =  new Producto(ve6F3, local3);
+		Producto producto7F3 =  new Producto(ve7F3, local4);
+		Producto producto8F3 =  new Producto(ve8F3, local4);
+		
+		ArrayList<Producto> vehiculos1F3=new ArrayList<Producto>();
+		ArrayList<Producto> vehiculos2F3=new ArrayList<Producto>();
+		ArrayList<Producto> vehiculos3F3=new ArrayList<Producto>();
+		ArrayList<Producto> vehiculos4F3=new ArrayList<Producto>();
+		
+		vehiculos1F3.add(producto1F3);
+		vehiculos1F3.add(producto5F3);
+		vehiculos2F3.add(producto3F3);
+		vehiculos2F3.add(producto6F3);
+		vehiculos3F3.add(producto8F3);
+		vehiculos3F3.add(producto2F3);
+		vehiculos4F3.add(producto4F3);
+		vehiculos4F3.add(producto7F3);
+		
+		funeraria3.getListadoFacturasPorPagar().add(new Factura(vehiculos1F3,"vehiculo"));
+		funeraria3.getListadoFacturasPorPagar().add(new Factura(vehiculos2F3,"vehiculo"));
+		funeraria3.getListadoFacturasPorPagar().add(new Factura(vehiculos3F3,"vehiculo"));
+		funeraria3.getListadoFacturasPorPagar().add(new Factura(vehiculos4F3,"vehiculo"));
+		
+		//Producto inventario 
+		
+		Producto productoI1 =  new Producto("Urnas",10000,6,local1);
+		Producto productoI2 =  new Producto("Urnas",10000,3,local1);
+		Producto productoI3 =  new Producto("Urnas",10000,6,local2);
+		Producto productoI4 =  new Producto("Urnas",10000,2,local2);
+		Producto productoI5 =  new Producto("Tumbas",15000,7,local3);
+		Producto productoI6 =  new Producto("Tumbas",15000,3,local3);
+		Producto productoI7 =  new Producto("Tumbas",1500,8,local1);
+		Producto productoI8 =  new Producto("Tumbas",15000,2,local3);
+		
+		//Facturas inventario funeraria 1
+		ArrayList<Producto> urnas1F1=new ArrayList<Producto>();
+		ArrayList<Producto> urnas2F1=new ArrayList<Producto>();
+		ArrayList<Producto> tumbas1F1=new ArrayList<Producto>();
+		ArrayList<Producto> tumbas2F1=new ArrayList<Producto>();
+		
+		urnas1F1.add(productoI1);
+		urnas1F1.add(productoI2);
+		urnas2F1.add(productoI3);
+		urnas2F1.add(productoI4);
+		tumbas1F1.add(productoI5);
+		tumbas1F1.add(productoI6);
+		tumbas2F1.add(productoI7);
+		tumbas2F1.add(productoI8);
+		
+		funeraria1.getListadoFacturasPorPagar().add(new Factura(urnas1F1,"inventario"));
+		funeraria1.getListadoFacturasPorPagar().add(new Factura(urnas2F1,"inventario"));
+		funeraria1.getListadoFacturasPorPagar().add(new Factura(tumbas1F1,"inventario"));
+		funeraria1.getListadoFacturasPorPagar().add(new Factura(tumbas2F1,"inventario"));
+		
+		//Facturas inventario funeraria 2
+		ArrayList<Producto> urnas1F2=new ArrayList<Producto>();
+		ArrayList<Producto> urnas2F2=new ArrayList<Producto>();
+		ArrayList<Producto> tumbas1F2=new ArrayList<Producto>();
+		ArrayList<Producto> tumbas2F2=new ArrayList<Producto>();
+				
+		urnas1F2.add(productoI1);
+		urnas1F2.add(productoI3);
+		urnas2F2.add(productoI2);
+		urnas2F2.add(productoI4);
+		tumbas1F2.add(productoI5);
+		tumbas1F2.add(productoI7);
+		tumbas2F2.add(productoI6);
+		tumbas2F2.add(productoI8);
+				
+		funeraria2.getListadoFacturasPorPagar().add(new Factura(urnas1F2,"inventario"));
+		funeraria2.getListadoFacturasPorPagar().add(new Factura(urnas2F2,"inventario"));
+		funeraria2.getListadoFacturasPorPagar().add(new Factura(tumbas1F2,"inventario"));
+		funeraria2.getListadoFacturasPorPagar().add(new Factura(tumbas2F2,"inventario"));
+				
+		//Facturas inventario funeraria 3
+		ArrayList<Producto> urnas1F3=new ArrayList<Producto>();
+		ArrayList<Producto> urnas2F3=new ArrayList<Producto>();
+		ArrayList<Producto> tumbas1F3=new ArrayList<Producto>();
+		ArrayList<Producto> tumbas2F3=new ArrayList<Producto>();
+				
+		urnas1F3.add(productoI1);
+		urnas1F3.add(productoI4);
+		urnas2F3.add(productoI2);
+		urnas2F3.add(productoI3);
+		tumbas1F3.add(productoI5);
+		tumbas1F3.add(productoI8);
+		tumbas2F3.add(productoI7);
+		tumbas2F3.add(productoI6);
+				
+		funeraria3.getListadoFacturasPorPagar().add(new Factura(urnas1F1,"inventario"));
+		funeraria3.getListadoFacturasPorPagar().add(new Factura(urnas2F1,"inventario"));
+		funeraria3.getListadoFacturasPorPagar().add(new Factura(tumbas1F1,"inventario"));
+		funeraria3.getListadoFacturasPorPagar().add(new Factura(tumbas2F1,"inventario"));
+		
+		
+		//Productos establecimiento 		
+		Producto productoE1 =  new Producto("Tarifa de cremacion",1000,1,local1);
+		Producto productoE2 =  new Producto("Derechos de uso  de instalaciones",10000,1,local1);
+		Producto productoE3 =  new Producto("Tarifa de inhumacion",1500,1,local2);
+		Producto productoE4 =  new Producto("Derechos del uso de nicho o sepultura",1000,1,local2);
+		Producto productoE5 =  new Producto("Mantenimiento y conservacion",15000,1,local3);
+		Producto productoE6 =  new Producto("Ofrenda o donacion",500,1,local3);
+		Producto productoE7 =  new Producto("Tarifa de uso de instalaciones",500,1,local1);
+		
+		//Facturas establecimiento funeraria 1
+		ArrayList<Producto> servicios1F1 = new ArrayList<Producto>();
+		ArrayList<Producto> servicios2F1 = new ArrayList<Producto>();
+		ArrayList<Producto> servicios3F1 = new ArrayList<Producto>();
+		
+		servicios1F1.add(productoE1);
+		servicios1F1.add(productoE2);
+		servicios1F1.add(productoE3);
+		servicios2F1.add(productoE4);
+		servicios2F1.add(productoE5);
+		servicios3F1.add(productoE6);
+		servicios3F1.add(productoE7);
+		
+		funeraria1.getListadoFacturasPorPagar().add(new Factura(servicios1F1,"establecimiento"));
+		funeraria1.getListadoFacturasPorPagar().add(new Factura(servicios2F1,"establecimiento"));
+		funeraria1.getListadoFacturasPorPagar().add(new Factura(servicios3F1,"establecimiento"));
+		
+		//Facturas establecimiento funeraria 2
+		ArrayList<Producto> servicios1F2 = new ArrayList<Producto>();
+		ArrayList<Producto> servicios2F2 = new ArrayList<Producto>();
+		ArrayList<Producto> servicios3F2 = new ArrayList<Producto>();
+				
+		servicios1F2.add(productoE1);
+		servicios1F2.add(productoE4);
+		servicios1F2.add(productoE6);
+		servicios2F2.add(productoE2);
+		servicios2F2.add(productoE5);
+		servicios3F2.add(productoE3);
+		servicios3F2.add(productoE7);
+				
+		funeraria2.getListadoFacturasPorPagar().add(new Factura(servicios1F2,"establecimiento"));
+		funeraria2.getListadoFacturasPorPagar().add(new Factura(servicios2F2,"establecimiento"));
+		funeraria2.getListadoFacturasPorPagar().add(new Factura(servicios3F2,"establecimiento"));
+				
+		//Facturas establecimiento funeraria 3
+		ArrayList<Producto> servicios1F3 = new ArrayList<Producto>();
+		ArrayList<Producto> servicios2F3 = new ArrayList<Producto>();
+		ArrayList<Producto> servicios3F3 = new ArrayList<Producto>();
+				
+		servicios1F3.add(productoE7);
+		servicios1F3.add(productoE5);
+		servicios1F3.add(productoE6);
+		servicios2F3.add(productoE4);
+		servicios2F3.add(productoE2);
+		servicios3F3.add(productoE3);
+		servicios3F3.add(productoE1);
+				
+		funeraria3.getListadoFacturasPorPagar().add(new Factura(servicios1F3,"establecimiento"));
+		funeraria3.getListadoFacturasPorPagar().add(new Factura(servicios2F3,"establecimiento"));
+		funeraria3.getListadoFacturasPorPagar().add(new Factura(servicios3F3,"establecimiento"));
+		
 		
 		Funeraria[] funerarias = new Funeraria[]{funeraria1, funeraria2, funeraria1};
 		
