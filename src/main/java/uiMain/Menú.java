@@ -817,12 +817,11 @@ public class Menú {
 
 	            // Asignar los empleados y vehículos a las funerarias correspondientes
 	            for (Empleado empleado : empleadosSeleccionados) {
-	                funA.agregarEmpleado(empleado);
-	                funB.agregarEmpleado(empleado);  
+	                funA.agregarEmpleado(empleado);  
 	            }
 	            for (Vehiculo vehiculo : vehiculosSeleccionados) {
 	                funA.agregarVehiculo(vehiculo);
-	                //funB.agregarVehiculo(vehiculo);  
+	                  
 	            }
 
 	            System.out.println("Intercambio realizado exitosamente.");
