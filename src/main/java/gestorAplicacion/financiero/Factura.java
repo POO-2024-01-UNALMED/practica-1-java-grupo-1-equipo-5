@@ -89,7 +89,7 @@ public class Factura implements Serializable{
 		this.Servicio = servicio;
 		facturasCreadas++;
 		ID=facturasCreadas;
-		calcularTotal();
+		totalFactura();
 		facturas.add(this);
 	}
 	
@@ -151,7 +151,7 @@ public class Factura implements Serializable{
     }
     // Método para calcular el total con IVA
     private void calcularTotal() {
-        total = precio + (precio * IVA);
+        this.total = precio + (precio * IVA);
     }
     // Método para agregar un producto a la lista
     public void agregarProducto(Producto producto) {

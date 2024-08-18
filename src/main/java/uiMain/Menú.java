@@ -4266,43 +4266,43 @@ public class Menú {
 		
 		//Facturas clientes 
 		
-		clienteF11E.getListadoFacturas().add(new Factura(productoF1U1));
-		clienteF12E.getListadoFacturas().add(new Factura(productoF1U2));
-		clienteF13E.getListadoFacturas().add(new Factura(productoF1U3));
-		clienteF14E.getListadoFacturas().add(new Factura(productoF1U4));
-		clienteF15E.getListadoFacturas().add(new Factura(productoF1U5));
-		clienteF16E.getListadoFacturas().add(new Factura(productoF1U6));
-		clienteF17E.getListadoFacturas().add(new Factura(productoF1U7));
-		clienteF18E.getListadoFacturas().add(new Factura(productoF1U8));
-		clienteF19E.getListadoFacturas().add(new Factura(productoF1U9));
-		clienteF110E.getListadoFacturas().add(new Factura(productoF1U10));
-		clienteF111E.getListadoFacturas().add(new Factura(productoF1U11));
-		clienteF112E.getListadoFacturas().add(new Factura(productoF1U12));
-		clienteF113E.getListadoFacturas().add(new Factura(productoF1U13));
-		clienteF114E.getListadoFacturas().add(new Factura(productoF1U14));
-		clienteF115E.getListadoFacturas().add(new Factura(productoF1U15));
-		clienteF116E.getListadoFacturas().add(new Factura(productoF1U16));
-		clienteF117E.getListadoFacturas().add(new Factura(productoF1U17));
-		clienteF118E.getListadoFacturas().add(new Factura(productoF1U18));
+		clienteF11E.getListadoFacturas().add(new Factura(productoF1U1, "clientes"));
+		clienteF12E.getListadoFacturas().add(new Factura(productoF1U2, "clientes"));
+		clienteF13E.getListadoFacturas().add(new Factura(productoF1U3, "clientes"));
+		clienteF14E.getListadoFacturas().add(new Factura(productoF1U4, "clientes"));
+		clienteF15E.getListadoFacturas().add(new Factura(productoF1U5, "clientes"));
+		clienteF16E.getListadoFacturas().add(new Factura(productoF1U6, "clientes"));
+		clienteF17E.getListadoFacturas().add(new Factura(productoF1U7, "clientes"));
+		clienteF18E.getListadoFacturas().add(new Factura(productoF1U8, "clientes"));
+		clienteF19E.getListadoFacturas().add(new Factura(productoF1U9, "clientes"));
+		clienteF110E.getListadoFacturas().add(new Factura(productoF1U10, "clientes"));
+		clienteF111E.getListadoFacturas().add(new Factura(productoF1U11, "clientes"));
+		clienteF112E.getListadoFacturas().add(new Factura(productoF1U12, "clientes"));
+		clienteF113E.getListadoFacturas().add(new Factura(productoF1U13, "clientes"));
+		clienteF114E.getListadoFacturas().add(new Factura(productoF1U14, "clientes"));
+		clienteF115E.getListadoFacturas().add(new Factura(productoF1U15, "clientes"));
+		clienteF116E.getListadoFacturas().add(new Factura(productoF1U16, "clientes"));
+		clienteF117E.getListadoFacturas().add(new Factura(productoF1U17, "clientes"));
+		clienteF118E.getListadoFacturas().add(new Factura(productoF1U18, "clientes"));
 		
-		clienteF11ET.getListadoFacturas().add(new Factura(productoF1T1));
-		clienteF12ET.getListadoFacturas().add(new Factura(productoF1T2));
-		clienteF13ET.getListadoFacturas().add(new Factura(productoF1T3));
-		clienteF14ET.getListadoFacturas().add(new Factura(productoF1T4));
-		clienteF15ET.getListadoFacturas().add(new Factura(productoF1T5));
-		clienteF16ET.getListadoFacturas().add(new Factura(productoF1T6));
-		clienteF17ET.getListadoFacturas().add(new Factura(productoF1T7));
-		clienteF18ET.getListadoFacturas().add(new Factura(productoF1T8));
-		clienteF19ET.getListadoFacturas().add(new Factura(productoF1T9));
-		clienteF110ET.getListadoFacturas().add(new Factura(productoF1T10));
-		clienteF111ET.getListadoFacturas().add(new Factura(productoF1T11));
-		clienteF112ET.getListadoFacturas().add(new Factura(productoF1T12));
-		clienteF113ET.getListadoFacturas().add(new Factura(productoF1T13));
-		clienteF114ET.getListadoFacturas().add(new Factura(productoF1T14));
-		clienteF115ET.getListadoFacturas().add(new Factura(productoF1T15));
-		clienteF116ET.getListadoFacturas().add(new Factura(productoF1T16));
-		clienteF117ET.getListadoFacturas().add(new Factura(productoF1T17));
-		clienteF118ET.getListadoFacturas().add(new Factura(productoF1T18));
+		clienteF11ET.getListadoFacturas().add(new Factura(productoF1T1, "clientes"));
+		clienteF12ET.getListadoFacturas().add(new Factura(productoF1T2, "clientes"));
+		clienteF13ET.getListadoFacturas().add(new Factura(productoF1T3, "clientes"));
+		clienteF14ET.getListadoFacturas().add(new Factura(productoF1T4, "clientes"));
+		clienteF15ET.getListadoFacturas().add(new Factura(productoF1T5, "clientes"));
+		clienteF16ET.getListadoFacturas().add(new Factura(productoF1T6, "clientes"));
+		clienteF17ET.getListadoFacturas().add(new Factura(productoF1T7, "clientes"));
+		clienteF18ET.getListadoFacturas().add(new Factura(productoF1T8, "clientes"));
+		clienteF19ET.getListadoFacturas().add(new Factura(productoF1T9, "clientes"));
+		clienteF110ET.getListadoFacturas().add(new Factura(productoF1T10, "clientes"));
+		clienteF111ET.getListadoFacturas().add(new Factura(productoF1T11, "clientes"));
+		clienteF112ET.getListadoFacturas().add(new Factura(productoF1T12, "clientes"));
+		clienteF113ET.getListadoFacturas().add(new Factura(productoF1T13, "clientes"));
+		clienteF114ET.getListadoFacturas().add(new Factura(productoF1T14, "clientes"));
+		clienteF115ET.getListadoFacturas().add(new Factura(productoF1T15, "clientes"));
+		clienteF116ET.getListadoFacturas().add(new Factura(productoF1T16, "clientes"));
+		clienteF117ET.getListadoFacturas().add(new Factura(productoF1T17, "clientes"));
+		clienteF118ET.getListadoFacturas().add(new Factura(productoF1T18, "clientes"));
 		
 		//Facturas clientes Funeraria 2
 		
@@ -4318,7 +4318,6 @@ public class Menú {
 		Producto productoF27E = new Producto(urnaF2C31E,2);
 		Producto productoF28E = new Producto(urnaF2C32E,3);
 		Producto productoF29E = new Producto(urnaF2C33E,4);
-
 		Producto productoF210E = new Producto(urnaF2C41E,5);
 		Producto productoF211E = new Producto(urnaF2C42E,1);
 		Producto productoF212E = new Producto(urnaF2C43E,2);
@@ -4438,43 +4437,42 @@ public class Menú {
 				
 		//Facturas clientes 
 				
-	    clienteF21E.getListadoFacturas().add(new Factura(productoF2U1));
-		clienteF22E.getListadoFacturas().add(new Factura(productoF2U2));
-		clienteF23E.getListadoFacturas().add(new Factura(productoF2U3));
-		clienteF24E.getListadoFacturas().add(new Factura(productoF2U4));
-		clienteF25E.getListadoFacturas().add(new Factura(productoF2U5));
-		clienteF26E.getListadoFacturas().add(new Factura(productoF2U6));
-		clienteF27E.getListadoFacturas().add(new Factura(productoF2U7));
-		clienteF28E.getListadoFacturas().add(new Factura(productoF2U8));
-		clienteF29E.getListadoFacturas().add(new Factura(productoF2U9));
-		clienteF210E.getListadoFacturas().add(new Factura(productoF2U10));
-		clienteF211E.getListadoFacturas().add(new Factura(productoF2U11));
-		clienteF212E.getListadoFacturas().add(new Factura(productoF2U12));
-		clienteF213E.getListadoFacturas().add(new Factura(productoF2U13));
-		clienteF214E.getListadoFacturas().add(new Factura(productoF2U14));
-		clienteF215E.getListadoFacturas().add(new Factura(productoF2U15));
-		clienteF216E.getListadoFacturas().add(new Factura(productoF2U16));
-		clienteF217E.getListadoFacturas().add(new Factura(productoF2U17));
-		clienteF218E.getListadoFacturas().add(new Factura(productoF2U18));
-				
-		clienteF21ET.getListadoFacturas().add(new Factura(productoF2T1));
-		clienteF22ET.getListadoFacturas().add(new Factura(productoF2T2));
-		clienteF23ET.getListadoFacturas().add(new Factura(productoF2T3));
-		clienteF24ET.getListadoFacturas().add(new Factura(productoF2T4));
-		clienteF25ET.getListadoFacturas().add(new Factura(productoF2T5));
-		clienteF26ET.getListadoFacturas().add(new Factura(productoF2T6));
-		clienteF27ET.getListadoFacturas().add(new Factura(productoF2T7));
-		clienteF28ET.getListadoFacturas().add(new Factura(productoF2T8));
-		clienteF29ET.getListadoFacturas().add(new Factura(productoF2T9));
-		clienteF210ET.getListadoFacturas().add(new Factura(productoF2T10));
-		clienteF211ET.getListadoFacturas().add(new Factura(productoF2T11));
-		clienteF212ET.getListadoFacturas().add(new Factura(productoF2T12));
-		clienteF213ET.getListadoFacturas().add(new Factura(productoF2T13));
-		clienteF214ET.getListadoFacturas().add(new Factura(productoF2T14));
-		clienteF215ET.getListadoFacturas().add(new Factura(productoF2T15));
-		clienteF216ET.getListadoFacturas().add(new Factura(productoF2T16));
-		clienteF217ET.getListadoFacturas().add(new Factura(productoF2T17));
-		clienteF218ET.getListadoFacturas().add(new Factura(productoF2T18));
+	    clienteF21E.getListadoFacturas().add(new Factura(productoF2U1, "clientes"));
+		clienteF22E.getListadoFacturas().add(new Factura(productoF2U2, "clientes"));
+		clienteF23E.getListadoFacturas().add(new Factura(productoF2U3, "clientes"));
+		clienteF24E.getListadoFacturas().add(new Factura(productoF2U4, "clientes"));
+		clienteF25E.getListadoFacturas().add(new Factura(productoF2U5, "clientes"));
+		clienteF26E.getListadoFacturas().add(new Factura(productoF2U6, "clientes"));
+		clienteF27E.getListadoFacturas().add(new Factura(productoF2U7, "clientes"));
+		clienteF28E.getListadoFacturas().add(new Factura(productoF2U8, "clientes"));
+		clienteF29E.getListadoFacturas().add(new Factura(productoF2U9, "clientes"));
+		clienteF210E.getListadoFacturas().add(new Factura(productoF2U10, "clientes"));
+		clienteF211E.getListadoFacturas().add(new Factura(productoF2U11, "clientes"));
+		clienteF212E.getListadoFacturas().add(new Factura(productoF2U12, "clientes"));
+		clienteF213E.getListadoFacturas().add(new Factura(productoF2U13, "clientes"));
+		clienteF214E.getListadoFacturas().add(new Factura(productoF2U14, "clientes"));
+		clienteF215E.getListadoFacturas().add(new Factura(productoF2U15, "clientes"));
+		clienteF216E.getListadoFacturas().add(new Factura(productoF2U16, "clientes"));
+		clienteF217E.getListadoFacturas().add(new Factura(productoF2U17, "clientes"));
+		clienteF218E.getListadoFacturas().add(new Factura(productoF2U18, "clientes"));
+		clienteF21ET.getListadoFacturas().add(new Factura(productoF2T1, "clientes"));
+		clienteF22ET.getListadoFacturas().add(new Factura(productoF2T2, "clientes"));
+		clienteF23ET.getListadoFacturas().add(new Factura(productoF2T3, "clientes"));
+		clienteF24ET.getListadoFacturas().add(new Factura(productoF2T4, "clientes"));
+		clienteF25ET.getListadoFacturas().add(new Factura(productoF2T5, "clientes"));
+		clienteF26ET.getListadoFacturas().add(new Factura(productoF2T6, "clientes"));
+		clienteF27ET.getListadoFacturas().add(new Factura(productoF2T7, "clientes"));
+		clienteF28ET.getListadoFacturas().add(new Factura(productoF2T8, "clientes"));
+		clienteF29ET.getListadoFacturas().add(new Factura(productoF2T9, "clientes"));
+		clienteF210ET.getListadoFacturas().add(new Factura(productoF2T10, "clientes"));
+		clienteF211ET.getListadoFacturas().add(new Factura(productoF2T11, "clientes"));
+		clienteF212ET.getListadoFacturas().add(new Factura(productoF2T12, "clientes"));
+		clienteF213ET.getListadoFacturas().add(new Factura(productoF2T13, "clientes"));
+		clienteF214ET.getListadoFacturas().add(new Factura(productoF2T14, "clientes"));
+		clienteF215ET.getListadoFacturas().add(new Factura(productoF2T15, "clientes"));
+		clienteF216ET.getListadoFacturas().add(new Factura(productoF2T16, "clientes"));
+		clienteF217ET.getListadoFacturas().add(new Factura(productoF2T17, "clientes"));
+		clienteF218ET.getListadoFacturas().add(new Factura(productoF2T18, "clientes"));
 		
 		//Facturas clientes Funeraria 3
 				
@@ -4609,45 +4607,73 @@ public class Menú {
 		productoF3T18.add(productoF318ET);
 				
 		//Facturas clientes 
+		clienteF31E.getListadoFacturas().add(new Factura(productoF3U1, "clientes"));
+		clienteF32E.getListadoFacturas().add(new Factura(productoF3U2, "clientes"));
+		clienteF33E.getListadoFacturas().add(new Factura(productoF3U3, "clientes"));
+		clienteF34E.getListadoFacturas().add(new Factura(productoF3U4, "clientes"));
+		clienteF35E.getListadoFacturas().add(new Factura(productoF3U5, "clientes"));
+		clienteF36E.getListadoFacturas().add(new Factura(productoF3U6, "clientes"));
+		clienteF37E.getListadoFacturas().add(new Factura(productoF3U7, "clientes"));
+		clienteF38E.getListadoFacturas().add(new Factura(productoF3U8, "clientes"));
+		clienteF39E.getListadoFacturas().add(new Factura(productoF3U9, "clientes"));
+		clienteF310E.getListadoFacturas().add(new Factura(productoF3U10, "clientes"));
+		clienteF311E.getListadoFacturas().add(new Factura(productoF3U11, "clientes"));
+		clienteF312E.getListadoFacturas().add(new Factura(productoF3U12, "clientes"));
+		clienteF313E.getListadoFacturas().add(new Factura(productoF3U13, "clientes"));
+		clienteF314E.getListadoFacturas().add(new Factura(productoF3U14, "clientes"));
+		clienteF315E.getListadoFacturas().add(new Factura(productoF3U15, "clientes"));
+		clienteF316E.getListadoFacturas().add(new Factura(productoF3U16, "clientes"));
+		clienteF317E.getListadoFacturas().add(new Factura(productoF3U17, "clientes"));
+		clienteF318E.getListadoFacturas().add(new Factura(productoF3U18, "clientes"));
 				
-		clienteF31E.getListadoFacturas().add(new Factura(productoF3U1));
-		clienteF32E.getListadoFacturas().add(new Factura(productoF3U2));
-		clienteF33E.getListadoFacturas().add(new Factura(productoF3U3));
-		clienteF34E.getListadoFacturas().add(new Factura(productoF3U4));
-		clienteF35E.getListadoFacturas().add(new Factura(productoF3U5));
-		clienteF36E.getListadoFacturas().add(new Factura(productoF3U6));
-		clienteF37E.getListadoFacturas().add(new Factura(productoF3U7));
-		clienteF38E.getListadoFacturas().add(new Factura(productoF3U8));
-		clienteF39E.getListadoFacturas().add(new Factura(productoF3U9));
-		clienteF310E.getListadoFacturas().add(new Factura(productoF3U10));
-		clienteF311E.getListadoFacturas().add(new Factura(productoF3U11));
-		clienteF312E.getListadoFacturas().add(new Factura(productoF3U12));
-		clienteF313E.getListadoFacturas().add(new Factura(productoF3U13));
-		clienteF314E.getListadoFacturas().add(new Factura(productoF3U14));
-		clienteF315E.getListadoFacturas().add(new Factura(productoF3U15));
-		clienteF316E.getListadoFacturas().add(new Factura(productoF3U16));
-		clienteF317E.getListadoFacturas().add(new Factura(productoF3U17));
-		clienteF318E.getListadoFacturas().add(new Factura(productoF3U18));
-				
-		clienteF31ET.getListadoFacturas().add(new Factura(productoF3T1));
-		clienteF32ET.getListadoFacturas().add(new Factura(productoF3T2));
-		clienteF33ET.getListadoFacturas().add(new Factura(productoF3T3));
-		clienteF34ET.getListadoFacturas().add(new Factura(productoF3T4));
-		clienteF35ET.getListadoFacturas().add(new Factura(productoF3T5));
-		clienteF36ET.getListadoFacturas().add(new Factura(productoF3T6));
-		clienteF37ET.getListadoFacturas().add(new Factura(productoF3T7));
-		clienteF38ET.getListadoFacturas().add(new Factura(productoF3T8));
-		clienteF39ET.getListadoFacturas().add(new Factura(productoF3T9));
-		clienteF310ET.getListadoFacturas().add(new Factura(productoF3T10));
-		clienteF311ET.getListadoFacturas().add(new Factura(productoF3T11));
-		clienteF312ET.getListadoFacturas().add(new Factura(productoF3T12));
-		clienteF313ET.getListadoFacturas().add(new Factura(productoF3T13));
-		clienteF314ET.getListadoFacturas().add(new Factura(productoF3T14));
-		clienteF315ET.getListadoFacturas().add(new Factura(productoF3T15));
-		clienteF316ET.getListadoFacturas().add(new Factura(productoF3T16));
-		clienteF317ET.getListadoFacturas().add(new Factura(productoF3T17));
-		clienteF318ET.getListadoFacturas().add(new Factura(productoF3T18));
-	
+		clienteF31ET.getListadoFacturas().add(new Factura(productoF3T1, "clientes"));
+		clienteF32ET.getListadoFacturas().add(new Factura(productoF3T2, "clientes"));
+		clienteF33ET.getListadoFacturas().add(new Factura(productoF3T3, "clientes"));
+		clienteF34ET.getListadoFacturas().add(new Factura(productoF3T4, "clientes"));
+		clienteF35ET.getListadoFacturas().add(new Factura(productoF3T5, "clientes"));
+		clienteF36ET.getListadoFacturas().add(new Factura(productoF3T6, "clientes"));
+		clienteF37ET.getListadoFacturas().add(new Factura(productoF3T7, "clientes"));
+		clienteF38ET.getListadoFacturas().add(new Factura(productoF3T8, "clientes"));
+		clienteF39ET.getListadoFacturas().add(new Factura(productoF3T9, "clientes"));
+		clienteF310ET.getListadoFacturas().add(new Factura(productoF3T10, "clientes"));
+		clienteF311ET.getListadoFacturas().add(new Factura(productoF3T11, "clientes"));
+		clienteF312ET.getListadoFacturas().add(new Factura(productoF3T12, "clientes"));
+		clienteF313ET.getListadoFacturas().add(new Factura(productoF3T13, "clientes"));
+		clienteF314ET.getListadoFacturas().add(new Factura(productoF3T14, "clientes"));
+		clienteF315ET.getListadoFacturas().add(new Factura(productoF3T15, "clientes"));
+		clienteF316ET.getListadoFacturas().add(new Factura(productoF3T16, "clientes"));
+		clienteF317ET.getListadoFacturas().add(new Factura(productoF3T17, "clientes"));
+		clienteF318ET.getListadoFacturas().add(new Factura(productoF3T18, "clientes"));
+	    
+		//Facturas pagadas funerarias 
+		
+		//facturas Vehiculos funeraria3
+		Vehiculo ve100F1= new Vehiculo(TipoVehiculo.BERLINA,funeraria1,"azul", "2345",70000,3);
+		Vehiculo ve100F2= new Vehiculo(TipoVehiculo.BUS,funeraria2,"rojo", "3444",50000,3);
+		Vehiculo ve100F3= new Vehiculo(TipoVehiculo.CARROZA,funeraria3,"amarillo", "2566",150000,4);
+		
+		Producto producto100F1 =  new Producto(ve100F1, local1);
+		Producto producto100F2 =  new Producto(ve100F2, local2);
+		Producto producto100F3 =  new Producto(ve100F3, local3);
+		
+		ArrayList<Producto> vehiculos100F1 = new ArrayList<Producto>();
+		ArrayList<Producto> vehiculos100F2 = new ArrayList<Producto>();
+		ArrayList<Producto> vehiculos100F3 = new ArrayList<Producto>();
+		
+		vehiculos100F1.add(producto100F1);
+		vehiculos100F2.add(producto100F2);
+		vehiculos100F3.add(producto100F3);
+		
+		funeraria1.getListadoFacturas().add(new Factura(vehiculos100F1, "vehiculo"));
+		funeraria2.getListadoFacturas().add(new Factura(vehiculos100F2, "vehiculo"));
+		funeraria3.getListadoFacturas().add(new Factura(vehiculos100F3, "vehiculo"));
+		
+		funeraria1.getListadoFacturas().add(new Factura(urnas1F1, "inventario"));
+		funeraria2.getListadoFacturas().add(new Factura(tumbas2F2, "inventario"));
+		funeraria3.getListadoFacturas().add(new Factura(servicios1F3, "establecimiento"));
+		
+		
+		
 		Funeraria[] funerarias = new Funeraria[]{funeraria1, funeraria2, funeraria1};
 		
 		boolean validacion=true;
