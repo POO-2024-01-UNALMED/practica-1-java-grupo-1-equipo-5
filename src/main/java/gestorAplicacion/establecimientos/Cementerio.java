@@ -170,6 +170,7 @@ public class Cementerio extends Establecimiento {
 			cliente.getInventario().getInventarioFlores().remove(flor);
 			
 			sillas-=1;
+			contador+=1;
 			
 		}
 		

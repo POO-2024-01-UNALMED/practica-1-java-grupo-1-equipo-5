@@ -355,6 +355,19 @@ public class FuncionalidadExhumacion {
 			}
 		}
 		
+		System.out.println();
+		
+		
+		if(cementerios.size()==0) {
+			System.out.println("No se encontró inventario disponible");
+			System.out.println("Se deberá añadir inventario tipo default");
+			for(Establecimiento auxCementerio:cementeriosPorTipo) {
+				new Urna("default",(Cementerio)auxCementerio,pesoEstatura,edad,"fija");
+				cementerios.add(auxCementerio);
+			}
+			
+		}
+		
 		indice=1;
 		for(Establecimiento auxCementerio: cementerios) {
 			Cementerio auxCementerio2 = (Cementerio) auxCementerio;
@@ -463,7 +476,7 @@ public class FuncionalidadExhumacion {
 		//Seleccionar sepulturero
 		
 		System.out.println();
-		System.out.println("Se inciiará con el proceso de selección de empleados");
+		System.out.println("Se inciará con el proceso de selección de empleados");
 			
 		System.out.println();
 		System.out.println("Seleccione el empleado sepulturero disponible");
@@ -471,6 +484,7 @@ public class FuncionalidadExhumacion {
 		indice=1;
 		for(Empleado auxEmpleado:empleados) {
 			System.out.println("["+indice+"] "+auxEmpleado);
+			indice+=1;
 		}
 		System.out.print("Ingrese el índice para escoger el empleado: ");
 		indice=scanner.nextInt();
@@ -487,9 +501,10 @@ public class FuncionalidadExhumacion {
 		//Seleccionar Forense
 		
 		empleados=cementerio.getFuneraria().buscarEmpleados(cementerio.getHoraEvento(), "forense");
-		
+		indice=1;
 		for(Empleado auxEmpleado:empleados) {
 			System.out.println("["+indice+"] "+auxEmpleado);
+			indice+=1;
 		}
 		System.out.print("Ingrese el índice para escoger el empleado forense: ");
 		indice=scanner.nextInt();
@@ -513,11 +528,14 @@ public class FuncionalidadExhumacion {
 		
 		empleados = cementerio.getFuneraria().buscarEmpleados(cementerio.getHoraEvento().plusHours(3), empleado);
 		
+		indice=1;
 		for(Empleado auxEmpleado:empleados) {
 			if(categoria==0) {
 				System.out.println(cementerio.getIglesia().getReligiosoAltoRango()+" "+auxEmpleado);
+				indice+=1;
 			}else {
 				System.out.println(cementerio.getIglesia().getReligioso()+" "+auxEmpleado);
+				indice+=1;
 			}
 		}
 		
