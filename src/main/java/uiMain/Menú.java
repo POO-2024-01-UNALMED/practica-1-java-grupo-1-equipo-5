@@ -1495,6 +1495,79 @@ public class Menú {
 	    CuentaBancaria cuenta17FA = new CuentaBancaria(545396, "Catalina", 3478455, "BANCO_OCCIDENTE");
 	    CuentaBancaria cuenta18FA = new CuentaBancaria(223949, "Sebastian", 374375, "BANCO_BOGOTA");
 	    CuentaBancaria cuenta19FA = new CuentaBancaria(104940, "Alba", 172121, "DAVIVIENDA");
+	    CuentaBancaria cuenta20FA = new CuentaBancaria(456456, "Libia", 172121, "DAVIVIENDA");              
+  	    CuentaBancaria cuenta21FA = new CuentaBancaria(878977, "Armando", 3478411, "BANCO_OCCIDENTE");     
+  	    CuentaBancaria cuenta22FA = new CuentaBancaria(890890, "Andres", 374371, "BANCO_BOGOTA");       
+  	    CuentaBancaria cuenta23FA = new CuentaBancaria(100001, "Catalina", 2834811, "BBVA");             
+  	    CuentaBancaria cuenta24FA = new CuentaBancaria(100003, "Alma", 23484, "BANCOLOMBIA");        
+  	    CuentaBancaria cuenta25FA = new CuentaBancaria(100004, "Mar", 2382811, "DAVIVIENDA");         
+  	    CuentaBancaria cuenta26FA = new CuentaBancaria(322222, "Eduardo", 482381, "BANCO_OCCIDENTE");      
+  	    CuentaBancaria cuenta27FA = new CuentaBancaria(100043, "Carmen", 4273411, "BANCO_BOGOTA");       
+  	    CuentaBancaria cuenta28FA = new CuentaBancaria(123131, "Catalina", 23424, "BBVA");                 
+  	    CuentaBancaria cuenta29FA = new CuentaBancaria(111192, "Carlos", 3456411, "BANCOLOMBIA");     
+  	    CuentaBancaria cuenta30FA = new CuentaBancaria(333322, "Pablo", 3646411, "DAVIVIENDA");       
+  	    CuentaBancaria cuenta31FA = new CuentaBancaria(234444, "Sol", 5756711, "BANCO_OCCIDENTE");
+  	    CuentaBancaria cuenta32FA = new CuentaBancaria(123122, "Andres", 86786, "BANCO_BOGOTA");       
+  	    CuentaBancaria cuenta33FA = new CuentaBancaria(534444, "Vanessa", 57567, "BBVA");                 
+  	    CuentaBancaria cuenta34FA = new CuentaBancaria(232322, "Carlos", 86786, "BANCOLOMBIA");       
+  	    CuentaBancaria cuenta35FA = new CuentaBancaria(332423, "Carla", 172127, "DAVIVIENDA");       
+  	    CuentaBancaria cuenta36FA = new CuentaBancaria(345344, "Catalina", 3478455, "BANCO_OCCIDENTE");
+  	    CuentaBancaria cuenta37FA = new CuentaBancaria(266667, "David", 374375, "BANCO_BOGOTA");   
+  	    CuentaBancaria cuenta38FA = new CuentaBancaria(107888, "Esteban", 172121, "DAVIVIENDA");          
+  	    CuentaBancaria cuenta39FA = new CuentaBancaria(122223, "Luisa", 172121, "DAVIVIENDA");              
+	    CuentaBancaria cuenta40FA = new CuentaBancaria(102102, "Maria", 3478411, "BANCO_OCCIDENTE");     
+	    CuentaBancaria cuenta41FA = new CuentaBancaria(234211, "Eduardo", 374371, "BANCO_BOGOTA");       
+	    CuentaBancaria cuenta42FA = new CuentaBancaria(100441, "Mario", 2834811, "BBVA");             
+	    CuentaBancaria cuenta43FA = new CuentaBancaria(102342, "Catalina", 23484, "BANCOLOMBIA");        
+	    CuentaBancaria cuenta44FA = new CuentaBancaria(100454, "Hugo", 2382811, "DAVIVIENDA");         
+	    CuentaBancaria cuenta45FA = new CuentaBancaria(322456, "Hugo", 482381, "BANCO_OCCIDENTE");      
+	    CuentaBancaria cuenta46FA = new CuentaBancaria(100566, "Sol", 4273411, "BANCO_BOGOTA");       
+	    CuentaBancaria cuenta47FA = new CuentaBancaria(345345, "Daniel", 23424, "BBVA"); 
+	    CuentaBancaria cuenta48FA = new CuentaBancaria(455585, "Carla", 3456411, "BANCOLOMBIA");     
+        CuentaBancaria cuenta49FA = new CuentaBancaria(100012, "Armando", 3646411, "DAVIVIENDA");       
+        CuentaBancaria cuenta50FA = new CuentaBancaria(123131, "Vanesa", 5756711, "BANCO_OCCIDENTE");
+        CuentaBancaria cuenta51FA = new CuentaBancaria(223423, "Alicia", 86786, "BANCO_BOGOTA");       
+        CuentaBancaria cuenta52FA = new CuentaBancaria(556756, "Anastasio", 57567, "BBVA");                 
+        CuentaBancaria cuenta53FA = new CuentaBancaria(678644, "Miranda", 86786, "BANCOLOMBIA");                   
+        CuentaBancaria cuenta54FA = new CuentaBancaria(234235, "Samuel", 172127, "DAVIVIENDA");       
+        CuentaBancaria cuenta55FA = new CuentaBancaria(245645, "Carla", 3478455, "BANCO_OCCIDENTE");
+        CuentaBancaria cuenta56FA = new CuentaBancaria(656766, "Eduardo", 374375, "BANCO_BOGOTA");   
+        CuentaBancaria cuenta57FA = new CuentaBancaria(245245, "Eduardo", 172121, "DAVIVIENDA");
+        CuentaBancaria cuenta58FA = new CuentaBancaria(467867, "Alma", 172121, "DAVIVIENDA");              
+  	    CuentaBancaria cuenta59FA = new CuentaBancaria(789789, "Eduardo", 3478411, "BANCO_OCCIDENTE");           	    
+  	    CuentaBancaria cuenta60FA = new CuentaBancaria(455564, "Camila", 374371, "BANCO_BOGOTA");       
+  	    CuentaBancaria cuenta61FA = new CuentaBancaria(100456, "Luis", 2834811, "BBVA");             
+  	    CuentaBancaria cuenta62FA = new CuentaBancaria(145645, "Tomas", 23484, "BANCOLOMBIA");        
+  	    CuentaBancaria cuenta63FA = new CuentaBancaria(105675, "Andres", 2382811, "DAVIVIENDA");               	    
+  	    CuentaBancaria cuenta64FA = new CuentaBancaria(455645, "Vanesa", 482381, "BANCO_OCCIDENTE");      
+  	    CuentaBancaria cuenta65FA = new CuentaBancaria(123423, "Carlos", 4273411, "BANCO_BOGOTA");       
+  	    CuentaBancaria cuenta66FA = new CuentaBancaria(145655, "Juan Jose", 23424, "BBVA");                 
+  	    CuentaBancaria cuenta67FA = new CuentaBancaria(654444, "Nicolas", 3456411, "BANCOLOMBIA");      	    
+  	    CuentaBancaria cuenta68FA = new CuentaBancaria(344553, "Mateo", 3646411, "DAVIVIENDA");       
+  	    CuentaBancaria cuenta69FA = new CuentaBancaria(456566, "Mariana", 5756711, "BANCO_OCCIDENTE");
+  	    CuentaBancaria cuenta70FA = new CuentaBancaria(777566, "Esteban", 86786, "BANCO_BOGOTA");       
+  	    CuentaBancaria cuenta71FA = new CuentaBancaria(545555, "David", 57567, "BBVA");                       	    
+  	    CuentaBancaria cuenta72FA = new CuentaBancaria(567777, "Jireh", 86786, "BANCOLOMBIA");       
+  	    CuentaBancaria cuenta73FA = new CuentaBancaria(456444, "Carlos", 172127, "DAVIVIENDA");       
+  	    CuentaBancaria cuenta74FA = new CuentaBancaria(678677, "Carla", 3478455, "BANCO_OCCIDENTE");
+  	    CuentaBancaria cuenta75FA = new CuentaBancaria(767888, "Carolina", 374375, "BANCO_BOGOTA");   
+  	    CuentaBancaria cuenta76FA = new CuentaBancaria(887665, "Carla", 172121, "DAVIVIENDA");          
+  	    CuentaBancaria cuenta77FA = new CuentaBancaria(345550, "Luis", 172121, "DAVIVIENDA");              
+	    CuentaBancaria cuenta78FA = new CuentaBancaria(123423, "Tomas", 3478411, "BANCO_OCCIDENTE");     
+	    CuentaBancaria cuenta79FA = new CuentaBancaria(456455, "Andres", 374371, "BANCO_BOGOTA");       
+	    CuentaBancaria cuenta80FA = new CuentaBancaria(565777, "Rodrigo", 2834811, "BBVA");             
+	    CuentaBancaria cuenta81FA = new CuentaBancaria(123233, "Carlos", 23484, "BANCOLOMBIA");  
+	    CuentaBancaria cuenta82FA = new CuentaBancaria(145677, "Juan Jose", 2382811, "DAVIVIENDA");         
+	    CuentaBancaria cuenta83FA = new CuentaBancaria(567576, "Nicolas", 482381, "BANCO_OCCIDENTE");      
+	    CuentaBancaria cuenta84FA = new CuentaBancaria(177765, "Jimena", 4273411, "BANCO_BOGOTA");       
+	    CuentaBancaria cuenta85FA = new CuentaBancaria(334555, "Maria Jose", 23424, "BBVA");                 
+	    CuentaBancaria cuenta86FA = new CuentaBancaria(342333, "Esteban", 3456411, "BANCOLOMBIA");     
+        CuentaBancaria cuenta87FA = new CuentaBancaria(222220, "David", 3646411, "DAVIVIENDA");       
+        CuentaBancaria cuenta88FA = new CuentaBancaria(200002, "David", 5756711, "BANCO_OCCIDENTE");
+        CuentaBancaria cuenta89FA = new CuentaBancaria(300004, "Carlos", 86786, "BANCO_BOGOTA");       
+        CuentaBancaria cuenta90FA = new CuentaBancaria(400004, "Armando", 57567, "BBVA");                 
+        CuentaBancaria cuenta91FA = new CuentaBancaria(500004, "Carolina", 86786, "BANCOLOMBIA");  
+	    
 	    
 	    //Cuenta clientes
 	    CuentaBancaria cuenta1CL = new CuentaBancaria(373273, "Alejandro Rodríguez", 374371, "BANCO_BOGOTA");
@@ -1774,61 +1847,61 @@ public class Menú {
 		Familiar F23 = new Familiar("Lyriel",12,"hijo",F21);
 		Familiar F24 = new Familiar("Caspian",7,"hermano",F22);
 		
-		Familiar F25 = new Familiar("Libia",12345,18,cuenta4FA,"conyugue",17);
-		Familiar F26 = new Familiar("Armando",12375,70,cuenta5FA,"padre",17);
+		Familiar F25 = new Familiar("Libia",12345,18,cuenta20FA,"conyugue",17);
+		Familiar F26 = new Familiar("Armando",12375,70,cuenta21FA,"padre",17);
 		Familiar F27 = new Familiar("Geronimo",12,"hijo",F26);
 		Familiar F28 = new Familiar("Alicia",7,"hermano",F25);
 		
-		Familiar F29 = new Familiar("Andres",12345,18,cuenta4FA,"conyugue",17);
-		Familiar F210 = new Familiar("Catalina",12375,70,cuenta5FA,"padre",17);
+		Familiar F29 = new Familiar("Andres",12345,18,cuenta22FA,"conyugue",17);
+		Familiar F210 = new Familiar("Catalina",12375,70,cuenta23FA,"padre",17);
 		Familiar F211 = new Familiar("Lucas",12,"hijo",F29);
 		Familiar F212 = new Familiar("Caspian",7,"hermano",F210);
 		
-		Familiar F213= new Familiar("Alma",715,60,cuenta13FA,"padre",17);
-		Familiar F214= new Familiar("Mar",716,60,cuenta14FA,"padre",13);
-		Familiar F215= new Familiar("Eduardo",717,37,cuenta15FA,"hermano",17);
+		Familiar F213= new Familiar("Alma",715,60,cuenta24FA,"padre",17);
+		Familiar F214= new Familiar("Mar",716,60,cuenta25FA,"padre",13);
+		Familiar F215= new Familiar("Eduardo",717,37,cuenta26FA,"hermano",17);
 		Familiar F216= new Familiar("Andres",5, "hermano",F214);
 		
-		Familiar F217= new Familiar("Carmen",715,60,cuenta13FA,"padre",17);
-		Familiar F218= new Familiar("Catalina",716,60,cuenta14FA,"padre",13);
-		Familiar F219= new Familiar("Carlos",717,37,cuenta15FA,"hermano",17);
+		Familiar F217= new Familiar("Carmen",715,60,cuenta27FA,"padre",17);
+		Familiar F218= new Familiar("Catalina",716,60,cuenta28FA,"padre",13);
+		Familiar F219= new Familiar("Carlos",717,37,cuenta29FA,"hermano",17);
 		Familiar F220= new Familiar("Azul",5, "hermano",F217);
 		
-		Familiar F221= new Familiar("Pablo",715,60,cuenta13FA,"padre",17);
-		Familiar F222= new Familiar("Sol",716,60,cuenta14FA,"padre",13);
-		Familiar F223= new Familiar("Andres",717,37,cuenta15FA,"hermano",17);
+		Familiar F221= new Familiar("Pablo",715,60,cuenta30FA,"padre",17);
+		Familiar F222= new Familiar("Sol",716,60,cuenta31FA,"padre",13);
+		Familiar F223= new Familiar("Andres",717,37,cuenta32FA,"hermano",17);
 		Familiar F224= new Familiar("Carlos",5, "hermano",F221);
 		
 		//Funeraria 3
 		
-		Familiar F31 = new Familiar("Vanessa",12345,18,cuenta4FA,"conyugue",17);
-		Familiar F32 = new Familiar("Carlos",12375,70,cuenta5FA,"padre",17);
+		Familiar F31 = new Familiar("Vanessa",12345,18,cuenta33FA,"conyugue",17);
+		Familiar F32 = new Familiar("Carlos",12375,70,cuenta34FA,"padre",17);
 		Familiar F33 = new Familiar("Camila",12,"hijo",F21);
 		Familiar F34 = new Familiar("Cuasquer",7,"hermano",F32);
 		
-		Familiar F35 = new Familiar("Carla",12345,18,cuenta4FA,"conyugue",17);
-		Familiar F36 = new Familiar("Catalina",12375,70,cuenta5FA,"padre",17);
+		Familiar F35 = new Familiar("Carla",12345,18,cuenta35FA,"conyugue",17);
+		Familiar F36 = new Familiar("Catalina",12375,70,cuenta36FA,"padre",17);
 		Familiar F37 = new Familiar("Manuel",12,"hijo",F36);
 		Familiar F38 = new Familiar("Jose",7,"hermano",F35);
 		
-		Familiar F39 = new Familiar("David",12345,18,cuenta4FA,"conyugue",17);
-		Familiar F310 = new Familiar("Esteban",12375,70,cuenta5FA,"padre",17);
+		Familiar F39 = new Familiar("David",12345,18,cuenta37FA,"conyugue",17);
+		Familiar F310 = new Familiar("Esteban",12375,70,cuenta38FA,"padre",17);
 		Familiar F311 = new Familiar("Lucas",12,"hijo",F39);
 		Familiar F312 = new Familiar("Carlos",7,"hermano",F310);
 		
-		Familiar F313= new Familiar("Luisa",715,60,cuenta13FA,"padre",17);
-		Familiar F314= new Familiar("Maria",716,60,cuenta14FA,"padre",13);
-		Familiar F315= new Familiar("Eduardo",717,37,cuenta15FA,"hermano",17);
+		Familiar F313= new Familiar("Luisa",715,60,cuenta39FA,"padre",17);
+		Familiar F314= new Familiar("Maria",716,60,cuenta40FA,"padre",13);
+		Familiar F315= new Familiar("Eduardo",717,37,cuenta41FA,"hermano",17);
 		Familiar F316= new Familiar("Andres",5, "hermano",F314);
 		
-		Familiar F317= new Familiar("Mario",715,60,cuenta13FA,"padre",17);
-		Familiar F318= new Familiar("Catalina",716,60,cuenta14FA,"padre",13);
-		Familiar F319= new Familiar("Hugo",717,37,cuenta15FA,"hermano",17);
+		Familiar F317= new Familiar("Mario",715,60,cuenta42FA,"padre",17);
+		Familiar F318= new Familiar("Catalina",716,60,cuenta43FA,"padre",13);
+		Familiar F319= new Familiar("Hugo",717,37,cuenta44FA,"hermano",17);
 		Familiar F320= new Familiar("Azul",5, "hermano",F317);
 		
-		Familiar F321= new Familiar("Hugo",715,60,cuenta13FA,"padre",17);
-		Familiar F322= new Familiar("Sol",716,60,cuenta14FA,"padre",13);
-		Familiar F323= new Familiar("Daniel",717,37,cuenta15FA,"hermano",17);
+		Familiar F321= new Familiar("Hugo",715,60,cuenta45FA,"padre",17);
+		Familiar F322= new Familiar("Sol",716,60,cuenta46FA,"padre",13);
+		Familiar F323= new Familiar("Daniel",717,37,cuenta47FA,"hermano",17);
 		Familiar F324= new Familiar("Carlos",5, "hermano",F321);
 		
 		
@@ -1968,69 +2041,69 @@ public class Menú {
 		
 		//Funeraria 1
 		
-		Familiar F11M= new Familiar("Carla",715,60,cuenta13FA,"padre",17);
-		Familiar F12M= new Familiar("Armando",716,60,cuenta14FA,"padre",13);
-		Familiar F13M= new Familiar("Vanesa",717,37,cuenta15FA,"hermano",17);
+		Familiar F11M= new Familiar("Carla",715,60,cuenta48FA,"padre",17);
+		Familiar F12M= new Familiar("Armando",716,60,cuenta49FA,"padre",13);
+		Familiar F13M= new Familiar("Vanesa",717,37,cuenta50FA,"hermano",17);
 		Familiar F14M= new Familiar("Maria",5, "hermano",F13M);
 		
-		Familiar F15M= new Familiar("Alicia",715,60,cuenta13FA,"padre",17);
-		Familiar F16M= new Familiar("Anastasio",716,60,cuenta14FA,"padre",13);
-		Familiar F17M= new Familiar("Miranda",717,37,cuenta15FA,"hermano",17);
+		Familiar F15M= new Familiar("Alicia",715,60,cuenta51FA,"padre",17);
+		Familiar F16M= new Familiar("Anastasio",716,60,cuenta52FA,"padre",13);
+		Familiar F17M= new Familiar("Miranda",717,37,cuenta53FA,"hermano",17);
 		Familiar F18M= new Familiar("Maria",5, "hermano",F17M);
 		
-		Familiar F19M= new Familiar("Samuel",715,60,cuenta13FA,"padre",17);
-		Familiar F110M= new Familiar("Carla",716,60,cuenta14FA,"padre",13);
-		Familiar F111M= new Familiar("Eduardo",717,37,cuenta15FA,"hermano",17);
+		Familiar F19M= new Familiar("Samuel",715,60,cuenta54FA,"padre",17);
+		Familiar F110M= new Familiar("Carla",716,60,cuenta55FA,"padre",13);
+		Familiar F111M= new Familiar("Eduardo",717,37,cuenta56FA,"hermano",17);
 		Familiar F112M= new Familiar("Maria",5, "hermano",F111M);
 		
-		Familiar F113M= new Familiar("Eduardo",715,60,cuenta13FA,"padre",17);
-		Familiar F114M= new Familiar("Alma",716,60,cuenta14FA,"padre",13);
-		Familiar F115M= new Familiar("Eduardo",717,37,cuenta15FA,"hermano",17);
+		Familiar F113M= new Familiar("Eduardo",715,60,cuenta57FA,"padre",17);
+		Familiar F114M= new Familiar("Alma",716,60,cuenta58FA,"padre",13);
+		Familiar F115M= new Familiar("Eduardo",717,37,cuenta59FA,"hermano",17);
 		Familiar F116M= new Familiar("Maria",5, "hermano",F115M);
 		
 		//Funeraria 2
 		
-		Familiar F21M= new Familiar("Camila",715,60,cuenta13FA,"padre",17);
-		Familiar F22M= new Familiar("Luis",716,60,cuenta14FA,"padre",13);
-		Familiar F23M= new Familiar("Tomas",717,37,cuenta15FA,"hermano",17);
-		Familiar F24M= new Familiar("Andres",717,37,cuenta15FA,"hermano",17);
+		Familiar F21M= new Familiar("Camila",715,60,cuenta60FA,"padre",17);
+		Familiar F22M= new Familiar("Luis",716,60,cuenta61FA,"padre",13);
+		Familiar F23M= new Familiar("Tomas",717,37,cuenta62FA,"hermano",17);
+		Familiar F24M= new Familiar("Andres",717,37,cuenta63FA,"hermano",17);
 		
-		Familiar F25M= new Familiar("Vanesa",715,60,cuenta13FA,"padre",17);
-		Familiar F26M= new Familiar("Carlos",716,60,cuenta14FA,"padre",13);
-		Familiar F27M= new Familiar("Juan Jose",717,37,cuenta15FA,"hermano",17);
-		Familiar F28M= new Familiar("Nicolas",717,37,cuenta15FA,"hermano",17);
+		Familiar F25M= new Familiar("Vanesa",715,60,cuenta64FA,"padre",17);
+		Familiar F26M= new Familiar("Carlos",716,60,cuenta65FA,"padre",13);
+		Familiar F27M= new Familiar("Juan Jose",717,37,cuenta66FA,"hermano",17);
+		Familiar F28M= new Familiar("Nicolas",717,37,cuenta67FA,"hermano",17);
 		
-		Familiar F29M= new Familiar("Mateo",715,60,cuenta13FA,"padre",17);
-		Familiar F210M= new Familiar("Mariana",716,60,cuenta14FA,"padre",13);
-		Familiar F211M= new Familiar("Esteban",717,37,cuenta15FA,"hermano",17);
-		Familiar F212M= new Familiar("David",717,37,cuenta15FA,"hermano",17);
+		Familiar F29M= new Familiar("Mateo",715,60,cuenta68FA,"padre",17);
+		Familiar F210M= new Familiar("Mariana",716,60,cuenta69FA,"padre",13);
+		Familiar F211M= new Familiar("Esteban",717,37,cuenta70FA,"hermano",17);
+		Familiar F212M= new Familiar("David",717,37,cuenta71FA,"hermano",17);
 		
-		Familiar F213M= new Familiar("Jireh",715,60,cuenta13FA,"padre",17);
-		Familiar F214M= new Familiar("Carlos",716,60,cuenta14FA,"padre",13);
-		Familiar F215M= new Familiar("Carla",717,37,cuenta15FA,"hermano",17);
-		Familiar F216M= new Familiar("Carolina",717,37,cuenta15FA,"hermano",17);
+		Familiar F213M= new Familiar("Jireh",715,60,cuenta72FA,"padre",17);
+		Familiar F214M= new Familiar("Carlos",716,60,cuenta73FA,"padre",13);
+		Familiar F215M= new Familiar("Carla",717,37,cuenta74FA,"hermano",17);
+		Familiar F216M= new Familiar("Carolina",717,37,cuenta75FA,"hermano",17);
 		
 		//Funeraria 3
 		
-		Familiar F31M= new Familiar("Carla",715,60,cuenta13FA,"padre",17);
-		Familiar F32M= new Familiar("Luis",716,60,cuenta14FA,"padre",13);
-		Familiar F33M= new Familiar("Tomas",717,37,cuenta15FA,"hermano",17);
-		Familiar F34M= new Familiar("Andres",717,37,cuenta15FA,"hermano",17);
+		Familiar F31M= new Familiar("Carla",715,60,cuenta76FA,"padre",17);
+		Familiar F32M= new Familiar("Luis",716,60,cuenta77FA,"padre",13);
+		Familiar F33M= new Familiar("Tomas",717,37,cuenta78FA,"hermano",17);
+		Familiar F34M= new Familiar("Andres",717,37,cuenta79FA,"hermano",17);
 		
-		Familiar F35M= new Familiar("Rodrigo",715,60,cuenta13FA,"padre",17);
-		Familiar F36M= new Familiar("Carlos",716,60,cuenta14FA,"padre",13);
-		Familiar F37M= new Familiar("Juan Jose",717,37,cuenta15FA,"hermano",17);
-		Familiar F38M= new Familiar("Nicolas",717,37,cuenta15FA,"hermano",17);
+		Familiar F35M= new Familiar("Rodrigo",715,60,cuenta80FA,"padre",17);
+		Familiar F36M= new Familiar("Carlos",716,60,cuenta81FA,"padre",13);
+		Familiar F37M= new Familiar("Juan Jose",717,37,cuenta82FA,"hermano",17);
+		Familiar F38M= new Familiar("Nicolas",717,37,cuenta83FA,"hermano",17);
 		
-		Familiar F39M= new Familiar("Jimena",715,60,cuenta13FA,"padre",17);
-		Familiar F310M= new Familiar("Maria Jose",716,60,cuenta14FA,"padre",13);
-		Familiar F311M= new Familiar("Esteban",717,37,cuenta15FA,"hermano",17);
-		Familiar F312M= new Familiar("David",717,37,cuenta15FA,"hermano",17);
+		Familiar F39M= new Familiar("Jimena",715,60,cuenta84FA,"padre",17);
+		Familiar F310M= new Familiar("Maria Jose",716,60,cuenta85FA,"padre",13);
+		Familiar F311M= new Familiar("Esteban",717,37,cuenta86FA,"hermano",17);
+		Familiar F312M= new Familiar("David",717,37,cuenta87FA,"hermano",17);
 		
-		Familiar F313M= new Familiar("David",715,60,cuenta13FA,"padre",17);
-		Familiar F314M= new Familiar("Carlos",716,60,cuenta14FA,"padre",13);
-		Familiar F315M= new Familiar("Armando",717,37,cuenta15FA,"hermano",17);
-		Familiar F316M= new Familiar("Carolina",717,37,cuenta15FA,"hermano",17);
+		Familiar F313M= new Familiar("David",715,60,cuenta88FA,"padre",17);
+		Familiar F314M= new Familiar("Carlos",716,60,cuenta89FA,"padre",13);
+		Familiar F315M= new Familiar("Armando",717,37,cuenta90FA,"hermano",17);
+		Familiar F316M= new Familiar("Carolina",717,37,cuenta91FA,"hermano",17);
 		
 		//Listas de familiares para menores de edad con el indicativo M
 		
