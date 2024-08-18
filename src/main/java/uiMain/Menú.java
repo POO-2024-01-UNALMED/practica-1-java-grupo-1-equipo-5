@@ -1482,6 +1482,86 @@ public class Menú {
 	    CuentaBancaria cuenta18FA = new CuentaBancaria(223949, "Sebastian", 374375, "BANCO_BOGOTA");
 	    CuentaBancaria cuenta19FA = new CuentaBancaria(104940, "Alba", 172121, "DAVIVIENDA");
 	    
+	    //Cuenta clientes
+	    CuentaBancaria cuenta1CL = new CuentaBancaria(373273, "Alejandro Rodríguez", 374371, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta2CL = new CuentaBancaria(543674, "Diego Martínez", 2834811, "BBVA");
+	    CuentaBancaria cuenta3CL = new CuentaBancaria(454577, "Carlos Fernández", 23484, "BANCOLOMBIA");
+	    CuentaBancaria cuenta4CL = new CuentaBancaria(267586, "María González", 2382811, "DAVIVIENDA");
+	    CuentaBancaria cuenta5CL = new CuentaBancaria(368786, "Laura Fernández", 482381, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta6CL = new CuentaBancaria(278908, "Isabel Rodríguez", 4273411, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta7CL = new CuentaBancaria(334506, "Valeria Sánchez", 23424, "BBVA");
+	    CuentaBancaria cuenta8CL = new CuentaBancaria(234949, "Patricia Morales", 3456411, "BANCOLOMBIA");
+	    CuentaBancaria cuenta9CL = new CuentaBancaria(234949, "Gabriela García", 3646411, "DAVIVIENDA");
+	    CuentaBancaria cuenta10CL = new CuentaBancaria(245747, "Andrés Vargas", 5756711, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta11CL = new CuentaBancaria(632355, "Sergio Pérez", 86786, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta12CL = new CuentaBancaria(539494, "Luis García", 57567, "BBVA");
+	    CuentaBancaria cuenta13CL = new CuentaBancaria(234959, "Ana Torres", 86786, "BANCOLOMBIA");
+	    CuentaBancaria cuenta14CL= new CuentaBancaria(399595, "Beatriz Sánchez", 172127, "DAVIVIENDA");
+	    CuentaBancaria cuenta15CL = new CuentaBancaria(645069, "Alex Cruz", 3478455, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta16CL = new CuentaBancaria(456969, "Dani Morales", 374375, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta17CL = new CuentaBancaria(448494, "Lucía González", 172121, "DAVIVIENDA");
+	    CuentaBancaria cuenta18CL = new CuentaBancaria(345959, "Jordan Silva", 3478411, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta19CL = new CuentaBancaria(234243, "Juan Pérez", 374371, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta20CL = new CuentaBancaria(456457, "Carlos Fernández", 2834811, "BBVA");
+	    CuentaBancaria cuenta21CL = new CuentaBancaria(340448, "Miguel Rodríguez", 23484, "BANCOLOMBIA");
+	    CuentaBancaria cuenta22CL = new CuentaBancaria(345959, "Dani Morales", 2382811, "DAVIVIENDA");
+	    CuentaBancaria cuenta23CL = new CuentaBancaria(234949, "Pedro González", 482381, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta24CL = new CuentaBancaria(345950, "José Martínez", 4273411, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta25CL = new CuentaBancaria(359505, "Laura Morales", 23424, "BBVA");
+	    CuentaBancaria cuenta26CL = new CuentaBancaria(234902, "Robert Jones", 3456411, "BANCOLOMBIA");
+	    CuentaBancaria cuenta27CL = new CuentaBancaria(128318, "Olivia Miller", 3646411, "DAVIVIENDA");
+	    CuentaBancaria cuenta28CL = new CuentaBancaria(221291, "Sophia Moore", 5756711, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta29CL = new CuentaBancaria(610124, "Ezequiel Andrade", 86786, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta30CL = new CuentaBancaria(139219, "Damián Vargas", 57567, "BBVA");
+	    CuentaBancaria cuenta31CL = new CuentaBancaria(212499, "Octavio Salazar", 86786, "BANCOLOMBIA");
+	    CuentaBancaria cuenta32CL= new CuentaBancaria(124494, "Leonardo Paredes", 172127, "DAVIVIENDA");
+	    CuentaBancaria cuenta33CL = new CuentaBancaria(614922, "Ulises Ortega", 3478455, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta34CL = new CuentaBancaria(231212, "Valeria Castro", 374375, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta35CL = new CuentaBancaria(434142, "Leo Cruz", 172121, "DAVIVIENDA");
+	    CuentaBancaria cuenta36CL = new CuentaBancaria(335255, "Luna Martínez", 3478411, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta37CL = new CuentaBancaria(234090, "Lucas Moreno", 374371, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta38CL = new CuentaBancaria(232342, "Sofía Rodríguez", 2834811, "BBVA");
+	    CuentaBancaria cuenta39CL = new CuentaBancaria(334554, "Juan Pérez", 374371, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta40CL = new CuentaBancaria(456969, "Carlos Fernández", 2834811, "BBVA");
+	    CuentaBancaria cuenta41CL = new CuentaBancaria(404040, "Miguel Rodríguez", 23484, "BANCOLOMBIA");
+	    CuentaBancaria cuenta42CL = new CuentaBancaria(265466, "Dani Morales", 2382811, "DAVIVIENDA");
+	    CuentaBancaria cuenta43CL = new CuentaBancaria(358596, "Pedro González", 482381, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta44CL = new CuentaBancaria(250950, "José Martínez", 4273411, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta45CL = new CuentaBancaria(349494, "Laura Morales", 23424, "BBVA");
+	    CuentaBancaria cuenta46CL = new CuentaBancaria(358585, "Robert Jones", 3456411, "BANCOLOMBIA");
+	    CuentaBancaria cuenta47CL = new CuentaBancaria(345355, "Olivia Miller", 3646411, "DAVIVIENDA");
+	    CuentaBancaria cuenta48CL = new CuentaBancaria(234535, "Sophia Moore", 5756711, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta49CL = new CuentaBancaria(345533, "Ezequiel Andrade", 86786, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta50CL = new CuentaBancaria(345353, "Damián Vargas", 57567, "BBVA");
+	    CuentaBancaria cuenta51CL = new CuentaBancaria(456564, "Octavio Salazar", 86786, "BANCOLOMBIA");
+	    CuentaBancaria cuenta52CL= new CuentaBancaria(320293, "Leonardo Paredes", 172127, "DAVIVIENDA");
+	    CuentaBancaria cuenta53CL = new CuentaBancaria(243040, "Ulises Ortega", 3478455, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta54CL = new CuentaBancaria(424304, "Valeria Castro", 374375, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta55CL = new CuentaBancaria(238494, "Leo Cruz", 172121, "DAVIVIENDA");
+	    CuentaBancaria cuenta56CL = new CuentaBancaria(354953, "Luna Martínez", 3478411, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta57CL = new CuentaBancaria(349494, "Lucas Moreno", 374371, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta58CL = new CuentaBancaria(595055, "Sofía Rodríguez", 2834811, "BBVA");
+	    CuentaBancaria cuenta59CL = new CuentaBancaria(204204, "Juan Pérez", 374371, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta60CL = new CuentaBancaria(405050, "Carlos Fernández", 2834811, "BBVA");
+	    CuentaBancaria cuenta61CL = new CuentaBancaria(494945, "Miguel Rodríguez", 23484, "BANCOLOMBIA");
+	    CuentaBancaria cuenta62CL = new CuentaBancaria(585858, "Dani Morales", 2382811, "DAVIVIENDA");
+	    CuentaBancaria cuenta63CL = new CuentaBancaria(234020, "Pedro González", 482381, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta64CL = new CuentaBancaria(240400, "José Martínez", 4273411, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta65CL = new CuentaBancaria(324323, "Laura Morales", 23424, "BBVA");
+	    CuentaBancaria cuenta66CL = new CuentaBancaria(249595, "Robert Jones", 3456411, "BANCOLOMBIA");
+	    CuentaBancaria cuenta67CL = new CuentaBancaria(495959, "Olivia Miller", 3646411, "DAVIVIENDA");
+	    CuentaBancaria cuenta68CL = new CuentaBancaria(239404, "Sophia Moore", 5756711, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta69CL = new CuentaBancaria(494944, "Ezequiel Andrade", 86786, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta70CL = new CuentaBancaria(404404, "Damián Vargas", 57567, "BBVA");
+	    CuentaBancaria cuenta71CL = new CuentaBancaria(494599, "Octavio Salazar", 86786, "BANCOLOMBIA");
+	    CuentaBancaria cuenta72CL= new CuentaBancaria(355050, "Leonardo Paredes", 172127, "DAVIVIENDA");
+	    CuentaBancaria cuenta73CL = new CuentaBancaria(243949, "Ulises Ortega", 3478455, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta74CL = new CuentaBancaria(404043, "Valeria Castro", 374375, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta75CL = new CuentaBancaria(244994, "Leo Cruz", 172121, "DAVIVIENDA");
+	    CuentaBancaria cuenta76CL = new CuentaBancaria(249494, "Luna Martínez", 3478411, "BANCO_OCCIDENTE");
+	    CuentaBancaria cuenta77CL = new CuentaBancaria(334222, "Lucas Moreno", 374371, "BANCO_BOGOTA");
+	    CuentaBancaria cuenta78CL = new CuentaBancaria(524949, "Sofía Rodríguez", 2834811, "BBVA");
+	    
 	    //Objetos Funeraria
 		
 		Funeraria funeraria1 = new Funeraria("Eterna Paz", cuenta1F,cuenta4F);
@@ -1870,14 +1950,14 @@ public class Menú {
 		
 		//Clientes F1 - Mayores de edad
 		
-		Cliente clienteF11 = new Cliente("Alejandro Rodríguez",123,30,null,"oro",familiarC);
-		Cliente clienteF12 = new Cliente("Diego Martínez",1234,25,null,"oro",familiarC);
+		Cliente clienteF11 = new Cliente("Alejandro Rodríguez",123,30,cuenta1CL,"oro",familiarC);
+		Cliente clienteF12 = new Cliente("Diego Martínez",1234,25,cuenta2CL,"oro",familiarC);
 		
-		Cliente clienteF13 = new Cliente("Carlos Fernández",1235,90,null,"plata",familiarB);
-		Cliente clienteF14 = new Cliente("María González",1236,57,null,"plata",familiarB);
+		Cliente clienteF13 = new Cliente("Carlos Fernández",1235,90,cuenta3CL,"plata",familiarB);
+		Cliente clienteF14 = new Cliente("María González",1236,57,cuenta4CL,"plata",familiarB);
 		
-		Cliente clienteF15 = new Cliente("Laura Fernández",1237,21,null,"bronce",familiarC);
-		Cliente clienteF16 = new Cliente("Isabel Rodríguez",1238,50,null,"bronce",familiarC);
+		Cliente clienteF15 = new Cliente("Laura Fernández",1237,21,cuenta5CL,"bronce",familiarC);
+		Cliente clienteF16 = new Cliente("Isabel Rodríguez",1238,50,cuenta6CL,"bronce",familiarC);
 	
 		
 		//Clientes F1 - Menores de edad
@@ -2040,14 +2120,14 @@ public class Menú {
 	
 		//Clientes F2 - Mayores de edad
 		
-		Cliente clienteF21 = new Cliente("Valeria Sánchez",231,30,null,"oro",familiarA);
-		Cliente clienteF22 = new Cliente("Patricia Morales",232,25,null,"oro",familiarA);
+		Cliente clienteF21 = new Cliente("Valeria Sánchez",231,30,cuenta7CL,"oro",familiarA);
+		Cliente clienteF22 = new Cliente("Patricia Morales",232,25,cuenta8CL,"oro",familiarA);
 								
-		Cliente clienteF23 = new Cliente("Gabriela García",233,90,null,"plata",familiarA);
-		Cliente clienteF24 = new Cliente("Andrés Vargas",234,57,null,"plata",familiarC);
+		Cliente clienteF23 = new Cliente("Gabriela García",233,90,cuenta9CL,"plata",familiarA);
+		Cliente clienteF24 = new Cliente("Andrés Vargas",234,57,cuenta10CL,"plata",familiarC);
 								
-		Cliente clienteF25 = new Cliente("Sergio Pérez",235,35,null, "bronce",familiarC);
-		Cliente clienteF26 = new Cliente("Luis García",236,50,null, "bronce",familiarC);
+		Cliente clienteF25 = new Cliente("Sergio Pérez",235,35,cuenta11CL, "bronce",familiarC);
+		Cliente clienteF26 = new Cliente("Luis García",236,50,cuenta12CL, "bronce",familiarC);
 						
 						
 		//Clientes F2 - Menores de edad
@@ -2210,14 +2290,14 @@ public class Menú {
 		
 		//Clientes F3 - Mayores de edad
 		
-		Cliente clienteF31 = new Cliente("Ana Torres",3111,30,null,"oro",familiarA);
-		Cliente clienteF32 = new Cliente("Beatriz Sánchez",3112,25,null,"oro",familiarA);
+		Cliente clienteF31 = new Cliente("Ana Torres",3111,30,cuenta13CL,"oro",familiarA);
+		Cliente clienteF32 = new Cliente("Beatriz Sánchez",3112,25,cuenta14CL,"oro",familiarA);
 										
-		Cliente clienteF33 = new Cliente("Alex Cruz",3113,90,null,"plata",familiarC);
-		Cliente clienteF34 = new Cliente("Dani Morales",3114,57,null,"plata",familiarC);
+		Cliente clienteF33 = new Cliente("Alex Cruz",3113,90,cuenta15CL,"plata",familiarC);
+		Cliente clienteF34 = new Cliente("Dani Morales",3114,57,cuenta16CL,"plata",familiarC);
 										
-		Cliente clienteF35 = new Cliente("Lucía González",3115,50,null, "bronce",familiarB);
-		Cliente clienteF36 = new Cliente("Jordan Silva",3115,30,null, "bronce",familiarA);
+		Cliente clienteF35 = new Cliente("Lucía González",3115,50,cuenta17CL, "bronce",familiarB);
+		Cliente clienteF36 = new Cliente("Jordan Silva",3115,30,cuenta18CL, "bronce",familiarA);
 								
 								
 		//Clientes F3 - Menores de edad
@@ -2277,14 +2357,14 @@ public class Menú {
 		
 		//Funeraria 1
 		
-		Cliente clienteF11E = new Cliente("Juan Pérez",3212,30,null,"oro",familiarA);
-		Cliente clienteF12E = new Cliente("Carlos Fernández",3213,25,null,"oro",familiarA);
+		Cliente clienteF11E = new Cliente("Juan Pérez",3212,30,cuenta19CL,"oro",familiarA);
+		Cliente clienteF12E = new Cliente("Carlos Fernández",3213,25,cuenta20CL,"oro",familiarA);
 										
-		Cliente clienteF13E = new Cliente("Miguel Rodríguez",3213,90,null,"plata",familiarC);
-		Cliente clienteF14E = new Cliente("Dani Morales",3214,57,null,"plata",familiarC);
+		Cliente clienteF13E = new Cliente("Miguel Rodríguez",3213,90,cuenta21CL,"plata",familiarC);
+		Cliente clienteF14E = new Cliente("Dani Morales",3214,57,cuenta22CL,"plata",familiarC);
 										
-		Cliente clienteF15E = new Cliente("Pedro González",3215,50,null, "bronce",familiarB);
-		Cliente clienteF16E = new Cliente("José Martínez",3215,30,null, "bronce",familiarA);
+		Cliente clienteF15E = new Cliente("Pedro González",3215,50,cuenta23CL, "bronce",familiarB);
+		Cliente clienteF16E = new Cliente("José Martínez",3215,30,cuenta24CL, "bronce",familiarA);
 		
 
 		Cliente clienteF17E = new Cliente("María López",5,"oro",familiarB);
@@ -2294,11 +2374,11 @@ public class Menú {
 		Cliente clienteF110E = new Cliente("Isabel Ramírez",13,"bronce",familiarB);
 		
 
-		Cliente clienteF111E = new Cliente("Laura Morales",233,90,null,"plata",familiarA);
-		Cliente clienteF112E = new Cliente("Robert Jones",234,57,null,"plata",familiarC);
+		Cliente clienteF111E = new Cliente("Laura Morales",233,90,cuenta25CL,"plata",familiarA);
+		Cliente clienteF112E = new Cliente("Robert Jones",234,57,cuenta26CL,"plata",familiarC);
 								
-		Cliente clienteF113E = new Cliente("Olivia Miller",235,35,null, "bronce",familiarC);
-		Cliente clienteF114E = new Cliente("Sophia Moore",236,50,null, "bronce",familiarC);
+		Cliente clienteF113E = new Cliente("Olivia Miller",235,35,cuenta27CL, "bronce",familiarC);
+		Cliente clienteF114E = new Cliente("Sophia Moore",236,50,cuenta28CL, "bronce",familiarC);
 		
 
 		Cliente clienteF115E = new Cliente("James Smith",5,"oro",familiarB);
@@ -2377,14 +2457,14 @@ public class Menú {
 		
 		
 		
-		Cliente clienteF11ET = new Cliente("Ezequiel Andrade",123,30,null,"oro",familiarC);
-		Cliente clienteF12ET = new Cliente("Damián Vargas",1234,25,null,"oro",familiarC);
+		Cliente clienteF11ET = new Cliente("Ezequiel Andrade",123,30,cuenta29CL,"oro",familiarC);
+		Cliente clienteF12ET = new Cliente("Damián Vargas",1234,25,cuenta30CL,"oro",familiarC);
 		
-		Cliente clienteF13ET = new Cliente("Octavio Salazar",1235,90,null,"plata",familiarB);
-		Cliente clienteF14ET = new Cliente("Leonardo Paredes",1236,57,null,"plata",familiarB);
+		Cliente clienteF13ET = new Cliente("Octavio Salazar",1235,90,cuenta31CL,"plata",familiarB);
+		Cliente clienteF14ET = new Cliente("Leonardo Paredes",1236,57,cuenta32CL,"plata",familiarB);
 		
-		Cliente clienteF15ET = new Cliente("Ulises Ortega",1237,21,null,"bronce",familiarC);
-		Cliente clienteF16ET = new Cliente("Valeria Castro",1238,50,null,"bronce",familiarC);
+		Cliente clienteF15ET = new Cliente("Ulises Ortega",1237,21,cuenta33CL,"bronce",familiarC);
+		Cliente clienteF16ET = new Cliente("Valeria Castro",1238,50,cuenta34CL,"bronce",familiarC);
 	
 		
 		Cliente clienteF17ET = new Cliente("Delfina Méndez",5,"oro",familiarB);
@@ -2393,11 +2473,11 @@ public class Menú {
 		Cliente clienteF19ET = new Cliente("Renata Aguirre",15,"plata",familiarB);
 		Cliente clienteF110ET = new Cliente("Alma Guzmán",13,"plata",familiarB);
 		
-		Cliente clienteF111ET = new Cliente("Leo Cruz",1235,90,null,"plata",familiarB);
-		Cliente clienteF112ET = new Cliente("Luna Martínez",1236,57,null,"plata",familiarB);
+		Cliente clienteF111ET = new Cliente("Leo Cruz",1235,90,cuenta35CL,"plata",familiarB);
+		Cliente clienteF112ET = new Cliente("Luna Martínez",1236,57,cuenta36CL,"plata",familiarB);
 		
-		Cliente clienteF113ET = new Cliente("Lucas Moreno",1237,21,null,"bronce",familiarC);
-		Cliente clienteF114ET = new Cliente("Sofía Rodríguez",1238,50,null,"bronce",familiarC);
+		Cliente clienteF113ET = new Cliente("Lucas Moreno",1237,21,cuenta37CL,"bronce",familiarC);
+		Cliente clienteF114ET = new Cliente("Sofía Rodríguez",1238,50,cuenta38CL,"bronce",familiarC);
 	
 		
 		//Clientes F1 - Menores de edad
@@ -2472,14 +2552,14 @@ public class Menú {
 		
 		//Funeraria 2
 		
-		Cliente clienteF21E = new Cliente("Juan Pérez",3212,30,null,"oro",familiarA);
-		Cliente clienteF22E = new Cliente("Carlos Fernández",3213,25,null,"oro",familiarA);
+		Cliente clienteF21E = new Cliente("Juan Pérez",3212,30,cuenta39CL,"oro",familiarA);
+		Cliente clienteF22E = new Cliente("Carlos Fernández",3213,25,cuenta40CL,"oro",familiarA);
 										
-		Cliente clienteF23E = new Cliente("Miguel Rodríguez",3213,90,null,"plata",familiarC);
-		Cliente clienteF24E = new Cliente("Dani Morales",3214,57,null,"plata",familiarC);
+		Cliente clienteF23E = new Cliente("Miguel Rodríguez",3213,90,cuenta41CL,"plata",familiarC);
+		Cliente clienteF24E = new Cliente("Dani Morales",3214,57,cuenta42CL,"plata",familiarC);
 										
-		Cliente clienteF25E = new Cliente("Pedro González",3215,50,null, "bronce",familiarB);
-		Cliente clienteF26E = new Cliente("José Martínez",3215,30,null, "bronce",familiarA);
+		Cliente clienteF25E = new Cliente("Pedro González",3215,50,cuenta43CL, "bronce",familiarB);
+		Cliente clienteF26E = new Cliente("José Martínez",3215,30,cuenta44CL, "bronce",familiarA);
 		
 
 		Cliente clienteF27E = new Cliente("María López",5,"oro",familiarB);
@@ -2489,11 +2569,11 @@ public class Menú {
 		Cliente clienteF210E = new Cliente("Isabel Ramírez",13,"bronce",familiarB);
 		
 
-		Cliente clienteF211E = new Cliente("Laura Morales",233,90,null,"plata",familiarA);
-		Cliente clienteF212E = new Cliente("Robert Jones",234,57,null,"plata",familiarC);
+		Cliente clienteF211E = new Cliente("Laura Morales",233,90,cuenta45CL,"plata",familiarA);
+		Cliente clienteF212E = new Cliente("Robert Jones",234,57,cuenta46CL,"plata",familiarC);
 								
-		Cliente clienteF213E = new Cliente("Olivia Miller",235,35,null, "bronce",familiarC);
-		Cliente clienteF214E = new Cliente("Sophia Moore",236,50,null, "bronce",familiarC);
+		Cliente clienteF213E = new Cliente("Olivia Miller",235,35,cuenta47CL, "bronce",familiarC);
+		Cliente clienteF214E = new Cliente("Sophia Moore",236,50,cuenta48CL, "bronce",familiarC);
 		
 
 		Cliente clienteF215E = new Cliente("James Smith",5,"oro",familiarB);
@@ -2572,14 +2652,14 @@ public class Menú {
 		
 		
 		
-		Cliente clienteF21ET = new Cliente("Ezequiel Andrade",123,30,null,"oro",familiarC);
-		Cliente clienteF22ET = new Cliente("Damián Vargas",1234,25,null,"oro",familiarC);
+		Cliente clienteF21ET = new Cliente("Ezequiel Andrade",123,30,cuenta49CL,"oro",familiarC);
+		Cliente clienteF22ET = new Cliente("Damián Vargas",1234,25,cuenta50CL,"oro",familiarC);
 		
-		Cliente clienteF23ET = new Cliente("Octavio Salazar",1235,90,null,"plata",familiarB);
-		Cliente clienteF24ET = new Cliente("Leonardo Paredes",1236,57,null,"plata",familiarB);
+		Cliente clienteF23ET = new Cliente("Octavio Salazar",1235,90,cuenta51CL,"plata",familiarB);
+		Cliente clienteF24ET = new Cliente("Leonardo Paredes",1236,57,cuenta52CL,"plata",familiarB);
 		
-		Cliente clienteF25ET = new Cliente("Ulises Ortega",1237,21,null,"bronce",familiarC);
-		Cliente clienteF26ET = new Cliente("Valeria Castro",1238,50,null,"bronce",familiarC);
+		Cliente clienteF25ET = new Cliente("Ulises Ortega",1237,21,cuenta53CL,"bronce",familiarC);
+		Cliente clienteF26ET = new Cliente("Valeria Castro",1238,50,cuenta54CL,"bronce",familiarC);
 	
 		
 		Cliente clienteF27ET = new Cliente("Delfina Méndez",5,"oro",familiarB);
@@ -2588,11 +2668,11 @@ public class Menú {
 		Cliente clienteF29ET = new Cliente("Renata Aguirre",15,"plata",familiarB);
 		Cliente clienteF210ET = new Cliente("Alma Guzmán",13,"plata",familiarB);
 		
-		Cliente clienteF211ET = new Cliente("Leo Cruz",1235,90,null,"plata",familiarB);
-		Cliente clienteF212ET = new Cliente("Luna Martínez",1236,57,null,"plata",familiarB);
+		Cliente clienteF211ET = new Cliente("Leo Cruz",1235,90,cuenta55CL,"plata",familiarB);
+		Cliente clienteF212ET = new Cliente("Luna Martínez",1236,57,cuenta56CL,"plata",familiarB);
 		
-		Cliente clienteF213ET = new Cliente("Lucas Moreno",1237,21,null,"bronce",familiarC);
-		Cliente clienteF214ET = new Cliente("Sofía Rodríguez",1238,50,null,"bronce",familiarC);
+		Cliente clienteF213ET = new Cliente("Lucas Moreno",1237,21,cuenta57CL,"bronce",familiarC);
+		Cliente clienteF214ET = new Cliente("Sofía Rodríguez",1238,50,cuenta58CL,"bronce",familiarC);
 	
 		
 		//Clientes F1 - Menores de edad
@@ -2666,14 +2746,14 @@ public class Menú {
 		
 		//Funeraria 3
 		
-		Cliente clienteF31E = new Cliente("Juan Pérez",3212,30,null,"oro",familiarA);
-		Cliente clienteF32E = new Cliente("Carlos Fernández",3213,25,null,"oro",familiarA);
+		Cliente clienteF31E = new Cliente("Juan Pérez",3212,30,cuenta59CL,"oro",familiarA);
+		Cliente clienteF32E = new Cliente("Carlos Fernández",3213,25,cuenta60CL,"oro",familiarA);
 										
-		Cliente clienteF33E = new Cliente("Miguel Rodríguez",3213,90,null,"plata",familiarC);
-		Cliente clienteF34E = new Cliente("Dani Morales",3214,57,null,"plata",familiarC);
+		Cliente clienteF33E = new Cliente("Miguel Rodríguez",3213,90,cuenta61CL,"plata",familiarC);
+		Cliente clienteF34E = new Cliente("Dani Morales",3214,57,cuenta62CL,"plata",familiarC);
 										
-		Cliente clienteF35E = new Cliente("Pedro González",3215,50,null, "bronce",familiarB);
-		Cliente clienteF36E = new Cliente("José Martínez",3215,30,null, "bronce",familiarA);
+		Cliente clienteF35E = new Cliente("Pedro González",3215,50,cuenta63CL, "bronce",familiarB);
+		Cliente clienteF36E = new Cliente("José Martínez",3215,30,cuenta64CL, "bronce",familiarA);
 		
 
 		Cliente clienteF37E = new Cliente("María López",5,"oro",familiarB);
@@ -2683,11 +2763,11 @@ public class Menú {
 		Cliente clienteF310E = new Cliente("Isabel Ramírez",13,"bronce",familiarB);
 		
 
-		Cliente clienteF311E = new Cliente("Laura Morales",233,90,null,"plata",familiarA);
-		Cliente clienteF312E = new Cliente("Robert Jones",234,57,null,"plata",familiarC);
+		Cliente clienteF311E = new Cliente("Laura Morales",233,90,cuenta65CL,"plata",familiarA);
+		Cliente clienteF312E = new Cliente("Robert Jones",234,57,cuenta66CL,"plata",familiarC);
 								
-		Cliente clienteF313E = new Cliente("Olivia Miller",235,35,null, "bronce",familiarC);
-		Cliente clienteF314E = new Cliente("Sophia Moore",236,50,null, "bronce",familiarC);
+		Cliente clienteF313E = new Cliente("Olivia Miller",235,35,cuenta67CL, "bronce",familiarC);
+		Cliente clienteF314E = new Cliente("Sophia Moore",236,50,cuenta68CL, "bronce",familiarC);
 		
 
 		Cliente clienteF315E = new Cliente("James Smith",5,"oro",familiarB);
@@ -2766,14 +2846,14 @@ public class Menú {
 		
 		
 		
-		Cliente clienteF31ET = new Cliente("Ezequiel Andrade",123,30,null,"oro",familiarC);
-		Cliente clienteF32ET = new Cliente("Damián Vargas",1234,25,null,"oro",familiarC);
+		Cliente clienteF31ET = new Cliente("Ezequiel Andrade",123,30,cuenta69CL,"oro",familiarC);
+		Cliente clienteF32ET = new Cliente("Damián Vargas",1234,25,cuenta70CL,"oro",familiarC);
 		
-		Cliente clienteF33ET = new Cliente("Octavio Salazar",1235,90,null,"plata",familiarB);
-		Cliente clienteF34ET = new Cliente("Leonardo Paredes",1236,57,null,"plata",familiarB);
+		Cliente clienteF33ET = new Cliente("Octavio Salazar",1235,90,cuenta71CL,"plata",familiarB);
+		Cliente clienteF34ET = new Cliente("Leonardo Paredes",1236,57,cuenta72CL,"plata",familiarB);
 		
-		Cliente clienteF35ET = new Cliente("Ulises Ortega",1237,21,null,"bronce",familiarC);
-		Cliente clienteF36ET = new Cliente("Valeria Castro",1238,50,null,"bronce",familiarC);
+		Cliente clienteF35ET = new Cliente("Ulises Ortega",1237,21,cuenta73CL,"bronce",familiarC);
+		Cliente clienteF36ET = new Cliente("Valeria Castro",1238,50,cuenta74CL,"bronce",familiarC);
 	
 		
 		Cliente clienteF37ET = new Cliente("Delfina Méndez",5,"oro",familiarB);
@@ -2782,11 +2862,11 @@ public class Menú {
 		Cliente clienteF39ET = new Cliente("Renata Aguirre",15,"plata",familiarB);
 		Cliente clienteF310ET = new Cliente("Alma Guzmán",13,"plata",familiarB);
 		
-		Cliente clienteF311ET = new Cliente("Leo Cruz",1235,90,null,"plata",familiarB);
-		Cliente clienteF312ET = new Cliente("Luna Martínez",1236,57,null,"plata",familiarB);
+		Cliente clienteF311ET = new Cliente("Leo Cruz",1235,90,cuenta75CL,"plata",familiarB);
+		Cliente clienteF312ET = new Cliente("Luna Martínez",1236,57,cuenta76CL,"plata",familiarB);
 		
-		Cliente clienteF313ET = new Cliente("Lucas Moreno",1237,21,null,"bronce",familiarC);
-		Cliente clienteF314ET = new Cliente("Sofía Rodríguez",1238,50,null,"bronce",familiarC);
+		Cliente clienteF313ET = new Cliente("Lucas Moreno",1237,21,cuenta77CL,"bronce",familiarC);
+		Cliente clienteF314ET = new Cliente("Sofía Rodríguez",1238,50,cuenta78CL,"bronce",familiarC);
 	
 		
 		//Clientes F1 - Menores de edad

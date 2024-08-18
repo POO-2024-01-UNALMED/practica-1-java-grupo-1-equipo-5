@@ -547,27 +547,38 @@ public static void main(String[] args) {
 }
 
 
-CuentaBancaria cuenta25CE = new CuentaBancaria(234243, "Jardín de los Ángeles", 17212, "DAVIVIENDA");
-CuentaBancaria cuenta26CE = new CuentaBancaria(545667, "Campo de la Tranquilidad", 34784, "BANCO_OCCIDENTE");
-CuentaBancaria cuenta27CE = new CuentaBancaria(667878, "Oasis de Paz", 37437, "BANCO_BOGOTA");
-CuentaBancaria cuenta28CE = new CuentaBancaria(707070, "Colinas del Recuerdo", 28348, "BBVA");
-CuentaBancaria cuenta29CE = new CuentaBancaria(124124, "Rincón del Silencio", 23484, "BANCOLOMBIA");
-CuentaBancaria cuenta30CE = new CuentaBancaria(546065, "Eterna Armonía", 23828, "DAVIVIENDA");
-CuentaBancaria cuenta31CE = new CuentaBancaria(634666, "Bosque de los Sueños", 48238, "BANCO_OCCIDENTE");
-CuentaBancaria cuenta32CE = new CuentaBancaria(284658, "Pradera del Descanso", 42734, "BANCO_BOGOTA");
-CuentaBancaria cuenta33CE = new CuentaBancaria(284654, "Refugio de la Memoria", 23424, "BBVA");
-CuentaBancaria cuenta34CE = new CuentaBancaria(474742, "Sendero de la Memoria", 34564, "BANCOLOMBIA");
-CuentaBancaria cuenta35CE = new CuentaBancaria(324727, "Valle del Reposo", 36464, "DAVIVIENDA");
-CuentaBancaria cuenta36CE = new CuentaBancaria(237474, "Jardines del Refugio", 57567, "BANCO_OCCIDENTE");
-CuentaBancaria cuenta10CE = new CuentaBancaria(656456, "Cementerio del Refugi", 86786, "BANCO_BOGOTA");
-CuentaBancaria cuenta11CE = new CuentaBancaria(567567, "Paz y Esperanza", 57567, "BBVA");
-CuentaBancaria cuenta12CE = new CuentaBancaria(349599, "Sendero de la Tranquilidad", 86786, "BANCOLOMBIA");
 
-//
+CuentaBancaria cuenta19CL = new CuentaBancaria(234243, "Juan Pérez", 374371, "BANCO_BOGOTA");
+CuentaBancaria cuenta20CL = new CuentaBancaria(456457, "Carlos Fernández", 2834811, "BBVA");
+CuentaBancaria cuenta21CL = new CuentaBancaria(340448, "Miguel Rodríguez", 23484, "BANCOLOMBIA");
+CuentaBancaria cuenta22CL = new CuentaBancaria(345959, "Dani Morales", 2382811, "DAVIVIENDA");
+CuentaBancaria cuenta23CL = new CuentaBancaria(234949, "Pedro González", 482381, "BANCO_OCCIDENTE");
+CuentaBancaria cuenta24CL = new CuentaBancaria(345950, "José Martínez", 4273411, "BANCO_BOGOTA");
+CuentaBancaria cuenta25CL = new CuentaBancaria(359505, "Laura Morales", 23424, "BBVA");
+CuentaBancaria cuenta26CL = new CuentaBancaria(234902, "Robert Jones", 3456411, "BANCOLOMBIA");
+CuentaBancaria cuenta27CL = new CuentaBancaria(128318, "Olivia Miller", 3646411, "DAVIVIENDA");
+CuentaBancaria cuenta28CL = new CuentaBancaria(221291, "Sophia Moore", 5756711, "BANCO_OCCIDENTE");
+CuentaBancaria cuenta29CL = new CuentaBancaria(610124, "Ezequiel Andrade", 86786, "BANCO_BOGOTA");
+CuentaBancaria cuenta30CL = new CuentaBancaria(139219, "Damián Vargas", 57567, "BBVA");
+CuentaBancaria cuenta31CL = new CuentaBancaria(212499, "Octavio Salazar", 86786, "BANCOLOMBIA");
+CuentaBancaria cuenta32CL= new CuentaBancaria(124494, "Leonardo Paredes", 172127, "DAVIVIENDA");
+CuentaBancaria cuenta33CL = new CuentaBancaria(614922, "Ulises Ortega", 3478455, "BANCO_OCCIDENTE");
+CuentaBancaria cuenta34CL = new CuentaBancaria(231212, "Valeria Castro", 374375, "BANCO_BOGOTA");
+CuentaBancaria cuenta35CL = new CuentaBancaria(434142, "Leo Cruz", 172121, "DAVIVIENDA");
+CuentaBancaria cuenta36CL = new CuentaBancaria(335255, "Luna Martínez", 3478411, "BANCO_OCCIDENTE");
+CuentaBancaria cuenta37CL = new CuentaBancaria(234090, "Lucas Moreno", 374371, "BANCO_BOGOTA");
+CuentaBancaria cuenta38CL = new CuentaBancaria(232342, "Sofía Rodríguez", 2834811, "BBVA");
+CuentaBancaria cuenta39CL = new CuentaBancaria(334554, "Juan Pérez", 374371, "BANCO_BOGOTA");
+CuentaBancaria cuenta40CL = new CuentaBancaria(456969, "Carlos Fernández", 2834811, "BBVA");
 
-//
+
+//d
 
 
-CuentaBancaria cuenta25CE = new CuentaBancaria(423342, "Crematorio Serenidad Eterna", 17212, "DAVIVIENDA");
-CuentaBancaria cuenta26CE = new CuentaBancaria(345345, "Llama de la Eternidada", 34784, "BANCO_OCCIDENTE");
-CuentaBancaria cuenta27CE = new CuentaBancaria(454564, "Refugio del Alba", 37437, "BANCO_BOGOTA");
+								
+
+
+
+
+
+						
