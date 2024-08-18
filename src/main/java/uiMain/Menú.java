@@ -525,369 +525,560 @@ public class Menú {
 	//______________________________________________________________________________________________________________________________________
 	// funcion gestion inventario
 	
-	public static void FuncionalidadGestionInventario(Funeraria[] fun){
-		// Inicializa las funerarias y otros datos necesarios aquí
-        Funeraria[] funerarias = fun;
-        Scanner scanner = new Scanner(System.in);
+		public static void FuncionalidadGestionInventario(Funeraria[] fun){
+	        Funeraria[] funerarias = fun;
+	        Scanner scanner = new Scanner(System.in);
 
-        // Paso 1: Seleccionar y mostrar información de la funeraria
-        Funeraria funerariaSeleccionada = seleccionarFuneraria(funerarias, scanner);
-        imprimirInformacion(funerariaSeleccionada);
+	        // Paso 1: Seleccionar y mostrar información de la funeraria
+	        Funeraria funerariaSeleccionada = seleccionarFuneraria(funerarias, scanner);
+	        imprimirInformacion(funerariaSeleccionada);
 
-        // Paso 2: Realizar intercambio entre funerarias si es posible
-        if (analizarIntercambios(funerarias, funerariaSeleccionada, scanner)) {
-            // Si el intercambio es posible, procede con la asignación de recursos
-            asignarRecursos(funerariaSeleccionada, scanner);
-        }
+	        // Paso 2: Realizar intercambio entre funerarias si es posible
+	        if (analizarIntercambios(funerarias, funerariaSeleccionada, scanner)) {
+	            // Si el intercambio es posible, procede con la asignación de recursos
+	            asignarRecursos(funerariaSeleccionada, scanner);
+	        }
 
-        // Paso 3: Comprar productos faltantes o contratar empleados
-        realizarCompras(funerariaSeleccionada, scanner);
+	        // Paso 3: Comprar productos faltantes o contratar empleados
+	        realizarCompras(funerariaSeleccionada, scanner);
 
-        // Paso 4: Realizar encuesta sobre el desempeño de empleados y establecimientos
-        realizarEncuesta(funerariaSeleccionada, scanner);
+	        // Paso 4: Realizar encuesta 
+	        realizarEncuesta(funerariaSeleccionada, scanner);
 
-        System.out.println("Proceso completado.");
-	}
-	
-	
-	private static Funeraria seleccionarFuneraria(Funeraria[] funerarias, Scanner scanner) {
-        while (true) {
-            System.out.println("Seleccione una funeraria:");
-            for (int i = 0; i < funerarias.length; i++) {
-                System.out.println((i + 1) + ". " + funerarias[i].getNombre());
-                System.out.println("   ____");
-                System.out.println("  /    \\");
-                System.out.println(" /______\\");
-                System.out.println(" |      |  " + funerarias[i].getNombre());
-                System.out.println(" |______|");
-                System.out.println();
-            }
-            System.out.println((funerarias.length + 1) + ". Cancelar");
+	        System.out.println("Proceso completado.");
+		}
+		
+		
+		private static Funeraria seleccionarFuneraria(Funeraria[] funerarias, Scanner scanner) {
+	        while (true) {
+	            System.out.println("Seleccione una funeraria:");
+	            for (int i = 0; i < funerarias.length; i++) {
+	                System.out.println((i + 1) + ". " + funerarias[i].getNombre());
+	                System.out.println("   ____");
+	                System.out.println("  /    \\");
+	                System.out.println(" /______\\");
+	                System.out.println(" |      |  " + funerarias[i].getNombre());
+	                System.out.println(" |______|");
+	                System.out.println();
+	            }
+	            System.out.println((funerarias.length + 1) + ". Cancelar");
 
-            int seleccion = scanner.nextInt() - 1;
-            if (seleccion >= 0 && seleccion < funerarias.length) {
-                return funerarias[seleccion];
-            } else if (seleccion == funerarias.length) {
-                System.out.println("Proceso cancelado.");
-                System.exit(0);
-            } else {
-                System.out.println("Selección inválida. Intente de nuevo.");
-            }
-        }
-    }
+	            int seleccion = scanner.nextInt() - 1;
+	            if (seleccion >= 0 && seleccion < funerarias.length) {
+	                return funerarias[seleccion];
+	            } else if (seleccion == funerarias.length) {
+	                System.out.println("Proceso cancelado.");
+	                System.exit(0);
+	            } else {
+	                System.out.println("Selección inválida. Intente de nuevo.");
+	            }
+	        }
+	    }
 
-    public static void imprimirInformacion(Funeraria funeraria) {
-        System.out.println("Nombre: " + funeraria.getNombre());
-        System.out.println("Calificación: " + funeraria.getCalificacion());
-        System.out.println("Cantidad de empleados: " + funeraria.getEmpleados().size());
+		private static void imprimirInformacion(Funeraria funeraria) {
+		    System.out.println("Nombre: " + funeraria.getNombre());
+		    System.out.println("Calificación: " + funeraria.getCalificacion());
+		    System.out.println("Cantidad de empleados: " + funeraria.getEmpleados().size());
 
-        Producto[] productosVendidos = Funeraria.calcularProductosVendidos(funeraria);
+		    Producto[] productosVendidos = Funeraria.calcularProductosVendidos(funeraria);
 
-        System.out.println("Productos más vendidos:");
-        for (Producto producto : productosVendidos) {
-            System.out.println("- " + producto.getNombre() + ": " + producto.getCantidadVendida());
-            System.out.println("- " + producto.getNombre() + ": " + producto.getCantidadVendida());
-            System.out.println("    ____");
-            System.out.println("   |    |");
-            System.out.println("   | " + producto.getNombre().charAt(0) + "  | " + producto.getCantidadVendida());
-            System.out.println("   |____|");
-            System.out.println();
-        }
+		    System.out.println("Productos más vendidos:");
+		    Producto masVendido = null;
+		    int maxVendidas = 0;
+		    for (Producto producto : productosVendidos) {
+		        System.out.println("- " + producto.getNombre() + ": " + producto.getCantidadVendida() + " vendidas, " );
+		        if (producto.getCantidadVendida() > maxVendidas) {
+		            masVendido = producto;
+		            maxVendidas = producto.getCantidadVendida();
+		        }
+		    }
+		    if (masVendido != null) {
+		        System.out.println("El producto más vendido es " + masVendido.getNombre() + " con " + masVendido.getCantidadVendida() + " unidades vendidas.");
+		    }
 
-        System.out.println("------------------------");
-    }
+		    System.out.println("------------------------");
+		}
 
-    private static boolean analizarIntercambios(Funeraria[] funerarias, Funeraria seleccionada, Scanner scanner) {
-        for (Funeraria otraFuneraria : funerarias) {
-            if (!otraFuneraria.equals(seleccionada)) {
-                Producto[] productosSeleccionada = Funeraria.calcularProductosVendidos(seleccionada);
-                Producto[] productosOtra = Funeraria.calcularProductosVendidos(otraFuneraria);
 
-                for (Producto productoA : productosSeleccionada) {
-                    for (Producto productoB : productosOtra) {
-                        if (!productoA.getNombre().equals(productoB.getNombre()) && productoA.getCantidad() > 10 && productoB.getCantidad() > 10) {
-                            System.out.println("Intercambio posible entre " + seleccionada.getNombre() + " y " + otraFuneraria.getNombre());
-                            System.out.println("- " + seleccionada.getNombre() + " puede intercambiar " + productoA.getNombre() + " con " + otraFuneraria.getNombre());
-                            System.out.println("- " + otraFuneraria.getNombre() + " puede intercambiar " + productoB.getNombre() + " con " + seleccionada.getNombre());
+		private static boolean analizarIntercambios(Funeraria[] funerarias, Funeraria funerariaSeleccionada, Scanner scanner) {
+		    scanner.nextLine(); 
+		    
+		    while (true) { // Bucle para asegurar que el usuario proporcione una respuesta válida
+		        System.out.println("¿Desea realizar un intercambio de productos entre funerarias? (sí/no):");
+		        String respuesta = scanner.nextLine().trim().toLowerCase();
 
-                            System.out.println("¿Desea realizar este intercambio? (S/N)");
-                            String respuesta = scanner.next();
-                            if (respuesta.equalsIgnoreCase("S")) {
-                                realizarIntercambio(seleccionada, otraFuneraria, productoA, productoB, scanner);
-                                return true;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        return false;
-    }
+		        if (respuesta.equals("sí")) {
+		            // Encuentra la funeraria con mayor stock de productos
+		            Funeraria funerariaConMayorStock = null;
+		            Producto productoConMayorStock = null;
+		            
+		            for (Funeraria f : funerarias) {
+		                if (f != funerariaSeleccionada) {
+		                    for (Producto p : f.getProductos()) {
+		                        if (productoConMayorStock == null || p.getCantidad() > productoConMayorStock.getCantidad()) {
+		                            productoConMayorStock = p;
+		                            funerariaConMayorStock = f;
+		                        }
+		                    }
+		                }
+		            }
 
-    private static void realizarIntercambio(Funeraria funA, Funeraria funB, Producto productoA, Producto productoB, Scanner scanner) {
-        // Mostrar empleados disponibles y vehículos
-        System.out.println("Seleccione los empleados para realizar el intercambio:");
-        List<Empleado> empleadosSeleccionados = seleccionarEmpleados(funA, scanner);
+		            if (funerariaConMayorStock != null && productoConMayorStock != null) {
+		                // Intercambia el producto con mayor stock entre las funerarias
+		                Producto productoIntercambiado = productoConMayorStock;
 
-        System.out.println("Seleccione los vehículos para realizar el intercambio:");
-        List<Vehiculo> vehiculosSeleccionados = seleccionarVehiculos(funA, scanner);
+		                funerariaConMayorStock.getProductos().remove(productoIntercambiado);
+		                funerariaSeleccionada.getProductos().add(productoIntercambiado);
 
-        // Mostrar productos y realizar intercambio
-        System.out.println("Seleccione los productos para intercambiar:");
-        int cantidadIntercambio = seleccionarCantidadProducto(productoA, scanner);
-        realizarIntercambioProductos(funA, funB, productoA, productoB, cantidadIntercambio, empleadosSeleccionados, vehiculosSeleccionados);
-    }
+		                System.out.println("Se ha realizado un intercambio:");
+		                System.out.println("Producto intercambiado: " + productoIntercambiado.getNombre());
+		                System.out.println("De la funeraria: " + funerariaConMayorStock.getNombre());
+		                System.out.println("A la funeraria: " + funerariaSeleccionada.getNombre());
 
-    private static List<Empleado> seleccionarEmpleados(Funeraria funeraria, Scanner scanner) {
-        List<Empleado> empleadosSeleccionados = new ArrayList<>();
-        for (Empleado empleado : funeraria.getEmpleados()) {
-            System.out.println(empleado.getNombre() + " (" + empleado.getCargo() + ") - Jornada: " + empleado.getJornada());
-            System.out.println("    O ");
-            System.out.println("   /|\\");
-            System.out.println("   / \\");
-            System.out.println("¿Seleccionar este empleado? (S/N)");
-            String respuesta = scanner.next();
-            if (respuesta.equalsIgnoreCase("S")) {
-                empleadosSeleccionados.add(empleado);
-            }
-        }
-        return empleadosSeleccionados;
-    }
+		                return true; // Intercambio realizado
+		            } else {
+		                System.out.println("No se encontraron productos para intercambiar.");
+		                return false; // No se realizó el intercambio
+		            }
+		        } else if (respuesta.equals("no")) {
+		            System.out.println("No se realizará ningún intercambio.");
+		            return false; 
+		        } else {
+		            System.out.println("Respuesta no válida. Por favor, responda 'sí' o 'no'.");
+		        }
+		    }
+		}
 
-    private static List<Vehiculo> seleccionarVehiculos(Funeraria funeraria, Scanner scanner) {
-        List<Vehiculo> vehiculosSeleccionados = new ArrayList<>();
-        for (Vehiculo vehiculo : funeraria.getVehiculos()) {
-            System.out.println(vehiculo.getTipoVehiculo() + " - Capacidad: " + vehiculo.getCapacidad() + " - Conductor: " + vehiculo.getConductor().getNombre());
-            System.out.println("   ______");
-            System.out.println("  /|_||_\\`.__");
-            System.out.println(" (   _    _ _\\");
-            System.out.println(" =`-(_)--(_)-'");
-            System.out.println("¿Seleccionar este vehículo? (S/N)");
-            String respuesta = scanner.next();
-            if (respuesta.equalsIgnoreCase("S")) {
-                vehiculosSeleccionados.add(vehiculo);
-            }
-        }
-        return vehiculosSeleccionados;
-    }
+		private static void realizarIntercambio(Funeraria funA, Funeraria funB, Producto productoA, Producto productoB, Scanner scanner) {
+		    // Seleccionar empleados
+		    System.out.println("Seleccione hasta dos empleados para realizar el intercambio:");
+		    List<Empleado> empleadosSeleccionados = seleccionarEmpleados(funA, scanner);
 
-    private static int seleccionarCantidadProducto(Producto producto, Scanner scanner) {
-        System.out.println("Ingrese la cantidad de " + producto.getNombre() + " para intercambiar:");
-        return scanner.nextInt();
-    }
+		    // Seleccionar un vehículo
+		    System.out.println("Seleccione un vehículo para realizar el intercambio:");
+		    List<Vehiculo> vehiculosSeleccionados = seleccionarVehiculos(funA, scanner);
 
-    private static void realizarIntercambioProductos(Funeraria funA, Funeraria funB, Producto productoA, Producto productoB, int cantidad, List<Empleado> empleados, List<Vehiculo> vehiculos) {
-        // Lógica para realizar el intercambio, actualizar inventarios, etc.
-        System.out.println("Intercambio realizado exitosamente.");
-    }
+		    // Mostrar productos y realizar intercambio
+		    System.out.println("Seleccione la cantidad de " + productoA.getNombre() + " para intercambiar:");
+		    int cantidadIntercambio = seleccionarCantidadProducto(productoA, scanner);
 
-    private static void realizarCompras(Funeraria funeraria, Scanner scanner) {
-        Producto[] productosFaltantes = Funeraria.identificarProductosFaltantes(funeraria);
-        if (productosFaltantes.length > 0) {
-            System.out.println("Productos con menos de 10 existencias:");
-            for (Producto producto : productosFaltantes) {
-                System.out.println("- " + producto.getNombre() + ": " + producto.getCantidad());
-            }
+		    realizarIntercambioProductos(funA, funB, productoA, productoB, cantidadIntercambio, empleadosSeleccionados, vehiculosSeleccionados);
+		}
 
-            // Comprar productos, contratar empleados, o comprar vehículos
-            System.out.println("Seleccione una opción:");
-            System.out.println("1. Comprar productos");
-            System.out.println("2. Contratar empleados");
-            System.out.println("3. Comprar vehículos");
-            System.out.println("4. Cancelar");
+		private static List<Empleado> seleccionarEmpleados(Funeraria funeraria, Scanner scanner) {
+		    List<Empleado> empleadosSeleccionados = new ArrayList<>();
+		    int maxEmpleados = 1;
+		    
+		    for (Empleado empleado : funeraria.getEmpleados()) {
+		        System.out.println(empleado.getNombre() + " (" + empleado.getCargo() + ") - Jornada: " + empleado.getJornada());
+		        System.out.println("    O ");
+		        System.out.println("   /|\\");
+		        System.out.println("   / \\");
+		        System.out.println("¿Seleccionar este empleado? (S/N)");
+		        
+		        String respuesta = scanner.next();
+		        if (respuesta.equalsIgnoreCase("S")) {
+		            if (empleadosSeleccionados.size() < maxEmpleados) {
+		                empleadosSeleccionados.add(empleado);
+		            } else {
+		                System.out.println("Ya ha seleccionado el máximo de empleados permitidos.");
+		                break;
+		            }
+		        }
+		    }
 
-            int opcion = scanner.nextInt();
-            switch (opcion) {
-                case 1:
-                    comprarProductos(funeraria, productosFaltantes, scanner);
-                    break;
-                case 2:
-                    contratarEmpleados(funeraria, scanner);
-                    break;
-                case 3:
-                    comprarVehiculos(funeraria, scanner);
-                    break;
-                case 4:
-                    System.out.println("Operación cancelada.");
-                    return;
-                default:
-                    System.out.println("Opción inválida.");
-                    realizarCompras(funeraria, scanner);
-            }
-        } else {
-            System.out.println("No hay productos faltantes.");
-        }
-    }
+		    while (empleadosSeleccionados.size() < maxEmpleados) {
+		        System.out.println("Debe seleccionar exactamente " + maxEmpleados + " empleados. Seleccione más empleados:");
+		        for (Empleado empleado : funeraria.getEmpleados()) {
+		            if (!empleadosSeleccionados.contains(empleado)) {
+		                System.out.println(empleado.getNombre() + " (" + empleado.getCargo() + ") - Jornada: " + empleado.getJornada());
+		                System.out.println("    O ");
+		                System.out.println("   /|\\");
+		                System.out.println("   / \\");
+		                System.out.println("¿Seleccionar este empleado? (S/N)");
+		                String respuesta = scanner.next();
+		                if (respuesta.equalsIgnoreCase("S")) {
+		                    empleadosSeleccionados.add(empleado);
+		                    if (empleadosSeleccionados.size() >= maxEmpleados) break;
+		                }
+		            }
+		        }
+		    }
 
-    private static void comprarProductos(Funeraria funeraria, Producto[] productosFaltantes, Scanner scanner) {
-        System.out.println("Establecimientos que pueden vender los productos faltantes:");
-        for (int i = 0; i < funeraria.getListadoProveedores().size(); i++) {
-            Establecimiento est = funeraria.getListadoProveedores().get(i);
-            System.out.println((i + 1) + ". " + est.getNombre() + " (Calificación: " + est.getCalificacion() + ")");
-        }
+		    return empleadosSeleccionados;
+		}
 
-        // Seleccionar establecimiento
-        System.out.println("Seleccione el establecimiento para realizar la compra:");
-        int seleccionEstablecimiento = scanner.nextInt() - 1;
+	    private static List<Vehiculo> seleccionarVehiculos(Funeraria funeraria, Scanner scanner) {
+	        List<Vehiculo> vehiculosSeleccionados = new ArrayList<>();
+	        int maxVehiculos = 1;
+	        
+	        for (Vehiculo vehiculo : funeraria.getVehiculos()) {
+	            System.out.println(vehiculo.getTipoVehiculo() + " - Capacidad: " + vehiculo.getCapacidad());
 
-        if (seleccionEstablecimiento >= 0 && seleccionEstablecimiento < funeraria.getListadoProveedores().size()) {
-            Establecimiento proveedorSeleccionado = funeraria.getListadoProveedores().get(seleccionEstablecimiento);
+	            
+	            if (vehiculo.getConductor() != null) {
+	                System.out.println("Conductor: " + vehiculo.getConductor().getNombre());
+	            } else {
+	            }
+	            
+	            System.out.println("   ______");
+	            System.out.println("  /|_||_\\.__");
+	            System.out.println(" (   _    _ _\\");
+	            System.out.println(" =-(_)--(_)-'");
+	            System.out.println("¿Seleccionar este vehículo? (S/N)");
+	            
+	            String respuesta = scanner.next();
+	            if (respuesta.equalsIgnoreCase("S")) {
+	                if (vehiculosSeleccionados.size() < maxVehiculos) {
+	                    vehiculosSeleccionados.add(vehiculo);
+	                } else {
+	                    System.out.println("Ya ha seleccionado el máximo de vehículos permitidos.");
+	                    break;
+	                }
+	            }
+	        }
+	        
+	        return vehiculosSeleccionados;
+	    }
 
-            // Mostrar productos faltantes y realizar la compra
-            for (Producto productoFaltante : productosFaltantes) {
-                if (proveedorSeleccionado.tieneProducto(productoFaltante.getNombre())) {
-                    System.out.println("¿Desea comprar " + productoFaltante.getNombre() + "? (S/N)");
-                    String respuesta = scanner.next();
+	    private static int seleccionarCantidadProducto(Producto producto, Scanner scanner) {
+	        System.out.println("Ingrese la cantidad de " + producto.getNombre() + " para intercambiar:");
+	        return scanner.nextInt();
+	    }
 
-                    if (respuesta.equalsIgnoreCase("S")) {
-                        System.out.println("Ingrese la cantidad a comprar:");
-                        int cantidadCompra = scanner.nextInt();
+	    private static void realizarIntercambioProductos(Funeraria funA, Funeraria funB, Producto productoA, Producto productoB, int cantidad, List<Empleado> empleados, List<Vehiculo> vehiculos) {
+	        Scanner scanner = new Scanner(System.in);
 
-                        if (cantidadCompra > 0) {
-                            // Actualizar inventario
-                            productoFaltante.setCantidad(productoFaltante.getCantidad() + cantidadCompra);
+	        // Paso 1: Seleccionar productos a intercambiar
+	        System.out.println("Seleccione los productos que desea intercambiar:");
 
-                            // Crear y almacenar la factura
-                            Producto productoComprado = new Producto(productoFaltante.getNombre(), productoFaltante.getPrecio(), cantidadCompra);
-                            ArrayList<Producto> productosComprados = new ArrayList<>();
-                            productosComprados.add(productoComprado);
-                            Factura nuevaFactura = new Factura(productosComprados, "Compra de productos");
-                            
-                            funeraria.agregarFactura(nuevaFactura);
+	        
+	        List<Producto> productosASeleccionados = new ArrayList<>();
+	        for (Producto producto : funA.getProductos()) {
+	            if (producto.getCantidad() > 0) {
+	                System.out.println("Producto: " + producto.getNombre() + ", Cantidad disponible: " + producto.getCantidad());
+	                System.out.println("¿Desea intercambiar este producto? (S/N)");
+	                String respuesta = scanner.next();
+	                if (respuesta.equalsIgnoreCase("S")) {
+	                    System.out.println("Ingrese la cantidad a intercambiar:");
+	                    int cantidadAIntercambiar = scanner.nextInt();
+	                    if (cantidadAIntercambiar > 0 && cantidadAIntercambiar <= producto.getCantidad()) {
+	                        Producto productoSeleccionado = new Producto(producto.getNombre(), producto.getPrecio(), cantidadAIntercambiar);
+	                        productosASeleccionados.add(productoSeleccionado);
+	                        producto.setCantidad(producto.getCantidad() - cantidadAIntercambiar);
+	                    } else {
+	                        System.out.println("Cantidad inválida. El intercambio no se realizará.");
+	                    }
+	                }
+	            }
+	        }
 
-                            System.out.println("Compra realizada exitosamente. Factura generada y almacenada.");
-                        }
-                    }
-                }
-            }
-        } else {
-            System.out.println("Selección inválida.");
-        }
-    }
+	        
 
-    private static void contratarEmpleados(Funeraria funeraria, Scanner scanner) {
-        System.out.println("Empleados disponibles para contratación:");
-        for (Establecimiento est : funeraria.getListadoProveedoresEmpleados()) {
-            for (Empleado empleado : est.getEmpleados()) {
-                System.out.println("Establecimiento: " + est.getNombre() + ", Calificación: " + est.getCalificacion());
-                System.out.println("  Empleado: " + empleado.getNombre() + ", Cargo: " + empleado.getCargo() + ", Experiencia: " + empleado.getExperiencia() + " años, Edad: " + empleado.getEdad());
-            }
-        }
+	        // Paso 2: Seleccionar empleados
+	        System.out.println("Seleccione hasta dos empleados para realizar el intercambio:");
+	        List<Empleado> empleadosSeleccionados = seleccionarEmpleados(funA, scanner);
 
-        // Seleccionar empleados y realizar contratación
-    }
+	        // Paso 3: Seleccionar vehículos
+	        System.out.println("Seleccione un vehículo para realizar el intercambio:");
+	        List<Vehiculo> vehiculosSeleccionados = seleccionarVehiculos(funA, scanner);
 
-    private static void comprarVehiculos(Funeraria funeraria, Scanner scanner) {
-        System.out.println("Vehículos disponibles para la compra:");
+	        // Paso 4: Mostrar resumen de intercambio
+	        System.out.println("Resumen del intercambio:");
+	        System.out.println("Productos de " + funA.getNombre() + " a intercambiar:");
+	        for (Producto producto : productosASeleccionados) {
+	            System.out.println("- " + producto.getNombre() + ": " + producto.getCantidad() + " unidades");
+	        }
 
-        // Aquí asumimos que cada establecimiento puede tener vehículos a la venta
-        for (Establecimiento est : funeraria.getListadoProveedoresVehiculos()) {
-            for (Vehiculo vehiculo : est.getVehiculosEnVenta()) { 
-                System.out.println("Establecimiento: " + est.getNombre() + ", Calificación: " + est.getCalificacion());
-                System.out.println("  Vehículo: " + vehiculo.getTipoVehiculo() + ", Capacidad: " + vehiculo.getCapacidad() + ", Precio: " + vehiculo.getPrecio());
-                
-                // vehículo de forma visual
-                System.out.println("   ______");
-                System.out.println("  /|_||_\\`.__");
-                System.out.println(" (   _    _ _\\");
-                System.out.println(" =`-(_)--(_)-'");
-                
-                System.out.println("¿Desea comprar este vehículo? (S/N)");
-                String respuesta = scanner.next();
-                if (respuesta.equalsIgnoreCase("S")) {
-                    // Aquí se realizaría la compra y la actualización de la lista de vehículos de la funeraria
-                    funeraria.agregarVehiculo(vehiculo); 
-                    est.removerVehiculoEnVenta(vehiculo); 
-                    System.out.println("Vehículo comprado exitosamente.");
-                }
-            }
-        }
-    }
-    
-    private static void realizarEncuesta(Funeraria funeraria, Scanner scanner) {
-        System.out.println("Realizando encuesta de desempeño...");
 
-        // Encuesta para empleados
-        for (Empleado empleado : funeraria.getEmpleados()) {
-            System.out.println("Empleado: " + empleado.getNombre());
-            System.out.println("Califique el desempeño del empleado (1-5):");
-            int calificacion = scanner.nextInt();
-            scanner.nextLine();  // Consumir el salto de línea
-            System.out.println("Ingrese una descripción opcional sobre el desempeño del empleado:");
-            String descripcion = scanner.nextLine();
+	        System.out.println("Empleados seleccionados:");
+	        for (Empleado empleado : empleadosSeleccionados) {
+	            System.out.println("- " + empleado.getNombre() + " (" + empleado.getCargo() + ")");
+	        }
 
-            empleado.setCalificacion(calificacion);
-            empleado.setDescripcionCalificacion(descripcion);
+	        System.out.println("Vehículos seleccionados:");
+	        for (Vehiculo vehiculo : vehiculosSeleccionados) {
+	            System.out.println("- " + vehiculo.getTipoVehiculo());
+	            if (vehiculo.getConductor() != null) {
+	                System.out.println("  Conductor: " + vehiculo.getConductor().getNombre());
+	            } else {
+	                System.out.println("  Conductor: No asignado");
+	            }
+	        }
 
-            System.out.println("Calificación guardada: " + calificacion);
-            if (!descripcion.isEmpty()) {
-                System.out.println("Descripción: " + descripcion);
-            }
-        }
+	        // Confirmar el intercambio
+	        System.out.println("¿Desea confirmar el intercambio? (S/N)");
+	        String confirmacion = scanner.next();
+	        if (confirmacion.equalsIgnoreCase("S")) {
+	            // Realizar el intercambio de productos
+	            for (Producto producto : productosASeleccionados) {
+	                funB.agregarProducto(producto);
+	            }
 
-        // Encuesta para proveedores
-        for (Establecimiento est : funeraria.getListadoProveedores()) {
-            System.out.println("Proveedor: " + est.getNombre());
-            System.out.println("Califique el desempeño del proveedor (1-5):");
-            int calificacion = scanner.nextInt();
-            scanner.nextLine();  // Consumir el salto de línea
-            System.out.println("Ingrese una descripción opcional sobre el desempeño del proveedor:");
-            String descripcion = scanner.nextLine();
+	            // Asignar los empleados y vehículos a las funerarias correspondientes
+	            for (Empleado empleado : empleadosSeleccionados) {
+	                funA.agregarEmpleado(empleado);
+	                funB.agregarEmpleado(empleado);  
+	            }
+	            for (Vehiculo vehiculo : vehiculosSeleccionados) {
+	                funA.agregarVehiculo(vehiculo);
+	                //funB.agregarVehiculo(vehiculo);  
+	            }
 
-            est.setCalificacion(calificacion);
-            est.setDescripcionCalificacion(descripcion);
+	            System.out.println("Intercambio realizado exitosamente.");
+	        } else {
+	            System.out.println("Intercambio cancelado.");
+	        }
+	    }
 
-            System.out.println("Calificación guardada: " + calificacion);
-            if (!descripcion.isEmpty()) {
-                System.out.println("Descripción: " + descripcion);
-            }
-        }
+	    private static void realizarCompras(Funeraria funeraria, Scanner scanner) {
+	        Producto[] productosFaltantes = Funeraria.identificarProductosFaltantes(funeraria);
+	        if (productosFaltantes.length > 0) {
+	            System.out.println("Productos con menos de 10 existencias:");
+	            for (Producto producto : productosFaltantes) {
+	                System.out.println("- " + producto.getNombre() + ": " + producto.getCantidad());
+	            }
 
-        System.out.println("Encuesta completada. Gracias por su retroalimentación.");
-    }
+	            // Comprar productos, contratar empleados, o comprar vehículos
+	            System.out.println("Seleccione una opción:");
+	            System.out.println("1. Comprar productos");
+	            System.out.println("2. Contratar empleados");
+	            System.out.println("3. Comprar vehículos");
+	            System.out.println("4. Cancelar");
 
-    
-    private static void asignarRecursos(Funeraria funeraria, Scanner scanner) {
-        System.out.println("Asignación de recursos para la funeraria: " + funeraria.getNombre());
+	            int opcion = scanner.nextInt();
+	            switch (opcion) {
+	                case 1:
+	                    comprarProductos(funeraria, productosFaltantes, scanner);
+	                    break;
+	                case 2:
+	                    contratarEmpleados(funeraria, scanner);
+	                    break;
+	                case 3:
+	                    comprarVehiculos(funeraria, scanner);
+	                    break;
+	                case 4:
+	                    System.out.println("Operación cancelada.");
+	                    return;
+	                default:
+	                    System.out.println("Opción inválida.");
+	                    realizarCompras(funeraria, scanner);
+	            }
+	        } else {
+	            System.out.println("No hay productos faltantes.");
+	        }
+	    }
 
-        // Selección de empleados
-        System.out.println("Seleccione los empleados para realizar la tarea:");
-        List<Empleado> empleadosSeleccionados = seleccionarEmpleados(funeraria, scanner);
+	    private static void comprarProductos(Funeraria funeraria, Producto[] productosFaltantes, Scanner scanner) {
+	        System.out.println("Establecimientos que pueden vender los productos faltantes:");
+	        for (int i = 0; i < funeraria.getListadoProveedores().size(); i++) {
+	            Establecimiento est = funeraria.getListadoProveedores().get(i);
+	            System.out.println((i + 1) + ". " + est.getNombre() + " (Calificación: " + est.getCalificacion() + ")");
+	        }
 
-        // Selección de vehículos
-        System.out.println("Seleccione los vehículos para realizar la tarea:");
-        List<Vehiculo> vehiculosSeleccionados = seleccionarVehiculos(funeraria, scanner);
+	        // Seleccionar establecimiento
+	        System.out.println("Seleccione el establecimiento para realizar la compra:");
+	        int seleccionEstablecimiento = scanner.nextInt() - 1;
 
-        // Selección de productos
-        System.out.println("Seleccione los productos a enviar:");
-        List<Producto> productosSeleccionados = new ArrayList<>();
-        for (Producto producto : funeraria.getProductos()) {
-            System.out.println(producto.getNombre() + " - Cantidad disponible: " + producto.getCantidad());
-            System.out.println("¿Cuántos desea enviar?");
-            int cantidad = scanner.nextInt();
-            if (cantidad > 0 && cantidad <= producto.getCantidad()) {
-                Producto productoSeleccionado = new Producto(producto.getNombre(), producto.getPrecio(), cantidad);
-                productosSeleccionados.add(productoSeleccionado);
-            }
-        }
+	        if (seleccionEstablecimiento >= 0 && seleccionEstablecimiento < funeraria.getListadoProveedores().size()) {
+	            Establecimiento proveedorSeleccionado = funeraria.getListadoProveedores().get(seleccionEstablecimiento);
+	            List<Producto> productosComprados = new ArrayList<>();
 
-        // Mostrar resumen de recursos seleccionados
-        System.out.println("Resumen de recursos asignados:");
-        System.out.println("Empleados:");
-        for (Empleado empleado : empleadosSeleccionados) {
-            System.out.println("- " + empleado.getNombre() + " (" + empleado.getCargo() + ")");
-        }
-        System.out.println("Vehículos:");
-        for (Vehiculo vehiculo : vehiculosSeleccionados) {
-            System.out.println("- " + vehiculo.getTipoVehiculo() + " - Conductor: " + vehiculo.getConductor().getNombre());
-        }
-        System.out.println("Productos:");
-        for (Producto producto : productosSeleccionados) {
-            System.out.println("- " + producto.getNombre() + ": " + producto.getCantidad() + " unidades");
-        }
+	            // Mostrar productos faltantes y realizar la compra
+	            for (Producto productoFaltante : productosFaltantes) {
+	                if (proveedorSeleccionado.tieneProducto(productoFaltante.getNombre())) {
+	                    System.out.println("¿Desea comprar " + productoFaltante.getNombre() + "? (S/N)");
+	                    String respuesta = scanner.next();
 
-        
-    }
+	                    if (respuesta.equalsIgnoreCase("S")) {
+	                        System.out.println("Ingrese la cantidad a comprar:");
+	                        int cantidadCompra = scanner.nextInt();
+
+	                        if (cantidadCompra > 0) {
+	                            // Actualizar inventario
+	                            productoFaltante.setCantidad(productoFaltante.getCantidad() + cantidadCompra);
+	                            productosComprados.add(new Producto(productoFaltante.getNombre(), cantidadCompra));
+	                            System.out.println("Compra realizada exitosamente.");
+	                        } else {
+	                            System.out.println("Cantidad inválida. La compra no se realizará.");
+	                        }
+	                    }
+	                }
+	            }
+
+	            // Mostrar resumen de la compra
+	            if (!productosComprados.isEmpty()) {
+	                System.out.println("Resumen de la compra de productos:");
+	                for (Producto producto : productosComprados) {
+	                    System.out.println("  Producto: " + producto.getNombre() + ", Cantidad comprada: " + producto.getCantidad());
+	                }
+	            } else {
+	                System.out.println("No se realizaron compras.");
+	            }
+
+	        } else {
+	            System.out.println("Selección de establecimiento inválida.");
+	        }
+	    }
+
+	    private static void contratarEmpleados(Funeraria funeraria, Scanner scanner) {
+	        System.out.println("Establecimientos disponibles para contratación de empleados:");
+
+	        List<Establecimiento> establecimientos = funeraria.getListadoProveedoresEmpleados();
+	        for (int i = 0; i < establecimientos.size(); i++) {
+	            System.out.println((i + 1) + ". " + establecimientos.get(i).getNombre() + " (Calificación: " + establecimientos.get(i).getCalificacion() + ")");
+	        }
+
+	        // Seleccionar establecimiento
+	        System.out.println("Seleccione el establecimiento para ver sus empleados:");
+	        int seleccionEstablecimiento = scanner.nextInt() - 1;
+
+	        if (seleccionEstablecimiento >= 0 && seleccionEstablecimiento < establecimientos.size()) {
+	            Establecimiento estSeleccionado = establecimientos.get(seleccionEstablecimiento);
+	            List<Empleado> empleadosContratados = new ArrayList<>();
+
+	            // Mostrar empleados disponibles para contratación
+	            System.out.println("Empleados disponibles en " + estSeleccionado.getNombre() + ":");
+	            for (Empleado empleado : estSeleccionado.getEmpleados()) {
+	                System.out.println("  Empleado: " + empleado.getNombre() + ", Cargo: " + empleado.getCargo() + ", Experiencia: " + empleado.getExperiencia() + " años, Edad: " + empleado.getEdad());
+	                System.out.println("¿Desea contratar este empleado? (S/N)");
+	                String respuesta = scanner.next();
+	                if (respuesta.equalsIgnoreCase("S")) {
+	                    funeraria.agregarEmpleado(empleado);
+	                    empleadosContratados.add(empleado);
+	                    System.out.println("Empleado " + empleado.getNombre() + " contratado exitosamente.");
+	                }
+	            }
+
+	            // Mostrar resumen de la contratación
+	            if (!empleadosContratados.isEmpty()) {
+	                System.out.println("Resumen de la contratación de empleados:");
+	                for (Empleado empleado : empleadosContratados) {
+	                    System.out.println("  Empleado: " + empleado.getNombre() + ", Cargo: " + empleado.getCargo() + ", Experiencia: " + empleado.getExperiencia() + " años, Edad: " + empleado.getEdad());
+	                }
+	            } else {
+	                System.out.println("No se contrataron empleados.");
+	            }
+
+	        } else {
+	            System.out.println("Selección inválida.");
+	        }
+	    }
+
+
+	    private static void comprarVehiculos(Funeraria funeraria, Scanner scanner) {
+	        System.out.println("Establecimientos disponibles para compra de vehículos:");
+
+	        List<Establecimiento> establecimientos = funeraria.getListadoProveedoresVehiculos();
+	        for (int i = 0; i < establecimientos.size(); i++) {
+	            System.out.println((i + 1) + ". " + establecimientos.get(i).getNombre() + " (Calificación: " + establecimientos.get(i).getCalificacion() + ")");
+	        }
+
+	        // Seleccionar establecimiento
+	        System.out.println("Seleccione el establecimiento para ver sus vehículos:");
+	        int seleccionEstablecimiento = scanner.nextInt() - 1;
+
+	        if (seleccionEstablecimiento >= 0 && seleccionEstablecimiento < establecimientos.size()) {
+	            Establecimiento estSeleccionado = establecimientos.get(seleccionEstablecimiento);
+	            List<Vehiculo> vehiculosEnVenta = new ArrayList<>(estSeleccionado.getVehiculosEnVenta()); // Hacer una copia de la lista
+	            List<Vehiculo> vehiculosComprados = new ArrayList<>();
+
+	            // Mostrar vehículos disponibles para compra
+	            System.out.println("Vehículos disponibles en " + estSeleccionado.getNombre() + ":");
+	            for (Vehiculo vehiculo : vehiculosEnVenta) {
+	                System.out.println("  Vehículo: " + vehiculo.getTipoVehiculo() + ", Capacidad: " + vehiculo.getCapacidad() + ", Precio: " + vehiculo.getPrecio());
+	                System.out.println("¿Desea comprar este vehículo? (S/N)");
+	                String respuesta = scanner.next();
+	                if (respuesta.equalsIgnoreCase("S")) {
+	                    funeraria.agregarVehiculo(vehiculo);
+	                    estSeleccionado.removerVehiculoEnVenta(vehiculo);
+	                    vehiculosComprados.add(vehiculo); // Agregar al resumen
+	                    System.out.println("Vehículo comprado exitosamente.");
+	                }
+	            }
+
+	            // Mostrar resumen de la compra
+	            if (!vehiculosComprados.isEmpty()) {
+	                System.out.println("Resumen de la compra de vehículos:");
+	                for (Vehiculo vehiculo : vehiculosComprados) {
+	                    System.out.println("  Vehículo: " + vehiculo.getTipoVehiculo() + ", Precio: " + vehiculo.getPrecio());
+	                }
+	            } else {
+	                System.out.println("No se realizaron compras.");
+	            }
+	        } else {
+	            System.out.println("Selección inválida.");
+	        }
+	    }
+
+	    
+	    private static void realizarEncuesta(Funeraria funeraria, Scanner scanner) {
+	        System.out.println("Realizando encuesta de desempeño...");
+
+	        // Encuesta para el proceso en general
+	        System.out.println("Califique el desempeño del proceso en general (1-5):");
+	        int calificacion = scanner.nextInt();
+	        scanner.nextLine(); 
+	        System.out.println("Ingrese una descripción opcional sobre el desempeño del proceso:");
+	        String descripcion = scanner.nextLine();
+
+	        // Guardar la calificación y descripción en la funeraria
+	        funeraria.setCalificacion(calificacion);
+	        funeraria.setDescripcionCalificacion(descripcion);
+
+	        System.out.println("Calificación del proceso guardada: " + calificacion);
+	        if (!descripcion.isEmpty()) {
+	            System.out.println("Descripción: " + descripcion);
+	        }
+
+	        System.out.println("Encuesta completada. Gracias por su retroalimentación.");
+	    }
+
+	    
+	    private static void asignarRecursos(Funeraria funeraria, Scanner scanner) {
+	        System.out.println("Asignación de recursos para la funeraria: " + funeraria.getNombre());
+
+	        // Selección de empleados
+	        System.out.println("Seleccione los empleados para realizar la tarea:");
+	        List<Empleado> empleadosSeleccionados = seleccionarEmpleados(funeraria, scanner);
+
+	        // Selección de vehículos
+	        System.out.println("Seleccione los vehículos para realizar la tarea:");
+	        List<Vehiculo> vehiculosSeleccionados = seleccionarVehiculos(funeraria, scanner);
+
+	        // Selección de productos
+	        System.out.println("Seleccione los productos a enviar:");
+	        List<Producto> productosSeleccionados = new ArrayList<>();
+	        for (Producto producto : funeraria.getProductos()) {
+	            System.out.println(producto.getNombre() + " - Cantidad disponible: " + producto.getCantidad());
+	            System.out.println("¿Cuántos desea enviar?");
+	            int cantidad = scanner.nextInt();
+	            if (cantidad > 0 && cantidad <= producto.getCantidad()) {
+	                Producto productoSeleccionado = new Producto(producto.getNombre(), producto.getPrecio(), cantidad);
+	                productosSeleccionados.add(productoSeleccionado);
+	            }
+	        }
+
+	        // Mostrar resumen de recursos seleccionados
+	        System.out.println("Resumen de recursos asignados:");
+	        System.out.println("Empleados:");
+	        for (Empleado empleado : empleadosSeleccionados) {
+	            System.out.println("- " + empleado.getNombre() + " (" + empleado.getCargo() + ")");
+	        }
+	        System.out.println("Vehículos:");
+	        for (Vehiculo vehiculo : vehiculosSeleccionados) {
+	            System.out.println("- " + vehiculo.getTipoVehiculo());
+	            if (vehiculo.getConductor() != null) {
+	                System.out.println("  Conductor: " + vehiculo.getConductor().getNombre());
+	            } else {
+	                System.out.println("  Conductor: No asignado");
+	            }
+	        }
+	        System.out.println("Productos:");
+	        for (Producto producto : productosSeleccionados) {
+	            System.out.println("- " + producto.getNombre() + ": " + producto.getCantidad() + " unidades");
+	        }
+	    }
 	
   //______________________________________________________________________________________________________________________________________
   // funcionalidad  Finanzas
@@ -2576,10 +2767,10 @@ public class Menú {
     	
     	//Establecimientos
     	//public Establecimiento(String nombre, int capacidad, CuentaBancaria cuentaCorriente, Empleado jefe,double calificacion)
-    	Establecimiento local1 = new Establecimiento("local1 productos",500,cuentalocal0,jefe1,5);
-    	Establecimiento local2 = new Establecimiento("local2 productos",500,cuentalocal1,jefe2,5);
-    	Establecimiento local3 = new Establecimiento("local3 productos",500,cuentalocal2,jefe3,5);
-    	Establecimiento local4 = new Establecimiento("local4 productos",500,cuentalocal3,jefe4,5);
+    	Establecimiento local1 = new Establecimiento("D1 productos",500,cuentalocal0,jefe1,5);
+    	Establecimiento local2 = new Establecimiento("ARA productos",500,cuentalocal1,jefe2,5);
+    	Establecimiento local3 = new Establecimiento("JUSTO Y BUENO productos",500,cuentalocal2,jefe3,5);
+    	Establecimiento local4 = new Establecimiento("HOMECENTER productos",500,cuentalocal3,jefe4,5);
     	funeraria1.agregarProveedor(local1);
     	funeraria1.agregarProveedor(local2);
     	funeraria1.agregarProveedor(local3);
@@ -2596,9 +2787,9 @@ public class Menú {
     	funeraria3.agregarProveedor(local4);
     	
     	
-    	Establecimiento local5 = new Establecimiento("local5 Vehiculos",500,cuentalocal4,jefe5,5);
-    	Establecimiento local6 = new Establecimiento("local6 Vehiculos",500,cuentalocal5,jefe6,5);
-    	Establecimiento local7 = new Establecimiento("local7 Vehiculos",500,cuentalocal6,jefe7,5);
+    	Establecimiento local5 = new Establecimiento("Yamaha Vehiculos",500,cuentalocal4,jefe5,5);
+    	Establecimiento local6 = new Establecimiento("BMW Vehiculos",500,cuentalocal5,jefe6,5);
+    	Establecimiento local7 = new Establecimiento("AUDI Vehiculos",500,cuentalocal6,jefe7,5);
     	funeraria1.agregarProveedorVehiculo(local5);
     	funeraria1.agregarProveedorVehiculo(local6);
     	funeraria1.agregarProveedorVehiculo(local7);
@@ -2611,9 +2802,9 @@ public class Menú {
     	funeraria3.agregarProveedorVehiculo(local6);
     	funeraria3.agregarProveedorVehiculo(local7);
     	
-    	Establecimiento local8 = new Establecimiento("local8 Empleados",500,cuentalocal7,jefe8,5);
-    	Establecimiento local9 = new Establecimiento("local9 Empleados",500,cuentalocal8,jefe9,5);
-    	Establecimiento local10 = new Establecimiento("local110 Empleados",500,cuentalocal9,jefe10,5);
+    	Establecimiento local8 = new Establecimiento("COMFAMA Empleados",500,cuentalocal7,jefe8,5);
+    	Establecimiento local9 = new Establecimiento("SENA Empleados",500,cuentalocal8,jefe9,5);
+    	Establecimiento local10 = new Establecimiento("CONTRATACIONES S.A Empleados",500,cuentalocal9,jefe10,5);
     	funeraria1.agregarProveedorEmpleado(local8);
     	funeraria1.agregarProveedorEmpleado(local9);
     	funeraria1.agregarProveedorEmpleado(local10);
@@ -2913,7 +3104,80 @@ public class Menú {
         facturaF3_6.agregarProducto(recuerdo4VendidosF3);
         facturaF3_7.agregarProducto(velasRojasVendidosF3);
         facturaF3_8.agregarProducto(velasBlancasVendidosF3);
+        
+        // PRODUCTOS LOCALES
+        Producto trajesCaballeroLocales = new Producto("Trajes de caballero", 998.0, 100, 0); 
+        Producto vestidosDamaLocales = new Producto("Vestidos de dama", 1200.0, 100, 0); 
+        Producto recuerdoLocales = new Producto("Medalla conmemorativa", 100.0, 100, 0);
+        Producto recuerdo2Locales = new Producto("Joyas conmemorativas", 250.0, 100, 0);
+        Producto recuerdo3Locales = new Producto("Álbumes de fotos", 300.0, 100, 0);
+        Producto recuerdo4Locales = new Producto("Portarretratos digitales", 120.0, 100, 0); 
+        Producto velasRojasLocales = new Producto("Velas rojas", 300.0, 100, 0); 
+        Producto velasBlancasLocales = new Producto("Velas blancas", 300.0, 100, 0);
+        
+        local1.agregarProducto(trajesCaballeroLocales);
+        local1.agregarProducto(vestidosDamaLocales);
+        local1.agregarProducto(recuerdoLocales);
+        local1.agregarProducto(recuerdo2Locales);
+        local1.agregarProducto(recuerdo3Locales);
+        local1.agregarProducto(recuerdo4Locales);
+        local1.agregarProducto(velasRojasLocales);
+        local1.agregarProducto(velasBlancasLocales);
+        
+        Producto trajesCaballeroLocales2 = new Producto("Trajes de caballero", 998.0, 100, 0); 
+        Producto vestidosDamaLocales2 = new Producto("Vestidos de dama", 1200.0, 100, 0); 
+        Producto recuerdoLocales2 = new Producto("Medalla conmemorativa", 100.0, 100, 0);
+        Producto recuerdo2Locales2 = new Producto("Joyas conmemorativas", 250.0, 100, 0);
+        Producto recuerdo3Locales2 = new Producto("Álbumes de fotos", 300.0, 100, 0);
+        Producto recuerdo4Locales2 = new Producto("Portarretratos digitales", 120.0, 100, 0); 
+        Producto velasRojasLocales2 = new Producto("Velas rojas", 300.0, 100, 0); 
+        Producto velasBlancasLocales2 = new Producto("Velas blancas", 300.0, 100, 0);
+        
+        local2.agregarProducto(trajesCaballeroLocales);
+        local2.agregarProducto(vestidosDamaLocales);
+        local2.agregarProducto(recuerdoLocales);
+        local2.agregarProducto(recuerdo2Locales);
+        local2.agregarProducto(recuerdo3Locales);
+        local2.agregarProducto(recuerdo4Locales);
+        local2.agregarProducto(velasRojasLocales);
+        local2.agregarProducto(velasBlancasLocales);
+        
+        Producto trajesCaballeroLocales3 = new Producto("Trajes de caballero", 998.0, 100, 0); 
+        Producto vestidosDamaLocales3 = new Producto("Vestidos de dama", 1200.0, 100, 0); 
+        Producto recuerdoLocales3 = new Producto("Medalla conmemorativa", 100.0, 100, 0);
+        Producto recuerdo2Locales3 = new Producto("Joyas conmemorativas", 250.0, 100, 0);
+        Producto recuerdo3Locales3 = new Producto("Álbumes de fotos", 300.0, 100, 0);
+        Producto recuerdo4Locales3 = new Producto("Portarretratos digitales", 120.0, 100, 0); 
+        Producto velasRojasLocales3 = new Producto("Velas rojas", 300.0, 100, 0); 
+        Producto velasBlancasLocales3 = new Producto("Velas blancas", 300.0, 100, 0);
+        
+        local3.agregarProducto(trajesCaballeroLocales);
+        local3.agregarProducto(vestidosDamaLocales);
+        local3.agregarProducto(recuerdoLocales);
+        local3.agregarProducto(recuerdo3Locales);
+        local3.agregarProducto(recuerdo3Locales);
+        local3.agregarProducto(recuerdo4Locales);
+        local3.agregarProducto(velasRojasLocales);
+        local3.agregarProducto(velasBlancasLocales);
 		
+        Producto trajesCaballeroLocales4 = new Producto("Trajes de caballero", 998.0, 100, 0); 
+        Producto vestidosDamaLocales4 = new Producto("Vestidos de dama", 1200.0, 100, 0); 
+        Producto recuerdoLocales4 = new Producto("Medalla conmemorativa", 100.0, 100, 0);
+        Producto recuerdo2Locales4 = new Producto("Joyas conmemorativas", 250.0, 100, 0);
+        Producto recuerdo3Locales4= new Producto("Álbumes de fotos", 300.0, 100, 0);
+        Producto recuerdo4Locales4 = new Producto("Portarretratos digitales", 120.0, 100, 0); 
+        Producto velasRojasLocales4 = new Producto("Velas rojas", 300.0, 100, 0); 
+        Producto velasBlancasLocales4 = new Producto("Velas blancas", 300.0, 100, 0);
+        
+        local4.agregarProducto(trajesCaballeroLocales);
+        local4.agregarProducto(vestidosDamaLocales);
+        local4.agregarProducto(recuerdoLocales);
+        local4.agregarProducto(recuerdo4Locales);
+        local4.agregarProducto(recuerdo4Locales);
+        local4.agregarProducto(recuerdo4Locales);
+        local4.agregarProducto(velasRojasLocales);
+        local4.agregarProducto(velasBlancasLocales);
+        
 		
 		
 			

@@ -29,7 +29,12 @@ public class Empleado extends Persona{
 		}
 		
 	}
-	
+	public Empleado(String nombre, CuentaBancaria cuentaBancaria,String jornada, String cargo, double salario) {
+		super(nombre, 0, 0,  cuentaBancaria);
+		this.jornada=jornada;
+		this.cargo=cargo;
+		this.salario=salario;
+	}
 	
 	public Empleado(String nombre,int edad, CuentaBancaria cuentaBancaria,String jornada, String cargo, double salario, int Experiencia,int trabajosHechos) {
 		super(nombre, 0, edad, cuentaBancaria);

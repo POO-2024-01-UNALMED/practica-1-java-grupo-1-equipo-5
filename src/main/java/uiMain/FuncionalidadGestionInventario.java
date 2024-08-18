@@ -162,7 +162,7 @@ public class FuncionalidadGestionInventario {
     }
 
     private static void realizarIntercambioProductos(Funeraria funA, Funeraria funB, Producto productoA, Producto productoB, int cantidad, List<Empleado> empleados, List<Vehiculo> vehiculos) {
-        // Lógica para realizar el intercambio, actualizar inventarios, etc.
+        
         System.out.println("Intercambio realizado exitosamente.");
     }
 
