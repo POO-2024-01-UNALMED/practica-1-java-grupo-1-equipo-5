@@ -128,6 +128,9 @@ public class Funeraria extends Establecimiento{
 	}
 	
 	
+	//Recibe como parámetro el atributo CC de algún objeto Cliente y 
+	//Verificará si este se encunetre en el ArrayList<Cliente> clientes y 
+	//Retornará al objeto Cliente que coincida con este atributo
 	
 	public Cliente buscarCliente(long IDcliente) {
 		for(Cliente auxCliente: this.clientes) {

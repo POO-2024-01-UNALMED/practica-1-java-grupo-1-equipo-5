@@ -121,21 +121,22 @@ public class Establecimiento implements Serializable {
 		
 	}
 	
-	//Filtra a los clientes en adulto o Niño a través de su atributo CC
-	//Recibe un parámetro de tipo String que debe ser "adulto" para buscar a los clientes que tenga un atributo CC distinto de 0 
-	//y "niño" para buscar a los clientes que tengan un atributo CC igual a 0 
-	
+	//Recibe como parámetro tipo String que debe ser "adulto" o "niño"
+	//Filtra a los elementos de la lista clientes que tiene Objetos de tipo Cliente respecto a su atributo CC
+	//Devuelve una lista de los clientes filtrados 
 	public ArrayList<Cliente> buscarCliente(String adultoNiño) {
 		
 		ArrayList<Cliente> clientesEdad= new ArrayList<Cliente>();
 		if(adultoNiño=="adulto") {
 			for(Cliente cliente: this.clientes) {
+				//Si cliente tiene un atributo CC distinto de 0 es un cliente mayor de edad
 				if(cliente.getCC()!=0) {
 					clientesEdad.add(cliente);
 				}//fin if
 			}//fin for
 		}else {
 			for(Cliente cliente: this.clientes) {
+				//Si cliente tiene un atributo CC igual a 0 es un cliente menor de edad
 				if(cliente.getCC()==0) {
 					clientesEdad.add(cliente);
 				}//fin if

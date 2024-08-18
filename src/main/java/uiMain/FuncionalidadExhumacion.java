@@ -373,6 +373,8 @@ public class FuncionalidadExhumacion {
 			
 		}
 		
+		//System.out.println("cementerios: "+ cementerios);
+		
 		indice=1;
 		for(Establecimiento auxCementerio: cementerios) {
 			Cementerio auxCementerio2 = (Cementerio) auxCementerio;
