@@ -60,7 +60,7 @@ public class Factura implements Serializable{
 		producto = nombre;
 		this.total= 0;
 		facturas.add(this);
-		Servicio = "Establecimiento";
+		Servicio = "Inventario";
 	}
 
 

@@ -46,6 +46,7 @@ public class Producto {
     public Producto(Establecimiento establecimiento) {
     	this.establecimiento=establecimiento;
     	this.nombre=establecimiento.getNombre();
+    	this.cantidad=1;
 
     }
     
