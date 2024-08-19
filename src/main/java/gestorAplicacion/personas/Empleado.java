@@ -1,10 +1,12 @@
 package gestorAplicacion.personas;
 
 
+import java.io.Serializable;
+
 import gestorAplicacion.establecimientos.Funeraria;
 import gestorAplicacion.financiero.*;
 
-public class Empleado extends Persona{
+public class Empleado extends Persona implements Serializable{
 	//Atributos
 	private String jornada; //mañana - tarde - noche
 	private String cargo; //Cargos disponibles sepulturero - cremador - padre

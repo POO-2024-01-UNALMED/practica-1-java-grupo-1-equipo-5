@@ -3,12 +3,12 @@ package gestorAplicacion.inventario;
 public enum TipoVehiculo {
 	
 	BERLINA(4,false,true,70000),//Hasta 4 acompañantes - familiares y cliente (si va el cliente irían 3 acompañantes)
-	CARROZA(1,true,false,150000), // Hasta 1 acompañante
+	CARROZA(6,true,false,150000), // Hasta 1 acompañante
 	FAETON(4,false,true,120000), //Hasta 4 acompañantes
 	COCHEFUNEBRE(1,true,false,80000), //1 persona - solo cliente
 	BUS(6,false,true,50000), // 6 personas
 	COCHERESPETO(8,false,true,75000), //8 personas - solo familiares
-	CUPE(2,false,true,65000), //una persona - solo cliente
+	CUPE(4,false,true,65000), //una persona - solo cliente
 	CAMION(5,false,false,69000);
 	
 	private int capacidad; //capacidad carro de personas 

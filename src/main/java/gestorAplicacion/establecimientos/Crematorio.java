@@ -2,6 +2,7 @@ package gestorAplicacion.establecimientos;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.io.Serializable;
 import java.time.LocalTime;
 
 import gestorAplicacion.personas.*;
@@ -9,7 +10,7 @@ import gestorAplicacion.financiero.CuentaBancaria;
 import gestorAplicacion.inventario.*;
 
 
-public class Crematorio extends Establecimiento{
+public class Crematorio extends Establecimiento implements Serializable{
 	//Atributos
 	
 	

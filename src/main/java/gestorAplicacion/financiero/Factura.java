@@ -124,11 +124,14 @@ public class Factura implements Serializable{
 		return total;
 	}
 	
+	//Retorna un String con el resumen de los objetos Producto del arreglo productos de la Factura 
 	public String retornarFactura() {
 		
 		String factura="";
 		for(Producto producto:listaProductos) {
-			factura+="Concepto: "+producto.getNombre()+" - Precio unitario: "+producto.getPrecio()+" - Cantidad: "+producto.getCantidad()+"\n";
+			factura+="Concepto: "+producto.getNombre()+" - "
+					+ "Precio unitario: "+producto.getPrecio()+" -"
+							+ " Cantidad: "+producto.getCantidad()+"\n";
 		}
 		factura+="\n Total: "+totalFactura();
 		return factura;

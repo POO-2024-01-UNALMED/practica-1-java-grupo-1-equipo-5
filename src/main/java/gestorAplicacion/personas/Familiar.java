@@ -2,11 +2,12 @@ package gestorAplicacion.personas;
 
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import gestorAplicacion.financiero.*;
 
-public class Familiar extends Persona {
+public class Familiar extends Persona implements Serializable {
 
 	private String parentesco;
 	// por el momento no es necesario private boolean estado;

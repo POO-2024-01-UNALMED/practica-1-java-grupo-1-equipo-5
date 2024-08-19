@@ -1,13 +1,14 @@
 package gestorAplicacion.inventario;
 
 import java.util.Random;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import gestorAplicacion.establecimientos.Cementerio;
 import gestorAplicacion.financiero.*;
 import gestorAplicacion.personas.Cliente;
 
-public class Urna extends Inventario {
+public class Urna extends Inventario implements Serializable{
 
 	private String tipo; // "fija" u "ordinaria" 
 	private ArrayList<String> floresUrna;

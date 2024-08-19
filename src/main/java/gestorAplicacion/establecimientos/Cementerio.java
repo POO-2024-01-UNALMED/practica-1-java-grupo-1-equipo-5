@@ -1,6 +1,7 @@
 package gestorAplicacion.establecimientos;
 import gestorAplicacion.inventario.*;
 
+import java.io.Serializable;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import gestorAplicacion.inventario.*;
@@ -10,7 +11,7 @@ import gestorAplicacion.financiero.Factura;
 import gestorAplicacion.personas.*;
 
 
-public class Cementerio extends Establecimiento {
+public class Cementerio extends Establecimiento implements Serializable {
 	
 	private String tipo; //(cenizas o cuerpos)
 	
@@ -161,7 +162,11 @@ public class Cementerio extends Establecimiento {
 	//El método se emplea para retornar un String con la organización del evento Iglesia 
 	public String organizarIglesia(Cliente cliente) {
 		
-		ArrayList<Familiar> familiares =cliente.getFamiliares();
+		ArrayList<Familiar> familiares =new ArrayList<Familiar>();
+		
+		for(Familiar familiar: cliente.getFamiliares()) {
+			familiares.add(familiar);
+		}
 		int sillas=getIglesia().getSillas();
 	
 		String organizacion="";

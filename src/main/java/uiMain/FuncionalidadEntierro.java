@@ -178,6 +178,8 @@ public class FuncionalidadEntierro {
 				Producto productoCementerio= new Producto(cementerio);
 				
 				//Invitación para Entierro
+				System.out.println();
+				System.out.println("A continuación encontrará la invitación y resumen de su evento de Entierro");
 				System.out.println(productoCementerio.evento(cliente));
 				
 				//Ya escogido el cementerio se muestra la disponibilidad de objetos Tumba con los filtros de estatura, categoria

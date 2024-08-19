@@ -11,6 +11,7 @@ import gestorAplicacion.establecimientos.Establecimiento;
 import gestorAplicacion.financiero.CuentaBancaria;
 import gestorAplicacion.financiero.Factura;
 import gestorAplicacion.inventario.Inventario;
+import gestorAplicacion.inventario.Producto;
 import gestorAplicacion.inventario.Vehiculo;
 import gestorAplicacion.personas.Persona;
 
@@ -49,6 +50,7 @@ public class Deserializador {
     	deserializar(Vehiculo.getVehiculos(), "Vehiculos");
     	deserializar(Factura.getFacturas(), "Facturas");
     	deserializar(CuentaBancaria.getCuentas(), "Cuentas");
+    	deserializar(Producto.getProductos(), "Productos");
     }
     
 }

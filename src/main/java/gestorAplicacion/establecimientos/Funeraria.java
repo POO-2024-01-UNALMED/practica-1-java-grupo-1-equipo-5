@@ -1,5 +1,6 @@
 package gestorAplicacion.establecimientos;
 
+import java.io.Serializable;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -9,7 +10,7 @@ import gestorAplicacion.inventario.*;
 import gestorAplicacion.personas.*;
 import gestorAplicacion.establecimientos.*;
 
-public class Funeraria extends Establecimiento{
+public class Funeraria extends Establecimiento implements Serializable{
 
 	
 	private static CuentaBancaria cuentaAhorros;
@@ -636,6 +637,9 @@ private void actualizarCredito(Factura credito, double porcentajeFaltante, doubl
     	}
      
      
+     //Recibe 3 parámetros de tipo Cliente, iglesia y double 
+     //Este método sirve para retornar un arreglo de Establecimiento que también tiene tipo Cementerio, 
+     //considerando la disponibilidad de Inventario y el Empleado con cargo "sepulturero"
      public ArrayList<Establecimiento> gestionEntierro(Cliente cliente,Iglesia iglesia,double estatura) {
     	 
     	 ArrayList<Establecimiento> cementerios =this.buscarCementerios("cuerpos", cliente); 
@@ -648,7 +652,8 @@ private void actualizarCredito(Factura credito, double porcentajeFaltante, doubl
         		 auxCementerio.generarHoras();
         	
         		 
-        		 //Si no hay horarios disponibles o no hay tumbas que cumplan los filtros de disponibilidaInventario el cementerio se elimina
+        		 //Si no hay horarios disponibles o no hay tumbas que cumplan los filtros de 
+        		 //disponibilidaInventario el cementerio se elimina
         		 if(auxCementerio.disponibilidadInventario("tumba", estatura, cliente.getEdad()).size()!=0) {
         			 cementeriosFiltrados.add(auxCementerio);
         		 }
@@ -661,7 +666,8 @@ private void actualizarCredito(Factura credito, double porcentajeFaltante, doubl
     			 cementeriosFiltrados.add(cementerios.get(0));
     		 }
         	 
-        	 //Se recorre cada cementerio filtrado y se cambia el horario del evento, la iglesia y se busca a un empleado para agregarlo
+        	 //Se recorre cada cementerio filtrado y se cambia el horario del evento, la iglesia 
+    		 //y se busca a un empleado para agregarlo
         	 for(Establecimiento cementerio:cementeriosFiltrados) {
         		 Cementerio auxCementerio=(Cementerio)cementerio;
         		 auxCementerio.setHoraEvento(auxCementerio.getHorarioEventos().get(0));
@@ -670,10 +676,6 @@ private void actualizarCredito(Factura credito, double porcentajeFaltante, doubl
         		 auxCementerio.setIglesia(iglesia);
         	 }//Fin For
         	 
-     
-    		 
-    	
-    	 
     	 
     	 return cementeriosFiltrados;
     	 
@@ -682,7 +684,11 @@ private void actualizarCredito(Factura credito, double porcentajeFaltante, doubl
      
      public String gestionarTrasnsporte(Cliente cliente, ArrayList<Vehiculo> vehiculos, LocalTime hora) {
 
- 		ArrayList<Familiar> familiares = cliente.getFamiliares();
+ 		ArrayList<Familiar> familiares = new ArrayList<Familiar>();
+ 		
+ 		for(Familiar familiar: cliente.getFamiliares()) {
+			familiares.add(familiar);
+		}
  		ArrayList<Empleado> conductores = this.buscarEmpleados(hora, "conductor");
  		String gestionTransporte ="Resumen de su transporte - Hora de llegada transporte: "+hora+"\n";
  		

@@ -1,12 +1,13 @@
 package gestorAplicacion.inventario;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 
 import gestorAplicacion.establecimientos.Cementerio;
 import gestorAplicacion.personas.Cliente;
 
-public class Tumba extends Inventario{
+public class Tumba extends Inventario implements Serializable{
 	
 	
 	//Constructor
@@ -16,7 +17,8 @@ public class Tumba extends Inventario{
 			cementerio.agregarInventario(this);
 		}
 	}
-	
+	//Para calcular el volumen de la tumba se deberá ingresar la estatura del Cliente 
+	//y se calculará el volumen con medidas estándares
 	@Override
 	public double determinarTamaño(double largo) {
 		
@@ -30,6 +32,8 @@ public class Tumba extends Inventario{
 	}
 	
 	@Override
+	//Recibe un parámetro tipo String que puede tener valor "flores" o "material"
+	//No retorna nada pero redefine inventarioFlores o inventarioMaterial según corresponda
 	public void generarAdornos(String tipoAdorno) {
 		
 		String[] arregloAuxiliar;
@@ -48,9 +52,6 @@ public class Tumba extends Inventario{
 			arregloAuxiliar=this.material;
 			int numeroAleatorio = random.nextInt(4)+1;
 			getInventarioMaterial().add(arregloAuxiliar[numeroAleatorio]); return;}
-		
-	
-		
 		
 		for(String arreglo:arregloAuxiliar) {
 			

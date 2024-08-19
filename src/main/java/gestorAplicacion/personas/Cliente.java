@@ -1,12 +1,13 @@
 package gestorAplicacion.personas;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import gestorAplicacion.establecimientos.*;
 import gestorAplicacion.financiero.*;
 import gestorAplicacion.inventario.*;
 
-public class Cliente extends Persona {
+public class Cliente extends Persona implements Serializable {
 	
 	
 	//Atributos
@@ -33,44 +34,6 @@ public class Cliente extends Persona {
 		
 		
 		
-		
-		//autorizar procedimiento de exhumacion y cremacion del cliente
-		//public String autorizar() {
-			//ArrayList<Familiar> familiares=this.familiares;
-			//Familiar familiarDesignado= this.designarFamiliar(familiares);
-			//String mensaje =" autoriza la solicitud";
-			
-			//for(Persona auxFamiliar: familiares) {
-				//if(auxFamiliar instanceof Cliente) {
-					//mensaje= " del cliente "+auxFamiliar.getNombre()+" autoriza la solicitud";
-					//break;
-				//}
-			//}
-			
-			//while (familiares.size()!=0) {
-				//if (familiarDesignado !=null) {
-					//if(numeroAutorizar() & familiarDesignado.getCC() !=0) {
-					//return familiarDesignado.getParentesco() + mensaje;
-				//}	else{
-					//	familiares.remove(familiarDesignado);
-						//familiarDesignado=this.designarFamiliar(familiares);}
-				
-				//}else {return "La solicitud no podrá ser autorizada";}
-						
-			//}
-			//return 	"La solicitud no podrá ser autorizada";
-			
-		//}
-		
-		//apoyo a metodo autorizar
-		//private boolean numeroAutorizar() {
-			//int numero = (int) (Math.random() * 10);
-			//if (numero < 6) {
-				//return true;
-			//}
-			//return false;
-			//}
-		
 		//Devuelve la cantidad de Familiares y acompañantes que tiene cada Familiar 
 		public int cantidadFamiliares() {
 			int cantidadFamiliares=familiares.size();
@@ -87,39 +50,6 @@ public class Cliente extends Persona {
 			return cantidadFamiliares;
 		}
 		
-		//Este método se empleará para asignar a familiares del cliente únicamente que tengan un parentesco directo con le nuevo cliente de conyuge, hijo, padre, hermano 
-		
-		//public void asignarParentesco(Cliente cliente, String parentesco) {
-			//ArrayList<String> parentescos = new ArrayList<String>();
-			//familiares.add(cliente);
-			
-			//if(parentesco=="conyuge") {
-				//parentescos.add("hijo");
-				
-			//}else if(parentesco=="hijo") {
-				//parentescos.add("conyuge");
-				//parentescos.add("hijo");
-			
-		//	}else if(parentesco=="padre") {
-			//	parentescos.add("hermano");
-				//parentescos.add("padre");
-			//}else {
-				//parentescos.add("padre");
-				//parentescos.add("hermano");
-			//}
-			
-		//	for (String auxParentesco: parentescos) {
-			//	for(Persona auxFamiliar: cliente.familiares) {
-				//	if(auxFamiliar instanceof Familiar) {
-					//	Familiar familiar= (Familiar) auxFamiliar;
-						//if(familiar.getParentesco()==auxParentesco) {
-							//familiares.add(familiar);
-						//}//fin if
-					//}//fin if principal
-				//}//fin for 
-			//}//fin for principal
-			
-			
 			
 		//}
 	
@@ -162,12 +92,21 @@ public class Cliente extends Persona {
 		return familiaresFiltrados;
 	} 
 	
+	//Recibe un parámetro tipo String con valor "flores" o con valor "material"
+	//Sirve para generar un String con el resumen de los adornos generados
 	public String pagoInmediato(String tipoAdorno) {
 		
+		//Se asocia al tipo más específico de Inventario (Es un método abstracto)
 		inventario.generarAdornos(tipoAdorno);
 		ArrayList<String> arreglo;
 		ArrayList<Producto> productos=new ArrayList<Producto>();
-		ArrayList<Familiar> familiaresA=this.familiares;
+		ArrayList<Familiar> familiaresA=new ArrayList<Familiar>();
+		
+		for(Familiar familiar: this.familiares) {
+			familiaresA.add(familiar);
+		}
+		
+		
 		Familiar familiarDesignado = null;
 		boolean validacionPago=false;
 		String pagoInmediato="";
@@ -187,16 +126,16 @@ public class Cliente extends Persona {
 		while(validacionPago==false) {
 			familiarDesignado = designarFamiliar(familiares);
 			
-			if (familiares.size()==0) {return "No es posible hacer el cobro de la factura. No se podrán agregar adornos";}
+			if (familiares.size()==0) {return 
+					"No es posible hacer el cobro de la factura. No se podrán agregar adornos";}
 			
 			if(familiarDesignado.getCC()!=0 && familiarDesignado.getCuentaBancaria().getSaldo()>=total) {
-				familiarDesignado.getCuentaBancaria().transaccionCuentaAhorros(total, inventario.getCementerio().getFuneraria().getCuentaAhorros());
+				familiarDesignado.getCuentaBancaria().transaccionCuentaAhorros(total, 
+						inventario.getCementerio().getFuneraria().getCuentaAhorros());
 				validacionPago=true;
 			}//Fin if
 			
 			else{familiaresA.remove(familiarDesignado);}
-			
-			
 			
 		}
 		

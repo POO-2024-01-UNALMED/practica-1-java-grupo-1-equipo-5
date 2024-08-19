@@ -13,6 +13,7 @@ import gestorAplicacion.establecimientos.Establecimiento;
 import gestorAplicacion.financiero.CuentaBancaria;
 import gestorAplicacion.financiero.Factura;
 import gestorAplicacion.inventario.Inventario;
+import gestorAplicacion.inventario.Producto;
 import gestorAplicacion.inventario.Vehiculo;
 import gestorAplicacion.personas.Persona;
 
@@ -53,6 +54,7 @@ public class Serializador {
         Serializador.serializar(Vehiculo.getVehiculos(), "Vehiculos");
         Serializador.serializar(Factura.getFacturas(), "Facturas");
         Serializador.serializar(CuentaBancaria.getCuentas(), "Cuentas");
+        Serializador.serializar(Producto.getProductos(), "Productos");
   
 
         // y asi ...

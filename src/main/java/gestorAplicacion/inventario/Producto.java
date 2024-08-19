@@ -1,13 +1,15 @@
 package gestorAplicacion.inventario;
 
+import java.io.Serializable;
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 import gestorAplicacion.establecimientos.*;
 import gestorAplicacion.personas.Cliente;
 import gestorAplicacion.personas.Familiar;
 import gestorAplicacion.personas.Persona;
 
-public class Producto {
+public class Producto implements Serializable {
 
 	// Atributos
     private String nombre;
@@ -20,6 +22,8 @@ public class Producto {
     private Tumba tumba;
     
     private int cantidadVendida=0;
+    
+    private static ArrayList<Producto> productos=new ArrayList<Producto>();
 
     
     
@@ -30,17 +34,20 @@ public class Producto {
 		this.precio = precio;
 		this.cantidad = cantidad;
 		this.cantidadVendida = cantidadVendida;
+		productos.add(this);
 	}
 	public Producto(String nombre, double precio, int cantidad) {
 		this.nombre = nombre;
 		this.precio = precio;
 		this.cantidad = cantidad;
+		productos.add(this);
 	}
     public Producto(String nombre, double precio, int cantidad, Establecimiento establecimiento) {
 		this.establecimiento = establecimiento;
 		this.nombre = nombre;
 		this.precio = precio;
 		this.cantidad = cantidad;
+		productos.add(this);
 	}
     
 
@@ -49,16 +56,19 @@ public class Producto {
     	this.establecimiento=establecimiento;
     	this.nombre=establecimiento.getNombre();
     	this.cantidad=1;
+    	productos.add(this);
 
     }public Producto(Urna urna, int cantidadFlores){
     	this.urna = urna;
     	this.precio = urna.precioTotal(cantidadFlores);
     	this.cantidad = 1;
+    	productos.add(this);
     }
     public Producto(Tumba tumba, int cantidadFlores){
     	this.tumba = tumba;
     	this.precio = tumba.precioTotal(cantidadFlores);
     	this.cantidad = 1;
+    	productos.add(this);
     }
     
     public Producto(Vehiculo vehiculo) {
@@ -66,6 +76,7 @@ public class Producto {
     	this.nombre=vehiculo.getTipoVehiculo().name();
     	this.precio=vehiculo.getTipoVehiculo().getPrecio();
     	this.cantidad = 1;
+    	productos.add(this);
     	
     }
     public Producto(Vehiculo vehiculo, Establecimiento establecimiento) {
@@ -74,7 +85,7 @@ public class Producto {
     	this.nombre=vehiculo.getTipoVehiculo().name();
     	this.precio=vehiculo.getPrecio();
     	this.cantidad = 1;
-    	
+    	productos.add(this);
     }
     
     
@@ -85,10 +96,14 @@ public class Producto {
     	String nombreIglesia=establecimiento.getIglesia().getNombre();;
     	String familiares="";
     	
+    	//Si el producto tiene asociado un objeto de tipo Establecimiento que a su vez
+    	//es de tipo Crematorio el evento es una Cremación  
     	if (establecimiento instanceof Crematorio) {
     		Crematorio crematorio=(Crematorio) establecimiento;
     		concepto="Cremación";
-    		
+    	
+    	//Si el producto tiene asociado un objeto de tipo Establecimiento que a su vez 
+    	//es de tipo Cementerio el evento es un Entierro  
     	}else if(establecimiento instanceof Cementerio) {
     		Cementerio cementerio=(Cementerio) establecimiento;
     		if( ((Cementerio)establecimiento).getTipo()=="cuerpos")
@@ -99,15 +114,13 @@ public class Producto {
     		familiares=familiares+familiar+"\n";
     	}
     	
-    	
-    	
+    	//Resume de los datos del evento guardados en el objeto de tipo Establecimiento
     	String evento=
     			"Asunto: Invitación a la Ceremonia de "+concepto+" de "+cliente+
     			"\nInvita\n"+familiares+
     			"\n Hora de la Ceremonia: "+hora+
-    			"\n Lugar de Cremación "+establecimiento.getNombre()+
+    			"\n Lugar de "+concepto+": " +establecimiento.getNombre()+
     			"\n Centro religioso: "+nombreIglesia;
-    	
     	return evento;
     	
     }
@@ -122,6 +135,7 @@ public class Producto {
     public Producto(String nombre, int cantidadVendida) {
         this.nombre = nombre;
         this.cantidadVendida = cantidadVendida;
+        productos.add(this);
     }
 
 	// Métodos getters y setters
@@ -173,6 +187,10 @@ public class Producto {
 
 	public void setVehiculo(Vehiculo vehiculo) {
 		this.vehiculo = vehiculo;
+	}
+	
+	public static ArrayList<Producto> getProductos(){
+		return productos;
 	}
     
 }
