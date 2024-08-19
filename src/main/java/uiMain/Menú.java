@@ -1259,144 +1259,201 @@ public class Menú {
     		
     		case 3:  //Pago empleados
     			valido = true;
+    			
+    			//Lista de todos los empleados de la funeraria
     			ArrayList <Empleado> empleados = funeraria.getEmpleados();
+    			
+    			//Lista para agregar a los empleados con al menos un trabajo hecho
     			ArrayList <Empleado> empleadosDispo = new ArrayList<Empleado>();
+    			
+    			//Variable de condicion
     			boolean hayEmpleadosDisponibles = false;
     			int indice4 = 0;
+    			
+    			//Se recorre la lista de los empleados de la funeraria
     			for(int i = 0; i < empleados.size();i++) {
+    				//Referencia empleado activo en el bucle
     				Empleado empleado = empleados.get(i);
+    				
+    				//Condicional que comprueba si el empleado ha hecho al menos un trabajo y se agrega a la lista de los empleados disponibles
     				if(empleado.getTrabajosHechos() > 0) {
     					indice4++;
     					empleadosDispo.add(empleado);
+    				//Se imprimen los empleados con al menos un trabajo
     				System.out.println("["+indice4+"] "+ empleados.get(i).getNombre());
+    				//Se actualiza la variable de condicion
     				hayEmpleadosDisponibles = true;
     			}}
+    			//Se indica que no hay empleados disponibles
     		    if(!hayEmpleadosDisponibles) {
     		    	System.out.println("No hay empleados disponibles a los que pagar");
-    		    }else {
+    		    }//Se pregunta a que cliente se le quiere pagar
+    		    else {
     			System.out.print("Ingrese el índice correspondiente: ");
     			int indiceEmpleado=scanner.nextInt();
+    			
+    			//Si el indice esta fuera de rango se pregunta de nuevo
     			while (indiceEmpleado <1 || indiceEmpleado>empleados.size()) {
     				System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
     				indiceEmpleado=scanner.nextInt();
     			}
-    			
+    			//Referencia al empleado seleccionado
     			Empleado empleado=(Empleado) empleadosDispo.get(indiceEmpleado-1);
     			
+    			//Se invoca el metodo pagoTrabajadores y semuestra su resultado
     			System.out.println(funeraria.pagoTrabajadores(empleado));}
     			break;
-    		case 4:
+    		case 4:  //Credito
     			valido = true;
     			boolean continuar = true;
+    			
+    			//Bucle que pregunta si se quiere realizar otro proceso al terminar uno
     			while(continuar) {
+    			//Se muestran las acciones disponibles en credito
     			System.out.println("Que proceso quiere hacer ");
     			System.out.println("[1] Pedir credito");
     			System.out.println("[2] Pagar credito");
     			System.out.println("[3] Ver credito");
     			
+    			//Se selecciona la opcion
     			System.out.print("Ingrese el índice correspondiente: ");
     			int indiceCredito = scanner.nextInt();
+    			
+    			//Si el indice esta fuera de rango se pregunta de nuevo
     			while (indiceCredito < 1 || indiceCredito > 3) {
     				System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
     				indiceCredito=scanner.nextInt();
-    			}
+    			}//Referencia a la lista de creditos de la funeraria
     			ArrayList<Factura> creditos = funeraria.getCuentaCorriente().getCredito();
     				switch(indiceCredito) {		
-    			case 1:
+    			case 1:  //Pedir credito
+    				//Se llama al metodo pedirCredito y devuelve su resultado
     				System.out.println(funeraria.pedirCredito());
     				break;
-    			case 2:
+    			case 2:  //Pagar credito
+    				//Condicional para saber si la funeraria tiene algun credito activo
     				if(creditos.size() > 0) {
+    					//Recorrido por los creditos activos de la funeraria
     				    for(int i = 0; i < creditos.size();i++) {
+    				    	//Referencia al credito activo en el bucle
     				    	Factura factura = creditos.get(i);
+    				    	//Imprime las facturas de los creditos activos
     				    	System.out.println("["+(i+1)+"]"+"Credito con ID: "+ factura.getID());}
+    				   
+    				    //Se selecciona un credito
     				    System.out.print("Ingrese el índice del credito: ");
     					int indiceCredito1 = scanner.nextInt();
     					scanner.nextLine();
     					
+    					//Si el indice esta fuera de rango se vuelve a pedir
     					while(indiceCredito1<1 || indiceCredito1>creditos.size()) {
     						System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
     						indiceCredito1=scanner.nextInt();
     					}
-    				System.out.println("Que porcentaje desea pagar ");
+    			//Se pregunta que porcentaje del credito se desea pagar		
+    			System.out.println("Que porcentaje desea pagar ");
     			System.out.println("[1] 100%");
     			System.out.println("[2] 80%");
     			System.out.println("[3] 60%");
     			System.out.println("[4] 40%");
     			System.out.println("[5] 20%");
     			System.out.print("Ingrese el índice correspondiente: ");
+    			//Se selecciona un porcentaje
     			int indicePorcentaje = scanner.nextInt();
+    			
+    			//Si el indice esta fuera de rango se vuelve a pedir
     			while (indicePorcentaje <1 || indicePorcentaje>5) {
     				System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
     				indicePorcentaje=scanner.nextInt();
     			}
 
     			switch(indicePorcentaje) {
-    			case 1:
+    			case 1: //100%
+    				//Se llama al metod pagar factura y sele pasa el credito seleccionado y se paga la totalidad de su precio
     				System.out.println(funeraria.pagarCredito(indiceCredito1 - 1,1.0));
     				break;
-    			case 2:
+    			case 2: //80%
+    				//Se llama al metod pagar factura y sele pasa el credito seleccionado y se paga el 80% de su precio
     				System.out.println(funeraria.pagarCredito(indiceCredito1 - 1, 0.8));
     				break;
-    			case 3:
+    			case 3:  //60%
+    				//Se llama al metod pagar factura y sele pasa el credito seleccionado y se paga el 60% de su precio
     				System.out.println(funeraria.pagarCredito(indiceCredito1 - 1,0.6));
     				break;
-    			case 4:
+    			case 4:  //40%
+    				//Se llama al metod pagar factura y sele pasa el credito seleccionado y se paga el 40% de su precio
     				System.out.println(funeraria.pagarCredito(indiceCredito1 - 1,0.4));
     				break;
-    			case 5:
+    				//Se llama al metod pagar factura y sele pasa el credito seleccionado y se paga la 20% de su precio
+    			case 5: //20%
     				System.out.println(funeraria.pagarCredito(indiceCredito1 - 1,0.2));
     				break;
     			}}
     			break;
-    			case 3:
+    			case 3:  //Ver credito
+    				//Condicional que comprueba si hay por lo menos un credito activo
     				if(creditos.size() > 0) {
+    					//Recorrido por los credito activos de la funeraria
     				    for(int i = 0; i < creditos.size();i++) {
+    				    	//Referencia factura activa en el bucle
     				    	Factura factura = creditos.get(i);
+    				    	//Se muestran los creditos activos con su ID
     				    	System.out.println("["+(i+1)+"]"+"Credito con ID: "+ factura.getID());}
     				    System.out.print("Ingrese el índice del credito: ");
-    					int indiceCredito2 = scanner.nextInt();
+    					//Se selecciona un credito
+    				    int indiceCredito2 = scanner.nextInt();
     					scanner.nextLine();
     					
+    					//Si el indice esta fuera de rango se vuelve a pedir
     					while(indiceCredito2<1 || indiceCredito2>creditos.size()) {
     						System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
     						indiceCredito2=scanner.nextInt();
     					}
+    				//Se invoca el metodo infoCredito y se muestra su informe	
     				System.out.println(funeraria.getCuentaCorriente().infoCredito(indiceCredito2 - 1));
     			break;
     			
-    				}}System.out.println("Desea realizar otra accion de credito? (s/n): ");
+    				}}//Se pregunta si se desea realizar otra accion con credito
+    				System.out.println("Desea realizar otra accion de credito? (s/n): ");
     			String respuesta = scanner.next();
     			continuar = respuesta.equalsIgnoreCase("s");
     			}
     			break;
-    		case 5:
+    		case 5:  //Reajuste de dinero
     			valido = true;
     			boolean continuarH = true;
+    			
+    			//bucle que pregunta al finalizar una accion si se quiere realizar otro
     			while(continuarH) {
+    			//Se muestran las acciones posibles en reajuste de dinero
     			System.out.println("Que proceso quiere hacer ");
     			System.out.println("[1] Ver informe gastos");
     			System.out.println("[2] Reajuste");
     			
+    			//Se selecciona un opcion
     			System.out.print("Ingrese el índice correspondiente: ");
     			int indiceReajuste = scanner.nextInt();
     			scanner.nextLine();
+    			//Si el indice esta fuera de rango se pregunta de nuevo
     			while(indiceReajuste<1 || indiceReajuste>2) {
     				System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
     				indiceReajuste=scanner.nextInt();
     			}
     			switch(indiceReajuste) {
-    			case 1:
+    			case 1:  //Ver informe gatos
+    				//Se invoca el metodo informeGastosFacturas y se muestra su resultado
     				System.out.println(funeraria.informeGastosFacturas());
     				break;
-    			case 2:
+    			case 2:  //Reajuste
+    				//Se invoca el metodo reajusteDinero y se muestra su resultado
     			    System.out.println(funeraria.reajusteDinero());
     			break;
-    			
+    			 //Se pregunta si se desea realizar otra accion en reajuste
     			}System.out.println("Desea realizar otra accion en reajuste? (s/n): ");
     			String respuesta = scanner.nextLine();
     			continuarH = respuesta.equalsIgnoreCase("s");
     		}break;
+    		//Se pregunta si se desea realizar otro proceso con la funeria
     		}System.out.println("Desea realizar otro proceso con la funeraria? (s/n): ");
     		String respuestape = scanner.next();
     		if(respuestape.equalsIgnoreCase("s")) {
