@@ -56,13 +56,16 @@ public class FuncionalidadExhumacion {
 					System.out.println("El cliente no se encuentra registrado");
 					System.out.print("Ingrese CC del cliente: ");
 					CC = scanner.nextLong();
-				}else{
-					if(cliente.getInventario() == null) {
-						System.out.println("El cliente está registrado pero no es apto para la exhumación"); cliente=null;
 				}
-			}
-			}	
+					
 			
+				
+				if(cliente.getInventario() == null) {
+					System.out.println("El cliente está registrado pero no es apto para la exhumación"); cliente=null;
+			}else {cliente = Establecimiento.examinarCliente(CC);}
+				
+			}	
+				
 				
 				break;
 				

@@ -160,11 +160,22 @@ public class Establecimiento implements Serializable {
 	public static Cliente examinarCliente(long CC) {
 		
 		ArrayList<Establecimiento> funerarias= Establecimiento.filtarEstablecimiento("funeraria");
+		ArrayList<Establecimiento> cementerios= Establecimiento.filtarEstablecimiento("cementerio");
 		Cliente cliente=null;
 		
 		for(Establecimiento auxFuneraria: funerarias) {
 			Funeraria funeraria= (Funeraria) auxFuneraria;
 			for(Cliente auxCliente: funeraria.buscarCliente("adulto")) {
+				if(auxCliente.getCC()==CC) {
+					return cliente=auxCliente;
+				}//fin if
+			}//fin for
+			
+		}
+		
+		for(Establecimiento auxCementerio: cementerios) {
+			Cementerio cementerio= (Cementerio) auxCementerio;
+			for(Cliente auxCliente: cementerio.buscarCliente("adulto")) {
 				if(auxCliente.getCC()==CC) {
 					return cliente=auxCliente;
 				}//fin if
