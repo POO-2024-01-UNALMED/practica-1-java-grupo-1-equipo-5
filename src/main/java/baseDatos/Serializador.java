@@ -2,6 +2,7 @@ package baseDatos;
 
 import java.io.File;
 
+
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -9,13 +10,10 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 
-import gestorAplicacion.establecimientos.Establecimiento;
-import gestorAplicacion.financiero.CuentaBancaria;
-import gestorAplicacion.financiero.Factura;
-import gestorAplicacion.inventario.Inventario;
-import gestorAplicacion.inventario.Producto;
-import gestorAplicacion.inventario.Vehiculo;
-import gestorAplicacion.personas.Persona;
+import gestorAplicacion.establecimientos.*;
+import gestorAplicacion.financiero.*;
+import gestorAplicacion.inventario.*;
+import gestorAplicacion.personas.*;
 
 
 public class Serializador {
@@ -56,6 +54,7 @@ public class Serializador {
         Serializador.serializar(Factura.getFacturas(), "Facturas");
         Serializador.serializar(CuentaBancaria.getCuentas(), "Cuentas");
         Serializador.serializar(Producto.getProductos(), "Productos");
+        Serializador.serializar(Cementerio.getCementerios(), "Cementerios");
   
 
         // y asi ...

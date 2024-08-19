@@ -2,6 +2,7 @@ package gestorAplicacion.establecimientos;
 import gestorAplicacion.inventario.*;
 
 
+
 import java.io.Serializable;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -19,11 +20,13 @@ public class Cementerio extends Establecimiento implements Serializable {
 	//En inventario se pueden agregar objetos de la clase Urna para los objetos cementerios de tipo cenizas y objetos Tumba para los cementerios de tipo Tumba
 	private ArrayList<Inventario> inventario = new ArrayList<Inventario>();
 	private static final long serialVersionUID = 1L;
+	public static ArrayList<Cementerio> cementerios =new ArrayList<Cementerio>(); 
 
 	//Constructor
 	public Cementerio(String nombre, int capacidad, CuentaBancaria cuentaCorriente,String afiliacion, Empleado empleado,String tipo,Funeraria funeraria) {
 			super(nombre,capacidad,cuentaCorriente,afiliacion,empleado,funeraria);
 			this.tipo=tipo;
+			cementerios.add(this);
 		}
 	
 	
@@ -221,7 +224,9 @@ public class Cementerio extends Establecimiento implements Serializable {
 		this.inventario = inventario;
 	}
 	
-
+	public static ArrayList<Cementerio> getCementerios(){
+		return Cementerio.cementerios;
+	}
 	
 
 }

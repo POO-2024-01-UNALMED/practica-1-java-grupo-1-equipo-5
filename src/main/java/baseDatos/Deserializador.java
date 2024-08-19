@@ -1,12 +1,14 @@
 package baseDatos;
 
 import java.io.File;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
+import gestorAplicacion.establecimientos.Cementerio;
 import gestorAplicacion.establecimientos.Establecimiento;
 import gestorAplicacion.financiero.CuentaBancaria;
 import gestorAplicacion.financiero.Factura;
@@ -51,6 +53,7 @@ public class Deserializador {
     	deserializar(Factura.getFacturas(), "Facturas");
     	deserializar(CuentaBancaria.getCuentas(), "Cuentas");
     	deserializar(Producto.getProductos(), "Productos");
+    	deserializar(Cementerio.getCementerios(), "Cementerios");
     	
     	
 

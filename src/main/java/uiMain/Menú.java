@@ -2,6 +2,7 @@ package uiMain;
 
 import java.util.Scanner;
 
+
 import baseDatos.Deserializador;
 import baseDatos.Serializador;
 
@@ -10,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import gestorAplicacion.establecimientos.*;
+
 import gestorAplicacion.financiero.CuentaBancaria;
 import gestorAplicacion.financiero.Factura;
 import gestorAplicacion.personas.*;
@@ -69,6 +71,7 @@ public class Menú {
 			while (indiceCliente<1 || indiceCliente>2) {
 				System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
 				indiceCliente=scanner.nextInt();
+				
 			}
 			
 			switch (indiceCliente) {
@@ -539,6 +542,7 @@ public static void funcionalidadEntierro() {
 		//Se escoge la funeraria con la que se va a realizar el procedimiento
 				ArrayList<Establecimiento> funerarias =Establecimiento.filtarEstablecimiento("funeraria");
 				System.out.println("Seleccione la funeraria correspondiente");
+			
 				int indice=0;
 				for(Establecimiento auxFuneraria:funerarias) {
 					indice+=1;
@@ -680,6 +684,7 @@ public static void funcionalidadEntierro() {
 				
 				
 				Cementerio cementerio = (Cementerio) cementerios.get(indice-1);
+				
 				
 				//Se crea un producto para agregarlo al Array de Productos y añadirlo a las facturas del cliente
 				Producto productoCementerio= new Producto(cementerio);
@@ -2266,7 +2271,7 @@ public static void funcionalidadExhumacion() {
 	public static void main(String[] args) {
 		
 		//cuentasCorriente funerarias
-		CuentaBancaria cuenta1F = new CuentaBancaria(199234234, "Eterna Paz", 4000000,4000000,4000000,4000000,4000000, "BBVA");
+		/*CuentaBancaria cuenta1F = new CuentaBancaria(199234234, "Eterna Paz", 4000000,4000000,4000000,4000000,4000000, "BBVA");
 	    CuentaBancaria cuenta2F = new CuentaBancaria(193739239, "Caminos de luz", 4000000,4000000,4000000,4000000,4000000, "BANCOLOMBIA");
 	    CuentaBancaria cuenta3F = new CuentaBancaria(384627823, "Recuerdos eternos", 4000000,4000000,4000000,4000000,4000000, "DAVIVIENDA");
 		    
@@ -5584,15 +5589,17 @@ public static void funcionalidadExhumacion() {
 		
 		funeraria1.getListadoFacturas().add(new Factura(urnas1F1, "inventario"));
 		funeraria2.getListadoFacturas().add(new Factura(tumbas2F2, "inventario"));
-		funeraria3.getListadoFacturas().add(new Factura(servicios1F3, "establecimiento")); 
+		funeraria3.getListadoFacturas().add(new Factura(servicios1F3, "establecimiento")); */
 		
 		
 		
-		//Funeraria[] funerarias = new Funeraria[]{funeraria1, funeraria2, funeraria3};*/
+		//Funeraria[] funerarias = new Funeraria[]{funeraria1, funeraria2, funeraria3};
 		
 		boolean validacion=true;
 		Scanner scanner = new Scanner(System.in);
-		//Deserializador.deserializarListas();
+	
+		Cementerio.getCementerios();
+		Deserializador.deserializarListas();
 		
 		while(validacion) {
 			
