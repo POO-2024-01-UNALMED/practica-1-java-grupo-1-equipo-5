@@ -19,7 +19,11 @@ public class Crematorio extends Establecimiento{
 		super(nombre,capacidad,cuentaCorriente,afiliacion,empleado,funeraria);
 		}
 	
+	//Recibe un arreglo de tipo Establecimiento y cada elemento del arreglo también debe ser de tipo Cementerio 
+	//Este método sirve para modificar el arreglo de horarios de Cementerio
+	//no devuelve nada, pero modifica el arreglo de horarioEventos de cada Cementerio del arreglo ingresado como parámetro
 	public void cambiarHorarios(ArrayList<Establecimiento> cementerios){
+		
 		
 		LocalTime horaFin =getIglesia().duracionEvento(getHoraEvento());
 		Random random=new Random();
@@ -27,7 +31,6 @@ public class Crematorio extends Establecimiento{
 		for(Establecimiento auxCementerio:cementerios) {
 		
 			int randomNumber = (int)(Math.random() * (3)) + 1;
-			Cementerio cementerio =(Cementerio) auxCementerio; 
 			
 			while(randomNumber>0) {
 				int min = horaFin.getHour();
@@ -41,9 +44,7 @@ public class Crematorio extends Establecimiento{
 	            randomNumber-=1;
 		
 			}
-		
 	
-		
 		
 	}
 		

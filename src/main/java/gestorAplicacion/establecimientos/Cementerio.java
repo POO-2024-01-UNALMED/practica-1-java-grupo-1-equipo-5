@@ -24,13 +24,17 @@ public class Cementerio extends Establecimiento {
 		}
 	
 	
-	
+	//Recibe como primer parámetro un arreglo de tipo Establecimiento y cada elemento del arreglo debe tener también el tipo Cementerio y
+	//como segundo parámetro recibe un String que debe tener como valor "cenizas" o "cuerpos"
+	//Este método sirve para filtrar los objetos Cementerio por su tipo que debe ser "cenizas" o "cuerpos"
+	//Devuelve un arrreglo de tipo Establecimiento 
 	public static ArrayList<Establecimiento> cementerioPorTipo(ArrayList<Establecimiento> cementerios,String tipo){
 		
 		ArrayList <Establecimiento> cementeriosDisponibles= new ArrayList<Establecimiento>();
 		
 		for(int i=0;i<cementerios.size();i++) {
 			
+			//Especificación del objeto para poder evaluar el atributo tipo
 			Cementerio cementerio = (Cementerio) cementerios.get(i);
 			
 			if (cementerio.getTipo()==tipo) {
@@ -42,7 +46,9 @@ public class Cementerio extends Establecimiento {
 		return cementeriosDisponibles;
 	}
 	
-	//Recibe como parámetro un String "urna" o "tumba"
+	//Recibe como primer parámetro un String que puede tomar el valor de "urna" o "tumba" además, 
+	//recibe el tamaño (peso o estatura) del cliente y su atributo edad
+	//Devuelve un arreglo de tipo Inventario con los objetos también de tipo Urna o Tumba seleccionados 
 	public ArrayList<Inventario> disponibilidadInventario(String urnaTumba, double tamaño, int edad){
 		
 		ArrayList<Inventario> inventarioDisponible=new ArrayList<Inventario>();
@@ -51,12 +57,15 @@ public class Cementerio extends Establecimiento {
 		if(urnaTumba.equals("tumba")) {
 			auxInventario=inventario;
 		}else {
+			//Devuelve un arreglo de tipo Inventario que también es de tipo Urna y 
+			//se las selecciona de acuerdo al tipo del Objeto Urna y a la iglesia del cementerio
 			auxInventario=this.tipoUrna();
 		}
 		
 		for(Inventario auxUrnaTumba: auxInventario) {
 	
-			if (auxUrnaTumba.getCliente()==null & auxUrnaTumba.getTamaño()>=auxUrnaTumba.determinarTamaño(tamaño) & auxUrnaTumba.getCategoria()==auxUrnaTumba.determinarCategoria(edad)) { //& auxUrnaTumba.getCategoria()==auxUrnaTumba.determinarCategoria(edad)){
+			if (auxUrnaTumba.getCliente()==null & auxUrnaTumba.getTamaño()>=auxUrnaTumba.determinarTamaño(tamaño) & 
+					auxUrnaTumba.getCategoria()==auxUrnaTumba.determinarCategoria(edad)) { 
 				inventarioDisponible.add(auxUrnaTumba);
 			}//Fin if
 		}//Fin for 

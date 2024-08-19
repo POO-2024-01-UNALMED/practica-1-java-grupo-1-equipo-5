@@ -363,10 +363,10 @@ public class Menú {
 				}
 				
 				//Tipo de categoria para la urna
-				System.out.println("Seleccione el tipo de categoría para la urna del cliente");
-				System.out.println("[0] Se puede escoger un arreglo florales");
-				System.out.println("[1] Se pueden escoger un arreglo floral y material para la Urna");
-				System.out.println("[2] Se pueden escoger cuatro arreglos florales y material para la Urna");
+				System.out.println("Seleccione la categoría para la urna del cliente");
+				System.out.println("[0] Se puede escoger un arreglo floral");
+				System.out.println("[1] Se pueden escoger tres arreglos florales");
+				System.out.println("[2] Se pueden escoger tres arreglos florales y material para la Urna");
 				
 				System.out.print("Indique el índice de la categoría deseada: ");
 				int categoria =scanner.nextInt();
@@ -429,7 +429,7 @@ public class Menú {
 				int numero=0;
 		
 				//Si la categoria es 0 solo se podrán escoger 2 flores del arreglo
-				if(categoria==0 || categoria==1) {
+				if(categoria==0 ) {
 					numero=1;
 				}else {numero=3; urna.setMaterialSeleccionado(null);} //Se cambia el materialSeleccionado con valor null para poder agregar uno
 				while(numero>0) {

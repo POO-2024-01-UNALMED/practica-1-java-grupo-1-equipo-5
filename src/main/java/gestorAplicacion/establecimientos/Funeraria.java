@@ -57,10 +57,14 @@ public class Funeraria extends Establecimiento{
 		return establecimientosDisponibles;
 	}
 	
+	//Recibe 2 parámetros, el primero tipo String que puede tomar el valor de "cuerpos" o "cenizas" y el segundo de tipo Cliente
 	//Sirve para buscar el cementerio adecuado según su atributo tipo que puede ser "cenizas" o "cuerpo"
+	//Devuelve un arreglo de tipo Establecimiento en donde se encuentran filtrados los objetos también de tipo Cementerio
 	public ArrayList<Establecimiento> buscarCementerios(String tipoCementerio,Cliente cliente){
 		
+		//Busca los objetos de tipo Cementerio que estén asociados a la funeraria y cumplan 2 restricciones
 		ArrayList <Establecimiento> cementerios = this.buscarEstablecimientos("cementerio", cliente);
+		
 		
 		ArrayList <Establecimiento> cementeriosDisponibles= Cementerio.cementerioPorTipo(cementerios, tipoCementerio);
 		
@@ -91,8 +95,14 @@ public class Funeraria extends Establecimiento{
 			
 	}
 	
+	
+	//Recibe dos parámetros, el primero de tipo LocalTime y el segundo de tipo String que puede tomar los siguientes valores
+	//"conductor","sepulturero","padre","obispo" o "cremador"
+	//Este método está sobrecargado 
+	//Devuelve un arreglo de objetos tipo Empleado filtrados por su atributo jornada y cargo  
 	public ArrayList<Empleado> buscarEmpleados(LocalTime horas,String cargo){
 		
+		//Determina el rango de horas para asignar la jornada
 		String jornada;
 		if(horas.getHour()<=14 & horas.getHour()>=6 ) {
 			jornada="mañana";
@@ -102,8 +112,11 @@ public class Funeraria extends Establecimiento{
 			jornada="noche";
 		}
 		
+		//Devuelve un arreglo de empleados seleccionados por su cargo y por su jornada determinanda por el rango de horas asignado
 		return this.buscarEmpleados(jornada, cargo);
 	}
+	
+	
 	public void agregarFactura(Factura factura) {
         listadoFacturasPorPagar.add(factura);
     }

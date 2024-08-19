@@ -22,7 +22,8 @@ public class Urna extends Inventario {
 		}
 	}
 		
-	
+		//Recibe como parámetro un String que puede tomar valor de "flores" o "material"
+		//Se emplea para modificar el arreglo de flores o material del objeto tipo Urna
 		@Override
 		public void generarAdornos(String tipoAdorno){
 			
@@ -55,13 +56,13 @@ public class Urna extends Inventario {
 				}//Fin for
 			}//Fin if validacion
 			
-				
-			
 		}
-	
+		//Se ingresa un parámetro tipo double y la idea es que ese parámetro sea el peso del cliente 
+		//Devuelve el volumen del objeto de tipo Urna de acuedo con el peso del cliente 
 		@Override
 		public double determinarTamaño(double peso) {
-			//Se estima que se necesitan alrededor de 1 pulgada cúbica (aproximadamente 16.4 cm³) de espacio en la urna por cada libra (0.45 kg) del peso del cuerpo antes de la cremación.
+			//Se estima que se necesitan alrededor de 1 pulgada cúbica (aproximadamente 16.4 cm³) de 
+			//espacio en la urna por cada libra (0.45 kg) del peso del cuerpo antes de la cremación.
 			//Se necesita calcular el volumen de acuerdo al peso y al tamaño base en cm^3
 			//El peso estará dado en kg 
 			
@@ -71,6 +72,8 @@ public class Urna extends Inventario {
 			return volumenNecesario;	
 			
 		}
+		
+		
 		public String[] tipoMaterial(){
 			String[] material= {"Madera", "Metal", "Cerámica"};
 			
