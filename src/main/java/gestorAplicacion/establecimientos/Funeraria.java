@@ -129,16 +129,21 @@ public class Funeraria extends Establecimiento{
 	
 	
 	
-	
+	//Recibe como primer parámetro un String que puede tomar como valor "cuerpos" o "cenizas" 
+	//y como segundo parámetro un String con valor "adulto" o "niño"
+	//Este método sirve para retornar los clientes que se encuentran en el arreglo clientes de la clase Cementerio cuyo 
+	//atributo tipo coincida con el primer parámetro  
 	public ArrayList<Cliente> buscarCliente(String tipoCementerio, String adultoNiño){
 		
 		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 		
 		//Cementerios asociados a la funeraria clasificados por tipo (cenizas o cuerpo)
-		ArrayList<Establecimiento> cementerios=Cementerio.cementerioPorTipo(Establecimiento.buscarPorFuneraria(this, "cementerio"), tipoCementerio);
+		ArrayList<Establecimiento> cementerios=
+				Cementerio.cementerioPorTipo(Establecimiento.buscarPorFuneraria(this, "cementerio"), tipoCementerio);
 		
 		for (Establecimiento auxCementerio:cementerios) {
 			Cementerio cementerio=(Cementerio) auxCementerio;
+			//Se filtra el arreglo de clientes por el parámetro ingresado según corresponda
 			clientes.addAll(cementerio.buscarCliente(adultoNiño));
 			
 		}

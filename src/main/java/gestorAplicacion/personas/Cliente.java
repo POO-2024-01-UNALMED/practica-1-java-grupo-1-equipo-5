@@ -123,7 +123,7 @@ public class Cliente extends Persona {
 			
 		//}
 	
-		
+		//Este método retorna al familiar con el parentesco más cercano 
 		public Familiar designarFamiliar(ArrayList<Familiar> familiares) {
 			
 			String[] parentescos ={"conyuge","hijo","padre","hermano"};

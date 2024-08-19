@@ -156,13 +156,15 @@ public class Establecimiento implements Serializable {
 	
 	
 	
-	//busca a un cliente en todas las funerarias por su atributo CC
+	//busca a un cliente en todas las funerarias y cementerios por su atributo CC
+	//retorna el cliente que corresponda con el que corresponda el parámetro con su atributo CC 
 	public static Cliente examinarCliente(long CC) {
 		
 		ArrayList<Establecimiento> funerarias= Establecimiento.filtarEstablecimiento("funeraria");
 		ArrayList<Establecimiento> cementerios= Establecimiento.filtarEstablecimiento("cementerio");
 		Cliente cliente=null;
 		
+		//Busca los clientes que se encuentran en el arreglo de clientes de las funerarias (No tienen asociado un objeto de tipo Inventario)
 		for(Establecimiento auxFuneraria: funerarias) {
 			Funeraria funeraria= (Funeraria) auxFuneraria;
 			for(Cliente auxCliente: funeraria.buscarCliente("adulto")) {
@@ -173,6 +175,7 @@ public class Establecimiento implements Serializable {
 			
 		}
 		
+		//Busca los clientes que se encuentran en el arreglo de clientes de los cementerios (Tienen asociado un objeto de tipo Inventario)
 		for(Establecimiento auxCementerio: cementerios) {
 			Cementerio cementerio= (Cementerio) auxCementerio;
 			for(Cliente auxCliente: cementerio.buscarCliente("adulto")) {

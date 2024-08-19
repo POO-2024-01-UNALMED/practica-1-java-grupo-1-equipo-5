@@ -72,7 +72,8 @@ public class Cementerio extends Establecimiento {
 		return inventarioDisponible;
 	}
 	
-	
+	//Recibe un arreglo de tipo Inventario filtrado de acuerdo a las especificaciones del cliente
+	//El método pretende retornar el objeto de tipo Inventario que tenga el menor tamaño
 	public Inventario inventarioRecomendado(ArrayList<Inventario> inventario) {
 		
 		
@@ -119,6 +120,8 @@ public class Cementerio extends Establecimiento {
 	
 	}
 	
+	//Este método sirve para filtrar del arreglo de inventario los objetos de tipo Inventario 
+	//que tenga como atributo nombre "default" y tengan asociado un Cliente
 	public ArrayList<Inventario> inventarioDefault(){
 		
 		ArrayList<Inventario> porDefecto=new ArrayList<Inventario>();
@@ -154,6 +157,8 @@ public class Cementerio extends Establecimiento {
 		return urnasPorTipo;
 	} 
 	
+	//Recibe un parámetro tipo Cliente 
+	//El método se emplea para retornar un String con la organización del evento Iglesia 
 	public String organizarIglesia(Cliente cliente) {
 		
 		ArrayList<Familiar> familiares =cliente.getFamiliares();
@@ -164,9 +169,9 @@ public class Cementerio extends Establecimiento {
 		
 		cliente.getInventario().generarAdornos("flores");
 		
-		
 		int contador=1;
 		while(familiares.size()!=0 & sillas!=0) {
+			//Retorna al familiar con parentezco más cernao
 			Familiar familiar = cliente.designarFamiliar(familiares);
 			String flor=cliente.getInventario().getInventarioFlores().get(0);
 			organizacion+="Silla ["+contador+"] - Familiar "+familiar+" Flores para decorar silla -  "+ flor+"\n";
@@ -180,13 +185,9 @@ public class Cementerio extends Establecimiento {
 			
 			sillas-=1;
 			contador+=1;
-			
-		}
-		
+	}
 		cliente.agregarFactura(new Factura(productos));
-		
 		return organizacion;	
-		
 	}
 	
 	
