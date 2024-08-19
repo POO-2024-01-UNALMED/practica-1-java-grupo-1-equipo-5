@@ -1086,28 +1086,40 @@ public class Menú {
     		
     		Scanner scanner = new Scanner(System.in);
     		
+    		//Filtrar funerarias 
     		ArrayList<Establecimiento> funerarias =Establecimiento.filtarEstablecimiento("funeraria");
+    		
+    		//Mostrar funerarias disponibles
     		System.out.println("Seleccione la funeraria correspondiente");
     		int indice=0;
     		for(Establecimiento auxFuneraria:funerarias) {
     			indice+=1;
     			System.out.println("["+indice+"]"+auxFuneraria);
     		}
-    	
+    	    
+    		//Seleccionar funeraria
     		System.out.print("Ingrese el índice correspondiente: ");
     		int indiceFuneraria=scanner.nextInt();
     		
-    		
+    		//Vuelve a pedir indice si se sale del rango
     		while (indiceFuneraria<1 || indiceFuneraria>funerarias.size()) {
     			System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
     			indiceFuneraria=scanner.nextInt();
     		}
-    		
+    		//Referencia a la funeraria del indice  seleccionado
     		Funeraria funeraria=(Funeraria) funerarias.get(indiceFuneraria-1);
+    		
+    		//Variable de condicion para el buble
     		boolean continuarY = true;
+    		
+    		//Bucle para volver a este punto si se desea después de terminar cualquiera de las 5 opciones siguientes
     		while(continuarY) {
+    			
+    		//Variable de condicion para el bucle
     		boolean valido = false;
     		int indiceHacer = 0 ;
+    		
+    		//Mostrar opciones disponibles con la funeraria seleccionada
     		System.out.println("Que proceso quiere hacer ");
     		System.out.println("[1] Cobro clientes");
     		System.out.println("[2] Pagar facturas ");
@@ -1115,9 +1127,12 @@ public class Menú {
     		System.out.println("[4] credito");
     		System.out.println("[5] reajuste de dinero");
     		
+    		//Seleccion opcion
     		System.out.print("Ingrese el índice correspondiente: ");
     	    indiceHacer = scanner.nextInt();
-    		while(!valido) {
+    		
+    	    //Vuelve a preguntar por indice si se salio de rango
+    	    while(!valido) {
     		
     			if(indiceHacer >= 1 && indiceHacer <= 5) {
     				valido = true;
@@ -1126,77 +1141,123 @@ public class Menú {
     				indiceHacer = scanner.nextInt();
     			}
     		}
-    		 int a = 0;
+    	    
     		switch(indiceHacer) {
-    		case 1:
+    		
+    		case 1: //Cobro clientes
     			valido = true;
+    			
+    			//Lista con todos los cementerios de la funeraria
     			ArrayList<Establecimiento> cementerios = funeraria.cementerios();
     			indice=0;
+    			
+    			//Muestra los cementerios disponibles en la funeraria
     			for(Establecimiento cementerio: cementerios) {
     				indice+=1;
     				System.out.println("["+indice+"] "+ cementerio);
     			}
-    			
+    			//Seleccion del cementerio
     			System.out.print("Ingrese el índice del cementerio: ");
     			int indiceCementerio = scanner.nextInt();
     			
+    			//Vuelve a pedir, si el indice esta fuera de rango
     			while(indiceCementerio < 1 || indiceCementerio > cementerios.size()) {
     				System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
     				indiceCementerio=scanner.nextInt();
     				
     			} 
+    			//Se referenci el cementerio del indice  seleccionado
     			Cementerio cementerio = (Cementerio) cementerios.get(indiceCementerio - 1);
+    			
+    			//Lista con los clientes del cementerio seleccionado
     			ArrayList<Cliente> clientes = cementerio.getClientes();
     			indice = 0;
+    			//Condicionador para ver si hay clientes en el cementerio
     			if(clientes.size() > 0) {
+    			
+    			//Recorrido por todos los clientes en el cementerio
     			for(Cliente cliente: clientes) {
+    				//Condicionador para  mostrar  clientes que tengan alguna factura
     				if(cliente.getListadoFacturas().size() > 0) {
     				indice+=1;
     				System.out.println("["+indice+"] "+ cliente);}
     	
     			}}
+    			//Condicionador para identificar si no hubo algun cliente con factura por pagar
     			if(indice == 0) {
     				System.out.println("No hay clientes con facturas por pagar");}
+    			//Pide el indice del cliente para cobrar la o las facturas
     			else{System.out.print("Ingrese el índice de los clientes: ");
     			int indiceCliente = scanner.nextInt();
     			
+    			//Vuelve a pedir indice si estuvo fuera de rango
     			while(indiceCliente<1 || indiceCliente>clientes.size()) {
     				System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
     				indiceCliente=scanner.nextInt();
     			}
+    			//Referencia al indice del cliente seleccionado
     			Cliente cliente = (Cliente) clientes.get(indiceCliente - 1);
+    			//Cantidad de facturas del cliente
     			int cantidadFacturas = cliente.getListadoFacturas().size();
+    			//Comprueba que la cantidad de factores sea mayor que 0
     			if(cantidadFacturas > 0 ) {
+    			//Se llama al metodo para el cobro de servicios del cliente
     			funeraria.cobroServiciosClientes(cliente);	
+    			//Se muestra por consola que el pago de facturas del cliente se concluyo de manera correcta
     			System.out.println("Cobro de  facturas del cliente: "+ cliente.getNombre()+", realizado correctamente");}
+    			//Se indica que no hay facturas por cobrar
     			else { System.out.println("No hay facturas que cobrar");}}
     			break;
-    		case 2:
+    			//Se pregunta si se quiere realizar otra accion con la funeraria
+    		
+    		case 2:  //Pago de facturas de la funeraria
     		    valido = true;
     		    boolean continuarq = true;
+    		    
+    		    //Buble para pedir si se quiere pagar otra factura
     			while(continuarq) {
+    			
+    			//Lista con todas las facturas de la funeraria
     		    ArrayList<Factura> facturas = funeraria.getListadoFacturasPorPagar();
+    		    //Condicional que mira si hay alguna factura por pagar
     		    if(facturas.size() > 0) {
+    		    	
+    		    //Recorrido por todas las facturas de la funeraria
     		    for(int i = 0; i < facturas.size();i++) {
+    		    	//Referencia a la factura que esta activa en el bucle
     		    	Factura factura = facturas.get(i);
+    		    	//Se muestran las facturas disponibles con su ID
     		    	System.out.println("["+(i+1)+"]"+"Factura con ID: "+ factura.getID());}
+    		    
+    		    //Se pide en indice de la factura a pagar
     		    System.out.print("Ingrese el índice de las facturas: ");
     			int indiceFactura = scanner.nextInt();
     			scanner.nextLine();
     			
+    			//Si el indice esta fuera de rango pide uno de nuevo
     			while(indiceFactura<1 || indiceFactura>facturas.size()) {
     				System.out.print("El índice ingresado está fuera de rango. Ingrese nuevamente un índice: ");
     				indiceFactura=scanner.nextInt();
-    			}
+    			}//Referencia de la factura que se selecciono
     			Factura factura1 = (Factura) facturas.get(indiceFactura - 1);
+    			
+    			//Se calcula el precio total de la factura con un metodo
     			factura1.totalFactura();
+    			
+    			//Se llama el metod cobroFacturas y se muestra su resultado
     			System.out.println(funeraria.cobroFacturas(factura1));
+    			
+    			//Se pregunta si se desea pagar otra Factura 
     		    System.out.println("Desea pagar otra factura? (s/n): ");
     		    String respuesta1 = scanner.next();
-    		    continuarq = respuesta1.equalsIgnoreCase("s");}else{System.out.println("No hay facturas disponibles");
+    		    continuarq = respuesta1.equalsIgnoreCase("s");}
+    		    //Se indica que no hay facturas disponibles para pagar
+    		    else{System.out.println("No hay facturas disponibles");
     		    break;}}
     		    break;
-    		case 3:
+    		    //Se pregunta si se desea hacer otra accion con la funeraria
+    		
+    		case 3:  //Pago empleados
     			valido = true;
     			ArrayList <Empleado> empleados = funeraria.getEmpleados();
     			ArrayList <Empleado> empleadosDispo = new ArrayList<Empleado>();
