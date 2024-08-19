@@ -5595,6 +5595,8 @@ public static void funcionalidadExhumacion() {
 		
 		//Funeraria[] funerarias = new Funeraria[]{funeraria1, funeraria2, funeraria3};
 		
+		
+		
 		boolean validacion=true;
 		Scanner scanner = new Scanner(System.in);
 	
@@ -5603,7 +5605,7 @@ public static void funcionalidadExhumacion() {
 		
 		while(validacion) {
 			
-			System.out.println("Bienvenido a la franquicia de Funerarias Rostros en el Recuerdo");
+			System.out.println("Bienvenido a la franquicia de funerarias Rosario, su muerte mi salario");
 			System.out.print("Contamos con los siguientes servicios. Selecciona el que deseas realizar el día de hoy");
 			System.out.println();
 			

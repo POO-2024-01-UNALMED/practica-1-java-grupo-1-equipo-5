@@ -455,10 +455,10 @@ public class Establecimiento implements Serializable {
     	listadoProveedoresEmpleados.add(proveedor);
     }
     public void agregarProveedorVehiculo(Establecimiento proveedor) {
-    	listadoProveedores.add(proveedor);
+    	listadoProveedoresVehiculos.add(proveedor);
     }
     public void agregarProveedor(Establecimiento proveedor) {
-    	listadoProveedoresVehiculos.add(proveedor);
+    	listadoProveedores.add(proveedor);
     }
 	
 	
