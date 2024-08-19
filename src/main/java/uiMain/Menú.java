@@ -5599,9 +5599,13 @@ public static void funcionalidadExhumacion() {
 		
 		boolean validacion=true;
 		Scanner scanner = new Scanner(System.in);
-	
+
 		Cementerio.getCementerios();
 		Deserializador.deserializarListas();
+
+		//Serializador.serializarListas();
+		//Deserializador.deserializarListas();
+
 		
 		while(validacion) {
 			

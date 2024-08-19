@@ -31,6 +31,7 @@ public class Deserializador {
             fis = new FileInputStream(path);
             ois = new ObjectInputStream(fis);
             if (lista!=null) {
+            	lista.clear();
             	lista.addAll((ArrayList<T>) ois.readObject());
             }
             
