@@ -14,7 +14,7 @@ public class Crematorio extends Establecimiento implements Serializable{
 	//Atributos
 	
 	
-	
+	private static final long serialVersionUID = 1L;
 	//Constructor
 	public Crematorio(String nombre, int capacidad, CuentaBancaria cuentaCorriente,String afiliacion, Empleado empleado,Funeraria funeraria) {
 		super(nombre,capacidad,cuentaCorriente,afiliacion,empleado,funeraria);

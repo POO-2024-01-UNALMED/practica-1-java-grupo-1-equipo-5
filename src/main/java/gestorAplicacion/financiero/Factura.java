@@ -27,6 +27,7 @@ public class Factura implements Serializable{
 	private List<Producto> listaProductos;
 	private double porcentajeCreditoPorPagar = 1.0;
 	private String Servicio ;
+	private static final long serialVersionUID = 1L;
 	
 
 

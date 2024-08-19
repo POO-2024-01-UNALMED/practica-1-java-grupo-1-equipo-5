@@ -19,6 +19,7 @@ public class Funeraria extends Establecimiento implements Serializable{
 	private ArrayList<Factura> listadoFacturas=new ArrayList<Factura>();
 	private ArrayList<Factura> listadoFacturasPorPagar=new ArrayList<Factura>();
 	private ArrayList<Vehiculo> vehiculos=new ArrayList<Vehiculo>();
+	private static final long serialVersionUID = 1L;
     
     
 	//hereda inventario

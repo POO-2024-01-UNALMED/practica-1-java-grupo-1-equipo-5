@@ -22,6 +22,7 @@ public class Vehiculo implements Serializable{
 	private Empleado conductor;
 	private ArrayList<String> ruta=new ArrayList<String>();
 	private int Precio;
+	private static final long serialVersionUID = 1L;
 
 	private ArrayList<Familiar> pasajeros = new ArrayList<Familiar>();
 	

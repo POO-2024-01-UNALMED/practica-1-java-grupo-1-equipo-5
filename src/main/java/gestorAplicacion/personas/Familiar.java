@@ -14,6 +14,7 @@ public class Familiar extends Persona implements Serializable {
 
 	private int acompañantes;
 	private Familiar responsable;
+	 private static final long serialVersionUID = 1L;
 
 	// Sobrecarga de contructores
 

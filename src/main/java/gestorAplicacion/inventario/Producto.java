@@ -22,6 +22,7 @@ public class Producto implements Serializable {
     private Tumba tumba;
     
     private int cantidadVendida=0;
+   
     
     private static ArrayList<Producto> productos=new ArrayList<Producto>();
 

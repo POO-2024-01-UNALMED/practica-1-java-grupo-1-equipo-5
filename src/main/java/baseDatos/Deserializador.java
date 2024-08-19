@@ -25,7 +25,7 @@ public class Deserializador {
 
         try {
 
-            File path = new File(archivo.getAbsolutePath()+"/src/baseDatos/temp/"+nombre+".txt");
+            File path = new File(archivo.getAbsolutePath()+"/src/main/java/baseDatos/temp"+nombre+".txt");
             fis = new FileInputStream(path);
             ois = new ObjectInputStream(fis);
             lista.addAll((ArrayList<T>) ois.readObject());
@@ -51,6 +51,9 @@ public class Deserializador {
     	deserializar(Factura.getFacturas(), "Facturas");
     	deserializar(CuentaBancaria.getCuentas(), "Cuentas");
     	deserializar(Producto.getProductos(), "Productos");
+    	
+    	
+
     }
     
 }

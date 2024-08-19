@@ -13,7 +13,8 @@ public class Urna extends Inventario implements Serializable{
 	private String tipo; // "fija" u "ordinaria" 
 	private ArrayList<String> floresUrna;
 	private ArrayList<String> materialUrna;
-
+	private static final long serialVersionUID = 1L;
+	
 	//Constructor
 	public Urna(String nombre,Cementerio cementerio,double peso,int categoria,String tipo) {
 		super(nombre,cementerio,peso, categoria);

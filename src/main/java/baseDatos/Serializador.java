@@ -25,7 +25,8 @@ public class Serializador {
         File archivo = new File("");
 
         try{
-            File path = new File(archivo.getAbsolutePath()+"/src/baseDatos/temp/"+nombre+".txt"); 
+            File path = new File(archivo.getAbsolutePath()+"/src/main/java/baseDatos/temp"+nombre+".txt"); 
+          
             
             FileOutputStream f = new FileOutputStream(path);
             ObjectOutputStream o = new ObjectOutputStream(f);

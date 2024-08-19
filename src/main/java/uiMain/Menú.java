@@ -5584,11 +5584,11 @@ public static void funcionalidadExhumacion() {
 		
 		funeraria1.getListadoFacturas().add(new Factura(urnas1F1, "inventario"));
 		funeraria2.getListadoFacturas().add(new Factura(tumbas2F2, "inventario"));
-		funeraria3.getListadoFacturas().add(new Factura(servicios1F3, "establecimiento"));
+		funeraria3.getListadoFacturas().add(new Factura(servicios1F3, "establecimiento")); 
 		
 		
 		
-		Funeraria[] funerarias = new Funeraria[]{funeraria1, funeraria2, funeraria3};
+		//Funeraria[] funerarias = new Funeraria[]{funeraria1, funeraria2, funeraria3};*/
 		
 		boolean validacion=true;
 		Scanner scanner = new Scanner(System.in);
@@ -5647,7 +5647,9 @@ public static void funcionalidadExhumacion() {
 	                validacion = false;}
 				break;
 			case 4:
-				FuncionalidadGestionInventario(funerarias);
+				//ArrayList<Establecimiento> funerarias = Establecimiento.filtarEstablecimiento("funeraria");
+				//Funeraria[] auxFunerarias= {(Funeraria) funerarias.get(0),(Funeraria) funerarias.get(1),(Funeraria) funerarias.get(2)};
+				//FuncionalidadGestionInventario(auxFunerarias);
 				System.out.println("¿Desea regresar al Menú principal? (s/n): ");
 	    		respuestape = scanner.next();
 	    		if(respuestape.equalsIgnoreCase("s")) {

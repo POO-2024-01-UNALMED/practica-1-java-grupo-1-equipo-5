@@ -19,6 +19,7 @@ public class CuentaBancaria implements Banco, Serializable{
     private double interes ;
     private double cobroAdicional;
     private ArrayList<Factura> credito = new ArrayList<Factura>();
+    private static final long serialVersionUID = 1L;
     
     private static ArrayList<CuentaBancaria> cuentas = new ArrayList<CuentaBancaria>(); 
 	

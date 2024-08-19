@@ -32,6 +32,7 @@ public class Establecimiento implements Serializable {
 	private ArrayList<Establecimiento> listadoProveedoresEmpleados=new ArrayList<Establecimiento>();
 	private ArrayList<Producto> productos = new ArrayList<Producto>();
 	private ArrayList<Establecimiento> listadoProveedores=new ArrayList<Establecimiento>();
+	private static final long serialVersionUID = 1L;
 	
 	
 	

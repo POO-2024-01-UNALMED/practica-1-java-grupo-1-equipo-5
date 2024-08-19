@@ -31,6 +31,7 @@ public abstract class Inventario implements Serializable{
 	
 	
 	private static ArrayList<Inventario> inventarioTotal =new ArrayList<Inventario>();
+	private static final long serialVersionUID = 1L;
 	//Constructor
 	protected Inventario(String nombre,Cementerio cementerio,double tamaño,int categoria) {
 		this.nombre=nombre;

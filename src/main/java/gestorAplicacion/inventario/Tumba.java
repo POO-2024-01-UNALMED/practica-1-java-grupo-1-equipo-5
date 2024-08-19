@@ -9,6 +9,7 @@ import gestorAplicacion.personas.Cliente;
 
 public class Tumba extends Inventario implements Serializable{
 	
+	private static final long serialVersionUID = 1L;
 	
 	//Constructor
 	public Tumba(String nombre,Cementerio cementerio,double tamaño,int categoria) {

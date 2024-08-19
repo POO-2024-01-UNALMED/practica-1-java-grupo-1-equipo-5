@@ -15,6 +15,7 @@ public class Persona implements Serializable{
 	private CuentaBancaria cuentaBancaria;
 	private static ArrayList<Persona> personas = new ArrayList<Persona>();
 	private static long auxCC = 1000;
+	 private static final long serialVersionUID = 1L;
 	
 	
 	public Persona(String nombre, long CC, int edad, CuentaBancaria cuentaBancaria) {

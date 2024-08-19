@@ -17,6 +17,7 @@ public class Empleado extends Persona implements Serializable{
 	private boolean disponible= true;
 	private Funeraria funeraria;
 	private String descripcionCalificacion; // Se utiliza al momento de las encuestas
+	 private static final long serialVersionUID = 1L;
 	
 	
 		

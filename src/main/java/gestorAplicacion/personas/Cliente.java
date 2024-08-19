@@ -18,6 +18,7 @@ public class Cliente extends Persona implements Serializable {
 	private Inventario inventario; 
 	private ArrayList<Familiar> familiares=new ArrayList<Familiar>();
 	private ArrayList<Factura> listadoFacturas=new ArrayList<Factura>();
+	private static final long serialVersionUID = 1L;
 	
 	
 	//Contructor mayores de edad
