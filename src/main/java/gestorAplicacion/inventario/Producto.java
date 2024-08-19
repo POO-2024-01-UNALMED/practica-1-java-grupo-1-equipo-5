@@ -53,10 +53,12 @@ public class Producto {
     }public Producto(Urna urna, int cantidadFlores){
     	this.urna = urna;
     	this.precio = urna.precioTotal(cantidadFlores);
+    	this.cantidad = 1;
     }
     public Producto(Tumba tumba, int cantidadFlores){
     	this.tumba = tumba;
     	this.precio = tumba.precioTotal(cantidadFlores);
+    	this.cantidad = 1;
     }
     
     public Producto(Vehiculo vehiculo) {

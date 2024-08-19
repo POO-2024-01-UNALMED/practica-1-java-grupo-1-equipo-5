@@ -420,20 +420,20 @@ public String cobroFacturas(Factura factura) {
 			   credito = funeraria;
 		   }}
 		   if(inventarioMax == 0) {resultado += "No hubo Funerarias que necesitaran un reajuste de dinero para inventario" + "\n";}
-		   else{cuentaAhorros.transaccion(100000, inventario.getCuentaCorriente(), "bolsilloInventario");
-		   resultado += "La funeraria: " + inventario.getNombre() + " requiere mayor cantidad de dinero para actualizar el inventario, por lo que se le ha transferido 100000" + "\n";}
+		   else{cuentaAhorros.transaccion(1000000, inventario.getCuentaCorriente(), "bolsilloInventario");
+		   resultado += "La funeraria: " + inventario.getNombre() + " requiere mayor cantidad de dinero para actualizar el inventario, por lo que se le ha transferido 1000000" + "\n";}
 		   if(transporteMax == 0) {resultado += "No hubo Funerarias que necesitaran un reajuste de dinero para transportes" + "\n";}
-		   else {cuentaAhorros.transaccion(100000, transporte.getCuentaCorriente(), "bolsilloTransporte");
-		   resultado += "La funeraria: " + transporte.getNombre() + " requiere mayor cantidad de dinero para la compra y la gestion de vehiculos, por lo que se le ha transferido 100000" + "\n";
+		   else {cuentaAhorros.transaccion(1000000, transporte.getCuentaCorriente(), "bolsilloTransporte");
+		   resultado += "La funeraria: " + transporte.getNombre() + " requiere mayor cantidad de dinero para la compra y la gestion de vehiculos, por lo que se le ha transferido 1000000" + "\n";
 		   }if(establecimientoMax == 0) {resultado += "No hubo Funerarias que necesitaran un reajuste de dinero para establecimientos" + "\n";}
-		   else {cuentaAhorros.transaccion(100000, establecimiento.getCuentaCorriente(), "bolsilloEstablecimientos");
-		   resultado += "La funeraria: " + establecimiento.getNombre() + " requiere mayor cantidad de dinero para el pago a los establecimientos, por lo que se le ha transferido 100000" + "\n";}
+		   else {cuentaAhorros.transaccion(1000000, establecimiento.getCuentaCorriente(), "bolsilloEstablecimientos");
+		   resultado += "La funeraria: " + establecimiento.getNombre() + " requiere mayor cantidad de dinero para el pago a los establecimientos, por lo que se le ha transferido 1000000" + "\n";}
 		   if(trabajadoresMax == 0) {resultado += "No hubo Funerarias que necesitaran un reajuste de dinero para trabajadores" + "\n";}
-		   else {cuentaAhorros.transaccion(100000, trabajadores.getCuentaCorriente(), "bolsilloTrabajadores");
-		   resultado += "La funeraria: " + trabajadores.getNombre() + " requiere mayor cantidad de dinero para la contratacion y el pago de los empleados, por lo que se le ha transferido 100000" + "\n";}
+		   else {cuentaAhorros.transaccion(1000000, trabajadores.getCuentaCorriente(), "bolsilloTrabajadores");
+		   resultado += "La funeraria: " + trabajadores.getNombre() + " requiere mayor cantidad de dinero para la contratacion y el pago de los empleados, por lo que se le ha transferido 1000000" + "\n";}
 		   if(creditoMax == 0) {resultado += "No hubo Funerarias que necesitaran un reajuste de dinero para credito" + "\n";}
-		   else {cuentaAhorros.transaccion(100000, credito.getCuentaCorriente(), "bolsilloPagoCredito");
-			   resultado +="La funeraria: " + credito.getNombre() + " requiere mayor cantidad de dinero para el pago de su credito, por lo que se le ha transferido 100000";}
+		   else {cuentaAhorros.transaccion(1000000, credito.getCuentaCorriente(), "bolsilloPagoCredito");
+			   resultado +="La funeraria: " + credito.getNombre() + " requiere mayor cantidad de dinero para el pago de su credito, por lo que se le ha transferido 1000000";}
 	   
 	   return resultado;
     }
