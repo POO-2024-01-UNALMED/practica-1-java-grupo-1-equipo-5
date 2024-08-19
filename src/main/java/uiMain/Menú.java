@@ -5622,7 +5622,8 @@ public static void funcionalidadExhumacion() {
 		
 		boolean validacion=true;
 		Scanner scanner = new Scanner(System.in);
-		Deserializador.deserializarListas();
+		//Serializador.serializarListas();
+		//Deserializador.deserializarListas();
 		
 		while(validacion) {
 			
