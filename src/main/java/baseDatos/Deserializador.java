@@ -28,7 +28,10 @@ public class Deserializador {
             File path = new File(archivo.getAbsolutePath()+"/src/main/java/baseDatos/temp"+nombre+".txt");
             fis = new FileInputStream(path);
             ois = new ObjectInputStream(fis);
-            lista.addAll((ArrayList<T>) ois.readObject());
+            if (lista!=null) {
+            	lista.addAll((ArrayList<T>) ois.readObject());
+            }
+            
             ois.close();
             fis.close();
 
