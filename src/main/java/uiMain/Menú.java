@@ -1405,10 +1405,10 @@ public static void funcionalidadExhumacion() {
 		    scanner.nextLine(); 
 		    
 		    while (true) { // Bucle para asegurar que el usuario proporcione una respuesta válida
-		        System.out.println("¿Desea realizar un intercambio de productos entre funerarias? (sí/no):");
+		        System.out.println("¿Desea realizar un intercambio de productos entre funerarias? (si/no):");
 		        String respuesta = scanner.nextLine().trim().toLowerCase();
 
-		        if (respuesta.equals("sí")) {
+		        if (respuesta.equals("si")) {
 		            // Encuentra la funeraria con mayor stock de productos
 		            Funeraria funerariaConMayorStock = null;
 		            Producto productoConMayorStock = null;
@@ -1445,7 +1445,7 @@ public static void funcionalidadExhumacion() {
 		            System.out.println("No se realizará ningún intercambio.");
 		            return false; 
 		        } else {
-		            System.out.println("Respuesta no válida. Por favor, responda 'sí' o 'no'.");
+		            System.out.println("Respuesta no válida. Por favor, responda 'si' o 'no'.");
 		        }
 		    }
 		}
