@@ -125,9 +125,9 @@ public class Cliente extends Persona implements Serializable {
 		double total=factura.totalFactura();
 		
 		while(validacionPago==false) {
-			familiarDesignado = designarFamiliar(familiares);
+			familiarDesignado = designarFamiliar(familiaresA);
 			
-			if (familiares.size()==0) {return 
+			if (familiaresA.size()==0 || familiarDesignado==null) { return 
 					"No es posible hacer el cobro de la factura. No se podrán agregar adornos";}
 			
 			if(familiarDesignado.getCC()!=0 && familiarDesignado.getCuentaBancaria().getSaldo()>=total) {
@@ -137,6 +137,8 @@ public class Cliente extends Persona implements Serializable {
 			}//Fin if
 			
 			else{familiaresA.remove(familiarDesignado);}
+			
+			
 			
 		}
 		

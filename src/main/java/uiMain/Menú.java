@@ -5631,11 +5631,10 @@ public static void funcionalidadExhumacion() {
 		boolean validacion=true;
 		Scanner scanner = new Scanner(System.in);
 
-		Cementerio.getCementerios();
-		Deserializador.deserializarListas();
-
-		//Serializador.serializarListas();
+		
 		//Deserializador.deserializarListas();
+
+	
 
 		
 		while(validacion) {
@@ -5663,8 +5662,7 @@ public static void funcionalidadExhumacion() {
 	    		if(respuestape.equalsIgnoreCase("s")) {
 	    			validacion = true;
 	    		}else {
-	    			Serializador.serializarListas();
-	                System.out.println("Has salido del programa");
+	    			
 	                validacion = false;}
 				break;
 				
@@ -5675,8 +5673,7 @@ public static void funcionalidadExhumacion() {
 	    		if(respuestape.equalsIgnoreCase("s")) {
 	    			validacion = true;
 	    		}else {
-	    			Serializador.serializarListas();
-	                System.out.println("Has salido del programa");
+	    			
 	                validacion = false;}
 				break;
 			case 3:
@@ -5686,8 +5683,7 @@ public static void funcionalidadExhumacion() {
 	    		if(respuestape.equalsIgnoreCase("s")) {
 	    			validacion = true;
 	    		}else {
-	    			Serializador.serializarListas();
-	                System.out.println("Has salido del programa");
+	    			
 	                validacion = false;}
 				break;
 			case 4:
@@ -5699,8 +5695,7 @@ public static void funcionalidadExhumacion() {
 	    		if(respuestape.equalsIgnoreCase("s")) {
 	    			validacion = true;
 	    		}else {
-	    			Serializador.serializarListas();
-	                System.out.println("Has salido del programa");
+	    			
 	                validacion = false;}
 				break;
 			case 5:	
@@ -5710,13 +5705,12 @@ public static void funcionalidadExhumacion() {
 	    		if(respuestape.equalsIgnoreCase("s")) {
 	    			validacion = true;
 	    		}else {
-	    			Serializador.serializarListas();
-	                System.out.println("Has salido del programa");
+	    			
 	                validacion = false;}
 				break;
 				
 			case 6: 
-				Serializador.serializarListas();
+				//Serializador.serializarListas();
                 System.out.println("Has salido del programa");
                 validacion = false;
                 break;
