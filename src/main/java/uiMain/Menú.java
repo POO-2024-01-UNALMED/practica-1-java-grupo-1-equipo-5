@@ -4396,36 +4396,36 @@ public static void funcionalidadExhumacion() {
     	Establecimiento local2 = new Establecimiento("ARA productos",500,cuentalocal1,jefe2,5);
     	Establecimiento local3 = new Establecimiento("JUSTO Y BUENO productos",500,cuentalocal2,jefe3,5);
     	Establecimiento local4 = new Establecimiento("HOMECENTER productos",500,cuentalocal3,jefe4,5);
-    	funeraria1.agregarProveedor(local1);
-    	funeraria1.agregarProveedor(local2);
-    	funeraria1.agregarProveedor(local3);
-    	funeraria1.agregarProveedor(local4);
+    	funeraria1.agregarProveedores(local1);
+    	funeraria1.agregarProveedores(local2);
+    	funeraria1.agregarProveedores(local3);
+    	funeraria1.agregarProveedores(local4);
     	
-    	funeraria2.agregarProveedor(local1);
-    	funeraria2.agregarProveedor(local2);
-    	funeraria2.agregarProveedor(local3);
-    	funeraria2.agregarProveedor(local4);
+    	funeraria2.agregarProveedores(local1);
+    	funeraria2.agregarProveedores(local2);
+    	funeraria2.agregarProveedores(local3);
+    	funeraria2.agregarProveedores(local4);
     	
-    	funeraria3.agregarProveedor(local1);
-    	funeraria3.agregarProveedor(local2);
-    	funeraria3.agregarProveedor(local3);
-    	funeraria3.agregarProveedor(local4);
+    	funeraria3.agregarProveedores(local1);
+    	funeraria3.agregarProveedores(local2);
+    	funeraria3.agregarProveedores(local3);
+    	funeraria3.agregarProveedores(local4);
     	
     	
     	Establecimiento local5 = new Establecimiento("Yamaha Vehiculos",500,cuentalocal4,jefe5,5);
     	Establecimiento local6 = new Establecimiento("BMW Vehiculos",500,cuentalocal5,jefe6,5);
     	Establecimiento local7 = new Establecimiento("AUDI Vehiculos",500,cuentalocal6,jefe7,5);
-    	funeraria1.agregarProveedorVehiculo(local5);
-    	funeraria1.agregarProveedorVehiculo(local6);
-    	funeraria1.agregarProveedorVehiculo(local7);
+    	funeraria1.agregarProveedorVehiculos(local5);
+    	funeraria1.agregarProveedorVehiculos(local6);
+    	funeraria1.agregarProveedorVehiculos(local7);
     	
-    	funeraria2.agregarProveedorVehiculo(local5);
-    	funeraria2.agregarProveedorVehiculo(local6);
-    	funeraria2.agregarProveedorVehiculo(local7);
+    	funeraria2.agregarProveedorVehiculos(local5);
+    	funeraria2.agregarProveedorVehiculos(local6);
+    	funeraria2.agregarProveedorVehiculos(local7);
     	
-    	funeraria3.agregarProveedorVehiculo(local5);
-    	funeraria3.agregarProveedorVehiculo(local6);
-    	funeraria3.agregarProveedorVehiculo(local7);
+    	funeraria3.agregarProveedorVehiculos(local5);
+    	funeraria3.agregarProveedorVehiculos(local6);
+    	funeraria3.agregarProveedorVehiculos(local7);
     	
     	Establecimiento local8 = new Establecimiento("COMFAMA Empleados",500,cuentalocal7,jefe8,5);
     	Establecimiento local9 = new Establecimiento("SENA Empleados",500,cuentalocal8,jefe9,5);
@@ -4474,11 +4474,11 @@ public static void funcionalidadExhumacion() {
         local8.agregarEmpleado(empleado4);
         local8.agregarEmpleado(empleado5);
         
-        Empleado empleado6 = new Empleado("Marta Herrera",  empleadocuenta6, "noche", "padre", 3700.00, funeraria1);
-        Empleado empleado7 = new Empleado("Luis Morales",  empleadocuenta7, "mañana", "sepulturero", 3600.00, funeraria1);
-        Empleado empleado8 = new Empleado("Elena Castillo",  empleadocuenta8, "tarde", "cremador", 3800.00, funeraria2);
-        Empleado empleado9 = new Empleado("Diego Torres",  empleadocuenta9, "noche", "padre", 3500.00, funeraria2);
-        Empleado empleado10 = new Empleado("Isabel Sánchez",  empleadocuenta10, "mañana", "sepulturero", 3400.00, funeraria3);
+        Empleado empleado6 = new Empleado("Marta Herrera",  empleadocuenta6, "noche", "padre", 3700.00, null);
+        Empleado empleado7 = new Empleado("Luis Morales",  empleadocuenta7, "mañana", "sepulturero", 3600.00, null);
+        Empleado empleado8 = new Empleado("Elena Castillo",  empleadocuenta8, "tarde", "cremador", 3800.00, null);
+        Empleado empleado9 = new Empleado("Diego Torres",  empleadocuenta9, "noche", "padre", 3500.00, null);
+        Empleado empleado10 = new Empleado("Isabel Sánchez",  empleadocuenta10, "mañana", "sepulturero", 3400.00, null);
         local9.agregarEmpleado(empleado6);
         local9.agregarEmpleado(empleado8);
         local9.agregarEmpleado(empleado7);
@@ -4486,16 +4486,47 @@ public static void funcionalidadExhumacion() {
         local9.agregarEmpleado(empleado10);
 
         
-        Empleado empleado11 = new Empleado("Miguel Ortega",  empleadocuenta11, "tarde", "cremador", 3700.00, funeraria3);
-        Empleado empleado12 = new Empleado("Claudia Jiménez",  empleadocuenta12, "noche", "padre", 3600.00, funeraria1);
-        Empleado empleado13 = new Empleado("Javier López", empleadocuenta13, "mañana", "sepulturero", 3800.00, funeraria1);
-        Empleado empleado14 = new Empleado("Rosa Pérez", empleadocuenta14, "tarde", "cremador", 3500.00, funeraria2);
-        Empleado empleado15 = new Empleado("Alberto Ramírez",  empleadocuenta15, "noche", "padre", 3900.00, funeraria2);
+        Empleado empleado11 = new Empleado("Miguel Ortega",  empleadocuenta11, "tarde", "cremador", 3700.00, null);
+        Empleado empleado12 = new Empleado("Claudia Jiménez",  empleadocuenta12, "noche", "padre", 3600.00, null);
+        Empleado empleado13 = new Empleado("Javier López", empleadocuenta13, "mañana", "sepulturero", 3800.00, null);
+        Empleado empleado14 = new Empleado("Rosa Pérez", empleadocuenta14, "tarde", "cremador", 3500.00, null);
+        Empleado empleado15 = new Empleado("Alberto Ramírez",  empleadocuenta15, "noche", "padre", 3900.00, null);
         local10.agregarEmpleado(empleado11);
         local10.agregarEmpleado(empleado12);
         local10.agregarEmpleado(empleado13);
         local10.agregarEmpleado(empleado14);
         local10.agregarEmpleado(empleado15);
+        
+        empleado1.setEdad(25);
+        empleado2.setEdad(33);
+        empleado3.setEdad(45);
+        empleado4.setEdad(20);
+        empleado5.setEdad(18);
+        empleado6.setEdad(45);
+        empleado7.setEdad(50);
+        empleado8.setEdad(31);
+        empleado9.setEdad(29);
+        empleado10.setEdad(55);
+        empleado11.setEdad(42);
+        empleado12.setEdad(36);
+        empleado13.setEdad(38);
+        empleado14.setEdad(39);
+        empleado15.setEdad(37);
+        empleado1.setExperiencia(10);
+        empleado2.setExperiencia(5);
+        empleado3.setExperiencia(4);
+        empleado4.setExperiencia(2);
+        empleado5.setExperiencia(1);
+        empleado6.setExperiencia(5);
+        empleado7.setExperiencia(20);
+        empleado8.setExperiencia(3);
+        empleado9.setExperiencia(2);
+        empleado10.setExperiencia(20);
+        empleado11.setExperiencia(12);
+        empleado12.setExperiencia(5);
+        empleado13.setExperiencia(8);
+        empleado14.setExperiencia(9);
+        empleado15.setExperiencia(7);
 
         
         //vehiculos provedores.
