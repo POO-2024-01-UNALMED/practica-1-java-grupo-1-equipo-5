@@ -1,3 +1,6 @@
+/* Autores  Violeta Gomez
+ * Esta clase tiene la funcionalidad de simular un Cementerio con asociaciones 
+ * de objetos Urna o Tumba según corresponda y de gestionar La ceremonia de Entierro*/
 package gestorAplicacion.establecimientos;
 import gestorAplicacion.inventario.*;
 
@@ -108,7 +111,7 @@ public class Cementerio extends Establecimiento implements Serializable {
 	
 	
 	
-	
+	//Este método tiene la funcionalidad de filtrar a los objetos de tipo Urna por la Iglesia que se agrega al Cementerio
 	public ArrayList<Inventario> tipoUrna(){
 		
 		Iglesia iglesia=this.getIglesia();
@@ -146,7 +149,7 @@ public class Cementerio extends Establecimiento implements Serializable {
 		return porDefecto;
 		
 	}
-	
+	//Este método tiene la funcionalidad de filtrar a los objetos de tipo Urna por su atributo tipo
 	public ArrayList<Inventario> urnasPorTipo(String tipo){
 		
 		ArrayList<Inventario> urnasPorTipo =new ArrayList<Inventario>();

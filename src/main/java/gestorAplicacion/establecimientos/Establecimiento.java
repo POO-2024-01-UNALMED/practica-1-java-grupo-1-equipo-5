@@ -1,3 +1,7 @@
+/* Autores  Andrés Perez, Violeta Gomez, Sebastián Guerra
+ * Esta clase tiene la funcionalidad de simular el Establecimiento principal de la franquicia de Funerarias
+ * la Clase Establecimiento es la clase padre de Cementerio, Crematorio y Funeraria*/
+
 package gestorAplicacion.establecimientos;
 
 import java.util.ArrayList;

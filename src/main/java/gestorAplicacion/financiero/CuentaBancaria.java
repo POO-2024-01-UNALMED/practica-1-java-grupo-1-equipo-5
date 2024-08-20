@@ -1,3 +1,6 @@
+/* Autores  Andrés Perez, Sebastian Guerra
+ * Esta clase tiene la funcionalidad simular una CuentaBancaria para poder asociarla a un Objeto de tipo 
+ * Persona o a un objeto de tipo Establecimiento*/
 package gestorAplicacion.financiero;
 
 import java.io.Serializable;

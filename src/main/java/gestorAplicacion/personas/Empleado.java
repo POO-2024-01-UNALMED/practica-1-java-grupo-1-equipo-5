@@ -1,3 +1,6 @@
+/* Autores  Violeta Gomez, Sebastian Guerra, Andres Perez
+ * Esta clase representa a los Empleados de la funeraria y pueden tener diferentes cargos*/
+
 package gestorAplicacion.personas;
 
 
@@ -9,7 +12,7 @@ import gestorAplicacion.financiero.*;
 public class Empleado extends Persona implements Serializable{
 	//Atributos
 	private String jornada; //mañana - tarde - noche
-	private String cargo; //Cargos disponibles sepulturero - cremador - padre
+	private String cargo; //Cargos disponibles sepulturero - cremador - padre - obispo - conductor
 	private double salario;
 	private int Calificacion=5;
 	private int Experiencia;

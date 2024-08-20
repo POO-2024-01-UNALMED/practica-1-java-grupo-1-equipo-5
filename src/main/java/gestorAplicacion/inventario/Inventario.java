@@ -1,3 +1,7 @@
+/* Autores Violeta Gómez
+ * Tiene la funcionalidad de asociar los objetos Urna y Tumba para que 
+ * se puedan emplear más facilmente*/
+
 package gestorAplicacion.inventario;
 
 import java.io.Serializable;
@@ -53,6 +57,8 @@ public abstract class Inventario implements Serializable{
 		this.cementerio.getFuneraria().getClientes().remove(cliente);
 	}
 	
+	//Este método sirve para comparar el parámetro que se ingresa que debe ser la edad de un Cliente
+	//Retorna un dato tipo int que determina en que rango de edad se encuentra la categoria
 	public int determinarCategoria(int edad) {
 		int categoria=0;
 		if(edad<18) {
@@ -66,6 +72,8 @@ public abstract class Inventario implements Serializable{
 	}
 	
 	
+	//Recibe un parámetro tipo String que debe tener valor "flores" o "material"
+	//Sirve para determinar los precios del arreglo flores y del arreglo material
 	public static double precios(String adorno) {
 		
 		String[] arregloCompleto = Stream.concat(Arrays.stream(flores), Arrays.stream(material)).toArray(String[]::new);
@@ -97,7 +105,10 @@ public abstract class Inventario implements Serializable{
 	public void setTamaño(double Tamaño) {
 		this.tamaño=determinarTamaño(tamaño);
 	}
-	
+	//Recibe dos parámetros tipo String el primer parámetro debe ser algún elemento del arreglo 
+	//flores y en ese caso el segundo parámetro deberá tomar el valor de "flores"
+	//En otro caso el primer parámetro deberá tomar un valor de algún elemento del arreglo de material 
+	//y en ese caso el segundo marámetro deberá ser "material"
 	public int contarAdorno(String adorno,String floresMaterial) {
 		int conteo=0;
 		if(floresMaterial.equals("flores")) {
@@ -106,6 +117,8 @@ public abstract class Inventario implements Serializable{
 		
 		return conteo;
 	}
+	
+	//Retorna el precio de del precio de los arreglos de material y flores dependiendo de la cantidad
 	public double precioTotal(int cantidadF ) {
 		double precio = cantidadF * Inventario.getPrecioFlores() + Inventario.getPrecioMateriales();
 	return precio;

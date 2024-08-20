@@ -1,3 +1,7 @@
+/* Autores Violeta Gómez, Andrés Perez, Sebastian Guerra
+ * Esta clase Tiene la funcionalidad de servir como un servicio de la Funeraria
+ * Simular la asignación del transporte a los familiares*/
+
 package gestorAplicacion.inventario;
 
 

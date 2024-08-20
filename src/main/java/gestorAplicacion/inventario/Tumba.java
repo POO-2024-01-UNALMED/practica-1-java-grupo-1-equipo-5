@@ -1,3 +1,7 @@
+/* Autores Violeta Gómez
+ * Esta clase tiene la funcionalidad de simular una Tumba que está asociada a 
+ * un cementerio y puede o no estar asociada a un cliente*/
+
 package gestorAplicacion.inventario;
 
 import java.io.Serializable;

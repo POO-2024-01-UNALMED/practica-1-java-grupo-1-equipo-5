@@ -1,3 +1,6 @@
+/* Autores  Violeta Gomez
+ * Esta clase representa a las Personas y tiene la funcionalidad de encapsular 
+ * a las clases Empleado, Familiar y Cliente que también representa a Personas */
 package gestorAplicacion.personas;
 
 
@@ -15,7 +18,7 @@ public class Persona implements Serializable{
 	private CuentaBancaria cuentaBancaria;
 	private static ArrayList<Persona> personas = new ArrayList<Persona>();
 	private static long auxCC = 1000;
-	 private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 	
 	
 	public Persona(String nombre, long CC, int edad, CuentaBancaria cuentaBancaria) {

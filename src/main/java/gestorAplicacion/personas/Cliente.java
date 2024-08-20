@@ -1,3 +1,5 @@
+/* Autores  Violeta Gomez
+ * Esta clase representa a los muertos (Clientes de la Funeraria)*/
 package gestorAplicacion.personas;
 
 import java.io.Serializable;
@@ -13,8 +15,6 @@ public class Cliente extends Persona implements Serializable {
 	//Atributos
 	
 	private String afiliacion; //oro, plata y bronce
-	//private Crematorio crematorio;
-	//private Cementerio cementerio;
 	private Inventario inventario; 
 	private ArrayList<Familiar> familiares=new ArrayList<Familiar>();
 	private ArrayList<Factura> listadoFacturas=new ArrayList<Factura>();

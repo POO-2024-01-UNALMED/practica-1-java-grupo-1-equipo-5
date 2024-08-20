@@ -1,3 +1,7 @@
+/* Autores  Andrés Perez, Violeta Gomez, Sebastián Guerra
+ * Esta clase tiene la funcionalidad de simular las actividades de una Funeraria como lo son
+ * la gestion de Entierro, gestion de cremación y pagos a trabajadores, cobro clientes etc*/
+
 package gestorAplicacion.establecimientos;
 
 import java.io.Serializable;

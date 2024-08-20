@@ -1,3 +1,7 @@
+/* Autores Violeta Gómez, Andrés Perez, Sebastian Guerra
+ * Esta clase tiene la funcionalidad simular una Factura en donde se van a guardar 
+ * arreglos tipo Producto y en donde calculando IVA y teniendo más consideraciones*/
+
 package gestorAplicacion.financiero;
 import gestorAplicacion.personas.*;
 
@@ -95,6 +99,8 @@ public class Factura implements Serializable{
 	}
 	
 	
+	//Este método sirve para que cuando se tenga un arreglo de Objetos tipo Producto no hayan 
+	//Objetos Producto con el mismo nombre si no que se aumente su cantidad
 	public void ajustarProductos() {
 		
 		//Nueva lista de productos
@@ -116,6 +122,7 @@ public class Factura implements Serializable{
         listaProductos=productos;
 	}
 	
+	//Calcula el total del arreglo Productos por medio de los atributos del Objeto Producto precio y el atributo cantidad
 	public double totalFactura() {
 		total=0;
 		for(Producto producto:listaProductos) {
