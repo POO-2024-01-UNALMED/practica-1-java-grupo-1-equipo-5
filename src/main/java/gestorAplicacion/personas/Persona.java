@@ -4,7 +4,6 @@
 package gestorAplicacion.personas;
 
 
-
 import java.io.Serializable;
 import java.util.ArrayList;
 
