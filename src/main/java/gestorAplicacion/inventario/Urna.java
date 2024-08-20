@@ -88,6 +88,21 @@ public class Urna extends Inventario implements Serializable{
 			
 		} 
 		
+		@Override
+		public int determinarCategoria(int numAdornos) {
+			int categoria=0;
+			if(numAdornos==1) {
+				categoria=1;
+			}else if(categoria==2) {
+				categoria=2;
+			}
+			
+			return categoria;
+		}
+		
+		
+		
+		
 		
 		@Override
 		public String toString() {
