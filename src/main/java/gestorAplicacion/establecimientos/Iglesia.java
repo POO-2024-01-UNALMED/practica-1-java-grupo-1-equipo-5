@@ -19,7 +19,7 @@ public enum Iglesia {
 	private String religioso;
 	private String religiosoAltoRango;
 	
-	
+	//bendito sea jesucristo
 	//Constructor 
 	private Iglesia(String nombre, int sillas, boolean cremacion,int duracionEvento,String[] tipoUrnas,String religioso,String religiosoAltoRango) {
 		this.nombre=nombre;
