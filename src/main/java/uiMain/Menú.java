@@ -2271,7 +2271,7 @@ public static void funcionalidadExhumacion() {
 	public static void main(String[] args) {
 		
 		//cuentasCorriente funerarias
-		/*CuentaBancaria cuenta1F = new CuentaBancaria(199234234, "Eterna Paz", 4000000,4000000,4000000,4000000,4000000, "BBVA");
+		CuentaBancaria cuenta1F = new CuentaBancaria(199234234, "Eterna Paz", 4000000,4000000,4000000,4000000,4000000, "BBVA");
 	    CuentaBancaria cuenta2F = new CuentaBancaria(193739239, "Caminos de luz", 4000000,4000000,4000000,4000000,4000000, "BANCOLOMBIA");
 	    CuentaBancaria cuenta3F = new CuentaBancaria(384627823, "Recuerdos eternos", 4000000,4000000,4000000,4000000,4000000, "DAVIVIENDA");
 		    
@@ -5589,7 +5589,7 @@ public static void funcionalidadExhumacion() {
 		
 		funeraria1.getListadoFacturas().add(new Factura(urnas1F1, "inventario"));
 		funeraria2.getListadoFacturas().add(new Factura(tumbas2F2, "inventario"));
-		funeraria3.getListadoFacturas().add(new Factura(servicios1F3, "establecimiento")); */
+		funeraria3.getListadoFacturas().add(new Factura(servicios1F3, "establecimiento")); 
 		
 		
 		
@@ -5600,11 +5600,10 @@ public static void funcionalidadExhumacion() {
 		boolean validacion=true;
 		Scanner scanner = new Scanner(System.in);
 
-		Cementerio.getCementerios();
-		Deserializador.deserializarListas();
-
-		//Serializador.serializarListas();
+		
 		//Deserializador.deserializarListas();
+
+	
 
 		
 		while(validacion) {
@@ -5632,8 +5631,7 @@ public static void funcionalidadExhumacion() {
 	    		if(respuestape.equalsIgnoreCase("s")) {
 	    			validacion = true;
 	    		}else {
-	    			Serializador.serializarListas();
-	                System.out.println("Has salido del programa");
+	    			
 	                validacion = false;}
 				break;
 				
@@ -5644,8 +5642,7 @@ public static void funcionalidadExhumacion() {
 	    		if(respuestape.equalsIgnoreCase("s")) {
 	    			validacion = true;
 	    		}else {
-	    			Serializador.serializarListas();
-	                System.out.println("Has salido del programa");
+	    			
 	                validacion = false;}
 				break;
 			case 3:
@@ -5655,21 +5652,19 @@ public static void funcionalidadExhumacion() {
 	    		if(respuestape.equalsIgnoreCase("s")) {
 	    			validacion = true;
 	    		}else {
-	    			Serializador.serializarListas();
-	                System.out.println("Has salido del programa");
+	    			
 	                validacion = false;}
 				break;
 			case 4:
-				//ArrayList<Establecimiento> funerarias = Establecimiento.filtarEstablecimiento("funeraria");
-				//Funeraria[] auxFunerarias= {(Funeraria) funerarias.get(0),(Funeraria) funerarias.get(1),(Funeraria) funerarias.get(2)};
-				//FuncionalidadGestionInventario(auxFunerarias);
+				ArrayList<Establecimiento> funerarias = Establecimiento.filtarEstablecimiento("funeraria");
+				Funeraria[] auxFunerarias= {(Funeraria) funerarias.get(0),(Funeraria) funerarias.get(1),(Funeraria) funerarias.get(2)};
+				FuncionalidadGestionInventario(auxFunerarias);
 				System.out.println("¿Desea regresar al Menú principal? (s/n): ");
 	    		respuestape = scanner.next();
 	    		if(respuestape.equalsIgnoreCase("s")) {
 	    			validacion = true;
 	    		}else {
-	    			Serializador.serializarListas();
-	                System.out.println("Has salido del programa");
+	    			
 	                validacion = false;}
 				break;
 			case 5:	
@@ -5679,13 +5674,12 @@ public static void funcionalidadExhumacion() {
 	    		if(respuestape.equalsIgnoreCase("s")) {
 	    			validacion = true;
 	    		}else {
-	    			Serializador.serializarListas();
-	                System.out.println("Has salido del programa");
+	    			
 	                validacion = false;}
 				break;
 				
 			case 6: 
-				Serializador.serializarListas();
+				//Serializador.serializarListas();
                 System.out.println("Has salido del programa");
                 validacion = false;
                 break;
