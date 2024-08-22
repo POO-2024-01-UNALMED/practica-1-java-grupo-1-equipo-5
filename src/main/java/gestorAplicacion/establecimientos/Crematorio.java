@@ -1,3 +1,5 @@
+/* Autores  Violeta Gomez
+ * Esta clase tiene la funcionalidad de simular la estion en un Crematorio, hereda de Establecimiento */
 package gestorAplicacion.establecimientos;
 
 import java.util.ArrayList;

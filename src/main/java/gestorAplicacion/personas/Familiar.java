@@ -1,3 +1,5 @@
+/* Autores  Violeta Gomez
+ * Esta clase representa a los familiares de los clientes de la Funeraria*/
 package gestorAplicacion.personas;
 
 

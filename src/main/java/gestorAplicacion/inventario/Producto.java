@@ -1,3 +1,8 @@
+/* Autores Violeta Gómez, Andrés Perez, Sebastian Guerra
+ * Tiene la funcionalidad de simular un Producto que contenga 
+ * atributos claves como nombre, cantidad y precio como apoyo a la clase Factura*/
+
+
 package gestorAplicacion.inventario;
 
 import java.io.Serializable;
@@ -44,10 +49,8 @@ public class Producto implements Serializable {
 		productos.add(this);
 	}
     public Producto(String nombre, double precio, int cantidad, Establecimiento establecimiento) {
+    	this(nombre,precio,cantidad);
 		this.establecimiento = establecimiento;
-		this.nombre = nombre;
-		this.precio = precio;
-		this.cantidad = cantidad;
 		productos.add(this);
 	}
     

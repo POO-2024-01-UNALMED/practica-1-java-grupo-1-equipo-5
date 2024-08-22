@@ -1,3 +1,6 @@
+/* Autores  Andrés Perez
+ * Esta clase tiene la funcionalidad de imponer métodos a la clase CuentaBancaria*/
+
 package gestorAplicacion.financiero;
 
 public interface Banco{

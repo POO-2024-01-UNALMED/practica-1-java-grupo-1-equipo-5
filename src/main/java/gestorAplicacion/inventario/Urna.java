@@ -1,3 +1,8 @@
+
+/* Autores Violeta Gómez
+ * Esta clase tiene la funcionalidad de simular una Urna que está asociada a 
+ * un cementerio y puede o no estar asociada a un cliente*/
+
 package gestorAplicacion.inventario;
 
 import java.util.Random;
@@ -75,7 +80,7 @@ public class Urna extends Inventario implements Serializable{
 			
 		}
 		
-		
+		//Dependiendo del atributo tipo del mismo Objeto se filtran los materiales para la urna 
 		public String[] tipoMaterial(){
 			String[] material= {"Madera", "Metal", "Cerámica"};
 			
@@ -87,6 +92,23 @@ public class Urna extends Inventario implements Serializable{
 			return material;
 			
 		} 
+		
+		@Override
+		//Recibe un parámetro tipo int que recibe la cantidad de adornos para determinar 
+		//la categoria que debe tener el objeto Urna
+		public int determinarCategoria(int numAdornos) {
+			int categoria=0;
+			if(numAdornos==1) {
+				categoria=1;
+			}else if(numAdornos==2) {
+				categoria=2;
+			}
+			
+			return categoria;
+		}
+		
+		
+		
 		
 		
 		@Override

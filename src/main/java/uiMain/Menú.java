@@ -802,20 +802,22 @@ public static void funcionalidadExhumacion() {
 			System.out.print("Ingrese CC del cliente: ");
 			long CC = scanner.nextLong();
 			//Busca al cliente en todas funerarias 
-			cliente =Establecimiento.examinarCliente(CC);
+			Establecimiento prueba = new Establecimiento("Establecimiento",null);
+			cliente =prueba.buscarCliente(CC);
 			
 			//Opción en caso de no estar registrado
 			if(cliente==null) {
 				System.out.println("El cliente no se encuentra registrado");
-				System.out.print("Ingrese CC del cliente: ");
-				CC = scanner.nextLong();
-			}
+				//System.out.print("Ingrese CC del cliente: ");
+				//CC = scanner.nextLong();
+			}else {
+				if(cliente.getInventario() == null) {
+					System.out.println("El cliente está registrado pero no es apto para la exhumación"); cliente=null;
+			}  //else {cliente = Establecimiento.examinarCliente(CC);}
 				
-		
+			}
 			
-			if(cliente.getInventario() == null) {
-				System.out.println("El cliente está registrado pero no es apto para la exhumación"); cliente=null;
-		}else {cliente = Establecimiento.examinarCliente(CC);}
+		
 			
 		}	
 			
