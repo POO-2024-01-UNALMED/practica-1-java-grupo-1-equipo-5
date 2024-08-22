@@ -1351,8 +1351,10 @@ public static void funcionalidadExhumacion() {
 		
 		
 		private static Funeraria seleccionarFuneraria(Funeraria[] funerarias, Scanner scanner) {
+			// Bucle infinito que mantiene la solicitud de selección de funeraria hasta que se realice una elección válida
 	        while (true) {
 	            System.out.println("Seleccione una funeraria:");
+	         // Recorre el arreglo de funerarias para mostrarlas con un número correspondiente
 	            for (int i = 0; i < funerarias.length; i++) {
 	                System.out.println((i + 1) + ". " + funerarias[i].getNombre());
 	                System.out.println("   ____");
@@ -1365,9 +1367,12 @@ public static void funcionalidadExhumacion() {
 	            System.out.println((funerarias.length + 1) + ". Cancelar");
 
 	            int seleccion = scanner.nextInt() - 1;
+	         // Verifica si la selección está dentro del rango válido de funerarias
 	            if (seleccion >= 0 && seleccion < funerarias.length) {
+	            	// Devuelve la funeraria seleccionada
 	                return funerarias[seleccion];
 	            } else if (seleccion == funerarias.length) {
+	            	// Si la selección es la opción de cancelar, imprime un mensaje y termina el programa
 	                System.out.println("Proceso cancelado.");
 	                System.exit(0);
 	            } else {
@@ -1380,19 +1385,27 @@ public static void funcionalidadExhumacion() {
 		    System.out.println("Nombre: " + funeraria.getNombre());
 		    System.out.println("Calificación: " + funeraria.getCalificacion());
 		    System.out.println("Cantidad de empleados: " + funeraria.getEmpleados().size());
-
+		    
+		 // Calcula los productos vendidos en la funeraria
 		    Producto[] productosVendidos = Funeraria.calcularProductosVendidos(funeraria);
 
 		    System.out.println("Productos más vendidos:");
+		    
+		 // Variable para rastrear el producto más vendido y la cantidad máxima vendida
 		    Producto masVendido = null;
 		    int maxVendidas = 0;
+		 // Recorre el arreglo de productos vendidos
 		    for (Producto producto : productosVendidos) {
+		    	// Imprime el nombre del producto y la cantidad vendida
+
 		        System.out.println("- " + producto.getNombre() + ": " + producto.getCantidadVendida() + " vendidas, " );
+		     // Si la cantidad vendida de este producto es mayor que la máxima registrada, actualiza las variables correspondientes
 		        if (producto.getCantidadVendida() > maxVendidas) {
 		            masVendido = producto;
 		            maxVendidas = producto.getCantidadVendida();
 		        }
 		    }
+		 // Si hay un producto más vendido, lo imprime
 		    if (masVendido != null) {
 		        System.out.println("El producto más vendido es " + masVendido.getNombre() + " con " + masVendido.getCantidadVendida() + " unidades vendidas.");
 		    }
@@ -1405,6 +1418,7 @@ public static void funcionalidadExhumacion() {
 		    scanner.nextLine(); 
 		    
 		    while (true) { // Bucle para asegurar que el usuario proporcione una respuesta válida
+		    	// Solicita al usuario si desea realizar un intercambio de productos entre funerarias
 		        System.out.println("¿Desea realizar un intercambio de productos entre funerarias? (si/no):");
 		        String respuesta = scanner.nextLine().trim().toLowerCase();
 
@@ -1414,8 +1428,9 @@ public static void funcionalidadExhumacion() {
 		            Producto productoConMayorStock = null;
 		            
 		            for (Funeraria f : funerarias) {
-		                if (f != funerariaSeleccionada) {
+		                if (f != funerariaSeleccionada) {//evita la funeraria seleccionada
 		                    for (Producto p : f.getProductos()) {
+		                    	// Verifica si este producto tiene mayor stock que el actual producto con mayor stock registrado
 		                        if (productoConMayorStock == null || p.getCantidad() > productoConMayorStock.getCantidad()) {
 		                            productoConMayorStock = p;
 		                            funerariaConMayorStock = f;
@@ -1423,7 +1438,7 @@ public static void funcionalidadExhumacion() {
 		                    }
 		                }
 		            }
-
+		         // Verifica si se encontró una funeraria y un producto con mayor stock para el intercambio
 		            if (funerariaConMayorStock != null && productoConMayorStock != null) {
 		                // Intercambia el producto con mayor stock entre las funerarias
 		                Producto productoIntercambiado = productoConMayorStock;
@@ -1467,9 +1482,11 @@ public static void funcionalidadExhumacion() {
 		}
 
 		private static List<Empleado> seleccionarEmpleados(Funeraria funeraria, Scanner scanner) {
+			//Lista para guardar empleados
 		    List<Empleado> empleadosSeleccionados = new ArrayList<>();
+		 // Define el número máximo de empleados que se pueden seleccionar
 		    int maxEmpleados = 1;
-		    
+		 // Itera sobre la lista de empleados de la funeraria e imprime la informacion
 		    for (Empleado empleado : funeraria.getEmpleados()) {
 		        System.out.println(empleado.getNombre() + " (" + empleado.getCargo() + ") - Jornada: " + empleado.getJornada());
 		        System.out.println("    O ");
@@ -1478,17 +1495,19 @@ public static void funcionalidadExhumacion() {
 		        System.out.println("¿Seleccionar este empleado? (S/N)");
 		        
 		        String respuesta = scanner.next();
+		     // Si la respuesta es 'S' (sí), añade al empleado a la lista si no se ha alcanzado el máximo permitido
 		        if (respuesta.equalsIgnoreCase("S")) {
 		            if (empleadosSeleccionados.size() < maxEmpleados) {
 		                empleadosSeleccionados.add(empleado);
-		            } else {
+		            } else {// Si ya se ha alcanzado el máximo de empleados seleccionados, muestra un mensaje e interrumpe el bucle
 		                System.out.println("Ya ha seleccionado el máximo de empleados permitidos.");
 		                break;
 		            }
 		        }
 		    }
-
+		 // Verifica si se ha alcanzado el número máximo de empleados seleccionados
 		    while (empleadosSeleccionados.size() < maxEmpleados) {
+		    	// Si no se ha alcanzado el número máximo, obliga al usuario a seleccionar más empleados
 		        System.out.println("Debe seleccionar exactamente " + maxEmpleados + " empleados. Seleccione más empleados:");
 		        for (Empleado empleado : funeraria.getEmpleados()) {
 		            if (!empleadosSeleccionados.contains(empleado)) {
@@ -1510,14 +1529,17 @@ public static void funcionalidadExhumacion() {
 		}
 
 	    private static List<Vehiculo> seleccionarVehiculos(Funeraria funeraria, Scanner scanner) {
+	    	//Lista para guardar vehiculos
 	        List<Vehiculo> vehiculosSeleccionados = new ArrayList<>();
+	     // Define el número máximo de empleados que se pueden seleccionar
 	        int maxVehiculos = 1;
 	        
+	        //Itera sobre la lista de vehiculos de la funeraria e imprime la informacion
 	        for (Vehiculo vehiculo : funeraria.getVehiculos()) {
 	            System.out.println(vehiculo.getTipoVehiculo() + " - Capacidad: " + vehiculo.getCapacidad());
 
-	            
-	            if (vehiculo.getConductor() != null) {
+	            // Verifica si tiene un coductos designa
+	            if (vehiculo.getConductor() != null) {// si tiene conductor imprime el nombre
 	                System.out.println("Conductor: " + vehiculo.getConductor().getNombre());
 	            } else {
 	            }
@@ -1541,13 +1563,14 @@ public static void funcionalidadExhumacion() {
 	        
 	        return vehiculosSeleccionados;
 	    }
-
+	    
+        // Metodo para seleccionar cantidad de un producto 
 	    private static int seleccionarCantidadProducto(Producto producto, Scanner scanner) {
 	        System.out.println("Ingrese la cantidad de " + producto.getNombre() + " para intercambiar:");
 	        return scanner.nextInt();
 	    }
 
-	    private static void realizarIntercambioProductos(Funeraria funA, Funeraria funB, Producto productoA, Producto productoB, int cantidad, List<Empleado> empleados, List<Vehiculo> vehiculos) {
+	    private static void realizarIntercambioProductos(Funeraria funA, Funeraria funB, Producto productoA, Producto productoB, int cantidad, List<Empleado> empleados, List<Vehiculo> vehiculos) { 
 	        Scanner scanner = new Scanner(System.in);
 
 	        // Paso 1: Seleccionar productos a intercambiar
@@ -1555,17 +1578,20 @@ public static void funcionalidadExhumacion() {
 
 	        
 	        List<Producto> productosASeleccionados = new ArrayList<>();
+	     // Itera sobre los productos de la funeraria A
 	        for (Producto producto : funA.getProductos()) {
-	            if (producto.getCantidad() > 0) {
+	            if (producto.getCantidad() > 0) {// Solo permite seleccionar productos con cantidad disponible
 	                System.out.println("Producto: " + producto.getNombre() + ", Cantidad disponible: " + producto.getCantidad());
 	                System.out.println("¿Desea intercambiar este producto? (S/N)");
 	                String respuesta = scanner.next();
 	                if (respuesta.equalsIgnoreCase("S")) {
 	                    System.out.println("Ingrese la cantidad a intercambiar:");
 	                    int cantidadAIntercambiar = scanner.nextInt();
+	                 // Verifica que la cantidad a intercambiar sea válida
 	                    if (cantidadAIntercambiar > 0 && cantidadAIntercambiar <= producto.getCantidad()) {
 	                        Producto productoSeleccionado = new Producto(producto.getNombre(), producto.getPrecio(), cantidadAIntercambiar);
 	                        productosASeleccionados.add(productoSeleccionado);
+	                     // Actualiza la cantidad disponible del producto original
 	                        producto.setCantidad(producto.getCantidad() - cantidadAIntercambiar);
 	                    } else {
 	                        System.out.println("Cantidad inválida. El intercambio no se realizará.");
@@ -1632,8 +1658,11 @@ public static void funcionalidadExhumacion() {
 	    }
 
 	    private static void realizarCompras(Funeraria funeraria, Scanner scanner) {
+	    	// Identifica los productos con menos de 10 existencias en la funeraria
 	        Producto[] productosFaltantes = Funeraria.identificarProductosFaltantes(funeraria);
+	     // Verifica si hay productos faltantes
 	        if (productosFaltantes.length > 0) {
+	        	// Informa al usuario sobre los productos con menos de 10 existencias
 	            System.out.println("Productos con menos de 10 existencias:");
 	            for (Producto producto : productosFaltantes) {
 	                System.out.println("- " + producto.getNombre() + ": " + producto.getCantidad());
@@ -1647,6 +1676,7 @@ public static void funcionalidadExhumacion() {
 	            System.out.println("4. Cancelar");
 
 	            int opcion = scanner.nextInt();
+	         // Ejecuta la acción correspondiente a la opción seleccionada
 	            switch (opcion) {
 	                case 1:
 	                    comprarProductos(funeraria, productosFaltantes, scanner);
@@ -1661,18 +1691,24 @@ public static void funcionalidadExhumacion() {
 	                    System.out.println("Operación cancelada.");
 	                    return;
 	                default:
+	                	// Informa al usuario que la opción seleccionada no es válida y vuelve a ejecutar el método
 	                    System.out.println("Opción inválida.");
 	                    realizarCompras(funeraria, scanner);
 	            }
 	        } else {
+	        	// Informa al usuario que no hay productos faltantes
 	            System.out.println("No hay productos faltantes.");
 	        }
 	    }
 
 	    private static void comprarProductos(Funeraria funeraria, Producto[] productosFaltantes, Scanner scanner) {
+	    	// Muestra una lista de establecimientos que pueden vender los productos faltantes
 	        System.out.println("Establecimientos que pueden vender los productos faltantes:");
+	     // Itera sobre la lista de proveedores de la funeraria
+
 	        for (int i = 0; i < funeraria.getListadoProveedores().size(); i++) {
 	            Establecimiento est = funeraria.getListadoProveedores().get(i);
+	         // Muestra el nombre y la calificación de cada establecimiento proveedor
 	            System.out.println((i + 1) + ". " + est.getNombre() + " (Calificación: " + est.getCalificacion() + ")");
 	        }
 
