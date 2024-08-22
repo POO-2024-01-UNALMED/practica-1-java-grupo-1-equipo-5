@@ -49,10 +49,8 @@ public class Producto implements Serializable {
 		productos.add(this);
 	}
     public Producto(String nombre, double precio, int cantidad, Establecimiento establecimiento) {
+    	this(nombre,precio,cantidad);
 		this.establecimiento = establecimiento;
-		this.nombre = nombre;
-		this.precio = precio;
-		this.cantidad = cantidad;
 		productos.add(this);
 	}
     
