@@ -73,6 +73,7 @@ public class Establecimiento implements Serializable {
 		establecimientos.add(this);
 	}
 	
+	//recibe un parámetro tipo String que puede tener como valor "funeraria","crematorio" o "cementerio"
 	//Este método sirve para clasificar por el tipo más específico de los objetos que son o heredan de la clase Establecimiento
 	//El método recibe un parámetro tipo String que indica que objeto especifico que hereda de establecimiento se quiere buscar
 	public static ArrayList<Establecimiento> filtarEstablecimiento(String establecimiento){
