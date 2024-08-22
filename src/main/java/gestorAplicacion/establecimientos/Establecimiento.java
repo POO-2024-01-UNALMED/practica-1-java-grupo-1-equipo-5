@@ -164,7 +164,7 @@ public class Establecimiento implements Serializable {
 	
 	//busca a un cliente en todas las funerarias y cementerios por su atributo CC
 	//retorna el cliente que corresponda con el que corresponda el parámetro con su atributo CC 
-	public static Cliente examinarCliente(long CC) {
+	public Cliente buscarCliente(long CC) {
 		
 		ArrayList<Establecimiento> funerarias= Establecimiento.filtarEstablecimiento("funeraria");
 		ArrayList<Establecimiento> cementerios= Establecimiento.filtarEstablecimiento("cementerio");
